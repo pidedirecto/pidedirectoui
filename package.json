@@ -1,7 +1,6 @@
 {
   "name": "pidedirectoui",
   "version": "0.1.0",
-  "private": true,
   "engines": {
     "node": "16.17.0",
     "npm": "8.15.0"
@@ -11,6 +10,9 @@
     "appName": "pidedirectoui",
     "appAlias": "pui"
   },
+  "files": [
+    ".dist"
+  ],
   "scripts": {
     "postinstall": "pd package-changed update-packagehash",
     "prepare": "husky install"
