@@ -1,0 +1,34 @@
+service: pidedirectoui
+
+frameworkVersion: "3.36.0" # keep same as version in package.json
+useDotenv: true
+
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-finch
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: us-east-1
+
+custom:
+  dotenv:
+    path: .env.${opt:stage}
+  client:
+    bucketName: ${env:S3_BUCKET_NAME}
+    distributionFolder: build
+    indexDocument: index.html
+    errorDocument: index.html
+    objectHeaders:
+      '*.html':
+        - name: Cache-Control
+          value: no-cache
+      'service-worker.js':
+        - name: Cache-Control
+          value: no-cache
+    uploadOrder:
+      - .*
+      - .*/assets/.*
+      - service-worker\.js
+      - index\.html

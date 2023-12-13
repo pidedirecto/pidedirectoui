@@ -1,0 +1,14 @@
+{
+    "files.exclude": {
+        "**/__pycache__": true,
+        ".venv/**": true,
+        ".idea/**": true,
+        ".serverless/**": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        ".husky": true
+    }
+}

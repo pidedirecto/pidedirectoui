@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="true" type="JavaScriptTestRunnerJest">
+    <node-interpreter value="project" />
+    <node-options value="" />
+    <jest-package value="$PROJECT_DIR$/node_modules/react-app-rewired" />
+    <working-dir value="" />
+    <jest-options value=" test --roots test/ --testMatch '**/*.test.{ts,tsx}' --clearMocks --restoreMocks" />
+    <envs />
+    <scope-kind value="ALL" />
+    <method v="2" />
+  </configuration>
+</component>

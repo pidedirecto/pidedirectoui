@@ -1,0 +1,7 @@
+amplify/*
+build/*
+flow-typed/*
+node_modules/*
+
+src/reportWebVitals.js
+config-overrides.js

@@ -1,0 +1,44 @@
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+#app-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* see https://github.com/mui-org/material-ui/issues/283#issuecomment-300250602 */
+/*     https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/ */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #0097aa;
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}

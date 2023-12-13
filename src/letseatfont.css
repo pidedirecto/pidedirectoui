@@ -1,0 +1,29 @@
+@font-face {
+  font-family: LetsEatIcons;
+  src: local('LetsEatIcons'), url(./fonts/LetsEatIcons.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: PoppinsRegular;
+  src: local('PoppinsRegular'), url(./fonts/Poppins-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: PoppinsSemiBold;
+  src: local('PoppinsSemiBold'), url(./fonts/Poppins-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: PoppinsBold;
+  src: local('PoppinsBold'), url(./fonts/Poppins-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: PoppinsMedium;
+  src: local('PoppinsMedium'), url(./fonts/Poppins-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: PoppinsLight;
+  src: local('PoppinsLight'), url(./fonts/Poppins-Light.ttf) format('truetype');
+}

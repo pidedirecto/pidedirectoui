@@ -1,0 +1,37 @@
+/* Visit https://aka.ms/tsconfig.json to read more about this file */
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "jsx": "react",
+        "checkJs": false,
+        "outDir": ".dist/",
+        "strict": true,
+        "strictNullChecks": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "src/*": ["src/*"],
+            "scripts/*": ["scripts/*"],
+            "test/*": ["test/*"]
+        },
+        "typeRoots": ["node_modules/@types/", "src/typescript"],
+        "types": ["react", "jest"],
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "isolatedModules": false
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx", "scripts/**/*.ts", "scripts/**/*.tsx", "test/**/*.ts", "test/**/*.tsx"],
+    "exclude": ["node_modules/**/*", ".serverless/**/*", ".webpack/**/*", "_warmup/**/*", ".vscode/**/*"],
+    "ts-node": {
+        "require": ["tsconfig-paths/register"],
+        "files": true
+    }
+}
