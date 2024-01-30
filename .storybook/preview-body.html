@@ -1,0 +1,26 @@
+<script>
+
+    function changeLogo(){
+        const logo = parent.document.querySelector('a[title="Storybook"]')
+        if(!logo) return
+
+        logo.removeChild(logo.firstChild)
+
+        const image = document.createElement('img')
+        image.src = 'https://images.letseat.mx/8e25048cf348a2d9725491e904e316e4.png'
+        logo.appendChild(image)
+    }
+
+    function setDefaultCss() {
+        const htmlElement = document.querySelector('html')
+        htmlElement.style.height = '100%'
+        htmlElement.style.overflowY = 'hidden'
+
+        const bodyElement = document.querySelector('body')
+        bodyElement.style.height = '100%'
+        bodyElement.style.overflowY = 'auto'
+    }
+
+    changeLogo()
+    setDefaultCss()
+</script>

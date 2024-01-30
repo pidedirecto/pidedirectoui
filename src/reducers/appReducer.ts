@@ -1,9 +1,9 @@
 /**
  * @prettier
  */
-import { createSlice } from 'redux-starter-kit';
+import { createSlice } from '@reduxjs/toolkit';
 
-export const appReducer: {
+export const slice: {
     reducer: any;
     actions: Actions;
 } = createSlice({
@@ -11,6 +11,8 @@ export const appReducer: {
     initialState: {} as AppState,
     reducers: {},
 });
+
+export const actions = slice.actions;
 
 export type AppState = {};
 

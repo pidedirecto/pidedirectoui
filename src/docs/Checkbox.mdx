@@ -1,0 +1,38 @@
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+
+import * as CheckboxStories from '../stories/Checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+Renders a checkbox
+
+<Canvas of={CheckboxStories.Primary} />
+
+If you need to control the checkbox state you can pass a boolean in the checked prop
+```tsx
+const [checked, setChecked] = useState(false)
+
+const handleCheckbox = () => {
+    setChecked(!checked)
+}
+
+<Checkbox
+  label="Just a checkbox"
+  name="checkbox"
+  value="value"
+  checked={checked}
+  onChange={handleCheckbox}
+/>
+```
+
+## User messages
+Besides the label we have other ways to show messages or additional information to the user, we have `helperText` and `tooltip`, we don't recommend one above the other, both have the same function it will depend on the case
+
+<Canvas of={CheckboxStories.Info} />
+
+
+## API
+
+<ArgTypes of={CheckboxStories} />

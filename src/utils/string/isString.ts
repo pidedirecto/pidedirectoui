@@ -1,6 +1,7 @@
 /**
  * @prettier
  */
-import _isString from 'lodash/isString';
 
-export const isString = _isString;
+export function isString(variable: any): boolean {
+    return typeof variable === 'string';
+}
