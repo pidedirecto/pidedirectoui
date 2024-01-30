@@ -1,36 +1,27 @@
 /**
  * @prettier
  */
-import MomentUtils from '@date-io/moment';
-import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import { configureStore } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
 import * as React from 'react';
 import { Provider } from 'react-redux';
-import { Router } from 'react-router-dom';
-import { createStore } from 'redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { history as defaultHistory } from 'src/config/history';
-import { persistor } from 'src/config/store';
-import reducers from 'src/reducers';
+import { slice } from 'src/reducers/appReducer';
 
-export function renderWithProviders(ui: any, { initialState, store = configureStore(initialState), history, ...renderOptions }: Props) {
+export function renderWithProviders(ui: any, { initialState, history, ...renderOptions }: Props) {
+    const store = configureStore({
+        reducer: {
+            app: slice.reducer,
+        },
+        preloadedState: initialState,
+        devTools: false,
+        enhancers: [],
+    });
+
     function Wrapper({ children }: any) {
-        return (
-            <Provider store={store}>
-                <PersistGate loading={null} persistor={persistor}>
-                    <MuiPickersUtilsProvider utils={MomentUtils}>
-                        <Router history={history ?? defaultHistory}>{children}</Router>
-                    </MuiPickersUtilsProvider>
-                </PersistGate>
-            </Provider>
-        );
+        return <Provider store={store}>{children}</Provider>;
     }
 
     return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
-}
-
-function configureStore(initialState = {}) {
-    return createStore(reducers, initialState);
 }
 
 type Props = {
