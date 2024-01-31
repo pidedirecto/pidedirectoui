@@ -23,7 +23,6 @@
     "appAlias": "pui"
   },
   "scripts": {
-    "postinstall": "pd package-changed update-packagehash",
     "prepare": "husky install",
     "storybook": "storybook",
     "build": "vite build"
