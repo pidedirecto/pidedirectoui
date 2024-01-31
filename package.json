@@ -10,14 +10,16 @@
     "appName": "pidedirectoui",
     "appAlias": "pui"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
     ".dist"
   ],
   "scripts": {
     "postinstall": "pd package-changed update-packagehash",
     "prepare": "husky install",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook",
+    "build": "react-app-rewired build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "1.5.0",

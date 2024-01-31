@@ -22,16 +22,24 @@ body {
 }
 
 :root {
-  /* Variable fonts */
+  /* fonts */
   --fontLight: 'PoppinsLight';
   --fontNormal: 'PoppinsRegular';
   --fontMedium: 'PoppinsMedium';
   --fontSemiBold: 'PoppinsSemiBold';
   --fontBold: 'PoppinsBold';
 
-  /* Variable text size */
+  /* text sizes */
   --fontSizeSmall: 12px;
   --fontSizeNormal: 14px;
+
+  /* text colors */
+  --fontColorNormal: #2E3748;
+  --fontColorLight: #40464d;
+
+  /* colors */
+  --primaryColor: #06B7A2;
+  --primaryBorderColor: #D9D9D9;
 
 
 }

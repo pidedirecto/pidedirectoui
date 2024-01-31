@@ -1,15 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 8px;
-}
-
-.label {
-    font-size: var(--fontSizeNormal);
-    font-family: var(--fontNormal);
-    color: #2E3748;
-    cursor: pointer;
 }
 
 .input {
@@ -19,7 +11,7 @@
     height: 16px;
     min-height: 16px;
     appearance: none;
-    border: 1px solid #D9D9D9;
+    border: 1px solid var(--primaryBorderColor);
     border-radius: 2px;
     display: grid;
     place-content: center;
@@ -27,8 +19,8 @@
 }
 
 .input:checked {
-   background-color: #06B7A2;
-   border: 1px solid #06B7A2;
+   background-color: var(--primaryColor);
+   border: 1px solid var(--primaryColor);
 }
 
 .input:checked::before {
@@ -53,13 +45,5 @@
     flex-direction: row;
     align-items: center;
     gap: 8px;
-    width: 100%;
-}
-
-.helperTextContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    gap: 4px;
     width: 100%;
 }

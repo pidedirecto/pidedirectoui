@@ -1,0 +1,5 @@
+.text {
+    font-family: var(--fontLight);
+    font-size: var(--fontSizeSmall);
+    color: var(--fontColorLight)
+}

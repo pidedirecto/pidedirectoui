@@ -16,6 +16,10 @@ module.exports = {
                     module: /node_modules/,
                 },
             ],
+            output: {
+                filename: 'index.js',
+                path: __dirname + '/dist',
+            },
         };
     },
     jest: function (config) {

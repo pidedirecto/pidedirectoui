@@ -1,70 +1,56 @@
 /**
  * @prettier
  */
-import { useMemo } from 'react';
+import { HTMLProps } from 'react';
 import * as React from 'react';
+import { HelperText } from 'src/components/HelperText';
+import { Label } from 'src/components/Label';
 import { Tooltip } from 'src/components/Tooltip';
 import { CheckIcon } from 'src/icons/CheckIcon';
 import classes from 'src/styles/checkbox.module.css';
 import { classNames } from 'src/utils/css/classNames';
 
-export function Checkbox({ name, value, label, helperText, disabled, checked = false, onChange, classes: classesProp, tooltip }: Props): React.ReactElement {
+export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, onChange, ...props }: Props): React.ReactElement {
     const handleLabelClick = (e: React.MouseEvent<HTMLLabelElement>) => e.preventDefault();
 
-    const handleChange = (value: string | undefined, e: React.ChangeEvent<HTMLInputElement>) => {
-        // createUserClickedCheckBoxLogEvent({ pageContext, label });
-        onChange?.(value, e);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        onChange?.(e);
     };
 
-    return useMemo(
-        () => (
-            <div className={classNames(classes.container, classesProp?.container)}>
-                <div className={classes.hidden}>
-                    <CheckIcon />
-                </div>
-
-                <div className={classes.inputContainer}>
-                    <input
-                        aria-label={label ? '' : name}
-                        type='checkbox'
-                        name={name}
-                        value={value}
-                        onChange={(e) => handleChange(value, e)}
-                        id={`${name ?? ''}-checkbox`}
-                        className={classes.input}
-                        disabled={disabled}
-                        checked={checked}
-                    />
-
-                    {label && (
-                        <label htmlFor={`${value ?? ''}-checkbox`} className={classNames(classes.label, classesProp?.label)} onClick={handleLabelClick}>
-                            {label}
-                        </label>
-                    )}
-                    {tooltip && <Tooltip text={tooltip} />}
-                </div>
-                {helperText && (
-                    <div className={classes.helperTextContainer}>
-                        <span className={classes.span}>{helperText}</span>
-                    </div>
-                )}
+    return (
+        <div className={classNames(classes.container, classesProp?.container)}>
+            <div className={classes.hidden}>
+                <CheckIcon />
             </div>
-        ),
-        [name, value, label, disabled, checked],
+
+            <div className={classes.inputContainer}>
+                <input
+                    {...props}
+                    type='checkbox'
+                    onChange={(e) => handleChange(e)}
+                    id={id ?? `${name ?? ''}-checkbox`}
+                    aria-describedby={!!helperText ? `${name}-helperText` : undefined}
+                    className={classes.input}
+                />
+
+                {label && (
+                    <Label htmlFor={`${name ?? ''}-checkbox`} className={classesProp?.label} onClick={handleLabelClick}>
+                        {label}
+                    </Label>
+                )}
+                {tooltip && <Tooltip text={tooltip} />}
+            </div>
+            {helperText && <HelperText id={`${name}-helperText`}>{helperText}</HelperText>}
+        </div>
     );
 }
 
-type Props = {
-    name: string;
-    value?: string;
-    label: string;
+type Props = Omit<HTMLProps<HTMLInputElement>, 'className' | 'type'> & {
     helperText?: string;
-    disabled?: boolean;
-    checked: boolean;
-    onChange?: Function;
     classes?: {
         container?: string;
         label?: string;
     };
     tooltip?: string;
+    label?: string;
 };
