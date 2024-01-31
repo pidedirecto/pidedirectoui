@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { resolve } from "path";
+import dts from 'vite-plugin-dts'
 
 export default defineConfig({
     build: {
@@ -9,12 +10,20 @@ export default defineConfig({
             fileName: "index",
         },
         rollupOptions: {
-            external: ['react']
-        }
+            external: ['react', 'react-dom'],
+            output: {
+                globals: {
+                    react: 'React',
+                    'react-dom': 'ReactDOM'
+                }
+            }
+        },
+        sourcemap: true,
     },
     resolve: {
         alias: [
             { find: 'src', replacement: resolve(__dirname, 'src') },
         ],
     },
+    plugins: [dts({ exclude: ['test'], include: ['src/components'] })]
 })
