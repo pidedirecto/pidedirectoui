@@ -25,5 +25,5 @@ export default defineConfig({
             { find: 'src', replacement: resolve(__dirname, 'src') },
         ],
     },
-    plugins: [dts({ exclude: ['test'], include: ['src/components'] })]
+    plugins: [dts({ include: ['src/components', 'src/index.ts'] })]
 })
