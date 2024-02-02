@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import { resolve } from "path";
 import dts from 'vite-plugin-dts'
+import react from '@vitejs/plugin-react'
+
 
 export default defineConfig({
     build: {
@@ -25,5 +27,5 @@ export default defineConfig({
             { find: 'src', replacement: resolve(__dirname, 'src') },
         ],
     },
-    plugins: [dts({ include: ['src/components', 'src/index.ts'] })]
+    plugins: [dts({ include: ['src/components', 'src/index.ts'] }), react()]
 })
