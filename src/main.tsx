@@ -10,8 +10,6 @@ import { store } from 'src/config/store';
 import 'src/index.css';
 import 'src/letseatfont.css';
 
-console.log('heree')
-
 function Main(): React.ReactElement {
     return (
         <Provider store={store}>
@@ -21,4 +19,3 @@ function Main(): React.ReactElement {
 }
 
 ReactDOM.render(<Main />, document.getElementById('root'));
-

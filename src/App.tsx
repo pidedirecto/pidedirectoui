@@ -2,7 +2,7 @@
  * @prettier
  */
 import * as React from 'react';
-import { Checkbox } from "src/components";
+import { Checkbox } from 'src/components';
 
 export function App(): React.ReactElement {
     return (

@@ -1,7 +1,11 @@
+/**
+ * @prettire
+ */
 import { defineConfig } from 'vite'
 import { resolve } from "path";
 import dts from 'vite-plugin-dts'
 import react from '@vitejs/plugin-react'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
 
 
 export default defineConfig({
@@ -18,14 +22,15 @@ export default defineConfig({
                     react: 'React',
                     'react-dom': 'ReactDOM'
                 }
-            }
+            },
         },
         sourcemap: true,
+        emptyOutDir: true,
     },
     resolve: {
         alias: [
             { find: 'src', replacement: resolve(__dirname, 'src') },
         ],
     },
-    plugins: [dts({ include: ['src/components', 'src/index.ts'] }), react()]
+    plugins: [dts({ include: ['src/components', 'src/index.ts'] }), react(), libInjectCss()]
 })
