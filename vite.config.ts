@@ -50,5 +50,5 @@ export default defineConfig({
             { find: 'src', replacement: resolve(__dirname, 'src') },
         ],
     },
-    plugins: [dts({ include: ['src/components', 'src/icons/*.tsx', 'src/index.ts'], exclude: ['src/icons/IconsList.tsx'] }), react(), libInjectCss()]
+    plugins: [dts({ include: ['src/components', 'src/icons/*.tsx', 'src/icons/index.ts', 'src/index.ts'], exclude: ['src/icons/IconsList.tsx'] }), react(), libInjectCss()]
 })
