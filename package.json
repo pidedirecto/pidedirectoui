@@ -2,7 +2,7 @@
   "name": "@pidedirecto/ui",
   "version": "0.2.2",
   "files": [
-    "."
+    "./**"
   ],
   "main": "index.js",
   "module": "index.cjs",
