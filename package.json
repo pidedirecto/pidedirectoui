@@ -1,13 +1,17 @@
 {
   "name": "@pidedirecto/ui",
-  "version": "0.2.1",
-  "files": ["."],
+  "version": "0.2.2",
+  "files": [
+    "."
+  ],
   "main": "index.js",
   "module": "index.cjs",
   "types": "index.d.ts",
   "typesVersions": {
     "*": {
-      "icons": ["./icons/index.d.ts"]
+      "icons": [
+        "./icons/index.d.ts"
+      ]
     }
   },
   "exports": {
