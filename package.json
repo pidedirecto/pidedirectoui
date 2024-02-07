@@ -1,16 +1,23 @@
 {
   "name": "@pidedirecto/ui",
   "version": "0.2.1",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.umd.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "files": ["."],
+  "main": "index.js",
+  "module": "index.cjs",
+  "types": "index.d.ts",
+  "typesVersions": {
+    "*": {
+      "icons": ["./icons/index.d.ts"]
+    }
+  },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./icons": {
+      "import": "./icons/index.js",
+      "require": "./icons/index.cjs"
     }
   },
   "type": "module",
@@ -27,7 +34,8 @@
     "prepare": "husky install",
     "storybook": "storybook",
     "build": "vite build",
-    "start": "vite"
+    "start": "vite",
+    "release": "npm run build && cp ./package.json ./dist/package.json && cd dist && npm publish && cd .."
   },
   "dependencies": {
     "@reduxjs/toolkit": "1.5.0",
