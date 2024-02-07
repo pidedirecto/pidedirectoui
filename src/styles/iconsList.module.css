@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: var(--primaryColor);
+    margin: 20px auto;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.iconContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.iconName {
+    font-family: var(--fontNormal);
+    color: var(--fontColorNormal);
+    font-size: var(--fontSizeSmall);
+}

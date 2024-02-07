@@ -5,7 +5,7 @@ import * as React from 'react';
 import { ReactNode, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { QuestionIcon } from 'src/icons/QuestionIcon';
-import { RequiredIcon } from 'src/icons/RequiredIcon';
+import { WarningIcon } from 'src/icons/WarningIcon';
 import classes from 'src/styles/tooltip.module.css';
 import { classNames } from 'src/utils/css/classNames';
 
@@ -40,7 +40,7 @@ export function Tooltip({ text, id, forceOpen, children, type, position, classes
     return (
         <div ref={tooltipContainerRef} id={id} className={classNames(classes.tooltip, isTooltipError && classes.errorTooltip)} onMouseEnter={handleMouseEnter} onMouseLeave={() => setShowText(false)}>
             {children && children}
-            {isTooltipError && <RequiredIcon color={'#E32F45'} />}
+            {isTooltipError && <WarningIcon color={'#E32F45'} />}
             {!children && <QuestionIcon color={'#A4AAAD'} />}
             {createPortal(
                 <p aria-hidden={!visibleTooltip} style={getTooltipStyle()} role={'tooltip'} className={classNames(classes.text, classesProp?.text, visibleTooltip && classes.visible)}>

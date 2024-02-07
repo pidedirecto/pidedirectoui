@@ -1,0 +1,76 @@
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { QuestionIcon } from '../icons/QuestionIcon';
+import * as IconsStories from '../stories/Icon.stories';
+import { IconsList } from '../icons/IconsList';
+
+<Meta title="Icons" />
+
+# Icons
+
+You can use our icons importing them from `@pidedirecto/ui/icons`
+```tsx
+import { QuestionIcon } from "@pidedirecto/ui/icons";
+
+return <QuestionIcon />
+```
+
+<IconsList />
+
+## Props
+
+### Color
+Sets the icon color
+<div style={{ display: 'flex', flexDirection: 'row', gap: 5}}>
+    <QuestionIcon color={'#32a852'} />
+    <QuestionIcon color={'#3279a8'} />
+    <QuestionIcon color={'#f7df28'} />
+</div>
+
+```tsx
+<div>
+    <QuestionIcon color={'#32a852'} />
+    <QuestionIcon color={'#3279a8'} />
+    <QuestionIcon color={'#f7df28'} />
+</div>
+```
+
+
+By default, the icon color is [currentColor](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentcolor_keyword) that is why we strongly recommend setting the color through the css container element
+
+```tsx
+<div style={{ color: 'red' }}>
+    <QuestionIcon />
+<div>
+```
+
+### Size
+You can resize the icon through the size props, this will change the SVG width and height
+<div style={{ display: 'flex', flexDirection: 'row', gap: 5, alignItems: 'center', color: '#3279a8'}}>
+    <QuestionIcon size={15} />
+    <QuestionIcon size={20} />
+    <QuestionIcon size={25} />
+</div>
+
+```tsx
+<div>
+    <QuestionIcon size={15} />
+    <QuestionIcon size={20} />
+    <QuestionIcon size={25} />
+</div>
+```
+
+
+You can also pass independently the props `width` and `height`
+
+<Canvas of={IconsStories.Size} />
+
+If you pass one of these props the prop `size` will be ignored
+
+### Title
+Adds an accessibility title to SVG
+
+<Canvas of={IconsStories.Title} />
+
+# Api
+<ArgTypes of={IconsStories} />
+

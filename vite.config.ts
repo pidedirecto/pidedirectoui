@@ -17,12 +17,30 @@ export default defineConfig({
         },
         rollupOptions: {
             external: ['react', 'react-dom'],
-            output: {
-                globals: {
-                    react: 'React',
-                    'react-dom': 'ReactDOM'
-                }
+            input: {
+                index: 'src/index.ts',
+                'icons/index': 'src/icons/index.ts'
             },
+            output: [
+                {
+                    format: 'es',
+                    dir: 'dist',
+                    globals: {
+                        react: 'React',
+                        'react-dom': 'ReactDOM'
+                    },
+                    entryFileNames: '[name].js',
+                },
+                {
+                    format: 'cjs',
+                    dir: 'dist',
+                    globals: {
+                        react: 'React',
+                        'react-dom': 'ReactDOM'
+                    },
+                    entryFileNames: '[name].cjs',
+                }
+            ],
         },
         sourcemap: true,
         emptyOutDir: true,
@@ -32,5 +50,5 @@ export default defineConfig({
             { find: 'src', replacement: resolve(__dirname, 'src') },
         ],
     },
-    plugins: [dts({ include: ['src/components', 'src/index.ts'] }), react(), libInjectCss()]
+    plugins: [dts({ include: ['src/components', 'src/icons/*.tsx', 'src/index.ts'], exclude: ['src/icons/IconsList.tsx'] }), react(), libInjectCss()]
 })
