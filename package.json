@@ -35,7 +35,7 @@
     "appAlias": "pui"
   },
   "scripts": {
-    "prepare": "husky install",
+    "preinstall": "husky install",
     "storybook": "storybook",
     "build": "vite build",
     "start": "vite",
