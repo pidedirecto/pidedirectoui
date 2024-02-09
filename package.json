@@ -10,7 +10,7 @@
   "typesVersions": {
     "*": {
       "icons": [
-        ".dist/icons/index.d.ts"
+        "./dist/icons/index.d.ts"
       ]
     }
   },
