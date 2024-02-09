@@ -2,26 +2,26 @@
   "name": "@pidedirecto/ui",
   "version": "0.2.5",
   "files": [
-    "dist/*"
+    "*"
   ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
+  "main": "./index.js",
+  "module": "./index.cjs",
+  "types": "./index.d.ts",
   "typesVersions": {
     "*": {
       "icons": [
-        "./dist/icons/index.d.ts"
+        "./icons/index.d.ts"
       ]
     }
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./index.js",
+      "require": "./index.cjs"
     },
     "./icons": {
-      "import": "./dist/icons/index.js",
-      "require": "./dist/icons/index.cjs"
+      "import": "./icons/index.js",
+      "require": "./icons/index.cjs"
     }
   },
   "engines": {
