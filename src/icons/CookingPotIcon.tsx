@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function CookingPotIcon({ color, title, width, height, size }: Props): React.ReactElement {
+export function CookingPotIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 26} height={height ?? size ?? 20} viewBox='0 0 26 20' fill='none'>
             {title && <title>{title}</title>}
@@ -18,11 +19,3 @@ export function CookingPotIcon({ color, title, width, height, size }: Props): Re
         </svg>
     );
 }
-
-type Props = {
-    width?: number;
-    height?: number;
-    size?: number;
-    color?: string;
-    title?: string;
-};

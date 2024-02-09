@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function TrashCanIcon({ color, size, title, width, height }: Props): React.ReactElement {
+export function TrashCanIcon({ color, size, title, width, height }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 16} height={height ?? size ?? 18} viewBox='0 0 16 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
@@ -17,11 +18,3 @@ export function TrashCanIcon({ color, size, title, width, height }: Props): Reac
         </svg>
     );
 }
-
-type Props = {
-    width?: number;
-    height?: number;
-    size?: number;
-    color?: string;
-    title?: string;
-};

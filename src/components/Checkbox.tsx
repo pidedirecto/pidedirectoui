@@ -1,18 +1,19 @@
 /**
  * @prettier
  */
-import { HTMLProps } from 'react';
 import * as React from 'react';
 import { HelperText } from 'src/components/HelperText';
 import { Label } from 'src/components/Label';
 import { Tooltip } from 'src/components/Tooltip';
 import classes from 'src/styles/checkbox.module.css';
+import { CheckboxProps } from 'src/types/Checkbox';
+import { SvgIconProps } from 'src/types/SvgIcon';
 import { classNames } from 'src/utils/css/classNames';
 
 /**
  * Extra annotations
  */
-export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, onChange, ...props }: Props): React.ReactElement {
+export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, onChange, ...props }: CheckboxProps): React.ReactElement {
     const handleLabelClick = (e: React.MouseEvent<HTMLLabelElement>) => e.preventDefault();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -47,7 +48,7 @@ export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, 
     );
 }
 
-function CheckIcon({ title, color, width, height, size }: Props): React.ReactElement {
+function CheckIcon({ title, color, width, height, size }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 9} height={height ?? size ?? 9} viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <title>{title}</title>
@@ -62,13 +63,3 @@ function CheckIcon({ title, color, width, height, size }: Props): React.ReactEle
         </svg>
     );
 }
-
-type Props = Omit<HTMLProps<HTMLInputElement>, 'className' | 'type'> & {
-    helperText?: string;
-    classes?: {
-        container?: string;
-        label?: string;
-    };
-    tooltip?: string;
-    label?: string;
-};

@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function EyeIcon({ color, title, width, height, size }: Props): React.ReactElement {
+export function EyeIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 22} height={height ?? size ?? 18} viewBox='0 0 22 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
@@ -24,11 +25,3 @@ export function EyeIcon({ color, title, width, height, size }: Props): React.Rea
         </svg>
     );
 }
-
-type Props = {
-    width?: number;
-    height?: number;
-    size?: number;
-    color?: string;
-    title?: string;
-};

@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function BeakerIcon({ color, title, width, height, size }: Props): React.ReactElement {
+export function BeakerIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 20} height={height ?? size ?? 19} viewBox='0 0 20 19' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <title>{title}</title>
@@ -16,11 +17,3 @@ export function BeakerIcon({ color, title, width, height, size }: Props): React.
         </svg>
     );
 }
-
-type Props = {
-    width?: number;
-    height?: number;
-    size?: number;
-    color?: string;
-    title?: string;
-};

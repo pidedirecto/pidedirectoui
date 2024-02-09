@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function MegaphoneIcon({ title, color, width, height, size }: Props): React.ReactElement {
+export function MegaphoneIcon({ title, color, width, height, size }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 21} height={height ?? size ?? 19} viewBox='0 0 21 19' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
@@ -17,11 +18,3 @@ export function MegaphoneIcon({ title, color, width, height, size }: Props): Rea
         </svg>
     );
 }
-
-type Props = {
-    width?: number;
-    height?: number;
-    size?: number;
-    color?: string;
-    title?: string;
-};

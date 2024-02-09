@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function WarningIcon({ color, title, width, height, size }: Props): React.ReactElement {
+export function WarningIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 20} height={height ?? size ?? 20} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill={color ?? 'currentColor'} className='w-5 h-5'>
             <title>{title}</title>
@@ -11,11 +12,3 @@ export function WarningIcon({ color, title, width, height, size }: Props): React
         </svg>
     );
 }
-
-type Props = {
-    width?: number;
-    height?: number;
-    size?: number;
-    color?: string;
-    title?: string;
-};

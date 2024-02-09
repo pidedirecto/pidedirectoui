@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function FilterIcon({ color, title, width, height, size }: Props): React.ReactElement {
+export function FilterIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 14} height={height ?? size ?? 14} viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
@@ -17,11 +18,3 @@ export function FilterIcon({ color, title, width, height, size }: Props): React.
         </svg>
     );
 }
-
-type Props = {
-    color?: string;
-    title?: string;
-    width?: number;
-    height?: number;
-    size?: number;
-};

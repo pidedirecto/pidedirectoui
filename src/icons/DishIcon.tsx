@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function DishIcon({ title, color, width, height, size }: Props): React.ReactElement {
+export function DishIcon({ title, color, width, height, size }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 90} height={height ?? size ?? 91} viewBox='10 10 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <title>{title}</title>
@@ -39,11 +40,3 @@ export function DishIcon({ title, color, width, height, size }: Props): React.Re
         </svg>
     );
 }
-
-type Props = {
-    width?: number;
-    height?: number;
-    size?: number;
-    color?: string;
-    title?: string;
-};

@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function FoldersIcon({ width, height, color, title, size }: Props): React.ReactElement {
+export function FoldersIcon({ width, height, color, title, size }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 21} height={height ?? size ?? 21} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none'>
             {title && <title>{title}</title>}
@@ -24,11 +25,3 @@ export function FoldersIcon({ width, height, color, title, size }: Props): React
         </svg>
     );
 }
-
-type Props = {
-    width?: number;
-    height?: number;
-    size?: number;
-    color?: string;
-    title?: string;
-};

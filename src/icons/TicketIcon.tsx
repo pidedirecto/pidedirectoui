@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function TicketIcon({ title, color, width, height, size }: Props): React.ReactElement {
+export function TicketIcon({ title, color, width, height, size }: SvgIconProps): React.ReactElement {
     return (
         <svg fill='none' xmlns='http://www.w3.org/2000/svg' width={width ?? size ?? 30} height={height ?? size ?? 30} viewBox='0 0 33.111 33.111'>
             {title && <title>{title}</title>}
@@ -19,10 +20,3 @@ export function TicketIcon({ title, color, width, height, size }: Props): React.
         </svg>
     );
 }
-type Props = {
-    width?: number;
-    height?: number;
-    size?: number;
-    color?: string;
-    title?: string;
-};

@@ -2,8 +2,9 @@
  * @prettier
  */
 import * as React from 'react';
+import { SvgIconProps } from 'src/types/SvgIcon';
 
-export function KilogramsIcon({ width, height, title, color, size }: Props): React.ReactElement {
+export function KilogramsIcon({ width, height, title, color, size }: SvgIconProps): React.ReactElement {
     return (
         <svg width={width ?? size ?? 22} height={height ?? size ?? 21} viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
@@ -20,11 +21,3 @@ export function KilogramsIcon({ width, height, title, color, size }: Props): Rea
         </svg>
     );
 }
-
-type Props = {
-    width?: number;
-    height?: number;
-    size?: number;
-    color?: string;
-    title?: string;
-};
