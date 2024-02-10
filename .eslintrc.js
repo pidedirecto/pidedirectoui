@@ -11,6 +11,10 @@ module.exports = {
         // 'import/no-default-export': 'error',
         'no-relative-import-paths/no-relative-import-paths': ['off', { allowSameFolder: false }],
         'no-use-before-define': 'off', // turn off since it does not work with types
+        'no-unused-expressions': 'off',
+        'no-undef': 'off',
+        'no-restricted-globals': 'off',
+        'react-hooks/rules-of-hooks': 'off',
     },
     settings: {
         'import/resolver': {
