@@ -189,3 +189,5 @@ amplifyxc.config
 # package-changed
 .packagehash
 
+# storybook build folder
+storybook-static/

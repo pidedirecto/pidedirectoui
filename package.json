@@ -31,7 +31,8 @@
   "pidedirecto": {
     "appType": "NODE_PUBLIC_PACKAGE",
     "appName": "pidedirectoui",
-    "appAlias": "pui"
+    "appAlias": "pui",
+    "usesUiDocs": true
   },
   "scripts": {
     "prepare": "husky install",
@@ -115,8 +116,7 @@
     "redux-devtools-log-monitor": "2.1.0",
     "redux-immutable-state-invariant": "2.1.0",
     "replace-in-file": "4.2.0",
-    "serverless": "3.36.0",
-    "serverless-dotenv-plugin": "6.0.0",
+    "serverless": "3.37.0",
     "serverless-finch": "4.0.3",
     "storybook": "7.6.0",
     "ts-node": "10.9.1",
