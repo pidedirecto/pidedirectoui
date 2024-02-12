@@ -1,0 +1,61 @@
+import { Meta} from '@storybook/blocks';
+
+<Meta title="Contribute" />
+
+# Contribute
+
+The Directo UI library is built using React, TypeScript, Storybook and vite, so you may have a basic knowledge of them to contribute.
+
+## Project structure
+
+### Components folder
+
+The components are written in `React` and `TS`. The components can be used between each other, in fact, is better if we try to reuse the styles and logic of components created before, so we avoid duplicating code and functionality.
+The components may have their own `CSS`, if so the styles should be inside the `styles` folder.
+The component types such as props and component type declarations should be inside the `types` folder, each component should have their own type file, and they must end with `.d.ts`,
+these type files are going to be used in the library built therefore inside these files you can write any annotation you think is important for the user.
+
+Besides the components files there is also another important file, the `main.ts` file, this exports all the components we want the user can import later,
+this is due to 2 important reasons:
+1. When installing the library we can import the components just with `import { CheckIcon } from '@pidedirecto/ui/icons'` instead of `import { CheckIcon } from '@pidedirecto/ui/icons/CheckIcon'`
+2. We have a protection between what we want the user can access with imports and what files or components we want to keep private.
+
+### Stories folder
+
+Inside the stories folder there are [storybook stories](https://storybook.js.org/docs/get-started/whats-a-story). In short words a story is the way we represent each important state of a component, for example if the button is outlined, if it has a secondary version or if it is disabled.
+We use stories to later render them in the docs files.
+
+### Docs folder
+
+Here we have each [MDX](https://mdxjs.com/docs/what-is-mdx/) file corresponding to a view in the UI documentation, for example this "Contribute" view is written in a MDX file.
+
+Each component or library section should have its own mdx file documenting how the component, section, hook or whatever element exported in the library works, besides the documentation for each library element we also have other mdx files like this adding more information either to the developer or the contributor.
+
+### Additional folders
+
+The folders explained before are the 3 important folders to start contributing the project, but we also have additional folders that is valuable to explain.
+
+Besides the `components` folder we may also want to create additional folders to save different component types; Why not to save all the components just inside the components folder? you may ask.
+First to separate more the component types, for example even if the `CheckIcon` component is a React component it is not like the `Button` component, they are different so that's why the icons have their own folder,
+and second because we have to have a folder to manage the imports when we are using the library for example, how we want to import the icons from `@pidedirecto/ui/icons` and not directly from `@pidedirecto/ui` we have to create an icons folder inside `src`,
+this can also be done from the `vite.config.ts` file, but it will depend on what we want to add on the library.
+
+We also have helpers folders
+- utils: Here we have the utils functions used across the project
+- config: Config constants or functions for the project
+- constants: Constants used across the project
+- fonts: Fonts used in the project
+
+
+## Adding functionality
+
+How any other feature we have to have a Jira and create a branch with the Jira name.
+
+After you have code the feature, and you want to test you have 2 different ways of doing it
+1. Running `pd start` it will run `vite dev` and will create a web page in localhost, the content rendered there is the component `App`, this component its only purpose is for testing,
+unlike the other frontend projects the component `App` is not as important. Inside this file you will have to import your new component and test it manually.
+2. Creating the story and doc for the new library feature and checking the result in the library documentation, to start the library documentation you have to run the `pd docs`, once you started the documentation you will have to test the component while writing its documentation.
+
+Depending on what you want to add to the library you may also will have to change the `vite.config.ts`.
+
+
