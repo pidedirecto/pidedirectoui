@@ -39,8 +39,7 @@
     "build": "vite build",
     "start": "vite",
     "release": "npm run build && cp ./package.json ./dist/package.json && cd ./dist && npm publish",
-    "postinstall": "pd package-changed update-packagehash",
-    "prepare": "husky install"
+    "prepare": "husky install && pd package-changed update-packagehash"
   },
   "dependencies": {
     "@reduxjs/toolkit": "1.5.0",
