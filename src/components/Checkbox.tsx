@@ -10,9 +10,6 @@ import { CheckboxProps } from 'src/types/Checkbox';
 import { SvgIconProps } from 'src/types/SvgIcon';
 import { classNames } from 'src/utils/css/classNames';
 
-/**
- * Extra annotations
- */
 export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, onChange, ...props }: CheckboxProps): React.ReactElement {
     const handleLabelClick = (e: React.MouseEvent<HTMLLabelElement>) => e.preventDefault();
 

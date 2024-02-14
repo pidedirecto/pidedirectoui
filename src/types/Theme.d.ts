@@ -25,4 +25,4 @@ export type ThemeProps = {
     },
 }
 
-export type Theme = React.FunctionComponentElement<ThemeProps>
+export type Theme = React.FunctionComponent<ThemeProps>

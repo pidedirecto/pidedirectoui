@@ -5,9 +5,9 @@ import * as React from 'react';
 import { useEffect, useRef } from 'react';
 import { ThemeProps } from 'src/types/Theme';
 
-let initializedThemeId: number | undefined = undefined;
-
 export function Theme({ theme }: ThemeProps): React.ReactElement {
+    let initializedThemeId: number | undefined = undefined;
+
     const themeId = useRef(Math.floor(Math.random() * Date.now()));
 
     useEffect(() => {
@@ -34,5 +34,5 @@ export function Theme({ theme }: ThemeProps): React.ReactElement {
         if (theme.font?.size?.small) rootElement.style.setProperty('--fontSizeSmall', theme.font?.size?.small);
     };
 
-    return <></>;
+    return <div></div>;
 }
