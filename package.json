@@ -35,9 +35,6 @@
     "usesUiDocs": true
   },
   "scripts": {
-    "storybook": "storybook",
-    "build": "vite build",
-    "start": "vite",
     "prepare": "husky install && pd package-changed update-packagehash"
   },
   "dependencies": {
