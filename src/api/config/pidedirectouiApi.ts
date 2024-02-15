@@ -6,10 +6,10 @@ import { envPIDEDIRECTO_UI_API_URL } from 'src/env/envPIDEDIRECTO_UI_API_URL';
 
 export const pidedirectouiApi: {
     post: any;
-} = createPideDirectoLokiApiSauce(); // TODO: return api sauce type
+} = createPideDirectoUiApiSauce(); // TODO: return api sauce type
 
 // TODO: return api sauce type
-function createPideDirectoLokiApiSauce(): {
+function createPideDirectoUiApiSauce(): {
     post: any;
 } {
     const baseURL = envPIDEDIRECTO_UI_API_URL();
