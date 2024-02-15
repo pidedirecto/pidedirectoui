@@ -11,6 +11,9 @@
     "*": {
       "icons": [
         "./icons/index.d.ts"
+      ],
+      "hooks": [
+        "./hooks/index.d.ts"
       ]
     }
   },
@@ -22,6 +25,10 @@
     "./icons": {
       "import": "./icons/index.js",
       "require": "./icons/index.cjs"
+    },
+    "./hooks": {
+      "import": "./hooks/index.js",
+      "require": "./hooks/index.cjs"
     }
   },
   "engines": {
