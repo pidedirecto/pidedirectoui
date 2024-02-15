@@ -2,10 +2,10 @@
  * @prettier
  */
 import { useEffect, useRef } from 'react';
-import { ThemeProps } from 'src/types/UseTheme';
+import { Theme } from 'src/types/UseTheme';
 
 let initializedThemeId: number | undefined = undefined;
-export function useTheme(theme: ThemeProps): void {
+export function useTheme(theme: Theme): void {
     const themeId = useRef(Math.floor(Math.random() * Date.now()));
 
     useEffect(() => {
@@ -14,7 +14,7 @@ export function useTheme(theme: ThemeProps): void {
 
     const initializeTheme = () => {
         if (initializedThemeId && initializedThemeId !== themeId.current) {
-            console.warn('There are various instances of Theme component this is not recommended and the previous theme values will be overwritten.');
+            console.warn('There are various instances of useTheme hook this is not recommended and the previous theme values will be overwritten.');
         }
 
         initializedThemeId = themeId.current;

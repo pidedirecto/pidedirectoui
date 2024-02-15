@@ -2,7 +2,7 @@
  * @prettier
  */
 
-export type ThemeProps = {
+export type Theme = {
     palette?: {
         primary?: {
             color?: string;
@@ -21,4 +21,4 @@ export type ThemeProps = {
     }
 }
 
-export type UseTheme = (ThemeProps) => void
+export type UseTheme = (theme: Theme) => void
