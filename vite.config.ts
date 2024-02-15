@@ -20,6 +20,7 @@ export default defineConfig({
             input: {
                 index: 'src/main.ts',
                 'icons/index': 'src/icons/main.ts',
+                'hooks/index': 'src/hooks/main.ts',
             },
             output: [
                 {

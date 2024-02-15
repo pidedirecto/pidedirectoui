@@ -1,0 +1,81 @@
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { Color } from './utils/Color';
+
+import * as CheckboxStories from '../stories/Checkbox.stories';
+
+<Meta title="hooks/useTheme" />
+
+# useTheme
+
+Hook to override default components theme.
+
+The `useTheme` hook receives the new theme as prop
+
+```ts
+type theme = {
+        palette?: {
+            primary?: {
+                color?: string;
+                border?: string;
+            },
+        };
+        font?: {
+            size?: {
+                normal?: string;
+                small?: string;
+            },
+            color?: {
+                normal?: string;
+                light?: string;
+            }
+        }
+    }
+```
+
+If you use this component the `theme` prop is required but the values inside the theme object are optionals, so you can customize the theme as few as you want
+
+```tsx
+import { useTheme } from '@pidedirecto/ui/hooks'
+
+useTheme({
+    palette: {
+        primary: {
+            color: 'red'
+        }
+    }
+})
+```
+
+You can only have one theme per application, so if you use multiple `useTheme` hooks the last one will override the previous theme values
+
+## Theme
+
+The theme object is separated between palette and fonts
+
+### Palette
+
+The palette object contains all the different versions a component can have
+
+#### Primary
+
+The primary objects contains the color info about the primary components version
+
+- color: main color <Color color={'#06B7A2'} />
+- border: border color used in components, for example inputs <Color color={'#D9D9D9'} />
+
+### Fonts
+
+#### Size
+
+The size objects contains the font size info, this size are used across all the components
+
+- normal: main font size 12px
+- small: small font size, used for example in helper texts 10px
+
+#### color
+
+The size objects contains the font size info, this size are used across all the components
+
+- normal: main font color <Color color={'#2E3748'} />
+- light: light font color, used for example in helper texts <Color color={'#40464d'} />
+
