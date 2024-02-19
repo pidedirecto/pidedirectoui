@@ -2,8 +2,6 @@
  * @prettier
  */
 import * as React from 'react';
-import { useContext } from 'react';
-import { ApiContext } from 'src/components/app/ApiProvider';
 import { HelperText } from 'src/components/HelperText';
 import { Label } from 'src/components/Label';
 import { Tooltip } from 'src/components/Tooltip';
@@ -14,13 +12,12 @@ import { SvgIconProps } from 'src/types/SvgIcon';
 import { classNames } from 'src/utils/css/classNames';
 
 export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, onChange, ...props }: CheckboxProps): React.ReactElement {
-    const { apiCallsEnabled } = useContext(ApiContext);
     const createUserClickedCheckBoxLogEvent = useCreateUserClickedCheckboxLogEvent();
 
     const handleLabelClick = (e: React.MouseEvent<HTMLLabelElement>) => e.preventDefault();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (apiCallsEnabled) createUserClickedCheckBoxLogEvent(label ?? '');
+        createUserClickedCheckBoxLogEvent(label ?? '');
         onChange?.(e);
     };
 

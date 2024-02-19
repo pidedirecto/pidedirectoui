@@ -1,0 +1,58 @@
+import { Meta, ArgTypes } from '@storybook/blocks';
+import * as ApiProviderStories from '../stories/ApiProvider.stories';
+
+<Meta title="docs/ApiProvider" />
+
+# ApiProvider
+
+`ApiProvider` component makes you able to configure api calls used inside @pidedirecto/ui library.
+
+```tsx
+<ApiProvider api={{ createUiLogEvent: createUiLogEventApi }} >
+    <App />
+</ApiProvider>
+```
+
+## UI Log Events
+
+Every time the user interacts with any of the @pidedirecto/ui components we generate a UI log event,
+you can receive this UI log event through the `ApiProvider` via the createUiLogEvent callback.
+
+The UiLogEvent object is the next one
+
+```ts
+type UiLogEvent = {
+    logEventType: UiLogEventType;
+    message?: string;
+    details?: string;
+    data?: Record<string, any>;
+    offline?: boolean;
+    occurredAt?: Date;
+};
+```
+
+- **logEventType**: enum value, you can import the enum from `import { UiLogEventTypes } from '@pidedirecto/ui/constants'`
+```
+USER_OPENED_PAGE
+USER_CLICKED_BUTTON
+USER_CLICKED_TAB
+USER_OPENED_DIALOG
+USER_OPENED_CONTEXTUAL_MENU
+USER_CLICKED_CONTEXTUAL_MENU_ITEM
+USER_TOGGLED_ACCORDION
+USER_OPENED_ALERT_DIALOG
+USER_TYPED_INPUT
+USER_CLICKED_SWITCH
+USER_CLICKED_SELECT_OPTION
+USER_CLICKED_CHECKBOX
+```
+
+- **message**: Readable message explaining the ui log event
+- **details**: Stacktrace of the ui log event, if a button was clicked inside a Dialog here will be ui stack trace to the ui log event
+- **data**: Additional info for the ui log event
+- **offline**: Boolean value if the ui log event was created offline
+- **occurredAt**: Date when the ui log event happens
+
+## API
+
+<ArgTypes of={ApiProviderStories} />

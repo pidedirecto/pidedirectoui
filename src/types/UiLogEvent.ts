@@ -1,10 +1,10 @@
 /**
  * @prettier
  */
-import type { LogEventType } from 'src/constants/LogEventType';
+import type { UiLogEventType } from 'src/constants/UiLogEventType';
 
 export type UiLogEvent = {
-    logEventType: LogEventType;
+    logEventType: UiLogEventType;
     message?: string;
     details?: string;
     data?: Record<string, any>;

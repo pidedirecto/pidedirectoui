@@ -1,8 +1,13 @@
-/**
- * @prettier
- */
+import { Meta} from '@storybook/blocks';
 
-export const LogEventTypes = Object.freeze({
+<Meta title="constants/UiLogEventTypes" />
+
+# UiLogEventTypes
+
+You can import it from `import { UiLogEventTypes } from '@pidedirecto/ui/constants'`
+
+```ts
+export const UiLogEventTypes = Object.freeze({
     USER_OPENED_PAGE: 'USER_OPENED_PAGE',
     USER_CLICKED_BUTTON: 'USER_CLICKED_BUTTON',
     USER_CLICKED_TAB: 'USER_CLICKED_TAB',
@@ -15,8 +20,6 @@ export const LogEventTypes = Object.freeze({
     USER_CLICKED_SWITCH: 'USER_CLICKED_SWITCH',
     USER_CLICKED_SELECT_OPTION: 'USER_CLICKED_SELECT_OPTION',
     USER_CLICKED_CHECKBOX: 'USER_CLICKED_CHECKBOX',
-    USER_PRINT_SUCCESSFUL: 'USER_PRINT_SUCCESSFUL',
-    USER_PRINT_FAILED: 'USER_PRINT_FAILED',
 });
+```
 
-export type LogEventType = (typeof LogEventTypes)[keyof typeof LogEventTypes];
