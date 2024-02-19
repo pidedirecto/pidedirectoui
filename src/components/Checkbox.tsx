@@ -5,15 +5,19 @@ import * as React from 'react';
 import { HelperText } from 'src/components/HelperText';
 import { Label } from 'src/components/Label';
 import { Tooltip } from 'src/components/Tooltip';
+import { useCreateUserClickedCheckboxLogEvent } from 'src/services/logEvent/useCreateUserClickedCheckboxLogEvent';
 import classes from 'src/styles/checkbox.module.css';
 import { CheckboxProps } from 'src/types/Checkbox';
 import { SvgIconProps } from 'src/types/SvgIcon';
 import { classNames } from 'src/utils/css/classNames';
 
 export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, onChange, ...props }: CheckboxProps): React.ReactElement {
+    const createUserClickedCheckBoxLogEvent = useCreateUserClickedCheckboxLogEvent();
+
     const handleLabelClick = (e: React.MouseEvent<HTMLLabelElement>) => e.preventDefault();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        createUserClickedCheckBoxLogEvent(label ?? '');
         onChange?.(e);
     };
 
