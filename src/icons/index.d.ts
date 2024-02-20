@@ -50,6 +50,7 @@ export const DownloadIcon: SvgIcon
 export const DragIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon
+export const ExchangeArrowsIcon: SvgIcon
 export const EyeIcon: SvgIcon
 export const FilledChartDonutIcon: SvgIcon
 export const FilledCircleIcon: SvgIcon

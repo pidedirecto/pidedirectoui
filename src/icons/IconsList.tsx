@@ -52,6 +52,7 @@ import { DownloadIcon } from 'src/icons/DownloadIcon';
 import { DragIcon } from 'src/icons/DragIcon';
 import { EditIcon } from 'src/icons/EditIcon';
 import { EnvelopeIcon } from 'src/icons/EnvelopeIcon';
+import { ExchangeArrowsIcon } from 'src/icons/ExchangeArrowsIcon';
 import { EyeIcon } from 'src/icons/EyeIcon';
 import { FilledChartDonutIcon } from 'src/icons/FilledChartDonutIcon';
 import { FilledCircleIcon } from 'src/icons/FilledCircleIcon';
@@ -333,6 +334,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <EnvelopeIcon size={size} />
                 <span className={classes.iconName}>EnvelopeIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <ExchangeArrowsIcon size={size} />
+                <span className={classes.iconName}>ExchangeArrowsIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <EyeIcon size={size} />

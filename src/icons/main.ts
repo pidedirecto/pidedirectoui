@@ -52,6 +52,7 @@ export * from 'src/icons/DownloadIcon';
 export * from 'src/icons/DragIcon';
 export * from 'src/icons/EditIcon';
 export * from 'src/icons/EnvelopeIcon';
+export * from 'src/icons/ExchangeArrowsIcon';
 export * from 'src/icons/EyeIcon';
 export * from 'src/icons/FilledChartDonutIcon';
 export * from 'src/icons/FilledCircleIcon';
