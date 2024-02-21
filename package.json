@@ -17,6 +17,9 @@
       ],
       "constants": [
         "./constants/index.d.ts"
+      ],
+      "form": [
+        "./form/index.d.ts"
       ]
     }
   },
@@ -36,6 +39,10 @@
     "./constants": {
       "import": "./constants/index.js",
       "require": "./constants/index.cjs"
+    },
+    "./form": {
+      "import": "./form/index.js",
+      "require": "./form/index.cjs"
     }
   },
   "engines": {
@@ -56,7 +63,8 @@
     "apisauce": "1.1.1",
     "core-js": "3.22.7",
     "react-redux": "7.1.1",
-    "redux": "4.0.4"
+    "redux": "4.0.4",
+    "react-hook-form": "6.15.8"
   },
   "devDependencies": {
     "@babel/node": "7.8.7",
