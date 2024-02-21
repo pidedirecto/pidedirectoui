@@ -1,6 +1,6 @@
 import { Meta, ArgTypes } from '@storybook/blocks';
 
-import * as FormStories from '../../../stories/Form.stories';
+import * as FormStories from '../../stories/form/Form.stories';
 
 <Meta title='form/Form' />
 
@@ -8,7 +8,8 @@ import * as FormStories from '../../../stories/Form.stories';
 Form component used to create an HTML form, This component needs a form value created by the `useForm` hook and an `onSubmit` callback.
 
 ```tsx
-import { Form, FormCheckbox, useForm } from '@pidedirecto/ui/form'
+import { Form, FormCheckbox } from '@pidedirecto/ui/form'
+import { useForm } from '@pidedirecto/ui/hooks'
 
 function Component(){
     const form = useForm()
@@ -36,7 +37,6 @@ const onSubmit = form => {
 You can also can access to the submit event, it is passes as second argument in the `onSubmit` callback.
 
 Every form component, like `FormCheckbox` and `FormSwitch`, should be a children of `Form` component.
-
 
 ## API
 

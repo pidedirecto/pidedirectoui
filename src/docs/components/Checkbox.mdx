@@ -27,6 +27,12 @@ const handleCheckbox = () => {
 />
 ```
 
+## Checkbox states
+
+<Canvas of={CheckboxStories.Disabled} />
+<Canvas of={CheckboxStories.CheckedDisabled} />
+<Canvas of={CheckboxStories.Error} />
+
 ## User messages
 Besides the label we have other ways to show messages or additional information to the user, we have `helperText` and `tooltip`, we don't recommend one above the other, both have the same function it will depend on the case
 
@@ -34,5 +40,6 @@ Besides the label we have other ways to show messages or additional information 
 
 
 ## API
+Here there are described some of the important props, but the `Checkbox` component can receive almost any of the HTML input props.
 
 <ArgTypes of={CheckboxStories} />

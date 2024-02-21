@@ -11,7 +11,7 @@ import { CheckboxProps } from 'src/types/components/Checkbox';
 import { SvgIconProps } from 'src/types/hooks/SvgIcon';
 import { classNames } from 'src/utils/css/classNames';
 
-export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, error, onChange, disabled, ...props }: CheckboxProps): React.ReactElement {
+export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, error, onChange, disabled, inputRef, ...props }: CheckboxProps): React.ReactElement {
     const createUserClickedCheckBoxLogEvent = useCreateUserClickedCheckboxLogEvent();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,6 +34,7 @@ export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, 
                     id={id ?? `${name ?? ''}-checkbox`}
                     aria-describedby={!!helperText ? `${name}-helperText` : undefined}
                     className={classes.input}
+                    ref={inputRef}
                 />
                 {!!label && (
                     <Label aria-disabled={!!disabled} htmlFor={id ?? `${name ?? ''}-checkbox`} error={error} classes={{ label: classesProp?.label, error: classesProp?.labelError }}>

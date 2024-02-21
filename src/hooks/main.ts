@@ -3,3 +3,4 @@
  */
 
 export * from 'src/hooks/useTheme';
+export * from 'src/hooks/useForm';

@@ -22,6 +22,7 @@ export default defineConfig({
                 'icons/index': 'src/icons/main.ts',
                 'hooks/index': 'src/hooks/main.ts',
                 'constants/index': 'src/constants/main.ts',
+                'form/index': 'src/form/main.ts',
             },
             output: [
                 {
@@ -57,7 +58,7 @@ export default defineConfig({
         tsconfigPaths(),
         dts({
             copyDtsFiles: true,
-            include: ['src/*/*.d.ts', 'src/constants/*.ts', 'src/index.d.ts'],
+            include: ['src/**/*.d.ts', 'src/constants/*.ts', 'src/index.d.ts'],
             exclude: ['src/icons/IconsList.tsx'],
             beforeWriteFile: (path, content) => {
                 return { filePath: path.replace('src/', ''), content };

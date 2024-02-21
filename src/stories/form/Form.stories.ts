@@ -2,7 +2,7 @@
  * @prettier
  */
 import type { Meta, StoryObj } from '@storybook/react';
-import { Form } from 'src/components/form/Form';
+import { Form } from 'src/form/Form';
 
 const meta: Meta<typeof Form> = {
     component: Form,

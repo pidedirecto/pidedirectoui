@@ -17,6 +17,7 @@ export type CheckboxProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'typ
     tooltip?: string;
     label?: string;
     error?: boolean;
+    inputRef?: React.Ref<any>;
 };
 
 export type Checkbox = React.FunctionComponent<CheckboxProps>;

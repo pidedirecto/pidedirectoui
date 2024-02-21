@@ -4,7 +4,7 @@
 import { createContext } from 'react';
 import * as React from 'react';
 import { FormProvider } from 'react-hook-form';
-import { FormProps } from 'src/types/components/form/Form';
+import { FormProps } from 'src/types/form/Form';
 
 export function Form({ form, onSubmit, disabled, disableSubmitOnEnterKey, classes: classesProp, children }: FormProps): React.ReactElement {
     return (

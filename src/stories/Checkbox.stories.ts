@@ -15,10 +15,6 @@ const meta: Meta<typeof Checkbox> = {
     argTypes: {
         name: {
             description: 'Name for the checkbox input',
-            type: {
-                required: true,
-                name: 'string',
-            },
             table: {
                 type: { summary: 'string' },
             },
@@ -33,10 +29,6 @@ const meta: Meta<typeof Checkbox> = {
         },
         label: {
             description: 'Label for the checkbox input',
-            type: {
-                required: true,
-                name: 'string',
-            },
             table: {
                 type: { summary: 'string' },
             },
@@ -65,10 +57,6 @@ const meta: Meta<typeof Checkbox> = {
         },
         checked: {
             description: 'Controls the checked stated of the checkbox',
-            type: {
-                required: true,
-                name: 'boolean',
-            },
             table: {
                 type: { summary: 'boolean' },
             },
@@ -100,8 +88,40 @@ const meta: Meta<typeof Checkbox> = {
             },
             control: false,
         },
+        'classes.containerError': {
+            description: 'CSS class to override the container checkbox style when checkbox is in error state',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         'classes.label': {
             description: 'CSS class to override the label style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        'classes.labelError': {
+            description: 'CSS class to override the label style when checkbox is in error state',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        'classes.helperText': {
+            description: 'CSS class to override the helper text style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        'classes.helperTextError': {
+            description: 'CSS class to override the helper text style when checkbox is in error state',
             table: {
                 subcategory: 'Classes API',
                 type: { summary: 'string' },
@@ -118,6 +138,37 @@ export const Primary: Story = {
     args: {
         ...meta.args,
         onChange: undefined,
+    },
+};
+
+export const Disabled: Story = {
+    args: {
+        ...meta.args,
+        label: 'Checkbox disabled',
+        onChange: undefined,
+        disabled: true,
+        name: 'checkbox-disabled',
+    },
+};
+
+export const CheckedDisabled: Story = {
+    args: {
+        ...meta.args,
+        label: 'Checkbox checked and disabled',
+        onChange: undefined,
+        checked: true,
+        disabled: true,
+        name: 'checkbox-checked-disabled',
+    },
+};
+
+export const Error: Story = {
+    args: {
+        ...meta.args,
+        label: 'Checkbox with error',
+        onChange: undefined,
+        error: true,
+        name: 'checkbox-error',
     },
 };
 
