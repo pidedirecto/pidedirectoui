@@ -11,10 +11,8 @@ import { CheckboxProps } from 'src/types/Checkbox';
 import { SvgIconProps } from 'src/types/SvgIcon';
 import { classNames } from 'src/utils/css/classNames';
 
-export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, onChange, ...props }: CheckboxProps): React.ReactElement {
+export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, error, onChange, disabled, ...props }: CheckboxProps): React.ReactElement {
     const createUserClickedCheckBoxLogEvent = useCreateUserClickedCheckboxLogEvent();
-
-    const handleLabelClick = (e: React.MouseEvent<HTMLLabelElement>) => e.preventDefault();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         createUserClickedCheckBoxLogEvent(label ?? '');
@@ -22,29 +20,33 @@ export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, 
     };
 
     return (
-        <div className={classNames(classes.container, classesProp?.container)}>
+        <div className={classNames(classes.container, classesProp?.container, error && classNames(classes.containerError, classesProp?.containerError))}>
             <div className={classes.hidden}>
                 <CheckIcon />
             </div>
-
             <div className={classes.inputContainer}>
                 <input
                     {...props}
+                    name={name}
+                    disabled={disabled}
                     type='checkbox'
                     onChange={(e) => handleChange(e)}
                     id={id ?? `${name ?? ''}-checkbox`}
                     aria-describedby={!!helperText ? `${name}-helperText` : undefined}
                     className={classes.input}
                 />
-
-                {label && (
-                    <Label htmlFor={`${name ?? ''}-checkbox`} className={classesProp?.label} onClick={handleLabelClick}>
+                {!!label && (
+                    <Label aria-disabled={!!disabled} htmlFor={id ?? `${name ?? ''}-checkbox`} error={error} classes={{ label: classesProp?.label, error: classesProp?.labelError }}>
                         {label}
                     </Label>
                 )}
-                {tooltip && <Tooltip text={tooltip} />}
+                {!!tooltip && <Tooltip text={tooltip} />}
             </div>
-            {helperText && <HelperText id={`${name}-helperText`}>{helperText}</HelperText>}
+            {!!helperText && (
+                <HelperText id={`${name}-helperText`} classes={{ helperText: classesProp?.helperText, error: classesProp?.helperTextError }} error={error}>
+                    {helperText}
+                </HelperText>
+            )}
         </div>
     );
 }

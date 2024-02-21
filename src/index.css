@@ -35,11 +35,14 @@ body {
 
   /* text colors */
   --fontColorNormal: #2E3748;
+  --fontColorError: red;
+  --fontColorDisabled: #BDBDBD;
   --fontColorLight: #40464d;
 
   /* colors */
   --primaryColor: #06B7A2;
   --primaryBorderColor: #D9D9D9;
+  --primaryDisabledColor: #BDBDBD
 
 
 }

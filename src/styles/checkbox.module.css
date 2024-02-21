@@ -23,6 +23,14 @@
    border: 1px solid var(--primaryColor);
 }
 
+.input:disabled {
+    border: 1px solid var(--primaryDisabledColor);
+}
+
+.input:disabled:checked {
+    background-color: var(--primaryDisabledColor);
+}
+
 .input:checked::before {
     content: '""';
     clip-path: url(#check-icon-clip-path);

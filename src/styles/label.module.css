@@ -7,3 +7,11 @@
 .label[for] {
     cursor: pointer;
 }
+
+.labelError {
+    color: var(--fontColorError);
+}
+
+.label[aria-disabled="true"] {
+    color: var(--fontColorDisabled);
+}

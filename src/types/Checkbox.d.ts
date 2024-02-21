@@ -8,10 +8,15 @@ export type CheckboxProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'typ
     helperText?: string;
     classes?: {
         container?: string;
+        containerError?: string;
         label?: string;
+        labelError?: string;
+        helperText?: string;
+        helperTextError?: string;
     };
     tooltip?: string;
     label?: string;
+    error?: boolean,
 };
 
 export type Checkbox = React.FunctionComponent<CheckboxProps>;

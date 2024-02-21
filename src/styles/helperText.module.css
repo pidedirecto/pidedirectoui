@@ -3,3 +3,7 @@
     font-size: var(--fontSizeSmall);
     color: var(--fontColorLight)
 }
+
+.textError {
+    color: var(--fontColorError)
+}
