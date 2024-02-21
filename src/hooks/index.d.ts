@@ -1,4 +1,4 @@
-import { UseTheme } from "src/types/UseTheme";
+import { UseTheme } from "src/types/hooks/UseTheme";
 
 /**
  * Theme hook to override default components theme

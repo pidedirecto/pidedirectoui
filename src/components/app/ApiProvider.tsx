@@ -4,8 +4,8 @@
 import * as React from 'react';
 import { createContext } from 'react';
 import { SyncOfflineUiLogEvents } from 'src/components/app/SyncOfflineUiLogEvents';
-import { ApiProviderProps } from 'src/types/ApiProvider';
 import { ApiSauceResponse } from 'src/types/ApiSauceResponse';
+import { ApiProviderProps } from 'src/types/components/app/ApiProvider';
 import { UiLogEvent } from 'src/types/UiLogEvent';
 
 export function ApiProvider({ children, api }: ApiProviderProps): React.ReactElement {

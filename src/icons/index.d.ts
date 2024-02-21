@@ -1,4 +1,4 @@
-import { SvgIcon } from "src/types/SvgIcon";
+import { SvgIcon } from "src/types/hooks/SvgIcon";
 
 export const AddElementIcon: SvgIcon
 export const AirTableIcon: SvgIcon

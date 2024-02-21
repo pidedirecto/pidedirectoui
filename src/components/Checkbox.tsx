@@ -7,8 +7,8 @@ import { Label } from 'src/components/Label';
 import { Tooltip } from 'src/components/Tooltip';
 import { useCreateUserClickedCheckboxLogEvent } from 'src/services/logEvent/useCreateUserClickedCheckboxLogEvent';
 import classes from 'src/styles/checkbox.module.css';
-import { CheckboxProps } from 'src/types/Checkbox';
-import { SvgIconProps } from 'src/types/SvgIcon';
+import { CheckboxProps } from 'src/types/components/Checkbox';
+import { SvgIconProps } from 'src/types/hooks/SvgIcon';
 import { classNames } from 'src/utils/css/classNames';
 
 export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, error, onChange, disabled, ...props }: CheckboxProps): React.ReactElement {

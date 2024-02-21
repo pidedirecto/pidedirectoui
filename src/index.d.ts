@@ -1,5 +1,5 @@
-import { Checkbox } from "src/types/Checkbox";
-import { ApiProvider } from "src/types/ApiProvider";
+import { Checkbox } from "src/types/components/Checkbox";
+import { ApiProvider } from "src/types/components/app/ApiProvider";
 
 /**
  * Renders Checkbox

@@ -2,7 +2,7 @@
  * @prettier
  */
 import { useEffect, useRef } from 'react';
-import { Theme } from 'src/types/UseTheme';
+import { Theme } from 'src/types/hooks/UseTheme';
 
 let initializedThemeId: number | undefined = undefined;
 export function useTheme(theme: Theme): void {

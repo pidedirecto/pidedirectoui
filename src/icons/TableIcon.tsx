@@ -2,7 +2,7 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/SvgIcon';
+import { SvgIconProps } from 'src/types/hooks/SvgIcon';
 
 export function TableIcon({ title, width, height, color, size }: SvgIconProps): React.ReactElement {
     return (

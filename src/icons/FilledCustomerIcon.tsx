@@ -2,7 +2,7 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/SvgIcon';
+import { SvgIconProps } from 'src/types/hooks/SvgIcon';
 
 export function FilledCustomerIcon({ title, color, width, size, height }: SvgIconProps): React.ReactElement {
     return (

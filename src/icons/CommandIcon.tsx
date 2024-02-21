@@ -3,7 +3,7 @@
  */
 
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/SvgIcon';
+import { SvgIconProps } from 'src/types/hooks/SvgIcon';
 
 export function CommandIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
     return (

@@ -2,7 +2,7 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/SvgIcon';
+import { SvgIconProps } from 'src/types/hooks/SvgIcon';
 
 export function FoldersIcon({ width, height, color, title, size }: SvgIconProps): React.ReactElement {
     return (
