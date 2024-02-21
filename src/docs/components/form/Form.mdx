@@ -1,0 +1,44 @@
+import { Meta, ArgTypes } from '@storybook/blocks';
+
+import * as FormStories from '../../../stories/Form.stories';
+
+<Meta title='form/Form' />
+
+# Form
+Form component used to create an HTML form, This component needs a form value created by the `useForm` hook and an `onSubmit` callback.
+
+```tsx
+import { Form, FormCheckbox, useForm } from '@pidedirecto/ui/form'
+
+function Component(){
+    const form = useForm()
+
+    const onSubmit = () => {
+        console.log('Form submitted!')
+    }
+
+    return (
+        <Form form={form} onSubmit={onSubmit}>
+            <FormCheckbox name='isCheckbox' label={'Is it a checkbox?'} />
+        </Form>
+    )
+}
+```
+
+When the `Form` component is submitted the form values are passed to the `onSubmit` callback.
+
+```ts
+const onSubmit = form => {
+    console.log('Value from isCheckbox checkbox = ', form.isCheckbox)
+}
+```
+
+You can also can access to the submit event, it is passes as second argument in the `onSubmit` callback.
+
+Every form component, like `FormCheckbox` and `FormSwitch`, should be a children of `Form` component.
+
+
+## API
+
+<ArgTypes of={FormStories} />
+
