@@ -7,6 +7,7 @@ export type Theme = {
         primary?: {
             color?: string;
             border?: string;
+            disabled?: string;
         };
     };
     font?: {
@@ -17,6 +18,8 @@ export type Theme = {
         color?: {
             normal?: string;
             light?: string;
+            disabled?: string;
+            error?: string;
         };
     };
 };
