@@ -5,8 +5,8 @@
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { Checkbox } from 'src/components/Checkbox';
-import { Form } from 'src/components/form/Form';
-import { FormCheckbox } from 'src/components/form/FormCheckbox';
+import { Form } from 'src/form/Form';
+import { FormCheckbox } from 'src/form/FormCheckbox';
 
 export function App(): React.ReactElement {
     const form = useForm();
