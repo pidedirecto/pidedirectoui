@@ -4,8 +4,8 @@
   "files": [
     "*"
   ],
-  "main": "./index.js",
-  "module": "./index.cjs",
+  "main": "./index.cjs",
+  "module": "./index.js",
   "types": "./index.d.ts",
   "typesVersions": {
     "*": {
