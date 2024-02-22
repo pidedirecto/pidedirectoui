@@ -44,5 +44,81 @@ body {
   --primaryBorderColor: #D9D9D9;
   --primaryDisabledColor: #BDBDBD
 
+  /* primary colors */
+  --purple-100: #f9f6fd;
+  --purple-200: #ebd9ff;
+  --purple-300: #dab7ff;
+  --purple-400: #c48dff;
+  --purple-500: #b674ff;
+  --purple-600: #a34eff;
+  --purple-700: #8d25ff;
+  --purple-800: #7218d4;
+  --purple-900: #6114b4;
+  --purple-1000: #470f84;
+  --neutral-100: #ffffff;
+  --neutral-200: #f9f9f9;
+  --neutral-300: #ececec;
+  --neutral-400: #eef2f5;
+  --neutral-500: #d9d9d9;
+  --neutral-600: #9ba1aa;
+  --neutral-700: #616b79;
+  --neutral-800: #221f2b;
+  --neutral-900: #000000;
+  --blue-100: #eaf7fd;
+  --blue-200: #b4cfe8;
+  --blue-300: #7d8fff;
+  --blue-400: #458fff;
+  --blue-500: #122279;
+  --blue-600: #0a0050;
+  --red-100: #f7e6e6;
+  --red-200: #e32f45;
+  --red-300: #a00d1f;
+  --yellow-100: #fbf3da;
+  --yellow-200: #f6e3a7;
+  --yellow-300: #a57805;
+  --orange-100: #ffefdc;
+  --orange-200: #ffcb8d;
+  --orange-300: #fc9b41;
+  --pink-500: #ef006d;
+  --green-100: #ebfefe;
+  --green-200: #b7ecea;
+  --green-300: #89d5d2;
+  --green-400: #5eaca3;
+  --green-500: #63d6b3;
+  --green-600: #0fa489;
+  --green-700: #1b5764;
 
+  /* Surface Tokens */
+
+  --surface-primary: var(--neutral-100);
+  --surface-secondary: var(--neutral-300);
+  --surface-tertiary: var(--neutral-400);
+  --surface-contrast: var(--neutral-600);
+  --surface-heavy-contrast: var(--neutral-700);
+  --surface-invert: var(--neutral-800);
+  --surface-brand: var(--purple-200);
+  --surface-brand-secondary: var(--purple-300);
+  --surface-brand-contrast: var(--purple-700);
+  --surface-brand-heavy-contrast: var(--purple-1000);
+
+  /* Text Tokens */
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-700);
+  --text-contrast: var(--neutral-600);
+  --text-invert: var(--neutral-100);
+  --text-brand: var(--surface-brand-contrast);
+  --text-danger: var(--red-200);
+
+  /* Border Tokens */
+  --border-primary: var(--neutral-500);
+  --border-secondary: var(--neutral-600);
+  --border-invert: var(--surface-primary); 
+  --border-brand: var(--surface-brand); 
+  --border-brand-contrast: var(--surface-brand-contrast); 
+  --border-danger: var(--red-200);
+
+  /* Icons Tokens */
+  --icons-primary: var(--neutral-700);
+  --icons-invert: var(--neutral-100);
+  --icons-brand: var(--surface-brand); 
 }
