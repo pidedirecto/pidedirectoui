@@ -5,12 +5,16 @@ import * as React from 'react';
 import { HelperText } from 'src/components/HelperText';
 import { Label } from 'src/components/Label';
 import { Tooltip } from 'src/components/Tooltip';
+import { useCreateUserClickedSwitchLogEvent } from 'src/services/logEvent/useCreateUserClickedSwitchLogEvent';
 import classes from 'src/styles/switch.module.css';
 import { SwitchProps } from 'src/types/components/Switch';
 import { classNames } from 'src/utils/css/classNames';
 
 export function Switch({ disabled, inputRef, value, id, error, onChange, tooltip, name, label, helperText, classes: classesProp, ...props }: SwitchProps): React.ReactElement {
+    const createUserClickedSwitchLogEvent = useCreateUserClickedSwitchLogEvent();
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        createUserClickedSwitchLogEvent(label || name || '');
         onChange?.(e);
     };
 

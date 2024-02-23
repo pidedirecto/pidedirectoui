@@ -52,6 +52,8 @@ function getUiLogEventTraceId(params: UiLogEventData): string {
     switch (params.uiLogEventType) {
         case UiLogEventTypes.USER_CLICKED_CHECKBOX:
             return normalizeUiStackTrace(`checkbox_${params.element}`);
+        case UiLogEventTypes.USER_CLICKED_SWITCH:
+            return normalizeUiStackTrace(`switch_${params.element}`);
         default:
             return params.element;
     }
@@ -61,6 +63,8 @@ function getUiLogEventMessage(params: UiLogEventData): string {
     switch (params.uiLogEventType) {
         case UiLogEventTypes.USER_CLICKED_CHECKBOX:
             return `checkbox ${params.element} clicked`;
+        case UiLogEventTypes.USER_CLICKED_SWITCH:
+            return `switch ${params.element} clicked`;
         default:
             return `user interacted with ${params.element}`;
     }
