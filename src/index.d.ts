@@ -12,7 +12,7 @@ export const Checkbox: Checkbox
 /**
  * Renders Switch
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-checkbox--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-switch--docs)
  */
 export const Switch: Switch
 
