@@ -6,10 +6,10 @@ import * as React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Switch } from 'src/components/Switch';
 import { FormContext } from 'src/form/Form';
-import { FormCheckboxProps } from 'src/types/form/FormCheckbox';
+import { FormSwitchProps } from 'src/types/form/FormSwitch';
 import { getError } from 'src/utils/form/getError';
 
-export function FormSwitch({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormCheckboxProps): React.ReactElement {
+export function FormSwitch({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormSwitchProps): React.ReactElement {
     const {
         errors,
         control,
