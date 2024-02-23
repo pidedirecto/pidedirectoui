@@ -1,0 +1,45 @@
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+
+import * as SwitchStories from '../../stories/Switch.stories';
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+Renders a switch
+
+<Canvas of={SwitchStories.Primary} />
+
+If you need to control the switch state you can pass a boolean in the checked prop
+```tsx
+const [checked, setChecked] = useState(false)
+
+const handleSwitch = () => {
+    setChecked(!checked)
+}
+
+<Switch
+  label="Are you a cheese lover?"
+  name="switch"
+  value="value"
+  checked={checked}
+  onChange={handleSwitch}
+/>
+```
+
+## Switch states
+
+<Canvas of={SwitchStories.Disabled} />
+<Canvas of={SwitchStories.CheckedDisabled} />
+<Canvas of={SwitchStories.Error} />
+
+## User messages
+Besides the label we have other ways to show messages or additional information to the user, we have `helperText` and `tooltip`, we don't recommend one above the other, both have the same function it will depend on the case
+
+<Canvas of={SwitchStories.Info} />
+
+
+## API
+Here there are described some of the important props, but the `Switch` component can receive almost any of the HTML input props.
+
+<ArgTypes of={SwitchStories} />
