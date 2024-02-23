@@ -1,22 +1,25 @@
 import { Meta, ArgTypes } from '@storybook/blocks';
-import * as ApiProviderStories from '../stories/ApiProvider.stories';
+import * as UiLogEventTrackerStories from '../stories/UiLogEventTracker.stories';
 
-<Meta title="docs/ApiProvider" />
+<Meta title="docs/UiLogEventTracker" />
 
-# ApiProvider
+# UiLogEventTracker
 
-`ApiProvider` component makes you able to configure api calls used inside @pidedirecto/ui library.
+`UiLogEventTracker` component allows you to listen to ui log events.
 
 ```tsx
-<ApiProvider api={{ createUiLogEvent: createUiLogEventApi }} >
+import { UiLogEventTracker } from '@pidedirecto/ui/UiLogEventTracker';
+
+
+<UiLogEventTracker id='page1' onInteract={createUiLogEventApi} >
     <App />
-</ApiProvider>
+</UiLogEventTracker>
 ```
 
 ## UI Log Events
 
 Every time the user interacts with any of the @pidedirecto/ui components we generate a UI log event,
-you can receive this UI log event through the `ApiProvider` via the createUiLogEvent callback.
+you can receive this UI log event through the `UiLogEventTracker` via the onInteract callback.
 
 The UiLogEvent object is the next one
 
@@ -55,4 +58,4 @@ USER_CLICKED_CHECKBOX
 
 ## API
 
-<ArgTypes of={ApiProviderStories} />
+<ArgTypes of={UiLogEventTrackerStories} />

@@ -5,10 +5,10 @@ import * as React from 'react';
 import { createContext } from 'react';
 import { SyncOfflineUiLogEvents } from 'src/components/app/SyncOfflineUiLogEvents';
 import { ApiSauceResponse } from 'src/types/ApiSauceResponse';
-import { ApiProviderProps } from 'src/types/components/app/ApiProvider';
 import { UiLogEvent } from 'src/types/UiLogEvent';
 
-export function ApiProvider({ children, api }: ApiProviderProps): React.ReactElement {
+// TODO: Unused component but keep it in case we need later
+export function ApiProvider({ children, api }: any): React.ReactElement {
     return (
         <ApiContext.Provider value={{ api }}>
             <SyncOfflineUiLogEvents />

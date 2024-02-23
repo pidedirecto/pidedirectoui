@@ -1,5 +1,5 @@
 import { Checkbox } from "src/types/components/Checkbox";
-import { ApiProvider } from "src/types/components/app/ApiProvider";
+import { UiLogEventTracker } from "src/types/components/UiLogEventTracker";
 
 /**
  * Renders Checkbox
@@ -9,8 +9,8 @@ import { ApiProvider } from "src/types/components/app/ApiProvider";
 export const Checkbox: Checkbox
 
 /**
- * Provider to configure api calls for @pidedirecto/ui components
+ * Component to track ui log events
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-checkbox--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-uilogeventtracker--docs)
  */
-export const ApiProvider: ApiProvider
+export const UiLogEventTracker: UiLogEventTracker
