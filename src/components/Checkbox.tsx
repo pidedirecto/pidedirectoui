@@ -33,7 +33,7 @@ export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, 
                     onChange={(e) => handleChange(e)}
                     id={id ?? `${name ?? ''}-checkbox`}
                     aria-describedby={!!helperText ? `${name}-helperText` : undefined}
-                    className={classes.input}
+                    className={classNames(classes.input, classesProp?.checkbox)}
                     ref={inputRef}
                 />
                 {!!label && (

@@ -96,6 +96,14 @@ const meta: Meta<typeof Checkbox> = {
             },
             control: false,
         },
+        'classes.checkbox': {
+            description: 'CSS class to override the checkbox style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         'classes.label': {
             description: 'CSS class to override the label style',
             table: {

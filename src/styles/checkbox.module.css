@@ -20,7 +20,7 @@
 
 .input:checked {
    background-color: var(--primaryColor);
-   border: 1px solid var(--primaryColor);
+   border: 1px solid var(--primaryBorderColor);
 }
 
 .input:disabled {
