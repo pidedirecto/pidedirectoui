@@ -3,12 +3,17 @@
  */
 import * as React from 'react';
 import { createContext, useRef } from 'react';
+import { useEffect } from 'react';
 import { UiLogEventType, UiLogEventTypes } from 'src/constants/UiLogEventType';
 import { normalizeUiStackTrace } from 'src/services/logEvent/normalizeUiStackTrace';
 import { UiLogEventTrackerProps } from 'src/types/components/UiLogEventTracker';
 
 export function UiLogEventTracker({ id, onInteract, children }: UiLogEventTrackerProps): React.ReactElement {
     const stackTrace = useRef(id);
+
+    useEffect(() => {
+        clearStackTrace();
+    }, [id]);
 
     const createUiLogEvent = (params: UiLogEventData) => {
         const fullStackTrace = `${stackTrace.current}/${getUiLogEventTraceId(params)}`;
@@ -90,6 +95,7 @@ function createUiLogEventData(params: CreateUiLogEventDataParams): Object {
             };
         case UiLogEventTypes.USER_CLICKED_BUTTON:
             return {
+                buttonName: params.uiLogEvent.element,
                 pathId: params.stackTrace,
                 stacktrace: params.stackTrace.replace(params.elementId, ''),
                 buttonId: params.elementId,
