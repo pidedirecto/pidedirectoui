@@ -1,0 +1,139 @@
+.button {
+    position: relative;
+    border: 0;
+    padding: 8px 12px;
+    width: fit-content;
+    border-radius: 6px;
+    background-color: var(--primaryColor);
+    color: white;
+    font-family: var(--fontNormal);
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+    box-sizing: border-box;
+    transform-origin: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    min-height: 42px;
+    justify-content: center;
+    text-transform: none;
+    flex-shrink: 0;
+}
+
+.button:hover {
+    background-color: var(--primaryHover)
+}
+
+.button:focus {
+    outline: 2px solid var(--primaryOutline);
+}
+
+.button:disabled{
+    background-color: var(--primaryDisabledColor);
+    cursor: default;
+    color: var(--fontColorDisabled);
+}
+
+.button:disabled:hover{
+    background-color: var(--primaryDisabledColor);
+    cursor: default;
+}
+
+.button[data-variant="secondary"] {
+    background-color: white;
+    border: 1px solid var(--secondaryBorderColor);
+    color: var(--secondaryColor);
+}
+
+.button[data-variant="secondary"]:hover {
+    background-color: transparent;
+}
+
+.button[data-variant="secondary"]:focus {
+    outline: 2px solid var(--secondaryOutline);
+}
+
+.button[data-variant="secondary"]:disabled {
+    background-color: var(--secondaryDisabledColor);
+    border: 1px solid var(--secondaryBorderColor);
+    color: var(--fontColorDisabled);
+}
+
+.button[data-variant="secondary"]:disabled:hover {
+    background-color: var(--secondaryDisabledColor);
+    border: 1px solid var(--secondaryBorderColor);
+}
+
+.button[data-variant="outline"] {
+    background-color: transparent;
+    border: 1px solid var(--outlineColor);
+    color: var(--outlineColor);
+}
+
+.button[data-variant="outline"]:hover {
+    background-color: var(--outlineHover);
+}
+
+.button[data-variant="outline"]:focus {
+    outline: 2px solid var(--outlineOutline);
+}
+
+.button[data-variant="outline"]:disabled {
+    background-color: var(--outlineDisabledColor);
+    border: 1px solid var(--outlineBorderColor);
+    color: var(--fontColorDisabled);
+}
+
+.button[data-variant="outline"]:disabled:hover {
+    background-color: var(--outlineDisabledColor);
+    border: 1px solid var(--outlineBorderColor);
+}
+
+.button[data-variant="text"] {
+    border: 0;
+    background-color: transparent;
+    color: var(--fontColorNormal);
+    padding: 6px 8px;
+}
+
+.button[data-variant="text"]:hover {
+    background-color: var(--fontHoverColor);
+}
+
+.button[data-variant="text"]:focus {
+    outline: 2px solid var(--primaryOutline);
+}
+
+.button[data-variant="text"]:disabled {
+    color: var(--fontColorDisabled);
+    background-color: var(--primaryDisabledColor);
+}
+
+.button[data-variant="icon"] {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    border: 0;
+    background-color: transparent;
+    color: var(--fontColorNormal);
+    padding: 6px 8px;
+}
+
+.button[data-variant="icon"]:hover {
+    background-color: var(--fontHoverColor);
+}
+
+.button[data-variant="icon"]:focus {
+    outline: 2px solid var(--primaryOutline);
+}
+
+.button[data-variant="icon"]:disabled {
+    color: var(--fontColorDisabled);
+    background-color: var(--primaryDisabledColor);
+}
+
+.button[data-size="large"] {
+    height: 52px;
+    font-size: var(--fontSizeLarge);
+}

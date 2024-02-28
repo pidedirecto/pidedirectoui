@@ -15,22 +15,40 @@ type theme = {
         palette?: {
             primary?: {
                 color?: string;
+                hover?: string;
+                outline?: string;
                 border?: string;
                 disabled?: string;
-            },
+            };
+            secondary?: {
+                color?: string;
+                hover?: string;
+                outline?: string;
+                border?: string;
+                disabled?: string;
+            };
+            outline?: {
+                color?: string;
+                hover?: string;
+                outline?: string;
+                border?: string;
+                disabled?: string;
+            };
         };
         font?: {
             size?: {
                 normal?: string;
                 small?: string;
-            },
+                large?: string;
+            };
             color?: {
                 normal?: string;
                 light?: string;
                 disabled?: string;
                 error?: string;
-            }
-        }
+                hover?: string;
+            };
+        };
     }
 ```
 
@@ -65,6 +83,28 @@ The primary objects contains the color info about the primary components version
 - color: main color <Color color={'#06B7A2'} />
 - border: border color used in components, for example inputs <Color color={'#D9D9D9'} />
 - disabled: disabled color used in components when they are disabled, for example inputs <Color color={'#BDBDBD'} />
+- hover: hover color used in components in their main variant on hover event, for example buttons <Color color={'#198074'} />
+- outline: outline color used in components when they focused, for example inputs <Color color={'#1A73F9'} />
+
+#### Secondary
+
+The secondary objects contains the color info about the secondary components version
+
+- color: main color <Color color={'#616B79'} />
+- border: border color used in components, for example inputs <Color color={'#D9D9D9'} />
+- disabled: disabled color used in components when they are disabled, for example inputs <Color color={'#F1F1F1'} />
+- hover: hover color used in components in their main variant on hover event, for example buttons <Color color={'#8A95A5'} />
+- outline: outline color used in components when they focused, for example inputs <Color color={'#1A73F9'} />
+
+#### Outline
+
+The outline objects contains the color info about the outline components version
+
+- color: main color <Color color={'#06B7A2'} />
+- border: border color used in components, for example inputs <Color color={'#D9D9D9'} />
+- disabled: disabled color used in components when they are disabled, for example inputs <Color color={'#F1F1F1'} />
+- hover: hover color used in components in their main variant on hover event, for example buttons <Color color={'#EBFFF9'} />
+- outline: outline color used in components when they focused, for example inputs <Color color={'#1A73F9'} />
 
 ### Fonts
 
@@ -72,8 +112,9 @@ The primary objects contains the color info about the primary components version
 
 The size objects contains the font size info, this size are used across all the components
 
-- normal: main font size 12px
-- small: small font size, used for example in helper texts 10px
+- small: small font size, used for example in helper texts 12px
+- normal: main font size 14px
+- large: large font size 16px
 
 #### color
 
@@ -82,5 +123,6 @@ The size objects contains the font size info, this size are used across all the 
 - normal: main font color <Color color={'#2E3748'} />
 - light: light font color, used for example in helper texts <Color color={'#40464d'} />
 - disabled: disabled font color, used in labels when input is disabled <Color color={'#BDBDBD'} />
-- red: error font color, used in inputs when the input is in error state <Color color={'red'} />
+- error: error font color, used in inputs when the input is in error state <Color color={'red'} />
+- hover: hover color, used in components like button when they are in their text version <Color color={'#0000000A'} />
 

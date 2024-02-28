@@ -1,5 +1,6 @@
 import { Checkbox } from "src/types/components/Checkbox";
 import { Switch } from "src/types/components/Switch";
+import { Button } from "src/types/components/Button";
 import { UiLogEventTracker } from "src/types/components/UiLogEventTracker";
 
 /**
@@ -15,6 +16,13 @@ export const Checkbox: Checkbox
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-switch--docs)
  */
 export const Switch: Switch
+
+/**
+ * Renders Button
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-button--docs)
+ */
+export const Button: Button
 
 /**
  * Component to track ui log events

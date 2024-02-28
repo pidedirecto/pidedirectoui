@@ -32,17 +32,34 @@ body {
   /* text sizes */
   --fontSizeSmall: 12px;
   --fontSizeNormal: 14px;
+  --fontSizeLarge: 16px;
 
   /* text colors */
   --fontColorNormal: #2E3748;
   --fontColorError: red;
   --fontColorDisabled: #BDBDBD;
   --fontColorLight: #40464d;
+  --fontHoverColor: #0000000A;
 
   /* colors */
   --primaryColor: #06B7A2;
+  --primaryHover: #198074;
+  --primaryOutline: #1A73F9;
   --primaryBorderColor: #D9D9D9;
-  --primaryDisabledColor: #BDBDBD
+  --primaryDisabledColor: #F1F1F1;
+
+
+  --secondaryColor: #616B79;
+  --secondaryHover: #8A95A5;
+  --secondaryOutline: #1A73F9;
+  --secondaryBorderColor: #D9D9D9;
+  --secondaryDisabledColor: #F1F1F1;
+
+  --outlineColor: #06B7A2;
+  --outlineHover: #EBFFF9;
+  --outlineOutline: #1A73F9;
+  --outlineBorderColor: #D9D9D9;
+  --outlineDisabledColor: #F1F1F1;
 
 
 }
