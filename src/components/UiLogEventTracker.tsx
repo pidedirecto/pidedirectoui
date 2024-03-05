@@ -60,6 +60,8 @@ function getUiLogEventTraceId(params: UiLogEventData): string {
             return normalizeUiStackTrace(`switch_${params.element}`);
         case UiLogEventTypes.USER_CLICKED_BUTTON:
             return normalizeUiStackTrace(`button_${params.element}`);
+        case UiLogEventTypes.USER_CLICKED_TAB:
+            return normalizeUiStackTrace(`tab_${params.element}`);
         default:
             return params.element;
     }
@@ -73,6 +75,8 @@ function getUiLogEventMessage(params: UiLogEventData): string {
             return `switch ${params.element} clicked`;
         case UiLogEventTypes.USER_CLICKED_BUTTON:
             return `button ${params.element} clicked`;
+        case UiLogEventTypes.USER_CLICKED_TAB:
+            return `tab ${params.element} clicked`;
         default:
             return `user interacted with ${params.element}`;
     }
@@ -99,6 +103,11 @@ function createUiLogEventData(params: CreateUiLogEventDataParams): Object {
                 pathId: params.stackTrace,
                 stacktrace: params.stackTrace.replace(params.elementId, ''),
                 buttonId: params.elementId,
+            };
+        case UiLogEventTypes.USER_CLICKED_TAB:
+            return {
+                tabId: params.elementId,
+                pathId: params.stackTrace,
             };
         default:
             return {

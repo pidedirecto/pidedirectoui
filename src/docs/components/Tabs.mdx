@@ -1,0 +1,49 @@
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+
+import * as TabsStories from '../../stories/Tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs
+Renders a section with tabs
+
+<Canvas of={TabsStories.Primary} />
+
+This component needs an array of objects which each object contains the info for the tab, and multiple children where each child corresponds to the tab at that specific index.
+In other words the relation between the tabs and children is only the index, the content at the position 0 in the children array will be the content for the tab at position 0 in the tabs array
+
+If you pass more children than the length of tabs array those extra children will be ignored cause won't correspond to any tab due to the exceding index
+
+## Tab
+
+The `Tab` object is the object in the tabs array
+
+- `tab.label` The label for the tab
+- `tab.value` The value for the tab, this is used to identify each tab so make sure this value is unique for each tab
+- `tab.hidden` Hides a tab visually, how it was explained before the relation between the tab and the content is the index, so if you hide a tab make sure you hide content with the same condition
+```tsx
+const tabs = [{
+    label: 'Tab 1',
+    value: '1',
+    hidden: hideTab,
+}]
+
+<Tabs tabs={tabs}>
+    {hideTab && <div>Content to hide</div>}
+</Tabs>
+  ```
+- `tab.badge` Renders a badge next to the tab label, it can be any valid react node
+<Canvas of={TabsStories.Badge} />
+
+- `tab.onClick` Callback to be called each time the use clicks the tab, the tab object will be passed as prop to the callback, even though with this function you can reproduce the functionality of the `Tabs` component, switching sections, we strongly recommend to leave that functionality to the component and only do side effects on this callback
+
+## Tabs header
+
+There are situations where we want to have content shared between tabs, in order to not use that content inside each tab section we have the prop `tabsHeader`. This will render the content between the tabs and the section content
+
+<Canvas of={TabsStories.TabsHeader} />
+
+## API
+
+<ArgTypes of={TabsStories} />
+

@@ -48,7 +48,6 @@ body {
   --primaryBorderColor: #D9D9D9;
   --primaryDisabledColor: #F1F1F1;
 
-
   --secondaryColor: #616B79;
   --secondaryHover: #8A95A5;
   --secondaryOutline: #1A73F9;
@@ -61,5 +60,9 @@ body {
   --outlineBorderColor: #D9D9D9;
   --outlineDisabledColor: #F1F1F1;
 
+  /* screen size */
+  --smallScreen: 600px;
+  --mediumScreen: 960px;
+  --largeScreen: 1280px;
 
 }
