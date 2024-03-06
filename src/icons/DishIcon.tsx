@@ -36,7 +36,6 @@ export function DishIcon({ title, color, width, height, size }: SvgIconProps): R
                 strokeLinecap='round'
                 strokeLinejoin='round'
             />
-            <rect x='0.5' y='1' width='89' height='89' rx='44.5' stroke='#CBF7E9' />
         </svg>
     );
 }

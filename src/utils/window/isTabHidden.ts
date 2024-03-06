@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 
 export function isTabHidden(): boolean {

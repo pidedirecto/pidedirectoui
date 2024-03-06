@@ -43,6 +43,9 @@ export const CutleryIcon: SvgIcon
 export const DepositIcon: SvgIcon
 export const DeviceIcon: SvgIcon
 export const DishIcon: SvgIcon
+export const IncomingIcon: SvgIcon
+export const WithdrawalIcon: SvgIcon
+export const CashRegisterShiftIcon: SvgIcon
 export const DocumentIcon: SvgIcon
 export const DoorbellIcon: SvgIcon
 export const DoorHangerIcon: SvgIcon
@@ -74,6 +77,8 @@ export const LightingIcon: SvgIcon
 export const LinkIcon: SvgIcon
 export const ListIcon: SvgIcon
 export const LitreIcon: SvgIcon
+export const MinimalistMotorcycleIcon: SvgIcon
+export const FoodBoxIcon: SvgIcon
 export const LockIcon: SvgIcon
 export const MapIcon: SvgIcon
 export const MapPinIcon: SvgIcon
