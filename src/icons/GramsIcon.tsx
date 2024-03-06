@@ -8,7 +8,7 @@ export function GramsIcon({ width, height, title, size, color }: SvgIconProps): 
     return (
         <svg width={width ?? size ?? 22} height={height ?? size ?? 21} viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
-            <circle cx='11' cy='3' r='2.25' stroke='#06B7A2' strokeWidth='1.5' />
+            <circle cx='11' cy='3' r='2.25' stroke={color ?? 'currentColor'} strokeWidth='1.5' />
             <path
                 d='M3.12537 8.40106C3.41359 6.8639 4.75576 5.75 6.31971 5.75H15.6803C17.2442 5.75 18.5864 6.8639 18.8746 8.40106L20.3746 16.4011C20.7496 18.4012 19.2152 20.25 17.1803 20.25H4.81971C2.78476 20.25 1.25035 18.4012 1.62537 16.4011L3.12537 8.40106Z'
                 stroke={color ?? 'currentColor'}
