@@ -3,6 +3,7 @@ import { Switch } from "src/types/components/Switch";
 import { Button } from "src/types/components/Button";
 import { UiLogEventTracker } from "src/types/components/UiLogEventTracker";
 import { Tabs } from "src/types/components/Tabs";
+import { Accordion } from "src/types/components/Accordion";
 
 /**
  * Renders Checkbox
@@ -31,6 +32,13 @@ export const Button: Button
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-tab--docs)
  */
 export const Tabs: Tabs
+
+/**
+ * Renders Accordion
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-accordion--docs)
+ */
+export const Accordion: Accordion
 
 /**
  * Component to track ui log events

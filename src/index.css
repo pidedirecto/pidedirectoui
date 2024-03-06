@@ -33,6 +33,7 @@ body {
   --fontSizeSmall: 12px;
   --fontSizeNormal: 14px;
   --fontSizeLarge: 16px;
+  --fontSizeExtraLarge: 18px;
 
   /* text colors */
   --fontColorNormal: #2E3748;
