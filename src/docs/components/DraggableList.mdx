@@ -11,6 +11,8 @@ Renders a draggable list
 <Canvas of={DraggableListStories.Primary} sourceState={'none'} />
 
 ```tsx
+import { DraggableList, DraggableListItem } from '@pidedirecto/ui';
+
 <DraggableList onDragEnd={values => alert('The sorted values are ' + values.join(', '))}>
     <DraggableListItem value={'1'}>Do the laundry</DraggableListItem>
     <DraggableListItem value={'2'}>Wash the dishes</DraggableListItem>
@@ -26,6 +28,8 @@ This does not mean that you can't move the list items to its own components, you
 
 **Do**
 ```tsx
+import { DraggableList, DraggableListItem } from '@pidedirecto/ui';
+
 <DraggableList onDragEnd={values => alert('The sorted values are ' + values.join(', '))}>
     <Component1 />
     <Component2 />
