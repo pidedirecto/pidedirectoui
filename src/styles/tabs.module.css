@@ -34,7 +34,7 @@
     padding: 8px 24px;
     font-family: var(--fontNormal);
     font-size: var(--fontSizeNormal);
-    color: var(--fontColorNormal);
+    color: var(--text-primary);
     cursor: pointer;
     gap: 8px;
     background-color: transparent;

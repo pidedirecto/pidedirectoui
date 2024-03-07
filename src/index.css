@@ -81,6 +81,8 @@ body {
 
   /* TOKENS */
 
+  /* TODO: Replace the new brand colors to the variables that have 'brand' in their name (They are commented below) */
+
   /* surface */
   --surface-primary: var(--neutral100);
   --surface-secondary: var(--neutral300);
@@ -119,59 +121,12 @@ body {
   --border-info: var(--blue600);
   --border-warning: var(--orange400);
   --border-danger: var(--red200);
-  --border-outline: var(--blue500);
+  --border-brand-outline: var(--blue500);
   
   /* icon */
   --icon-primary: var(--neutral700);
   --icon-invert: var(--neutral100);
   --icon-brand: var(--purple700);
-
-[data-theme="light"] {
-  /* surface */
-  --surface-primary: var(--neutral100);
-  --surface-secondary: var(--neutral300);
-  --surface-tertiary: var(--neutral400);
-  --surface-contrast: var(--neutral600);
-  --surface-heavy-contrast: var(--neutral700);
-  --surface-invert: var(--neutral900);
-  --surface-brand: var(--green200);
-  --surface-brand-secondary: var(--green300);
-  --surface-brand-contrast: var(--green500);
-  --surface-brand-heavy-contrast: var(--green700);
-  --surface-success: var(--green200);
-  --surface-info: var(--blue100);
-  --surface-warning: var(--orange100);
-  --surface-danger: var(--red100);
-
-  /* text */
-  --text-primary: var(--neutral900);
-  --text-secondary: var(--neutral700);
-  --text-contrast: var(--neutral600);
-  --text-invert: var(--neutral100);
-  --text-brand: var(--purple700);
-  --text-success: var(--green700);
-  --text-info: var(--blue600);
-  --text-warning: var(--orange400);
-  --text-danger: var(--red200);
-
-  /* border */
-  --border-primary: var(--neutral500);
-  --border-secondary: var(--neutral600);
-  --border-tertiary: var(--neutral400);
-  --border-invert: var(--neutral100);
-  --border-brand: var(--purple200);
-  --border-brand-contrast: var(--purple700);
-  --border-success: var(--green700);
-  --border-info: var(--blue600);
-  --border-warning: var(--orange400);
-  --border-danger: var(--red200);
-  --border-outline: var(--purple200);
-  
-  /* icon */
-  --icon-primary: var(--neutral700);
-  --icon-invert: var(--neutral100);
-  --icon-brand: var(--purple700);
-}
 
 /* [data-theme="light"] {
 
@@ -210,14 +165,15 @@ body {
   --border-info: var(--blue600);
   --border-warning: var(--orange400);
   --border-danger: var(--red200);
+  --border-brand-outline: var(--purple200);
   
   --icon-primary: var(--neutral700);
   --icon-invert: var(--neutral100);
   --icon-brand: var(--purple700);
 } */
 
-[data-theme="dark"] {
-  /* surface */
+/* [data-theme="dark"] {
+  surface
   --surface-primary: var(--neutral800);
   --surface-secondary: var(--neutral1000);
   --surface-tertiary: var(--neutral1100);
@@ -233,7 +189,7 @@ body {
   --surface-warning: var(--orange100);
   --surface-danger: var(--red100);
 
-  /* text */
+  text
   --text-primary: var(--neutral100);
   --text-secondary: var(--neutral500);
   --text-contrast: var(--neutral600);
@@ -244,7 +200,7 @@ body {
   --text-warning: var(--orange400);
   --text-danger: var(--red200);
 
-  /* border */
+  border
   --border-primary: var(--neutral600);
   --border-secondary: var(--neutral600);
   --border-tertiary: var(--neutral400);
@@ -256,11 +212,11 @@ body {
   --border-warning: var(--orange400);
   --border-danger: var(--red200);
   
-  /* icon */
+  icon
   --icon-primary: var(--neutral700);
   --icon-invert: var(--neutral100);
   --icon-brand: var(--purple700);
-}
+} */
 
   /* text sizes */
   --fontSizeSmall: 12px;

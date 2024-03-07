@@ -26,7 +26,7 @@
 }
 
 .button:focus {
-    outline: 2px solid var(--border-outline);
+    outline: 2px solid var(--border-brand-outline);
 }
 
 .button:disabled{
@@ -48,7 +48,7 @@
 }
 
 .button[data-variant="secondary"]:focus {
-    outline: 2px solid var(--border-outline);
+    outline: 2px solid var(--border-brand-outline);
 }
 
 .button[data-variant="secondary"]:disabled {
@@ -69,7 +69,7 @@
 }
 
 .button[data-variant="outline"]:focus {
-    outline: 2px solid var(--border-outline);
+    outline: 2px solid var(--border-brand-outline);
 }
 
 .button[data-variant="outline"]:disabled {
@@ -91,7 +91,7 @@
 }
 
 .button[data-variant="text"]:focus {
-    outline: 2px solid var(--border-outline);
+    outline: 2px solid var(--border-brand-outline);
 }
 
 .button[data-variant="text"]:disabled {
@@ -114,7 +114,7 @@
 }
 
 .button[data-variant="icon"]:focus {
-    outline: 2px solid var(--border-outline);
+    outline: 2px solid var(--border-brand-outline);
 }
 
 .button[data-variant="icon"]:disabled {

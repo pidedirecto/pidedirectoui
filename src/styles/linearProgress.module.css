@@ -4,8 +4,8 @@
     appearance: none;
     border: none;
     height: 0.25em;
-    color: var(--outlineColor);
-    background-color: var(--outlineHover);
+    color: var(--border-brand);
+    background-color: var(--surface-secondary);
     font-size: 16px;
     width: 100%;
     position: absolute;

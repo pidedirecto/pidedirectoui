@@ -8,8 +8,8 @@
     position: absolute;
     top: -10px;
     left: 10px;
-    background-color: #5c5e61;
-    color: white;
+    background-color: var(--surface-heavy-contrast);
+    color: vart(--text-invert);
     font-family: var(--fontNormal);
     font-size: var(--fontSizeSmall);
     padding: 6px 12px;
