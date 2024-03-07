@@ -4,6 +4,8 @@ import { Button } from "src/types/components/Button";
 import { UiLogEventTracker } from "src/types/components/UiLogEventTracker";
 import { Tabs } from "src/types/components/Tabs";
 import { Accordion } from "src/types/components/Accordion";
+import { DraggableList } from "src/types/components/DraggableList";
+import { DraggableListItem } from "src/types/components/DraggableListItem";
 
 /**
  * Renders Checkbox
@@ -46,3 +48,17 @@ export const Accordion: Accordion
  * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-uilogeventtracker--docs)
  */
 export const UiLogEventTracker: UiLogEventTracker
+
+/**
+ * Renders draggable list
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-draggablelist--docs)
+ */
+export const DraggableList: DraggableList
+
+/**
+ * Renders draggable list item
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-draggablelistitem--docs)
+ */
+export const DraggableListItem: DraggableListItem
