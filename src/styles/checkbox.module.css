@@ -11,7 +11,7 @@
     height: 16px;
     min-height: 16px;
     appearance: none;
-    border: 1px solid var(--primaryBorderColor);
+    border: 1px solid var(--border-primary);
     border-radius: 2px;
     display: grid;
     place-content: center;
@@ -19,16 +19,16 @@
 }
 
 .input:checked {
-   background-color: var(--primaryColor);
-   border: 1px solid var(--primaryColor);
+   background-color: var(--surface-brand-contrast);
+   border: 1px solid var(--surface-brand-contrast);
 }
 
 .input:disabled {
-    border: 1px solid var(--primaryDisabledColor);
+    border: 1px solid var(--surface-secondary);
 }
 
 .input:disabled:checked {
-    background-color: var(--primaryDisabledColor);
+    background-color: var(--surface-secondary);
 }
 
 .input:checked::before {
@@ -36,7 +36,7 @@
     clip-path: url(#check-icon-clip-path);
     width: 10px;
     height: 10px;
-    background-color: white;
+    background-color: var(--icon-invert);
     margin-left: 2px;
     margin-top: 1px;
 }
