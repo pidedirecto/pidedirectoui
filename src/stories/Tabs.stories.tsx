@@ -160,7 +160,6 @@ export const Badge: Story = {
             {
                 label: 'Tab 2',
                 value: '2',
-                badge: 4,
             },
         ],
         children: [<div>Content 1</div>, <div>Content 2</div>],
