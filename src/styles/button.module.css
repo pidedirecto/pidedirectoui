@@ -4,8 +4,8 @@
     padding: 8px 12px;
     width: fit-content;
     border-radius: 6px;
-    background-color: var(--primaryColor);
-    color: white;
+    background-color: var(--surface-brand-contrast);
+    color: var(--text-invert);
     font-family: var(--fontNormal);
     cursor: pointer;
     transition: background-color 0.2s linear;
@@ -22,92 +22,81 @@
 }
 
 .button:hover {
-    background-color: var(--primaryHover)
+    background-color: var(--surface-brand-heavy-contrast)
 }
 
 .button:focus {
-    outline: 2px solid var(--primaryOutline);
+    outline: 2px solid var(--border-outline);
 }
 
 .button:disabled{
-    background-color: var(--primaryDisabledColor);
+    background-color: var(--surface-secondary);
     cursor: default;
-    color: var(--fontColorDisabled);
-}
-
-.button:disabled:hover{
-    background-color: var(--primaryDisabledColor);
-    cursor: default;
+    color: var(--text-contrast);
+    pointer-events: none;
 }
 
 .button[data-variant="secondary"] {
-    background-color: white;
-    border: 1px solid var(--secondaryBorderColor);
-    color: var(--secondaryColor);
+    background-color: transparent;
+    border: 1px solid var(--border-primary);
+    color: var(--text-secondary);
 }
 
 .button[data-variant="secondary"]:hover {
-    background-color: transparent;
+    background-color: var(--surface-tertiary);
+    border: 1px solid var(--border-tertiary);
 }
 
 .button[data-variant="secondary"]:focus {
-    outline: 2px solid var(--secondaryOutline);
+    outline: 2px solid var(--border-outline);
 }
 
 .button[data-variant="secondary"]:disabled {
-    background-color: var(--secondaryDisabledColor);
-    border: 1px solid var(--secondaryBorderColor);
-    color: var(--fontColorDisabled);
-}
-
-.button[data-variant="secondary"]:disabled:hover {
-    background-color: var(--secondaryDisabledColor);
-    border: 1px solid var(--secondaryBorderColor);
+    background-color: var(--surface-secondary);
+    border: 1px solid var(--surface-secondary);
+    color: var(--text-contrast);
+    pointer-events: none;
 }
 
 .button[data-variant="outline"] {
     background-color: transparent;
-    border: 1px solid var(--outlineColor);
-    color: var(--outlineColor);
+    border: 1px solid var(--border-brand-contrast);
+    color: var(--text-brand);
 }
 
 .button[data-variant="outline"]:hover {
-    background-color: var(--outlineHover);
+    background-color: var(--surface-brand);
 }
 
 .button[data-variant="outline"]:focus {
-    outline: 2px solid var(--outlineOutline);
+    outline: 2px solid var(--border-outline);
 }
 
 .button[data-variant="outline"]:disabled {
-    background-color: var(--outlineDisabledColor);
-    border: 1px solid var(--outlineBorderColor);
-    color: var(--fontColorDisabled);
-}
-
-.button[data-variant="outline"]:disabled:hover {
-    background-color: var(--outlineDisabledColor);
-    border: 1px solid var(--outlineBorderColor);
+    background-color: var(--surface-secondary);
+    border: 1px solid var(--surface-secondary);
+    color: var(--text-contrast);
+    pointer-events: none;
 }
 
 .button[data-variant="text"] {
     border: 0;
     background-color: transparent;
-    color: var(--fontColorNormal);
-    padding: 6px 8px;
+    color: var(--text-secondary);
+    padding: 6px 0px;
 }
 
 .button[data-variant="text"]:hover {
-    background-color: var(--fontHoverColor);
+    text-decoration: underline;
 }
 
 .button[data-variant="text"]:focus {
-    outline: 2px solid var(--primaryOutline);
+    outline: 2px solid var(--border-outline);
 }
 
 .button[data-variant="text"]:disabled {
-    color: var(--fontColorDisabled);
-    background-color: var(--primaryDisabledColor);
+    color: var(--text-contrast);
+    pointer-events: none;
 }
 
 .button[data-variant="icon"] {
@@ -116,21 +105,21 @@
     border-radius: 48px;
     border: 0;
     background-color: transparent;
-    color: var(--fontColorNormal);
+    color: var(--icon-primary);
     padding: 6px 8px;
 }
 
 .button[data-variant="icon"]:hover {
-    background-color: var(--fontHoverColor);
+    background-color: var(--surface-tertiary);
 }
 
 .button[data-variant="icon"]:focus {
-    outline: 2px solid var(--primaryOutline);
+    outline: 2px solid var(--border-outline);
 }
 
 .button[data-variant="icon"]:disabled {
-    color: var(--fontColorDisabled);
-    background-color: var(--primaryDisabledColor);
+    color: var(--text-contrast);
+    background-color: var(--surface-secondary);
 }
 
 .button[data-size="large"] {
