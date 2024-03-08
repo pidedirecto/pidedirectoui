@@ -1,0 +1,13 @@
+.container {
+    width: 100%;
+    color: var(--fontColorNormal);
+    font-family: var(--fontNormal);
+    font-size: var(--fontSizeSmall);
+    cursor: pointer;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container:hover {
+    background-color: var(--fontHoverColor);
+}

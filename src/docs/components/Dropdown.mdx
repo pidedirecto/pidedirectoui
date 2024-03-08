@@ -1,0 +1,71 @@
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+
+import * as DropDownStories from '../../stories/DropDown.stories';
+import * as DropDownItemStories from '../../stories/DropDownItem.stories';
+
+<Meta of={DropDownStories} />
+
+# DropDown
+Renders a dropdown.
+
+<Canvas of={DropDownStories.Primary} sourceState={'none'} />
+
+If you need to show a list within the dropdown, you will have to use the `DropDownItem` component
+```tsx
+import { DropDown, DropDownItem } from '@pidedirecto/ui';
+
+<DropDown content='Show items'>
+    <DropDownItem>Item 1</DropDownItem>
+    <DropDownItem>Item 2</DropDownItem>
+    <DropDownItem>Item 3</DropDownItem>
+</DropDown>
+```
+
+The `DropDownItem` should only be used as children of `DropDown` component.
+
+The `DropDown` component accepts any type of React children, not only `DropDownItem` components, the children will be rendered in the dropdown card, but we recommend always rendering this custom content as children of some DropDownItem.
+
+You can pass any valid `React.Node` to the `content` prop, if this prop is of type `React.Element` the arrow will be hidden so it does no collide with any special content you want to show.
+
+<Canvas of={DropDownStories.CustomContent} sourceState={'none'} />
+
+```tsx
+import { DropDown, DropDownItem } from '@pidedirecto/ui';
+
+<DropDown
+    content=(
+        <div style={{ color: 'red' }}>Hi! I'm a custom content</div>
+    )
+>
+    <DropDownItem>Item 1</DropDownItem>
+    <DropDownItem>Item 2</DropDownItem>
+    <DropDownItem>Item 3</DropDownItem>
+</DropDown>
+```
+
+With the `content` and `variant` prop you can achieve rendering a contextual menu
+
+<Canvas of={DropDownStories.Icon} sourceState={'none'} />
+
+```tsx
+import { DropDown, DropDownItem } from '@pidedirecto/ui';
+import { ListIcon } from '@pidedirecto/ui/icons';
+
+<DropDown
+    content=(<ListIcon />)
+    variant='icon'
+>
+    <DropDownItem>Item 1</DropDownItem>
+    <DropDownItem>Item 2</DropDownItem>
+    <DropDownItem>Item 3</DropDownItem>
+</DropDown>
+```
+
+## API
+
+<ArgTypes of={DropDownStories} />
+
+## DropDownItem API
+
+<ArgTypes of={DropDownItemStories} />
+
