@@ -9,11 +9,16 @@ import classes from 'src/styles/dropDownItem.module.css';
 import { DropDownItemProps } from 'src/types/components/DropDownItem';
 import { classNames } from 'src/utils/css/classNames';
 
-export function DropDownItem({ children, classes: classesProp, selected }: DropDownItemProps): React.ReactElement {
+export function DropDownItem({ children, classes: classesProp, selected, onClick }: DropDownItemProps): React.ReactElement {
     const { closeDropDown } = useContext(DropDownContext);
 
+    const handleClick = () => {
+        onClick?.();
+        closeDropDown();
+    };
+
     return (
-        <div className={classNames(classes.container, classesProp?.container)} role='option' aria-selected={selected} onClick={closeDropDown}>
+        <div className={classNames(classes.container, classesProp?.container)} role='option' aria-selected={selected} onClick={handleClick}>
             {children}
         </div>
     );
