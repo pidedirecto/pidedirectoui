@@ -6,6 +6,7 @@ import { Children, useContext, useState } from 'react';
 import { LinearProgress } from 'src/components/LinearProgress';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
 import { UiLogEventTypes } from 'src/constants/UiLogEventType';
+import { normalizeUiStackTrace } from 'src/services/logEvent/normalizeUiStackTrace';
 import { useCreateUserClickedTabLogEvent } from 'src/services/logEvent/useCreateUserClickedTabLogEvent';
 import classes from 'src/styles/tabs.module.css';
 import { Tab, TabsProp } from 'src/types/components/Tabs';
@@ -30,7 +31,7 @@ export function Tabs({ tabs, loading, classes: classesProp, defaultValue, onChan
 
     const addTabToStackTrace = (tab: Tab) => {
         addElementToStackTrace({
-            element: tab.label,
+            element: normalizeUiStackTrace(`tab_${tab.label}`),
             uiLogEventType: UiLogEventTypes.USER_CLICKED_TAB,
         });
     };
