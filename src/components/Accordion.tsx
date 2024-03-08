@@ -6,7 +6,6 @@ import * as React from 'react';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
 import { UiLogEventTypes } from 'src/constants/UiLogEventType';
 import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
-import { normalizeUiStackTrace } from 'src/services/logEvent/normalizeUiStackTrace';
 import { useCreateUserToggledAccordionLogEvent } from 'src/services/logEvent/useCreateUserToggledAccordionLogEvent';
 import classes from 'src/styles/accordion.module.css';
 import { AccordionProps } from 'src/types/components/Accordion';
@@ -36,7 +35,7 @@ export function Accordion({ open, title, defaultOpened, children, classes: class
 
     const addAccordionToStackTrace = () => {
         addElementToStackTrace({
-            element: normalizeUiStackTrace(`accordion_${title ?? ''}`),
+            element: title ?? '',
             uiLogEventType: UiLogEventTypes.USER_TOGGLED_ACCORDION,
         });
     };
