@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function CreditCardIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
+export function CreditCardIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 24} height={height ?? size ?? 24} xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke={color ?? 'currentColor'}>
+        <svg {...props} width={width ?? size ?? 24} height={height ?? size ?? 24} xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke={color ?? 'currentColor'}>
             <title>{title}</title>
             <path
                 strokeLinecap='round'

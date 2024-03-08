@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function PideDirectoIcon({ title, width, height, size }: SvgIconProps): React.ReactElement {
+export function PideDirectoIcon({ title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 20} height={height ?? size ?? 20} viewBox='0 0 29 30' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 20} height={height ?? size ?? 20} viewBox='0 0 29 30' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <title>{title}</title>
             <path
                 d='M0.493164 0.0128977C0.635039 2.88286e-09 0.712425 0 0.802708 0C2.84054 0 4.87838 0 6.91621 0C7.09678 0 7.21286 0.0515907 7.32894 0.193465C10.0632 3.39209 12.8104 6.60361 15.5577 9.80224C15.6737 9.93122 15.6866 10.0215 15.5577 10.1634C13.3264 12.7687 11.0951 15.374 8.86376 17.9794C8.33496 18.5985 7.81905 19.2047 7.29024 19.8108C7.22575 19.8882 7.09678 19.9656 6.9936 19.9656C4.89127 19.9785 2.78895 19.9785 0.673732 19.9656C0.622141 19.9656 0.583448 19.9527 0.493164 19.9398C3.34355 16.5993 6.18104 13.2975 9.01853 9.96991C6.19394 6.681 3.36935 3.3663 0.493164 0.0128977Z'

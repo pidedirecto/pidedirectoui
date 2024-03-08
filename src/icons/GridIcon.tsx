@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function GridIcon({ title, width, height, color, size }: SvgIconProps): React.ReactElement {
+export function GridIcon({ title, width, height, color, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 13} height={height ?? size ?? 14} viewBox='0 0 13 14' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 13} height={height ?? size ?? 14} viewBox='0 0 13 14' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <title>{title}</title>
             <mask id='path-1-inside-1_1319_249' fill={color ?? 'currentColor'}>
                 <path
