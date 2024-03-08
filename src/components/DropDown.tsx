@@ -63,9 +63,7 @@ export function DropDown({ content, variant, children, disabled, preventClose, c
                 ) : (
                     <div className={classes.contentContainer}>
                         <div className={classes.content}>{content}</div>
-                        <div className={classes.icon}>
-                            <ArrowDownIcon />
-                        </div>
+                        <ArrowDownIcon className={classes.icon} />
                     </div>
                 )}
             </Button>
