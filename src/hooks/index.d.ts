@@ -1,5 +1,6 @@
 import { UseTheme } from "src/types/hooks/UseTheme";
 import { UseForm } from "src/types/hooks/UseForm";
+import { UseHasClickedOutside } from "src/types/hooks/UseHasClickedOutside";
 
 /**
  * Theme hook to override default components theme
@@ -14,3 +15,10 @@ export const useTheme: UseTheme
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useform--docs)
  */
 export const useForm: UseForm
+
+/**
+ * Hook to known when the user clicks outside an element
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-usehasclickedoutside--docs)
+ */
+export const useHasClickedOutside: UseHasClickedOutside
