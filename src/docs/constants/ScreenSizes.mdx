@@ -1,0 +1,21 @@
+import { Meta} from '@storybook/blocks';
+
+<Meta title="constants/ScreenSizes" />
+
+# ScreenSizes
+
+You can import it from `import { ScreenSizes } from '@pidedirecto/ui/constants'`
+
+```ts
+export const ScreenSizes = Object.freeze({
+    EXTRA_SMALL_SCREEN: 'EXTRA_SMALL_SCREEN',
+    SMALL_SCREEN: 'SMALL_SCREEN',
+    MEDIUM_SCREEN: 'MEDIUM_SCREEN',
+    LARGE_SCREEN: 'LARGE_SCREEN',
+});
+```
+
+- `EXTRA_SMALL_SCREEN` screen less than or equal to 600px
+- `SMALL_SCREEN` screen greater than 600px and less than or equal to 960px
+- `MEDIUM_SCREEN` screen greater than 960px and less than or equal to 1280px
+- `LARGE_SCREEN` screen greater than 1280px
