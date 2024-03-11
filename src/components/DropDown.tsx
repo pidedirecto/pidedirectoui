@@ -35,6 +35,11 @@ export function DropDown({ content, variant, children, disabled, preventClose, c
         return dropDownContainerRef.current?.getBoundingClientRect().top + (dropDownContainerRef.current?.clientHeight || 0) + 10;
     };
 
+    const getDropDownWidth = () => {
+        if (!dropDownContainerRef.current) return;
+        return dropDownContainerRef.current?.getBoundingClientRect().width;
+    };
+
     const handleCloseDropDown = () => {
         if (preventClose) return;
         setIsOpen(false);
@@ -66,7 +71,7 @@ export function DropDown({ content, variant, children, disabled, preventClose, c
                         className={classNames(classes.dropdown, classesProp?.dropdown)}
                         aria-labelledby={`listbox-${id.current}-button`}
                         aria-readonly={true}
-                        style={{ left: getDropDownLeft(), top: getDropDownTop(), width: '100%' }}
+                        style={{ left: getDropDownLeft(), top: getDropDownTop(), width: getDropDownWidth() }}
                         ref={dropDownRef}
                     >
                         <DropDownContext.Provider value={{ closeDropDown: handleCloseDropDown }}>{children}</DropDownContext.Provider>
