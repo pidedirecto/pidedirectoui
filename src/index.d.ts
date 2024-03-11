@@ -8,6 +8,7 @@ import { DraggableList } from "src/types/components/DraggableList";
 import { DraggableListItem } from "src/types/components/DraggableListItem";
 import { DropDown } from "src/types/components/DropDown";
 import { DropDownItem } from "src/types/components/DropDownItem";
+import { Select } from "src/types/components/Select";
 
 /**
  * Renders Checkbox
@@ -78,3 +79,10 @@ export const DropDown: DropDown
  * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-dropdown--docs)
  */
 export const DropDownItem: DropDownItem
+
+/**
+ * Renders select
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-select--docs)
+ */
+export const Select: Select

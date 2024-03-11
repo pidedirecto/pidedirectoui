@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.labelContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.selectError[data-variant="secondary"] {
+    border-color: var(--fontColorError) !important;
+}
+
+.optionContainer {
+    width: 100%;
+}
+
+.topContainer {
+    width: 100%;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+.inputContainer {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.option {
+    font-family: var(--fontNormal);
+    font-size: var(--fontSizeNormal);
+    color: var(--fontColorNormal);
+    padding: 8px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.option:hover {
+    background-color: var(--fontHoverColor);
+    cursor: pointer;
+}
