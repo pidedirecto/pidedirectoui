@@ -87,16 +87,21 @@ export function Select({
     const selectedValues = getValue();
 
     return (
-        <div className={classes.container}>
+        <div className={classNames(classes.container, classesProp?.container)}>
             {!!label && (
                 <div className={classes.labelContainer}>
                     <Label aria-disabled={!!disabled} error={error}>
                         {label}
                     </Label>
-                    {tooltip && <Tooltip text={tooltip} />}
+                    {!!tooltip && <Tooltip text={tooltip} />}
                 </div>
             )}
-            <DropDown content={getPlaceholder()} disabled={disabled} classes={{ button: classNames(classesProp?.button, error && classes.selectError) }} preventClose={preventClose}>
+            <DropDown
+                content={getPlaceholder()}
+                disabled={disabled}
+                classes={{ button: classNames(classes.select, classesProp?.button, error && classes.selectError), container: classNames(classes.selectContainer, classesProp?.selectContainer) }}
+                preventClose={preventClose}
+            >
                 {options.map((option) => {
                     const isSelected = selectedValues.includes(option.value);
                     return (

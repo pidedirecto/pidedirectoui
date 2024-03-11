@@ -12,6 +12,8 @@ export type SelectProps = {
         content?: React.ReactNode
     }>,
     classes?: {
+        container?: string,
+        selectContainer?: string,
         item?: string,
         button?: string,
     },

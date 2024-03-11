@@ -134,6 +134,22 @@ const meta: Meta<typeof Select> = {
             },
         },
         //@ts-ignore
+        'classes.container': {
+            description: 'CSS class to override the container style, this container contains the select, label and helper text',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        'classes.selectContainer': {
+            description: 'CSS class to override the select container style, this is only the select container',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         'classes.button': {
             description: 'CSS class to override the select button style',
             table: {

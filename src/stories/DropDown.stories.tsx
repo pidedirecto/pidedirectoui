@@ -55,6 +55,14 @@ const meta: Meta<typeof DropDown> = {
             },
         },
         //@ts-ignore
+        'classes.container': {
+            description: 'CSS class to override the container dropdown style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         'classes.button': {
             description: 'CSS class to override the button dropdown style',
             table: {
