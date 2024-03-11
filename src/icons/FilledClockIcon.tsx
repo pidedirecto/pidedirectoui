@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function FilledClockIcon({ title, color, width, height, size }: SvgIconProps): React.ReactElement {
+export function FilledClockIcon({ title, color, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width={width ?? size ?? 20} height={height ?? size ?? 20}>
+        <svg {...props} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width={width ?? size ?? 20} height={height ?? size ?? 20}>
             {title && <title>{title}</title>}
             <path
                 fillRule='evenodd'

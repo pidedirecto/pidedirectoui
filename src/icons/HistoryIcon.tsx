@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function HistoryIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
+export function HistoryIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg xmlns='http://www.w3.org/2000/svg' width={width ?? size ?? 18} height={height ?? size ?? 18} viewBox='0 0 18 18' fill='none'>
+        <svg {...props} xmlns='http://www.w3.org/2000/svg' width={width ?? size ?? 18} height={height ?? size ?? 18} viewBox='0 0 18 18' fill='none'>
             {title && <title>{title}</title>}
             <path
                 fill='none'

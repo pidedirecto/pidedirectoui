@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function MotorcycleIcon({ width, height, title, color, size }: SvgIconProps): React.ReactElement {
+export function MotorcycleIcon({ width, height, color, title, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 90} height={height ?? size ?? 90} viewBox={`0 0 ${width ?? size ?? 90} ${height ?? size ?? 90}`} fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 50} height={height ?? size ?? 36} viewBox={`0 0 ${width ?? size ?? 50} ${height ?? size ?? 36}`} fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
             <path
                 d='M36.6667 55.9176C36.6667 59.6296 33.6833 62.6362 30 62.6362C26.3167 62.6362 23.3333 59.6296 23.3333 55.9176M67.25 54.238C68.1667 57.8324 66.0083 61.494 62.4417 62.4094C58.875 63.3332 55.2417 61.1581 54.3333 57.5637C54.0583 56.4719 54.0583 55.3214 54.3333 54.2296'

@@ -1,0 +1,63 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px 10px 10px;
+    border: 0;
+    border-bottom: 1px solid var(--primaryBorderColor);
+    background-color: transparent;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--secondaryBorderColor);
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    color: var(--secondaryHover);
+}
+
+.button svg {
+    transition: transform 0.2s linear
+}
+
+.button[data-opened="true"] svg {
+    transform: rotate(-180deg);
+}
+
+.icon {
+    align-self: start;
+    padding-top: 5px;
+}
+
+.accordion {
+    width: 100%;
+    transition: height 0.25s linear;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.title {
+    font-family: var(--fontSemiBold);
+    font-size: var(--fontSizeExtraLarge);
+    margin: 0;
+    color: var(--fontColorNormal);
+    text-align: left;
+}
+
+.caption {
+    font-family: var(--fontNormal);
+    color: var(--secondaryColor);
+    font-size: var(--fontSizeSmall);
+}

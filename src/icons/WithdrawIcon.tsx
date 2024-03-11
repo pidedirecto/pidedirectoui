@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function WithdrawIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
+export function WithdrawIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 289} height={height ?? size ?? 284} viewBox='0 0 289 284' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 289} height={height ?? size ?? 284} viewBox='0 0 289 284' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <title>{title}</title>
             <path
                 fillRule='evenodd'

@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function PinIcon({ title, color, width, height, size }: SvgIconProps): React.ReactElement {
+export function PinIcon({ title, color, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 14} height={height ?? size ?? 14} viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 14} height={height ?? size ?? 14} viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
             <path
                 fillRule='evenodd'

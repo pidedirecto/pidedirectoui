@@ -62,6 +62,8 @@ function getUiLogEventTraceId(params: UiLogEventData): string {
             return normalizeUiStackTrace(`button_${params.element}`);
         case UiLogEventTypes.USER_CLICKED_TAB:
             return normalizeUiStackTrace(`tab_${params.element}`);
+        case UiLogEventTypes.USER_TOGGLED_ACCORDION:
+            return normalizeUiStackTrace(`accordion_${params.element}`);
         default:
             return params.element;
     }
@@ -77,6 +79,8 @@ function getUiLogEventMessage(params: UiLogEventData): string {
             return `button ${params.element} clicked`;
         case UiLogEventTypes.USER_CLICKED_TAB:
             return `tab ${params.element} clicked`;
+        case UiLogEventTypes.USER_TOGGLED_ACCORDION:
+            return `accordion ${params.element} toggled`;
         default:
             return `user interacted with ${params.element}`;
     }
@@ -107,6 +111,12 @@ function createUiLogEventData(params: CreateUiLogEventDataParams): Object {
         case UiLogEventTypes.USER_CLICKED_TAB:
             return {
                 tabId: params.elementId,
+                pathId: params.stackTrace,
+            };
+        case UiLogEventTypes.USER_TOGGLED_ACCORDION:
+            return {
+                title: params.uiLogEvent.element,
+                accordionId: params.elementId,
                 pathId: params.stackTrace,
             };
         default:

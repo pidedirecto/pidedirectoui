@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function StarIcon({ title, color, width, height, size }: SvgIconProps): React.ReactElement {
+export function StarIcon({ title, color, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg xmlns='http://www.w3.org/2000/svg' width={width ?? size ?? 30} height={height ?? size ?? 30} viewBox='0 0 33.111 33.111'>
+        <svg {...props} xmlns='http://www.w3.org/2000/svg' width={width ?? size ?? 30} height={height ?? size ?? 30} viewBox='0 0 33.111 33.111'>
             <title>{title}</title>
             <g transform='translate(2.759 2.759)'>
                 <path

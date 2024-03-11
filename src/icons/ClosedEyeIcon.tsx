@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function ClosedEyeIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
+export function ClosedEyeIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 20} height={height ?? size ?? 20} viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 20} height={height ?? size ?? 20} viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
             <path
                 d='M2.94167 2.05837C2.82319 1.94797 2.66649 1.88787 2.50457 1.89072C2.34265 1.89358 2.18816 1.95917 2.07365 2.07368C1.95914 2.18819 1.89355 2.34268 1.89069 2.5046C1.88784 2.66652 1.94794 2.82322 2.05834 2.9417L17.0583 17.9417C17.1156 18.0031 17.1846 18.0524 17.2612 18.0865C17.3379 18.1207 17.4207 18.139 17.5046 18.1405C17.5885 18.142 17.6718 18.1266 17.7497 18.0951C17.8275 18.0637 17.8982 18.0169 17.9575 17.9576C18.0169 17.8982 18.0637 17.8275 18.0951 17.7497C18.1265 17.6719 18.142 17.5885 18.1405 17.5046C18.139 17.4207 18.1206 17.3379 18.0865 17.2613C18.0523 17.1846 18.0031 17.1156 17.9417 17.0584L2.94167 2.05837ZM18.8967 10.4609C18.4475 11.8088 17.6977 13.0369 16.7042 14.0525L14.1217 11.47C14.4003 10.69 14.4517 9.84684 14.27 9.03868C14.0883 8.23053 13.6809 7.49057 13.0952 6.90486C12.5095 6.31914 11.7695 5.91173 10.9614 5.73002C10.1532 5.54831 9.31007 5.59975 8.53 5.87837L6.46584 3.8142C7.58836 3.3575 8.78897 3.12344 10.0008 3.12503C14.1425 3.12503 17.655 5.81087 18.8967 9.53337C18.9967 9.83503 18.9967 10.16 18.8967 10.4609Z'

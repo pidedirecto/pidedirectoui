@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function OutlinedLightBulbIcon({ title, color, width, height, size }: SvgIconProps): React.ReactElement {
+export function OutlinedLightBulbIcon({ title, color, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 18} height={height ?? size ?? 24} viewBox='0 0 18 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 18} height={height ?? size ?? 24} viewBox='0 0 18 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
 
             <path

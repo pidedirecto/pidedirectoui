@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function EyeIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
+export function EyeIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 22} height={height ?? size ?? 18} viewBox='0 0 22 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 22} height={height ?? size ?? 18} viewBox='0 0 22 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
             <path
                 d='M1.03601 9.322C0.967 9.11459 0.967 8.89041 1.03601 8.683C2.42301 4.51 6.36001 1.5 11 1.5C15.638 1.5 19.573 4.507 20.963 8.678C21.033 8.885 21.033 9.109 20.963 9.317C19.577 13.49 15.64 16.5 11 16.5C6.36201 16.5 2.42701 13.493 1.03701 9.322H1.03601Z'

@@ -1,14 +1,12 @@
 html {
   height: 100%;
   width: 100%;
-  font-size: 62.5%;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 body {
   height: 100%;
   width: 100%;
-  font-size: 1.6rem;
 }
 
 #root {
@@ -33,6 +31,7 @@ body {
   --fontSizeSmall: 12px;
   --fontSizeNormal: 14px;
   --fontSizeLarge: 16px;
+  --fontSizeExtraLarge: 18px;
 
   /* text colors */
   --fontColorNormal: #2E3748;
@@ -47,6 +46,7 @@ body {
   --primaryOutline: #1A73F9;
   --primaryBorderColor: #D9D9D9;
   --primaryDisabledColor: #F1F1F1;
+  --primaryBackogrund: #fafbfb;
 
   --secondaryColor: #616B79;
   --secondaryHover: #8A95A5;
