@@ -44,7 +44,6 @@ export const DepositIcon: SvgIcon
 export const DeviceIcon: SvgIcon
 export const DishIcon: SvgIcon
 export const IncomingIcon: SvgIcon
-export const WithdrawalIcon: SvgIcon
 export const CashRegisterShiftIcon: SvgIcon
 export const DocumentIcon: SvgIcon
 export const DoorbellIcon: SvgIcon

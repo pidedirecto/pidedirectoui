@@ -84,7 +84,6 @@ import { MapIcon } from 'src/icons/MapIcon';
 import { MapPinIcon } from 'src/icons/MapPinIcon';
 import { MegaphoneIcon } from 'src/icons/MegaphoneIcon';
 import { MilliliterIcon } from 'src/icons/MilliliterIcon';
-import { MinimalistMotorcycleIcon } from 'src/icons/MinimalistMotorcycleIcon';
 import { MobileIcon } from 'src/icons/MobileIcon';
 import { MoneyBagIcon } from 'src/icons/MoneyBagIcon';
 import { MoneyIcon } from 'src/icons/MoneyIcon';
@@ -131,7 +130,6 @@ import { UsersIcon } from 'src/icons/UsersIcon';
 import { VideoIcon } from 'src/icons/VideoIcon';
 import { WarningIcon } from 'src/icons/WarningIcon';
 import { WifiIcon } from 'src/icons/WifiIcon';
-import { WithdrawalIcon } from 'src/icons/WithdrawalIcon';
 import { WithdrawIcon } from 'src/icons/WithdrawIcon';
 import { XmlFileIcon } from 'src/icons/XmlFileIcon';
 import classes from 'src/styles/iconsList.module.css';
@@ -233,6 +231,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>CashDrawerIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <CashRegisterShiftIcon size={size} />
+                <span className={classes.iconName}>CashRegisterShiftIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <CashTransferIcon size={size} />
                 <span className={classes.iconName}>CashTransferIcon</span>
             </div>
@@ -317,14 +319,6 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>IncomingIcon</span>
             </div>
             <div className={classes.iconContainer}>
-                <WithdrawalIcon size={size} />
-                <span className={classes.iconName}>WithdrawalIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <CashRegisterShiftIcon size={size} />
-                <span className={classes.iconName}>CashRegisterShiftIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
                 <DocumentIcon size={size} />
                 <span className={classes.iconName}>DocumentIcon</span>
             </div>
@@ -393,6 +387,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>FoodBagIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <FoodBoxIcon size={size} />
+                <span className={classes.iconName}>FoodBoxIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <GearIcon size={size} />
                 <span className={classes.iconName}>GearIcon</span>
             </div>
@@ -447,14 +445,6 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <LitreIcon size={size} />
                 <span className={classes.iconName}>LitreIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <MinimalistMotorcycleIcon size={size} />
-                <span className={classes.iconName}>MinimalistMotorcycleIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <FoodBoxIcon size={size} />
-                <span className={classes.iconName}>FoodBoxIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <LockIcon size={size} />
