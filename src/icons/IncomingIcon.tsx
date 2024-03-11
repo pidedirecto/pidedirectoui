@@ -2,7 +2,7 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
 export function IncomingIcon({ width, height, title, color, size }: SvgIconProps): React.ReactElement {
     return (
