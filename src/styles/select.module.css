@@ -16,8 +16,8 @@
     gap: 4px;
 }
 
-.selectError[data-variant="secondary"] {
-    border-color: var(--fontColorError) !important;
+.selectError{
+    border-color: var(--fontColorError);
 }
 
 .select {
