@@ -17,8 +17,8 @@ export function FormSelect({ name, label, defaultValue, disabled, tooltip, requi
     } = useFormContext();
     const formContext = useContext(FormContext);
 
-    const errorMessage = getError(errors, name)?.message;
     const error = getError(errors, name);
+    const errorMessage = getError(errors, name)?.message;
 
     return (
         <Controller
