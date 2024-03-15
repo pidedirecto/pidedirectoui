@@ -6,6 +6,7 @@ import { HelperText } from 'src/components/HelperText';
 import { Label } from 'src/components/Label';
 import { Tooltip } from 'src/components/Tooltip';
 import { SearchIcon } from 'src/icons/SearchIcon';
+import { useCreateUserTypedInputLogEvent } from 'src/services/logEvent/useCreateUserTypedInputLogEvent';
 import classes from 'src/styles/input.module.css';
 import { InputProps } from 'src/types/components/Input';
 import { classNames } from 'src/utils/css/classNames';
@@ -23,9 +24,12 @@ export function Input({
     error,
     autoComplete,
     InputComponent,
+    onBlur,
     classes: classesProp,
     ...props
 }: InputProps): React.ReactElement {
+    const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
+
     const isSearchType = type === 'search';
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,8 +37,9 @@ export function Input({
         onChange?.(value, event);
     };
 
-    const handleInputBlur = () => {
-        //createUserTypedInputLogEvent({ pageContext, label, name, valueMessage: `${valueMessage}` });
+    const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+        createUserTypedInputLogEvent(label ?? name, value ?? '');
+        onBlur?.(e);
     };
 
     return (

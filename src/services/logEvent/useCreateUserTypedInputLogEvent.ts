@@ -5,14 +5,14 @@ import { useContext } from 'react';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
 import { UiLogEventTypes, type UiLogEventType } from 'src/constants/UiLogEventType';
 
-export function useCreateUserClickedSelectOptionLogEvent(): (label: string, option: string) => Promise<void> {
+export function useCreateUserTypedInputLogEvent(): (label: string, value: string) => Promise<void> {
     const uiLogEventTrackerContext = useContext(UiLogEventTrackerContext);
 
-    const handleCreateUiInteractionLogEvent = async (label: string, option: string) => {
+    const handleCreateUiInteractionLogEvent = async (label: string, value: string) => {
         uiLogEventTrackerContext.createUiLogEvent({
             element: label,
-            value: option,
-            uiLogEventType: UiLogEventTypes.USER_CLICKED_SELECT_OPTION as UiLogEventType,
+            value: value,
+            uiLogEventType: UiLogEventTypes.USER_TYPED_INPUT as UiLogEventType,
         });
     };
 

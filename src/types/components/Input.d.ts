@@ -3,6 +3,7 @@ import { HTMLProps } from "react";
 
 export type InputProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'onChange'> & {
     name: string,
+    value?: string,
     label?: string,
     tooltip?: string,
     helperText?: string,
