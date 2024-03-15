@@ -58,6 +58,13 @@ const meta: Meta<typeof Input> = {
             },
             control: false,
         },
+        inputRef: {
+            description: 'Input React.Ref',
+            table: {
+                type: { summary: 'React.Ref' },
+            },
+            control: false,
+        },
         InputComponent: {
             description: 'New input component to override the default one',
             table: {

@@ -23,6 +23,7 @@ export function Input({
     step,
     error,
     autoComplete,
+    inputRef,
     InputComponent,
     onBlur,
     classes: classesProp,
@@ -74,6 +75,7 @@ export function Input({
                 {!InputComponent && (
                     <input
                         {...props}
+                        ref={inputRef}
                         id={`${name}-input`}
                         type={type || 'text'}
                         className={classNames(classes.input, classesProp?.input)}

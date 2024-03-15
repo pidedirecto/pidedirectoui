@@ -2,6 +2,7 @@ import { Form } from "src/types/form/Form";
 import { FormCheckbox } from "src/types/form/FormCheckbox";
 import { FormSwitch } from "src/types/form/FormSwitch";
 import { FormSelect } from "src/types/form/FormSelect";
+import { FormTextField } from "src/types/form/FormTextField";
 
 
 /**
@@ -27,3 +28,9 @@ export const FormSwitch: FormSwitch
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formselect--docs)
  */
 export const FormSelect: FormSelect
+
+/**
+ * Form text component
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formtextfield--docs)
+ */
+export const FormTextField: FormTextField
