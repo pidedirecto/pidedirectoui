@@ -10,6 +10,7 @@ import { DropDown } from "src/types/components/DropDown";
 import { DropDownItem } from "src/types/components/DropDownItem";
 import { Select } from "src/types/components/Select";
 import { Tooltip } from "src/types/components/Tooltip";
+import { Input } from "src/types/components/Input";
 
 /**
  * Renders Checkbox
@@ -94,3 +95,10 @@ export const Select: Select
  * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-tooltip--docs)
  */
 export const Tooltip: Tooltip
+
+/**
+ * Renders Input
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-input--docs)
+ */
+export const Input: Input
