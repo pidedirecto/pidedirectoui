@@ -65,6 +65,20 @@ const meta: Meta<typeof Input> = {
             },
             control: false,
         },
+        leftAdornment: {
+            description: "Content to be rendered to the input's left",
+            table: {
+                type: { summary: 'React.Node' },
+            },
+            control: false,
+        },
+        rightAdornment: {
+            description: "Content to be rendered to the input's right",
+            table: {
+                type: { summary: 'React.Node' },
+            },
+            control: false,
+        },
         InputComponent: {
             description: 'New input component to override the default one',
             table: {

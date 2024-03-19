@@ -34,3 +34,9 @@ export const FormSelect: FormSelect
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formtextfield--docs)
  */
 export const FormTextField: FormTextField
+
+/**
+ * Form password component
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formpasswordfield--docs)
+ */
+export const FormPasswordField: FormPasswordField

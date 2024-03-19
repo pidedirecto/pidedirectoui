@@ -11,6 +11,8 @@ export type InputProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'onChan
     onChange?: (value: string, e: React.ChangeEvent<HTMLInputElement>) => void | Promise<void>,
     inputRef?: React.Ref<HTMLInputElement>,
     InputComponent?: React.FunctionComponent<any>,
+    leftAdornment?: React.ReactNode,
+    rightAdornment?: React.ReactNode,
     classes?: {
         container?: string,
         inputContainer?: string,

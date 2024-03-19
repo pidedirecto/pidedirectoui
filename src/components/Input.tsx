@@ -24,6 +24,8 @@ export function Input({
     error,
     autoComplete,
     inputRef,
+    leftAdornment,
+    rightAdornment,
     InputComponent,
     onBlur,
     classes: classesProp,
@@ -54,11 +56,12 @@ export function Input({
                 </div>
             )}
             <div data-error={error} className={classNames(classes.inputContainer, classesProp?.inputContainer)}>
-                {isSearchType && (
+                {isSearchType && !leftAdornment && (
                     <div className={classes.icon}>
                         <SearchIcon size={16} />
                     </div>
                 )}
+                {!!leftAdornment && leftAdornment}
                 {!!InputComponent && (
                     <InputComponent
                         {...props}
@@ -86,6 +89,7 @@ export function Input({
                         autoComplete={autoComplete || 'off'}
                     />
                 )}
+                {!!rightAdornment && rightAdornment}
             </div>
             {!!helperText && <HelperText error={error}>{helperText}</HelperText>}
         </div>
