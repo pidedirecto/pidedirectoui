@@ -2,7 +2,6 @@
     position: relative;
     border: 0;
     padding: 8px 12px;
-    width: fit-content;
     border-radius: 6px;
     background-color: var(--surface-brand-contrast);
     color: var(--text-invert);
@@ -58,7 +57,7 @@
     pointer-events: none;
 }
 
-.button[data-variant="outline"] {
+.outline {
     background-color: transparent;
     border: 1px solid var(--border-brand-contrast);
     color: var(--text-brand);
@@ -79,7 +78,7 @@
     pointer-events: none;
 }
 
-.button[data-variant="text"] {
+.text {
     border: 0;
     background-color: transparent;
     color: var(--text-secondary);
@@ -99,7 +98,7 @@
     pointer-events: none;
 }
 
-.button[data-variant="icon"] {
+.icon {
     width: 48px;
     height: 48px;
     border-radius: 48px;
@@ -107,6 +106,8 @@
     background-color: transparent;
     color: var(--icon-primary);
     padding: 6px 8px;
+    align-items: center;
+    justify-content: center;
 }
 
 .button[data-variant="icon"]:hover {

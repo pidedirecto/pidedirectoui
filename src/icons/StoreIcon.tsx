@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function StoreIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
+export function StoreIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 20} height={height ?? size ?? 20} viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 20} height={height ?? size ?? 20} viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <title>{title}</title>
             <path
                 d='M4.35253 1.875C3.93836 1.875 3.54086 2.04 3.24836 2.33333L2.16503 3.415C1.60522 3.97377 1.27812 4.72404 1.2497 5.51448C1.22128 6.30493 1.49366 7.07675 2.0119 7.67428C2.53014 8.27181 3.25568 8.65059 4.0422 8.73424C4.82873 8.81788 5.61771 8.60017 6.25003 8.125C6.77253 8.51667 7.42169 8.75 8.12503 8.75C8.82836 8.75 9.47836 8.51667 10 8.125C10.5217 8.51667 11.1717 8.75 11.875 8.75C12.5784 8.75 13.2275 8.51667 13.75 8.125C14.3823 8.60017 15.1713 8.81788 15.9579 8.73424C16.7444 8.65059 17.4699 8.27181 17.9882 7.67428C18.5064 7.07675 18.7788 6.30493 18.7504 5.51448C18.7219 4.72404 18.3948 3.97377 17.835 3.415L16.7517 2.3325C16.4588 2.0397 16.0617 1.87514 15.6475 1.875H4.35253Z'

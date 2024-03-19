@@ -1,0 +1,44 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as TooltipStories from '../../stories/Tooltip.stories';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+Renders a tooltip.
+
+<Canvas of={TooltipStories.Primary} />
+
+If you don't pass any children the tooltip will just render a question mark icon indicating that there is a tooltip there, but if you pass any children the tooltip will be wrapping the content passed and will be shown when you hover the content.
+
+<Canvas of={TooltipStories.Children} />
+
+## Position
+
+You can change the tooltip position
+
+- top
+<Canvas of={TooltipStories.Top} />
+
+- bottom
+<Canvas of={TooltipStories.Bottom} />
+
+- left
+<Canvas of={TooltipStories.Left} />
+
+- right, this is the default behaviour
+<Canvas of={TooltipStories.Right} />
+
+## Type
+
+You can change the tooltip type
+
+- error
+<Canvas of={TooltipStories.Error} />
+
+
+
+## API
+
+<ArgTypes of={TooltipStories} />
+

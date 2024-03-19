@@ -4,28 +4,30 @@
 
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
-import { Switch } from 'src/components/Switch';
-import { Form } from 'src/form/Form';
-import { FormSwitch } from 'src/form/FormSwitch';
+import { DropDown } from 'src/components/DropDown';
+import { DropDownItem } from 'src/components/DropDownItem';
+import { FoodBoxIcon } from 'src/icons/FoodBoxIcon';
+import { MotorcycleIcon } from 'src/icons/MotorcycleIcon';
 
 export function App(): React.ReactElement {
     const form = useForm();
     return (
         <div>
-            <Switch name={'asdas1'} label={'asdas'} />
-            <hr />
-            <Switch name={'asdas2'} label={'asdas'} checked={true} value={true} />
-            <hr />
-            <Switch name={'asdas3'} label={'asdas'} disabled />
-            <hr />
-            <Switch name={'asdas4'} label={'asdas'} checked={true} disabled />
-            <hr />
-            <Switch name={'asdas5'} label={'asdas'} error />
-            <hr />
-            <Form form={form} onSubmit={console.log}>
-                <FormSwitch name={'asda'} label={'form switch'} />
-                <button type={'submit'}>submit</button>
-            </Form>
+            <MotorcycleIcon />
+            <FoodBoxIcon />
+            <DropDown content={'here'}>
+                <DropDownItem>
+                    <div style={{ width: '100%', textAlign: 'center' }}>1283kasdjasd</div>
+                </DropDownItem>
+                <DropDownItem>
+                    <div style={{ width: '100%', textAlign: 'center' }}>1283kasdjasd</div>
+                </DropDownItem>
+                <DropDownItem>12312</DropDownItem>
+                <DropDownItem>12312</DropDownItem>
+                <DropDownItem>azdaksmdkasmd</DropDownItem>
+                <DropDownItem>sda</DropDownItem>
+                <DropDownItem>asdas</DropDownItem>
+            </DropDown>
         </div>
     );
 }

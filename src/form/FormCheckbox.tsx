@@ -17,7 +17,7 @@ export function FormCheckbox({ name, label, helperText, defaultValue, disabled, 
     } = useFormContext();
     const formContext = useContext(FormContext);
 
-    const errorMessage = getError(errors, name)?.message;
+    const error = getError(errors, name);
 
     return (
         <Controller
@@ -37,8 +37,8 @@ export function FormCheckbox({ name, label, helperText, defaultValue, disabled, 
                     disabled={isSubmitting || disabled || formContext.disabled}
                     aria-label={label ? undefined : name}
                     tooltip={tooltip}
-                    error={!!errorMessage}
-                    helperText={errorMessage ?? helperText}
+                    error={!!error}
+                    helperText={error?.errorMessage ?? helperText}
                 />
             )}
             defaultValue={defaultValue ?? false}

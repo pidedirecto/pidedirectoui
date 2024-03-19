@@ -3,8 +3,10 @@
  */
 import { useContext, useEffect, useRef, useState } from 'react';
 import * as React from 'react';
-import { PageContext } from 'src/components/Page';
+import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
+import { UiLogEventTypes } from 'src/constants/UiLogEventType';
 import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
+import { useCreateUserToggledAccordionLogEvent } from 'src/services/logEvent/useCreateUserToggledAccordionLogEvent';
 import classes from 'src/styles/accordion.module.css';
 import { AccordionProps } from 'src/types/components/Accordion';
 import { classNames } from 'src/utils/css/classNames';
@@ -12,7 +14,8 @@ import { classNames } from 'src/utils/css/classNames';
 export function Accordion({ open, title, defaultOpened, children, classes: classesProp, subText, renderIcon, onChange, iconTitle }: AccordionProps): React.ReactElement {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const accordionId = useRef(getId());
-    const pageContext = useContext(PageContext);
+    const { addElementToStackTrace } = useContext(UiLogEventTrackerContext);
+    const createUserToggledAccordionLogEvent = useCreateUserToggledAccordionLogEvent();
 
     const [currentHeight, setCurrentHeight] = useState('0px');
     const [accordionOpened, setAccordionOpened] = useState(!!defaultOpened || false);
@@ -24,15 +27,17 @@ export function Accordion({ open, title, defaultOpened, children, classes: class
     }, [accordionOpened, open, children]);
 
     const handleOnClickAccordion = () => {
-        // createUserToggledAccordionLogEvent({ pageContext, title });
+        createUserToggledAccordionLogEvent(title ?? '');
 
-        pageContext.clearStackTrace();
         if (onChange) onChange(!accordionOpened);
         setAccordionOpened(!accordionOpened);
     };
 
     const addAccordionToStackTrace = () => {
-        // pageContext.addElementToStackTrace(normalizeUiStackTrace(`accordion_${title || ''}`));
+        addElementToStackTrace({
+            element: title ?? '',
+            uiLogEventType: UiLogEventTypes.USER_TOGGLED_ACCORDION,
+        });
     };
 
     if (title) {

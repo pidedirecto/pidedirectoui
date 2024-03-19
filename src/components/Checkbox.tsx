@@ -8,7 +8,7 @@ import { Tooltip } from 'src/components/Tooltip';
 import { useCreateUserClickedCheckboxLogEvent } from 'src/services/logEvent/useCreateUserClickedCheckboxLogEvent';
 import classes from 'src/styles/checkbox.module.css';
 import { CheckboxProps } from 'src/types/components/Checkbox';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 import { classNames } from 'src/utils/css/classNames';
 
 export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, label, error, onChange, disabled, inputRef, ...props }: CheckboxProps): React.ReactElement {
@@ -52,9 +52,9 @@ export function Checkbox({ helperText, classes: classesProp, tooltip, name, id, 
     );
 }
 
-function CheckIcon({ title, color, width, height, size }: SvgIconProps): React.ReactElement {
+function CheckIcon({ title, color, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 9} height={height ?? size ?? 9} viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 9} height={height ?? size ?? 9} viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <title>{title}</title>
             <clipPath id='check-icon-clip-path'>
                 <path

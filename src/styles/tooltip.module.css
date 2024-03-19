@@ -2,6 +2,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    width: fit-content;
 }
 
 .text {
@@ -13,14 +14,15 @@
     font-family: var(--fontNormal);
     font-size: var(--fontSizeSmall);
     padding: 6px 12px;
-    display: none;
     border-radius: 4px;
     z-index: 99;
     width: max-content;
     max-width: 200px;
     text-align: center;
+    margin: 0;
+    display: none;
 }
 
-.visible {
-    display: flex;
+.text[aria-hidden="false"] {
+    display: block;
 }

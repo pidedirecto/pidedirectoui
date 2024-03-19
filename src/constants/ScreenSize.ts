@@ -2,8 +2,9 @@
  * @prettier
  */
 export const ScreenSizes = Object.freeze({
-    SMALL_SCREEN: 600,
-    MEDIUM_SCREEN: 960,
-    LARGE_SCREEN: 1280,
+    EXTRA_SMALL_SCREEN: 'EXTRA_SMALL_SCREEN',
+    SMALL_SCREEN: 'SMALL_SCREEN',
+    MEDIUM_SCREEN: 'MEDIUM_SCREEN',
+    LARGE_SCREEN: 'LARGE_SCREEN',
 });
 export type ScreenSize = (typeof ScreenSizes)[keyof typeof ScreenSizes];

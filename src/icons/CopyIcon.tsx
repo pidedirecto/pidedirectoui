@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function CopyIcon({ color, title, width, height, size }: SvgIconProps): React.ReactElement {
+export function CopyIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 17} height={height ?? size ?? 20} viewBox='0 0 17 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 17} height={height ?? size ?? 20} viewBox='0 0 17 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
             <path
                 d='M11.9091 14.7727V17.8409C11.9091 18.4055 11.4509 18.8636 10.8864 18.8636H2.02273C1.75148 18.8636 1.49135 18.7559 1.29955 18.5641C1.10775 18.3723 1 18.1122 1 17.8409V6.25C1 5.68546 1.45818 5.22727 2.02273 5.22727H3.72727C4.18416 5.22696 4.64028 5.26467 5.09091 5.34M11.9091 14.7727H14.9773C15.5418 14.7727 16 14.3145 16 13.75V9.31818C16 5.26364 13.0518 1.89909 9.18182 1.24909C8.73119 1.17376 8.27507 1.13605 7.81818 1.13637H6.11364C5.54909 1.13637 5.09091 1.59455 5.09091 2.15909V5.34M11.9091 14.7727H6.11364C5.84239 14.7727 5.58226 14.665 5.39046 14.4732C5.19866 14.2814 5.09091 14.0212 5.09091 13.75V5.34M16 11.3636V9.65909C16 8.84536 15.6767 8.06496 15.1014 7.48956C14.526 6.91417 13.7456 6.59091 12.9318 6.59091H11.5682C11.2969 6.59091 11.0368 6.48316 10.845 6.29136C10.6532 6.09956 10.5455 5.83943 10.5455 5.56818V4.20455C10.5455 3.80163 10.4661 3.40265 10.3119 3.03041C10.1577 2.65816 9.93171 2.31992 9.6468 2.03502C9.3619 1.75011 9.02366 1.52411 8.65142 1.36992C8.27917 1.21573 7.88019 1.13637 7.47727 1.13637H6.45455'

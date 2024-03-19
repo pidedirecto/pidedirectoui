@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function DishIcon({ title, color, width, height, size }: SvgIconProps): React.ReactElement {
+export function DishIcon({ title, color, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 90} height={height ?? size ?? 91} viewBox='10 10 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 90} height={height ?? size ?? 91} viewBox='10 10 70 70' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <title>{title}</title>
             <path
                 d='M45.6968 65.5C56.1092 65.5 64.5501 56.9934 64.5501 46.5C64.5501 36.0066 56.1092 27.5 45.6968 27.5C35.2844 27.5 26.8435 36.0066 26.8435 46.5C26.8435 56.9934 35.2844 65.5 45.6968 65.5Z'
@@ -36,7 +36,6 @@ export function DishIcon({ title, color, width, height, size }: SvgIconProps): R
                 strokeLinecap='round'
                 strokeLinejoin='round'
             />
-            <rect x='0.5' y='1' width='89' height='89' rx='44.5' stroke='#CBF7E9' />
         </svg>
     );
 }

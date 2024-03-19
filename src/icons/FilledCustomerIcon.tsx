@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function FilledCustomerIcon({ title, color, width, size, height }: SvgIconProps): React.ReactElement {
+export function FilledCustomerIcon({ title, color, width, size, height, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 12} height={height ?? size ?? 13} viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 12} height={height ?? size ?? 13} viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
             <path
                 fillRule='evenodd'

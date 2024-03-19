@@ -1,0 +1,30 @@
+import { Meta} from '@storybook/blocks';
+
+
+<Meta title="hooks/useHasClickedOutside" />
+
+# useHasClickedOutside
+
+Hook to know if a user has clicked outside a specific element.
+
+```tsx
+import { useHasClickedOutside } from '@pidedirecto/ui/hooks'
+
+const elementRef = useRef(null)
+useHasClickedOutside({
+    element: elementRef,
+    onClick: ({ hasClickedOutside, element }) => console.log(hasClickedOutside)
+})
+
+return (
+    <div ref={elementRef}>content</div>
+)
+```
+
+The hook needs an `element` to know if the click event on the page has been outside of it,
+we recommend using React refs to get the HTML element, but it can also be gotten with the document.getElement method.
+
+To listen to the onClick event you have to pass the `onClick` callback, it will be called each time the user clicks on the page.
+The onClick callback receives 2 arguments: `hasClickedOutside` a boolean value to know if the click has been done outside the element, and `element` which is the HTML element clicked.
+
+

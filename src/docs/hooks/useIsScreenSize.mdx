@@ -1,0 +1,21 @@
+import { Meta} from '@storybook/blocks';
+
+
+<Meta title="hooks/useIsScreenSize" />
+
+# useIsScreenSize
+
+Hook to know if current screen width is of specific size.
+
+```tsx
+import { useIsScreenSize } from '@pidedirecto/ui/hooks'
+import { ScreenSizes } from '@pidedirecto/ui/constants'
+
+const isSmallScreen = useIsScreenSize(ScreenSizes.SMALL_SCREEN)
+```
+
+In order to use this hook you have to use the `ScreenSizes` const.
+
+Try to avoid to use this hook for styling purposes, instead try to use always CSS media queries.
+
+

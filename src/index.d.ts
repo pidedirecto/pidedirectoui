@@ -6,6 +6,11 @@ import { Tabs } from "src/types/components/Tabs";
 import { Accordion } from "src/types/components/Accordion";
 import { DraggableList } from "src/types/components/DraggableList";
 import { DraggableListItem } from "src/types/components/DraggableListItem";
+import { DropDown } from "src/types/components/DropDown";
+import { DropDownItem } from "src/types/components/DropDownItem";
+import { Select } from "src/types/components/Select";
+import { Tooltip } from "src/types/components/Tooltip";
+import { Input } from "src/types/components/Input";
 
 /**
  * Renders Checkbox
@@ -59,6 +64,41 @@ export const DraggableList: DraggableList
 /**
  * Renders draggable list item
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-draggablelistitem--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-draggablelist--docs)
  */
 export const DraggableListItem: DraggableListItem
+
+/**
+ * Renders drop down
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-dropdown--docs)
+ */
+export const DropDown: DropDown
+
+/**
+ * Renders drop down item
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-dropdown--docs)
+ */
+export const DropDownItem: DropDownItem
+
+/**
+ * Renders select
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-select--docs)
+ */
+export const Select: Select
+
+/**
+ * Renders Tooltip
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-tooltip--docs)
+ */
+export const Tooltip: Tooltip
+
+/**
+ * Renders Input
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-input--docs)
+ */
+export const Input: Input

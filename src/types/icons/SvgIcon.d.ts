@@ -3,7 +3,7 @@
  */
 import * as React from 'react';
 
-export type SvgIconProps = {
+export type SvgIconProps = React.SVGAttributes & {
     width?: number;
     height?: number;
     size?: number;

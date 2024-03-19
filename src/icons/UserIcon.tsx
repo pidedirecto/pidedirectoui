@@ -2,11 +2,11 @@
  * @prettier
  */
 import * as React from 'react';
-import { SvgIconProps } from 'src/types/hooks/SvgIcon';
+import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function UserIcon({ title, width, height, color, size }: SvgIconProps): React.ReactElement {
+export function UserIcon({ title, width, height, color, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 112} height={height ?? size ?? 112} viewBox='0 0 113 112' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 112} height={height ?? size ?? 112} viewBox='0 0 113 112' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
 
             <path
