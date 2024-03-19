@@ -4,9 +4,9 @@
 import * as React from 'react';
 import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function FoodBoxIcon({ width, height, title, color, size }: SvgIconProps): React.ReactElement {
+export function FoodBoxIcon({ width, height, title, color, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg width={width ?? size ?? 90} height={height ?? size ?? 91} viewBox={`0 0 ${width ?? size ?? 90} ${width ?? size ?? 91}`} fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 90} height={height ?? size ?? 91} viewBox={`0 0 ${width ?? size ?? 90} ${width ?? size ?? 91}`} fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
             <path
                 d='M25.2734 42.3474L29.9626 37.6733C30.1353 37.5022 30.3669 37.4051 30.6086 37.4051H59.1784C59.4144 37.4051 59.6403 37.4964 59.8115 37.6588L64.7137 42.3445C64.8964 42.52 65 42.7621 65 43.0172V62.1081C65 64.0682 63.423 65.6557 61.4791 65.6557H28.5209C26.5755 65.6557 25 64.0667 25 62.1081V43.0056C25 42.7577 25.0978 42.5214 25.2734 42.3474Z'
