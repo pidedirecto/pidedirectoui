@@ -22,21 +22,6 @@ export function useTheme(theme: Theme): void {
         const rootElement: HTMLElement = document.querySelector(':root') as any;
         if (!rootElement) return;
 
-        //         --surface-primary: var(--neutral100);
-        //   --surface-secondary: var(--neutral300);
-        //   --surface-tertiary: var(--neutral400);
-        //   --surface-contrast: var(--neutral600);
-        //   --surface-heavy-contrast: var(--neutral700);
-        //   --surface-invert: var(--neutral900);
-        //   --surface-brand: var(--green100);
-        //   --surface-brand-secondary: var(--green200);
-        //   --surface-brand-contrast: var(--green500);
-        //   --surface-brand-heavy-contrast: var(--green600);
-        //   --surface-success: var(--green200);
-        //   --surface-info: var(--blue100);
-        //   --surface-warning: var(--orange100);
-        //   --surface-danger: var(--red100);
-
         if (theme.palette?.surface?.primary) rootElement.style.setProperty('--surface-primary', theme.palette?.surface?.primary);
         if (theme.palette?.surface?.secondary) rootElement.style.setProperty('--surface-secondary', theme.palette?.surface?.secondary);
         if (theme.palette?.surface?.tertiary) rootElement.style.setProperty('--surface-tertiary', theme.palette?.surface?.tertiary);
