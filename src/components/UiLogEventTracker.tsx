@@ -64,6 +64,10 @@ function getUiLogEventTraceId(params: UiLogEventData): string {
             return normalizeUiStackTrace(`tab_${params.element}`);
         case UiLogEventTypes.USER_TOGGLED_ACCORDION:
             return normalizeUiStackTrace(`accordion_${params.element}`);
+        case UiLogEventTypes.USER_CLICKED_SELECT_OPTION:
+            return normalizeUiStackTrace(`select_${params.element}`);
+        case UiLogEventTypes.USER_TYPED_INPUT:
+            return normalizeUiStackTrace(`input_${params.element}`);
         default:
             return params.element;
     }
@@ -81,6 +85,10 @@ function getUiLogEventMessage(params: UiLogEventData): string {
             return `tab ${params.element} clicked`;
         case UiLogEventTypes.USER_TOGGLED_ACCORDION:
             return `accordion ${params.element} toggled`;
+        case UiLogEventTypes.USER_CLICKED_SELECT_OPTION:
+            return `select ${params.element} changed with value ${params.value}`;
+        case UiLogEventTypes.USER_TYPED_INPUT:
+            return `input ${params.element} typed with value ${params.value}`;
         default:
             return `user interacted with ${params.element}`;
     }
@@ -119,6 +127,18 @@ function createUiLogEventData(params: CreateUiLogEventDataParams): Object {
                 accordionId: params.elementId,
                 pathId: params.stackTrace,
             };
+        case UiLogEventTypes.USER_CLICKED_SELECT_OPTION:
+            return {
+                selectedValue: params.uiLogEvent.value,
+                selectId: params.elementId,
+                pathId: params.stackTrace,
+            };
+        case UiLogEventTypes.USER_TYPED_INPUT:
+            return {
+                valueMessage: params.uiLogEvent.value,
+                inputId: params.elementId,
+                pathId: params.stackTrace,
+            };
         default:
             return {
                 label: params.uiLogEvent.element,
@@ -135,6 +155,7 @@ export type UiLogEventTrackerContextState = {
 
 type UiLogEventData = {
     element: string;
+    value?: string;
     uiLogEventType: UiLogEventType;
 };
 

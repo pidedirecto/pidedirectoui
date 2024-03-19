@@ -5,9 +5,7 @@ import { createContext, useRef, useState } from 'react';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { Button } from 'src/components/Button';
-import { ScreenSizes } from 'src/constants/ScreenSize';
 import { useHasClickedOutside } from 'src/hooks/useHasClickedOutside';
-import { useIsScreenSize } from 'src/hooks/useIsScreenSize';
 import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
 import classes from 'src/styles/dropDown.module.css';
 import { DropDownProps } from 'src/types/components/DropDown';
@@ -17,7 +15,6 @@ export function DropDown({ content, variant, children, disabled, preventClose, c
     const dropDownContainerRef = useRef<HTMLDivElement | null>(null);
     const dropDownRef = useRef<HTMLDivElement | null>(null);
     const id = useRef(normalizeContent(content));
-    const isExtraSmallScreen = useIsScreenSize(ScreenSizes.EXTRA_SMALL_SCREEN);
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -39,8 +36,8 @@ export function DropDown({ content, variant, children, disabled, preventClose, c
     };
 
     const getDropDownWidth = () => {
-        if (!isExtraSmallScreen) return;
-        return '100%';
+        if (!dropDownContainerRef.current) return;
+        return dropDownContainerRef.current?.getBoundingClientRect().width;
     };
 
     const handleCloseDropDown = () => {
@@ -49,7 +46,7 @@ export function DropDown({ content, variant, children, disabled, preventClose, c
     };
 
     return (
-        <div ref={dropDownContainerRef} className={classes.container}>
+        <div ref={dropDownContainerRef} className={classNames(classes.container, classesProp?.container)}>
             <Button
                 id={`listbox-${id.current}-button`}
                 classes={{ button: classNames(classes.button, classesProp?.button) }}

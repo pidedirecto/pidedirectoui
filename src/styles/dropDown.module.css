@@ -8,6 +8,7 @@
 .icon {
     transform: rotate(0deg);
     transition: 300ms ease-in-out;
+    flex-shrink: 0;
 }
 
 .button[data-open="true"] .icon {
@@ -35,6 +36,10 @@
 .content {
     display: flex;
     flex-grow: 1;
+    max-width: 98%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .textContainer {
@@ -45,7 +50,7 @@
 }
 
 .dropdown {
-    position: absolute;
+    position: fixed;
     top: 120%;
     min-width: 250px;
     max-height: 400px;

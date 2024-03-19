@@ -17,6 +17,13 @@ const meta: Meta<typeof DropDownItem> = {
             },
             control: false,
         },
+        onClick: {
+            description: 'Callback when the user clicks on the dropdown item',
+            table: {
+                type: { summary: 'function' },
+            },
+            control: false,
+        },
         classes: {
             description: 'Classes object to override dropdown item style',
             table: {

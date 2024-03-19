@@ -7,8 +7,8 @@ import { SvgIconProps } from 'src/types/icons/SvgIcon';
 export function PhoneIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
         <svg
+            {...props}
             xmlns='http://www.w3.org/2000/svg'
-            className='icon icon-tabler icon-tabler-phone'
             width={width ?? size ?? 24}
             height={height ?? size ?? 24}
             viewBox='0 0 24 24'

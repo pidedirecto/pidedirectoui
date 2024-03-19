@@ -7,6 +7,7 @@ export type DropDownProps = {
     preventClose?: boolean,
     children: React.ReactNode,
     classes?: {
+        container?: string,
         button?: string,
         dropdown?: string,
     },

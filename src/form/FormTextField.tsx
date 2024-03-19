@@ -4,12 +4,12 @@
 import { useContext } from 'react';
 import * as React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
-import { Checkbox } from 'src/components/Checkbox';
+import { Input } from 'src/components/Input';
 import { FormContext } from 'src/form/Form';
-import { FormCheckboxProps } from 'src/types/form/FormCheckbox';
+import { FormTextFieldProps } from 'src/types/form/FormTextField';
 import { getError } from 'src/utils/form/getError';
 
-export function FormCheckbox({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormCheckboxProps): React.ReactElement {
+export function FormTextField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormTextFieldProps): React.ReactElement {
     const {
         errors,
         control,
@@ -24,15 +24,15 @@ export function FormCheckbox({ name, label, helperText, defaultValue, disabled, 
             control={control}
             name={name}
             render={({ onChange, onBlur, value, name, ref }) => (
-                <Checkbox
+                <Input
                     {...inputProps}
                     inputRef={ref}
                     label={required ? `${label}*` : label}
                     onBlur={onBlur}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                        onChange(e.target.checked);
+                    value={value}
+                    onChange={(value: string) => {
+                        onChange(value);
                     }}
-                    checked={value}
                     name={name}
                     disabled={isSubmitting || disabled || formContext.disabled}
                     aria-label={label ? undefined : name}

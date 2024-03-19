@@ -13,3 +13,5 @@ export * from 'src/components/DraggableList';
 export * from 'src/components/DraggableListItem';
 export * from 'src/components/DropDown';
 export * from 'src/components/DropDownItem';
+export * from 'src/components/Select';
+export * from 'src/components/Input';

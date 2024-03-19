@@ -16,8 +16,19 @@ export function Button({ classes: classesProp, type, children, onClick, variant,
         createUserClickedButtonLogEvent(convertReactNodeToString(children));
     };
 
+    const getClassName = () => {
+        let className = classes.button;
+
+        if (variant === 'secondary') className = classNames(className, classes.secondary);
+        if (variant === 'outline') className = classNames(className, classes.outline);
+        if (variant === 'text') className = classNames(className, classes.text);
+        if (variant === 'icon') className = classNames(className, classes.icon);
+
+        return classNames(className, classesProp?.button);
+    };
+
     return (
-        <button {...props} data-variant={variant} type={type ?? 'button'} onClick={handleClick} className={classNames(classes.button, classesProp?.button)}>
+        <button {...props} data-variant={variant} type={type ?? 'button'} onClick={handleClick} className={getClassName()}>
             {children}
         </button>
     );
