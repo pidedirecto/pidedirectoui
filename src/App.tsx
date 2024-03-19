@@ -6,11 +6,15 @@ import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import { DropDown } from 'src/components/DropDown';
 import { DropDownItem } from 'src/components/DropDownItem';
+import { FoodBoxIcon } from 'src/icons/FoodBoxIcon';
+import { MotorcycleIcon } from 'src/icons/MotorcycleIcon';
 
 export function App(): React.ReactElement {
     const form = useForm();
     return (
         <div>
+            <MotorcycleIcon />
+            <FoodBoxIcon />
             <DropDown content={'here'}>
                 <DropDownItem>
                     <div style={{ width: '100%', textAlign: 'center' }}>1283kasdjasd</div>
