@@ -1,9 +1,9 @@
 .text {
     font-family: var(--fontLight);
     font-size: var(--fontSizeSmall);
-    color: var(--fontColorLight)
+    color: var(--text-contrast)
 }
 
 .textError {
-    color: var(--fontColorError)
+    color: var(--text-danger)
 }

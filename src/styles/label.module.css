@@ -1,7 +1,7 @@
 .label {
     font-size: var(--fontSizeNormal);
     font-family: var(--fontNormal);
-    color: var(--fontColorNormal);
+    color: var(--text-primary);
 }
 
 .label[for] {
@@ -9,9 +9,9 @@
 }
 
 .labelError {
-    color: var(--fontColorError);
+    color: var(--text-danger);
 }
 
 .label[aria-disabled="true"] {
-    color: var(--fontColorDisabled);
+    color: var(--text-contrast);
 }

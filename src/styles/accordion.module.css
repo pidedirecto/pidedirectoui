@@ -11,7 +11,7 @@
     align-items: center;
     padding: 0 10px 10px 10px;
     border: 0;
-    border-bottom: 1px solid var(--primaryBorderColor);
+    border-bottom: 1px solid var(--border-primary);
     background-color: transparent;
     cursor: pointer;
     gap: 10px;
@@ -21,11 +21,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--secondaryBorderColor);
+    border: 1px solid var(--border-primary);
     border-radius: 4px;
     width: 24px;
     height: 24px;
-    color: var(--secondaryHover);
+    color: var(--icon-primary);
 }
 
 .button svg {
@@ -52,12 +52,12 @@
     font-family: var(--fontSemiBold);
     font-size: var(--fontSizeExtraLarge);
     margin: 0;
-    color: var(--fontColorNormal);
+    color: var(--text-primary);
     text-align: left;
 }
 
 .caption {
     font-family: var(--fontNormal);
-    color: var(--secondaryColor);
+    color: var(--text-secondary);
     font-size: var(--fontSizeSmall);
 }

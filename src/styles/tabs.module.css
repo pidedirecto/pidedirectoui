@@ -34,7 +34,7 @@
     padding: 8px 24px;
     font-family: var(--fontNormal);
     font-size: var(--fontSizeNormal);
-    color: var(--fontColorNormal);
+    color: var(--text-primary);
     cursor: pointer;
     gap: 8px;
     background-color: transparent;
@@ -44,29 +44,30 @@
 }
 
 .tab:hover {
-    background-color: var(--fontHoverColor);
+    background-color: var(--surface-brand);
 }
 
 .tab[aria-selected="true"] {
     font-family: var(--fontMedium);
     text-transform: none;
     font-size: var(--fontSizeNormal);
-    color: var(--primaryColor);
-    border-bottom: 2px solid var(--primaryColor);
+    color: var(--text-brand);
+    border-bottom: 2px solid var(--border-brand-contrast);
 }
 
 .badge {
-    background-color: var(--primaryDisabledColor);
-    padding: 3px 13px;
-    border-radius: 10px;
+    background-color: var(--surface-tertiary);
+    color: var(--text-secondary);
+    padding: 2px 18px;
+    border-radius: 8px;
     font-family: var(--fontMedium);
-    width: 44px;
     font-size: var(--fontSizeSmall);
     text-align: center;
 }
 
 .badge[aria-selected="true"] {
-    background-color: var(--outlineHover);
+    background-color: var(--surface-brand);
+    color: var(--text-secondary);
 }
 
 .tabContainer {

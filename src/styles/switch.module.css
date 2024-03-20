@@ -17,7 +17,7 @@
     height: 24px;
     border-radius: 100px;
     position: relative;
-    background-color: var(--primaryBorderColor);
+    background-color: var(--neutral500);
     margin: 8px 0;
     flex-shrink: 0;
 }
@@ -26,7 +26,7 @@
    content: "";
    width: 20px;
    height: 20px;
-   background-color: #FFF;
+   background-color: var(--neutral100);
    border-radius: 50px;
    position: absolute;
    top: 2px;
@@ -35,7 +35,7 @@
 }
 
 .input:checked {
-    background-color: var(--primaryColor);
+    background-color: var(--green500);
 }
 
 .input:checked::before {
@@ -43,5 +43,5 @@
 }
 
 .input:disabled {
-    background-color: var(--primaryDisabledColor);
+    background-color: var(--neutral300);
 }

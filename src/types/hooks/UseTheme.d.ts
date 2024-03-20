@@ -4,26 +4,50 @@
 
 export type Theme = {
     palette?: {
-        primary?: {
-            color?: string;
-            hover?: string;
-            outline?: string;
-            border?: string;
-            disabled?: string;
+        surface?: {
+            primary?: string;
+            secondary?: string;
+            tertiary?: string;
+            contrast?: string;
+            heavyContrast?: string;
+            invert?: string;
+            brand?: string;
+            brandSecondary?: string;
+            brandContrast?: string;
+            brandHeavyContrast?: string;
+            success?: string;
+            info?: string;
+            warning?: string;
+            danger?: string;
         };
-        secondary?: {
-            color?: string;
-            hover?: string;
-            outline?: string;
-            border?: string;
-            disabled?: string;
+        text?: {
+            primary?: string;
+            contrast?: string;
+            secondary?: string;
+            invert?: string;
+            brand?: string;
+            success?: string;
+            info?: string;
+            warning?: string;
+            danger?: string;
         };
-        outline?: {
-            color?: string;
-            hover?: string;
-            outline?: string;
-            border?: string;
-            disabled?: string;
+        border?: {
+            primary?: string;
+            secondary?: string;
+            tertiary?: string;
+            invert?: string;
+            brand?: string;
+            brandContrast?: string;
+            success?: string;
+            info?: string;
+            warning?: string;
+            danger?: string;
+            brandOutline?: string;
+        };
+        icon?: {
+            primary?: string;
+            invert?: string;
+            brand?: string;
         };
     };
     font?: {
@@ -31,13 +55,6 @@ export type Theme = {
             normal?: string;
             small?: string;
             large?: string;
-        };
-        color?: {
-            normal?: string;
-            light?: string;
-            disabled?: string;
-            error?: string;
-            hover?: string;
         };
     };
 };
