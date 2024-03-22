@@ -20,6 +20,8 @@ export function FormCurrencyNumberStringField({
     disabled,
     tooltip,
     required,
+    min,
+    max,
     rules,
     maximumDigits,
     inputProps,
@@ -61,6 +63,8 @@ export function FormCurrencyNumberStringField({
             defaultValue={defaultValue ?? false}
             rules={{
                 required,
+                min,
+                max,
                 ...rules,
             }}
         />

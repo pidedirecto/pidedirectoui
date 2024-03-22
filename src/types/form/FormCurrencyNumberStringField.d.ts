@@ -13,6 +13,8 @@ export type FormCurrencyNumberStringFieldProps = {
     disabled?: boolean;
     maximumDigits?: number;
     required?: ValidationRule<boolean>;
+    min?: ValidationRule<number>;
+    max?: ValidationRule<number>;
     tooltip?: string;
     rules?: Record<string, ValidationRule<any>>;
     inputProps?: InputProps;

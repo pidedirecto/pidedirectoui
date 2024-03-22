@@ -50,9 +50,21 @@ const meta: Meta<typeof FormCurrencyNumberStringField> = {
             },
         },
         required: {
-            description: `Sets checkbox as required, can be boolean or ${createLink('https://react-hook-form.com/docs/useform/register#options', 'rule object')}`,
+            description: `Sets input as required, can be boolean or ${createLink('https://react-hook-form.com/docs/useform/register#options', 'rule object')}`,
             table: {
                 type: { summary: 'boolean | object' },
+            },
+        },
+        min: {
+            description: `Sets input as required, can be a number or ${createLink('https://react-hook-form.com/docs/useform/register#options', 'rule object')}`,
+            table: {
+                type: { summary: 'number | object' },
+            },
+        },
+        max: {
+            description: `Sets input as required, can be a number or ${createLink('https://react-hook-form.com/docs/useform/register#options', 'rule object')}`,
+            table: {
+                type: { summary: 'number | object' },
             },
         },
         tooltip: {

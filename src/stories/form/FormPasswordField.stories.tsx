@@ -50,7 +50,7 @@ const meta: Meta<typeof FormPasswordField> = {
             },
         },
         required: {
-            description: `Sets checkbox as required, can be boolean or ${createLink('https://react-hook-form.com/docs/useform/register#options', 'rule object')}`,
+            description: `Sets input as required, can be boolean or ${createLink('https://react-hook-form.com/docs/useform/register#options', 'rule object')}`,
             table: {
                 type: { summary: 'boolean | object' },
             },
