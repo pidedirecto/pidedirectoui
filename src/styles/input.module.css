@@ -18,7 +18,7 @@
     height: 42px;
     padding: 14px;
     width: 100%;
-    outline: 1px solid var(--primaryBorderColor);
+    border: 1px solid var(--border-primary);
     background-color: transparent;
     border-radius: 4px;
     position: relative;
@@ -30,16 +30,16 @@
 }
 
 .inputContainer[data-error="true"] {
-    outline-color: var(--fontColorError);
+    border: 2px solid var(--border-danger);
 }
 
 .inputContainer:focus{
-    outline: 2px solid var(--primaryOutline);
+    outline: 2px solid var(--border-brand-outline);
 }
 
 .input {
     box-sizing: border-box;
-    color: var(--fontColorNormal);
+    color: var(--text-primary);
     width: 100%;
     font-family: var(--fontLight);
     border: 0;
@@ -48,7 +48,7 @@
 }
 
 .icon {
-    color: var(--fontColorNormal);
+    color: var(--icon-primary);
     width: 16px;
     height: 16px;
 }
