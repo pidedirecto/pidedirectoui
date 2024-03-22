@@ -87,6 +87,7 @@
 
 .button[data-variant="text"]:hover {
     text-decoration: underline;
+    background-color: transparent;
 }
 
 .button[data-variant="text"]:focus {
