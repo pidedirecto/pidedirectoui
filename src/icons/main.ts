@@ -79,6 +79,7 @@ export * from 'src/icons/LinkIcon';
 export * from 'src/icons/ListIcon';
 export * from 'src/icons/LitreIcon';
 export * from 'src/icons/MotorcycleIcon';
+export * from 'src/icons/RestoreIcon';
 export * from 'src/icons/FoodBoxIcon';
 export * from 'src/icons/LockIcon';
 export * from 'src/icons/MapIcon';

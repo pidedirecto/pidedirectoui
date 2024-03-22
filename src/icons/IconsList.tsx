@@ -107,6 +107,7 @@ import { PrinterIcon } from 'src/icons/PrinterIcon';
 import { QuestionIcon } from 'src/icons/QuestionIcon';
 import { ReceiptIcon } from 'src/icons/ReceiptIcon';
 import { RefreshIcon } from 'src/icons/RefreshIcon';
+import { RestoreIcon } from 'src/icons/RestoreIcon';
 import { RouteIcon } from 'src/icons/RouteIcon';
 import { SaveIcon } from 'src/icons/SaveIcon';
 import { ScissorsIcon } from 'src/icons/ScissorsIcon';
@@ -557,6 +558,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <RefreshIcon size={size} />
                 <span className={classes.iconName}>RefreshIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <RestoreIcon size={size} />
+                <span className={classes.iconName}>MotorcycleIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <RouteIcon size={size} />

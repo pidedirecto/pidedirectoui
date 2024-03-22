@@ -7,13 +7,13 @@ import { useForm } from 'react-hook-form';
 import { DropDown } from 'src/components/DropDown';
 import { DropDownItem } from 'src/components/DropDownItem';
 import { FoodBoxIcon } from 'src/icons/FoodBoxIcon';
-import { MotorcycleIcon } from 'src/icons/MotorcycleIcon';
+import { RestoreIcon } from 'src/icons/RestoreIcon';
 
 export function App(): React.ReactElement {
     const form = useForm();
     return (
         <div>
-            <MotorcycleIcon />
+            <RestoreIcon />
             <FoodBoxIcon />
             <DropDown content={'here'}>
                 <DropDownItem>
