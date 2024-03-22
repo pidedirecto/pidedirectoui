@@ -78,6 +78,7 @@ export function Input({
                 {!InputComponent && (
                     <input
                         {...props}
+                        value={value}
                         ref={inputRef}
                         id={`${name}-input`}
                         type={type || 'text'}

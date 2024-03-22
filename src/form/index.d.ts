@@ -3,6 +3,7 @@ import { FormCheckbox } from "src/types/form/FormCheckbox";
 import { FormSwitch } from "src/types/form/FormSwitch";
 import { FormSelect } from "src/types/form/FormSelect";
 import { FormTextField } from "src/types/form/FormTextField";
+import { FormCurrencyNumberStringField } from "src/types/form/FormCurrencyNumberStringField";
 
 
 /**
@@ -40,3 +41,9 @@ export const FormTextField: FormTextField
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formpasswordfield--docs)
  */
 export const FormPasswordField: FormPasswordField
+
+/**
+ * Form currency number string component
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formcurrencynumberstringfield--docs)
+ */
+export const FormCurrencyNumberStringField: FormCurrencyNumberStringField

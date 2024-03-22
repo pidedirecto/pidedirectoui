@@ -8,3 +8,4 @@ export * from 'src/form/FormSwitch';
 export * from 'src/form/FormSelect';
 export * from 'src/form/FormTextField';
 export * from 'src/form/FormPasswordField';
+export * from 'src/form/FormCurrencyNumberStringField';
