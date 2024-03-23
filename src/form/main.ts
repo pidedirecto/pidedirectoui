@@ -11,3 +11,4 @@ export * from 'src/form/FormPasswordField';
 export * from 'src/form/FormCurrencyNumberStringField';
 export * from 'src/form/FormEmailField';
 export * from 'src/form/FormColorField';
+export * from 'src/form/FormIntegerField';

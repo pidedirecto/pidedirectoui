@@ -6,6 +6,7 @@ import { FormTextField } from "src/types/form/FormTextField";
 import { FormCurrencyNumberStringField } from "src/types/form/FormCurrencyNumberStringField";
 import { FormEmailField } from "src/types/form/FormEmailField";
 import { FormColorField } from "src/types/form/FormColorField";
+import { FormIntegerField } from "src/types/form/FormIntegerField";
 
 
 /**
@@ -58,6 +59,12 @@ export const FormEmailField: FormEmailField
 
 /**
  * Form color component
- * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formemailfield--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formcolorfield--docs)
  */
 export const FormColorField: FormColorField
+
+/**
+ * Form integer component
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formintegerfield--docs)
+ */
+export const FormIntegerField: FormIntegerField
