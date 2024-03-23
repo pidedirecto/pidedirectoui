@@ -56,7 +56,7 @@ export function FormPasswordField({ name, label, helperText, defaultValue, disab
                     }
                 />
             )}
-            defaultValue={defaultValue ?? ''}
+            defaultValue={defaultValue ?? null}
             rules={{
                 required,
                 ...rules,

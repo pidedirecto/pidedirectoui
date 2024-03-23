@@ -44,7 +44,7 @@ export function FormColorField({ name, label, helperText, defaultValue, disabled
                     classes={{ inputContainer: classes.inputContainer, input: classes.input }}
                 />
             )}
-            defaultValue={defaultValue ?? ''}
+            defaultValue={defaultValue ?? null}
             rules={{
                 required,
                 ...rules,

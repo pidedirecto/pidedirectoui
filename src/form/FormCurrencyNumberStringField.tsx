@@ -60,7 +60,7 @@ export function FormCurrencyNumberStringField({
                     inputMode='numeric'
                 />
             )}
-            defaultValue={defaultValue ?? false}
+            defaultValue={defaultValue ?? null}
             rules={{
                 required,
                 min,

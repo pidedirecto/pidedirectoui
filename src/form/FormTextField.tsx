@@ -41,7 +41,7 @@ export function FormTextField({ name, label, helperText, defaultValue, disabled,
                     helperText={error?.errorMessage ?? helperText}
                 />
             )}
-            defaultValue={defaultValue ?? false}
+            defaultValue={defaultValue ?? null}
             rules={{
                 required,
                 ...rules,

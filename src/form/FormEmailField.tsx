@@ -43,7 +43,7 @@ export function FormEmailField({ name, label, helperText, defaultValue, disabled
                     inputMode='email'
                 />
             )}
-            defaultValue={defaultValue ?? ''}
+            defaultValue={defaultValue ?? null}
             rules={{
                 required,
                 pattern: {
