@@ -1,0 +1,17 @@
+.inputContainer {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    width: 34px;
+    height: 34px;
+    border-radius: 34px;
+}
+
+.input:hover {
+    cursor: pointer;
+}
