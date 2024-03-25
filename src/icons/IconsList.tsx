@@ -561,7 +561,7 @@ export function IconsList(): React.ReactElement {
             </div>
             <div className={classes.iconContainer}>
                 <RestoreIcon size={size} />
-                <span className={classes.iconName}>MotorcycleIcon</span>
+                <span className={classes.iconName}>RestoreIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <RouteIcon size={size} />
