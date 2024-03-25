@@ -8,6 +8,7 @@ export type FormProps = {
     form: UseFormMethods<Record<string, any>>;
     onSubmit: (formValues: Record<string, any>) => void;
     disabled?: boolean;
+    id?: string;
     disableSubmitOnEnterKey?: boolean;
     classes?: {
         form: string;

@@ -6,7 +6,7 @@ import * as React from 'react';
 import { FormProvider } from 'react-hook-form';
 import { FormProps } from 'src/types/form/Form';
 
-export function Form({ form, onSubmit, disabled, disableSubmitOnEnterKey, classes: classesProp, children }: FormProps): React.ReactElement {
+export function Form({ form, onSubmit, disabled, id, disableSubmitOnEnterKey, classes: classesProp, children }: FormProps): React.ReactElement {
     return (
         <FormProvider {...form}>
             <FormContext.Provider value={{ disabled: !!disabled }}>
@@ -25,6 +25,7 @@ export function Form({ form, onSubmit, disabled, disableSubmitOnEnterKey, classe
                     }
                     className={classesProp?.form}
                     noValidate
+                    id={id}
                 >
                     {children}
                 </form>

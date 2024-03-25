@@ -37,6 +37,12 @@ const meta: Meta<typeof Form> = {
                 type: { summary: 'boolean' },
             },
         },
+        id: {
+            description: 'Form id',
+            table: {
+                type: { summary: 'string' },
+            },
+        },
         disableSubmitOnEnterKey: {
             description: 'Disables onSubmit when click on enter key',
             table: {
