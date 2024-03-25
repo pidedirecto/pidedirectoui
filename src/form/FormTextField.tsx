@@ -38,7 +38,7 @@ export function FormTextField({ name, label, helperText, defaultValue, disabled,
                     aria-label={label ? undefined : name}
                     tooltip={tooltip}
                     error={!!error}
-                    helperText={error?.errorMessage ?? helperText}
+                    helperText={error?.message ?? helperText}
                 />
             )}
             defaultValue={defaultValue ?? null}

@@ -36,9 +36,9 @@ export function FormPasswordField({ name, label, helperText, defaultValue, disab
                     {...inputProps}
                     type={showPassword ? 'text' : 'password'}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={required ? `${label ?? ''}*` : label}
                     onBlur={onBlur}
-                    value={value}
+                    value={value ?? ''}
                     onChange={(value: string) => {
                         onChange(value);
                     }}
@@ -47,7 +47,7 @@ export function FormPasswordField({ name, label, helperText, defaultValue, disab
                     aria-label={label ? undefined : name}
                     tooltip={tooltip}
                     error={!!error}
-                    helperText={error?.errorMessage ?? helperText}
+                    helperText={error?.message ?? helperText}
                     rightAdornment={
                         <Button variant='icon' onClick={togglePassword} classes={{ button: classes.button }}>
                             {!!showPassword && <EyeIcon />}
@@ -58,8 +58,11 @@ export function FormPasswordField({ name, label, helperText, defaultValue, disab
             )}
             defaultValue={defaultValue ?? null}
             rules={{
-                required,
                 ...rules,
+                required: {
+                    value: true,
+                    message: 'required',
+                },
             }}
         />
     );

@@ -39,7 +39,7 @@ export function FormColorField({ name, label, helperText, defaultValue, disabled
                     aria-label={label ? undefined : name}
                     tooltip={tooltip}
                     error={!!error}
-                    helperText={error?.errorMessage ?? helperText}
+                    helperText={error?.message ?? helperText}
                     type='color'
                     classes={{ inputContainer: classes.inputContainer, input: classes.input }}
                 />

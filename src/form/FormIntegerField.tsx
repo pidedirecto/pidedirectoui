@@ -41,7 +41,7 @@ export function FormIntegerField({ name, label, helperText, defaultValue, disabl
                     aria-label={label ? undefined : name}
                     tooltip={tooltip}
                     error={!!error}
-                    helperText={error?.errorMessage ?? helperText}
+                    helperText={error?.message ?? helperText}
                     type='number'
                     inputMode='numeric'
                     classes={{ input: classes.input }}

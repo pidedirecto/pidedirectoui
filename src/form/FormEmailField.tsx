@@ -39,7 +39,7 @@ export function FormEmailField({ name, label, helperText, defaultValue, disabled
                     tooltip={tooltip}
                     error={!!error}
                     rightAdornment='@'
-                    helperText={error?.errorMessage ?? helperText}
+                    helperText={error?.message ?? helperText}
                     inputMode='email'
                 />
             )}

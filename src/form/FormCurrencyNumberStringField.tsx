@@ -55,7 +55,7 @@ export function FormCurrencyNumberStringField({
                     aria-label={label ? undefined : name}
                     tooltip={tooltip}
                     error={!!error}
-                    helperText={error?.errorMessage ?? helperText}
+                    helperText={error?.message ?? helperText}
                     leftAdornment={'$'}
                     inputMode='numeric'
                 />
