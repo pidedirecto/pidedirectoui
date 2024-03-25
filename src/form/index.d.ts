@@ -7,6 +7,7 @@ import { FormCurrencyNumberStringField } from "src/types/form/FormCurrencyNumber
 import { FormEmailField } from "src/types/form/FormEmailField";
 import { FormColorField } from "src/types/form/FormColorField";
 import { FormIntegerField } from "src/types/form/FormIntegerField";
+import { FormPasswordField } from "src/types/form/FormPasswordField";
 
 
 /**
