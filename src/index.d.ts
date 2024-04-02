@@ -11,6 +11,7 @@ import { DropDownItem } from "src/types/components/DropDownItem";
 import { Select } from "src/types/components/Select";
 import { Tooltip } from "src/types/components/Tooltip";
 import { Input } from "src/types/components/Input";
+import { VirtualizedList } from "src/types/components/VirtualizedList";
 
 /**
  * Renders Checkbox
@@ -102,3 +103,10 @@ export const Tooltip: Tooltip
  * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-input--docs)
  */
 export const Input: Input
+
+/**
+ * Renders VirtualizedList
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-virtualizedlist--docs)
+ */
+export const VirtualizedList: VirtualizedList

@@ -1,0 +1,40 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as VirtualizedListStories from '../../stories/VirtualizedList.stories';
+
+
+<Meta of={VirtualizedListStories} />
+
+# VirtualizedList
+Renders an VirtualizedList.
+
+
+The Virtualized list is capable of storing a large number of elements but will only render those that are seen in the window defined by the height of the component
+
+<Canvas of={VirtualizedListStories.Controlled} sourceState={'none'} />
+
+```tsx
+    const items=[
+        {value:'Item 1'},
+        {value:'Item 2'},
+        {value:'Item 3'},
+        {value:'Item 4'},
+        {value:'Item 5'},
+        {value:'Item 6'},
+        {value:'Item 7'},
+        {value:'Item 8'},
+        {value:'Item 9'},
+        {value:'Item 10'}]
+
+
+return (
+    <VirtualizedList height={120} itemSize={20} overScanCount={2}>
+        {items.map((item, idx) => (<div key={item.value}>{item.value}</div>))}
+    </VirtualizedList>
+);
+```
+
+## API
+
+<ArgTypes of={VirtualizedListStories} />
+
