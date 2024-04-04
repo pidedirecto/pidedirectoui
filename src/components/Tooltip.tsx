@@ -37,7 +37,6 @@ export function Tooltip({ text, id, forceOpen, children, type, position, classes
     const getTooltipStyle = () => {
         const containerRect = tooltipContainerRef?.current?.getBoundingClientRect();
         if (!containerRect) return {};
-        console.log('hereee');
 
         return removeNulls({
             top: getTopPosition(containerRect),
@@ -49,14 +48,14 @@ export function Tooltip({ text, id, forceOpen, children, type, position, classes
     };
 
     const getTopPosition = (containerRect: DOMRect) => {
-        if (position === 'top') return;
+        if (position === 'top') return 'unset';
         if (position === 'bottom') return containerRect.top + containerRect.height + 6;
         if (position === 'left') return containerRect.top;
         return containerRect.top;
     };
 
     const getLeftPosition = (containerRect: DOMRect) => {
-        if (position === 'left') return;
+        if (position === 'left') return 'unset';
         if (position === 'bottom') return containerRect.left;
         if (position === 'top') return containerRect.left;
         return containerRect.right + 6;
