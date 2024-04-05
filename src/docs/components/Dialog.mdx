@@ -1,0 +1,53 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as DialogStories from '../../stories/Dialog.stories';
+
+<Meta of={DialogStories} />
+
+# Dialog
+Renders a Dialog.
+
+<Canvas of={DialogStories.Primary} sourceState='none' />
+
+```tsx
+import { Dialog, Buttom } from '@pidedirecto/ui'
+
+const [open, setOpen] = useState(false)
+
+return (
+    <div>
+        <Button onClick={() => setOpen(true)}>Open Dialog</Button>
+        <Dialog open={open} onClose={() => setOpen(false)}>
+            This is the dialog content
+        </Dialog>
+    </div>
+)
+```
+
+## Positions
+
+The `Dialog` component can be positioned in 5 different ways around the window, by default the dialog is centered in the screen,
+but it can also be positioned in the 4 edges of the screen by passing the `position` prop.
+
+- top
+<Canvas of={DialogStories.TopDialog} sourceState='none' />
+
+- right
+<Canvas of={DialogStories.RightDialog} sourceState='none' />
+
+- bottom
+<Canvas of={DialogStories.BottomDialog} sourceState='none' />
+
+- left
+<Canvas of={DialogStories.LeftDialog} sourceState='none' />
+
+## Dialog mounting
+
+By default, when the dialog is closed it is removed from the DOM so the next time it opens it will have to be mounted again,
+this can be problematic if mounting the content of the dialog is expensive in terms of computing or rendering, if you want to keep mounted the dialog and its content
+all the time you can achieve this by passing the prop `keepMounted`.
+
+## API
+
+<ArgTypes of={DialogStories} />
+
