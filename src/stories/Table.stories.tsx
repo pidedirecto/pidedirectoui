@@ -1,0 +1,289 @@
+/**
+ * @prettier
+ */
+import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
+import { Table } from 'src/components/Table';
+
+const meta: Meta<typeof Table> = {
+    component: Table,
+    args: {
+        onRowClick: undefined,
+        columns: [
+            {
+                id: 'column1',
+                content: 'Header 1',
+            },
+            {
+                id: 'column2',
+                content: 'Header 2',
+            },
+            {
+                id: 'column3',
+                content: 'Header 3',
+            },
+        ],
+        rows: [
+            {
+                column1: 'Cell 1',
+                column2: 'Cell 2',
+                column3: 'Cell 3',
+            },
+            {
+                column1: 'Cell 4',
+                column2: 'Cell 5',
+                column3: 'Cell 6',
+            },
+            {
+                column1: 'Cell 7',
+                column2: 'Cell 8',
+                column3: 'Cell 9',
+            },
+        ],
+    },
+    argTypes: {
+        columns: {
+            description: 'Columns array',
+            type: {
+                required: true,
+                name: 'Array' as any,
+            },
+            table: {
+                type: { summary: 'array' },
+            },
+            control: false,
+        },
+        // @ts-ignore
+        'columns.id': {
+            description: 'Column id',
+            type: {
+                required: true,
+                name: 'string',
+            },
+            table: {
+                subcategory: 'Column API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        'columns.content': {
+            description: 'Header cell content',
+            type: {
+                required: true,
+                name: 'React.Node',
+            },
+            table: {
+                subcategory: 'Column API',
+                type: { summary: 'React.Node' },
+            },
+            control: false,
+        },
+        'columns.size': {
+            description: 'Column size, by default it is 1 ',
+            table: {
+                subcategory: 'Column API',
+                type: { summary: 'number' },
+            },
+            control: false,
+        },
+        rows: {
+            description: 'Rows array',
+            type: {
+                required: true,
+                name: 'string',
+            },
+            table: {
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        'rows.[column.id]': {
+            description: 'Cell content, the key should be one of the columns.id, if not it will be ignored, and the value can be any react node',
+            type: {
+                required: true,
+                name: 'React.Node',
+            },
+            table: {
+                subcategory: 'Row API',
+                type: { summary: 'React.Node' },
+            },
+            control: false,
+        },
+        'rows.className': {
+            description: 'CSS class to override the current row style',
+            table: {
+                subcategory: 'Row API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        'rows.onSearch': {
+            description: 'Callback to know if the row match the search query',
+            table: {
+                subcategory: 'Row API',
+                type: { summary: 'function' },
+            },
+            control: false,
+        },
+        hideHeaders: {
+            description: 'Hides table headers',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        emptyMessage: {
+            description: 'Message to show when there are not rows to show',
+            table: {
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        searchable: {
+            description: 'Sets if table should be searchable',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        searchInputProps: {
+            description: 'Input props for search input',
+            table: {
+                type: { summary: 'InputProps' },
+            },
+            control: false,
+        },
+        rowsPerPage: {
+            description: 'Enables pagination and sets rows per page',
+            table: {
+                type: { summary: 'number' },
+            },
+            control: false,
+        },
+        onRowClick: {
+            description: 'Function to be called when row is clicked',
+            table: {
+                type: { summary: 'function' },
+            },
+            control: false,
+        },
+        classes: {
+            description: 'Classes object to override table style',
+            table: {
+                type: { summary: 'object' },
+            },
+        },
+        //@ts-ignore
+        'classes.table': {
+            description: 'CSS class to override the table element style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        'classes.cell': {
+            description: 'CSS class to override the cells style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        'classes.header': {
+            description: 'CSS class to override the cell header style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        'classes.container': {
+            description: 'CSS class to override the table container style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+    },
+};
+export default meta;
+
+type Story = StoryObj<typeof Table>;
+
+export const Primary: Story = {
+    args: {
+        ...meta.args,
+    },
+};
+
+export const RowClick: Story = {
+    args: {
+        ...meta.args,
+        onRowClick: (row) => alert(`Row clicked! ${JSON.stringify(row)}`),
+    },
+};
+
+export const CellClick: Story = {
+    args: {
+        ...meta.args,
+        rows: [
+            {
+                column1: 'Cell 1',
+                column2: 'Cell 2',
+                column3: <span onClick={() => alert(`Cell clicked!`)}>Cell 3</span>,
+            },
+            {
+                column1: 'Cell 4',
+                column2: 'Cell 5',
+                column3: <span onClick={() => alert(`Cell clicked!`)}>Cell 6</span>,
+            },
+            {
+                column1: 'Cell 7',
+                column2: 'Cell 8',
+                column3: <span onClick={() => alert(`Cell clicked!`)}>Cell 9</span>,
+            },
+        ],
+    },
+};
+
+export const Pagination: Story = {
+    args: {
+        ...meta.args,
+        rowsPerPage: 1,
+    },
+};
+
+export const SearchableTable: Story = {
+    args: {
+        ...meta.args,
+        searchable: true,
+        rows: [
+            {
+                column1: 'Cell 1',
+                column2: 'Cell 2',
+                column3: 'Cell 3',
+                onSearch: (query: string) => {
+                    return 'row 1'.includes(query);
+                },
+            },
+            {
+                column1: 'Cell 4',
+                column2: 'Cell 5',
+                column3: 'Cell 6',
+                onSearch: (query: string) => {
+                    return 'row 2'.includes(query);
+                },
+            },
+            {
+                column1: 'Cell 7',
+                column2: 'Cell 8',
+                column3: 'Cell 9',
+                onSearch: (query: string) => {
+                    return 'row 3'.includes(query);
+                },
+            },
+        ],
+    },
+};

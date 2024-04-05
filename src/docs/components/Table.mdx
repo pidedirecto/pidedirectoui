@@ -1,0 +1,93 @@
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+
+import * as TableStories from '../../stories/Table.stories';
+
+<Meta of={TableStories} />
+
+# Table
+Renders a table
+
+<Canvas of={TableStories.Primary} />
+
+## Columns
+
+### id
+This is the column id, this is important because this will be the link between the column and the row, with this id you can tell to the component what should be rendered on this column
+
+### content
+This is the column header content, in other words the children of `th`, this content can be any valid React.Node, can be just a string or a React element
+
+### size
+This is the column size, this is optional and by default this has a value of 1, if you set a value of `2` means this column will grow in 200%
+
+```tsx
+const columns = [
+    {
+        id: 'column1',
+        content: 'This is the header 1'
+    },
+    {
+        id: 'column2',
+        content: (
+            <span style={{ color: 'red' }}>This is the header 2</span>
+        )
+    },
+    {
+        id: 'column3',
+        content: 'This is the header 3',
+        size: 2,
+    },
+]
+```
+
+## Rows
+
+This prop is an array of objects, each object should have one key per column, the key should be one of the ids defined in the columns array, for example, if you define a column with id `status`
+```tsx
+const column = {
+    id: 'column1',
+    content: 'Column 1'
+}
+```
+You should have objects inside the rows array with the key `status`, thus you tell what should be rendered in the column by the value of the key `status`, the value can be any React node
+```tsx
+const rows = [
+    {
+        column1: 'Cell 1'
+    },
+    {
+        column1: <div>Cell 2</div>
+    }
+]
+```
+
+## Table interaction
+
+If you want to know when the user clicks somewhere in the table you can do it with 2 different ways. You can know when the user clicks on a row by the `onRowClick` prop,
+this function will be called each time the user clicks on a row and will receive the row info you provided
+
+<Canvas of={TableStories.RowClick} />
+
+If you want to know when the user clicks on a cell or add more functionality to cells, you can pass whatever you want as cell content
+
+<Canvas of={TableStories.CellClick} />
+
+### Pagination
+
+To enable the pagination you have to pass the `rowsPerPage` prop indicating how many rows are going to be shown per page
+
+<Canvas of={TableStories.Pagination} />
+
+### Search
+
+To enable the search input you have to pass the `searchable` prop, this will show an input, in order to indicate that a row matches the query of the input you have to pass a `onSearch` key in the row object.
+The `onSearch` function will receive a query argument of type string and will expect a boolean response.
+
+For example in the next table searche for row 1, row 2 and row 3
+
+<Canvas of={TableStories.SearchableTable} />
+
+## API
+
+<ArgTypes of={TableStories} />
+

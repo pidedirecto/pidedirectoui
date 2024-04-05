@@ -12,6 +12,7 @@ import { Select } from "src/types/components/Select";
 import { Tooltip } from "src/types/components/Tooltip";
 import { Input } from "src/types/components/Input";
 import { VirtualizedList } from "src/types/components/VirtualizedList";
+import { Table } from "src/types/components/Table";
 
 /**
  * Renders Checkbox
@@ -110,3 +111,10 @@ export const Input: Input
  * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-virtualizedlist--docs)
  */
 export const VirtualizedList: VirtualizedList
+
+/**
+ * Renders Table
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-table--docs)
+ */
+export const Table: Table

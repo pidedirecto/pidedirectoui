@@ -16,3 +16,4 @@ export * from 'src/components/DropDownItem';
 export * from 'src/components/Select';
 export * from 'src/components/Input';
 export * from 'src/components/VirtualizedList';
+export * from 'src/components/Table';

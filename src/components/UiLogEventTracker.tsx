@@ -68,6 +68,8 @@ function getUiLogEventTraceId(params: UiLogEventData): string {
             return normalizeUiStackTrace(`select_${params.element}`);
         case UiLogEventTypes.USER_TYPED_INPUT:
             return normalizeUiStackTrace(`input_${params.element}`);
+        case UiLogEventTypes.USER_CLICKED_TABLE:
+            return normalizeUiStackTrace('table');
         default:
             return params.element;
     }
