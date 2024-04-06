@@ -10,7 +10,7 @@ Renders a Dialog.
 <Canvas of={DialogStories.Primary} sourceState='none' />
 
 ```tsx
-import { Dialog, Buttom } from '@pidedirecto/ui'
+import { Dialog, Button } from '@pidedirecto/ui'
 
 const [open, setOpen] = useState(false)
 
@@ -46,6 +46,31 @@ but it can also be positioned in the 4 edges of the screen by passing the `posit
 By default, when the dialog is closed it is removed from the DOM so the next time it opens it will have to be mounted again,
 this can be problematic if mounting the content of the dialog is expensive in terms of computing or rendering, if you want to keep mounted the dialog and its content
 all the time you can achieve this by passing the prop `keepMounted`.
+
+## Dialog actions
+
+You can also import `DialogActions` component to quickly format action buttons inside a dialog
+
+<Canvas of={DialogStories.DialogActionsDialog} sourceState='none' />
+
+```tsx
+import { Dialog, Button, DialogActions } from '@pidedirecto/ui'
+
+const [open, setOpen] = useState(false);
+
+return (
+    <div>
+        <Button onClick={() => setOpen(true)}>Open Dialog</Button>
+        <Dialog open={open} onClose={() => setOpen(false)} position='left'>
+            This is the dialog content
+            <DialogActions>
+                <Button variant='secondary'>Cancel</Button>
+                <Button>Accept</Button>
+            </DialogActions>
+        </Dialog>
+    </div>
+);
+```
 
 ## API
 

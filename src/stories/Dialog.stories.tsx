@@ -6,6 +6,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { Button } from 'src/components/Button';
 import { Dialog } from 'src/components/Dialog';
+import { DialogActions } from 'src/components/DialogActions';
 
 const meta: Meta<typeof Dialog> = {
     component: Dialog,
@@ -180,6 +181,28 @@ export const LeftDialog: Story = {
                 <Button onClick={() => setOpen(true)}>Open left Dialog</Button>
                 <Dialog open={open} onClose={() => setOpen(false)} position='left'>
                     This is the dialog content
+                </Dialog>
+            </div>
+        );
+    },
+};
+
+export const DialogActionsDialog: Story = {
+    args: {
+        ...meta.args,
+    },
+    render: () => {
+        const [open, setOpen] = useState(false);
+
+        return (
+            <div>
+                <Button onClick={() => setOpen(true)}>Open Dialog</Button>
+                <Dialog open={open} onClose={() => setOpen(false)}>
+                    This is the dialog content
+                    <DialogActions>
+                        <Button variant='secondary'>Cancel</Button>
+                        <Button>Accept</Button>
+                    </DialogActions>
                 </Dialog>
             </div>
         );
