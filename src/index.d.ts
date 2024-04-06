@@ -61,76 +61,76 @@ export const UiLogEventTracker: UiLogEventTracker
 /**
  * Renders draggable list
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-draggablelist--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-draggablelist--docs)
  */
 export const DraggableList: DraggableList
 
 /**
  * Renders draggable list item
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-draggablelist--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-draggablelist--docs)
  */
 export const DraggableListItem: DraggableListItem
 
 /**
  * Renders drop down
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-dropdown--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-dropdown--docs)
  */
 export const DropDown: DropDown
 
 /**
  * Renders drop down item
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-dropdown--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-dropdown--docs)
  */
 export const DropDownItem: DropDownItem
 
 /**
  * Renders select
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-select--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-select--docs)
  */
 export const Select: Select
 
 /**
  * Renders Tooltip
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-tooltip--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-tooltip--docs)
  */
 export const Tooltip: Tooltip
 
 /**
  * Renders Input
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-input--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-input--docs)
  */
 export const Input: Input
 
 /**
  * Renders VirtualizedList
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-virtualizedlist--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-virtualizedlist--docs)
  */
 export const VirtualizedList: VirtualizedList
 
 /**
  * Renders Table
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-table--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-table--docs)
  */
 export const Table: Table
 
 /**
  * Renders Dialog
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-dialog--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-dialog--docs)
  */
 export const Dialog: Dialog
 
 /**
  * Dialog actions container
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-dialog--docs#dialog-actions)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-dialog--docs#dialog-actions)
  */
 export const DialogActions: DialogActions
