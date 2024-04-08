@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import { Button } from 'src/components/Button';
 import { Dialog } from 'src/components/Dialog';
 import { DialogActions } from 'src/components/DialogActions';
+import { Image } from 'src/components/Image';
 import { UiLogEventTracker } from 'src/components/UiLogEventTracker';
 
 export function App(): React.ReactElement {
@@ -26,6 +27,7 @@ export function App(): React.ReactElement {
                         <Button>Accept</Button>
                     </DialogActions>
                 </Dialog>
+                <Image src={'https://images.letseat.mx/e4a9ed780b54925264e4ac45761707f0.png'} width={200} height={500} />
             </UiLogEventTracker>
         </div>
     );

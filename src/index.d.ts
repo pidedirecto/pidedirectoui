@@ -15,6 +15,7 @@ import { VirtualizedList } from "src/types/components/VirtualizedList";
 import { Table } from "src/types/components/Table";
 import { Dialog } from "src/types/components/Dialog";
 import { DialogActions } from "src/types/components/DialogActions";
+import { Image } from "src/types/components/Image";
 
 /**
  * Renders Checkbox
@@ -134,3 +135,10 @@ export const Dialog: Dialog
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-dialog--docs#dialog-actions)
  */
 export const DialogActions: DialogActions
+
+/**
+ * Renders Image
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-image--docs)
+ */
+export const Image: Image
