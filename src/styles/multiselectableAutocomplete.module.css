@@ -1,0 +1,150 @@
+.headContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.label {
+    font-family: var(--fontNormal);
+    color: var(--text-secondary);
+    font-size: var(--fontSizeSmall);
+    margin-bottom: 8px;
+}
+
+.numberItemsSelectedContainer {
+    font-family: var(--fontNormal);
+    background-color: var(--surface-secondary);
+    color: var(--surface-brand-heavy-contrast);
+    font-size: var(--fontSizeSmall);
+    text-align: center;
+    padding: 4px 10px 4px 10px;
+    min-width: 93px;
+    min-height: 26px;
+    margin-right: 12px;
+}
+
+.labelError {
+    color: var(--text-danger);
+}
+
+.input {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-family: var(--fontNormal);
+    border: 1px solid var(--border-secondary);
+    height: 42px;
+    align-items: center;
+    display: flex;
+}
+
+.inputError{
+    border: 2px solid var(--border-danger);
+}
+
+.helperText {
+    font-family: var(--fontLight);
+    color: var(--text-danger);
+}
+
+.listbox {
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    z-index: 10000;
+    position: absolute;
+    list-style: none;
+    background-color: var(--surface-primary);
+    overflow: auto;
+    max-height: 40vh;
+    border: 1px solid var(--border-secondary);
+}
+
+.listbox li[data-focus="true"]{
+    background-color: var(--surface-brand);
+    color: var(--text-invert);
+    cursor: pointer;
+ }
+
+.listbox li:active {
+    background-color: var(--surface-brand);
+    color: var(--text-invert);
+ }
+
+.itemContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 60px;
+    padding: 5px 10px;
+}
+
+.mobileNumberContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.numberOfOrders {
+    color: var(--text-primary);
+    font-size: var(--fontSizeSmall);
+    margin-left: 5px;
+    font-family: var(--fontNormal);
+}
+
+.itemText {
+    font-family: var(--fontNormal);
+    font-size: var(--fontSizeNormal),
+}
+
+.checkBoxRow {
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
+}
+
+.checkAllBoxRow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--text-info) !important;
+    font-family: var(--fontSizeNormal);
+    padding-bottom: 12px;
+    padding-top: 12px;
+    margin-left: 6px;
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.arrowAlignCenter {
+    margin-left: 6px;
+}
+
+.checkAllBoxRow:hover {
+    color: var(--text-info) !important;
+}
+
+@media (min-width: 600px) {
+    .label{
+        font-size: var(--fontSizeNormal);
+    }
+}
+
+@media (max-width: 600px) {
+    .input{
+        width: 100%;
+    }
+}
