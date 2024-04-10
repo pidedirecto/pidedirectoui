@@ -36,14 +36,16 @@ export function MultiselectableAutocomplete({
     const listboxContainerRef = useRef<HTMLDivElement | null>(null);
 
     const [inputValue, setInputValue] = useState('');
-    const [showOptions, setShowOptions] = useState(false);
 
     const { getRootProps, getInputProps, getListboxProps, getOptionProps, groupedOptions } = useAutocomplete({
         id: name,
         options: data,
         getOptionLabel,
+        getOptionKey: getOptionValue,
         getOptionDisabled,
     });
+
+    const { ref: inputRef, onChange: inputOnChange, ...inputProps } = getInputProps() ?? {};
 
     const handleItem = (itemId: string) => {
         if (getOptionDisabled?.(itemId)) return;
@@ -99,34 +101,21 @@ export function MultiselectableAutocomplete({
                     <Label htmlFor={`use-autocomplete-customer`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
                         {label}
                     </Label>
-                    {!showOptions && <span className={classes.numberItemsSelectedContainer}>{productsSelectedLabel}</span>}
+                    {<span className={classes.numberItemsSelectedContainer}>{productsSelectedLabel}</span>}
                 </div>
                 <Input
-                    {...getInputProps()}
-                    name={`use-autocomplete-customer`}
+                    {...(inputProps as any)}
                     type='search'
                     classes={{ input: classes.input, label: classes.inputError }}
-                    value={inputValue}
-                    onChange={(value, e) => {
-                        setInputValue(value);
-                        debouncedOnChange(e);
-                    }}
-                    onBlur={(e) => {
-                        setShowOptions(false);
-                        handleOnBlur(e);
-                    }}
-                    onFocus={(e) => {
-                        setShowOptions(true);
-                        handleOnFocus(e);
-                    }}
                     placeholder={placeholder}
                     disabled={disabled}
+                    inputRef={inputRef}
+                    onChange={(value, e) => inputOnChange?.(e)}
                 />
                 {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}
             </div>
             <div ref={listboxContainerRef} style={{ width: '100%' }}>
                 {groupedOptions.length > 0 &&
-                    showOptions &&
                     createPortal(
                         <ul
                             className={classNames(classes.listbox, classesProp?.optionsContainer)}
@@ -140,16 +129,10 @@ export function MultiselectableAutocomplete({
                                 </li>
                             )}
                             {groupedOptions.map((option: any, index: number) => (
-                                <>
-                                    <li
-                                        {...getOptionProps({ option, index })}
-                                        onClick={() => handleItem(getOptionValue(option))}
-                                        className={classNames(classes.checkBoxRow, classesProp?.optionContainer)}
-                                    >
-                                        <Checkbox name={option.value} value={option.value || undefined} checked={selectedItems?.includes(getOptionValue(option))} onChange={() => handleItem(option)} />
-                                        {renderOption(option)}
-                                    </li>
-                                </>
+                                <li {...getOptionProps({ option, index })} onClick={() => handleItem(getOptionValue(option))} className={classNames(classes.checkBoxRow, classesProp?.optionContainer)}>
+                                    <Checkbox name={option.value} value={option.value || undefined} checked={selectedItems?.includes(getOptionValue(option))} onChange={() => handleItem(option)} />
+                                    {renderOption(option)}
+                                </li>
                             ))}
                         </ul>,
                         document.body,
