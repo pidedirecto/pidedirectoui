@@ -1,0 +1,68 @@
+import { Meta} from '@storybook/blocks';
+
+
+<Meta title="hooks/createStore" />
+
+# createStore
+
+Creates a store with initial state and actions
+
+```tsx
+import { createStore } from '@pidedirecto/ui/hooks'
+
+
+export const [useNumbersStore, useNumbersAction] = createStore<State, Actions>({
+    initialState: {
+        numbers: []
+    },
+    actions: {
+        addNumber: (state, number) => {
+            state.numbers.push(number)
+        }
+    }
+})
+
+type State = {
+    numbers: Array<number>
+}
+
+type Actions = {
+    addNumber: (n: number) => void
+}
+```
+
+## useStore
+
+The first value returned by the `createStore` function is a `useStore` hook that will retrieve the value you want to get from state,
+using the previous example if you would like to get the `numbers` state from the store you should use `useNumbersStore` like
+
+```tsx
+const numbers = useNumbersStore(state => state.numbers)
+```
+
+The `useStore` hook expects a function as parameter, inside this function you will have to return what values you want from state.
+
+We recommend naming this hook with this format `use...anyNameHere...Store`
+
+## useAction
+
+The second value is a `useAction` function that will retrieve the action from the store you want to do,
+using the previous example if you would like to call the `addNumber` action you should do it as follows
+
+```tsx
+const addNumber = useNumbersAction(actions => actions.addNumber)
+
+const handleClick = () => {
+    addNumber(1)
+}
+```
+
+The `useAction` expects a function as parameter, inside this function you will have to return what action you want from state.
+
+We recommend naming this hook with this format `use...anyNameHere...Action`
+
+
+
+
+
+
