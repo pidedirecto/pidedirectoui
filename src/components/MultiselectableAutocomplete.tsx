@@ -2,7 +2,7 @@
  * @prettier
  */
 import { useAutocomplete } from '@mui/base/useAutocomplete';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { Checkbox } from 'src/components/Checkbox';
@@ -12,7 +12,6 @@ import { Label } from 'src/components/Label';
 import classes from 'src/styles/multiselectableAutocomplete.module.css';
 import { MultiselectableAutocompleteProps } from 'src/types/components/MultiselectableAutoComplete';
 import { classNames } from 'src/utils/css/classNames';
-import { debounce } from 'src/utils/function/debounce';
 
 export function MultiselectableAutocomplete({
     label,
@@ -34,8 +33,6 @@ export function MultiselectableAutocomplete({
     selectAllOptionLabel,
 }: MultiselectableAutocompleteProps): React.ReactElement {
     const listboxContainerRef = useRef<HTMLDivElement | null>(null);
-
-    const [inputValue, setInputValue] = useState('');
 
     const { getRootProps, getInputProps, getListboxProps, getOptionProps, groupedOptions } = useAutocomplete({
         id: name,
@@ -80,20 +77,6 @@ export function MultiselectableAutocomplete({
         return clientRect.left;
     };
 
-    const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        getInputProps().onChange?.(e);
-    };
-
-    const handleOnBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        getInputProps().onBlur?.(e);
-    };
-
-    const handleOnFocus = (e: React.FocusEvent<HTMLInputElement>) => {
-        getInputProps().onFocus?.(e);
-    };
-
-    const debouncedOnChange = debounce(handleOnChange, 700);
-
     return (
         <div>
             <div {...getRootProps()}>
@@ -130,7 +113,12 @@ export function MultiselectableAutocomplete({
                             )}
                             {groupedOptions.map((option: any, index: number) => (
                                 <li {...getOptionProps({ option, index })} onClick={() => handleItem(getOptionValue(option))} className={classNames(classes.checkBoxRow, classesProp?.optionContainer)}>
-                                    <Checkbox name={option.value} value={option.value || undefined} checked={selectedItems?.includes(getOptionValue(option))} onChange={() => handleItem(option)} />
+                                    <Checkbox
+                                        name={option.value}
+                                        value={option.value || undefined}
+                                        checked={selectedItems?.includes(getOptionValue(option))}
+                                        onChange={() => handleItem(getOptionValue(option))}
+                                    />
                                     {renderOption(option)}
                                 </li>
                             ))}

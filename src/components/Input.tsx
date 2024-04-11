@@ -46,8 +46,6 @@ export function Input({
         onBlur?.(e);
     };
 
-    console.log('inputRef= ', inputRef);
-
     return (
         <div className={classNames(classes.inputWrapper, classesProp?.container)}>
             {!!label && (

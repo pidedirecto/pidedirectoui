@@ -110,3 +110,10 @@ export const Input: Input
  * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-virtualizedlist--docs)
  */
 export const VirtualizedList: VirtualizedList
+
+/**
+ * Renders MultiselectableAutocomplete
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-multiselectableAutocomplete--docs)
+ */
+export const MultiselectableAutocomplete: MultiselectableAutocomplete

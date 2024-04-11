@@ -15,7 +15,7 @@ import { RestoreIcon } from 'src/icons/RestoreIcon';
 export function App(): React.ReactElement {
     const form = useForm();
 
-    const [itemsSelected, setItemsSelected] = useState([]);
+    const [selectedItems, setSelectedItems] = useState<Array<string>>([]);
 
     const itemsFiltered = [
         { value: 'pepe', label: 'proando 1' },
@@ -26,12 +26,13 @@ export function App(): React.ReactElement {
         { value: 'pap2', label: 'proando 6' },
         { value: 'papa3', label: 'proando 7' },
         { value: 'papa4', label: 'proando 8' },
-        { value: 'pap5', label: 'proando 9' },
+        { value: 'pap5', label: 'proando 9', restaurantName: 'popeye' },
     ];
 
-    const handleChange = (itemIds: any) => {
-        console.log({ itemIds });
+    const handleChange = (itemsId: Array<string>) => {
+        setSelectedItems(itemsId);
     };
+
     return (
         <div>
             <RestoreIcon />
@@ -51,8 +52,9 @@ export function App(): React.ReactElement {
             </DropDown>
             <MultiselectableAutocomplete
                 name={'example'}
+                selectAllOption
                 selectAllOptionLabel={'seleccionar todos'}
-                productsSelectedLabel={'productos seleccionados'}
+                productsSelectedLabel={`${selectedItems.length} productos seleccionados`}
                 data={itemsFiltered}
                 getOptionValue={(option) => option.value}
                 getOptionLabel={(option) => option.label}
@@ -64,14 +66,15 @@ export function App(): React.ReactElement {
                             alignItems: 'center',
                             justifyContent: 'space-between',
                             padding: '8px 4px',
+                            gap: '12px',
                         }}
                     >
-                        <p>{option.menuItemName}</p>
-                        <HelperText>({option?.restaurantName})</HelperText>
+                        <p>{option.label}</p>
+                        <HelperText>{option?.restaurantName}</HelperText>
                     </div>
                 )}
                 onChange={(itemIds: any) => handleChange(itemIds)}
-                selectedItems={itemsSelected}
+                selectedItems={selectedItems}
             />
         </div>
     );
