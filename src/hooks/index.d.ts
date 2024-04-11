@@ -2,7 +2,7 @@ import { UseTheme } from "src/types/hooks/UseTheme";
 import { UseForm } from "src/types/hooks/UseForm";
 import { UseHasClickedOutside } from "src/types/hooks/UseHasClickedOutside";
 import { UseIsScreenSize } from "src/types/hooks/UseIsScreenSize";
-import { CreateStore } from "src/types/hooks/CreateStore";
+import { Params, Result } from "src/types/hooks/CreateStore";
 
 /**
  * Theme hook to override default components theme
@@ -37,4 +37,4 @@ export const useIsScreenSize: UseIsScreenSize
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-createstore--docs)
  */
-export const createStore: CreateStore
+export const createStore = <State, Actions>(params: Params<State, Actions>) => Result<State, Actions>;
