@@ -113,6 +113,8 @@ import { SaveIcon } from 'src/icons/SaveIcon';
 import { ScissorsIcon } from 'src/icons/ScissorsIcon';
 import { SearchIcon } from 'src/icons/SearchIcon';
 import { SettingsIcon } from 'src/icons/SettingsIcon';
+import { SpeakerIcon } from 'src/icons/SpeakerIcon';
+import { SpeakerOffIcon } from 'src/icons/SpeakerOffIcon';
 import { StarIcon } from 'src/icons/StarIcon';
 import { StoreIcon } from 'src/icons/StoreIcon';
 import { SurveyIcon } from 'src/icons/SurveyIcon';
@@ -582,6 +584,14 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <SettingsIcon size={size} />
                 <span className={classes.iconName}>SettingsIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <SpeakerIcon size={size} />
+                <span className={classes.iconName}>SpeakerIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <SpeakerOffIcon size={size} />
+                <span className={classes.iconName}>SpeakerOffIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <StarIcon size={size} />

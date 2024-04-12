@@ -112,6 +112,8 @@ export const SaveIcon: SvgIcon
 export const ScissorsIcon: SvgIcon
 export const SearchIcon: SvgIcon
 export const SettingsIcon: SvgIcon
+export const SpeakerIcon: SvgIcon
+export const SpeakerOffIcon: SvgIcon
 export const StarIcon: SvgIcon
 export const StoreIcon: SvgIcon
 export const SurveyIcon: SvgIcon
