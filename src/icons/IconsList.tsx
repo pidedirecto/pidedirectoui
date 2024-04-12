@@ -134,7 +134,7 @@ import { UsersIcon } from 'src/icons/UsersIcon';
 import { VideoIcon } from 'src/icons/VideoIcon';
 import { WarningIcon } from 'src/icons/WarningIcon';
 import { WifiIcon } from 'src/icons/WifiIcon';
-import { WifiIOffIcon } from 'src/icons/WifiIOffIcon';
+import { WifiOffIcon } from 'src/icons/WifiOffIcon';
 import { WithdrawIcon } from 'src/icons/WithdrawIcon';
 import { XmlFileIcon } from 'src/icons/XmlFileIcon';
 import classes from 'src/styles/iconsList.module.css';
@@ -672,8 +672,8 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>WifiIcon</span>
             </div>
             <div className={classes.iconContainer}>
-                <WifiIOffIcon size={size} />
-                <span className={classes.iconName}>WifiIOffIcon</span>
+                <WifiOffIcon size={size} />
+                <span className={classes.iconName}>WifiOffIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <WithdrawIcon size={size} />

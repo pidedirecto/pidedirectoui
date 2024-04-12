@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function WifiIOffIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
+export function WifiOffIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
         <svg
             {...props}

@@ -134,6 +134,6 @@ export * from 'src/icons/UsersIcon';
 export * from 'src/icons/VideoIcon';
 export * from 'src/icons/WarningIcon';
 export * from 'src/icons/WifiIcon';
-export * from 'src/icons/WifiIOffIcon';
+export * from 'src/icons/WifiOffIcon';
 export * from 'src/icons/WithdrawIcon';
 export * from 'src/icons/XmlFileIcon';
