@@ -2,8 +2,6 @@
  * @prettier
  */
 
-export type CreateStore<State, Actions> = (params: Params<State, Actions>) => Result<State, Actions>;
-
 export type Params<State, Actions> = {
     initialState: State;
     actions: {

@@ -37,4 +37,4 @@ export const useIsScreenSize: UseIsScreenSize
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-createstore--docs)
  */
-export const createStore = <State, Actions>(params: Params<State, Actions>) => Result<State, Actions>;
+export function createStore<State, Actions>(params: Params<State, Actions>): Result<State, Actions>;
