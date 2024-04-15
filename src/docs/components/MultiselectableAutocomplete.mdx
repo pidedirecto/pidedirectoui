@@ -10,11 +10,23 @@ Renders a MultiselectableAutocomplete
 
 <Canvas of={MultiselectableAutocompleteStories.Controlled} />
 
-The MultiselectableAutocomplete component needs a number of options, each option is an object containing a key `label` and `value`, the label can be any string, the value can be a string or a null value, make sure the values of the options are unique.
-The null option should be used when the user can select an "empty" option.
-With the ability to select multiple items from a list and filter them
+The MultiselectableAutocomplete component needs several options, each option is an object of any type, it will access its values through the function provided in getValue and getLabel, make sure the values are unique.
 
-To control the component you must pass the value property.
+The getValue and getLabel functions will be like this:
+
+In this example array:
+constant orders = [
+`{
+orderID: '',
+orderStatus: '',
+},`
+....
+]
+
+The getValue and getLabel functions will be like this:
+
+getOptionValue=`{(option) => option.orderID}` getOptionLabel=`{(option) => option.orderStatus}`
+
 ```tsx
 import { MultiselectableAutocomplete } from '@pidedirecto/ui'
 

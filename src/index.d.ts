@@ -12,6 +12,7 @@ import { Select } from "src/types/components/Select";
 import { Tooltip } from "src/types/components/Tooltip";
 import { Input } from "src/types/components/Input";
 import { VirtualizedList } from "src/types/components/VirtualizedList";
+import { MultiselectableAutocomplete } from "src/types/components/MultiselectableAutoComplete";
 
 /**
  * Renders Checkbox
