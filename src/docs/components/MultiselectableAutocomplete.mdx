@@ -18,14 +18,14 @@ In this example array:
 ```
 const orders = [
 {
-orderID: '',
+orderId: '',
 orderStatus: '',
 },
 ....
 ]
 ```
 The getValue and getLabel functions will be like this:
-`getOptionValue='{(option) => option.orderID}' getOptionLabel='{(option) => option.orderStatus}'`
+`getOptionValue={(option) => option.orderId} getOptionLabel={(option) => option.orderStatus}`
 
 ```tsx
 import { MultiselectableAutocomplete } from '@pidedirecto/ui'
