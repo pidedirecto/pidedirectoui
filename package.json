@@ -20,6 +20,9 @@
       ],
       "form": [
         "./form/index.d.ts"
+      ],
+      "utils": [
+        "./utils/index.d.ts"
       ]
     }
   },
@@ -43,6 +46,10 @@
     "./form": {
       "import": "./form/index.js",
       "require": "./form/index.cjs"
+    },
+    "./utils": {
+      "import": "./utils/index.js",
+      "require": "./utils/index.cjs"
     }
   },
   "engines": {

@@ -23,6 +23,7 @@ export default defineConfig({
                 'hooks/index': 'src/hooks/main.ts',
                 'constants/index': 'src/constants/main.ts',
                 'form/index': 'src/form/main.ts',
+                'utils/index': 'src/utils/main.ts',
             },
             output: [
                 {

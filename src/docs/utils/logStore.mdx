@@ -1,0 +1,19 @@
+import { Meta, ArgTypes } from '@storybook/blocks';
+
+<Meta title='utils/logStore' />
+
+# logStore
+
+The `createStore` function uses [immer](https://immerjs.github.io/immer/) underneath so if you try to console log directly
+the store values, you will find difficult to read the state cause immer uses proxies to track the object changes, for this problem
+we have the function `logStore` to console log as usual the store values. For example inside a store action
+
+```ts
+import { logStore } from '@pidedirect/ui/utils'
+
+someAction: (state, someParams) => {
+    logStore('Here i am consoling the state store = ', state)
+    // Rest of action code ...
+}
+
+```
