@@ -54,6 +54,7 @@ import { DragIcon } from 'src/icons/DragIcon';
 import { EditIcon } from 'src/icons/EditIcon';
 import { EnvelopeIcon } from 'src/icons/EnvelopeIcon';
 import { ExchangeArrowsIcon } from 'src/icons/ExchangeArrowsIcon';
+import { ExitIcon } from 'src/icons/ExitIcon';
 import { EyeIcon } from 'src/icons/EyeIcon';
 import { FilledChartDonutIcon } from 'src/icons/FilledChartDonutIcon';
 import { FilledCircleIcon } from 'src/icons/FilledCircleIcon';
@@ -113,6 +114,8 @@ import { SaveIcon } from 'src/icons/SaveIcon';
 import { ScissorsIcon } from 'src/icons/ScissorsIcon';
 import { SearchIcon } from 'src/icons/SearchIcon';
 import { SettingsIcon } from 'src/icons/SettingsIcon';
+import { SpeakerIcon } from 'src/icons/SpeakerIcon';
+import { SpeakerOffIcon } from 'src/icons/SpeakerOffIcon';
 import { StarIcon } from 'src/icons/StarIcon';
 import { StoreIcon } from 'src/icons/StoreIcon';
 import { SurveyIcon } from 'src/icons/SurveyIcon';
@@ -131,6 +134,7 @@ import { UsersIcon } from 'src/icons/UsersIcon';
 import { VideoIcon } from 'src/icons/VideoIcon';
 import { WarningIcon } from 'src/icons/WarningIcon';
 import { WifiIcon } from 'src/icons/WifiIcon';
+import { WifiOffIcon } from 'src/icons/WifiOffIcon';
 import { WithdrawIcon } from 'src/icons/WithdrawIcon';
 import { XmlFileIcon } from 'src/icons/XmlFileIcon';
 import classes from 'src/styles/iconsList.module.css';
@@ -350,6 +354,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <ExchangeArrowsIcon size={size} />
                 <span className={classes.iconName}>ExchangeArrowsIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <ExitIcon size={size} />
+                <span className={classes.iconName}>ExitIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <EyeIcon size={size} />
@@ -584,6 +592,14 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>SettingsIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <SpeakerIcon size={size} />
+                <span className={classes.iconName}>SpeakerIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <SpeakerOffIcon size={size} />
+                <span className={classes.iconName}>SpeakerOffIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <StarIcon size={size} />
                 <span className={classes.iconName}>StarIcon</span>
             </div>
@@ -654,6 +670,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <WifiIcon size={size} />
                 <span className={classes.iconName}>WifiIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <WifiOffIcon size={size} />
+                <span className={classes.iconName}>WifiOffIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <WithdrawIcon size={size} />

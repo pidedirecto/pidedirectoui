@@ -53,6 +53,7 @@ export const DragIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon
 export const ExchangeArrowsIcon: SvgIcon
+export const ExitIcon: SvgIcon
 export const EyeIcon: SvgIcon
 export const FilledChartDonutIcon: SvgIcon
 export const FilledCircleIcon: SvgIcon
@@ -112,6 +113,8 @@ export const SaveIcon: SvgIcon
 export const ScissorsIcon: SvgIcon
 export const SearchIcon: SvgIcon
 export const SettingsIcon: SvgIcon
+export const SpeakerIcon: SvgIcon
+export const SpeakerOffIcon: SvgIcon
 export const StarIcon: SvgIcon
 export const StoreIcon: SvgIcon
 export const SurveyIcon: SvgIcon
@@ -130,5 +133,6 @@ export const UsersIcon: SvgIcon
 export const VideoIcon: SvgIcon
 export const WarningIcon: SvgIcon
 export const WifiIcon: SvgIcon
+export const WifiOffIcon: SvgIcon
 export const WithdrawIcon: SvgIcon
 export const XmlFileIcon: SvgIcon

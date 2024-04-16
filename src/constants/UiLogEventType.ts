@@ -15,6 +15,7 @@ export const UiLogEventTypes = Object.freeze({
     USER_CLICKED_SWITCH: 'USER_CLICKED_SWITCH',
     USER_CLICKED_SELECT_OPTION: 'USER_CLICKED_SELECT_OPTION',
     USER_CLICKED_CHECKBOX: 'USER_CLICKED_CHECKBOX',
+    USER_CLICKED_TABLE: 'USER_CLICKED_TABLE',
 });
 
 export type UiLogEventType = (typeof UiLogEventTypes)[keyof typeof UiLogEventTypes];

@@ -68,6 +68,10 @@ function getUiLogEventTraceId(params: UiLogEventData): string {
             return normalizeUiStackTrace(`select_${params.element}`);
         case UiLogEventTypes.USER_TYPED_INPUT:
             return normalizeUiStackTrace(`input_${params.element}`);
+        case UiLogEventTypes.USER_CLICKED_TABLE:
+            return normalizeUiStackTrace('table');
+        case UiLogEventTypes.USER_OPENED_DIALOG:
+            return normalizeUiStackTrace(`dialog_${params.element}`);
         default:
             return params.element;
     }
@@ -89,6 +93,8 @@ function getUiLogEventMessage(params: UiLogEventData): string {
             return `select ${params.element} changed with value ${params.value}`;
         case UiLogEventTypes.USER_TYPED_INPUT:
             return `input ${params.element} typed with value ${params.value}`;
+        case UiLogEventTypes.USER_OPENED_DIALOG:
+            return `dialog ${params.element} opened`;
         default:
             return `user interacted with ${params.element}`;
     }
@@ -137,6 +143,13 @@ function createUiLogEventData(params: CreateUiLogEventDataParams): Object {
             return {
                 valueMessage: params.uiLogEvent.value,
                 inputId: params.elementId,
+                pathId: params.stackTrace,
+            };
+        case UiLogEventTypes.USER_OPENED_DIALOG:
+            return {
+                title: params.uiLogEvent.element,
+                dialogId: params.elementId,
+                stacktrace: params.stackTrace.replace(params.elementId, ''),
                 pathId: params.stackTrace,
             };
         default:

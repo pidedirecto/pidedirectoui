@@ -1,0 +1,44 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as ImageStories from '../../stories/Image.stories';
+
+<Meta of={ImageStories} />
+
+# Image
+This component should be used to show images inside projects, this guarantees that every image is scaled to its right dimensions avoiding browser to download and cache all the original image info.
+
+<Canvas of={ImageStories.Primary} />
+
+The resizing feature only works for pidedirecto images, so any external image will behave normally.
+
+## Sizing
+
+You can pass `width` and `height` to `Image` component, if you only pass `width` that value will be used as height, and the other way around.
+
+You can also pass a `size` prop, this prop accepts any `ImageSize` value
+```tsx
+import { Image } from '@pidedirecto/ui'
+import { ImageSizes } from '@pidedirecto/ui/constants'
+
+<Image src='https://images.letseat.mx/e4a9ed780b54925264e4ac45761707f0.png' size={ImageSizes.SMALL} />
+```
+
+You can check the available image sizes [here](https://ui.pidedirecto.mx/?path=/docs/constants-imagesizes--docs)
+
+## Fit in
+
+You can size the image as you want through the width and size props, so it can have a dimension not proportional to the original image size and could cause a weird looking, to fix that you can use the `fitIn` prop
+
+- Fit in
+<Canvas of={ImageStories.FitIn} />
+
+- Not Fit in
+<Canvas of={ImageStories.NotFitIn} />
+
+
+## API
+
+Here there are described some of the important props, but the `Image` component can receive almost any of the HTML image props.
+
+<ArgTypes of={ImageStories} />
+
