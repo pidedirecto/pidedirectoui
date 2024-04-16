@@ -28,6 +28,7 @@ export function Input({
     rightAdornment,
     InputComponent,
     onBlur,
+    id,
     classes: classesProp,
     ...props
 }: InputProps): React.ReactElement {
@@ -49,7 +50,7 @@ export function Input({
         <div className={classNames(classes.inputWrapper, classesProp?.container)}>
             {!!label && (
                 <div className={classes.labelContainer}>
-                    <Label htmlFor={`${name}-input`} error={error} classes={{ label: classesProp?.label }}>
+                    <Label htmlFor={id ?? `${name}-input`} error={error} classes={{ label: classesProp?.label }}>
                         {label}
                     </Label>
                     {!!tooltip && <Tooltip text={tooltip} id={`${name}-tooltip`} />}
@@ -65,7 +66,7 @@ export function Input({
                 {!!InputComponent && (
                     <InputComponent
                         {...props}
-                        id={`${name}-input`}
+                        id={id ?? `${name}-input`}
                         type={type || 'text'}
                         className={classNames(classes.input, classesProp?.input)}
                         name={name}
@@ -80,7 +81,7 @@ export function Input({
                         {...props}
                         value={value}
                         ref={inputRef}
-                        id={`${name}-input`}
+                        id={id ?? `${name}-input`}
                         type={type || 'text'}
                         className={classNames(classes.input, classesProp?.input)}
                         name={name}

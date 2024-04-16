@@ -12,6 +12,7 @@ import { Select } from "src/types/components/Select";
 import { Tooltip } from "src/types/components/Tooltip";
 import { Input } from "src/types/components/Input";
 import { VirtualizedList } from "src/types/components/VirtualizedList";
+import { MultiselectableAutocomplete } from "src/types/components/MultiselectableAutoComplete";
 import { Table } from "src/types/components/Table";
 import { Dialog } from "src/types/components/Dialog";
 import { DialogActions } from "src/types/components/DialogActions";
@@ -114,6 +115,13 @@ export const Input: Input
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-virtualizedlist--docs)
  */
 export const VirtualizedList: VirtualizedList
+
+/**
+ * Renders MultiselectableAutocomplete
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-multiselectableAutocomplete--docs)
+ */
+export const MultiselectableAutocomplete: MultiselectableAutocomplete
 
 /**
  * Renders Table
