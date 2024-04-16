@@ -60,7 +60,6 @@
   },
   "dependencies": {
     "@mui/material": "5.15.15",
-    "@reduxjs/toolkit": "1.5.0",
     "apisauce": "1.1.1",
     "core-js": "3.22.7",
     "immer": "10.0.4",
