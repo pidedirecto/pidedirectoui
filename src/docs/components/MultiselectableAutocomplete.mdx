@@ -13,19 +13,20 @@ Renders a MultiselectableAutocomplete
 The MultiselectableAutocomplete component needs several options, each option is an object of any type, it will access its values through the function provided in getValue and getLabel, make sure the values are unique.
 
 The getValue and getLabel functions will be like this:
-
+```
 In this example array:
-constant orders = [
-`{
+const orders = [
+{
 orderID: '',
 orderStatus: '',
-},`
+},
 ....
 ]
 
 The getValue and getLabel functions will be like this:
 
 getOptionValue=`{(option) => option.orderID}` getOptionLabel=`{(option) => option.orderStatus}`
+```
 
 ```tsx
 import { MultiselectableAutocomplete } from '@pidedirecto/ui'
