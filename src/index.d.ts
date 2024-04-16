@@ -17,6 +17,7 @@ import { Table } from "src/types/components/Table";
 import { Dialog } from "src/types/components/Dialog";
 import { DialogActions } from "src/types/components/DialogActions";
 import { Image } from "src/types/components/Image";
+import { Text } from "src/types/components/Text";
 
 /**
  * Renders Checkbox
@@ -150,3 +151,10 @@ export const DialogActions: DialogActions
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-image--docs)
  */
 export const Image: Image
+
+/**
+ * Renders Text
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-text--docs)
+ */
+export const Text: Text
