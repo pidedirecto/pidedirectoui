@@ -8,6 +8,7 @@ export type TableProps = {
     classes?: {
         table?: string,
         cell?: string,
+        row?: string,
         header?: string,
         container?: string,
     },

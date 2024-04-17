@@ -182,6 +182,14 @@ const meta: Meta<typeof Table> = {
             },
             control: false,
         },
+        'classes.row': {
+            description: 'CSS class to override the rows style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         'classes.cell': {
             description: 'CSS class to override the cells style',
             table: {

@@ -69,7 +69,7 @@ export function Table({ columns, rows, hideHeaders, rowsPerPage, emptyMessage, s
                     {getRowsToShow().map((row: TableRow, idx) => {
                         const isLastRow = idx === rows.length - 1;
                         return (
-                            <tr onClick={() => onRowClick?.(row)} key={idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, row?.className)}>
+                            <tr onClick={() => onRowClick?.(row)} key={idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, classesProp?.row, row?.className)}>
                                 {columns.map((column: TableColumn) => {
                                     const columnSize = column.size || 1;
                                     const width = 100 * columnSize;
