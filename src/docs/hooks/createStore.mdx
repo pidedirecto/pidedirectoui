@@ -61,6 +61,12 @@ The `useAction` expects a function as parameter, inside this function you will h
 
 We recommend naming this hook with this format `use...anyNameHere...Action`
 
+## logs
+
+If you try to console.log directly the state of the store inside an action you will find it difficult to read because the store state is wrapped into proxies,
+so if you want to console log the state you will have to use the [logStore](https://ui.pidedirecto.mx/?path=/docs/utils-logstore--docs) function
+
+
 
 
 
