@@ -1,0 +1,35 @@
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+
+import * as SelectableListStories from '../../stories/SelectableList.stories';
+
+<Meta of={SelectableListStories} />
+
+# SelectableList
+
+Renders a SelectableList
+
+<Canvas of={SelectableListStories.Primary} />
+
+```tsx
+
+import { SelectableList } from '@pidedirecto/ui'
+
+const [value, setValue] = useState()
+
+return (
+    <SelectableList options={options} onChange={setValue} value={value} label={'Select an option'} />
+)
+```
+
+The options array should be an array of objects containing a `value` and `content` keys, the `value` can be any type but should be unique between other options,
+the `content` key can be any React.Node type, and will be the content rendered next to the checkbox in the list.
+
+## Multiselectable
+
+The `SelectableList` component can be multiselectable if you pass the `multiselectable` prop
+
+<Canvas of={SelectableListStories.Multiselectable} />
+
+## API
+
+<ArgTypes of={SelectableListStories} />

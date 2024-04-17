@@ -18,6 +18,7 @@ import { Dialog } from "src/types/components/Dialog";
 import { DialogActions } from "src/types/components/DialogActions";
 import { Image } from "src/types/components/Image";
 import { Text } from "src/types/components/Text";
+import { SelectableList } from "src/types/components/SelectableList";
 
 /**
  * Renders Checkbox
@@ -158,3 +159,10 @@ export const Image: Image
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-text--docs)
  */
 export const Text: Text
+
+/**
+ * Renders SelectableList
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-selectablelist--docs)
+ */
+export const SelectableList: SelectableList
