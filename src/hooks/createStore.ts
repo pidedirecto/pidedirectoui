@@ -4,9 +4,15 @@
 import { produce } from 'immer';
 import { useSyncExternalStore } from 'use-sync-external-store/shim';
 import type { Params, Result } from 'src/types/hooks/CreateStore';
+import { cloneObject } from 'src/utils/object/cloneObject';
+import { isObject } from 'src/utils/object/isObject';
 
 export function createStore<State, Actions>({ initialState, actions }: Params<State, Actions>): Result<State, Actions> {
-    let state: State = structuredClone(initialState);
+    if (!isObject(initialState)) {
+        console.error('initialState passed to createStore function is not an object');
+    }
+
+    let state: State = cloneObject(initialState as any);
     let listeners: Array<Listener> = [];
 
     function useStore<T>(fn: (state: State) => T): T {
