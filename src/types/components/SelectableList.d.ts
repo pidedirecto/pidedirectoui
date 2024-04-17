@@ -3,7 +3,7 @@ import * as React from "react";
 export type SelectableListProps = {
     label?: string,
     options: Array<{ value: any, content: React.Node }>,
-    onChange: (selectedItems: Array<any>) => void,
+    onChange: (selectedItems: any) => void,
     value: any,
     disabled?: boolean,
     error?: boolean,

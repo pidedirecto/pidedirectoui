@@ -13,3 +13,4 @@ export * from 'src/form/FormEmailField';
 export * from 'src/form/FormColorField';
 export * from 'src/form/FormIntegerField';
 export * from 'src/form/FormPercentNumberField';
+export * from 'src/form/FormSelectableList';

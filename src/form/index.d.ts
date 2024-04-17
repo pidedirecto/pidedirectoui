@@ -9,6 +9,7 @@ import { FormColorField } from "src/types/form/FormColorField";
 import { FormIntegerField } from "src/types/form/FormIntegerField";
 import { FormPasswordField } from "src/types/form/FormPasswordField";
 import { FormPercentNumberField } from "src/types/form/FormPercentNumberField";
+import { FormSelectableList } from "src/types/form/FormSelectableList";
 
 
 /**
@@ -76,3 +77,9 @@ export const FormIntegerField: FormIntegerField
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formpercentnumberfield--docs)
  */
 export const FormPercentNumberField: FormPercentNumberField
+
+/**
+ * Form selectable list
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formselectablelist--docs)
+ */
+export const FormSelectableList: FormSelectableList
