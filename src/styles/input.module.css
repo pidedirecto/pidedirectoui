@@ -41,7 +41,7 @@
     box-sizing: border-box;
     color: var(--text-primary);
     width: 100%;
-    font-family: var(--fontLight);
+    font-family: var(--font-light);
     border: 0;
     background-color: transparent;
     outline: 0;

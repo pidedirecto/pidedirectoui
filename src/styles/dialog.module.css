@@ -84,8 +84,8 @@
 .title {
     color: var(--text-brand);
     text-align: center;
-    font-size: var(--fontSizeExtraLarge);
-    font-family: var(--fontSemiBold);
+    font-size: var(--font-size-extra-large);
+    font-family: var(--font-semi-bold);
     margin: 0 0 10px 0;
 }
 

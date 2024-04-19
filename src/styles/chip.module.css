@@ -2,11 +2,11 @@
     border-radius: 10px;
     height: 20px;
     padding: 2px 8px;
-    font-family: var(--fontNormal);
+    font-family: var(--font-regular);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--fontSizeExtraSmall);
+    font-size: var(--font-size-extra-small);
     width: fit-content;
     background-color: var(--surface-brand-contrast);
     color: var(--text-invert);

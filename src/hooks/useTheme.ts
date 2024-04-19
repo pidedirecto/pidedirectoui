@@ -63,8 +63,10 @@ export function useTheme(theme: Theme): void {
         if (theme.palette?.icon?.invert) rootElement.style.setProperty('--border-icon-invert', theme.palette?.icon?.invert);
         if (theme.palette?.icon?.brand) rootElement.style.setProperty('--border-icon-brand', theme.palette?.icon?.brand);
 
-        if (theme.font?.size?.normal) rootElement.style.setProperty('--fontSizeNormal', theme.font?.size?.normal);
-        if (theme.font?.size?.small) rootElement.style.setProperty('--fontSizeSmall', theme.font?.size?.small);
-        if (theme.font?.size?.large) rootElement.style.setProperty('---fontSizeLarge', theme.font?.size?.large);
+        if (theme.font?.size?.extraSmall) rootElement.style.setProperty('--font-size-extra-small', theme.font?.size?.extraSmall);
+        if (theme.font?.size?.small) rootElement.style.setProperty('--font-size-small', theme.font?.size?.small);
+        if (theme.font?.size?.normal) rootElement.style.setProperty('--font-size-regular', theme.font?.size?.normal);
+        if (theme.font?.size?.large) rootElement.style.setProperty('---font-size-large', theme.font?.size?.large);
+        if (theme.font?.size?.extraLarge) rootElement.style.setProperty('---font-size-extra-large', theme.font?.size?.extraLarge);
     };
 }

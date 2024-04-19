@@ -1,8 +1,8 @@
 .container {
     width: 100%;
     color: var(--fontColorNormal);
-    font-family: var(--fontNormal);
-    font-size: var(--fontSizeSmall);
+    font-family: var(--font-regular);
+    font-size: var(--font-size-small);
     cursor: pointer;
     padding: 10px;
     box-sizing: border-box;

@@ -17,7 +17,7 @@
 }
 
 .iconName {
-    font-family: var(--fontNormal);
+    font-family: var(--font-regular);
     color: var(--text-primary);
-    font-size: var(--fontSizeSmall);
+    font-size: var(--font-size-small);
 }

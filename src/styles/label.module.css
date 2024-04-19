@@ -1,6 +1,6 @@
 .label {
-    font-size: var(--fontSizeNormal);
-    font-family: var(--fontNormal);
+    font-size: var(--font-size-regular);
+    font-family: var(--font-regular);
     color: var(--text-primary);
 }
 

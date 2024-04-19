@@ -21,11 +21,11 @@ body {
 
 :root {
   /* fonts */
-  --fontLight: 'PoppinsLight';
-  --fontNormal: 'PoppinsRegular';
-  --fontMedium: 'PoppinsMedium';
-  --fontSemiBold: 'PoppinsSemiBold';
-  --fontBold: 'PoppinsBold';
+  --font-light: 'PoppinsLight';
+  --font-regular: 'PoppinsRegular';
+  --font-medium: 'PoppinsMedium';
+  --font-semi-bold: 'PoppinsSemiBold';
+  --font-bold: 'PoppinsBold';
 
   /* primitive colors */
 
@@ -216,11 +216,11 @@ body {
 } */
 
   /* text sizes */
-  --fontSizeExtraSmall: 10px;
-  --fontSizeSmall: 12px;
-  --fontSizeNormal: 14px;
-  --fontSizeLarge: 16px;
-  --fontSizeExtraLarge: 18px;
+  --font-size-extra-small: 10px;
+  --font-size-small: 12px;
+  --font-size-regular: 14px;
+  --font-size-large: 16px;
+  --font-size-extra-large: 18px;
 
   /* screen size */
   --smallScreen: 600px;

@@ -32,8 +32,8 @@
     justify-content: center;
     box-sizing: border-box;
     padding: 8px 24px;
-    font-family: var(--fontNormal);
-    font-size: var(--fontSizeNormal);
+    font-family: var(--font-regular);
+    font-size: var(--font-size-regular);
     color: var(--text-primary);
     cursor: pointer;
     gap: 8px;
@@ -48,9 +48,9 @@
 }
 
 .tab[aria-selected="true"] {
-    font-family: var(--fontMedium);
+    font-family: var(--font-medium);
     text-transform: none;
-    font-size: var(--fontSizeNormal);
+    font-size: var(--font-size-regular);
     color: var(--text-brand);
     border-bottom: 2px solid var(--border-brand-contrast);
 }
@@ -60,8 +60,8 @@
     color: var(--text-secondary);
     padding: 2px 18px;
     border-radius: 8px;
-    font-family: var(--fontMedium);
-    font-size: var(--fontSizeSmall);
+    font-family: var(--font-medium);
+    font-size: var(--font-size-small);
     text-align: center;
 }
 

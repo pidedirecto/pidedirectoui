@@ -49,15 +49,15 @@
 }
 
 .title {
-    font-family: var(--fontSemiBold);
-    font-size: var(--fontSizeExtraLarge);
+    font-family: var(--font-semi-bold);
+    font-size: var(--font-size-extra-large);
     margin: 0;
     color: var(--text-primary);
     text-align: left;
 }
 
 .caption {
-    font-family: var(--fontNormal);
+    font-family: var(--font-regular);
     color: var(--text-secondary);
-    font-size: var(--fontSizeSmall);
+    font-size: var(--font-size-small);
 }

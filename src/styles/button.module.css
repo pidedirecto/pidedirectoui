@@ -5,7 +5,7 @@
     border-radius: 6px;
     background-color: var(--surface-brand-contrast);
     color: var(--text-invert);
-    font-family: var(--fontNormal);
+    font-family: var(--font-regular);
     cursor: pointer;
     transition: background-color 0.2s linear;
     box-sizing: border-box;
@@ -126,5 +126,5 @@
 
 .button[data-size="large"] {
     height: 52px;
-    font-size: var(--fontSizeLarge);
+    font-size: var(--font-size-large);
 }

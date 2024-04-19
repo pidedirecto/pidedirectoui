@@ -1,52 +1,52 @@
 .text {
-    font-family: var(--fontNormal);
-    font-size: var(--fontSizeNormal);
+    font-family: var(--font-regular);
+    font-size: var(--font-size-regular);
     color: currentColor;
     margin: 0;
 }
 
 .text[data-weight="regular"] {
-    font-family: var(--fontNormal);
+    font-family: var(--font-regular);
 }
 
 .text[data-weight="light"] {
-    font-family: var(--fontLight);
+    font-family: var(--font-light);
 }
 
 .text[data-weight="bold"] {
-    font-family: var(--fontBold);
+    font-family: var(--font-bold);
 }
 
 .text[data-weight="medium"] {
-    font-family: var(--fontMedium);
+    font-family: var(--font-medium);
 }
 
 .text[data-weight="semiBold"] {
-    font-family: var(--fontSemiBold);
+    font-family: var(--font-semi-bold);
 }
 
 .text[data-size="small"] {
-    font-size: var(--fontSizeSmall);
+    font-size: var(--font-size-small);
 }
 
 .text[data-size="regular"] {
-    font-size: var(--fontSizeNormal);
+    font-size: var(--font-size-regular);
 }
 
 .text[data-size="large"] {
-    font-size: var(--fontSizeLarge);
+    font-size: var(--font-size-large);
 }
 
 .text[data-size="extraLarge"] {
-    font-size: var(--fontSizeExtraLarge);
+    font-size: var(--font-size-extra-large);
 }
 
 .title {
-    font-size: var(--fontSizeExtraLarge);
-    font-family: var(--fontBold);
+    font-size: var(--font-size-extra-large);
+    font-family: var(--font-bold);
 }
 
 .subtitle {
-    font-size: var(--fontSizeLarge);
-    font-family: var(--fontMedium);
+    font-size: var(--font-size-large);
+    font-family: var(--font-medium);
 }

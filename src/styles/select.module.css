@@ -49,8 +49,8 @@
 }
 
 .option {
-    font-family: var(--fontNormal);
-    font-size: var(--fontSizeNormal);
+    font-family: var(--font-regular);
+    font-size: var(--font-size-regular);
     color: var(--text-primary);
     padding: 8px;
     width: 100%;

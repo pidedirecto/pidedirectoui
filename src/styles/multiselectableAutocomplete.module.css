@@ -7,17 +7,17 @@
 }
 
 .label {
-    font-family: var(--fontNormal);
+    font-family: var(--font-regular);
     color: var(--text-secondary);
-    font-size: var(--fontSizeSmall);
+    font-size: var(--font-size-small);
     margin-bottom: 8px;
 }
 
 .numberItemsSelectedContainer {
-    font-family: var(--fontNormal);
+    font-family: var(--font-regular);
     background-color: var(--surface-secondary);
     color: var(--surface-brand-heavy-contrast);
-    font-size: var(--fontSizeSmall);
+    font-size: var(--font-size-small);
     text-align: center;
     padding: 4px 10px 4px 10px;
     min-width: 93px;
@@ -35,7 +35,7 @@
     border-radius: 4px;
     padding-left: 8px;
     padding-right: 8px;
-    font-family: var(--fontNormal);
+    font-family: var(--font-regular);
     border: 1px solid var(--border-secondary);
     height: 42px;
     align-items: center;
@@ -47,7 +47,7 @@
 }
 
 .helperText {
-    font-family: var(--fontLight);
+    font-family: var(--font-light);
     color: var(--text-danger);
 }
 
@@ -99,14 +99,14 @@
 
 .numberOfOrders {
     color: var(--text-primary);
-    font-size: var(--fontSizeSmall);
+    font-size: var(--font-size-small);
     margin-left: 5px;
-    font-family: var(--fontNormal);
+    font-family: var(--font-regular);
 }
 
 .itemText {
-    font-family: var(--fontNormal);
-    font-size: var(--fontSizeNormal),
+    font-family: var(--font-regular);
+    font-size: var(--font-size-regular),
 }
 
 .checkBoxRow {
@@ -122,7 +122,7 @@
     justify-content: space-between;
     gap: 8px;
     color: var(--text-info) !important;
-    font-family: var(--fontSizeNormal);
+    font-family: var(--font-size-regular);
     padding-bottom: 12px;
     padding-top: 12px;
     margin-left: 6px;
@@ -139,7 +139,7 @@
 
 @media (min-width: 600px) {
     .label{
-        font-size: var(--fontSizeNormal);
+        font-size: var(--font-size-regular);
     }
 }
 

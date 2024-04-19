@@ -11,8 +11,8 @@
     left: 10px;
     background-color: var(--surface-heavy-contrast);
     color: var(--text-invert);
-    font-family: var(--fontNormal);
-    font-size: var(--fontSizeSmall);
+    font-family: var(--font-regular);
+    font-size: var(--font-size-small);
     padding: 6px 12px;
     border-radius: 4px;
     z-index: 99;

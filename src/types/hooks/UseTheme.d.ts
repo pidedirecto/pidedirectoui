@@ -52,9 +52,11 @@ export type Theme = {
     };
     font?: {
         size?: {
-            normal?: string;
+            extraSmall?: string;
             small?: string;
+            normal?: string;
             large?: string;
+            extraLarge?: string;
         };
     };
 };

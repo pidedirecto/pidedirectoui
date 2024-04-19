@@ -1,6 +1,6 @@
 .text {
-    font-family: var(--fontLight);
-    font-size: var(--fontSizeSmall);
+    font-family: var(--font-light);
+    font-size: var(--font-size-small);
     color: var(--text-contrast)
 }
 

@@ -18,6 +18,6 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    font-family: var(--fontNormal);
+    font-family: var(--font-regular);
     height: 40px
 }
