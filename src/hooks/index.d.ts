@@ -3,6 +3,7 @@ import { UseForm } from "src/types/hooks/UseForm";
 import { UseHasClickedOutside } from "src/types/hooks/UseHasClickedOutside";
 import { UseIsScreenSize } from "src/types/hooks/UseIsScreenSize";
 import { Params, Result } from "src/types/hooks/CreateStore";
+import { UseNotification } from "src/types/hooks/UseNotification";
 
 /**
  * Theme hook to override default components theme
@@ -31,6 +32,13 @@ export const useHasClickedOutside: UseHasClickedOutside
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useisscreensize--docs)
  */
 export const useIsScreenSize: UseIsScreenSize
+
+/**
+ * Hook to shwo a notification
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-usenotification--docs)
+ */
+export const useNotification: UseNotification
 
 /**
  * Create store function

@@ -20,6 +20,7 @@ import { Image } from "src/types/components/Image";
 import { Text } from "src/types/components/Text";
 import { SelectableList } from "src/types/components/SelectableList";
 import { Chip } from "src/types/components/Chip";
+import React from 'react'
 
 /**
  * Renders Checkbox
@@ -174,3 +175,10 @@ export const SelectableList: SelectableList
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-chip--docs)
  */
 export const Chip: Chip
+
+/**
+ * Notification cotainer
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-notifications--docs)
+ */
+export const Notifications: React.FunctionComponent

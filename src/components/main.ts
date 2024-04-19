@@ -24,3 +24,4 @@ export * from 'src/components/Image';
 export * from 'src/components/Text';
 export * from 'src/components/SelectableList';
 export * from 'src/components/Chip';
+export * from 'src/components/Notifications';

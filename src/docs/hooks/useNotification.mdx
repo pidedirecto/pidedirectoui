@@ -1,0 +1,50 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/blocks';
+import * as NotificationsStories from '../../stories/Notifications.stories';
+
+<Meta title="hooks/useNotification" />
+
+# useNotification
+
+`useNotification` hook returns a function that you can call to show notifications.
+
+The basic usage for using this hook is first importing the Notifications component and put it somewhere in your applications,
+commonly in the application main component
+
+```tsx
+import { Notificatons } from '@pidedirecto/ui'
+
+
+return (
+    <Notifications />
+)
+```
+
+We strongly recommend importing and using only one `Notifications` component per application, having 2 instances of this component
+could lead to unexpected behaviours.
+
+Once you have imported the `Notifications` component, you can use the `useNotification` hook anywhere in your application and start showing notifications.
+
+```tsx
+import { useNotification } from '@pidedirecto/ui/hooks'
+import { Button } from '@pidedirecto/ui'
+
+function Component() {
+    const notification = useNotification()
+
+    const handleClick = () => {
+        notification({ message: 'Hi! You have a new notification' })
+    }
+
+    return (
+        <Button onClick={handleClick}>Click me!</Button>
+    )
+}
+```
+
+<Canvas of={NotificationsStories.Primary} sourceState='none' />
+
+# API
+
+The function returned by the `useNotification` hook accepts the following fields
+
+<ArgTypes of={NotificationsStories} />
