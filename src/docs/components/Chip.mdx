@@ -1,0 +1,53 @@
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+
+import * as ChipStories from '../../stories/Chip.stories';
+
+<Meta of={ChipStories} />
+
+# Chip
+
+Renders a Chip
+
+<Canvas of={ChipStories.Primary} />
+
+## Variants
+
+The `Chip` component has default set of variants and you can change it through the `variant` prop
+
+- success
+
+<Canvas of={ChipStories.Success} />
+
+- error
+
+<Canvas of={ChipStories.Error} />
+
+- warning
+
+<Canvas of={ChipStories.Warning} />
+
+- info
+
+<Canvas of={ChipStories.Info} />
+
+## Clickable
+
+The `Chip` component can be clickable if you pass an `onClick` callback, besides this the component accepts any React.Node valid content as a children
+
+<Canvas of={ChipStories.Clickable} sourceState='none' />
+
+```tsx
+import { Chip } from '@pidedirecto/ui'
+import { EditIcon } from '@pidedirecto/ui/icons'
+
+<Chip onClick={() => alert('You click on the chip!!')}>
+    <div>
+        Edit
+        <EditIcon size={10} />
+    </div>
+</ Chip>
+```
+
+## API
+
+<ArgTypes of={ChipStories} />

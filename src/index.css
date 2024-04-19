@@ -119,7 +119,7 @@ body {
   --border-warning: var(--orange400);
   --border-danger: var(--red200);
   --border-brand-outline: var(--purple200);
-  
+
   /* icon */
   --icon-primary: var(--neutral700);
   --icon-invert: var(--neutral100);
@@ -163,7 +163,7 @@ body {
   --border-warning: var(--orange400);
   --border-danger: var(--red200);
   --border-brand-outline: var(--purple200);
-  
+
   --icon-primary: var(--neutral700);
   --icon-invert: var(--neutral100);
   --icon-brand: var(--purple700);
@@ -208,7 +208,7 @@ body {
   --border-info: var(--blue600);
   --border-warning: var(--orange400);
   --border-danger: var(--red200);
-  
+
   icon
   --icon-primary: var(--neutral700);
   --icon-invert: var(--neutral100);
@@ -216,6 +216,7 @@ body {
 } */
 
   /* text sizes */
+  --fontSizeExtraSmall: 10px;
   --fontSizeSmall: 12px;
   --fontSizeNormal: 14px;
   --fontSizeLarge: 16px;
