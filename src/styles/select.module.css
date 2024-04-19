@@ -9,6 +9,13 @@
     width: 100%;
 }
 
+.topContainer {
+    width: 100%;
+    background-color: var(--surface-primary);
+    position: sticky;
+    top: 0;
+}
+
 .labelContainer {
     display: flex;
     flex-direction: row;
@@ -17,7 +24,7 @@
 }
 
 .selectError{
-    border-color: var(--fontColorError);
+    border-color: var(--border-danger);
 }
 
 .select {
@@ -44,13 +51,13 @@
 .option {
     font-family: var(--fontNormal);
     font-size: var(--fontSizeNormal);
-    color: var(--fontColorNormal);
+    color: var(--text-primary);
     padding: 8px;
     width: 100%;
     border-radius: 4px;
 }
 
 .option:hover {
-    background-color: var(--fontHoverColor);
+    background-color: var(--surface-brand);
     cursor: pointer;
 }

@@ -185,6 +185,13 @@ export const Multiselectable: Story = {
     },
 };
 
+export const Searchable: Story = {
+    args: {
+        ...meta.args,
+        searchable: true,
+    },
+};
+
 export const CustomOptions: Story = {
     args: {
         options: [

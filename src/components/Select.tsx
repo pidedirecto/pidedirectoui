@@ -3,10 +3,15 @@
  */
 
 import * as React from 'react';
+import { useState } from 'react';
+import { useMemo } from 'react';
+import { useCallback } from 'react';
+import { memo } from 'react';
 import { Checkbox } from 'src/components/Checkbox';
 import { DropDown } from 'src/components/DropDown';
 import { DropDownItem } from 'src/components/DropDownItem';
 import { HelperText } from 'src/components/HelperText';
+import { Input } from 'src/components/Input';
 import { Label } from 'src/components/Label';
 import { Tooltip } from 'src/components/Tooltip';
 import { useCreateUserClickedSelectOptionLogEvent } from 'src/services/logEvent/useCreateUserClickedSelectOptionLogEvent';
@@ -14,6 +19,7 @@ import classes from 'src/styles/select.module.css';
 import { SelectProps } from 'src/types/components/Select';
 import { isArray } from 'src/utils/array/isArray';
 import { classNames } from 'src/utils/css/classNames';
+import { debounce } from 'src/utils/function/debounce';
 
 // TODO: Implement searchable feature after adding Input component
 export function Select({
@@ -25,12 +31,15 @@ export function Select({
     helperText,
     multiselectable,
     disabled,
+    searchable,
     error,
     preventClose,
     tooltip,
     classes: classesProp,
     onChange,
 }: SelectProps): React.ReactElement {
+    const [search, setSearch] = useState('');
+
     const createUserClickedSelectOptionLogEvent = useCreateUserClickedSelectOptionLogEvent();
 
     const getValue = () => {
@@ -84,7 +93,27 @@ export function Select({
             .join(', ');
     };
 
+    const handleSearch = useCallback((value: string) => {
+        setSearch(value);
+    }, []);
+
+    const getOptions = () => {
+        if (!search) return options;
+        return options.filter((option) => labelMatchSearch(option.label));
+    };
+
+    const labelMatchSearch = (label: string) => {
+        try {
+            const regExp = new RegExp(search, 'gi');
+            return regExp.test(label);
+        } catch (e) {
+            return false;
+        }
+    };
+
     const selectedValues = getValue();
+
+    const filteredOptions = getOptions();
 
     return (
         <div className={classNames(classes.container, classesProp?.container)}>
@@ -102,7 +131,12 @@ export function Select({
                 classes={{ button: classNames(classes.select, classesProp?.button, error && classes.selectError), container: classNames(classes.selectContainer, classesProp?.selectContainer) }}
                 preventClose={preventClose}
             >
-                {options.map((option) => {
+                {searchable && (
+                    <div className={classes.topContainer}>
+                        <SearchInput onSearch={handleSearch} />
+                    </div>
+                )}
+                {filteredOptions.map((option) => {
                     const isSelected = selectedValues.includes(option.value);
                     return (
                         <DropDownItem key={option.value} classes={{ container: classNames(classes.option, classesProp?.item) }} selected={isSelected} onClick={() => handleOnChange(option.value)}>
@@ -124,3 +158,20 @@ export function Select({
         </div>
     );
 }
+
+const SearchInput = memo(function ({ onSearch }: SearchInputProps): React.ReactElement {
+    const [search, setSearch] = useState('');
+
+    const handleSearch = (search: string) => {
+        setSearch(search);
+        debounceOnSearch(search);
+    };
+
+    const debounceOnSearch = useMemo(() => debounce(onSearch, 300), []);
+
+    return <Input type='search' name='search' value={search} onChange={handleSearch} />;
+});
+
+type SearchInputProps = {
+    onSearch: (search: string) => void;
+};

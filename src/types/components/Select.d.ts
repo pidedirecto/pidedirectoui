@@ -19,6 +19,7 @@ export type SelectProps = {
     },
     multiselectable?: boolean,
     disabled?: boolean,
+    searchable?: boolean,
     preventClose?: boolean,
     error?: boolean,
     tooltip?: string,
