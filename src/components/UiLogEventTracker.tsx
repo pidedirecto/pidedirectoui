@@ -4,11 +4,12 @@
 import * as React from 'react';
 import { createContext, useRef } from 'react';
 import { useEffect } from 'react';
+import { memo } from 'react';
 import { UiLogEventType, UiLogEventTypes } from 'src/constants/UiLogEventType';
 import { normalizeUiStackTrace } from 'src/services/logEvent/normalizeUiStackTrace';
 import { UiLogEventTrackerProps } from 'src/types/components/UiLogEventTracker';
 
-export function UiLogEventTracker({ id, onInteract, children }: UiLogEventTrackerProps): React.ReactElement {
+export const UiLogEventTracker = memo(function ({ id, onInteract, children }: UiLogEventTrackerProps): React.ReactElement {
     const stackTrace = useRef(id);
 
     useEffect(() => {
@@ -45,7 +46,7 @@ export function UiLogEventTracker({ id, onInteract, children }: UiLogEventTracke
     };
 
     return <UiLogEventTrackerContext.Provider value={{ createUiLogEvent, addElementToStackTrace }}>{children}</UiLogEventTrackerContext.Provider>;
-}
+});
 
 export const UiLogEventTrackerContext = createContext<UiLogEventTrackerContextState>({
     addElementToStackTrace: () => {},
