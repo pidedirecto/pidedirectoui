@@ -181,4 +181,4 @@ export const Chip: Chip
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-notifications--docs)
  */
-export const Notifications: React.FunctionComponent
+export const Notifications: React.FunctionComponent<{}>
