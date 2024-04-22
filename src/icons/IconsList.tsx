@@ -114,13 +114,13 @@ import { SaveIcon } from 'src/icons/SaveIcon';
 import { ScissorsIcon } from 'src/icons/ScissorsIcon';
 import { SearchIcon } from 'src/icons/SearchIcon';
 import { SettingsIcon } from 'src/icons/SettingsIcon';
-import { SimpleTerminalIcon } from 'src/icons/SimpleTerminalIcon';
 import { SpeakerIcon } from 'src/icons/SpeakerIcon';
 import { SpeakerOffIcon } from 'src/icons/SpeakerOffIcon';
 import { StarIcon } from 'src/icons/StarIcon';
 import { StoreIcon } from 'src/icons/StoreIcon';
 import { SurveyIcon } from 'src/icons/SurveyIcon';
 import { TableIcon } from 'src/icons/TableIcon';
+import { TerminalIcon } from 'src/icons/TerminalIcon';
 import { TicketIcon } from 'src/icons/TicketIcon';
 import { TicketsIcon } from 'src/icons/TicketsIcon';
 import { TransactionIcon } from 'src/icons/TransactionIcon';
@@ -581,10 +581,6 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>SaveIcon</span>
             </div>
             <div className={classes.iconContainer}>
-                <SimpleTerminalIcon size={size} />
-                <span className={classes.iconName}>SimpleTerminalIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
                 <ScissorsIcon size={size} />
                 <span className={classes.iconName}>ScissorsIcon</span>
             </div>
@@ -619,6 +615,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <TableIcon size={size} />
                 <span className={classes.iconName}>TableIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <TerminalIcon size={size} />
+                <span className={classes.iconName}>TerminalIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <TicketIcon size={size} />

@@ -4,9 +4,9 @@
 import * as React from 'react';
 import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function SimpleTerminalIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
+export function TerminalIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg {...props} width={width ?? '24'} height={height ?? '26'} viewBox='0 0 24 26' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? '24'} height={height ?? size ?? '26'} viewBox='0 0 24 26' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
             <path
                 fillRule='evenodd'

@@ -110,7 +110,6 @@ export const ReceiptIcon: SvgIcon
 export const RefreshIcon: SvgIcon
 export const RouteIcon: SvgIcon
 export const SaveIcon: SvgIcon
-export const SimpleTerminalIcon: SvgIcon
 export const ScissorsIcon: SvgIcon
 export const SearchIcon: SvgIcon
 export const SettingsIcon: SvgIcon
@@ -120,6 +119,7 @@ export const StarIcon: SvgIcon
 export const StoreIcon: SvgIcon
 export const SurveyIcon: SvgIcon
 export const TableIcon: SvgIcon
+export const TerminalIcon: SvgIcon
 export const TicketIcon: SvgIcon
 export const TicketsIcon: SvgIcon
 export const TransactionIcon: SvgIcon
