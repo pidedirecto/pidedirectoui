@@ -111,6 +111,7 @@ export * from 'src/icons/ReceiptIcon';
 export * from 'src/icons/RefreshIcon';
 export * from 'src/icons/RouteIcon';
 export * from 'src/icons/SaveIcon';
+export * from 'src/icons/SimpleTerminalIcon';
 export * from 'src/icons/ScissorsIcon';
 export * from 'src/icons/SearchIcon';
 export * from 'src/icons/SettingsIcon';
