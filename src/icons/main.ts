@@ -120,6 +120,7 @@ export * from 'src/icons/StarIcon';
 export * from 'src/icons/StoreIcon';
 export * from 'src/icons/SurveyIcon';
 export * from 'src/icons/TableIcon';
+export * from 'src/icons/TerminalIcon';
 export * from 'src/icons/TicketIcon';
 export * from 'src/icons/TicketsIcon';
 export * from 'src/icons/TransactionIcon';

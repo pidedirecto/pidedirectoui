@@ -119,6 +119,7 @@ export const StarIcon: SvgIcon
 export const StoreIcon: SvgIcon
 export const SurveyIcon: SvgIcon
 export const TableIcon: SvgIcon
+export const TerminalIcon: SvgIcon
 export const TicketIcon: SvgIcon
 export const TicketsIcon: SvgIcon
 export const TransactionIcon: SvgIcon

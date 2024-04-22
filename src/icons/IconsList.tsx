@@ -120,6 +120,7 @@ import { StarIcon } from 'src/icons/StarIcon';
 import { StoreIcon } from 'src/icons/StoreIcon';
 import { SurveyIcon } from 'src/icons/SurveyIcon';
 import { TableIcon } from 'src/icons/TableIcon';
+import { TerminalIcon } from 'src/icons/TerminalIcon';
 import { TicketIcon } from 'src/icons/TicketIcon';
 import { TicketsIcon } from 'src/icons/TicketsIcon';
 import { TransactionIcon } from 'src/icons/TransactionIcon';
@@ -614,6 +615,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <TableIcon size={size} />
                 <span className={classes.iconName}>TableIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <TerminalIcon size={size} />
+                <span className={classes.iconName}>TerminalIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <TicketIcon size={size} />
