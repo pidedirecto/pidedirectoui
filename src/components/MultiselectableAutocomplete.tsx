@@ -1,7 +1,7 @@
 /**
  * @prettier
  */
-import { useAutocomplete } from '@mui/base/useAutocomplete';
+import { useAutocomplete } from '@material-ui/lab';
 import { useRef } from 'react';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
@@ -38,11 +38,10 @@ export function MultiselectableAutocomplete({
         id: name,
         options: data,
         getOptionLabel,
-        getOptionKey: getOptionValue,
         getOptionDisabled,
     });
 
-    const { ref: inputRef, onChange: inputOnChange, ...inputProps } = getInputProps() ?? {};
+    const { ref: inputRef, onChange: inputOnChange, ...inputProps }: any = getInputProps();
 
     const handleItem = (itemId: string) => {
         if (getOptionDisabled?.(itemId)) return;
