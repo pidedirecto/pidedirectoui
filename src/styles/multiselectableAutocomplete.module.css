@@ -15,7 +15,7 @@
 
 .numberItemsSelectedContainer {
     font-family: var(--font-regular);
-    background-color: var(--surface-secondary);
+    background-color: var(--surface-tertiary);
     color: var(--surface-brand-heavy-contrast);
     font-size: var(--font-size-small);
     text-align: center;
@@ -65,7 +65,6 @@
 }
 
 .listbox li[data-focus="true"]{
-    background-color: var(--surface-contrast);
     color: var(--text-primary);
     cursor: pointer;
  }
@@ -113,6 +112,7 @@
     display: flex;
     align-items: center;
     margin-left: 4px;
+    font-family: var(--font-size-regular);
 }
 
 .checkAllBoxRow {
@@ -125,8 +125,9 @@
     font-family: var(--font-size-regular);
     padding-bottom: 12px;
     padding-top: 12px;
-    margin-left: 6px;
+    margin-left: 4px;
     border-bottom: 1px solid var(--border-primary);
+    font-size: var(--font-size-small),
 }
 
 .arrowAlignCenter {
