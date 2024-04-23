@@ -2,13 +2,14 @@
  * @prettier
  */
 import { useAutocomplete } from '@material-ui/lab';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { Checkbox } from 'src/components/Checkbox';
 import { HelperText } from 'src/components/HelperText';
 import { Input } from 'src/components/Input';
 import { Label } from 'src/components/Label';
+import { useHasClickedOutside } from 'src/hooks/useHasClickedOutside';
 import classes from 'src/styles/multiselectableAutocomplete.module.css';
 import { MultiselectableAutocompleteProps } from 'src/types/components/MultiselectableAutoComplete';
 import { classNames } from 'src/utils/css/classNames';
@@ -33,6 +34,8 @@ export function MultiselectableAutocomplete({
     selectAllOptionLabel,
 }: MultiselectableAutocompleteProps): React.ReactElement {
     const listboxContainerRef = useRef<HTMLDivElement | null>(null);
+    const listItemsContainerRef = useRef<HTMLDivElement | null>(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
 
     const { getRootProps, getInputProps, getListboxProps, getOptionProps, groupedOptions } = useAutocomplete({
         id: name,
@@ -41,7 +44,16 @@ export function MultiselectableAutocomplete({
         getOptionDisabled,
     });
 
+    const [isOpen, setIsOpen] = useState(false);
+
     const { ref: inputRef, onChange: inputOnChange, ...inputProps }: any = getInputProps();
+
+    useHasClickedOutside({
+        element: containerRef.current,
+        onClick: ({ hasClickedOutside, elementClicked }) => {
+            if (hasClickedOutside && listItemsContainerRef.current && !listItemsContainerRef.current.contains(elementClicked)) setIsOpen(false);
+        },
+    });
 
     const handleItem = (itemId: string) => {
         if (getOptionDisabled?.(itemId)) return;
@@ -77,7 +89,7 @@ export function MultiselectableAutocomplete({
     };
 
     return (
-        <div>
+        <div ref={containerRef}>
             <div {...getRootProps()}>
                 <div className={classes.headContainer}>
                     <Label htmlFor={`use-autocomplete-customer`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
@@ -93,35 +105,45 @@ export function MultiselectableAutocomplete({
                     disabled={disabled}
                     inputRef={inputRef}
                     onChange={(value, e) => inputOnChange?.(e)}
+                    onClick={() => {
+                        setIsOpen(true);
+                    }}
                 />
                 {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}
             </div>
             <div ref={listboxContainerRef} style={{ width: '100%' }}>
                 {groupedOptions.length > 0 &&
+                    isOpen &&
                     createPortal(
-                        <ul
-                            className={classNames(classes.listbox, classesProp?.optionsContainer)}
-                            {...getListboxProps()}
-                            style={{ top: getListboxTopPosition(), left: getListboxLeftPosition(), width: listboxContainerRef.current?.offsetWidth }}
-                        >
-                            {selectAllOption && (
-                                <li onClick={() => handleSelectAllItem()} className={classNames(classesProp?.optionContainer, classes.checkAllBoxRow)}>
-                                    <Checkbox name={'selectAll'} label={selectAllOptionLabel} value={'all'} checked={selectedItems.length === data.length} onChange={() => handleSelectAllItem()} />
-                                    <span className={classes.numberItemsSelectedContainer}>{productsSelectedLabel}</span>
-                                </li>
-                            )}
-                            {groupedOptions.map((option: any, index: number) => (
-                                <li {...getOptionProps({ option, index })} onClick={() => handleItem(getOptionValue(option))} className={classNames(classes.checkBoxRow, classesProp?.optionContainer)}>
-                                    <Checkbox
-                                        name={option.value}
-                                        value={option.value || undefined}
-                                        checked={selectedItems?.includes(getOptionValue(option))}
-                                        onChange={() => handleItem(getOptionValue(option))}
-                                    />
-                                    {renderOption(option)}
-                                </li>
-                            ))}
-                        </ul>,
+                        <div ref={listItemsContainerRef}>
+                            <ul
+                                className={classNames(classes.listbox, classesProp?.optionsContainer)}
+                                {...getListboxProps()}
+                                style={{ top: getListboxTopPosition(), left: getListboxLeftPosition(), width: listboxContainerRef.current?.offsetWidth }}
+                            >
+                                {selectAllOption && (
+                                    <li onClick={() => handleSelectAllItem()} className={classNames(classesProp?.optionContainer, classes.checkAllBoxRow)}>
+                                        <Checkbox name={'selectAll'} label={selectAllOptionLabel} value={'all'} checked={selectedItems.length === data.length} onChange={() => handleSelectAllItem()} />
+                                        <span className={classes.numberItemsSelectedContainer}>{productsSelectedLabel}</span>
+                                    </li>
+                                )}
+                                {groupedOptions.map((option: any, index: number) => (
+                                    <li
+                                        {...getOptionProps({ option, index })}
+                                        onClick={() => handleItem(getOptionValue(option))}
+                                        className={classNames(classes.checkBoxRow, classesProp?.optionContainer)}
+                                    >
+                                        <Checkbox
+                                            name={option.value}
+                                            value={option.value || undefined}
+                                            checked={selectedItems?.includes(getOptionValue(option))}
+                                            onChange={() => handleItem(getOptionValue(option))}
+                                        />
+                                        {renderOption(option)}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>,
                         document.body,
                     )}
             </div>

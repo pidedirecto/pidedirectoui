@@ -36,10 +36,10 @@
     padding-left: 8px;
     padding-right: 8px;
     font-family: var(--font-regular);
-    border: 1px solid var(--border-secondary);
     height: 42px;
     align-items: center;
     display: flex;
+    border: none;
 }
 
 .inputError{
@@ -65,14 +65,14 @@
 }
 
 .listbox li[data-focus="true"]{
-    background-color: var(--surface-brand);
-    color: var(--text-invert);
+    background-color: var(--surface-contrast);
+    color: var(--text-primary);
     cursor: pointer;
  }
 
 .listbox li:active {
-    background-color: var(--surface-brand);
-    color: var(--text-invert);
+    background-color: var(--surface-secondary);
+    color: var(--text-primary);
  }
 
 .itemContainer {
