@@ -13,12 +13,11 @@ import { DatePickerProps } from 'src/types/components/DatePicker';
 import { classNames } from 'src/utils/css/classNames';
 import 'src/utils/configureMoment';
 import { ThemeProvider } from '@material-ui/core';
-import { createMuiTheme } from '@material-ui/core/styles';
 import moment from 'moment/moment';
-import { useTheme } from 'src/hooks/useTheme';
+import { useConfigureMuiTheme } from 'src/utils/mui/useConfigureMuiTheme';
 
 export function DatePicker({ value, onChange, onBlur, label, placeholder, name, id, helperText, disabled, error, inputRef, classes: classesProp }: DatePickerProps): React.ReactElement {
-    const theme = useTheme();
+    const muiTheme = useConfigureMuiTheme();
 
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
@@ -31,23 +30,9 @@ export function DatePicker({ value, onChange, onBlur, label, placeholder, name, 
         onBlur?.(e);
     };
 
-    const buildMuiTheme = () => {
-        return createMuiTheme({
-            palette: {
-                primary: {
-                    main: theme.palette.surface.brandContrast,
-                },
-            },
-            typography: {
-                fontFamily: 'var(--font-regular)',
-                fontSize: 12,
-            },
-        });
-    };
-
     return (
         <MuiPickersUtilsProvider utils={MomentUtils} libInstance={moment}>
-            <ThemeProvider theme={buildMuiTheme()}>
+            <ThemeProvider theme={muiTheme}>
                 <div className={classes.container}>
                     {!!label && (
                         <Label error={error} htmlFor={id ?? `${name}-input`} disabled={disabled}>
