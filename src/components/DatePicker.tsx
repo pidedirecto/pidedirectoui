@@ -40,6 +40,7 @@ export function DatePicker({ value, onChange, onBlur, label, placeholder, name, 
             },
             typography: {
                 fontFamily: 'var(--font-regular)',
+                fontSize: 12,
             },
         });
     };
