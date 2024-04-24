@@ -21,6 +21,7 @@ import { Text } from "src/types/components/Text";
 import { SelectableList } from "src/types/components/SelectableList";
 import { Chip } from "src/types/components/Chip";
 import { DatePicker } from "src/types/components/DatePicker";
+import { DateTimePicker } from "src/types/components/DateTimePicker";
 import React from 'react'
 
 /**
@@ -190,3 +191,10 @@ export const Notifications: React.FunctionComponent<{}>
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-datepicker--docs)
  */
 export const DatePicker: DatePicker
+
+/**
+ * Renders date time picker
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-datetimepicker--docs)
+ */
+export const DateTimePicker: DateTimePicker
