@@ -1,0 +1,33 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as DatePickerStories from '../../stories/DatePicker.stories';
+
+<Meta of={DatePickerStories} />
+
+# DatePicker
+Renders a date picker.
+
+<Canvas of={DatePickerStories.Primary} />
+
+The `onChange` prop will be called with the selected date
+
+```tsx
+import { DatePicker } form '@pidedirecto/ui'
+
+const handleDate = (date: Date) => {
+    // Handle date
+}
+
+<DatePicker
+    value={value}
+    label={'Select a date'}
+    name='input'
+    onChange={handleDate}
+/>
+
+```
+
+## API
+
+<ArgTypes of={DatePickerStories} />
+
