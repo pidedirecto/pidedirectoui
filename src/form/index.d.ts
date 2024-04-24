@@ -10,6 +10,7 @@ import { FormIntegerField } from "src/types/form/FormIntegerField";
 import { FormPasswordField } from "src/types/form/FormPasswordField";
 import { FormPercentNumberField } from "src/types/form/FormPercentNumberField";
 import { FormSelectableList } from "src/types/form/FormSelectableList";
+import { FormMultiselectableAutoComplete } from "src/types/form/FormMultiselectableAutoComplete";
 
 
 /**
@@ -83,3 +84,9 @@ export const FormPercentNumberField: FormPercentNumberField
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formselectablelist--docs)
  */
 export const FormSelectableList: FormSelectableList
+
+/**
+ * Form multiselectable Autocomplete list
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-FormMultiselectableAutoComplete--docs)
+ */
+export const FormMultiselectableAutoComplete: FormMultiselectableAutoComplete
