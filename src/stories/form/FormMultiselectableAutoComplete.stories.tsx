@@ -3,7 +3,7 @@
  */
 
 import type { Meta, StoryObj } from '@storybook/react';
-import React, { useState } from 'react';
+import React from 'react';
 import { HelperText } from 'src/components/HelperText';
 import { Form } from 'src/form/Form';
 import { FormMultiselectableAutoComplete } from 'src/form/FormMultiselectableAutoComplete';
@@ -18,8 +18,6 @@ const meta: Meta<typeof FormMultiselectableAutoComplete> = {
         data: [{ value: 'I am a value', label: 'I am a label' }],
         productsSelectedLabel: '8 products selected',
         selectAllOptionLabel: 'I am an label for select all',
-        onChange: undefined,
-        selectedItems: [],
         renderOption: (option) => <div>Hi I am the option rendered : {option}</div>,
         getOptionValue: () => {},
         getOptionLabel: () => {},
@@ -141,25 +139,11 @@ const meta: Meta<typeof FormMultiselectableAutoComplete> = {
                 type: { summary: 'any' },
             },
         },
-        onChange: {
-            description: 'Callback to be called after the user hides or shows the accordion',
-            table: {
-                required: true,
-                type: { summary: 'function' },
-            },
-        },
         tooltip: {
             description: 'Renders a tooltip next to the label',
             table: {
                 required: false,
                 type: { summary: 'string' },
-            },
-        },
-        selectedItems: {
-            description: 'Take this value for has a controlled the options selected',
-            table: {
-                required: true,
-                type: { summary: 'Array<string>' },
             },
         },
         classes: {
@@ -201,7 +185,6 @@ export const Controlled: Story = {
 
 const ControlledMultiselectableAutocomplete = () => {
     const form = useForm();
-    const [selectedItems, setSelectedItems] = useState<Array<string>>([]);
 
     const itemsFiltered = [
         { value: 'value1', label: 'Example 1' },
@@ -215,17 +198,12 @@ const ControlledMultiselectableAutocomplete = () => {
         { value: 'value9', label: 'Example 9', restaurantName: 'popeye' },
     ];
 
-    const handleChange = (itemsId: Array<string>) => {
-        setSelectedItems(itemsId);
-    };
-
     return (
         <Form form={form} onSubmit={() => {}}>
             <FormMultiselectableAutoComplete
                 name={'example'}
                 selectAllOption
                 selectAllOptionLabel={'seleccionar todos'}
-                productsSelectedLabel={`${selectedItems.length} productos seleccionados`}
                 data={itemsFiltered}
                 getOptionValue={(option) => option.value}
                 getOptionLabel={(option) => option.label}
@@ -244,8 +222,6 @@ const ControlledMultiselectableAutocomplete = () => {
                         <HelperText>{option?.restaurantName}</HelperText>
                     </div>
                 )}
-                onChange={(itemIds: any) => handleChange(itemIds)}
-                selectedItems={selectedItems}
             />
         </Form>
     );

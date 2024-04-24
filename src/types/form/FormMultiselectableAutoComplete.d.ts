@@ -22,13 +22,11 @@ export type FormMultiselectableAutoCompleteProps = {
     selectAllOption?: boolean;
     required?: ValidationRule<boolean>;
     InputProps?: any;
-    onChange: Function;
     tooltip?: string;
     classes?: {
         optionsContainer?: string;
         optionContainer?: string;
     };
-    selectedItems: Array<string>;
     rules?: Record<string, ValidationRule<any>>;
 };
 
