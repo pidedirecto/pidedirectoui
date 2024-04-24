@@ -11,8 +11,10 @@ export type DatePickerProps = {
     id?: string;
     disabled?: boolean;
     error?: boolean;
-    value: Date;
+    value: Date | undefined | null;
     onChange: (value: Date | undefined) => void | Promise<void>;
+    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void | Promise<void>;
+    inputRef?: React.Ref<HTMLInputElement>;
     classes?: {
         inputContainer?: string;
         input?: string;

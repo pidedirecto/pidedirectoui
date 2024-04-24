@@ -42,6 +42,13 @@ const meta: Meta<typeof DatePicker> = {
             },
             control: false,
         },
+        inputRef: {
+            description: 'DatePicker React.Ref',
+            table: {
+                type: { summary: 'React.Ref' },
+            },
+            control: false,
+        },
         helperText: {
             description: 'DatePicker helper text',
             table: {

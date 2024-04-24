@@ -34,6 +34,7 @@
 .input {
     border: 1px solid red;
     font-family: var(--font-light) !important;
+    font-size: var(--font-size-regular) !important;
     color: var(--text-primary) !important;
     padding: 0 !important;
 }
