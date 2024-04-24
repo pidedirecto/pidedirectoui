@@ -19,7 +19,7 @@ const meta: Meta<typeof Input> = {
                 name: 'string',
             },
             table: {
-                type: { summary: 'boolean' },
+                type: { summary: 'string' },
             },
             control: false,
         },
