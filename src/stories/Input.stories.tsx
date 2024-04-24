@@ -13,7 +13,7 @@ const meta: Meta<typeof Input> = {
     },
     argTypes: {
         name: {
-            description: 'Controls opening the accordion',
+            description: 'Input name',
             type: {
                 required: true,
                 name: 'string',
