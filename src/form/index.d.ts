@@ -11,6 +11,7 @@ import { FormPasswordField } from "src/types/form/FormPasswordField";
 import { FormPercentNumberField } from "src/types/form/FormPercentNumberField";
 import { FormSelectableList } from "src/types/form/FormSelectableList";
 import { FormDatePicker } from "src/types/form/FormDatePicker";
+import { FormDateTimePicker } from "src/types/form/FormDateTimePicker";
 
 
 /**
@@ -90,3 +91,9 @@ export const FormSelectableList: FormSelectableList
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formdatepicker--docs)
  */
 export const FormDatePicker: FormDatePicker
+
+/**
+ * Form date time picker
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formdatetimepicker--docs)
+ */
+export const FormDateTimePicker: FormDateTimePicker
