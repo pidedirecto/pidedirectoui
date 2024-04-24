@@ -6,7 +6,8 @@ import { Color } from 'src/docs/utils/Color';
 
 # useTheme
 
-This hook allows for the overriding of the default theme for components. It is designed to receive a `Theme` object as a prop, where you can specify various aspects of the theme such as palette colors, font sizes, and more.
+This hook allows you to interact with the app theme, it will return the current theme, and you can configure it passing a `Theme` object as a prop, where you can specify various aspects of the theme such as palette colors, font sizes, and more.
+You can use it to get the theme in as many as places as you want, but we only recommend to configure the theme in a single point of the application.
 
 The `Theme` object is organized into several sections, including `palette` for colors and `font` for typography settings. Notably, within the `palette`, there are `surface` and `text` categories, among others, which allow for detailed customization of the application's appearance.
 

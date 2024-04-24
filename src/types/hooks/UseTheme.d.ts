@@ -61,4 +61,4 @@ export type Theme = {
     };
 };
 
-export type UseTheme = (theme: Theme) => void;
+export type UseTheme = (theme: Theme) => Theme;
