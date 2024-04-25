@@ -18,11 +18,8 @@ export type FormMultiselectableAutoCompleteProps = {
     getOptionDisabled?: (req: any) => boolean;
     renderOption: (req: any) => React.Node;
     disabled?: boolean;
-    error?: boolean;
     selectAllOption?: boolean;
     required?: ValidationRule<boolean>;
-    InputProps?: any;
-    tooltip?: string;
     classes?: {
         optionsContainer?: string;
         optionContainer?: string;

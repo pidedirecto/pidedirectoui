@@ -56,7 +56,7 @@ export function FormMultiselectableAutoComplete({
                     getOptionDisabled={getOptionDisabled}
                     renderOption={renderOption}
                     onChange={(itemIds: any) => onChange(itemIds)}
-                    selectedItems={value}
+                    value={value}
                     disabled={isSubmitting || disabled || formContext.disabled}
                     classes={classesProp}
                     error={error}

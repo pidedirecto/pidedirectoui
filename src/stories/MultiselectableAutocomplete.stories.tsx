@@ -17,7 +17,7 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
         productsSelectedLabel: '8 products selected',
         selectAllOptionLabel: 'I am an label for select all',
         onChange: undefined,
-        selectedItems: [],
+        value: [],
         renderOption: (option) => <div>Hi I am the option rendered : {option}</div>,
         getOptionValue: () => {},
         getOptionLabel: () => {},
@@ -153,7 +153,7 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
                 type: { summary: 'string' },
             },
         },
-        selectedItems: {
+        value: {
             description: 'Take this value for has a controlled the options selected',
             table: {
                 required: true,
@@ -241,7 +241,7 @@ const ControlledMultiselectableAutocomplete = () => {
                 </div>
             )}
             onChange={(itemIds: any) => handleChange(itemIds)}
-            selectedItems={selectedItems}
+            value={selectedItems}
         />
     );
 };

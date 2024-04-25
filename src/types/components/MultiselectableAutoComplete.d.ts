@@ -24,7 +24,7 @@ export type MultiselectableAutocompleteProps = {
         optionsContainer?: string,
         optionContainer?: string,
     },
-    selectedItems: Array<string>,
+    value: Array<string>,
 };
 
 export type MultiselectableAutocomplete = React.FunctionComponent<MultiselectableAutocompleteProps>
