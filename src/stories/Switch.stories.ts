@@ -59,6 +59,13 @@ const meta: Meta<typeof Switch> = {
             },
             control: false,
         },
+        labelPosition: {
+            description: 'Label position, by default right',
+            table: {
+                type: { summary: 'right | left' },
+            },
+            control: false,
+        },
         onChange: {
             description: 'Function to be called when the checked stated of the switch changes',
             table: {
@@ -179,5 +186,13 @@ export const Info: Story = {
         onChange: undefined,
         helperText: 'This is just a helper text',
         tooltip: 'This is just a tooltip',
+    },
+};
+
+export const LeftLabel: Story = {
+    args: {
+        ...meta.args,
+        onChange: undefined,
+        labelPosition: 'left',
     },
 };
