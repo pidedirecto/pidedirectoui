@@ -14,5 +14,6 @@ export * from 'src/form/FormColorField';
 export * from 'src/form/FormIntegerField';
 export * from 'src/form/FormPercentNumberField';
 export * from 'src/form/FormSelectableList';
+export * from 'src/form/FormMultiselectableAutoComplete';
 export * from 'src/form/FormDatePicker';
 export * from 'src/form/FormDateTimePicker';
