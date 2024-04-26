@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.inputContainer {
+    height: 42px;
+    padding: 14px;
+    width: 100%;
+    border: 1px solid var(--border-primary);
+    background-color: transparent;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+.inputContainer::before {
+    border: 0 !important;
+}
+
+.inputContainer::after {
+    border: 0 !important;
+}
+
+.inputContainer[data-error="true"] {
+    border: 2px solid var(--border-danger);
+}
+
+.input {
+    border: 1px solid red;
+    font-family: var(--font-light) !important;
+    font-size: var(--font-size-regular) !important;
+    color: var(--text-primary) !important;
+    padding: 0 !important;
+}
+
+.input::before {
+    border: 0 !important;
+}
+
+.input::after {
+    border: 0 !important;
+}

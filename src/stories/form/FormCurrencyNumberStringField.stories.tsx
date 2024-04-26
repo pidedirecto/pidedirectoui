@@ -44,7 +44,7 @@ const meta: Meta<typeof FormCurrencyNumberStringField> = {
             },
         },
         disabled: {
-            description: 'Disables checkbox',
+            description: 'Disables input',
             table: {
                 type: { summary: 'boolean' },
             },
