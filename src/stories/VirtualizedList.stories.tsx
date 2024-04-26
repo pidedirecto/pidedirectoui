@@ -39,7 +39,7 @@ const meta: Meta<typeof VirtualizedList> = {
             description: 'This property is assigned to the layout and allows to have a horizontal list, by default it is vertical.',
             type: {
                 required: false,
-                name: 'string',
+                name: 'horizontal' as any,
             },
         },
         children: {
