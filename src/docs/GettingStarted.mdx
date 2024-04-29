@@ -1,4 +1,4 @@
-import { Meta} from '@storybook/blocks';
+import { Meta } from '@storybook/blocks';
 
 <Meta title="Getting Started" />
 
@@ -6,4 +6,49 @@ To install the Directo UI library run the next command
 
 ```
 npm i @pidedirecto/ui
+```
+
+## Usage
+
+General components can be imported from the root of the package
+
+```ts
+import { Button } from '@pidedirecto/ui'
+import { Table } from '@pidedirecto/ui'
+import { Tabs } from '@pidedirecto/ui'
+```
+
+To import form components they should be imported from the `form` path
+
+```ts
+import { FormCheckbox } from '@pidedirecto/ui/form'
+import { Form } from '@pidedirecto/ui/form'
+import { FormTextField } from '@pidedirecto/ui/form'
+```
+
+To import hooks they should be imported from the `hooks` path
+
+```ts
+import { useTheme } from '@pidedirecto/ui/hooks'
+import { useNotification } from '@pidedirecto/ui/hooks'
+```
+
+To import icons they should be imported from the `icons` path
+
+```ts
+import { BagIcon } from '@pidedirecto/ui/icons'
+import { BillIcon } from '@pidedirecto/ui/icons'
+```
+
+To import constants they should be imported from the `constants` path
+
+```ts
+import { ImageSizes } from '@pidedirecto/ui/constants'
+import { ScreenSizes } from '@pidedirecto/ui/constants'
+```
+
+To import utils they should be imported from the `utils` path
+
+```ts
+import { logStore } from '@pidedirecto/ui/utils'
 ```
