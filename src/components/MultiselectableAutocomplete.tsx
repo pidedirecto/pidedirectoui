@@ -11,7 +11,7 @@ import { Input } from 'src/components/Input';
 import { Label } from 'src/components/Label';
 import { useHasClickedOutside } from 'src/hooks/useHasClickedOutside';
 import classes from 'src/styles/multiselectableAutocomplete.module.css';
-import { MultiselectableAutocompleteProps } from 'src/types/components/MultiselectableAutoComplete';
+import { MultiselectableAutocompleteProps } from 'src/types/components/MultiselectableAutocomplete';
 import { classNames } from 'src/utils/css/classNames';
 
 export function MultiselectableAutocomplete({
