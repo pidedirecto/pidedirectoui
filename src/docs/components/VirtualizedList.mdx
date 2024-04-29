@@ -6,10 +6,12 @@ import * as VirtualizedListStories from '../../stories/VirtualizedList.stories';
 <Meta of={VirtualizedListStories} />
 
 # VirtualizedList
+
 Renders an VirtualizedList.
 
 
 The Virtualized list is capable of storing a large number of elements but will only render those that are seen in the window defined by the height of the component
+## Vertical virtualized list
 
 <Canvas of={VirtualizedListStories.Controlled} sourceState={'none'} />
 
@@ -31,6 +33,32 @@ import { VirtualizedList } from '@pidedirecto/ui';
 
 return (
     <VirtualizedList height={120} itemSize={20} overScanCount={2}>
+        {items.map((item, idx) => (<div key={item.value}>{item.value}</div>))}
+    </VirtualizedList>
+);
+```
+
+## Horizontal virtualized list
+<Canvas of={VirtualizedListStories.Horizontal} sourceState={'none'} />
+
+```tsx
+import { VirtualizedList } from '@pidedirecto/ui';
+
+    const items=[
+        {value:'Item 1'},
+        {value:'Item 2'},
+        {value:'Item 3'},
+        {value:'Item 4'},
+        {value:'Item 5'},
+        {value:'Item 6'},
+        {value:'Item 7'},
+        {value:'Item 8'},
+        {value:'Item 9'},
+        {value:'Item 10'}]
+
+
+return (
+    <VirtualizedList orientation={'horizontal'} width={800} height={60} itemSize={150} >
         {items.map((item, idx) => (<div key={item.value}>{item.value}</div>))}
     </VirtualizedList>
 );
