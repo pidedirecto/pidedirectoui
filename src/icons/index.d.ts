@@ -43,6 +43,7 @@ export const CutleryIcon: SvgIcon
 export const DepositIcon: SvgIcon
 export const DeviceIcon: SvgIcon
 export const DishIcon: SvgIcon
+export const EllipsisVerticalIcon: SvgIcon
 export const IncomingIcon: SvgIcon
 export const CashRegisterShiftIcon: SvgIcon
 export const DocumentIcon: SvgIcon
@@ -118,6 +119,7 @@ export const SpeakerOffIcon: SvgIcon
 export const StarIcon: SvgIcon
 export const StoreIcon: SvgIcon
 export const SurveyIcon: SvgIcon
+export const SwitchUserIcon: SvgIcon
 export const TableIcon: SvgIcon
 export const TerminalIcon: SvgIcon
 export const TicketIcon: SvgIcon

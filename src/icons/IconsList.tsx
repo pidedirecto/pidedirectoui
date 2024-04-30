@@ -52,6 +52,7 @@ import { DoorHangerIcon } from 'src/icons/DoorHangerIcon';
 import { DownloadIcon } from 'src/icons/DownloadIcon';
 import { DragIcon } from 'src/icons/DragIcon';
 import { EditIcon } from 'src/icons/EditIcon';
+import { EllipsisVerticalIcon } from 'src/icons/EllipsisVerticalIcon';
 import { EnvelopeIcon } from 'src/icons/EnvelopeIcon';
 import { ExchangeArrowsIcon } from 'src/icons/ExchangeArrowsIcon';
 import { ExitIcon } from 'src/icons/ExitIcon';
@@ -119,6 +120,7 @@ import { SpeakerOffIcon } from 'src/icons/SpeakerOffIcon';
 import { StarIcon } from 'src/icons/StarIcon';
 import { StoreIcon } from 'src/icons/StoreIcon';
 import { SurveyIcon } from 'src/icons/SurveyIcon';
+import { SwitchUserIcon } from 'src/icons/SwitchUserIcon';
 import { TableIcon } from 'src/icons/TableIcon';
 import { TerminalIcon } from 'src/icons/TerminalIcon';
 import { TicketIcon } from 'src/icons/TicketIcon';
@@ -319,6 +321,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <DishIcon size={size} />
                 <span className={classes.iconName}>DishIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <EllipsisVerticalIcon size={size} />
+                <span className={classes.iconName}>EllipsisVerticalIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <IncomingIcon size={size} />
@@ -611,6 +617,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <SurveyIcon size={size} />
                 <span className={classes.iconName}>SurveyIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <SwitchUserIcon size={size} />
+                <span className={classes.iconName}>SwitchUserIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <TableIcon size={size} />
