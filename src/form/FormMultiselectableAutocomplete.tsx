@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 import * as React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
-import { MultiselectableAutocomplete } from 'src/components/MultiselectableAutocomplete';
+import { Multiselectableautocomplete } from 'src/components/Multiselectableautocomplete';
 import { FormContext } from 'src/form/Form';
 import { FormMultiselectableAutocompleteProps } from 'src/types/form/FormMultiselectableAutocomplete';
 import { getError } from 'src/utils/form/getError';
@@ -42,7 +42,7 @@ export function FormMultiselectableAutocomplete({
             control={control}
             name={name}
             render={({ onChange, value, name }) => (
-                <MultiselectableAutocomplete
+                <Multiselectableautocomplete
                     name={name}
                     label={required ? `${label}*` : label}
                     placeholder={placeholder}

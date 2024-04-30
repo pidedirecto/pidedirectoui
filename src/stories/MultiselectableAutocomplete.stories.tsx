@@ -5,10 +5,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { HelperText } from 'src/components/HelperText';
-import { MultiselectableAutocomplete } from 'src/components/MultiselectableAutocomplete';
+import { Multiselectableautocomplete } from 'src/components/Multiselectableautocomplete';
 
-const meta: Meta<typeof MultiselectableAutocomplete> = {
-    component: MultiselectableAutocomplete,
+const meta: Meta<typeof Multiselectableautocomplete> = {
+    component: Multiselectableautocomplete,
     args: {
         label: 'This is an label',
         name: 'multiselectableAutocompleteExample',
@@ -188,7 +188,7 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof MultiselectableAutocomplete>;
+type Story = StoryObj<typeof Multiselectableautocomplete>;
 
 export const Controlled: Story = {
     args: {
@@ -217,7 +217,7 @@ const ControlledMultiselectableAutocomplete = () => {
     };
 
     return (
-        <MultiselectableAutocomplete
+        <Multiselectableautocomplete
             name={'example'}
             selectAllOption
             selectAllOptionLabel={'seleccionar todos'}
