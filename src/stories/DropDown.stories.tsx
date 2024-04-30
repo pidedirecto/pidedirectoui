@@ -34,6 +34,13 @@ const meta: Meta<typeof DropDown> = {
             },
             control: false,
         },
+        position: {
+            description: 'DropDown position, default is right',
+            table: {
+                type: { summary: 'right | left' },
+            },
+            control: false,
+        },
         disabled: {
             description: 'Disables dropdown',
             table: {
@@ -103,5 +110,25 @@ export const Icon: Story = {
         ...meta.args,
         variant: 'icon',
         content: <ListIcon />,
+    },
+};
+
+export const LeftPosition: Story = {
+    args: {
+        ...meta.args,
+        variant: 'icon',
+        position: 'left',
+        content: <ListIcon />,
+    },
+    render: () => {
+        return (
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end' }}>
+                <DropDown content={'Show items'} position={'left'}>
+                    <DropDownItem>Item 1</DropDownItem>
+                    <DropDownItem>Item 2</DropDownItem>
+                    <DropDownItem>Item 3</DropDownItem>
+                </DropDown>
+            </div>
+        );
     },
 };

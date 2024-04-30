@@ -11,7 +11,7 @@ import classes from 'src/styles/dropDown.module.css';
 import { DropDownProps } from 'src/types/components/DropDown';
 import { classNames } from 'src/utils/css/classNames';
 
-export function DropDown({ content, variant, children, disabled, preventClose, classes: classesProp }: DropDownProps): React.ReactElement {
+export function DropDown({ content, variant, position, children, disabled, preventClose, classes: classesProp }: DropDownProps): React.ReactElement {
     const dropDownContainerRef = useRef<HTMLDivElement | null>(null);
     const dropDownRef = useRef<HTMLDivElement | null>(null);
     const id = useRef(normalizeContent(content));
@@ -27,7 +27,14 @@ export function DropDown({ content, variant, children, disabled, preventClose, c
 
     const getDropDownLeft = () => {
         if (!dropDownContainerRef.current) return;
+        if (position === 'left') return 'unset';
         return dropDownContainerRef.current.getBoundingClientRect().left;
+    };
+
+    const getDropDownRight = () => {
+        if (!dropDownContainerRef.current) return;
+        if (position === 'right' || !position) return 'unset';
+        return window.innerWidth - dropDownContainerRef.current.getBoundingClientRect().right;
     };
 
     const getDropDownTop = () => {
@@ -71,7 +78,12 @@ export function DropDown({ content, variant, children, disabled, preventClose, c
                         className={classNames(classes.dropdown, classesProp?.dropdown)}
                         aria-labelledby={`listbox-${id.current}-button`}
                         aria-readonly={true}
-                        style={{ left: getDropDownLeft(), top: getDropDownTop(), width: getDropDownWidth() }}
+                        style={{
+                            left: getDropDownLeft(),
+                            right: getDropDownRight(),
+                            top: getDropDownTop(),
+                            width: getDropDownWidth(),
+                        }}
                         ref={dropDownRef}
                     >
                         <DropDownContext.Provider value={{ closeDropDown: handleCloseDropDown }}>{children}</DropDownContext.Provider>
