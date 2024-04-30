@@ -4,6 +4,14 @@ import { UseHasClickedOutside } from "src/types/hooks/UseHasClickedOutside";
 import { UseIsScreenSize } from "src/types/hooks/UseIsScreenSize";
 import { Params, Result } from "src/types/hooks/CreateStore";
 import { UseNotification } from "src/types/hooks/UseNotification";
+import { UseElementSize } from "src/types/hooks/UseElementSize";
+
+/**
+ * Theme gives width and height of a element passing its reference
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useelementsize--docs)
+ */
+export const useElementSize: UseElementSize
 
 /**
  * Theme hook to override default components theme
