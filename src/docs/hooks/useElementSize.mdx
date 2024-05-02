@@ -1,0 +1,20 @@
+import { Meta} from '@storybook/blocks';
+
+<Meta title="hooks/useElementSize" />
+
+# useElementSize
+
+This hook allows you to obtain the width and height of an element by passing a reference to that element, using useRef. Returns width and height number variables
+
+
+```tsx
+
+import { useElementSize } from '@pidedirecto/ui/hooks'
+import { useRef } from "react";
+
+const elementRef = useRef();
+
+const { width, height } = useElementSize(elementRef);
+
+```
+
