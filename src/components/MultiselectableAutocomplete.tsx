@@ -1,11 +1,11 @@
 /**
  * @prettier
  */
-import { Button } from 'src/components/Button';
 import { useAutocomplete } from '@material-ui/lab';
 import { useRef, useState } from 'react';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
+import { Button } from 'src/components/Button';
 import { Checkbox } from 'src/components/Checkbox';
 import { HelperText } from 'src/components/HelperText';
 import { Input } from 'src/components/Input';
@@ -157,14 +157,14 @@ export function MultiselectableAutocomplete({
             </div>
             {variant === 'detailed' && (
                 <div className={classes.chipsContainer}>
-                    {value.map((valueItem) => {
-                        const option = data.find((item) => getOptionValue(item) === valueItem);
+                    {value.map((optionValue) => {
+                        const option = data.find((item) => getOptionValue(item) === optionValue);
                         return (
-                            <div className={classes.chipContainer} key={valueItem}>
+                            <div className={classes.chipContainer} key={optionValue}>
                                 <div className={classes.chip}>
                                     <span>{getOptionLabel(option)}</span>
                                 </div>
-                                <Button variant={'icon'} onClick={() => removeRestaurantChannels(valueItem)} classes={{ button: classes.iconButton }}>
+                                <Button variant={'icon'} onClick={() => removeRestaurantChannels(optionValue)} classes={{ button: classes.iconButton }}>
                                     <CrossIcon />
                                 </Button>
                             </div>

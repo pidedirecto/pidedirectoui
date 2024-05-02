@@ -75,9 +75,11 @@ import { MultiselectableAutocomplete } from '@pidedirecto/ui'
     );
 
 ```
-# MultiselectableAutocomplete variant
+## MultiselectableAutocomplete variant
 
-Renders a MultiselectableAutocomplete
+Renders a MultiselectableAutocomplete detailed variant
+
+When you send the 'detailed' attribute, a container is rendered with the selected options, each with the ability to be deleted without having to open the multiselectable
 
 <Canvas of={MultiselectableAutocompleteStories.ControlledVariant} />
 
@@ -129,7 +131,7 @@ import { MultiselectableAutocomplete } from '@pidedirecto/ui'
             }
             onChange={(itemIds: any) => handleChange(itemIds)}
             selectedItems={selectedItems}
-            variant:'detailed'
+            variant={'detailed'}
         />
     );
 
