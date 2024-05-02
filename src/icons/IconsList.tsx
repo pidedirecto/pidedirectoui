@@ -211,6 +211,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>BugIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <BankIcon size={size} />
+                <span className={classes.iconName}>BankIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <CalculatorIcon size={size} />
                 <span className={classes.iconName}>CalculatorIcon</span>
             </div>
@@ -289,6 +293,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <CommandIcon size={size} />
                 <span className={classes.iconName}>CommandIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <CoinsIcon size={size} />
+                <span className={classes.iconName}>CoinsIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <CookingPotIcon size={size} />
@@ -689,14 +697,6 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <XmlFileIcon size={size} />
                 <span className={classes.iconName}>XmlFileIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <CoinsIcon size={size} />
-                <span className={classes.iconName}>CoinsIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <BankIcon size={size} />
-                <span className={classes.iconName}>BankIcon</span>
             </div>
         </div>
     );
