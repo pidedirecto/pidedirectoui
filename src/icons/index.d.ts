@@ -8,6 +8,7 @@ export const BackArrowIcon: SvgIcon
 export const BagIcon: SvgIcon
 export const BarChartIcon: SvgIcon
 export const BasketIcon: SvgIcon
+export const BankIcon: SvgIcon
 export const BeakerIcon: SvgIcon
 export const BellIcon: SvgIcon
 export const BillIcon: SvgIcon
@@ -37,6 +38,7 @@ export const ClosedEyeIcon: SvgIcon
 export const CommandIcon: SvgIcon
 export const CookingPotIcon: SvgIcon
 export const CopyIcon: SvgIcon
+export const CoinsIcon: SvgIcon
 export const CreditCardIcon: SvgIcon
 export const CrossIcon: SvgIcon
 export const CutleryIcon: SvgIcon
