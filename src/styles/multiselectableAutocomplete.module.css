@@ -138,6 +138,59 @@
     color: var(--text-info) !important;
 }
 
+.chipsContainer {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    height: 128px;
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+.chipsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.chipContainer {
+    font-family: var(--font-medium);
+    font-size: var(--font-size-regular);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border-secondary);
+    border-radius: 6px;
+    gap: 6px;
+    background-color: var(--surface-secondary);
+    height: 26px;
+    width: fit-content;
+
+}
+
+.chip {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6px;
+    font-size: var(--font-size-small);
+    color: var(--text-secondary);
+}
+
+.iconButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+    min-height: 28px;
+}
+
+.iconButton:hover {
+    cursor: pointer;
+}
+
 @media (min-width: 600px) {
     .label{
         font-size: var(--font-size-regular);

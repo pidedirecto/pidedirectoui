@@ -37,6 +37,13 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
                 type: { summary: 'string' },
             },
         },
+        variant: {
+            description: 'autocomplete variant',
+            table: {
+                required: false,
+                type: { summary: 'detailed' },
+            },
+        },
         placeholder: {
             description: 'autocomplete placeholder',
             table: {
@@ -197,6 +204,13 @@ export const Controlled: Story = {
     render: () => <ControlledMultiselectableAutocomplete />,
 };
 
+export const ControlledVariant: Story = {
+    args: {
+        ...meta.args,
+    },
+    render: () => <ControlledMultiselectableAutocompleteVariant />,
+};
+
 const ControlledMultiselectableAutocomplete = () => {
     const [selectedItems, setSelectedItems] = useState<Array<string>>([]);
 
@@ -242,6 +256,55 @@ const ControlledMultiselectableAutocomplete = () => {
             )}
             onChange={(itemIds: any) => handleChange(itemIds)}
             value={selectedItems}
+        />
+    );
+};
+const ControlledMultiselectableAutocompleteVariant = () => {
+    const [selectedItems, setSelectedItems] = useState<Array<string>>([]);
+
+    const itemsFiltered = [
+        { value: 'value1', label: 'Example 1' },
+        { value: 'value2', label: 'Example 2' },
+        { value: 'value3', label: 'Example 3' },
+        { value: 'value4', label: 'Example 4' },
+        { value: 'value5', label: 'Example 5' },
+        { value: 'value6', label: 'Example 6' },
+        { value: 'value7', label: 'Example 7' },
+        { value: 'value8', label: 'Example 8' },
+        { value: 'value9', label: 'Example 9', restaurantName: 'popeye' },
+    ];
+
+    const handleChange = (itemsId: Array<string>) => {
+        setSelectedItems(itemsId);
+    };
+
+    return (
+        <MultiselectableAutocomplete
+            name={'example'}
+            selectAllOption
+            selectAllOptionLabel={'seleccionar todos'}
+            productsSelectedLabel={`${selectedItems.length} productos seleccionados`}
+            data={itemsFiltered}
+            getOptionValue={(option) => option.value}
+            getOptionLabel={(option) => option.label}
+            renderOption={(option) => (
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '8px 4px',
+                        gap: '12px',
+                    }}
+                >
+                    <p>{option.label}</p>
+                    <HelperText>{option?.restaurantName}</HelperText>
+                </div>
+            )}
+            onChange={(itemIds: any) => handleChange(itemIds)}
+            value={selectedItems}
+            variant={'detailed'}
         />
     );
 };

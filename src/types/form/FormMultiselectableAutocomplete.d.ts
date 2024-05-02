@@ -25,6 +25,7 @@ export type FormMultiselectableAutocompleteProps = {
         optionContainer?: string;
     };
     rules?: Record<string, ValidationRule<any>>;
+    variant?: 'detailed';
 };
 
 export type FormMultiselectableAutocomplete = React.FunctionComponent<FormMultiselectableAutocompleteProps>;

@@ -27,6 +27,7 @@ export function FormMultiselectableAutocomplete({
     defaultValue,
     required,
     rules,
+    variant,
 }: FormMultiselectableAutocompleteProps): React.ReactElement {
     const {
         errors,
@@ -60,6 +61,7 @@ export function FormMultiselectableAutocomplete({
                     disabled={isSubmitting || disabled || formContext.disabled}
                     classes={classesProp}
                     error={error}
+                    variant={variant}
                 />
             )}
             defaultValue={defaultValue ?? []}

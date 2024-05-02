@@ -37,6 +37,13 @@ const meta: Meta<typeof FormMultiselectableAutocomplete> = {
                 type: { summary: 'string' },
             },
         },
+        variant: {
+            description: 'autocomplete variant',
+            table: {
+                required: false,
+                type: { summary: 'detailed' },
+            },
+        },
         placeholder: {
             description: 'autocomplete placeholder',
             table: {
@@ -162,6 +169,13 @@ export const Controlled: Story = {
     render: () => <ControlledMultiselectableAutocomplete />,
 };
 
+export const ControlledVariant: Story = {
+    args: {
+        ...meta.args,
+    },
+    render: () => <ControlledMultiselectableAutocompleteVariant />,
+};
+
 const ControlledMultiselectableAutocomplete = () => {
     const form = useForm();
 
@@ -181,6 +195,50 @@ const ControlledMultiselectableAutocomplete = () => {
         <Form form={form} onSubmit={() => {}}>
             <FormMultiselectableAutocomplete
                 name={'example'}
+                selectAllOption
+                selectAllOptionLabel={'seleccionar todos'}
+                data={itemsFiltered}
+                getOptionValue={(option: any) => option.value}
+                getOptionLabel={(option: any) => option.label}
+                renderOption={(option: any) => (
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            padding: '8px 4px',
+                            gap: '12px',
+                        }}
+                    >
+                        <p>{option.label}</p>
+                        <HelperText>{option?.restaurantName}</HelperText>
+                    </div>
+                )}
+            />
+        </Form>
+    );
+};
+const ControlledMultiselectableAutocompleteVariant = () => {
+    const form = useForm();
+
+    const itemsFiltered = [
+        { value: 'value1', label: 'Example 1' },
+        { value: 'value2', label: 'Example 2' },
+        { value: 'value3', label: 'Example 3' },
+        { value: 'value4', label: 'Example 4' },
+        { value: 'value5', label: 'Example 5' },
+        { value: 'value6', label: 'Example 6' },
+        { value: 'value7', label: 'Example 7' },
+        { value: 'value8', label: 'Example 8' },
+        { value: 'value9', label: 'Example 9', restaurantName: 'popeye' },
+    ];
+
+    return (
+        <Form form={form} onSubmit={() => {}}>
+            <FormMultiselectableAutocomplete
+                name={'example'}
+                variant={'detailed'}
                 selectAllOption
                 selectAllOptionLabel={'seleccionar todos'}
                 data={itemsFiltered}

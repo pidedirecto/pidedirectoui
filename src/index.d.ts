@@ -21,6 +21,7 @@ import { SelectableList } from "src/types/components/SelectableList";
 import { Chip } from "src/types/components/Chip";
 import { DatePicker } from "src/types/components/DatePicker";
 import { DateTimePicker } from "src/types/components/DateTimePicker";
+import { MultiselectableAutocomplete } from "src/types/components/MultiselectableAutocomplete";
 import React from 'react'
 
 /**
