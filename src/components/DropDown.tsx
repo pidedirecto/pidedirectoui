@@ -3,7 +3,6 @@
  */
 import { createContext, useRef, useState } from 'react';
 import * as React from 'react';
-import { createPortal } from 'react-dom';
 import { Button } from 'src/components/Button';
 import { useHasClickedOutside } from 'src/hooks/useHasClickedOutside';
 import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
@@ -24,21 +23,6 @@ export function DropDown({ content, variant, children, disabled, preventClose, c
             if (hasClickedOutside && dropDownRef.current && !dropDownRef.current.contains(elementClicked)) setIsOpen(false);
         },
     });
-
-    const getDropDownLeft = () => {
-        if (!dropDownContainerRef.current) return;
-        return dropDownContainerRef.current.getBoundingClientRect().left;
-    };
-
-    const getDropDownTop = () => {
-        if (!dropDownContainerRef.current) return;
-        return dropDownContainerRef.current?.getBoundingClientRect().top + (dropDownContainerRef.current?.clientHeight || 0) + 10;
-    };
-
-    const getDropDownWidth = () => {
-        if (!dropDownContainerRef.current) return;
-        return dropDownContainerRef.current?.getBoundingClientRect().width;
-    };
 
     const handleCloseDropDown = () => {
         if (preventClose) return;
@@ -64,20 +48,11 @@ export function DropDown({ content, variant, children, disabled, preventClose, c
                     </div>
                 )}
             </Button>
-            {isOpen &&
-                createPortal(
-                    <div
-                        role='listbox'
-                        className={classNames(classes.dropdown, classesProp?.dropdown)}
-                        aria-labelledby={`listbox-${id.current}-button`}
-                        aria-readonly={true}
-                        style={{ left: getDropDownLeft(), top: getDropDownTop(), width: getDropDownWidth() }}
-                        ref={dropDownRef}
-                    >
-                        <DropDownContext.Provider value={{ closeDropDown: handleCloseDropDown }}>{children}</DropDownContext.Provider>
-                    </div>,
-                    document.body,
-                )}
+            {isOpen && (
+                <div role='listbox' className={classNames(classes.dropdown, classesProp?.dropdown)} aria-labelledby={`listbox-${id.current}-button`} aria-readonly={true} ref={dropDownRef}>
+                    <DropDownContext.Provider value={{ closeDropDown: handleCloseDropDown }}>{children}</DropDownContext.Provider>
+                </div>
+            )}
         </div>
     );
 }
