@@ -5,11 +5,13 @@ import { useAutocomplete } from '@material-ui/lab';
 import { useRef, useState } from 'react';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
+import { Button } from 'src/components/Button';
 import { Checkbox } from 'src/components/Checkbox';
 import { HelperText } from 'src/components/HelperText';
 import { Input } from 'src/components/Input';
 import { Label } from 'src/components/Label';
 import { useHasClickedOutside } from 'src/hooks/useHasClickedOutside';
+import { CrossIcon } from 'src/icons/CrossIcon';
 import classes from 'src/styles/multiselectableAutocomplete.module.css';
 import { MultiselectableAutocompleteProps } from 'src/types/components/MultiselectableAutocomplete';
 import { classNames } from 'src/utils/css/classNames';
@@ -32,6 +34,7 @@ export function MultiselectableAutocomplete({
     value,
     productsSelectedLabel,
     selectAllOptionLabel,
+    variant,
 }: MultiselectableAutocompleteProps): React.ReactElement {
     const listboxContainerRef = useRef<HTMLDivElement | null>(null);
     const listOptionsContainerRef = useRef<HTMLDivElement | null>(null);
@@ -86,6 +89,11 @@ export function MultiselectableAutocomplete({
 
         const clientRect = listboxContainerRef.current.getBoundingClientRect();
         return clientRect.left;
+    };
+
+    const removeRestaurantChannels = (selectedOptionValue: string) => {
+        const optionsUpdated = value?.filter((option) => option !== selectedOptionValue);
+        onChange(optionsUpdated);
     };
 
     return (
@@ -147,6 +155,23 @@ export function MultiselectableAutocomplete({
                         document.body,
                     )}
             </div>
+            {variant === 'detailed' && (
+                <div className={classes.chipsContainer}>
+                    {value.map((optionValue) => {
+                        const option = data.find((item) => getOptionValue(item) === optionValue);
+                        return (
+                            <div className={classes.chipContainer} key={optionValue}>
+                                <div className={classes.chip}>
+                                    <span>{getOptionLabel(option)}</span>
+                                </div>
+                                <Button variant={'icon'} onClick={() => removeRestaurantChannels(optionValue)} classes={{ button: classes.iconButton }}>
+                                    <CrossIcon />
+                                </Button>
+                            </div>
+                        );
+                    })}
+                </div>
+            )}
         </div>
     );
 }
