@@ -8,6 +8,7 @@ import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
 import { ArrowUpIcon } from 'src/icons/ArrowUpIcon';
 import { BackArrowIcon } from 'src/icons/BackArrowIcon';
 import { BagIcon } from 'src/icons/BagIcon';
+import { BankIcon } from 'src/icons/BankIcon';
 import { BarChartIcon } from 'src/icons/BarChartIcon';
 import { BasketIcon } from 'src/icons/BasketIcon';
 import { BeakerIcon } from 'src/icons/BeakerIcon';
@@ -37,6 +38,7 @@ import { ClipboardIcon } from 'src/icons/ClipboardIcon';
 import { ClipboardsIcon } from 'src/icons/ClipboardsIcon';
 import { ClockIcon } from 'src/icons/ClockIcon';
 import { ClosedEyeIcon } from 'src/icons/ClosedEyeIcon';
+import { CoinsIcon } from 'src/icons/CoinsIcon';
 import { CommandIcon } from 'src/icons/CommandIcon';
 import { CookingPotIcon } from 'src/icons/CookingPotIcon';
 import { CopyIcon } from 'src/icons/CopyIcon';
@@ -211,6 +213,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>BugIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <BankIcon size={size} />
+                <span className={classes.iconName}>BankIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <CalculatorIcon size={size} />
                 <span className={classes.iconName}>CalculatorIcon</span>
             </div>
@@ -289,6 +295,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <CommandIcon size={size} />
                 <span className={classes.iconName}>CommandIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <CoinsIcon size={size} />
+                <span className={classes.iconName}>CoinsIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <CookingPotIcon size={size} />
