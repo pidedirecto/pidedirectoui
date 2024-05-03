@@ -28,6 +28,7 @@ export function DropDown({ content, variant, position, children, disabled, preve
     const getDropDownLeft = () => {
         if (!dropDownContainerRef.current) return;
         if (position === 'left') return 'unset';
+        // if (position === 'left') return 'unset';
         return dropDownContainerRef.current.getBoundingClientRect().left;
     };
 
