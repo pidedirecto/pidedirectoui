@@ -8,6 +8,7 @@ export const BackArrowIcon: SvgIcon
 export const BagIcon: SvgIcon
 export const BarChartIcon: SvgIcon
 export const BasketIcon: SvgIcon
+export const BankIcon: SvgIcon
 export const BeakerIcon: SvgIcon
 export const BellIcon: SvgIcon
 export const BillIcon: SvgIcon
@@ -37,12 +38,14 @@ export const ClosedEyeIcon: SvgIcon
 export const CommandIcon: SvgIcon
 export const CookingPotIcon: SvgIcon
 export const CopyIcon: SvgIcon
+export const CoinsIcon: SvgIcon
 export const CreditCardIcon: SvgIcon
 export const CrossIcon: SvgIcon
 export const CutleryIcon: SvgIcon
 export const DepositIcon: SvgIcon
 export const DeviceIcon: SvgIcon
 export const DishIcon: SvgIcon
+export const EllipsisVerticalIcon: SvgIcon
 export const IncomingIcon: SvgIcon
 export const CashRegisterShiftIcon: SvgIcon
 export const DocumentIcon: SvgIcon
@@ -118,6 +121,7 @@ export const SpeakerOffIcon: SvgIcon
 export const StarIcon: SvgIcon
 export const StoreIcon: SvgIcon
 export const SurveyIcon: SvgIcon
+export const SwitchUserIcon: SvgIcon
 export const TableIcon: SvgIcon
 export const TerminalIcon: SvgIcon
 export const TicketIcon: SvgIcon

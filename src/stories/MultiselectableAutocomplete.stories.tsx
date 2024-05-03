@@ -17,7 +17,7 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
         productsSelectedLabel: '8 products selected',
         selectAllOptionLabel: 'I am an label for select all',
         onChange: undefined,
-        selectedItems: [],
+        value: [],
         renderOption: (option) => <div>Hi I am the option rendered : {option}</div>,
         getOptionValue: () => {},
         getOptionLabel: () => {},
@@ -35,6 +35,13 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
             table: {
                 required: true,
                 type: { summary: 'string' },
+            },
+        },
+        variant: {
+            description: 'autocomplete variant',
+            table: {
+                required: false,
+                type: { summary: 'detailed' },
             },
         },
         placeholder: {
@@ -153,7 +160,7 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
                 type: { summary: 'string' },
             },
         },
-        selectedItems: {
+        value: {
             description: 'Take this value for has a controlled the options selected',
             table: {
                 required: true,
@@ -195,6 +202,13 @@ export const Controlled: Story = {
         ...meta.args,
     },
     render: () => <ControlledMultiselectableAutocomplete />,
+};
+
+export const ControlledVariant: Story = {
+    args: {
+        ...meta.args,
+    },
+    render: () => <ControlledMultiselectableAutocompleteVariant />,
 };
 
 const ControlledMultiselectableAutocomplete = () => {
@@ -241,7 +255,56 @@ const ControlledMultiselectableAutocomplete = () => {
                 </div>
             )}
             onChange={(itemIds: any) => handleChange(itemIds)}
-            selectedItems={selectedItems}
+            value={selectedItems}
+        />
+    );
+};
+const ControlledMultiselectableAutocompleteVariant = () => {
+    const [selectedItems, setSelectedItems] = useState<Array<string>>([]);
+
+    const itemsFiltered = [
+        { value: 'value1', label: 'Example 1' },
+        { value: 'value2', label: 'Example 2' },
+        { value: 'value3', label: 'Example 3' },
+        { value: 'value4', label: 'Example 4' },
+        { value: 'value5', label: 'Example 5' },
+        { value: 'value6', label: 'Example 6' },
+        { value: 'value7', label: 'Example 7' },
+        { value: 'value8', label: 'Example 8' },
+        { value: 'value9', label: 'Example 9', restaurantName: 'popeye' },
+    ];
+
+    const handleChange = (itemsId: Array<string>) => {
+        setSelectedItems(itemsId);
+    };
+
+    return (
+        <MultiselectableAutocomplete
+            name={'example'}
+            selectAllOption
+            selectAllOptionLabel={'seleccionar todos'}
+            productsSelectedLabel={`${selectedItems.length} productos seleccionados`}
+            data={itemsFiltered}
+            getOptionValue={(option) => option.value}
+            getOptionLabel={(option) => option.label}
+            renderOption={(option) => (
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '8px 4px',
+                        gap: '12px',
+                    }}
+                >
+                    <p>{option.label}</p>
+                    <HelperText>{option?.restaurantName}</HelperText>
+                </div>
+            )}
+            onChange={(itemIds: any) => handleChange(itemIds)}
+            value={selectedItems}
+            variant={'detailed'}
         />
     );
 };

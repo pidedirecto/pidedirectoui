@@ -61,6 +61,20 @@ import { ListIcon } from '@pidedirecto/ui/icons';
 </DropDown>
 ```
 
+## Position
+
+You can change the position with the `position` prop, it will align the dropdown list position with the button position
+
+<Canvas of={DropDownStories.LeftPosition} sourceState={'none'} />
+
+```tsx
+ <DropDown content={'Show items'} position='left'>
+    <DropDownItem>Item 1</DropDownItem>
+    <DropDownItem>Item 2</DropDownItem>
+    <DropDownItem>Item 3</DropDownItem>
+</DropDown>
+```
+
 ## API
 
 <ArgTypes of={DropDownStories} />

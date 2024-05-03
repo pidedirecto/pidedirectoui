@@ -10,6 +10,9 @@ import { FormIntegerField } from "src/types/form/FormIntegerField";
 import { FormPasswordField } from "src/types/form/FormPasswordField";
 import { FormPercentNumberField } from "src/types/form/FormPercentNumberField";
 import { FormSelectableList } from "src/types/form/FormSelectableList";
+import { FormDatePicker } from "src/types/form/FormDatePicker";
+import { FormDateTimePicker } from "src/types/form/FormDateTimePicker";
+import { FormMultiselectableAutocomplete } from "src/types/form/FormMultiselectableAutocomplete";
 
 
 /**
@@ -83,3 +86,21 @@ export const FormPercentNumberField: FormPercentNumberField
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formselectablelist--docs)
  */
 export const FormSelectableList: FormSelectableList
+
+/**
+ * Form multiselectable Autocomplete list
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-FormMultiselectableAutocomplete--docs)
+ */
+export const FormMultiselectableAutocomplete: FormMultiselectableAutocomplete
+
+/**
+ * Form date picker
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formdatepicker--docs)
+ */
+export const FormDatePicker: FormDatePicker
+
+/**
+ * Form date time picker
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formdatetimepicker--docs)
+ */
+export const FormDateTimePicker: FormDateTimePicker

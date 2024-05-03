@@ -1,0 +1,22 @@
+import { Meta, ArgTypes, Canvas} from '@storybook/blocks';
+
+import * as FormMultiselectableAutocomplete from '../../stories/form/FormMultiselectableAutocomplete.stories';
+
+<Meta title='form/FormMultiselectableAutocomplete' />
+
+# FormMultiselectableAutocomplete
+FormMultiselectableAutocomplete component
+
+<Canvas of={FormMultiselectableAutocomplete.Controlled} sourceState={'none'} />
+
+## FormMultiselectableAutocomplete variant
+FormMultiselectableAutocomplete detailed variant
+
+When you send the 'detailed' attribute, a container is rendered with the selected options, each with the ability to be deleted without having to open the multiselectable
+
+<Canvas of={FormMultiselectableAutocomplete.ControlledVariant} sourceState={'none'} />
+
+## API
+
+<ArgTypes of={FormMultiselectableAutocomplete} />
+

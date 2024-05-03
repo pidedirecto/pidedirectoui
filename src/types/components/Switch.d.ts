@@ -15,6 +15,7 @@ export type SwitchProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'type'
     tooltip?: string;
     label?: string;
     error?: boolean;
+    labelPosition?: 'right' | 'left';
     inputRef?: React.Ref<any>;
 };
 

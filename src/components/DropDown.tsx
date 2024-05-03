@@ -10,7 +10,7 @@ import classes from 'src/styles/dropDown.module.css';
 import { DropDownProps } from 'src/types/components/DropDown';
 import { classNames } from 'src/utils/css/classNames';
 
-export function DropDown({ content, variant, children, disabled, preventClose, classes: classesProp }: DropDownProps): React.ReactElement {
+export function DropDown({ content, variant, position, children, disabled, preventClose, classes: classesProp }: DropDownProps): React.ReactElement {
     const dropDownContainerRef = useRef<HTMLDivElement | null>(null);
     const dropDownRef = useRef<HTMLDivElement | null>(null);
     const id = useRef(normalizeContent(content));
