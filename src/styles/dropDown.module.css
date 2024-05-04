@@ -22,6 +22,7 @@
     position: relative;
     width: max-content;
     max-width: 100%;
+    min-width: 150px;
 }
 
 .contentContainer {
@@ -51,7 +52,7 @@
 .dropdown {
     position: absolute;
     top: 120%;
-    width: 100%;
+    width: auto;
     height: auto;
     list-style: none;
     background-color: white;
@@ -61,6 +62,7 @@
     box-shadow: 0px 8px 20px -4px rgba(23, 24, 24, 0.12);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     z-index: 1000;
+    min-width: 150px;
 }
 
 @media (max-width: 600px) {

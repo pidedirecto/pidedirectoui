@@ -3,6 +3,7 @@
  */
 import { createContext, useRef, useState } from 'react';
 import * as React from 'react';
+import { createPortal } from 'react-dom';
 import { Button } from 'src/components/Button';
 import { useHasClickedOutside } from 'src/hooks/useHasClickedOutside';
 import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
@@ -48,11 +49,14 @@ export function DropDown({ content, variant, position, children, disabled, preve
                     </div>
                 )}
             </Button>
-            {isOpen && (
-                <div role='listbox' className={classNames(classes.dropdown, classesProp?.dropdown)} aria-labelledby={`listbox-${id.current}-button`} aria-readonly={true} ref={dropDownRef}>
-                    <DropDownContext.Provider value={{ closeDropDown: handleCloseDropDown }}>{children}</DropDownContext.Provider>
-                </div>
-            )}
+            {isOpen &&
+                dropDownContainerRef.current &&
+                createPortal(
+                    <div role='listbox' className={classNames(classes.dropdown, classesProp?.dropdown)} aria-labelledby={`listbox-${id.current}-button`} aria-readonly={true} ref={dropDownRef}>
+                        <DropDownContext.Provider value={{ closeDropDown: handleCloseDropDown }}>{children}</DropDownContext.Provider>
+                    </div>,
+                    dropDownContainerRef.current,
+                )}
         </div>
     );
 }
