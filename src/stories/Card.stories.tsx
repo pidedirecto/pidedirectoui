@@ -14,14 +14,14 @@ const meta: Meta<typeof Card> = {
     },
     argTypes: {
         title: {
-            description: 'Titles the accordion content',
+            description: 'Titles the card content',
             table: {
                 type: { summary: 'string' },
             },
             control: false,
         },
         children: {
-            description: 'Accordion content',
+            description: 'card content',
             type: {
                 required: true,
                 name: 'React.Node' as any,
@@ -32,7 +32,7 @@ const meta: Meta<typeof Card> = {
             control: false,
         },
         classes: {
-            description: 'Classes object to override accordion style',
+            description: 'Classes object to override card style',
             table: {
                 type: { summary: 'object' },
             },
@@ -73,7 +73,7 @@ export const Controlled: Story = {
         ...meta.args,
     },
     render: () => (
-        <Card title={'Accordion title content'}>
+        <Card title={'Card title content'}>
             <p>Information shown on card</p>
         </Card>
     ),
