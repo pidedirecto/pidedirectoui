@@ -1,0 +1,17 @@
+.cardContainer{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid var(--border-primary);
+}
+.cardTitle{
+    font-size: var(--font-size-large);
+    font-weight: bold;
+    font-family: var(--font-semi-bold);
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    padding: 8px;
+}
+
+.cardContent{
+    padding: 8px;
+}
