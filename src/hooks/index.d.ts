@@ -7,7 +7,7 @@ import { UseNotification } from "src/types/hooks/UseNotification";
 import { UseElementSize } from "src/types/hooks/UseElementSize";
 
 /**
- * Theme gives width and height of a element passing its reference
+ * Theme gives width and height of an element passing its reference
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useelementsize--docs)
  */
