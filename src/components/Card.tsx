@@ -9,7 +9,7 @@ import { classNames } from 'src/utils/css/classNames';
 export function Card({ classes: classesProp, children, title }: CardProps): React.ReactElement {
     return (
         <div className={classNames(classes.cardContainer, classesProp?.cardContainer)}>
-            <div className={classNames(classes.cardTitle, classesProp?.cardTitle)}>{title}</div>
+            <h3 className={classNames(classes.cardTitle, classesProp?.cardTitle)}>{title}</h3>
             <div className={classNames(classes.cardContent, classesProp?.cardContent)}>{children}</div>
         </div>
     );
