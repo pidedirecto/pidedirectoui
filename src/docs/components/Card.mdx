@@ -1,0 +1,25 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as CardStories from '../../stories/Card.stories';
+
+<Meta of={CardStories} />
+
+# Card
+Renders a Card.
+
+<Canvas of={CardStories.Controlled} />
+
+```tsx
+import { Card } from '@pidedirecto/ui'
+
+return (
+    <Card title={'Card title content'}>
+        <p>Information shown on card</p>
+    </Card>
+);
+```
+
+## API
+
+<ArgTypes of={CardStories} />
+
