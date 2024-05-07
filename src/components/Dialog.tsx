@@ -24,11 +24,13 @@ export function Dialog({ open, loading, keepMounted, onClose, title, position, c
         if (open) {
             if (closeDialogTimeout.current) clearTimeout(closeDialogTimeout.current);
             setIsDialogOpen(true);
+            document.body.style.overflow = 'hidden';
         }
         if (!open) {
             closeDialogTimeout.current = setTimeout(() => {
                 setIsDialogOpen(false);
                 closeDialogTimeout.current = undefined;
+                document.body.style.overflow = '';
             }, 100) as any;
         }
     }, [open]);

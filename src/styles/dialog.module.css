@@ -54,7 +54,7 @@
     border: 1px solid var(--border-primary);
     padding: 24px;
     max-height: 90vh;
-    max-width: 90vw;
+    max-width: 540px;
     border-radius: 10px;
     z-index: 120;
     position: relative;
@@ -94,6 +94,12 @@
     left: 0;
     bottom: 0;
     width: 100%;
+}
+
+@media (max-width: 600px) {
+    .dialogContent {
+        max-width: 80vw;
+    }
 }
 
 @keyframes modal-open {
