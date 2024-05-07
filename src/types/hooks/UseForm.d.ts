@@ -1,6 +1,6 @@
 /**
  * @prettier
  */
-import { type UseFormMethods } from 'react-hook-form';
+import type { UseFormMethods, UseFormOptions } from 'react-hook-form';
 
-export type UseForm = () => UseFormMethods<Record<string, any>>;
+export type UseForm = (options?: UseFormOptions) => UseFormMethods<Record<string, any>>;

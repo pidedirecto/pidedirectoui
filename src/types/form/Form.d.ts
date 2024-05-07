@@ -6,7 +6,7 @@ import { type UseFormMethods } from 'react-hook-form';
 
 export type FormProps = {
     form: UseFormMethods<Record<string, any>>;
-    onSubmit: (formValues: Record<string, any>) => void;
+    onSubmit: (formValues: any) => void | Promise<void>;
     disabled?: boolean;
     id?: string;
     disableSubmitOnEnterKey?: boolean;
