@@ -94,6 +94,12 @@ export const FormSelectableList: FormSelectableList
 export const FormMultiselectableAutocomplete: FormMultiselectableAutocomplete
 
 /**
+ * Form Autocomplete list
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-FormAutocomplete--docs)
+ */
+export const FormAutocomplete: FormAutocomplete
+
+/**
  * Form date picker
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formdatepicker--docs)
  */
