@@ -22,6 +22,7 @@ import { Chip } from "src/types/components/Chip";
 import { DatePicker } from "src/types/components/DatePicker";
 import { DateTimePicker } from "src/types/components/DateTimePicker";
 import { MultiselectableAutocomplete } from "src/types/components/MultiselectableAutocomplete";
+import { Autocomplete } from "src/types/components/Autocomplete";
 import { Card } from "src/types/components/Card";
 import React from 'react'
 
@@ -129,6 +130,13 @@ export const VirtualizedList: VirtualizedList
  * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-multiselectableAutocomplete--docs)
  */
 export const MultiselectableAutocomplete: MultiselectableAutocomplete
+
+/**
+ * Renders Autocomplete
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/docs-autocomplete--docs)
+ */
+export const Autocomplete: Autocomplete
 
 /**
  * Renders Table
