@@ -16,7 +16,6 @@ export type MultiselectableAutocompleteProps = {
     disabled?: boolean,
     error?: boolean,
     selectAllOption?: boolean,
-    required?: boolean | { value: number, message: string },
     InputProps?: any,
     onChange: Function,
     tooltip?: string,

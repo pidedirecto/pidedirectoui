@@ -13,7 +13,6 @@ export type AutocompleteProps = {
     renderOption: (req:any) => React.Node,
     disabled?: boolean,
     error?: boolean,
-    required?: boolean | { value: number, message: string },
     InputProps?: any,
     onChange: Function,
     onInputChange?: Function,
