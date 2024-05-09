@@ -117,9 +117,16 @@ const meta: Meta<typeof Autocomplete> = {
             },
         },
         onChange: {
-            description: 'Callback to be called after the user hides or shows the accordion',
+            description: 'Callback to be called after the user select an option',
             table: {
                 required: true,
+                type: { summary: 'function' },
+            },
+        },
+        onChangeInputValue: {
+            description: 'Callback to be called after the user write on input',
+            table: {
+                required: false,
                 type: { summary: 'function' },
             },
         },
@@ -168,7 +175,8 @@ export const Controlled: Story = {
 };
 
 const ControlledAutocomplete = () => {
-    const [selectedItems, setSelectedItems] = useState<Array<string>>([]);
+    const [selectedItems, setSelectedItems] = useState<string>('');
+    const [inputValue, setInputValue] = useState<string>();
 
     const itemsFiltered = [
         { value: 'value1', label: 'Example 1' },
@@ -182,8 +190,12 @@ const ControlledAutocomplete = () => {
         { value: 'value9', label: 'Example 9', restaurantName: 'popeye' },
     ];
 
-    const handleChange = (itemsId: Array<string>) => {
+    const handleChange = (itemsId: string) => {
         setSelectedItems(itemsId);
+    };
+
+    const handleInputValueChange = (value: string) => {
+        setInputValue(value);
     };
 
     return (
@@ -208,6 +220,7 @@ const ControlledAutocomplete = () => {
                 </div>
             )}
             onChange={(itemIds: any) => handleChange(itemIds)}
+            onChangeInputValue={handleInputValueChange}
         />
     );
 };

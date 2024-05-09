@@ -25,6 +25,11 @@ export function App(): React.ReactElement {
     const handleChange = (itemsId: string) => {
         setSelectedItem(itemsId);
     };
+
+    const handleInputValueChange = (itemsId: string) => {
+        setSelectedItem(itemsId);
+    };
+
     return (
         <div style={{ padding: 120 }}>
             <Card title={'titutlo'}>
@@ -49,6 +54,7 @@ export function App(): React.ReactElement {
                         </div>
                     )}
                     onChange={handleChange}
+                    onChangeInputValue={handleInputValueChange}
                 />
             </Card>
         </div>

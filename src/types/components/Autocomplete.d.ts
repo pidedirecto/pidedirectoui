@@ -16,6 +16,7 @@ export type AutocompleteProps = {
     required?: boolean | { value: number, message: string },
     InputProps?: any,
     onChange: Function,
+    onChangeInputValue?: Function,
     tooltip?: string,
     classes?: {
         optionsContainer?: string,
