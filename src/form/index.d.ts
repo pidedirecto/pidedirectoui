@@ -13,6 +13,7 @@ import { FormSelectableList } from "src/types/form/FormSelectableList";
 import { FormDatePicker } from "src/types/form/FormDatePicker";
 import { FormDateTimePicker } from "src/types/form/FormDateTimePicker";
 import { FormMultiselectableAutocomplete } from "src/types/form/FormMultiselectableAutocomplete";
+import { FormAutocomplete } from "src/types/form/FormAutocomplete";
 
 
 /**
@@ -89,13 +90,13 @@ export const FormSelectableList: FormSelectableList
 
 /**
  * Form multiselectable Autocomplete list
- * [docs](https://ui.pidedirecto.mx/?path=/docs/form-FormMultiselectableAutocomplete--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formMultiselectableAutocomplete--docs)
  */
 export const FormMultiselectableAutocomplete: FormMultiselectableAutocomplete
 
 /**
  * Form Autocomplete list
- * [docs](https://ui.pidedirecto.mx/?path=/docs/form-FormAutocomplete--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formAutocomplete--docs)
  */
 export const FormAutocomplete: FormAutocomplete
 

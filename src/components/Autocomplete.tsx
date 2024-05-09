@@ -24,7 +24,7 @@ export function Autocomplete({
     getOptionLabel,
     getOptionValue,
     onChange,
-    onChangeInputValue,
+    onInputChange,
     disabled,
     error,
     defaultValue,
@@ -90,7 +90,7 @@ export function Autocomplete({
                     inputRef={inputRef}
                     onChange={(value, e) => {
                         setInputValue(e.target.value);
-                        onChangeInputValue?.(e.target.value);
+                        onInputChange?.(e.target.value);
                         inputOnChange?.(e);
                     }}
                     onClick={() => {

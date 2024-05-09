@@ -123,7 +123,7 @@ const meta: Meta<typeof Autocomplete> = {
                 type: { summary: 'function' },
             },
         },
-        onChangeInputValue: {
+        onInputChange: {
             description: 'Callback to be called after the user write on input',
             table: {
                 required: false,
@@ -220,7 +220,7 @@ const ControlledAutocomplete = () => {
                 </div>
             )}
             onChange={(itemIds: any) => handleChange(itemIds)}
-            onChangeInputValue={handleInputValueChange}
+            onInputChange={handleInputValueChange}
         />
     );
 };

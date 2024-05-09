@@ -54,7 +54,7 @@ export function App(): React.ReactElement {
                         </div>
                     )}
                     onChange={handleChange}
-                    onChangeInputValue={handleInputValueChange}
+                    onInputChange={handleInputValueChange}
                 />
             </Card>
         </div>
