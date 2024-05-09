@@ -90,13 +90,13 @@ export const FormSelectableList: FormSelectableList
 
 /**
  * Form multiselectable Autocomplete list
- * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formMultiselectableAutocomplete--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formmultiselectableautocomplete--docs)
  */
 export const FormMultiselectableAutocomplete: FormMultiselectableAutocomplete
 
 /**
  * Form Autocomplete list
- * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formAutocomplete--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formautocomplete--docs)
  */
 export const FormAutocomplete: FormAutocomplete
 
