@@ -1,0 +1,204 @@
+.headContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.label {
+    font-family: var(--font-regular);
+    color: var(--text-secondary);
+    font-size: var(--font-size-small);
+    margin-bottom: 8px;
+}
+
+.numberOptionsSelectedContainer {
+    font-family: var(--font-regular);
+    background-color: var(--surface-tertiary);
+    color: var(--surface-brand-heavy-contrast);
+    font-size: var(--font-size-small);
+    text-align: center;
+    padding: 8px 10px 4px 10px;
+    min-width: 93px;
+    min-height: 26px;
+    margin-right: 12px;
+}
+
+.labelError {
+    color: var(--text-danger);
+}
+
+.input {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-family: var(--font-regular);
+    height: 42px;
+    align-items: center;
+    display: flex;
+    border: none;
+}
+
+.inputError{
+    border: 2px solid var(--border-danger);
+}
+
+.helperText {
+    font-family: var(--font-light);
+    color: var(--text-danger);
+}
+
+.listbox {
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    z-index: 10000;
+    position: absolute;
+    list-style: none;
+    background-color: var(--surface-primary);
+    overflow: auto;
+    max-height: 40vh;
+    border: 1px solid var(--border-secondary);
+}
+
+.listbox li[data-focus="true"]{
+    color: var(--text-primary);
+    cursor: pointer;
+ }
+
+.listbox li:active {
+    background-color: var(--surface-secondary);
+    color: var(--text-primary);
+ }
+
+.itemContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 60px;
+    padding: 5px 10px;
+}
+
+.mobileNumberContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.numberOfOrders {
+    color: var(--text-primary);
+    font-size: var(--font-size-small);
+    margin-left: 5px;
+    font-family: var(--font-regular);
+}
+
+.itemText {
+    font-family: var(--font-regular);
+    font-size: var(--font-size-regular),
+}
+
+.checkBoxRow {
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
+    font-family: var(--font-size-regular);
+}
+
+.checkAllBoxRow {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--text-info) !important;
+    font-family: var(--font-size-regular);
+    padding-bottom: 12px;
+    padding-top: 12px;
+    margin-left: 4px;
+    border-bottom: 1px solid var(--border-primary);
+    font-size: var(--font-size-small),
+}
+
+.arrowAlignCenter {
+    margin-left: 6px;
+}
+
+.checkAllBoxRow:hover {
+    color: var(--text-info) !important;
+}
+
+.chipsContainer {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    height: 128px;
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+}
+
+.chipsContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.chipContainer {
+    font-family: var(--font-medium);
+    font-size: var(--font-size-regular);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border-secondary);
+    border-radius: 6px;
+    gap: 6px;
+    background-color: var(--surface-secondary);
+    height: 26px;
+    width: fit-content;
+
+}
+
+.chip {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6px;
+    font-size: var(--font-size-small);
+    color: var(--text-secondary);
+}
+
+.iconButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+    min-height: 28px;
+}
+
+.iconButton:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 600px) {
+    .label{
+        font-size: var(--font-size-regular);
+    }
+}
+
+@media (max-width: 600px) {
+    .input{
+        width: 100%;
+    }
+}

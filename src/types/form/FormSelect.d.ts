@@ -2,6 +2,7 @@
  * @prettier
  */
 import * as React from 'react';
+import type { ValidationRule } from 'react-hook-form';
 
 export type FormSelectProps = {
     label?: string;
@@ -19,7 +20,7 @@ export type FormSelectProps = {
     };
     multiselectable?: boolean;
     disabled?: boolean;
-    required?: boolean;
+    required?: ValidationRule<boolean>;
     preventClose?: boolean;
     error?: boolean;
     defaultValue?: any | Array<any>;
