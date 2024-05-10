@@ -6,16 +6,38 @@ import * as React from 'react';
 import { Button } from 'src/components/Button';
 import { Input } from 'src/components/Input';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
+import { VirtualizedList } from 'src/components/VirtualizedList';
 import { UiLogEventTypes } from 'src/constants/UiLogEventType';
 import classes from 'src/styles/table.module.css';
 import type { TableColumn, TableProps, TableRow } from 'src/types/components/Table';
 import { classNames } from 'src/utils/css/classNames';
 
-export function Table({ columns, rows, hideHeaders, rowsPerPage, emptyMessage, searchable, searchInputProps, classes: classesProp, onRowClick }: TableProps): React.ReactElement {
+export function Table({
+    columns,
+    rows,
+    hideHeaders,
+    rowsPerPage,
+    emptyMessage,
+    searchable,
+    virtualized,
+    contentHeight,
+    rowHeight,
+    searchInputProps,
+    classes: classesProp,
+    onRowClick,
+}: TableProps): React.ReactElement {
     const { addElementToStackTrace } = useContext(UiLogEventTrackerContext);
 
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState('');
+
+    if (!!virtualized && !contentHeight) {
+        console.error('You are using a virtualized table without passing content height, contentHeight prop is required.');
+    }
+
+    if (!!virtualized && !rowHeight) {
+        console.error('You are using a virtualized table without passing row height, rowHeight prop is required.');
+    }
 
     const addTableToStackTrace = () => {
         addElementToStackTrace({
@@ -66,22 +88,25 @@ export function Table({ columns, rows, hideHeaders, rowsPerPage, emptyMessage, s
                     </thead>
                 )}
                 <tbody>
-                    {getRowsToShow().map((row: TableRow, idx) => {
-                        const isLastRow = idx === rows.length - 1;
-                        return (
-                            <tr onClick={() => onRowClick?.(row)} key={idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, classesProp?.row, row?.className)}>
-                                {columns.map((column: TableColumn) => {
-                                    const columnSize = column.size || 1;
-                                    const width = 100 * columnSize;
-                                    return (
-                                        <td key={column.id} className={classNames(classes.cell, classesProp?.cell)} style={{ width: `${width}%` }}>
-                                            {row[column.id]}
-                                        </td>
-                                    );
-                                })}
-                            </tr>
-                        );
-                    })}
+                    <TableBody virtualized={virtualized} height={contentHeight} rowHeight={rowHeight}>
+                        {getRowsToShow().map((row: TableRow, idx) => {
+                            const isLastRow = idx === rows.length - 1;
+
+                            return (
+                                <tr onClick={() => onRowClick?.(row)} key={idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, classesProp?.row, row?.className)}>
+                                    {columns.map((column: TableColumn) => {
+                                        const columnSize = column.size || 1;
+                                        const width = 100 * columnSize;
+                                        return (
+                                            <td key={column.id} className={classNames(classes.cell, classesProp?.cell)} style={{ width: `${width}%` }}>
+                                                {row[column.id]}
+                                            </td>
+                                        );
+                                    })}
+                                </tr>
+                            );
+                        })}
+                    </TableBody>
                     {rows.length === 0 && !!emptyMessage && (
                         <tr className={classes.row} style={{ justifyContent: 'center' }}>
                             <td className={classNames(classes.cell, classesProp?.cell)}>{emptyMessage}</td>
@@ -111,3 +136,22 @@ export function Table({ columns, rows, hideHeaders, rowsPerPage, emptyMessage, s
         </div>
     );
 }
+
+function TableBody({ children, virtualized, height, rowHeight }: TableBodyProps): React.ReactElement {
+    if (!virtualized) {
+        return <>{children}</>;
+    }
+
+    return (
+        <VirtualizedList itemSize={rowHeight} height={height}>
+            {children}
+        </VirtualizedList>
+    );
+}
+
+type TableBodyProps = {
+    children: Array<React.ReactElement>;
+    virtualized?: boolean;
+    height?: number;
+    rowHeight?: number;
+};

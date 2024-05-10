@@ -87,6 +87,13 @@ For example in the next table searche for row 1, row 2 and row 3
 
 <Canvas of={TableStories.SearchableTable} />
 
+### Virtualized
+
+To enable virtualization in `Table` you need to pass `virtualized` prop, also you have to pass `contentHeight` and `rowHeight`,
+both indicating the table body height and table rows height respectively
+
+<Canvas of={TableStories.Virtualized} />
+
 ## API
 
 <ArgTypes of={TableStories} />

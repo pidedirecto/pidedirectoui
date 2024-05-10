@@ -132,6 +132,27 @@ const meta: Meta<typeof Table> = {
             },
             control: false,
         },
+        virtualized: {
+            description: 'Enables table virtualization',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        contentHeight: {
+            description: 'Table body height, required when table is virtualized',
+            table: {
+                type: { summary: 'number' },
+            },
+            control: false,
+        },
+        rowHeight: {
+            description: 'Table row height, required when table is virtualized',
+            table: {
+                type: { summary: 'number' },
+            },
+            control: false,
+        },
         emptyMessage: {
             description: 'Message to show when there are not rows to show',
             table: {
@@ -293,5 +314,14 @@ export const SearchableTable: Story = {
                 },
             },
         ],
+    },
+};
+
+export const Virtualized: Story = {
+    args: {
+        ...meta.args,
+        virtualized: true,
+        contentHeight: 100,
+        rowHeight: 60,
     },
 };
