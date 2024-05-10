@@ -19,6 +19,7 @@ export * from 'src/components/VirtualizedList';
 export * from 'src/components/MultiselectableAutocomplete';
 export * from 'src/components/Table';
 export * from 'src/components/Dialog';
+export * from 'src/components/DialogContent';
 export * from 'src/components/DialogActions';
 export * from 'src/components/Image';
 export * from 'src/components/Text';

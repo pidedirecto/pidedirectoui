@@ -1,6 +1,5 @@
 /**
  * @prettier
- * @flow
  */
 import * as React from 'react';
 import classes from 'src/styles/dialogContent.module.css';
