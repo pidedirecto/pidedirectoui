@@ -21,14 +21,36 @@ return (
 )
 ```
 
-The options array should be an array of objects containing a `value` and `content` keys, the `value` can be any type but should be unique between other options,
-the `content` key can be any React.Node type, and will be the content rendered next to the checkbox in the list.
+The options array should be an array of objects containing a `value` and `label` keys, the `value` can be any type but should be unique between other options,
+the `label` key must be string type, you can also pass a `content` key, it can be any React.Node type, and will be the content rendered next to the checkbox in the list,
+even if you pass a content key the `label` field is required.
 
 ## Multiselectable
 
 The `SelectableList` component can be multiselectable if you pass the `multiselectable` prop
 
 <Canvas of={SelectableListStories.Multiselectable} sourceState='none' />
+
+## Searchable
+
+The `SelectableList` component can be searchable if you pass the `searchable` prop
+
+<Canvas of={SelectableListStories.Searchable} sourceState='none' />
+
+## Virtualized
+
+The `SelectableList` component can be virtualized, this is helpful if you have a large data set, you have to pass `virtualized` prop and `height` prop,
+the `height` prop is required when virtualizing the list.
+
+<Canvas of={SelectableListStories.Virtualized} sourceState='none' />
+
+## Variant
+
+The `SelectableList` component can change its default style with the `variant` prop
+
+- underline
+
+<Canvas of={SelectableListStories.VariantUnderline} sourceState='none' />
 
 ## API
 

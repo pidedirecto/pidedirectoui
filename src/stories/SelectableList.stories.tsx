@@ -24,10 +24,10 @@ const meta: Meta<typeof SelectableList> = {
             description: 'SelectableList options',
             type: {
                 required: true,
-                name: 'Array<{ value: any, content: React.Node }>' as any,
+                name: 'Array<{ value: any, label: string, content?: React.Node }>' as any,
             },
             table: {
-                type: { summary: 'large' },
+                type: { summary: 'Array<{ value: any, content?: React.Node }>' },
             },
             control: false,
         },
@@ -57,6 +57,34 @@ const meta: Meta<typeof SelectableList> = {
             description: 'Disables SelectableList component',
             table: {
                 type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        variant: {
+            description: 'SelectableList variant',
+            table: {
+                type: { summary: 'underline' },
+            },
+            control: false,
+        },
+        searchable: {
+            description: 'Searchable list',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        virtualized: {
+            description: 'Virtualize list',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        height: {
+            description: 'Virtualized list height in pixels, required when list is virtualized',
+            table: {
+                type: { summary: 'number' },
             },
             control: false,
         },
@@ -140,29 +168,62 @@ export const Multiselectable: Story = {
     },
 };
 
+export const Searchable: Story = {
+    args: {
+        ...meta.args,
+    },
+    render: () => {
+        const [value, setValue] = useState<any>([]);
+
+        return <SelectableList options={options} onChange={setValue} value={value} label={'Select an option'} searchable />;
+    },
+};
+
+export const Virtualized: Story = {
+    args: {
+        ...meta.args,
+    },
+    render: () => {
+        const [value, setValue] = useState<any>([]);
+
+        return <SelectableList options={options} onChange={setValue} value={value} label={'Select an option'} virtualized height={180} />;
+    },
+};
+
+export const VariantUnderline: Story = {
+    args: {
+        ...meta.args,
+    },
+    render: () => {
+        const [value, setValue] = useState<any>([]);
+
+        return <SelectableList options={options} onChange={setValue} value={value} label={'Select an option'} variant='underline' />;
+    },
+};
+
 const options = [
     {
         value: 1,
-        content: 'Option 1',
+        label: 'Option 1',
     },
     {
         value: 2,
-        content: 'Option 2',
+        label: 'Option 2',
     },
     {
         value: 3,
-        content: 'Option 3',
+        label: 'Option 3',
     },
     {
         value: 4,
-        content: 'Option 4',
+        label: 'Option 4',
     },
     {
         value: 5,
-        content: 'Option 5',
+        label: 'Option 5',
     },
     {
         value: 6,
-        content: 'Option 6',
+        label: 'Option 6',
     },
 ];

@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 6px;
 }
 
 .optionSelected {
@@ -21,3 +22,13 @@
     font-family: var(--font-regular);
     height: 40px
 }
+
+.underlineVariantTable {
+    border: 0
+}
+
+.underlineVariantTableRow {
+    padding-left: 0;
+    padding-right: 0;
+}
+
