@@ -20,8 +20,6 @@ import { useConfigureMuiTheme } from 'src/utils/mui/useConfigureMuiTheme';
 export function TimePicker({ value, onChange, onBlur, label, placeholder, name, id, helperText, disabled, error, inputRef, classes: classesProp }: TimePickerProps): React.ReactElement {
     const muiTheme = useConfigureMuiTheme();
 
-    console.log('value = ', value);
-
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
     const handleChange = (momentDate: MaterialUiPickersDate) => {
