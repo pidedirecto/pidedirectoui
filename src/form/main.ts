@@ -18,3 +18,4 @@ export * from 'src/form/FormMultiselectableAutocomplete';
 export * from 'src/form/FormDatePicker';
 export * from 'src/form/FormDateTimePicker';
 export * from 'src/form/FormAutocomplete';
+export * from 'src/form/FormTimePicker';
