@@ -9,8 +9,12 @@ export type FormSelectableListProps = {
     label?: string;
     helperText?: string;
     defaultValue?: any;
-    options: Array<{ value: any; content: React.Node }>;
+    options: Array<{ value: any; label: string; content?: React.Node }>;
     disabled?: boolean;
+    searchable?: boolean;
+    virtualized?: boolean;
+    height?: number;
+    variant?: 'underline';
     required?: ValidationRule<boolean>;
     rules?: Record<string, ValidationRule<any>>;
     multiselectable?: boolean;

@@ -72,6 +72,34 @@ const meta: Meta<typeof FormSelectableList> = {
             },
             control: false,
         },
+        variant: {
+            description: 'SelectableList variant',
+            table: {
+                type: { summary: 'underline' },
+            },
+            control: false,
+        },
+        searchable: {
+            description: 'Searchable list',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        virtualized: {
+            description: 'Virtualize list',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        height: {
+            description: 'Virtualized list height in pixels, required when list is virtualized',
+            table: {
+                type: { summary: 'number' },
+            },
+            control: false,
+        },
         classes: {
             description: 'Classes object to override SelectableList style',
             table: {
@@ -127,26 +155,26 @@ export const Primary: Story = {
 const options = [
     {
         value: 1,
-        content: 'Option 1',
+        label: 'Option 1',
     },
     {
         value: 2,
-        content: 'Option 2',
+        label: 'Option 2',
     },
     {
         value: 3,
-        content: 'Option 3',
+        label: 'Option 3',
     },
     {
         value: 4,
-        content: 'Option 4',
+        label: 'Option 4',
     },
     {
         value: 5,
-        content: 'Option 5',
+        label: 'Option 5',
     },
     {
         value: 6,
-        content: 'Option 6',
+        label: 'Option 6',
     },
 ];

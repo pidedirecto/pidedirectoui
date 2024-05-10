@@ -9,7 +9,22 @@ import { FormContext } from 'src/form/Form';
 import { FormSelectableListProps } from 'src/types/form/FormSelectableList';
 import { getError } from 'src/utils/form/getError';
 
-export function FormSelectableList({ name, label, helperText, defaultValue, disabled, options, required, rules, multiselectable, classes }: FormSelectableListProps): React.ReactElement {
+export function FormSelectableList({
+    name,
+    label,
+    helperText,
+    defaultValue,
+    disabled,
+    searchable,
+    virtualized,
+    height,
+    variant,
+    options,
+    required,
+    rules,
+    multiselectable,
+    classes,
+}: FormSelectableListProps): React.ReactElement {
     const {
         errors,
         control,
@@ -27,6 +42,10 @@ export function FormSelectableList({ name, label, helperText, defaultValue, disa
                 <SelectableList
                     label={required ? `${label}*` : label}
                     multiselectable={multiselectable}
+                    searchable={searchable}
+                    virtualized={virtualized}
+                    height={height}
+                    variant={variant}
                     options={options}
                     onChange={(selectedItems: any) => {
                         onChange(selectedItems);
