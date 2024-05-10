@@ -29,3 +29,4 @@ export * from 'src/components/Notifications';
 export * from 'src/components/DatePicker';
 export * from 'src/components/DateTimePicker';
 export * from 'src/components/Card';
+export * from 'src/components/TimePicker';

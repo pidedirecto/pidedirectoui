@@ -25,6 +25,7 @@ import { MultiselectableAutocomplete } from "src/types/components/Multiselectabl
 import { Autocomplete } from "src/types/components/Autocomplete";
 import { Card } from "src/types/components/Card";
 import React from 'react'
+import { TimePicker } from "src/types/components/TimePicker";
 
 /**
  * Renders Checkbox
@@ -214,3 +215,10 @@ export const DateTimePicker: DateTimePicker
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-card--docs)
  */
 export const Card: Card
+
+/**
+ * Renders time picker
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-timepicker--docs)
+ */
+export const TimePicker: TimePicker
