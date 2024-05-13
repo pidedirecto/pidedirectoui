@@ -1,17 +1,18 @@
 /**
  * @prettier
  */
-import { useEffect, useState } from 'react';
-import { ContainerRef, UseElementSizeResult } from 'src/types/hooks/UseElementSize';
 
-export function useElementSize(containerRef: ContainerRef): UseElementSizeResult {
+import { RefObject, useEffect, useState } from 'react';
+import { UseElementSizeResult } from 'src/types/hooks/UseElementSize';
+
+export function useElementSize<T extends HTMLElement = HTMLElement>(elementRef: RefObject<T>): UseElementSizeResult {
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
 
     useEffect(() => {
         function handleResize() {
-            if (containerRef.current) {
-                const { width, height } = containerRef.current.getBoundingClientRect();
+            if (elementRef?.current) {
+                const { width, height } = elementRef?.current.getBoundingClientRect();
                 setWidth(width);
                 setHeight(height);
             }
@@ -24,7 +25,7 @@ export function useElementSize(containerRef: ContainerRef): UseElementSizeResult
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [containerRef]);
+    }, [elementRef]);
 
     return { width, height };
 }
