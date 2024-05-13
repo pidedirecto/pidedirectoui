@@ -19,3 +19,4 @@ export * from 'src/form/FormDatePicker';
 export * from 'src/form/FormDateTimePicker';
 export * from 'src/form/FormAutocomplete';
 export * from 'src/form/FormTimePicker';
+export * from 'src/form/FormScheduleDaySelect';

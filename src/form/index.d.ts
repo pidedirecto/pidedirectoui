@@ -15,6 +15,7 @@ import { FormDateTimePicker } from "src/types/form/FormDateTimePicker";
 import { FormMultiselectableAutocomplete } from "src/types/form/FormMultiselectableAutocomplete";
 import { FormAutocomplete } from "src/types/form/FormAutocomplete";
 import { FormTimePicker } from "src/types/form/FormTimePicker";
+import { FormScheduleDaySelect } from "src/types/form/FormScheduleDaySelect";
 
 
 /**
@@ -118,3 +119,9 @@ export const FormDateTimePicker: FormDateTimePicker
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formtimepicker--docs)
  */
 export const FormTimePicker: FormTimePicker
+
+/**
+ * Form schedule day select
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formscheduledayselect--docs)
+ */
+export const FormScheduleDaySelect: FormScheduleDaySelect
