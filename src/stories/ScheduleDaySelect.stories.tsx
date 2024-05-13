@@ -49,6 +49,13 @@ const meta: Meta<typeof ScheduleDaySelect> = {
             },
             control: false,
         },
+        disabled: {
+            description: 'ScheduleDaySelect time pickers label',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
         onChange: {
             description: 'ScheduleDaySelect onChange callback',
             type: {

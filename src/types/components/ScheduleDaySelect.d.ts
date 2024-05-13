@@ -5,6 +5,7 @@ export type ScheduleDaySelectProps = {
     label: string,
     scheduleLabel?: string,
     value: string,
+    disabled?: boolean,
     daysTranslations?: {
         [Days.MONDAY]?: string,
         [Days.TUESDAY]?: string,

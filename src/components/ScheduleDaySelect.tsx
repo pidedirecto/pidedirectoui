@@ -11,7 +11,7 @@ import type { ScheduleDaySelectProps } from 'src/types/components/ScheduleDaySel
 import { formatOpeningHours } from 'src/utils/openingHours/formatOpeningHours';
 import { getDaysFromOpeningHours } from 'src/utils/openingHours/getDaysFromOpeningHours';
 
-export function ScheduleDaySelect({ label, scheduleLabel, value, daysTranslations, onChange }: ScheduleDaySelectProps): React.ReactElement {
+export function ScheduleDaySelect({ label, scheduleLabel, value, disabled, daysTranslations, onChange }: ScheduleDaySelectProps): React.ReactElement {
     const selectedDays = getDaysFromOpeningHours(value);
     const formattedOpeningHours = formatOpeningHours(value);
 
@@ -59,7 +59,7 @@ export function ScheduleDaySelect({ label, scheduleLabel, value, daysTranslation
                     {Object.values(Days).map((day) => {
                         const isDaySelected = selectedDays.includes(day);
                         return (
-                            <Button key={day} variant={isDaySelected ? undefined : 'secondary'} classes={{ button: classes.dayButton }} onClick={() => handleSelectedDays(day)}>
+                            <Button key={day} variant={isDaySelected ? undefined : 'secondary'} classes={{ button: classes.dayButton }} onClick={() => handleSelectedDays(day)} disabled={disabled}>
                                 {daysTranslations?.[day] ?? day.slice(0, 1)}
                             </Button>
                         );
@@ -69,8 +69,8 @@ export function ScheduleDaySelect({ label, scheduleLabel, value, daysTranslation
             <div className={classes.inputSection}>
                 {!!scheduleLabel && <Label>{scheduleLabel}</Label>}
                 <div className={classes.inputsContainer}>
-                    <TimePicker name='from' value={formatHoursToDate(openingTime)} onChange={handleFromInput} />
-                    <TimePicker name='to' value={formatHoursToDate(closingTime)} onChange={handleToInput} />
+                    <TimePicker name='from' value={formatHoursToDate(openingTime)} onChange={handleFromInput} disabled={disabled} />
+                    <TimePicker name='to' value={formatHoursToDate(closingTime)} onChange={handleToInput} disabled={disabled} />
                 </div>
             </div>
         </div>
