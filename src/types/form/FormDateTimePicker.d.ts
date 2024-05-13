@@ -20,6 +20,7 @@ export type FormDateTimePickerProps = {
         input?: string;
     };
     muiTheme?: any;
+    momentInstance?: any;
 };
 
 export type FormDateTimePicker = React.FunctionComponent<FormDateTimePickerProps>;

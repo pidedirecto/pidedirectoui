@@ -16,6 +16,7 @@ export type DateTimePickerProps = {
     onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void | Promise<void>;
     inputRef?: React.Ref<HTMLInputElement>;
     muiTheme?: any;
+    momentInstance?: any;
     classes?: {
         inputContainer?: string;
         input?: string;

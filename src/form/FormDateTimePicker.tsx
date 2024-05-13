@@ -9,7 +9,7 @@ import { FormContext } from 'src/form/Form';
 import { FormDateTimePickerProps } from 'src/types/form/FormDateTimePicker';
 import { getError } from 'src/utils/form/getError';
 
-export function FormDateTimePicker({ name, label, helperText, defaultValue, disabled, required, rules, muiTheme, classes }: FormDateTimePickerProps): React.ReactElement {
+export function FormDateTimePicker({ name, label, helperText, defaultValue, disabled, required, rules, muiTheme, momentInstance, classes }: FormDateTimePickerProps): React.ReactElement {
     const {
         errors,
         control,
@@ -37,6 +37,7 @@ export function FormDateTimePicker({ name, label, helperText, defaultValue, disa
                     error={!!error}
                     helperText={error?.message ?? helperText}
                     muiTheme={muiTheme}
+                    momentInstance={momentInstance}
                     classes={classes}
                 />
             )}

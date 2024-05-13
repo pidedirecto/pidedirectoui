@@ -30,6 +30,7 @@ export function DateTimePicker({
     inputRef,
     classes: classesProp,
     muiTheme,
+    momentInstance,
 }: DateTimePickerProps): React.ReactElement {
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
@@ -44,7 +45,7 @@ export function DateTimePicker({
 
     return (
         <MuiThemeProvider theme={muiTheme}>
-            <MuiPickersUtilsProvider utils={MomentUtils} libInstance={moment}>
+            <MuiPickersUtilsProvider utils={MomentUtils} libInstance={momentInstance ?? moment}>
                 <div className={classes.container}>
                     {!!label && (
                         <Label error={error} htmlFor={id ?? `${name}-input`} disabled={disabled}>
