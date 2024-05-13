@@ -11,7 +11,7 @@ import type { ScheduleDaySelectProps } from 'src/types/components/ScheduleDaySel
 import { formatOpeningHours } from 'src/utils/openingHours/formatOpeningHours';
 import { getDaysFromOpeningHours } from 'src/utils/openingHours/getDaysFromOpeningHours';
 
-export function ScheduleDaySelect({ label, scheduleLabel, value, disabled, error, daysTranslations, onChange }: ScheduleDaySelectProps): React.ReactElement {
+export function ScheduleDaySelect({ label, scheduleLabel, value, disabled, error, daysTranslations, onChange, muiTheme }: ScheduleDaySelectProps): React.ReactElement {
     const selectedDays = getDaysFromOpeningHours(value);
     const formattedOpeningHours = formatOpeningHours(value);
 
@@ -69,8 +69,8 @@ export function ScheduleDaySelect({ label, scheduleLabel, value, disabled, error
             <div className={classes.inputSection}>
                 {!!scheduleLabel && <Label>{scheduleLabel}</Label>}
                 <div className={classes.inputsContainer}>
-                    <TimePicker name='from' value={formatHoursToDate(openingTime)} onChange={handleFromInput} disabled={disabled} />
-                    <TimePicker name='to' value={formatHoursToDate(closingTime)} onChange={handleToInput} disabled={disabled} />
+                    <TimePicker name='from' value={formatHoursToDate(openingTime)} onChange={handleFromInput} disabled={disabled} muiTheme={muiTheme} />
+                    <TimePicker name='to' value={formatHoursToDate(closingTime)} onChange={handleToInput} disabled={disabled} muiTheme={muiTheme} />
                 </div>
             </div>
         </div>

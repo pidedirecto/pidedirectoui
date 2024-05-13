@@ -17,6 +17,7 @@ export type ScheduleDaySelectProps = {
         [Days.SUNDAY]?: string,
     }
     onChange: (openingHours: string) => void | Promise<void>;
+    muiTheme?: any,
 };
 
 export type ScheduleDaySelect = React.FunctionComponent<ScheduleDaySelectProps>
