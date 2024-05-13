@@ -1,12 +1,17 @@
 /**
  * @prettier
  */
+import MomentUtils from '@date-io/moment';
+import { ThemeProvider } from '@material-ui/core';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import type { Meta, StoryObj } from '@storybook/react';
+import moment from 'moment/moment';
 import React from 'react';
 import { Form } from 'src/form/Form';
 import { FormDateTimePicker } from 'src/form/FormDateTimePicker';
 import { useForm } from 'src/hooks/useForm';
 import { createLink } from 'src/utils/docs/createLink';
+import { useConfigureMuiTheme } from 'src/utils/mui/useConfigureMuiTheme';
 
 const meta: Meta<typeof FormDateTimePicker> = {
     component: FormDateTimePicker,
@@ -73,10 +78,15 @@ export const Primary: Story = {
     },
     render: () => {
         const form = useForm();
+        const muiTheme = useConfigureMuiTheme();
 
         return (
             <Form form={form} onSubmit={() => {}}>
-                <FormDateTimePicker name={'date'} label={'Select your birthday'} />
+                <MuiPickersUtilsProvider utils={MomentUtils} libInstance={moment}>
+                    <ThemeProvider theme={muiTheme}>
+                        <FormDateTimePicker name={'date'} label={'Select your birthday'} />
+                    </ThemeProvider>
+                </MuiPickersUtilsProvider>
             </Form>
         );
     },

@@ -5,9 +5,9 @@ import * as DateTimePickerStories from '../../stories/DateTimePicker.stories';
 <Meta of={DateTimePickerStories} />
 
 # DateTimePicker
-Renders a date picker.
+Renders a date picker. In order to use this component you should wrap it with `MuiPickersUtilsProvider` component from `@material-ui/pickers`.
 
-<Canvas of={DateTimePickerStories.Primary} />
+<Canvas of={DateTimePickerStories.Primary} sourceState='none' />
 
 The `onChange` prop will be called with the selected date
 
