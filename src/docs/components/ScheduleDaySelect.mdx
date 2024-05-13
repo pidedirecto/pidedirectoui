@@ -1,0 +1,27 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as ScheduleDaySelectStories from '../../stories/ScheduleDaySelect.stories';
+
+<Meta of={ScheduleDaySelectStories} />
+
+# ScheduleDaySelect
+Renders a schedule select. The value of this input should be a string with the schedule in [opening hours format](https://openingh.openstreetmap.de/evaluation_tool/),
+the onChange callback will send the new schedule in opening hours format.
+
+<Canvas of={ScheduleDaySelectStories.Primary} />
+
+You can add a label to the time pickers too
+
+<Canvas of={ScheduleDaySelectStories.SecondaryLabel} />
+
+## Days translations
+
+The days letters in the buttons will correspond to the initial letter of the day in english,
+to change this default behaviour you can pass a `daysTranslations` prop object indicating each translation.
+
+<Canvas of={ScheduleDaySelectStories.Translated} />
+
+## API
+
+<ArgTypes of={ScheduleDaySelectStories} />
+

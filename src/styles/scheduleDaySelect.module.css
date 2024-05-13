@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.inputSection {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.inputsContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.dayButton {
+    width: 30px;
+    height: 30px;
+    min-height: 30px !important;
+    border-radius: 30px !important;
+    font-size: var(--font-size-small);
+}

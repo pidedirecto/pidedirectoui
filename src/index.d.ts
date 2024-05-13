@@ -26,6 +26,7 @@ import { Autocomplete } from "src/types/components/Autocomplete";
 import { Card } from "src/types/components/Card";
 import React from 'react'
 import { TimePicker } from "src/types/components/TimePicker";
+import { ScheduleDaySelect } from "src/types/components/ScheduleDaySelect";
 
 /**
  * Renders Checkbox
@@ -222,3 +223,11 @@ export const Card: Card
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-timepicker--docs)
  */
 export const TimePicker: TimePicker
+
+
+/**
+ * Renders schedule day select
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-scheduledayselect--docs)
+ */
+export const ScheduleDaySelect: ScheduleDaySelect
