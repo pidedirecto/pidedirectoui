@@ -104,6 +104,13 @@ const meta: Meta<typeof TimePicker> = {
             },
             control: false,
         },
+        momentInstance: {
+            description: 'moment object instance',
+            table: {
+                type: { summary: 'Object' },
+            },
+            control: false,
+        },
         classes: {
             description: 'Classes object to override TimePicker style',
             table: {

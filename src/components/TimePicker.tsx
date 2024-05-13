@@ -17,7 +17,22 @@ import moment from 'moment/moment';
 import { ClockIcon } from 'src/icons/ClockIcon';
 import { TimePickerProps } from 'src/types/components/TimePicker';
 
-export function TimePicker({ value, onChange, onBlur, label, placeholder, name, id, helperText, disabled, error, inputRef, classes: classesProp, muiTheme }: TimePickerProps): React.ReactElement {
+export function TimePicker({
+    value,
+    onChange,
+    onBlur,
+    label,
+    placeholder,
+    name,
+    id,
+    helperText,
+    disabled,
+    error,
+    inputRef,
+    classes: classesProp,
+    muiTheme,
+    momentInstance,
+}: TimePickerProps): React.ReactElement {
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
     const handleChange = (momentDate: MaterialUiPickersDate) => {
@@ -31,7 +46,7 @@ export function TimePicker({ value, onChange, onBlur, label, placeholder, name, 
 
     return (
         <MuiThemeProvider theme={muiTheme}>
-            <MuiPickersUtilsProvider utils={MomentUtils} libInstance={moment}>
+            <MuiPickersUtilsProvider utils={MomentUtils} libInstance={momentInstance ?? moment}>
                 <div className={classes.container}>
                     {!!label && (
                         <Label error={error} htmlFor={id ?? `${name}-input`} disabled={disabled}>

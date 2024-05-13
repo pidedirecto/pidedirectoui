@@ -20,6 +20,7 @@ export type DatePickerProps = {
         input?: string;
     };
     muiTheme?: any;
+    momentInstance?: any;
 };
 
 export type DatePicker = React.FunctionComponent<DatePickerProps>;

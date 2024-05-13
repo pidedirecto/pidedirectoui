@@ -79,6 +79,13 @@ const meta: Meta<typeof FormTimePicker> = {
             },
             control: false,
         },
+        momentInstance: {
+            description: 'moment object instance',
+            table: {
+                type: { summary: 'Object' },
+            },
+            control: false,
+        },
     },
 };
 export default meta;
