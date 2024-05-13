@@ -11,7 +11,7 @@ import type { ScheduleDaySelectProps } from 'src/types/components/ScheduleDaySel
 import { formatOpeningHours } from 'src/utils/openingHours/formatOpeningHours';
 import { getDaysFromOpeningHours } from 'src/utils/openingHours/getDaysFromOpeningHours';
 
-export function ScheduleDaySelect({ label, scheduleLabel, value, disabled, daysTranslations, onChange }: ScheduleDaySelectProps): React.ReactElement {
+export function ScheduleDaySelect({ label, scheduleLabel, value, disabled, error, daysTranslations, onChange }: ScheduleDaySelectProps): React.ReactElement {
     const selectedDays = getDaysFromOpeningHours(value);
     const formattedOpeningHours = formatOpeningHours(value);
 
@@ -54,7 +54,7 @@ export function ScheduleDaySelect({ label, scheduleLabel, value, disabled, daysT
     return (
         <div className={classes.container}>
             <div className={classes.inputSection}>
-                <Label>{label}</Label>
+                <Label error={error}>{label}</Label>
                 <div className={classes.inputsContainer}>
                     {Object.values(Days).map((day) => {
                         const isDaySelected = selectedDays.includes(day);

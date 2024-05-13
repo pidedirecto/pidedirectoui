@@ -50,7 +50,14 @@ const meta: Meta<typeof ScheduleDaySelect> = {
             control: false,
         },
         disabled: {
-            description: 'ScheduleDaySelect time pickers label',
+            description: 'disables ScheduleDaySelect',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        error: {
+            description: 'ScheduleDaySelect error state',
             table: {
                 type: { summary: 'boolean' },
             },
