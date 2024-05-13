@@ -97,6 +97,13 @@ const meta: Meta<typeof TimePicker> = {
             },
             control: false,
         },
+        muiTheme: {
+            description: 'MUI theme',
+            table: {
+                type: { summary: 'Object' },
+            },
+            control: false,
+        },
         classes: {
             description: 'Classes object to override TimePicker style',
             table: {

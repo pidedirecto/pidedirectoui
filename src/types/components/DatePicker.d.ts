@@ -19,6 +19,7 @@ export type DatePickerProps = {
         inputContainer?: string;
         input?: string;
     };
+    muiTheme?: any;
 };
 
 export type DatePicker = React.FunctionComponent<DatePickerProps>;

@@ -19,6 +19,7 @@ export type TimePickerProps = {
         inputContainer?: string;
         input?: string;
     };
+    muiTheme?: any;
 };
 
 export type TimePicker = React.FunctionComponent<TimePickerProps>;
