@@ -23,7 +23,7 @@ export function TimePicker({ value, onChange, onBlur, label, placeholder, name, 
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
     const handleChange = (momentDate: MaterialUiPickersDate) => {
-        onChange(momentDate?.toDate(), momentDate?.format('hh:mm'));
+        onChange(momentDate?.toDate(), momentDate?.format('HH:mm'));
     };
 
     const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
