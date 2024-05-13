@@ -9,7 +9,7 @@ export type FormEmailFieldProps = {
     name: string;
     label?: string;
     helperText?: string;
-    defaultValue?: boolean;
+    defaultValue?: string;
     disabled?: boolean;
     required?: ValidationRule<boolean>;
     emailErrorMessage?: string;

@@ -1,7 +1,7 @@
 /**
  * @prettier
  */
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import * as React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Input } from 'src/components/Input';
@@ -62,6 +62,10 @@ export function FormPercentNumberField({ name, label, helperText, defaultValue, 
 
 function NumericInput({ value, onChange, ...props }: InputProps): React.ReactElement {
     const [inputValue, setInputValue] = useState('');
+
+    useEffect(() => {
+        if (!!value && !inputValue) setInputValue(value);
+    }, [value, inputValue]);
 
     const handleChange = (value: string, e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(value);

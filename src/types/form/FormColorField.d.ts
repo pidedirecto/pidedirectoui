@@ -9,7 +9,7 @@ export type FormColorFieldProps = {
     name: string;
     label?: string;
     helperText?: string;
-    defaultValue?: boolean;
+    defaultValue?: string;
     disabled?: boolean;
     required?: ValidationRule<boolean>;
     tooltip?: string;

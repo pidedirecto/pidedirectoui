@@ -9,7 +9,7 @@ export type FormIntegerFieldProps = {
     name: string;
     label?: string;
     helperText?: string;
-    defaultValue?: boolean;
+    defaultValue?: number;
     disabled?: boolean;
     required?: ValidationRule<boolean>;
     min?: ValidationRule<number>;
