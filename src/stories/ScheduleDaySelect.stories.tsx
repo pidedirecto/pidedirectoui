@@ -76,6 +76,13 @@ const meta: Meta<typeof ScheduleDaySelect> = {
             },
             control: false,
         },
+        momentInstance: {
+            description: 'moment object instance for time pickers',
+            table: {
+                type: { summary: 'Object' },
+            },
+            control: false,
+        },
         onChange: {
             description: 'ScheduleDaySelect onChange callback',
             type: {

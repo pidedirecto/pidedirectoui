@@ -9,7 +9,18 @@ import { FormContext } from 'src/form/Form';
 import { FormScheduleDaySelectProps } from 'src/types/form/FormScheduleDaySelect';
 import { getError } from 'src/utils/form/getError';
 
-export function FormScheduleDaySelect({ name, label, scheduleLabel, defaultValue, disabled, required, daysTranslations, rules }: FormScheduleDaySelectProps): React.ReactElement {
+export function FormScheduleDaySelect({
+    name,
+    label,
+    scheduleLabel,
+    defaultValue,
+    disabled,
+    required,
+    daysTranslations,
+    rules,
+    muiTheme,
+    momentInstance,
+}: FormScheduleDaySelectProps): React.ReactElement {
     const {
         errors,
         control,
@@ -34,6 +45,8 @@ export function FormScheduleDaySelect({ name, label, scheduleLabel, defaultValue
                     value={value}
                     disabled={isSubmitting || disabled || formContext.disabled}
                     error={!!error}
+                    muiTheme={muiTheme}
+                    momentInstance={momentInstance}
                 />
             )}
             defaultValue={defaultValue ?? '24/7'}

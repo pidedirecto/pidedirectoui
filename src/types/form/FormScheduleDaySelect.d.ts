@@ -22,6 +22,8 @@ export type FormScheduleDaySelectProps = {
     };
     required?: ValidationRule<boolean>;
     rules?: Record<string, ValidationRule<any>>;
+    muiTheme?: any;
+    momentInstance?: any;
 };
 
 export type FormScheduleDaySelect = React.FunctionComponent<FormScheduleDaySelectProps>;

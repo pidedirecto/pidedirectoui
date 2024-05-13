@@ -71,6 +71,20 @@ const meta: Meta<typeof FormScheduleDaySelect> = {
                 type: { summary: 'object' },
             },
         },
+        muiTheme: {
+            description: 'MUI theme for time pickers',
+            table: {
+                type: { summary: 'Object' },
+            },
+            control: false,
+        },
+        momentInstance: {
+            description: 'moment object instance for time pickers',
+            table: {
+                type: { summary: 'Object' },
+            },
+            control: false,
+        },
     },
 };
 export default meta;
