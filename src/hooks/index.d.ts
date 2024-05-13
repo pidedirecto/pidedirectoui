@@ -5,6 +5,7 @@ import { UseIsScreenSize } from "src/types/hooks/UseIsScreenSize";
 import { Params, Result } from "src/types/hooks/CreateStore";
 import { UseNotification } from "src/types/hooks/UseNotification";
 import { UseElementSize } from "src/types/hooks/UseElementSize";
+import { UseWatch } from "src/types/hooks/UseWatch";
 
 /**
  * Theme gives width and height of a element passing its reference
@@ -26,6 +27,13 @@ export const useTheme: UseTheme
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useform--docs)
  */
 export const useForm: UseForm
+
+/**
+ * Form hook to get value from input updated
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useform--docs)
+ */
+export const useWatch: UseWatch
 
 /**
  * Hook to known when the user clicks outside an element

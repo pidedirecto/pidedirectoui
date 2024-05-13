@@ -1,13 +1,18 @@
-/**
- * @prettier
- */
+import {type FieldValues,type FieldName,type Control,useWatch as useWatchReactHookForm} from "react-hook-form";
 
-import { useWatch, type UseFormMethods } from 'react-hook-form';
+interface WatchOptions<TFieldValues extends FieldValues> {
+    name: FieldName<TFieldValues>;
+    control: Control<TFieldValues>;
+    defaultValue?: TFieldValues[FieldName<TFieldValues>];
+}
 
-export function useFormWatch(form: UseFormMethods<Record<string, any>>, fieldName: string): any {
-    const value = useWatch({
-        name: fieldName,
-        control: form.control,
+export function useWatch<TFieldValues extends FieldValues>(
+    { name, control, defaultValue }: WatchOptions<TFieldValues>
+): TFieldValues[FieldName<TFieldValues>] | undefined{
+    const value = useWatchReactHookForm({
+        name: name,
+        control: control,
+        defaultValue: defaultValue
     });
 
     return value;

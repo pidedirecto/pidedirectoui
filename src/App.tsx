@@ -3,12 +3,15 @@
  */
 
 import * as React from 'react';
-import { useState } from 'react';
-import { Autocomplete } from 'src/components/Autocomplete';
-import { Card } from 'src/components/Card';
+import { Form } from 'src/form/Form';
+import { FormAutocomplete } from 'src/form/FormAutocomplete';
+import { useForm } from 'src/hooks/useForm';
+import { useWatch } from 'src/hooks/useWatch';
 
 export function App(): React.ReactElement {
-    const [selectedItem, setSelectedItem] = useState<string>();
+    const form = useForm();
+    const { control } = form;
+    const pepe = useWatch({ name: 'example', control });
 
     const itemsFiltered = [
         { value: 'value1', label: 'Example 1' },
@@ -19,27 +22,19 @@ export function App(): React.ReactElement {
         { value: 'value6', label: 'Example 6' },
         { value: 'value7', label: 'Example 7' },
         { value: 'value8', label: 'Example 8' },
-        { value: 'value9', label: 'Example 9', restaurantName: 'popeye' },
+        { value: 'value9', label: 'Example 9' },
     ];
 
-    const handleChange = (itemsId: string) => {
-        setSelectedItem(itemsId);
-    };
-
-    const handleInputValueChange = (itemsId: string) => {
-        setSelectedItem(itemsId);
-    };
-
+    console.log({ pepe });
     return (
         <div style={{ padding: 120 }}>
-            <Card title={'titutlo'}>
-                <Autocomplete
-                    label={'hola'}
+            <Form form={form} onSubmit={() => {}}>
+                <FormAutocomplete
                     name={'example'}
                     data={itemsFiltered}
-                    getOptionValue={(option) => option.value}
-                    getOptionLabel={(option) => option.label}
-                    renderOption={(option) => (
+                    getOptionValue={(option: any) => option.value}
+                    getOptionLabel={(option: any) => option.label}
+                    renderOption={(option: any) => (
                         <div
                             style={{
                                 display: 'flex',
@@ -53,10 +48,8 @@ export function App(): React.ReactElement {
                             <p>{option.label}</p>
                         </div>
                     )}
-                    onChange={handleChange}
-                    onInputChange={handleInputValueChange}
                 />
-            </Card>
+            </Form>
         </div>
     );
 }
