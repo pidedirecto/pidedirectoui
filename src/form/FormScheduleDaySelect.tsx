@@ -9,7 +9,7 @@ import { FormContext } from 'src/form/Form';
 import { FormScheduleDaySelectProps } from 'src/types/form/FormScheduleDaySelect';
 import { getError } from 'src/utils/form/getError';
 
-export function FormScheduleDaySelect({ name, label, defaultValue, disabled, required, daysTranslations, rules }: FormScheduleDaySelectProps): React.ReactElement {
+export function FormScheduleDaySelect({ name, label, scheduleLabel, defaultValue, disabled, required, daysTranslations, rules }: FormScheduleDaySelectProps): React.ReactElement {
     const {
         errors,
         control,
@@ -26,6 +26,7 @@ export function FormScheduleDaySelect({ name, label, defaultValue, disabled, req
             render={({ onChange, value }) => (
                 <ScheduleDaySelect
                     label={required ? `${label}*` : label}
+                    scheduleLabel={scheduleLabel}
                     daysTranslations={daysTranslations}
                     onChange={(openingHours) => {
                         onChange(openingHours);

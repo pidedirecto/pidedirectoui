@@ -8,6 +8,7 @@ import { Days } from 'src/constants/Day';
 export type FormScheduleDaySelectProps = {
     name: string;
     label: string;
+    scheduleLabel?: string;
     defaultValue?: string;
     disabled?: boolean;
     daysTranslations?: {
