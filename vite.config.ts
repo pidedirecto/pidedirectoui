@@ -52,6 +52,9 @@ export default defineConfig({
     resolve: {
         alias: [{ find: 'src', replacement: resolve(__dirname, 'src') }],
     },
+    optimizeDeps: {
+        exclude: ['i18next-client'],
+    },
     publicDir: './public',
     plugins: [
         react(),

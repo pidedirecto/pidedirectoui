@@ -74,6 +74,7 @@
     "core-js": "3.22.7",
     "immer": "10.0.4",
     "moment": "2.29.4",
+    "opening_hours": "3.8.0",
     "react-hook-form": "6.15.8",
     "react-window": "1.8.10",
     "use-sync-external-store": "1.2.0"
