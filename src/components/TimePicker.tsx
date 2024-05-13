@@ -10,6 +10,9 @@ import { useCreateUserTypedInputLogEvent } from 'src/services/logEvent/useCreate
 import classes from 'src/styles/timePicker.module.css';
 import { classNames } from 'src/utils/css/classNames';
 import 'src/utils/configureMoment';
+import MomentUtils from '@date-io/moment';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import moment from 'moment/moment';
 import { ClockIcon } from 'src/icons/ClockIcon';
 import { TimePickerProps } from 'src/types/components/TimePicker';
 
@@ -26,35 +29,37 @@ export function TimePicker({ value, onChange, onBlur, label, placeholder, name, 
     };
 
     return (
-        <div className={classes.container}>
-            {!!label && (
-                <Label error={error} htmlFor={id ?? `${name}-input`} disabled={disabled}>
-                    {label}
-                </Label>
-            )}
-            <MuiTimePicker
-                inputRef={inputRef}
-                placeholder={placeholder}
-                name={name}
-                disabled={disabled}
-                error={error}
-                InputProps={
-                    {
-                        startAdornment: <ClockIcon />,
-                        className: classNames(classes.inputContainer, classesProp?.inputContainer),
-                        'data-error': error,
-                    } as any
-                }
-                inputProps={{ className: classNames(classes.input, classesProp?.input), id: id ?? `${name}-input` }}
-                onChange={handleChange}
-                onBlur={handleInputBlur}
-                value={value}
-                format='LT'
-                autoOk
-                fullWidth
-                variant='inline'
-            />
-            {!!helperText && <HelperText error={error}>{helperText}</HelperText>}
-        </div>
+        <MuiPickersUtilsProvider utils={MomentUtils} libInstance={moment}>
+            <div className={classes.container}>
+                {!!label && (
+                    <Label error={error} htmlFor={id ?? `${name}-input`} disabled={disabled}>
+                        {label}
+                    </Label>
+                )}
+                <MuiTimePicker
+                    inputRef={inputRef}
+                    placeholder={placeholder}
+                    name={name}
+                    disabled={disabled}
+                    error={error}
+                    InputProps={
+                        {
+                            startAdornment: <ClockIcon />,
+                            className: classNames(classes.inputContainer, classesProp?.inputContainer),
+                            'data-error': error,
+                        } as any
+                    }
+                    inputProps={{ className: classNames(classes.input, classesProp?.input), id: id ?? `${name}-input` }}
+                    onChange={handleChange}
+                    onBlur={handleInputBlur}
+                    value={value}
+                    format='LT'
+                    autoOk
+                    fullWidth
+                    variant='inline'
+                />
+                {!!helperText && <HelperText error={error}>{helperText}</HelperText>}
+            </div>
+        </MuiPickersUtilsProvider>
     );
 }
