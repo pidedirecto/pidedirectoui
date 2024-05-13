@@ -1,4 +1,7 @@
-import { Meta} from '@storybook/blocks';
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+
+import * as useElementSizeStories from '../../stories/useElementSize.stories';
+
 
 <Meta title="hooks/useElementSize" />
 
@@ -12,9 +15,15 @@ This hook allows you to obtain the width and height of an element by passing a r
 import { useElementSize } from '@pidedirecto/ui/hooks'
 import { useRef } from "react";
 
-const elementRef = useRef();
+const elementRef = useRef<HTMLDivElement | null>(null);
 
 const { width, height } = useElementSize(elementRef);
 
+
+return <div ref={elementRef}></div>
+
 ```
+
+### Usage
+<Canvas of={useElementSizeStories.BasicUsage} />
 
