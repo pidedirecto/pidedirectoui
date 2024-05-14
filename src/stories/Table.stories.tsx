@@ -3,6 +3,7 @@
  */
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { Input } from 'src/components/Input';
 import { Table } from 'src/components/Table';
 
 const meta: Meta<typeof Table> = {
@@ -25,16 +26,19 @@ const meta: Meta<typeof Table> = {
         ],
         rows: [
             {
+                key: '1',
                 column1: 'Cell 1',
                 column2: 'Cell 2',
                 column3: 'Cell 3',
             },
             {
+                key: '2',
                 column1: 'Cell 4',
                 column2: 'Cell 5',
                 column3: 'Cell 6',
             },
             {
+                key: '3',
                 column1: 'Cell 7',
                 column2: 'Cell 8',
                 column3: 'Cell 9',
@@ -259,16 +263,19 @@ export const CellClick: Story = {
         ...meta.args,
         rows: [
             {
+                key: '1',
                 column1: 'Cell 1',
                 column2: 'Cell 2',
                 column3: <span onClick={() => alert(`Cell clicked!`)}>Cell 3</span>,
             },
             {
+                key: '2',
                 column1: 'Cell 4',
                 column2: 'Cell 5',
                 column3: <span onClick={() => alert(`Cell clicked!`)}>Cell 6</span>,
             },
             {
+                key: '3',
                 column1: 'Cell 7',
                 column2: 'Cell 8',
                 column3: <span onClick={() => alert(`Cell clicked!`)}>Cell 9</span>,
@@ -290,6 +297,7 @@ export const SearchableTable: Story = {
         searchable: true,
         rows: [
             {
+                key: '1',
                 column1: 'Cell 1',
                 column2: 'Cell 2',
                 column3: 'Cell 3',
@@ -298,6 +306,7 @@ export const SearchableTable: Story = {
                 },
             },
             {
+                key: '2',
                 column1: 'Cell 4',
                 column2: 'Cell 5',
                 column3: 'Cell 6',
@@ -306,7 +315,8 @@ export const SearchableTable: Story = {
                 },
             },
             {
-                column1: 'Cell 7',
+                key: '3',
+                column1: <Input name={'name'}></Input>,
                 column2: 'Cell 8',
                 column3: 'Cell 9',
                 onSearch: (query: string) => {

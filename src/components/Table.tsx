@@ -93,7 +93,7 @@ export function Table({
                             const isLastRow = idx === rows.length - 1;
 
                             return (
-                                <tr onClick={() => onRowClick?.(row)} key={idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, classesProp?.row, row?.className)}>
+                                <tr onClick={() => onRowClick?.(row)} key={row.key ?? idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, classesProp?.row, row?.className)}>
                                     {columns.map((column: TableColumn) => {
                                         const columnSize = column.size || 1;
                                         const width = 100 * columnSize;
