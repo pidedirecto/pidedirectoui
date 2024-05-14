@@ -12,7 +12,7 @@ import { getError } from 'src/utils/form/getError';
 
 import play = Simulate.play;
 
-export function FormDatePicker({ name, label, helperText, defaultValue, disabled, required, rules, placeholder, classes, muiTheme, momentInstance }: FormDatePickerProps): React.ReactElement {
+export function FormDatePicker({ name, label, helperText, defaultValue, disabled, required, rules, placeholder, classes }: FormDatePickerProps): React.ReactElement {
     const {
         errors,
         control,
@@ -41,8 +41,6 @@ export function FormDatePicker({ name, label, helperText, defaultValue, disabled
                     helperText={error?.message ?? helperText}
                     placeholder={placeholder}
                     classes={classes}
-                    muiTheme={muiTheme}
-                    momentInstance={momentInstance}
                 />
             )}
             defaultValue={defaultValue ?? null}

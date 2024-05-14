@@ -69,20 +69,6 @@ const meta: Meta<typeof ScheduleDaySelect> = {
             },
             control: false,
         },
-        muiTheme: {
-            description: 'MUI theme for time pickers',
-            table: {
-                type: { summary: 'Object' },
-            },
-            control: false,
-        },
-        momentInstance: {
-            description: 'moment object instance for time pickers',
-            table: {
-                type: { summary: 'Object' },
-            },
-            control: false,
-        },
         onChange: {
             description: 'ScheduleDaySelect onChange callback',
             type: {

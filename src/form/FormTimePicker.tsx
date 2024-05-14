@@ -9,7 +9,7 @@ import { FormContext } from 'src/form/Form';
 import { FormTimePickerProps } from 'src/types/form/FormTimePicker';
 import { getError } from 'src/utils/form/getError';
 
-export function FormTimePicker({ name, label, helperText, defaultValue, disabled, required, hoursAsValue, rules, classes, muiTheme, momentInstance }: FormTimePickerProps): React.ReactElement {
+export function FormTimePicker({ name, label, helperText, defaultValue, disabled, required, hoursAsValue, rules, classes }: FormTimePickerProps): React.ReactElement {
     const {
         errors,
         control,
@@ -49,8 +49,6 @@ export function FormTimePicker({ name, label, helperText, defaultValue, disabled
                     error={!!error}
                     helperText={error?.message ?? helperText}
                     classes={classes}
-                    muiTheme={muiTheme}
-                    momentInstance={momentInstance}
                 />
             )}
             defaultValue={defaultValue ?? null}

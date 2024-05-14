@@ -66,20 +66,6 @@ const meta: Meta<typeof FormDatePicker> = {
                 type: { summary: 'object' },
             },
         },
-        muiTheme: {
-            description: 'MUI theme',
-            table: {
-                type: { summary: 'Object' },
-            },
-            control: false,
-        },
-        momentInstance: {
-            description: 'moment object instance',
-            table: {
-                type: { summary: 'Object' },
-            },
-            control: false,
-        },
     },
 };
 export default meta;

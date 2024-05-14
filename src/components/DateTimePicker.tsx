@@ -14,24 +14,12 @@ import MomentUtils from '@date-io/moment';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import moment from 'moment';
+import { useContext } from 'react';
+import { PickersProviderContext } from 'src/components/PickersProvider';
 import { DateTimePickerProps } from 'src/types/components/DateTimePicker';
 
-export function DateTimePicker({
-    value,
-    onChange,
-    onBlur,
-    label,
-    placeholder,
-    name,
-    id,
-    helperText,
-    disabled,
-    error,
-    inputRef,
-    classes: classesProp,
-    muiTheme,
-    momentInstance,
-}: DateTimePickerProps): React.ReactElement {
+export function DateTimePicker({ value, onChange, onBlur, label, placeholder, name, id, helperText, disabled, error, inputRef, classes: classesProp }: DateTimePickerProps): React.ReactElement {
+    const context = useContext(PickersProviderContext);
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
     const handleChange = (momentDate: MaterialUiPickersDate) => {
@@ -44,8 +32,8 @@ export function DateTimePicker({
     };
 
     return (
-        <MuiThemeProvider theme={muiTheme}>
-            <MuiPickersUtilsProvider utils={MomentUtils} libInstance={momentInstance ?? moment}>
+        <MuiThemeProvider theme={context.muiTheme}>
+            <MuiPickersUtilsProvider utils={MomentUtils} libInstance={context.momentInstance ?? moment}>
                 <div className={classes.container}>
                     {!!label && (
                         <Label error={error} htmlFor={id ?? `${name}-input`} disabled={disabled}>

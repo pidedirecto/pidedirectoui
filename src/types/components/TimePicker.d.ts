@@ -19,8 +19,6 @@ export type TimePickerProps = {
         inputContainer?: string;
         input?: string;
     };
-    muiTheme?: any;
-    momentInstance?: any;
 };
 
 export type TimePicker = React.FunctionComponent<TimePickerProps>;

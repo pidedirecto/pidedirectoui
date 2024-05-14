@@ -97,20 +97,6 @@ const meta: Meta<typeof DateTimePicker> = {
             },
             control: false,
         },
-        muiTheme: {
-            description: 'MUI theme',
-            table: {
-                type: { summary: 'Object' },
-            },
-            control: false,
-        },
-        momentInstance: {
-            description: 'moment object instance',
-            table: {
-                type: { summary: 'Object' },
-            },
-            control: false,
-        },
         classes: {
             description: 'Classes object to override DateTimePicker style',
             table: {

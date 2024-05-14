@@ -27,6 +27,7 @@ import { Card } from "src/types/components/Card";
 import React from 'react'
 import { TimePicker } from "src/types/components/TimePicker";
 import { ScheduleDaySelect } from "src/types/components/ScheduleDaySelect";
+import { PickersProvider } from "src/types/components/PickersProvider";
 
 /**
  * Renders Checkbox
@@ -231,3 +232,11 @@ export const TimePicker: TimePicker
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-scheduledayselect--docs)
  */
 export const ScheduleDaySelect: ScheduleDaySelect
+
+
+/**
+ * Date/Time/DateTime pickers provider utils
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-pickersprovider--docs)
+ */
+export const PickersProvider: PickersProvider
