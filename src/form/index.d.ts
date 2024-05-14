@@ -7,6 +7,7 @@ import { FormCurrencyNumberStringField } from "src/types/form/FormCurrencyNumber
 import { FormEmailField } from "src/types/form/FormEmailField";
 import { FormColorField } from "src/types/form/FormColorField";
 import { FormIntegerField } from "src/types/form/FormIntegerField";
+import { FormHiddenField } from "src/types/form/FormHiddenField";
 import { FormPasswordField } from "src/types/form/FormPasswordField";
 import { FormPercentNumberField } from "src/types/form/FormPercentNumberField";
 import { FormSelectableList } from "src/types/form/FormSelectableList";
@@ -71,6 +72,12 @@ export const FormEmailField: FormEmailField
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formcolorfield--docs)
  */
 export const FormColorField: FormColorField
+
+/**
+ * Form hidden component
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formihiddenfield--docs)
+ */
+export const FormHiddenField: FormHiddenField
 
 /**
  * Form integer component
