@@ -6,10 +6,9 @@ import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
 export function PlusIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg {...props} width={width ?? size ?? 10} height={height ?? size ?? 10} viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 18} height={height ?? size ?? 18} viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}
-            <path d='M5 1V9V1ZM9 5H1H9Z' fill={color || 'currentColor'} />
-            <path d='M5 1V9M9 5H1' stroke={color || 'currentColor'} strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
+            <path d='M9 1.5V16.5M16.5 9H1.5' stroke='#8D25FF' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
         </svg>
     );
 }

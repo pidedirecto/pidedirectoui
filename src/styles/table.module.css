@@ -68,3 +68,37 @@
 .inputContainer {
     max-width: 400px;
 }
+
+.toolbarContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toolbarButtonsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+.toolbarButtonsContainer button {
+    color: var(--text-brand)
+}
+
+.title {
+    margin: 0;
+    font-family: var(--font-semi-bold);
+    font-size: var(--font-size-extra-large);
+    color: var(--text-primary)
+}
+
+.tableCheckbox {
+    width: 18px !important;
+    height: 18px !important;
+}
+
+.tableCheckboxContainer {
+    transform: translateX(-16px);
+}
