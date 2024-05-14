@@ -21,7 +21,6 @@ import { isArray } from 'src/utils/array/isArray';
 import { classNames } from 'src/utils/css/classNames';
 import { debounce } from 'src/utils/function/debounce';
 
-// TODO: Implement searchable feature after adding Input component
 export function Select({
     label,
     placeholder,
@@ -119,7 +118,7 @@ export function Select({
         <div className={classNames(classes.container, classesProp?.container)}>
             {!!label && (
                 <div className={classes.labelContainer}>
-                    <Label aria-disabled={!!disabled} error={error}>
+                    <Label aria-disabled={!!disabled} htmlFor={name} error={error}>
                         {label}
                     </Label>
                     {!!tooltip && <Tooltip text={tooltip} />}
@@ -130,6 +129,7 @@ export function Select({
                 disabled={disabled}
                 classes={{ button: classNames(classes.select, classesProp?.button, error && classes.selectError), container: classNames(classes.selectContainer, classesProp?.selectContainer) }}
                 preventClose={preventClose}
+                id={name}
             >
                 {searchable && (
                     <div className={classes.topContainer}>

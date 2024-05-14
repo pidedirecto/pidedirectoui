@@ -55,6 +55,13 @@ const meta: Meta<typeof DropDown> = {
             },
             control: false,
         },
+        id: {
+            description: 'Dropdown button id',
+            table: {
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         classes: {
             description: 'Classes object to override dropdown style',
             table: {
