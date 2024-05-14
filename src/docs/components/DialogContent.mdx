@@ -1,0 +1,29 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as DialogContentStories from '../../stories/DialogContent.stories';
+
+<Meta of={DialogContentStories} />
+
+# DialogContent
+Renders the content inside a Dialog with predefined styles for scrolling if the content surpasses the dialog max-height.
+
+Note: don't put Select or Dropdowns components at the bottom of any dialog.
+
+<Canvas of={DialogContentStories.Primary} sourceState='none' />
+
+```tsx
+import { Dialog, DialogContent, Button } from '@pidedirecto/ui';
+import { useState } from 'react';
+
+const [open, setOpen] = useState(false);
+
+return (
+    <div>
+        <Button onClick={() => setOpen(true)}>Open Dialog</Button>
+        <Dialog open={open} onClose={() => setOpen(false)}>
+            <DialogContent>
+                This is the dialog content
+            </DialogContent>
+        </Dialog>
+    </div>
+);
