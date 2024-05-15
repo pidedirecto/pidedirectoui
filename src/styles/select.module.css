@@ -12,7 +12,7 @@
 .topContainer {
     width: 100%;
     background-color: var(--surface-primary);
-    position: sticky;
+    position: absolute;
     top: 0;
 }
 

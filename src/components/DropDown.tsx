@@ -25,28 +25,6 @@ export function DropDown({ content, variant, position, children, disabled, preve
         },
     });
 
-    const getDropDownLeft = () => {
-        if (!dropDownContainerRef.current) return;
-        if (position === 'left') return 'unset';
-        return dropDownContainerRef.current.getBoundingClientRect().left;
-    };
-
-    const getDropDownRight = () => {
-        if (!dropDownContainerRef.current) return;
-        if (position === 'right' || !position) return 'unset';
-        return window.innerWidth - dropDownContainerRef.current.getBoundingClientRect().right;
-    };
-
-    const getDropDownTop = () => {
-        if (!dropDownContainerRef.current) return;
-        return dropDownContainerRef.current?.getBoundingClientRect().top + (dropDownContainerRef.current?.clientHeight || 0) + 10;
-    };
-
-    const getDropDownWidth = () => {
-        if (!dropDownContainerRef.current) return;
-        return dropDownContainerRef.current?.getBoundingClientRect().width;
-    };
-
     const handleCloseDropDown = () => {
         if (preventClose) return;
         setIsOpen(false);
@@ -72,23 +50,12 @@ export function DropDown({ content, variant, position, children, disabled, preve
                 )}
             </Button>
             {isOpen &&
+                dropDownContainerRef.current &&
                 createPortal(
-                    <div
-                        role='listbox'
-                        className={classNames(classes.dropdown, classesProp?.dropdown)}
-                        aria-labelledby={`listbox-${id.current}-button`}
-                        aria-readonly={true}
-                        style={{
-                            left: getDropDownLeft(),
-                            right: getDropDownRight(),
-                            top: getDropDownTop(),
-                            width: getDropDownWidth(),
-                        }}
-                        ref={dropDownRef}
-                    >
+                    <div role='listbox' className={classNames(classes.dropdown, classesProp?.dropdown)} aria-labelledby={`listbox-${id.current}-button`} aria-readonly={true} ref={dropDownRef}>
                         <DropDownContext.Provider value={{ closeDropDown: handleCloseDropDown }}>{children}</DropDownContext.Provider>
                     </div>,
-                    document.body,
+                    dropDownContainerRef.current,
                 )}
         </div>
     );

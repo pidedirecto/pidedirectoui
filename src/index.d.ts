@@ -14,6 +14,7 @@ import { Input } from "src/types/components/Input";
 import { VirtualizedList } from "src/types/components/VirtualizedList";
 import { Table } from "src/types/components/Table";
 import { Dialog } from "src/types/components/Dialog";
+import { DialogContent } from "src/types/components/DialogContent";
 import { DialogActions } from "src/types/components/DialogActions";
 import { Image } from "src/types/components/Image";
 import { Text } from "src/types/components/Text";
@@ -154,6 +155,13 @@ export const Table: Table
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-dialog--docs)
  */
 export const Dialog: Dialog
+
+/**
+ * Dialog actions container
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-dialog--docs#dialog-content)
+ */
+export const DialogContent: DialogContent
 
 /**
  * Dialog actions container
