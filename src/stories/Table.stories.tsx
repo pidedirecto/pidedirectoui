@@ -132,7 +132,7 @@ const meta: Meta<typeof Table> = {
             description: 'Row id',
             table: {
                 subcategory: 'Row API',
-                type: { summary: 'string | number' },
+                type: { summary: 'any' },
             },
             control: false,
         },

@@ -5,7 +5,7 @@ export type TableProps = {
     hideHeaders?: boolean,
     columns: Array<TableColumn>,
     rows: Array<TableRow>,
-    onSelect?: (selectedRows: Array<RowId>) => void | Promise<void>;
+    onSelect?: (selectedRows: Array<any>) => void | Promise<void>;
     classes?: {
         table?: string,
         cell?: string,
@@ -35,9 +35,7 @@ export type TableColumn = {
 export type TableRow = Omit<Record<string, React.ReactNode>, 'className', 'onSearch'> & {
     className?: string,
     onSearch?: (query: string) => boolean,
-    rowId?: RowId;
+    rowId?: any;
 }
 
 export type Table = React.FunctionComponent<TableProps>
-
-export type RowId = string | number

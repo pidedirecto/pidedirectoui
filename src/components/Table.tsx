@@ -10,7 +10,7 @@ import { TableCheckbox } from 'src/components/table/TableCheckbox';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
 import { UiLogEventTypes } from 'src/constants/UiLogEventType';
 import classes from 'src/styles/table.module.css';
-import type { RowId, TableColumn, TableProps, TableRow } from 'src/types/components/Table';
+import type { TableColumn, TableProps, TableRow } from 'src/types/components/Table';
 import { classNames } from 'src/utils/css/classNames';
 import { removeNulls } from 'src/utils/object/removeNulls';
 
@@ -37,7 +37,7 @@ export function Table({
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState('');
 
-    const rowIds = removeNulls<Array<RowId>>(rows.map((row) => row.rowId));
+    const rowIds = removeNulls<Array<any>>(rows.map((row) => row.rowId));
 
     if (!!virtualized && !contentHeight) {
         console.error('You are using a virtualized table without passing content height, contentHeight prop is required.');
