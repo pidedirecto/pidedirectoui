@@ -214,7 +214,14 @@ const meta: Meta<typeof Table> = {
         onSelect: {
             description: 'Callback function to be called each time table rows are selected',
             table: {
-                type: { summary: 'boolean' },
+                type: { summary: 'function' },
+            },
+            control: false,
+        },
+        toolbar: {
+            description: 'Toolbar content, can be either a function or a React.Element value',
+            table: {
+                type: { summary: 'function | React.Element' },
             },
             control: false,
         },

@@ -107,7 +107,14 @@ The `Table` component has customizable props. `title` prop will render a title.
 
 <Canvas of={TableStories.CustomToolbar} />
 
-`tooltbar` prop can receive either a function or directly a `React.Element` value, if a function is passed this function should return a `React.Element` and as argument will receive the selected items if table is selectable.
+`tooltbar` prop can receive either a function or directly a `React.Element` value, if a function is passed this function should return a `React.Element`, and as argument will receive an object.
+```ts
+{
+    selectedRows: Array<any>;
+    clearSelectedRows: () => void;
+}
+```
+The `selectedRows` key are the selected rows, the `clearSelectedRows` functions can be used to clear the selected rows.
 
 ```tsx
 import { RefreshIcon } from '@pidedirecto/ui/icons'
@@ -133,8 +140,8 @@ import { Table, Button } from '@pidedirecto/ui'
 <Table
     ...
     selectable
-    toolbar={(selectedItems) => (
-        <Button onClick={() => removeItems(selectedItems)}>
+    toolbar={({ selectedRows }) => (
+        <Button onClick={() => removeItems(selectedRows)}>
             <TrashCanIcon />
         </Button>
     )}

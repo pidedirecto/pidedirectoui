@@ -23,7 +23,7 @@ export type TableProps = {
     searchInputProps?: Omit<InputProps, 'name', 'value', 'onChange', 'type'>,
     rowsPerPage?: number,
     title?: string,
-    toolbar?: React.ReactElement | ((selectedItems: Array<any>) => React.ReactElement),
+    toolbar?: React.ReactElement | ((params: ToolbarParams) => React.ReactElement),
     onRowClick?: (row: TableRow) => void | Promise<void>,
 };
 
@@ -41,3 +41,8 @@ export type TableRow = Omit<Record<string, React.ReactNode>, 'className', 'onSea
 }
 
 export type Table = React.FunctionComponent<TableProps>
+
+export type ToolbarParams = {
+    selectedRows: Array<any>;
+    clearSelectedRows: () => void
+}

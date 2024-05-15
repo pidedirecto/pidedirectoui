@@ -3,15 +3,16 @@
  */
 import * as React from 'react';
 import { Checkbox } from 'src/components/Checkbox';
-import { createStore } from 'src/hooks/createStore';
+import { useTableActions, useTableStore } from 'src/components/table/tableStore';
 import classes from 'src/styles/table.module.css';
 
-export function TableCheckbox({ rowId, rowIds, onSelect }: Props): React.ReactElement {
+export function TableCheckbox({ tableId, rowId, rowIds, onSelect }: Props): React.ReactElement {
     const selectedRows = useTableStore((state) => state.selectedRows);
     const setSelectedRows = useTableActions((actions) => actions.setSelectedRows);
 
-    const checked = selectedRows.includes(rowId!);
-    const checkedGeneral = !!rowIds?.length && selectedRows.length === rowIds?.length;
+    const currentSelectedRows = selectedRows.find((selectedRows) => selectedRows.tableId === tableId)?.selectedRows ?? [];
+    const checked = currentSelectedRows.includes(rowId!);
+    const checkedGeneral = !!rowIds?.length && currentSelectedRows.length === rowIds?.length;
 
     const handleCheckbox = () => {
         if (rowId) return handleSelectSingleRow();
@@ -21,8 +22,8 @@ export function TableCheckbox({ rowId, rowIds, onSelect }: Props): React.ReactEl
     const handleSelectAllRows = () => {
         if (!rowIds) return;
 
-        const newSelectedRows: Array<any> = selectedRows.length === rowIds.length ? [] : rowIds;
-        setSelectedRows(newSelectedRows);
+        const newSelectedRows: Array<any> = currentSelectedRows.length === rowIds.length ? [] : rowIds;
+        setSelectedRows(tableId, newSelectedRows);
         onSelect?.(newSelectedRows);
     };
 
@@ -31,37 +32,19 @@ export function TableCheckbox({ rowId, rowIds, onSelect }: Props): React.ReactEl
 
         let newSelectedRows: Array<any> = [];
         if (checked) {
-            newSelectedRows = selectedRows.filter((selectedRows) => selectedRows !== rowId);
+            newSelectedRows = currentSelectedRows.filter((selectedRow) => selectedRow !== rowId);
         } else {
-            newSelectedRows = [...selectedRows, rowId];
+            newSelectedRows = [...currentSelectedRows, rowId];
         }
-        setSelectedRows(newSelectedRows);
+        setSelectedRows(tableId, newSelectedRows);
         onSelect?.(newSelectedRows);
     };
 
     return <Checkbox checked={checked || checkedGeneral} onChange={handleCheckbox} classes={{ checkbox: classes.tableCheckbox, container: classes.tableCheckboxContainer }} />;
 }
 
-export const [useTableStore, useTableActions] = createStore<State, Actions>({
-    initialState: {
-        selectedRows: [],
-    },
-    actions: {
-        setSelectedRows: (state, selectedRows) => {
-            state.selectedRows = selectedRows;
-        },
-    },
-});
-
-type Actions = {
-    setSelectedRows: (selectedRows: Array<any>) => void;
-};
-
-type State = {
-    selectedRows: Array<any>;
-};
-
 type Props = {
+    tableId: string;
     rowId?: any;
     rowIds?: Array<any>;
     onSelect?: (selectedRows: Array<any>) => void | Promise<void>;
