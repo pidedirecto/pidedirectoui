@@ -1,5 +1,7 @@
 import { UseTheme } from "src/types/hooks/UseTheme";
 import { UseForm } from "src/types/hooks/UseForm";
+import { UseFieldArray } from "src/types/hooks/UseFieldArray";
+import { UseFormContext } from "src/types/hooks/UseFormContext";
 import { UseHasClickedOutside } from "src/types/hooks/UseHasClickedOutside";
 import { UseIsScreenSize } from "src/types/hooks/UseIsScreenSize";
 import { Params, Result } from "src/types/hooks/CreateStore";
@@ -19,6 +21,20 @@ export const useElementSize: UseElementSize
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-usetheme--docs)
  */
 export const useTheme: UseTheme
+
+/**
+ * UseFieldArray hook
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-usefieldarray--docs)
+ */
+export const useFieldArray: UseFieldArray
+
+/**
+ * useFormContext hook
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useformcontext--docs)
+ */
+export const useFormContext: UseFormContext
 
 /**
  * Form hook to initialize a form
