@@ -140,6 +140,14 @@ const meta: Meta<typeof Table> = {
             },
             control: false,
         },
+        'rows.key': {
+            description: 'Row key',
+            table: {
+                subcategory: 'Row API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         title: {
             description: 'Table title',
             table: {
