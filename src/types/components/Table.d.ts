@@ -5,6 +5,7 @@ export type TableProps = {
     hideHeaders?: boolean,
     columns: Array<TableColumn>,
     rows: Array<TableRow>,
+    onSelect?: (selectedRows: Array<any>) => void | Promise<void>;
     classes?: {
         table?: string,
         cell?: string,
@@ -14,11 +15,15 @@ export type TableProps = {
     },
     emptyMessage?: string,
     searchable?: boolean,
+    selectable?: boolean,
     virtualized?: boolean,
+    loading?: boolean,
     contentHeight?: number,
     rowHeight?: number,
     searchInputProps?: Omit<InputProps, 'name', 'value', 'onChange', 'type'>,
     rowsPerPage?: number,
+    title?: string,
+    toolbar?: React.ReactElement | ((selectedItems: Array<any>) => React.ReactElement),
     onRowClick?: (row: TableRow) => void | Promise<void>,
 };
 
@@ -30,8 +35,9 @@ export type TableColumn = {
 
 export type TableRow = Omit<Record<string, React.ReactNode>, 'className', 'onSearch'> & {
     className?: string,
+    key: string,
     onSearch?: (query: string) => boolean,
+    rowId?: any;
 }
 
 export type Table = React.FunctionComponent<TableProps>
-

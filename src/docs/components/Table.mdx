@@ -94,6 +94,54 @@ both indicating the table body height and table rows height respectively
 
 <Canvas of={TableStories.Virtualized} />
 
+### Selectable
+
+`Table` component can have selectable rows, to do this you have to pass `selectable` prop and `onSelect` prop, the `onSelect` callback prop
+will be called each time the users selects or deselects a row, for this is also important to pass `rowId` to the row object
+
+<Canvas of={TableStories.Selectable} />
+
+### Customization
+
+The `Table` component has customizable props. `title` prop will render a title.
+
+<Canvas of={TableStories.CustomToolbar} />
+
+`tooltbar` prop can receive either a function or directly a `React.Element` value, if a function is passed this function should return a `React.Element` and as argument will receive the selected items if table is selectable.
+
+```tsx
+import { RefreshIcon } from '@pidedirecto/ui/icons'
+import { Table, Button } from '@pidedirecto/ui'
+
+<Table
+    ...
+    toolbar={(
+        <Button>
+            <RefreshIcon />
+        </Button>
+    )}
+/>
+
+```
+
+or
+
+```tsx
+import { TrashCanIcon } from '@pidedirecto/ui/icons'
+import { Table, Button } from '@pidedirecto/ui'
+
+<Table
+    ...
+    selectable
+    toolbar={(selectedItems) => (
+        <Button onClick={() => removeItems(selectedItems)}>
+            <TrashCanIcon />
+        </Button>
+    )}
+/>
+
+```
+
 ## API
 
 <ArgTypes of={TableStories} />

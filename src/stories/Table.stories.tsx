@@ -3,7 +3,11 @@
  */
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { Button } from 'src/components/Button';
+import { Input } from 'src/components/Input';
 import { Table } from 'src/components/Table';
+import { PlusIcon } from 'src/icons/PlusIcon';
+import { RefreshIcon } from 'src/icons/RefreshIcon';
 
 const meta: Meta<typeof Table> = {
     component: Table,
@@ -25,16 +29,19 @@ const meta: Meta<typeof Table> = {
         ],
         rows: [
             {
+                key: '1',
                 column1: 'Cell 1',
                 column2: 'Cell 2',
                 column3: 'Cell 3',
             },
             {
+                key: '2',
                 column1: 'Cell 4',
                 column2: 'Cell 5',
                 column3: 'Cell 6',
             },
             {
+                key: '3',
                 column1: 'Cell 7',
                 column2: 'Cell 8',
                 column3: 'Cell 9',
@@ -125,6 +132,29 @@ const meta: Meta<typeof Table> = {
             },
             control: false,
         },
+        'rows.rowId': {
+            description: 'Row id',
+            table: {
+                subcategory: 'Row API',
+                type: { summary: 'any' },
+            },
+            control: false,
+        },
+        'rows.key': {
+            description: 'Row key',
+            table: {
+                subcategory: 'Row API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        title: {
+            description: 'Table title',
+            table: {
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         hideHeaders: {
             description: 'Hides table headers',
             table: {
@@ -134,6 +164,13 @@ const meta: Meta<typeof Table> = {
         },
         virtualized: {
             description: 'Enables table virtualization',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        loading: {
+            description: 'Shows a loading indicator',
             table: {
                 type: { summary: 'boolean' },
             },
@@ -162,6 +199,20 @@ const meta: Meta<typeof Table> = {
         },
         searchable: {
             description: 'Sets if table should be searchable',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        selectable: {
+            description: 'Sets if table rows should be selectable',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        onSelect: {
+            description: 'Callback function to be called each time table rows are selected',
             table: {
                 type: { summary: 'boolean' },
             },
@@ -259,16 +310,19 @@ export const CellClick: Story = {
         ...meta.args,
         rows: [
             {
+                key: '1',
                 column1: 'Cell 1',
                 column2: 'Cell 2',
                 column3: <span onClick={() => alert(`Cell clicked!`)}>Cell 3</span>,
             },
             {
+                key: '2',
                 column1: 'Cell 4',
                 column2: 'Cell 5',
                 column3: <span onClick={() => alert(`Cell clicked!`)}>Cell 6</span>,
             },
             {
+                key: '3',
                 column1: 'Cell 7',
                 column2: 'Cell 8',
                 column3: <span onClick={() => alert(`Cell clicked!`)}>Cell 9</span>,
@@ -290,6 +344,7 @@ export const SearchableTable: Story = {
         searchable: true,
         rows: [
             {
+                key: '1',
                 column1: 'Cell 1',
                 column2: 'Cell 2',
                 column3: 'Cell 3',
@@ -298,6 +353,7 @@ export const SearchableTable: Story = {
                 },
             },
             {
+                key: '2',
                 column1: 'Cell 4',
                 column2: 'Cell 5',
                 column3: 'Cell 6',
@@ -306,12 +362,75 @@ export const SearchableTable: Story = {
                 },
             },
             {
-                column1: 'Cell 7',
+                key: '3',
+                column1: <Input name={'name'}></Input>,
                 column2: 'Cell 8',
                 column3: 'Cell 9',
                 onSearch: (query: string) => {
                     return 'row 3'.includes(query);
                 },
+            },
+        ],
+    },
+};
+
+export const Selectable: Story = {
+    args: {
+        ...meta.args,
+        selectable: true,
+        onSelect: () => {},
+        rows: [
+            {
+                column1: 'Cell 1',
+                column2: 'Cell 2',
+                column3: 'Cell 3',
+                rowId: '1',
+            },
+            {
+                column1: 'Cell 4',
+                column2: 'Cell 5',
+                column3: 'Cell 6',
+                rowId: '2',
+            },
+            {
+                column1: 'Cell 7',
+                column2: 'Cell 8',
+                column3: 'Cell 9',
+                rowId: '3',
+            },
+        ],
+    },
+};
+
+export const CustomToolbar: Story = {
+    args: {
+        ...meta.args,
+        title: 'Table title',
+        toolbar: (
+            <>
+                <Button variant='secondary'>
+                    <RefreshIcon size={20} />
+                </Button>
+                <Button variant='secondary'>
+                    <PlusIcon size={20} />
+                </Button>
+            </>
+        ),
+        rows: [
+            {
+                column1: 'Cell 1',
+                column2: 'Cell 2',
+                column3: 'Cell 3',
+            },
+            {
+                column1: 'Cell 4',
+                column2: 'Cell 5',
+                column3: 'Cell 6',
+            },
+            {
+                column1: 'Cell 7',
+                column2: 'Cell 8',
+                column3: 'Cell 9',
             },
         ],
     },
