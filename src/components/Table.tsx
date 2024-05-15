@@ -5,6 +5,7 @@ import { useContext, useState } from 'react';
 import * as React from 'react';
 import { Button } from 'src/components/Button';
 import { Input } from 'src/components/Input';
+import { LinearProgress } from 'src/components/LinearProgress';
 import { TableBody } from 'src/components/table/TableBody';
 import { TableCheckbox } from 'src/components/table/TableCheckbox';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
@@ -24,6 +25,7 @@ export function Table({
     searchable,
     selectable,
     virtualized,
+    loading,
     contentHeight,
     rowHeight,
     title,
@@ -158,6 +160,7 @@ export function Table({
                         </tr>
                     </tfoot>
                 )}
+                {loading && <LinearProgress />}
             </table>
         </div>
     );

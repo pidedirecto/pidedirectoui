@@ -17,6 +17,7 @@ export type TableProps = {
     searchable?: boolean,
     selectable?: boolean,
     virtualized?: boolean,
+    loading?: boolean,
     contentHeight?: number,
     rowHeight?: number,
     searchInputProps?: Omit<InputProps, 'name', 'value', 'onChange', 'type'>,

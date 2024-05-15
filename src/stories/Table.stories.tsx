@@ -157,6 +157,13 @@ const meta: Meta<typeof Table> = {
             },
             control: false,
         },
+        loading: {
+            description: 'Shows a loading indicator',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
         contentHeight: {
             description: 'Table body height, required when table is virtualized',
             table: {
