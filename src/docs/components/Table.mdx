@@ -94,6 +94,19 @@ both indicating the table body height and table rows height respectively
 
 <Canvas of={TableStories.Virtualized} />
 
+### Selectable
+
+`Table` component can have selectable rows, to do this you have to pass `selectable` prop and `onSelect` prop, the `onSelect` callback prop
+will be called each time the users selects or deselects a row, for this is also important to pass `rowId` to the row object
+
+<Canvas of={TableStories.Selectable} />
+
+### Customization
+
+The `Table` component has customizable props. `title` prop will render a title. `toolbar` prop receives a `React.Element` object, this props is specially useful for rendering button toolbars
+
+<Canvas of={TableStories.CustomToolbar} />
+
 ## API
 
 <ArgTypes of={TableStories} />
