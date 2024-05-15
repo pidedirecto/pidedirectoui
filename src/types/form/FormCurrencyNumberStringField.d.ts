@@ -4,6 +4,7 @@
 import * as React from 'react';
 import { type ValidationRule } from 'react-hook-form';
 import { InputProps } from 'src/types/components/Input';
+import { OptionalKeys } from 'src/utils/type/OptionalKeys';
 
 export type FormCurrencyNumberStringFieldProps = {
     name: string;
@@ -18,7 +19,7 @@ export type FormCurrencyNumberStringFieldProps = {
     max?: ValidationRule<number>;
     tooltip?: string;
     rules?: Record<string, ValidationRule<any>>;
-    inputProps?: InputProps;
+    inputProps?: OptionalKeys<InputProps>;
 };
 
 export type FormCurrencyNumberStringField = React.FunctionComponent<FormCurrencyNumberStringFieldProps>;
