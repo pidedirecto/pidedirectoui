@@ -107,8 +107,9 @@ export const PhoneIcon: SvgIcon
 export const PideDirectoIcon: SvgIcon
 export const PieChartIcon: SvgIcon
 export const PinIcon: SvgIcon
-export const PrinterIcon: SvgIcon
 export const PlusIcon: SvgIcon
+export const PrinterIcon: SvgIcon
+export const PromotionIcon: SvgIcon
 export const QuestionIcon: SvgIcon
 export const ReceiptIcon: SvgIcon
 export const RefreshIcon: SvgIcon

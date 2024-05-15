@@ -109,6 +109,7 @@ import { PieChartIcon } from 'src/icons/PieChartIcon';
 import { PinIcon } from 'src/icons/PinIcon';
 import { PlusIcon } from 'src/icons/PlusIcon';
 import { PrinterIcon } from 'src/icons/PrinterIcon';
+import { PromotionIcon } from 'src/icons/PromotionIcon';
 import { QuestionIcon } from 'src/icons/QuestionIcon';
 import { ReceiptIcon } from 'src/icons/ReceiptIcon';
 import { RefreshIcon } from 'src/icons/RefreshIcon';
@@ -572,6 +573,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <PrinterIcon size={size} />
                 <span className={classes.iconName}>PrinterIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <PromotionIcon size={size} />
+                <span className={classes.iconName}>PromotionIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <PlusIcon size={size} />
