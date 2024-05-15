@@ -8,6 +8,7 @@ import { Input } from 'src/components/Input';
 import { FormContext } from 'src/form/Form';
 import classes from 'src/styles/form/formCurrencyNumberStringField.module.css';
 import { FormCurrencyNumberStringFieldProps } from 'src/types/form/FormCurrencyNumberStringField';
+import { classNames } from 'src/utils/css/classNames';
 import { getError } from 'src/utils/form/getError';
 import { transformCurrencyNumberStringInput } from 'src/utils/form/transformCurrencyNumberStringInput';
 import { transformCurrencyNumberStringOutput } from 'src/utils/form/transformCurrencyNumberStringOutput';
@@ -43,7 +44,7 @@ export function FormCurrencyNumberStringField({
             render={({ onChange, onBlur, value, name, ref }) => (
                 <Input
                     {...inputProps}
-                    classes={{ input: classes.input }}
+                    classes={{ ...(inputProps?.classes ?? {}), input: classNames(classes.input, inputProps?.classes?.input) }}
                     inputRef={ref}
                     label={required ? `${label}*` : label}
                     onBlur={onBlur}

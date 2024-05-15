@@ -9,6 +9,7 @@ import { FormContext } from 'src/form/Form';
 import classes from 'src/styles/form/formPercentNumberField.module.css';
 import { InputProps } from 'src/types/components/Input';
 import { FormPercentNumberFieldProps } from 'src/types/form/FormPercentNumberField';
+import { classNames } from 'src/utils/css/classNames';
 import { getError } from 'src/utils/form/getError';
 import { transformPercentNumberInput } from 'src/utils/form/transformPercentNumberInput';
 import { transformPercentNumberOutput } from 'src/utils/form/transformPercentNumberOutput';
@@ -30,7 +31,7 @@ export function FormPercentNumberField({ name, label, helperText, defaultValue, 
             render={({ onChange, onBlur, value, name, ref }) => (
                 <NumericInput
                     {...inputProps}
-                    classes={{ input: classes.input }}
+                    classes={{ ...(inputProps?.classes ?? {}), input: classNames(classes.input, inputProps?.classes?.input) }}
                     inputRef={ref}
                     label={required ? `${label}*` : label}
                     onBlur={onBlur}

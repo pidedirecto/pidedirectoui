@@ -8,6 +8,7 @@ import { Input } from 'src/components/Input';
 import { FormContext } from 'src/form/Form';
 import classes from 'src/styles/form/formColorField.module.css';
 import { FormColorFieldProps } from 'src/types/form/FormColorField';
+import { classNames } from 'src/utils/css/classNames';
 import { getError } from 'src/utils/form/getError';
 
 export function FormColorField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormColorFieldProps): React.ReactElement {
@@ -41,7 +42,11 @@ export function FormColorField({ name, label, helperText, defaultValue, disabled
                     error={!!error}
                     helperText={error?.message ?? helperText}
                     type='color'
-                    classes={{ inputContainer: classes.inputContainer, input: classes.input }}
+                    classes={{
+                        ...(inputProps?.classes ?? {}),
+                        inputContainer: classNames(classes.inputContainer, inputProps?.classes?.inputContainer),
+                        input: classNames(classes.input, inputProps?.classes?.input),
+                    }}
                 />
             )}
             defaultValue={defaultValue ?? null}
