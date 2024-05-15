@@ -160,8 +160,8 @@ export function Table({
                         </tr>
                     </tfoot>
                 )}
-                {loading && <LinearProgress />}
             </table>
+            {loading && <LinearProgress />}
         </div>
     );
 }
