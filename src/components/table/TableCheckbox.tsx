@@ -21,9 +21,9 @@ export function TableCheckbox({ rowId, rowIds, onSelect }: Props): React.ReactEl
     const handleSelectAllRows = () => {
         if (!rowIds) return;
 
-        const newSelectedRows: Array<any> = !!selectedRows.length ? [] : rowIds;
+        const newSelectedRows: Array<any> = selectedRows.length === rowIds.length ? [] : rowIds;
         setSelectedRows(newSelectedRows);
-        onSelect(newSelectedRows);
+        onSelect?.(newSelectedRows);
     };
 
     const handleSelectSingleRow = () => {
@@ -36,13 +36,13 @@ export function TableCheckbox({ rowId, rowIds, onSelect }: Props): React.ReactEl
             newSelectedRows = [...selectedRows, rowId];
         }
         setSelectedRows(newSelectedRows);
-        onSelect(newSelectedRows);
+        onSelect?.(newSelectedRows);
     };
 
     return <Checkbox checked={checked || checkedGeneral} onChange={handleCheckbox} classes={{ checkbox: classes.tableCheckbox, container: classes.tableCheckboxContainer }} />;
 }
 
-const [useTableStore, useTableActions] = createStore<State, Actions>({
+export const [useTableStore, useTableActions] = createStore<State, Actions>({
     initialState: {
         selectedRows: [],
     },
@@ -64,5 +64,5 @@ type State = {
 type Props = {
     rowId?: any;
     rowIds?: Array<any>;
-    onSelect: (selectedRows: Array<any>) => void | Promise<void>;
+    onSelect?: (selectedRows: Array<any>) => void | Promise<void>;
 };

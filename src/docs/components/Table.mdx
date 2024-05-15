@@ -103,9 +103,44 @@ will be called each time the users selects or deselects a row, for this is also 
 
 ### Customization
 
-The `Table` component has customizable props. `title` prop will render a title. `toolbar` prop receives a `React.Element` object, this props is specially useful for rendering button toolbars
+The `Table` component has customizable props. `title` prop will render a title.
 
 <Canvas of={TableStories.CustomToolbar} />
+
+`tooltbar` prop can receive either a function or directly a `React.Element` value, if a function is passed this function should return a `React.Element` and as argument will receive the selected items if table is selectable.
+
+```tsx
+import { RefreshIcon } from '@pidedirecto/ui/icons'
+import { Table, Button } from '@pidedirecto/ui'
+
+<Table
+    ...
+    toolbar={(
+        <Button>
+            <RefreshIcon />
+        </Button>
+    )}
+/>
+
+```
+
+or
+
+```tsx
+import { TrashCanIcon } from '@pidedirecto/ui/icons'
+import { Table, Button } from '@pidedirecto/ui'
+
+<Table
+    ...
+    selectable
+    toolbar={(selectedItems) => (
+        <Button onClick={() => removeItems(selectedItems)}>
+            <TrashCanIcon />
+        </Button>
+    )}
+/>
+
+```
 
 ## API
 

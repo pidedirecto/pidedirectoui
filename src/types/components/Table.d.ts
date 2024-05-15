@@ -23,7 +23,7 @@ export type TableProps = {
     searchInputProps?: Omit<InputProps, 'name', 'value', 'onChange', 'type'>,
     rowsPerPage?: number,
     title?: string,
-    toolbar?: React.ReactElement,
+    toolbar?: React.ReactElement | ((selectedItems: Array<any>) => React.ReactElement),
     onRowClick?: (row: TableRow) => void | Promise<void>,
 };
 

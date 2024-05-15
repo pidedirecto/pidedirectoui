@@ -8,6 +8,7 @@ import { Input } from 'src/components/Input';
 import { LinearProgress } from 'src/components/LinearProgress';
 import { TableBody } from 'src/components/table/TableBody';
 import { TableCheckbox } from 'src/components/table/TableCheckbox';
+import { TableToolbar } from 'src/components/table/TableToolbar';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
 import { UiLogEventTypes } from 'src/constants/UiLogEventType';
 import classes from 'src/styles/table.module.css';
@@ -40,6 +41,10 @@ export function Table({
     const [search, setSearch] = useState('');
 
     const rowIds = removeNulls<Array<any>>(rows.map((row) => row.rowId));
+
+    if (rowIds.length !== rows.length && selectable) {
+        console.error('If Table component is selectable it requires each row has a rowId but some rows do not have it');
+    }
 
     if (!!virtualized && !contentHeight) {
         console.error('You are using a virtualized table without passing content height, contentHeight prop is required.');
@@ -87,13 +92,13 @@ export function Table({
                 )}
                 {!searchable && !!title && <h2 className={classes.title}>{title}</h2>}
                 {!searchable && !title && <div></div>}
-                {!!toolbar && <div className={classes.toolbarButtonsContainer}>{toolbar}</div>}
+                <TableToolbar toolbar={toolbar} />
             </div>
             <table className={classNames(classes.table, classesProp?.table)} onClickCapture={addTableToStackTrace}>
                 {!hideHeaders && (
                     <thead className={classes.headerRow}>
                         <tr className={classes.row}>
-                            {!!selectable && !!onSelect && (
+                            {!!selectable && (
                                 <th className={classNames(classes.header, classesProp?.header)} style={{ width: '10%' }}>
                                     <TableCheckbox rowIds={rowIds} onSelect={onSelect} />
                                 </th>
@@ -117,7 +122,7 @@ export function Table({
 
                             return (
                                 <tr onClick={() => onRowClick?.(row)} key={row.key ?? idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, classesProp?.row, row?.className)}>
-                                    {!!selectable && !!onSelect && (
+                                    {!!selectable && (
                                         <td className={classNames(classes.cell, classesProp?.cell)} style={{ width: `10%` }}>
                                             <TableCheckbox rowId={row.rowId} onSelect={onSelect} />
                                         </td>
