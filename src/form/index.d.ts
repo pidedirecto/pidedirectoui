@@ -75,7 +75,7 @@ export const FormColorField: FormColorField
 
 /**
  * Form hidden component
- * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formihiddenfield--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formhiddenfield--docs)
  */
 export const FormHiddenField: FormHiddenField
 
