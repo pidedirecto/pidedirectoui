@@ -23,6 +23,7 @@ export function FormCurrencyNumberStringField({
     min,
     max,
     rules,
+    placeHolder,
     maximumDigits,
     inputProps,
 }: FormCurrencyNumberStringFieldProps): React.ReactElement {
@@ -50,6 +51,7 @@ export function FormCurrencyNumberStringField({
                     onChange={(value: string) => {
                         onChange(transformCurrencyNumberStringOutput(value, { maximumDigits }));
                     }}
+                    placeholder={placeHolder}
                     name={name}
                     disabled={isSubmitting || disabled || formContext.disabled}
                     aria-label={label ? undefined : name}

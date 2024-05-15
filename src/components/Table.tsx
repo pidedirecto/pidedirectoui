@@ -116,7 +116,7 @@ export function Table({
                             const isLastRow = idx === rows.length - 1;
 
                             return (
-                                <tr onClick={() => onRowClick?.(row)} key={idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, classesProp?.row, row?.className)}>
+                                <tr onClick={() => onRowClick?.(row)} key={row.key ?? idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, classesProp?.row, row?.className)}>
                                     {!!selectable && !!onSelect && (
                                         <td className={classNames(classes.cell, classesProp?.cell)} style={{ width: `10%` }}>
                                             <TableCheckbox rowId={row.rowId} onSelect={onSelect} />

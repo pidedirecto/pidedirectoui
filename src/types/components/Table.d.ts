@@ -35,6 +35,7 @@ export type TableColumn = {
 
 export type TableRow = Omit<Record<string, React.ReactNode>, 'className', 'onSearch'> & {
     className?: string,
+    key: string,
     onSearch?: (query: string) => boolean,
     rowId?: any;
 }
