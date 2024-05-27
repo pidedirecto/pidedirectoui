@@ -24,6 +24,7 @@ export const CartIcon: SvgIcon
 export const CashBoxIcon: SvgIcon
 export const CashIcon: SvgIcon
 export const CashOutline: SvgIcon
+export const CardOutline: SvgIcon
 export const CashDrawerIcon: SvgIcon
 export const CashTransferIcon: SvgIcon
 export const ChatIcon: SvgIcon
