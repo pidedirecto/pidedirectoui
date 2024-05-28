@@ -93,9 +93,8 @@ export function Autocomplete({
                         onInputChange?.(e.target.value);
                         inputOnChange?.(e);
                     }}
-                    onClick={() => {
-                        setIsOpen(true);
-                    }}
+                    onFocus={() => setIsOpen(true)}
+                    onBlur={() => setIsOpen(false)}
                     value={inputValue}
                 />
                 {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}
