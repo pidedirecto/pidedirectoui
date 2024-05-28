@@ -6,7 +6,7 @@ import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
 export function CashOutline({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
-        <svg {...props} width={width ?? size ?? 35} height={width ?? size ?? 36} viewBox='0 0 35 36' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <svg {...props} width={width ?? size ?? 35} height={height ?? size ?? 36} viewBox='0 0 35 36' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <circle cx='17.5' cy='18' r='17.5' fill='#F1F1F1' />
             <title>{title}</title>
             <path
