@@ -45,6 +45,7 @@ export const CookingPotIcon: SvgIcon
 export const CopyIcon: SvgIcon
 export const CoinsIcon: SvgIcon
 export const CreditCardIcon: SvgIcon
+export const CreditCardCircleIcon: SvgIcon
 export const CrossIcon: SvgIcon
 export const CutleryIcon: SvgIcon
 export const DepositIcon: SvgIcon

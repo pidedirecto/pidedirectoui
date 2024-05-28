@@ -47,6 +47,7 @@ import { CoinsIcon } from 'src/icons/CoinsIcon';
 import { CommandIcon } from 'src/icons/CommandIcon';
 import { CookingPotIcon } from 'src/icons/CookingPotIcon';
 import { CopyIcon } from 'src/icons/CopyIcon';
+import { CreditCardCircleIcon } from 'src/icons/CreditCardCircleIcon';
 import { CreditCardIcon } from 'src/icons/CreditCardIcon';
 import { CrossIcon } from 'src/icons/CrossIcon';
 import { CutleryIcon } from 'src/icons/CutleryIcon';
@@ -341,6 +342,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <CreditCardIcon size={size} />
                 <span className={classes.iconName}>CreditCardIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <CreditCardCircleIcon size={size} />
+                <span className={classes.iconName}>CreditCardCircleIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <CrossIcon size={size} />
