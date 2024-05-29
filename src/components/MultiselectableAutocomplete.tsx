@@ -100,9 +100,13 @@ export function MultiselectableAutocomplete({
         <div ref={containerRef}>
             <div {...getRootProps()}>
                 <div className={classes.headContainer}>
-                    <Label htmlFor={`use-autocomplete-customer`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
-                        {label}
-                    </Label>
+                    <div className={classes.headContainerLabel}>
+                        <Label htmlFor={`use-autocomplete-customer`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
+                            {label}
+                        </Label>
+                        {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}
+                    </div>
+
                     {!!productsSelectedLabel && <span className={classes.numberOptionsSelectedContainer}>{productsSelectedLabel}</span>}
                 </div>
                 <Input
@@ -117,7 +121,6 @@ export function MultiselectableAutocomplete({
                         setIsOpen(true);
                     }}
                 />
-                {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}
             </div>
             <div ref={listboxContainerRef} style={{ width: '100%' }}>
                 {groupedOptions.length > 0 &&

@@ -5,7 +5,10 @@
     align-items: center;
     margin-bottom: 4px;
 }
-
+.headContainerLabel{
+    display: flex;
+    flex-direction: column;
+}
 .label {
     font-family: var(--font-regular);
     color: var(--text-secondary);
@@ -48,7 +51,7 @@
 
 .helperText {
     font-family: var(--font-light);
-    color: var(--text-danger);
+    color: var(--text-info);
 }
 
 .listbox {

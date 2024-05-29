@@ -66,6 +66,7 @@ export function App(): React.ReactElement {
             <Card title={'titutlo'}>
                 <MultiselectableAutocomplete
                     name={'example'}
+                    label={'Tipo de orden'}
                     selectAllOption
                     selectAllOptionLabel={'seleccionar todos'}
                     productsSelectedLabel={`${selectedItems.length} productos seleccionados`}
@@ -90,6 +91,7 @@ export function App(): React.ReactElement {
                     onChange={(itemIds: any) => handleChangeMultiSelectable(itemIds)}
                     value={selectedItems}
                     variant={'detailed'}
+                    helperText={'Si se deja en blanco serán todos los canales'}
                 />
             </Card>
         </div>
