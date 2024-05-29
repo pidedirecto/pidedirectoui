@@ -106,7 +106,6 @@ export function MultiselectableAutocomplete({
                         </Label>
                         {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}
                     </div>
-
                     {!!productsSelectedLabel && <span className={classes.numberOptionsSelectedContainer}>{productsSelectedLabel}</span>}
                 </div>
                 <Input
@@ -135,7 +134,7 @@ export function MultiselectableAutocomplete({
                                 {selectAllOption && (
                                     <li onClick={() => handleSelectAllOptions()} className={classNames(classes.checkAllBoxRow, classesProp?.optionContainer)}>
                                         <Checkbox name={'selectAll'} label={selectAllOptionLabel} value={'all'} checked={value.length === data.length} onChange={() => handleSelectAllOptions()} />
-                                        {!!productsSelectedLabel && <span className={classes.numberOptionsSelectedContainer}>{productsSelectedLabel}</span>}
+                                        {!!productsSelectedLabel && <span className={classes.numberOptionsSelectedContainerInside}>{productsSelectedLabel}</span>}
                                     </li>
                                 )}
                                 {groupedOptions.map((option: any, index: number) => (

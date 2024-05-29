@@ -19,13 +19,29 @@
 .numberOptionsSelectedContainer {
     font-family: var(--font-regular);
     background-color: var(--surface-tertiary);
-    color: var(--surface-brand-heavy-contrast);
+    color: var(--surface-heavy-contrast);
     font-size: var(--font-size-small);
     text-align: center;
     padding: 8px 10px 4px 10px;
     min-width: 93px;
     min-height: 26px;
+    border-radius: 100px;
+    font-weight: 700;
+
+}
+.numberOptionsSelectedContainerInside {
+    font-family: var(--font-regular);
+    background-color: var(--surface-tertiary);
+    color: var(--surface-heavy-contrast);
+    font-size: var(--font-size-small);
+    text-align: center;
+    padding: 8px 10px 4px 10px;
+    min-width: 93px;
+    min-height: 26px;
+    border-radius: 100px;
+    font-weight: 700;
     margin-right: 12px;
+
 }
 
 .labelError {
