@@ -51,7 +51,7 @@
 
 .helperText {
     font-family: var(--font-light);
-    color: var(--text-info);
+    color: var(--text-secondary);
 }
 
 .listbox {
