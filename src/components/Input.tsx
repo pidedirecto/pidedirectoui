@@ -20,6 +20,7 @@ export function Input({
     helperText,
     value,
     required,
+    disabled,
     step,
     error,
     autoComplete,
@@ -56,7 +57,7 @@ export function Input({
                     {!!tooltip && <Tooltip text={tooltip} id={`${name}-tooltip`} />}
                 </div>
             )}
-            <div data-error={error} className={classNames(classes.inputContainer, classesProp?.inputContainer)}>
+            <div data-error={error} className={classNames(disabled ? classes.inputContainerDisabled : classes.inputContainer, classesProp?.inputContainer)}>
                 {isSearchType && !leftAdornment && (
                     <div className={classes.icon}>
                         <SearchIcon size={16} />
@@ -89,6 +90,7 @@ export function Input({
                         aria-describedby={`${name ?? label}-tooltip`}
                         onBlur={handleInputBlur}
                         autoComplete={autoComplete || 'off'}
+                        disabled={disabled}
                     />
                 )}
                 {!!rightAdornment && rightAdornment}
