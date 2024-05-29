@@ -133,7 +133,7 @@ export function MultiselectableAutocomplete({
                                 style={{ top: getListboxTopPosition(), left: getListboxLeftPosition(), width: listboxContainerRef.current?.offsetWidth }}
                             >
                                 {selectAllOption && (
-                                    <li onClick={() => handleSelectAllOptions()} className={classNames(classesProp?.optionContainer, classes.checkAllBoxRow)}>
+                                    <li onClick={() => handleSelectAllOptions()} className={classNames(classes.checkAllBoxRow, classesProp?.optionContainer)}>
                                         <Checkbox name={'selectAll'} label={selectAllOptionLabel} value={'all'} checked={value.length === data.length} onChange={() => handleSelectAllOptions()} />
                                         {!!productsSelectedLabel && <span className={classes.numberOptionsSelectedContainer}>{productsSelectedLabel}</span>}
                                     </li>
