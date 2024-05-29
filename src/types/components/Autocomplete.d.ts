@@ -18,6 +18,7 @@ export type AutocompleteProps = {
     onInputChange?: Function,
     tooltip?: string,
     classes?: {
+        container?: string;
         optionsContainer?: string,
         optionContainer?: string,
     },

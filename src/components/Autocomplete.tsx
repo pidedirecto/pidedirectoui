@@ -86,7 +86,7 @@ export function Autocomplete({
                 <Input
                     {...(inputProps as any)}
                     type='search'
-                    classes={{ input: classes.input, label: classes.inputError }}
+                    classes={{ input: classes.input, label: classes.inputError, container: classesProp?.container }}
                     placeholder={placeholder}
                     disabled={disabled}
                     inputRef={inputRef}
