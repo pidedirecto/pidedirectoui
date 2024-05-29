@@ -76,11 +76,13 @@ export function Autocomplete({
     return (
         <div ref={containerRef}>
             <div {...getRootProps()}>
-                <div className={classes.headContainer}>
-                    <Label htmlFor={`use-autocomplete-customer`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
-                        {label}
-                    </Label>
-                </div>
+                {!!label && (
+                    <div className={classes.headContainer}>
+                        <Label htmlFor={`use-autocomplete-customer`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
+                            {label}
+                        </Label>
+                    </div>
+                )}
                 <Input
                     {...(inputProps as any)}
                     type='search'
