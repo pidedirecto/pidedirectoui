@@ -57,7 +57,6 @@ export function Autocomplete({
         if (getOptionDisabled?.(getOptionValue(option))) return;
         onChange(getOptionValue(option));
         setInputValue(getOptionLabel(option));
-        inputOnChange?.(getOptionLabel(option));
     };
 
     const getListboxTopPosition = () => {
