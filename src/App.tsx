@@ -4,8 +4,7 @@
 
 import * as React from 'react';
 import { useState } from 'react';
-import { Autocomplete } from 'src/components/Autocomplete';
-import { Card } from 'src/components/Card';
+import { Loader } from 'src/components/Loader';
 
 export function App(): React.ReactElement {
     const [selectedItem, setSelectedItem] = useState<string>();
@@ -32,31 +31,7 @@ export function App(): React.ReactElement {
 
     return (
         <div style={{ padding: 120 }}>
-            <Card title={'titutlo'}>
-                <Autocomplete
-                    label={'hola'}
-                    name={'example'}
-                    data={itemsFiltered}
-                    getOptionValue={(option) => option.value}
-                    getOptionLabel={(option) => option.label}
-                    renderOption={(option) => (
-                        <div
-                            style={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                padding: '8px 4px',
-                                gap: '12px',
-                            }}
-                        >
-                            <p>{option.label}</p>
-                        </div>
-                    )}
-                    onChange={handleChange}
-                    onInputChange={handleInputValueChange}
-                />
-            </Card>
+            <Loader isLoading={false}> </Loader>
         </div>
     );
 }
