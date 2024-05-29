@@ -49,7 +49,7 @@ export function Autocomplete({
     useHasClickedOutside({
         element: containerRef.current,
         onClick: ({ hasClickedOutside, elementClicked }) => {
-            if (hasClickedOutside && listOptionsContainerRef.current && !listOptionsContainerRef.current.contains(elementClicked)) setIsOpen(false);
+            if (hasClickedOutside && listOptionsContainerRef.current && listOptionsContainerRef.current.contains(elementClicked)) setIsOpen(false);
         },
     });
 
@@ -93,6 +93,7 @@ export function Autocomplete({
                         onInputChange?.(e.target.value);
                         inputOnChange?.(e);
                     }}
+                    onClick={() => setIsOpen(true)}
                     onFocus={() => setIsOpen(true)}
                     onBlur={() => setIsOpen(false)}
                     value={inputValue}

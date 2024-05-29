@@ -6,9 +6,12 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Autocomplete } from 'src/components/Autocomplete';
 import { Card } from 'src/components/Card';
+import { HelperText } from 'src/components/HelperText';
+import { MultiselectableAutocomplete } from 'src/components/MultiselectableAutocomplete';
 
 export function App(): React.ReactElement {
     const [selectedItem, setSelectedItem] = useState<string>();
+    const [selectedItems, setSelectedItems] = useState<Array<string>>([]);
 
     const itemsFiltered = [
         { value: 'value1', label: 'Example 1' },
@@ -24,6 +27,9 @@ export function App(): React.ReactElement {
 
     const handleChange = (itemsId: string) => {
         setSelectedItem(itemsId);
+    };
+    const handleChangeMultiSelectable = (itemsId: Array<string>) => {
+        setSelectedItems(itemsId);
     };
 
     const handleInputValueChange = (itemsId: string) => {
@@ -55,6 +61,35 @@ export function App(): React.ReactElement {
                     )}
                     onChange={handleChange}
                     onInputChange={handleInputValueChange}
+                />
+            </Card>
+            <Card title={'titutlo'}>
+                <MultiselectableAutocomplete
+                    name={'example'}
+                    selectAllOption
+                    selectAllOptionLabel={'seleccionar todos'}
+                    productsSelectedLabel={`${selectedItems.length} productos seleccionados`}
+                    data={itemsFiltered}
+                    getOptionValue={(option) => option.value}
+                    getOptionLabel={(option) => option.label}
+                    renderOption={(option) => (
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                padding: '8px 4px',
+                                gap: '12px',
+                            }}
+                        >
+                            <p>{option.label}</p>
+                            <HelperText>{option?.restaurantName}</HelperText>
+                        </div>
+                    )}
+                    onChange={(itemIds: any) => handleChangeMultiSelectable(itemIds)}
+                    value={selectedItems}
+                    variant={'detailed'}
                 />
             </Card>
         </div>

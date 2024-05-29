@@ -132,13 +132,6 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
                 type: { summary: 'boolean' },
             },
         },
-        required: {
-            description: 'Sets input as required',
-            table: {
-                required: false,
-                type: { summary: 'boolean | {value:number, message:string}' },
-            },
-        },
         InputProps: {
             description: 'Take all input properties',
             table: {
