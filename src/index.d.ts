@@ -4,6 +4,7 @@ import { Button } from "src/types/components/Button";
 import { UiLogEventTracker } from "src/types/components/UiLogEventTracker";
 import { Tabs } from "src/types/components/Tabs";
 import { Accordion } from "src/types/components/Accordion";
+import { CircleContainer } from "src/types/components/CircleContainer";
 import { DraggableList } from "src/types/components/DraggableList";
 import { DraggableListItem } from "src/types/components/DraggableListItem";
 import { DropDown } from "src/types/components/DropDown";
@@ -29,6 +30,7 @@ import React from 'react'
 import { TimePicker } from "src/types/components/TimePicker";
 import { ScheduleDaySelect } from "src/types/components/ScheduleDaySelect";
 import { PickersProvider } from "src/types/components/PickersProvider";
+import { CircleContainer } from "src/components/CircleContainer";
 
 /**
  * Renders Checkbox
@@ -248,3 +250,11 @@ export const ScheduleDaySelect: ScheduleDaySelect
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-pickersprovider--docs)
  */
 export const PickersProvider: PickersProvider
+
+
+/**
+ * Renders CircleContainer
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-circlecontainer--docs)
+ */
+export const CircleContainer: CircleContainer
