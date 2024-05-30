@@ -56,10 +56,10 @@ export const Controlled: Story = {
     args: {
         ...meta.args,
     },
-    render: () => <ControlledCircleContainer />,
+    render: () => <ControlledCircleIconContainer />,
 };
 
-const ControlledCircleContainer = () => {
+const ControlledCircleIconContainer = () => {
     return (
         <CircleIconContainer>
             <SaveIcon />

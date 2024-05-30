@@ -2,7 +2,7 @@
  * @prettier
  */
 import * as React from 'react';
-import classes from 'src/styles/circleContainer.module.css';
+import classes from 'src/styles/circleIconContainer.module.css';
 import { CircleIconContainerProps } from 'src/types/components/CircleIconContainer';
 import { classNames } from 'src/utils/css/classNames';
 
