@@ -5,7 +5,6 @@ export type MultiselectableAutocompleteProps = {
     name: string,
     placeholder?: string,
     helperText?: string,
-    id?: string;
     productsSelectedLabel?: string,
     selectAllOptionLabel?: string,
     defaultValue?: Array<string>,
