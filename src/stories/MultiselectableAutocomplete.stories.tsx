@@ -37,6 +37,13 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
                 type: { summary: 'string' },
             },
         },
+        id: {
+            description: 'MultiselectableAutocomplete id',
+            table: {
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         variant: {
             description: 'autocomplete variant',
             table: {
