@@ -52,14 +52,14 @@ export default meta;
 
 type Story = StoryObj<typeof CircleIconContainer>;
 
-export const Controlled: Story = {
+export const Primary: Story = {
     args: {
         ...meta.args,
     },
-    render: () => <ControlledCircleIconContainer />,
+    render: () => <PrimaryCircleIconContainer />,
 };
 
-const ControlledCircleIconContainer = () => {
+const PrimaryCircleIconContainer = () => {
     return (
         <CircleIconContainer>
             <SaveIcon />
