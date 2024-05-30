@@ -6,13 +6,21 @@ import { Loader } from 'src/components/Loader';
 
 const meta: Meta<typeof Loader> = {
     component: Loader,
-    args: {},
-    argTypes: {},
+    args: {
+        loading: true,
+    },
+    argTypes: {
+        loading: {
+            control: 'boolean',
+        },
+    },
 };
 export default meta;
 
 type Story = StoryObj<typeof Loader>;
 
 export const Primary: Story = {
-    args: {},
+    args: {
+        loading: true,
+    },
 };

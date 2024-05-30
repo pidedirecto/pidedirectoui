@@ -1,18 +1,24 @@
 /**
  * @prettier
  */
-import React from 'react';
+import React, { HTMLProps } from 'react';
+import { SlidingDots } from 'src/components/SlidingDots';
+import { Text } from 'src/components/Text';
 import classes from 'src/styles/loader.module.css';
 
-export function Loader(): React.ReactElement {
+export function Loader({ loading }: Props): React.ReactElement {
+    if (!loading) {
+        return <></>;
+    }
+
     return (
         <div className={classes.loaderContainer}>
-            <div className={classes.loader}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <p>Cargando, espera...</p>
+            <SlidingDots />
+            <Text weight='semiBold'>Cargando, espera...</Text>
         </div>
     );
 }
+
+type Props = Omit<HTMLProps<HTMLSpanElement>, 'className'> & {
+    loading: boolean;
+};
