@@ -4,24 +4,24 @@
 
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { CircleContainer } from 'src/components/CircleContainer';
+import { CircleIconContainer } from 'src/components/CircleIconContainer';
 import { SaveIcon } from 'src/icons/SaveIcon';
 
-const meta: Meta<typeof CircleContainer> = {
-    component: CircleContainer,
+const meta: Meta<typeof CircleIconContainer> = {
+    component: CircleIconContainer,
     args: {
         children: <p>Hi! I'm hidden inside an circle Container</p>,
     },
     argTypes: {
         disabled: {
-            description: 'Disables the CircleContainer',
+            description: 'Disables the CircleIconContainer',
             table: {
                 required: false,
                 type: { summary: 'boolean' },
             },
         },
         children: {
-            description: 'CircleContainer content',
+            description: 'CircleIconContainer content',
             type: {
                 required: true,
                 name: 'React.Node' as any,
@@ -32,14 +32,14 @@ const meta: Meta<typeof CircleContainer> = {
             control: false,
         },
         classes: {
-            description: 'Classes object to override CircleContainer style',
+            description: 'Classes object to override CircleIconContainer style',
             table: {
                 type: { summary: 'object' },
             },
         },
         // @ts-ignore
         'classes.container': {
-            description: 'CSS class to override the CircleContainer container style',
+            description: 'CSS class to override the CircleIconContainer container style',
             table: {
                 subcategory: 'Classes API',
                 type: { summary: 'string' },
@@ -50,7 +50,7 @@ const meta: Meta<typeof CircleContainer> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof CircleContainer>;
+type Story = StoryObj<typeof CircleIconContainer>;
 
 export const Controlled: Story = {
     args: {
@@ -61,8 +61,8 @@ export const Controlled: Story = {
 
 const ControlledCircleContainer = () => {
     return (
-        <CircleContainer>
+        <CircleIconContainer>
             <SaveIcon />
-        </CircleContainer>
+        </CircleIconContainer>
     );
 };

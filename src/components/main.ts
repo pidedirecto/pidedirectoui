@@ -9,7 +9,7 @@ export * from 'src/components/Button';
 export * from 'src/components/Tabs';
 export * from 'src/components/UiLogEventTracker';
 export * from 'src/components/Accordion';
-export * from 'src/components/CircleContainer';
+export * from 'src/components/CircleIconContainer';
 export * from 'src/components/DraggableList';
 export * from 'src/components/DraggableListItem';
 export * from 'src/components/DropDown';
