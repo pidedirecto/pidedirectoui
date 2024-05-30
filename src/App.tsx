@@ -10,7 +10,7 @@ import { SaveIcon } from 'src/icons/SaveIcon';
 export function App(): React.ReactElement {
     return (
         <div style={{ padding: 120 }}>
-            <Card title={'titulo'}>
+            <Card>
                 <CircleContainer>
                     <SaveIcon />
                 </CircleContainer>
