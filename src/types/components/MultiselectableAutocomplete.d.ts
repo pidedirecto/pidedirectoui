@@ -5,6 +5,7 @@ export type MultiselectableAutocompleteProps = {
     name: string,
     placeholder?: string,
     helperText?: string,
+    id?: string;
     productsSelectedLabel?: string,
     selectAllOptionLabel?: string,
     defaultValue?: Array<string>,
@@ -25,7 +26,6 @@ export type MultiselectableAutocompleteProps = {
     },
     value: Array<string>,
     variant?:'detailed'
-    helperText?:string
 };
 
 export type MultiselectableAutocomplete = React.FunctionComponent<MultiselectableAutocompleteProps>

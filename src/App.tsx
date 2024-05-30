@@ -8,8 +8,13 @@ import { Autocomplete } from 'src/components/Autocomplete';
 import { Card } from 'src/components/Card';
 import { HelperText } from 'src/components/HelperText';
 import { MultiselectableAutocomplete } from 'src/components/MultiselectableAutocomplete';
+import { Form } from 'src/form/Form';
+import { FormTextField } from 'src/form/FormTextField';
+import { useForm } from 'src/hooks/useForm';
 
 export function App(): React.ReactElement {
+    const form = useForm();
+
     const [selectedItem, setSelectedItem] = useState<string>();
     const [selectedItems, setSelectedItems] = useState<Array<string>>([]);
 
@@ -94,6 +99,9 @@ export function App(): React.ReactElement {
                     helperText={'Si se deja en blanco serán todos los canales'}
                 />
             </Card>
+            <Form form={form} onSubmit={() => {}}>
+                <FormTextField name={'input'} label={'Write your favorite food'} disabled={true} />
+            </Form>
         </div>
     );
 }

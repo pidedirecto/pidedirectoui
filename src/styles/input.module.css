@@ -52,6 +52,10 @@
     outline: 2px solid var(--border-brand-outline);
 }
 
+.inputContainer:disabled{
+    background-color: 2px solid var(--border-brand-outline);
+}
+
 .input {
     box-sizing: border-box;
     color: var(--text-primary);

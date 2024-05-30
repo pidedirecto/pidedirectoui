@@ -35,6 +35,7 @@ export function MultiselectableAutocomplete({
     productsSelectedLabel,
     selectAllOptionLabel,
     variant,
+    id,
 }: MultiselectableAutocompleteProps): React.ReactElement {
     const listboxContainerRef = useRef<HTMLDivElement | null>(null);
     const listOptionsContainerRef = useRef<HTMLDivElement | null>(null);
@@ -100,12 +101,15 @@ export function MultiselectableAutocomplete({
         <div ref={containerRef}>
             <div {...getRootProps()}>
                 <div className={classes.headContainer}>
-                    <div className={classes.headContainerLabel}>
-                        <Label htmlFor={`use-autocomplete-customer`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
-                            {label}
-                        </Label>
-                        {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}
-                    </div>
+                    {label ||
+                        (helperText && (
+                            <div className={classes.headContainerLabel}>
+                                <Label htmlFor={id ?? `use-autocomplete-customer`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
+                                    {label}
+                                </Label>
+                                {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}
+                            </div>
+                        ))}
                     {!!productsSelectedLabel && <span className={classes.numberOptionsSelectedContainer}>{productsSelectedLabel}</span>}
                 </div>
                 <Input
