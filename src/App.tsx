@@ -6,9 +6,17 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Autocomplete } from 'src/components/Autocomplete';
 import { Card } from 'src/components/Card';
+import { HelperText } from 'src/components/HelperText';
+import { MultiselectableAutocomplete } from 'src/components/MultiselectableAutocomplete';
+import { Form } from 'src/form/Form';
+import { FormTextField } from 'src/form/FormTextField';
+import { useForm } from 'src/hooks/useForm';
 
 export function App(): React.ReactElement {
+    const form = useForm();
+
     const [selectedItem, setSelectedItem] = useState<string>();
+    const [selectedItems, setSelectedItems] = useState<Array<string>>([]);
 
     const itemsFiltered = [
         { value: 'value1', label: 'Example 1' },
@@ -24,6 +32,9 @@ export function App(): React.ReactElement {
 
     const handleChange = (itemsId: string) => {
         setSelectedItem(itemsId);
+    };
+    const handleChangeMultiSelectable = (itemsId: Array<string>) => {
+        setSelectedItems(itemsId);
     };
 
     const handleInputValueChange = (itemsId: string) => {
@@ -57,6 +68,40 @@ export function App(): React.ReactElement {
                     onInputChange={handleInputValueChange}
                 />
             </Card>
+            <Card title={'titutlo'}>
+                <MultiselectableAutocomplete
+                    name={'example'}
+                    label={'Tipo de orden'}
+                    selectAllOption
+                    selectAllOptionLabel={'seleccionar todos'}
+                    productsSelectedLabel={`${selectedItems.length} productos seleccionados`}
+                    data={itemsFiltered}
+                    getOptionValue={(option) => option.value}
+                    getOptionLabel={(option) => option.label}
+                    renderOption={(option) => (
+                        <div
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                padding: '8px 4px',
+                                gap: '12px',
+                            }}
+                        >
+                            <p>{option.label}</p>
+                            <HelperText>{option?.restaurantName}</HelperText>
+                        </div>
+                    )}
+                    onChange={(itemIds: any) => handleChangeMultiSelectable(itemIds)}
+                    value={selectedItems}
+                    variant={'detailed'}
+                    helperText={'Si se deja en blanco serán todos los canales'}
+                />
+            </Card>
+            <Form form={form} onSubmit={() => {}}>
+                <FormTextField name={'input'} label={'Write your favorite food'} disabled={true} />
+            </Form>
         </div>
     );
 }
