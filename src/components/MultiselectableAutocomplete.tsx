@@ -101,20 +101,19 @@ export function MultiselectableAutocomplete({
         <div ref={containerRef}>
             <div {...getRootProps()}>
                 <div className={classes.headContainer}>
-                    {label ||
-                        (helperText && (
-                            <div className={classes.headContainerLabel}>
-                                <Label htmlFor={`${id ?? name}-multiselectable-autocomplete`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
-                                    {label}
-                                </Label>
-                                {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}
-                            </div>
-                        ))}
+                    {(!!label || !!helperText) && (
+                        <div className={classes.headContainerLabel}>
+                            <Label htmlFor={id ?? `${name}-multiselectable-autocomplete`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
+                                {label}
+                            </Label>
+                            {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}
+                        </div>
+                    )}
                     {!!productsSelectedLabel && <span className={classes.numberOptionsSelectedContainer}>{productsSelectedLabel}</span>}
                 </div>
                 <Input
                     {...(inputProps as any)}
-                    id={`${id ?? name}-multiselectable-autocomplete`}
+                    id={id ?? `${name}-multiselectable-autocomplete`}
                     type='search'
                     classes={{ input: classes.input, label: classes.inputError }}
                     placeholder={placeholder}
