@@ -8,6 +8,7 @@ export type InputProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'onChan
     tooltip?: string,
     helperText?: string,
     error?: boolean,
+    disabled?:boolean,
     onChange?: (value: string, e: React.ChangeEvent<HTMLInputElement>) => void | Promise<void>,
     inputRef?: React.Ref<HTMLInputElement>,
     InputComponent?: React.FunctionComponent<any>,

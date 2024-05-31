@@ -61,7 +61,8 @@
     background-color: var(--surface-primary);
     overflow: auto;
     max-height: 40vh;
-    border: 1px solid var(--border-secondary);
+    border: 1px solid var(--border-tertiary);
+    border-radius: 6px;
 }
 
 .listbox li[data-focus="true"]{
@@ -70,7 +71,7 @@
  }
 
 .listbox li:active {
-    background-color: var(--surface-secondary);
+    background-color: var(--surface-tertiary);
     color: var(--text-primary);
  }
 

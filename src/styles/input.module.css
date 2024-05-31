@@ -29,12 +29,31 @@
     box-sizing: border-box;
 }
 
+.inputContainerDisabled {
+    height: 42px;
+    padding: 14px;
+    width: 100%;
+    border: 1px solid var(--border-primary);
+    background-color: var(--surface-secondary);
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
 .inputContainer[data-error="true"] {
     border: 2px solid var(--border-danger);
 }
 
 .inputContainer:focus{
     outline: 2px solid var(--border-brand-outline);
+}
+
+.inputContainer:disabled{
+    background-color: 2px solid var(--border-brand-outline);
 }
 
 .input {

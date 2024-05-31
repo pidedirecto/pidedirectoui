@@ -3,6 +3,7 @@ import * as React from "react";
 export type MultiselectableAutocompleteProps = {
     label?: string,
     name: string,
+    id?: string,
     placeholder?: string,
     helperText?: string,
     productsSelectedLabel?: string,

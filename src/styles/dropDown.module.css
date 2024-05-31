@@ -19,10 +19,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    position: relative;
     width: max-content;
     max-width: 100%;
-    min-width: 150px;
+}
+
+.buttonIcon{
+    width: 48px;
+    justify-content: center;
 }
 
 .contentContainer {

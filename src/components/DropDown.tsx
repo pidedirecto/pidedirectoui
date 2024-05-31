@@ -34,7 +34,7 @@ export function DropDown({ content, variant, position, children, disabled, preve
         <div ref={dropDownContainerRef} className={classNames(classes.container, classesProp?.container)}>
             <Button
                 id={idProp ?? `listbox-${id.current}-button`}
-                classes={{ button: classNames(classes.button, classesProp?.button) }}
+                classes={{ button: classNames(classes.button, variant === 'icon' && classes.buttonIcon, classesProp?.button) }}
                 disabled={disabled}
                 variant={variant ?? 'secondary'}
                 onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
