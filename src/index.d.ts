@@ -29,6 +29,7 @@ import React from 'react'
 import { TimePicker } from "src/types/components/TimePicker";
 import { ScheduleDaySelect } from "src/types/components/ScheduleDaySelect";
 import { PickersProvider } from "src/types/components/PickersProvider";
+import { CircleIconContainer } from "src/components/CircleIconContainer";
 
 /**
  * Renders Checkbox
@@ -248,3 +249,11 @@ export const ScheduleDaySelect: ScheduleDaySelect
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-pickersprovider--docs)
  */
 export const PickersProvider: PickersProvider
+
+
+/**
+ * Renders CircleIconContainer
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-circleiconcontainer--docs)
+ */
+export const CircleIconContainer: CircleIconContainer

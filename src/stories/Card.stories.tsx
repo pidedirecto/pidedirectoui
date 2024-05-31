@@ -74,7 +74,11 @@ export const Controlled: Story = {
     },
     render: () => (
         <Card title={'Card title content'}>
-            <p>Information shown on card</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor ultricies ipsum. Fusce turpis sem, facilisis id dignissim et, dignissim commodo turpis. Morbi massa libero,
+                faucibus ut viverra et, fringilla non felis. Aliquam erat volutpat. Quisque fermentum metus vel eros ornare, bibendum tristique dui eleifend. Ut at arcu a magna egestas consectetur in
+                ultricies velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+            </p>
         </Card>
     ),
 };
