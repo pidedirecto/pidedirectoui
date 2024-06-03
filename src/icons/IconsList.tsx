@@ -26,7 +26,6 @@ import { CartIcon } from 'src/icons/CartIcon';
 import { CashBoxIcon } from 'src/icons/CashBoxIcon';
 import { CashDrawerIcon } from 'src/icons/CashDrawerIcon';
 import { CashIcon } from 'src/icons/CashIcon';
-import { CashOutline } from 'src/icons/CashOutline';
 import { CashRegisterShiftIcon } from 'src/icons/CashRegisterShiftIcon';
 import { CashTransferIcon } from 'src/icons/CashTransferIcon';
 import { CellphoneIcon } from 'src/icons/CellphoneIcon';
@@ -244,10 +243,6 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <CashIcon size={size} />
                 <span className={classes.iconName}>CashIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <CashOutline size={size} />
-                <span className={classes.iconName}>CashOutline</span>
             </div>
             <div className={classes.iconContainer}>
                 <CashDrawerIcon size={size} />

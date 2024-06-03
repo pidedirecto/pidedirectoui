@@ -25,7 +25,6 @@ export * from 'src/icons/CardCashIcon';
 export * from 'src/icons/CartIcon';
 export * from 'src/icons/CashBoxIcon';
 export * from 'src/icons/CashIcon';
-export * from 'src/icons/CashOutline';
 export * from 'src/icons/CashDrawerIcon';
 export * from 'src/icons/CashTransferIcon';
 export * from 'src/icons/CellphoneIcon';
