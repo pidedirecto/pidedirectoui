@@ -25,7 +25,7 @@ export const CashBoxIcon: SvgIcon
 export const CashIcon: SvgIcon
 export const CashDrawerIcon: SvgIcon
 export const CashTransferIcon: SvgIcon
-export const CellphoneCircleIcon: SvgIcon
+export const CellphoneIcon: SvgIcon
 export const ChatIcon: SvgIcon
 export const ChainIcon: SvgIcon
 export const CheckIcon: SvgIcon
@@ -140,7 +140,7 @@ export const UserIcon: SvgIcon
 export const UsersIcon: SvgIcon
 export const VideoIcon: SvgIcon
 export const WarningIcon: SvgIcon
-export const WalletCircleIcon: SvgIcon
+export const WalletIcon: SvgIcon
 export const WifiIcon: SvgIcon
 export const WifiOffIcon: SvgIcon
 export const WithdrawIcon: SvgIcon
