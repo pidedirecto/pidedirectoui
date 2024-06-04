@@ -23,14 +23,11 @@ export const CardCashIcon: SvgIcon
 export const CartIcon: SvgIcon
 export const CashBoxIcon: SvgIcon
 export const CashIcon: SvgIcon
-export const CashOutline: SvgIcon
-export const CardOutline: SvgIcon
 export const CashDrawerIcon: SvgIcon
 export const CashTransferIcon: SvgIcon
 export const CellphoneCircleIcon: SvgIcon
 export const ChatIcon: SvgIcon
 export const ChainIcon: SvgIcon
-export const ChainCircleIcon: SvgIcon
 export const CheckIcon: SvgIcon
 export const CircleIcon: SvgIcon
 export const CircleCheckIcon: SvgIcon
@@ -45,7 +42,6 @@ export const CookingPotIcon: SvgIcon
 export const CopyIcon: SvgIcon
 export const CoinsIcon: SvgIcon
 export const CreditCardIcon: SvgIcon
-export const CreditCardCircleIcon: SvgIcon
 export const CrossIcon: SvgIcon
 export const CutleryIcon: SvgIcon
 export const DepositIcon: SvgIcon
@@ -57,13 +53,11 @@ export const CashRegisterShiftIcon: SvgIcon
 export const DocumentIcon: SvgIcon
 export const DoorbellIcon: SvgIcon
 export const DoorHangerIcon: SvgIcon
-export const DoorHangerCircleIcon: SvgIcon
 export const DownloadIcon: SvgIcon
 export const DragIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon
 export const ExchangeArrowsIcon: SvgIcon
-export const ExchangeArrowsCircleIcon: SvgIcon
 export const ExitIcon: SvgIcon
 export const EyeIcon: SvgIcon
 export const FilledChartDonutIcon: SvgIcon
@@ -150,5 +144,4 @@ export const WalletCircleIcon: SvgIcon
 export const WifiIcon: SvgIcon
 export const WifiOffIcon: SvgIcon
 export const WithdrawIcon: SvgIcon
-export const SheetCircleIcon: SvgIcon
 export const XmlFileIcon: SvgIcon
