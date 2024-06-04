@@ -28,7 +28,7 @@ import { CashDrawerIcon } from 'src/icons/CashDrawerIcon';
 import { CashIcon } from 'src/icons/CashIcon';
 import { CashRegisterShiftIcon } from 'src/icons/CashRegisterShiftIcon';
 import { CashTransferIcon } from 'src/icons/CashTransferIcon';
-import { CellphoneIcon } from 'src/icons/CellphoneIcon';
+import { CellPhoneIcon } from 'src/icons/CellPhoneIcon';
 import { ChainIcon } from 'src/icons/ChainIcon';
 import { ChatIcon } from 'src/icons/ChatIcon';
 import { CheckIcon } from 'src/icons/CheckIcon';
@@ -257,8 +257,8 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>CashTransferIcon</span>
             </div>
             <div className={classes.iconContainer}>
-                <CellphoneIcon size={size} />
-                <span className={classes.iconName}>CellphoneIcon</span>
+                <CellPhoneIcon size={size} />
+                <span className={classes.iconName}>CellPhoneIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <ChatIcon size={size} />

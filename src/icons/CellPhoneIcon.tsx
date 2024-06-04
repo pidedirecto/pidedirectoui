@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function CellphoneIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
+export function CellPhoneIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
         <svg {...props} width={width ?? size ?? 24} height={height ?? size ?? 26} viewBox='0 0 24 26' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <path

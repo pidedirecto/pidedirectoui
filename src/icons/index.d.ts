@@ -25,7 +25,7 @@ export const CashBoxIcon: SvgIcon
 export const CashIcon: SvgIcon
 export const CashDrawerIcon: SvgIcon
 export const CashTransferIcon: SvgIcon
-export const CellphoneIcon: SvgIcon
+export const CellPhoneIcon: SvgIcon
 export const ChatIcon: SvgIcon
 export const ChainIcon: SvgIcon
 export const CheckIcon: SvgIcon
