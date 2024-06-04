@@ -74,6 +74,7 @@ export function Input({
                         onChange={handleChange}
                         aria-describedby={`${name ?? label}-tooltip`}
                         onBlur={handleInputBlur}
+                        required={required}
                         autoComplete={autoComplete || 'off'}
                     />
                 )}
@@ -86,6 +87,7 @@ export function Input({
                         type={type || 'text'}
                         className={classNames(classes.input, classesProp?.input)}
                         name={name}
+                        required={required}
                         onChange={handleChange}
                         aria-describedby={`${name ?? label}-tooltip`}
                         onBlur={handleInputBlur}
