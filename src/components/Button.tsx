@@ -19,10 +19,10 @@ export function Button({ classes: classesProp, type, children, onClick, variant,
     const getClassName = () => {
         let className = classes.button;
 
-        if (variant === 'secondary') className = classNames(className, classes.secondary);
-        if (variant === 'outline') className = classNames(className, classes.outline);
-        if (variant === 'text') className = classNames(className, classes.text);
-        if (variant === 'icon') className = classNames(className, classes.icon);
+        if (variant === 'secondary') className = classNames(className, classes.buttonSecondary);
+        if (variant === 'outline') className = classNames(className, classes.buttonOutline);
+        if (variant === 'text') className = classNames(className, classes.buttonText);
+        if (variant === 'icon') className = classNames(className, classes.buttonIcon);
 
         return classNames(className, classesProp?.button);
     };
