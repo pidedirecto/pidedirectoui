@@ -5,6 +5,7 @@ export type RadioGroupProps = {
     name: string;
     label?: string;
     tooltip?: string;
+    helperText?: string;
     error?: boolean;
     children: React.ReactNode;
     onChange: (value: any) => void | Promise<void>;

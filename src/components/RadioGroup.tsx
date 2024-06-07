@@ -3,19 +3,23 @@
  */
 import * as React from 'react';
 import { createContext } from 'react';
+import { HelperText } from 'src/components/HelperText';
 import { Label } from 'src/components/Label';
 import { Tooltip } from 'src/components/Tooltip';
 import classes from 'src/styles/radioGroup.module.css';
 import { RadioGroupProps } from 'src/types/components/RadioGroup';
 import { classNames } from 'src/utils/css/classNames';
 
-export function RadioGroup({ label, value, onChange, name, tooltip, error, children, orientation = 'vertical', classes: classesProp }: RadioGroupProps): React.ReactElement {
+export function RadioGroup({ label, value, onChange, name, tooltip, helperText, error, children, orientation = 'vertical', classes: classesProp }: RadioGroupProps): React.ReactElement {
     return (
         <div className={classNames(classes.container, classesProp?.container)}>
             {!!label && (
                 <div className={classes.labelContainer}>
-                    <Label error={error}>{label}</Label>
-                    {!!tooltip && <Tooltip text={tooltip} />}
+                    <div className={classes.label}>
+                        <Label error={error}>{label}</Label>
+                        {!!tooltip && <Tooltip text={tooltip} />}
+                    </div>
+                    {!!helperText && <HelperText error={error}>{helperText}</HelperText>}
                 </div>
             )}
             <RadioGroupContext.Provider value={{ name, value, onChange }}>

@@ -45,6 +45,13 @@ const meta: Meta<typeof RadioGroup> = {
             },
             control: false,
         },
+        helperText: {
+            description: 'Radio group helper text',
+            table: {
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         error: {
             description: 'Sets radio group error state',
             table: {
