@@ -1,0 +1,30 @@
+import { Meta, ArgTypes, Canvas} from '@storybook/blocks';
+
+import * as FormRadioGroup from '../../stories/form/FormRadioGroup.stories';
+
+<Meta title='form/FormRadioGroup' />
+
+# FormRadioGroup
+FormRadioGroup component
+
+<Canvas of={FormRadioGroup.Primary} sourceState={'none'} />
+
+The `FormRadioGroup` needs to use `Radio` components to display the options
+
+```tsx
+import { Radio } from '@pidedirecto/ui'
+import { FormRadioGroup } from '@pidedirecto/ui/form'
+
+<FormRadioGroup name='food' label={'Select your favorite food'}>
+    <Radio value='pizza' label={'Pizza'} />
+    <Radio value='burger' label={'Burger'} />
+    <Radio value='taco' label={'Taco'} />
+</FormRadioGroup>
+```
+
+if you need to disable the radios inputs, you should pass the disabled prop to each of them.
+
+## API
+
+<ArgTypes of={FormRadioGroup} />
+
