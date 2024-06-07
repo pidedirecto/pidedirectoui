@@ -29,7 +29,9 @@ import React from 'react'
 import { TimePicker } from "src/types/components/TimePicker";
 import { ScheduleDaySelect } from "src/types/components/ScheduleDaySelect";
 import { PickersProvider } from "src/types/components/PickersProvider";
-import { CircleIconContainer } from "src/components/CircleIconContainer";
+import { CircleIconContainer } from "src/types/components/CircleIconContainer";
+import { Radio } from "src/types/components/Radio";
+import { RadioGroup } from "src/types/components/RadioGroup";
 
 /**
  * Renders Checkbox
@@ -257,3 +259,19 @@ export const PickersProvider: PickersProvider
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-circleiconcontainer--docs)
  */
 export const CircleIconContainer: CircleIconContainer
+
+
+/**
+ * Renders CircleIconContainer
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-radio--docs)
+ */
+export const Radio: Radio
+
+
+/**
+ * Renders CircleIconContainer
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-radiogroup--docs)
+ */
+export const RadioGroup: RadioGroup
