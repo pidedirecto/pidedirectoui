@@ -32,6 +32,7 @@ import { PickersProvider } from "src/types/components/PickersProvider";
 import { CircleIconContainer } from "src/types/components/CircleIconContainer";
 import { Radio } from "src/types/components/Radio";
 import { RadioGroup } from "src/types/components/RadioGroup";
+import { Stepper } from "src/types/components/Stepper";
 
 /**
  * Renders Checkbox
@@ -236,14 +237,12 @@ export const Card: Card
  */
 export const TimePicker: TimePicker
 
-
 /**
  * Renders schedule day select
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-scheduledayselect--docs)
  */
 export const ScheduleDaySelect: ScheduleDaySelect
-
 
 /**
  * Date/Time/DateTime pickers provider utils
@@ -252,7 +251,6 @@ export const ScheduleDaySelect: ScheduleDaySelect
  */
 export const PickersProvider: PickersProvider
 
-
 /**
  * Renders CircleIconContainer
  *
@@ -260,18 +258,23 @@ export const PickersProvider: PickersProvider
  */
 export const CircleIconContainer: CircleIconContainer
 
-
 /**
- * Renders CircleIconContainer
+ * Renders Radio input
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-radio--docs)
  */
 export const Radio: Radio
 
-
 /**
- * Renders CircleIconContainer
+ * Renders Radio Group
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-radiogroup--docs)
  */
 export const RadioGroup: RadioGroup
+
+/**
+ * Renders Stepper
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-stepper--docs)
+ */
+export const Stepper: Stepper
