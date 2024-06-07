@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.radiosContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.radiosContainerHorizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.labelContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

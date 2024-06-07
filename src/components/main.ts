@@ -34,3 +34,5 @@ export * from 'src/components/Card';
 export * from 'src/components/TimePicker';
 export * from 'src/components/ScheduleDaySelect';
 export * from 'src/components/PickersProvider';
+export * from 'src/components/Radio';
+export * from 'src/components/RadioGroup';
