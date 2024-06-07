@@ -15,7 +15,7 @@
     font-size: var(--font-size-small);
     padding: 6px 12px;
     border-radius: 4px;
-    z-index: 99;
+    z-index: 1500;
     width: max-content;
     max-width: 200px;
     text-align: center;
