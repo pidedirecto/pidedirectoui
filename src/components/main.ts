@@ -2,7 +2,6 @@
  * @prettier
  */
 
-
 export * from 'src/components/Checkbox';
 export * from 'src/components/Switch';
 export * from 'src/components/Tooltip';
@@ -38,3 +37,4 @@ export * from 'src/components/PickersProvider';
 export * from 'src/components/Radio';
 export * from 'src/components/RadioGroup';
 export * from 'src/components/Stepper';
+export * from 'src/components/ConfirmDialog';

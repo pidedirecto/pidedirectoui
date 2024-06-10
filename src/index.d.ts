@@ -33,6 +33,7 @@ import { CircleIconContainer } from "src/types/components/CircleIconContainer";
 import { Radio } from "src/types/components/Radio";
 import { RadioGroup } from "src/types/components/RadioGroup";
 import { Stepper } from "src/types/components/Stepper";
+import { ConfirmDialog } from "src/types/components/ConfirmDialog";
 
 /**
  * Renders Checkbox
@@ -278,3 +279,10 @@ export const RadioGroup: RadioGroup
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-stepper--docs)
  */
 export const Stepper: Stepper
+
+/**
+ * Renders ConfirmDialog
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-confirm-dialog--docs)
+ */
+export const ConfirmDialog: ConfirmDialog

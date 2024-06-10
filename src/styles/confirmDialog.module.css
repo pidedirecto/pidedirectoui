@@ -1,0 +1,78 @@
+.iconContainer {
+    text-align: center;
+    font-family: var(--font-regular);
+    min-width: 280px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:12px
+}
+.dialogContent {
+    text-align: center;
+    margin: 25px 0;
+}
+.buttonsContainer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+}
+.button {
+    min-width: 110px;
+}
+
+.errorButton {
+background-color: var(--surface-brand-contrast);
+}
+
+.errorButton:hover{
+    background-color: var(--surface-brand-heavy-contrast);
+}
+
+.warningButton {
+    background-color: var(--surface-brand-contrast);
+}
+
+.successButton {
+background-color: var(--surface-brand-contrast);
+}
+
+.dialog {
+    max-width: 280px;
+}
+
+.message {
+    font-family: var(--font-regular);
+    color: var(--text-primary);
+    font-size: var(--font-size-large);
+}
+
+.title {
+font-family: var(--font-regular);
+color:var(--text-primary);
+font-size: var(--font-size-extra-large);
+font-weight: 600;
+}
+
+@media (min-width: 600px) {
+    .dialog{
+        max-width: 90%;
+    }
+    .message{
+        font-size: var(--font-size-extra-large);
+    }
+}
+
+@media (min-width: 960px) {
+    .iconContainer{
+        min-width: 460px;
+    }
+    .dialog{
+        max-width: 50%;
+    }
+
+
+}
+

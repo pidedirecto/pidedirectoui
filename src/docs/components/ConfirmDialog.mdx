@@ -1,0 +1,45 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as ConfirmDialogStories from '../../stories/ConfirmDialog.stories';
+
+<Meta of={ConfirmDialogStories} />
+
+# ConfirmDialog
+Renders an ConfirmDialog.
+
+The ConfirmDialog has several ways of use, for which there is a variant with the aim of letting the user understand if they are sure to perform an action.
+
+```tsx
+const [confirmDialogState, setConfirmDialogState] = useState(true);
+
+const handleOpenConfirmDialogState = () => setConfirmDialogState(true);
+
+return (
+    <div>
+        <ConfirmDialog open={confirmDialogState}  title={'ConfirmDialog title'} content={'content of ConfirmDialog'} acceptButtonText={'Accept'}  cancelButtonText={'Cancel'}/>
+        <Button onClick={handleOpenConfirmDialogState}>Click me to show confirmDialogState!</Button>
+    </div>
+);
+```
+
+## Warning ConfirmDialog
+
+<Canvas of={ConfirmDialogStories.WarningConfirmDialog} sourceState={'none'} />
+
+## Error ConfirmDialog
+
+<Canvas of={ConfirmDialogStories.ErrorConfirmDialog} sourceState={'none'} />
+
+## Success ConfirmDialog
+
+<Canvas of={ConfirmDialogStories.SuccessConfirmDialog} sourceState={'none'} />
+
+## Notification ConfirmDialog
+
+<Canvas of={ConfirmDialogStories.NotificationConfirmDialog} sourceState={'none'} />
+
+
+## API
+
+<ArgTypes of={ConfirmDialogStories} />
+
