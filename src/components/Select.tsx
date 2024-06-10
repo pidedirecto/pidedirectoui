@@ -127,7 +127,11 @@ export function Select({
             <DropDown
                 content={getPlaceholder()}
                 disabled={disabled}
-                classes={{ button: classNames(classes.select, classesProp?.button, error && classes.selectError), container: classNames(classes.selectContainer, classesProp?.selectContainer) }}
+                classes={{
+                    button: classNames(classes.select, classesProp?.button, error && classes.selectError),
+                    container: classNames(classes.selectContainer, classesProp?.selectContainer),
+                    dropdown: classesProp?.dropdown,
+                }}
                 preventClose={preventClose}
                 id={name}
             >

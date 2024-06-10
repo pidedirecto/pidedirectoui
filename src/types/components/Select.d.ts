@@ -14,6 +14,7 @@ export type SelectProps = {
     classes?: {
         container?: string,
         selectContainer?: string,
+        dropdown?: string,
         item?: string,
         button?: string,
     },
