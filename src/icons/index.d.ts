@@ -119,6 +119,8 @@ export const SaveIcon: SvgIcon
 export const ScissorsIcon: SvgIcon
 export const SearchIcon: SvgIcon
 export const SettingsIcon: SvgIcon
+export const ShieldIcon: SvgIcon
+export const ShieldFillIcon: SvgIcon
 export const SpeakerIcon: SvgIcon
 export const SpeakerOffIcon: SvgIcon
 export const StarIcon: SvgIcon

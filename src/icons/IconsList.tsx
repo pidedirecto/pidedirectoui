@@ -120,6 +120,8 @@ import { SaveIcon } from 'src/icons/SaveIcon';
 import { ScissorsIcon } from 'src/icons/ScissorsIcon';
 import { SearchIcon } from 'src/icons/SearchIcon';
 import { SettingsIcon } from 'src/icons/SettingsIcon';
+import { ShieldFillIcon } from 'src/icons/ShieldFillIcon';
+import { ShieldIcon } from 'src/icons/ShieldIcon';
 import { SpeakerIcon } from 'src/icons/SpeakerIcon';
 import { SpeakerOffIcon } from 'src/icons/SpeakerOffIcon';
 import { StarIcon } from 'src/icons/StarIcon';
@@ -623,6 +625,14 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <SettingsIcon size={size} />
                 <span className={classes.iconName}>SettingsIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <ShieldIcon size={size} />
+                <span className={classes.iconName}>ShieldIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <ShieldFillIcon size={size} />
+                <span className={classes.iconName}>ShieldFillIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <SpeakerIcon size={size} />
