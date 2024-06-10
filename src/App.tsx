@@ -3,31 +3,25 @@
  */
 
 import * as React from 'react';
-import { useState } from 'react';
 import { Button } from 'src/components/Button';
 import { Card } from 'src/components/Card';
 import { CircleIconContainer } from 'src/components/CircleIconContainer';
-import { ConfirmDialog } from 'src/components/ConfirmDialog';
+import { ConfirmDialog } from 'src/components/confirmDialog/ConfirmDialog';
+import { useConfirmDialog } from 'src/hooks/useConfirmDialog';
 import { SaveIcon } from 'src/icons/SaveIcon';
 
 export function App(): React.ReactElement {
-    const [confirmDialogState, setConfirmDialogState] = useState(false);
+    const confirmDialog = useConfirmDialog();
 
-    const onCloseConfirmDialog = () => {
-        setConfirmDialogState(false);
+    const handleClick = async () => {
+        const confirm = await confirmDialog({ title: 'pepe' });
+        console.log({ confirm });
     };
+
     return (
         <div style={{ padding: 120 }}>
-            <ConfirmDialog
-                open={confirmDialogState}
-                onClose={onCloseConfirmDialog}
-                title={'Eliminar este objeto?'}
-                buttonText={'Eliminar'}
-                cancelButtonText={'Cancelar'}
-                content={'Contenido de ejemplo para mostrar el dialog'}
-                variant={'notification'}
-            />
-            <Button onClick={() => setConfirmDialogState(true)}> pepe</Button>
+            <ConfirmDialog />
+            <Button onClick={handleClick}>pepe</Button>
             <Card>
                 <CircleIconContainer>
                     <SaveIcon />
