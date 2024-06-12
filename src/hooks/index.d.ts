@@ -67,7 +67,7 @@ export const useIsScreenSize: UseIsScreenSize
 export const useNotification: UseNotification
 
 /**
- * Hook to show an confirmDialog
+ * Hook to show a confirmation dialog
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useconfirmdialog--docs)
  */
