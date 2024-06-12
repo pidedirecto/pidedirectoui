@@ -7,7 +7,7 @@ import { UseIsScreenSize } from "src/types/hooks/UseIsScreenSize";
 import { Params, Result } from "src/types/hooks/CreateStore";
 import { UseNotification } from "src/types/hooks/UseNotification";
 import { UseElementSize } from "src/types/hooks/UseElementSize";
-import { useConfirmDialog } from "src/types/hooks/useConfirmDialog";
+import { UseConfirmDialog } from "src/types/hooks/UseConfirmDialog";
 import { ApiSauceResponse, Options } from "src/types/hooks/UseLoadApi";
 
 /**
@@ -71,7 +71,7 @@ export const useNotification: UseNotification
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useconfirmdialog--docs)
  */
-export const useConfirmDialog: useConfirmDialog
+export const UseConfirmDialog: UseConfirmDialog
 
 /**
  * Create store function

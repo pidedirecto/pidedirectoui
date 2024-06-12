@@ -37,4 +37,3 @@ export * from 'src/components/PickersProvider';
 export * from 'src/components/Radio';
 export * from 'src/components/RadioGroup';
 export * from 'src/components/Stepper';
-export * from 'src/components/confirmDialog/ConfirmDialog';

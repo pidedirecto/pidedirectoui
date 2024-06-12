@@ -385,7 +385,7 @@ export function IconsList(): React.ReactElement {
             </div>
             <div className={classes.iconContainer}>
                 <ErrorIcon size={size} />
-                <span className={classes.iconName}>ErrorAlertIcon</span>
+                <span className={classes.iconName}>ErrorIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <ExchangeArrowsIcon size={size} />

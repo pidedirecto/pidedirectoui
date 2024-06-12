@@ -57,7 +57,7 @@ export const DownloadIcon: SvgIcon
 export const DragIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon
-export const ErrorAlertIcon: SvgIcon
+export const ErrorIcon: SvgIcon
 export const ExchangeArrowsIcon: SvgIcon
 export const ExitIcon: SvgIcon
 export const EyeIcon: SvgIcon

@@ -1,35 +1,19 @@
 /**
  * @prettier
  */
-import React, { useEffect } from 'react';
-import { useConfirmDialogActions, useConfirmDialogStore } from 'src/components/confirmDialog/confirmDialogStore';
-import { SECONDS } from 'src/constants/TimeUnit';
-import { UseConfirmDialogProps } from 'src/types/hooks/useConfirmDialog';
+import { useRef } from 'react';
+import { useConfirmDialogActions } from 'src/components/confirmDialog/confirmDialogStore';
+import { UseConfirmDialogProps } from 'src/types/hooks/UseConfirmDialog';
 
 export function useConfirmDialog() {
-    const confirmDialogState = useConfirmDialogStore((state) => state);
     const openConfirmDialog = useConfirmDialogActions((actions) => actions.openConfirmDialog);
     const clearConfirmDialog = useConfirmDialogActions((actions) => actions.clearConfirmDialog);
-    const awaitingPromiseRef = React.useRef<
+    const awaitingPromiseRef = useRef<
         | {
               resolve: (result: Promise<boolean | undefined> | boolean | undefined) => void;
           }
         | undefined
     >();
-    let timeout: NodeJS.Timeout | null = null;
-
-    useEffect(() => {
-        if (Boolean(confirmDialogState) && confirmDialogState?.timeoutSeconds) {
-            if (timeout) clearTimeout(timeout);
-            timeout = setTimeout(
-                () => {
-                    timeout = null;
-                    handleClose();
-                },
-                (confirmDialogState?.timeoutSeconds || 5) * SECONDS,
-            );
-        }
-    }, [confirmDialogState]);
 
     const handleOpenConfirmDialog = (options: UseConfirmDialogProps) => {
         openConfirmDialog({ ...options, onAccept: handleAccept, onCancel: handleClose });

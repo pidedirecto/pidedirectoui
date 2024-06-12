@@ -1,16 +1,34 @@
-import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
-
+import { Meta, Canvas, ArgTypes } from '@storybook/blocks';
 import * as ConfirmDialogStories from '../../stories/ConfirmDialog.stories';
 
-<Meta of={ConfirmDialogStories} />
+<Meta title="hooks/useConfirmDialog" />
 
-# ConfirmDialog
-Renders an ConfirmDialog.
+# useConfirmDialog
 
-The ConfirmDialog has several ways of use, for which there is a variant with the aim of letting the user understand if they are sure to perform an action.
+`useConfirmDialog` hook returns a function that you can call to show a confirmation dialog.
+
+The basic usage for using this hook is first importing the ConfirmDialog component and put it somewhere in your applications,
+commonly in the application main component
 
 ```tsx
- const confirmDialog = useConfirmDialog()
+import { ConfirmDialog } from '@pidedirecto/ui'
+
+return (
+    <ConfirmDialog />
+)
+```
+
+We strongly recommend importing and using only one `ConfirmDialog` component per application, having 2 instances of this component
+could lead to unexpected behaviours.
+
+Once you have imported the `ConfirmDialog` component, you can use the `useConfirmDialog` hook anywhere in your application and start use confirmation dialogs .
+
+```tsx
+import { useConfirmDialog } from '@pidedirecto/ui/hooks'
+import { Button } from '@pidedirecto/ui'
+
+function Component() {
+     const confirmDialog = useConfirmDialog()
 
 const handleClick = async () => {
     const confirm = await confirmDialog({
@@ -24,10 +42,10 @@ const handleClick = async () => {
 
 return (
     <div>
-        <ConfirmDialog/>
         <Button onClick={handleClick}>Click me to show confirmDialogState!</Button>
     </div>
 );
+}
 ```
 
 ## Warning ConfirmDialog
@@ -46,8 +64,8 @@ return (
 
 <Canvas of={ConfirmDialogStories.NotificationConfirmDialog} sourceState={'none'} />
 
+# API
 
-## API
+The function returned by the `useConfirmDialog` hook accepts the following fields
 
 <ArgTypes of={ConfirmDialogStories} />
-

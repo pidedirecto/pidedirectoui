@@ -2,7 +2,7 @@
  * @prettier
  */
 
-export type useConfirmDialog = () => (params: UseConfirmDialogProps) => void;
+export type UseConfirmDialog = () => (params: UseConfirmDialogProps) => void;
 
 export type UseConfirmDialogProps = {
     onAccept?: () => void;
