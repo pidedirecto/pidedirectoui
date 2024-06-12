@@ -20,6 +20,7 @@ export * from 'src/icons/BookIcon';
 export * from 'src/icons/BoxIcon';
 export * from 'src/icons/BugIcon';
 export * from 'src/icons/CalculatorIcon';
+export * from 'src/icons/CalendarIcon';
 export * from 'src/icons/CalendarClockIcon';
 export * from 'src/icons/CardCashIcon';
 export * from 'src/icons/CartIcon';

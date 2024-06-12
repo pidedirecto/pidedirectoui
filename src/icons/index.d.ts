@@ -18,6 +18,7 @@ export const BookIcon: SvgIcon
 export const BoxIcon: SvgIcon
 export const BugIcon: SvgIcon
 export const CalculatorIcon: SvgIcon
+export const CalendarIcon: SvgIcon
 export const CalendarClockIcon: SvgIcon
 export const CardCashIcon: SvgIcon
 export const CartIcon: SvgIcon
