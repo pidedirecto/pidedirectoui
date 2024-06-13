@@ -58,6 +58,7 @@ export const DownloadIcon: SvgIcon
 export const DragIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon
+export const ErrorIcon: SvgIcon
 export const ExchangeArrowsIcon: SvgIcon
 export const ExitIcon: SvgIcon
 export const EyeIcon: SvgIcon
@@ -97,6 +98,7 @@ export const MoneyIcon: SvgIcon
 export const MotorcycleIcon: SvgIcon
 export const NoPhotoIcon: SvgIcon
 export const NoteIcon: SvgIcon
+export const NotificationIcon: SvgIcon
 export const OpenBoxIcon: SvgIcon
 export const OutlinedLightBulbIcon: SvgIcon
 export const OutlinedPeopleIcon: SvgIcon
@@ -127,6 +129,7 @@ export const SpeakerOffIcon: SvgIcon
 export const StarIcon: SvgIcon
 export const StoreIcon: SvgIcon
 export const SurveyIcon: SvgIcon
+export const SuccessAlertIcon: SvgIcon
 export const SwitchUserIcon: SvgIcon
 export const TableIcon: SvgIcon
 export const TerminalIcon: SvgIcon

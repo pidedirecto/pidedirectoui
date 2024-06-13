@@ -59,6 +59,7 @@ import { DragIcon } from 'src/icons/DragIcon';
 import { EditIcon } from 'src/icons/EditIcon';
 import { EllipsisVerticalIcon } from 'src/icons/EllipsisVerticalIcon';
 import { EnvelopeIcon } from 'src/icons/EnvelopeIcon';
+import { ErrorIcon } from 'src/icons/ErrorIcon';
 import { ExchangeArrowsIcon } from 'src/icons/ExchangeArrowsIcon';
 import { ExitIcon } from 'src/icons/ExitIcon';
 import { EyeIcon } from 'src/icons/EyeIcon';
@@ -97,6 +98,7 @@ import { MoneyIcon } from 'src/icons/MoneyIcon';
 import { MotorcycleIcon } from 'src/icons/MotorcycleIcon';
 import { NoPhotoIcon } from 'src/icons/NoPhotoIcon';
 import { NoteIcon } from 'src/icons/NoteIcon';
+import { NotificationIcon } from 'src/icons/NotificationIcon';
 import { OpenBoxIcon } from 'src/icons/OpenBoxIcon';
 import { OutlinedLightBulbIcon } from 'src/icons/OutlinedLightBulbIcon';
 import { OutlinedPeopleIcon } from 'src/icons/OutlinedPeopleIcon';
@@ -127,6 +129,7 @@ import { SpeakerIcon } from 'src/icons/SpeakerIcon';
 import { SpeakerOffIcon } from 'src/icons/SpeakerOffIcon';
 import { StarIcon } from 'src/icons/StarIcon';
 import { StoreIcon } from 'src/icons/StoreIcon';
+import { SuccessIcon } from 'src/icons/SuccessIcon';
 import { SurveyIcon } from 'src/icons/SurveyIcon';
 import { SwitchUserIcon } from 'src/icons/SwitchUserIcon';
 import { TableIcon } from 'src/icons/TableIcon';
@@ -388,6 +391,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>EnvelopeIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <ErrorIcon size={size} />
+                <span className={classes.iconName}>ErrorIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <ExchangeArrowsIcon size={size} />
                 <span className={classes.iconName}>ExchangeArrowsIcon</span>
             </div>
@@ -536,6 +543,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>NoteIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <NotificationIcon size={size} />
+                <span className={classes.iconName}>NotificationIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <OpenBoxIcon size={size} />
                 <span className={classes.iconName}>OpenBoxIcon</span>
             </div>
@@ -658,6 +669,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <SurveyIcon size={size} />
                 <span className={classes.iconName}>SurveyIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <SuccessIcon size={size} />
+                <span className={classes.iconName}>SuccessAlertIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <SwitchUserIcon size={size} />
