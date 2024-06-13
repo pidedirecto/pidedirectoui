@@ -71,7 +71,7 @@ export const useNotification: UseNotification
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useconfirmdialog--docs)
  */
-export const UseConfirmDialog: UseConfirmDialog
+export const useConfirmDialog: UseConfirmDialog
 
 /**
  * Create store function

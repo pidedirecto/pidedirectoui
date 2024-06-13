@@ -2,11 +2,11 @@
  * @prettier
  */
 
-export type UseConfirmDialog = () => (params: UseConfirmDialogProps) => void;
+export type UseConfirmDialog = () => (params: UseConfirmDialogProps) => Promise<boolean>;
 
 export type UseConfirmDialogProps = {
-    onAccept?: () => void;
-    onCancel?: () => void;
+    onAccept: (() => void) | undefined;
+    onCancel: (() => void) | undefined;
     title?: string;
     content?: string;
     acceptButtonText?: string;
