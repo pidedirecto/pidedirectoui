@@ -4,13 +4,13 @@
     flex-direction: column;
     gap: 12px;
     height: auto;
-    max-height: 85%; 
-    overflow: scroll; 
+    max-height: 85%;
+    overflow-y: scroll;
     padding: 0 8px;
 }
 
 @media (max-width: 600px) {
     .container{
-        max-height: 75%; 
+        max-height: 75%;
     }
 }
