@@ -2,7 +2,6 @@
  * @prettier
  */
 import { createStore } from 'src/hooks/createStore';
-import { UseConfirmDialogProps } from 'src/types/hooks/UseConfirmDialog';
 
 export const [useConfirmDialogStore, useConfirmDialogActions] = createStore<State, Actions>({
     initialState: {
@@ -47,7 +46,18 @@ type State = {
     variant?: 'warning' | 'error' | 'success' | 'notification';
 };
 
+type OpenConfirmDialogType = {
+    onAccept: (() => void) | undefined;
+    onCancel: (() => void) | undefined;
+    title?: string;
+    content?: string;
+    acceptButtonText?: string;
+    cancelButtonText?: string;
+    timeoutSeconds?: number;
+    variant?: 'warning' | 'error' | 'success' | 'notification';
+};
+
 type Actions = {
-    openConfirmDialog: (dialog: UseConfirmDialogProps) => void;
+    openConfirmDialog: (dialog: OpenConfirmDialogType) => void;
     clearConfirmDialog: () => void;
 };
