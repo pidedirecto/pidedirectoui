@@ -46,7 +46,7 @@ type State = {
     variant?: 'warning' | 'error' | 'success' | 'notification';
 };
 
-type OpenConfirmDialogType = {
+type OpenConfirmDialogParams = {
     onAccept: (() => void) | undefined;
     onCancel: (() => void) | undefined;
     title?: string;
@@ -58,6 +58,6 @@ type OpenConfirmDialogType = {
 };
 
 type Actions = {
-    openConfirmDialog: (dialog: OpenConfirmDialogType) => void;
+    openConfirmDialog: (dialog: OpenConfirmDialogParams) => void;
     clearConfirmDialog: () => void;
 };
