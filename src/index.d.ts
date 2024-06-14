@@ -278,3 +278,10 @@ export const RadioGroup: RadioGroup
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-stepper--docs)
  */
 export const Stepper: Stepper
+
+/**
+ * Renders Confirmation Dialog
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-confirmdialog--docs)
+ */
+export const ConfirmDialog: Stepper
