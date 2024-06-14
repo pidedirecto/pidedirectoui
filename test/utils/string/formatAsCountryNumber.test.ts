@@ -36,9 +36,9 @@ describe('formatAsCountryNumber util', () => {
         expect(result).toBe('100.00000');
     });
 
-    it('should leave extra decimals if minimum digits is passed', () => {
-        const result = formatAsCountryNumber('100', { minimumFractionDigits: 5 });
-        expect(result).toBe('100.00000');
+    it('should cut decimals if maximum digits passed is lower than number decimals', () => {
+        const result = formatAsCountryNumber('100.123456', { maximumFractionDigits: 3 });
+        expect(result).toBe('100.123');
     });
 
     it('should format number properly for us country', () => {
