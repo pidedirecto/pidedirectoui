@@ -476,12 +476,12 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>InvoiceIcon</span>
             </div>
             <div className={classes.iconContainer}>
-                <KilogramsIcon size={size} />
-                <span className={classes.iconName}>KilogramsIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
                 <KeyIcon size={size} />
                 <span className={classes.iconName}>KeyIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <KilogramsIcon size={size} />
+                <span className={classes.iconName}>KilogramsIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <LightBulbIcon size={size} />

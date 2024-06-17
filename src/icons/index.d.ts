@@ -78,8 +78,8 @@ export const HomeIcon: SvgIcon
 export const IdentifierIcon: SvgIcon
 export const InfoIcon: SvgIcon
 export const InvoiceIcon: SvgIcon
-export const KilogramsIcon: SvgIcon
 export const KeyIcon: SvgIcon
+export const KilogramsIcon: SvgIcon
 export const LightBulbIcon: SvgIcon
 export const LightingIcon: SvgIcon
 export const LinkIcon: SvgIcon
