@@ -2,6 +2,7 @@
  * @prettier
  */
 import { CountryCode, CountryCodes } from 'src/constants/CountryCode';
+import { Currencies } from 'src/constants/Currency';
 import { Options } from 'src/types/utils/formatAsCurrencyNumber';
 import { isParaguay } from 'src/utils/country/isParaguay';
 import { isPeru } from 'src/utils/country/isPeru';
@@ -33,7 +34,7 @@ export function formatAsCurrencyNumber(value: string | number | null | undefined
     const numberParts = numberFormat.formatToParts(Number(value));
     const formattedString = numberParts.map((part) => formatNumberPart(part, options?.country ?? CountryCodes.MX)).join('');
 
-    return formattedString.replace(/\s/g, '');
+    return formattedString.replace(/\s/g, ' ');
 }
 
 function formatNumberPart(numberPart: NumberPart, country: CountryCode): string {
@@ -45,6 +46,8 @@ function formatNumberPart(numberPart: NumberPart, country: CountryCode): string 
             if (isPeru(country)) return ',';
             return numberPart.value;
         case 'currency':
+            const isForeignCurrency = Object.keys(Currencies).includes(numberPart.value);
+            if (isForeignCurrency) return `${numberPart.value}$`;
             if (isParaguay(country)) return '₲';
             return numberPart.value;
         default:
