@@ -81,6 +81,7 @@ import { IdentifierIcon } from 'src/icons/IdentifierIcon';
 import { IncomingIcon } from 'src/icons/IncomingIcon';
 import { InfoIcon } from 'src/icons/InfoIcon';
 import { InvoiceIcon } from 'src/icons/InvoiceIcon';
+import { KeyIcon } from 'src/icons/KeyIcon';
 import { KilogramsIcon } from 'src/icons/KilogramsIcon';
 import { LightBulbIcon } from 'src/icons/LightBulbIcon';
 import { LightingIcon } from 'src/icons/LightingIcon';
@@ -477,6 +478,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <KilogramsIcon size={size} />
                 <span className={classes.iconName}>KilogramsIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <KeyIcon size={size} />
+                <span className={classes.iconName}>KeyIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <LightBulbIcon size={size} />

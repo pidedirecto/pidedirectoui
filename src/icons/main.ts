@@ -81,6 +81,7 @@ export * from 'src/icons/IdentifierIcon';
 export * from 'src/icons/InfoIcon';
 export * from 'src/icons/InvoiceIcon';
 export * from 'src/icons/KilogramsIcon';
+export * from 'src/icons/KeyIcon';
 export * from 'src/icons/LightBulbIcon';
 export * from 'src/icons/LightingIcon';
 export * from 'src/icons/LinkIcon';
