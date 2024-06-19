@@ -38,3 +38,4 @@ export * from 'src/components/Radio';
 export * from 'src/components/RadioGroup';
 export * from 'src/components/Stepper';
 export * from 'src/components/ConfirmDialog';
+export * from 'src/components/TextArea';
