@@ -19,6 +19,7 @@ import { FormTimePicker } from "src/types/form/FormTimePicker";
 import { FormScheduleDaySelect } from "src/types/form/FormScheduleDaySelect";
 import { FormRadioGroup } from "src/types/form/FormRadioGroup";
 import { FormNextWeekDaysSelect } from "src/types/form/FormNextWeekDaysSelect";
+import { FormTextAreaField } from "src/types/form/FormTextAreaField";
 
 
 /**
@@ -146,3 +147,9 @@ export const FormRadioGroup: FormRadioGroup
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formnextweekdaysselect--docs)
  */
 export const FormNextWeekDaysSelect: FormNextWeekDaysSelect
+
+/**
+ * Form text area
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formtextareafield--docs)
+ */
+export const FormTextAreaField: FormTextAreaField

@@ -23,3 +23,4 @@ export * from 'src/form/FormTimePicker';
 export * from 'src/form/FormScheduleDaySelect';
 export * from 'src/form/FormRadioGroup';
 export * from 'src/form/FormNextWeekDaysSelect';
+export * from 'src/form/FormTextAreaField';
