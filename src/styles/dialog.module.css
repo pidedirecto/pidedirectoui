@@ -59,6 +59,8 @@
     z-index: 1100;
     position: relative;
     overflow-y: visible;
+    display: flex;
+    flex-direction: column;
 }
 
 .dialogContent[data-position="right"] {
