@@ -13,7 +13,7 @@ const meta: Meta<typeof Loader> = {
         loading: {
             control: 'boolean',
         },
-        loadingText: {
+        text: {
             description: 'text show in loader',
             table: {
                 type: { summary: 'string' },
@@ -29,6 +29,6 @@ type Story = StoryObj<typeof Loader>;
 export const Primary: Story = {
     args: {
         loading: true,
-        loadingText: 'Loading...',
+        text: 'Loading...',
     },
 };
