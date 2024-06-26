@@ -30,6 +30,12 @@ import React from 'react'
 import { TimePicker } from "src/types/components/TimePicker";
 import { ScheduleDaySelect } from "src/types/components/ScheduleDaySelect";
 import { PickersProvider } from "src/types/components/PickersProvider";
+import { CircleIconContainer } from "src/types/components/CircleIconContainer";
+import { Radio } from "src/types/components/Radio";
+import { RadioGroup } from "src/types/components/RadioGroup";
+import { Stepper } from "src/types/components/Stepper";
+import { ConfirmDialog } from "src/types/components/ConfirmDialog";
+import { TextArea } from "src/types/components/TextArea";
 
 /**
  * Renders Checkbox
@@ -234,7 +240,6 @@ export const Card: Card
  */
 export const TimePicker: TimePicker
 
-
 /**
  * Renders schedule day select
  *
@@ -242,13 +247,54 @@ export const TimePicker: TimePicker
  */
 export const ScheduleDaySelect: ScheduleDaySelect
 
-
 /**
  * Date/Time/DateTime pickers provider utils
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-pickersprovider--docs)
  */
 export const PickersProvider: PickersProvider
+
+/**
+ * Renders CircleIconContainer
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-circleiconcontainer--docs)
+ */
+export const CircleIconContainer: CircleIconContainer
+
+/**
+ * Renders Radio input
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-radio--docs)
+ */
+export const Radio: Radio
+
+/**
+ * Renders Radio Group
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-radiogroup--docs)
+ */
+export const RadioGroup: RadioGroup
+
+/**
+ * Renders Stepper
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-stepper--docs)
+ */
+export const Stepper: Stepper
+
+/**
+ * Renders Confirmation Dialog
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-confirmdialog--docs)
+ */
+export const ConfirmDialog: ConfirmDialog
+
+/**
+ * Renders TextArea
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-textarea--docs)
+ */
+export const TextArea: TextArea
 
 /**
  * Renders Loader

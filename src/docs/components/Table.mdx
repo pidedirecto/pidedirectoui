@@ -114,7 +114,8 @@ The `Table` component has customizable props. `title` prop will render a title.
     clearSelectedRows: () => void;
 }
 ```
-The `selectedRows` key are the selected rows, the `clearSelectedRows` functions can be used to clear the selected rows.
+The `selectedRows` key is an array containing the `rowId` values of the selected rows, so in order to use this functionality you should pass to each row object an unique value in the `rowId` field.
+The `clearSelectedRows` functions can be used to clear the selected rows.
 
 ```tsx
 import { RefreshIcon } from '@pidedirecto/ui/icons'

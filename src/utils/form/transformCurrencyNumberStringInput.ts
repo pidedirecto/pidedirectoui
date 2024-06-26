@@ -1,36 +1,43 @@
 /**
  * @prettier
  */
+import { CountryCode } from 'src/constants/CountryCode';
+import { doesCountryUseDotForDecimals } from 'src/utils/string/doesCountryUseDotForDecimals';
+import { formatAsCountryNumber } from 'src/utils/string/formatAsCountryNumber';
+
+let globalOptions: undefined | Options = undefined;
 
 export function transformCurrencyNumberStringInput(value?: string, options?: Options): string {
-    const formatter = new Intl.NumberFormat('en-US', { maximumFractionDigits: options?.maximumDigits ?? 2 });
-
+    globalOptions = options;
     if (!value) return '';
-    const normalizedValue = normalizeValue(value);
 
-    let formattedValue = formatter.format(normalizedValue as any);
-    if (value.includes('.') && !formattedValue.includes('.')) formattedValue += '.';
+    let formattedValue = formatAsCountryNumber(normalizeValue(value), { country: options?.country, maximumFractionDigits: options?.maximumFractionDigits });
 
-    return formattedValue;
+    return addDecimalCharacter(value, formattedValue);
 }
 
 function normalizeValue(value: string): string {
-    let normalizedValue = removeLetters(value);
-    normalizedValue = removeMultipleDots(normalizedValue);
-    return normalizedValue;
+    return removeIntegerGroups(removeLetters(value));
 }
 
-function removeMultipleDots(value: string): string {
-    const hasSingleDot = value.match(/^-?\d+(?:\.\d+)?$/);
-    if (hasSingleDot) return value;
-
-    return value.slice(0, value.length - 1);
+function removeIntegerGroups(value: string): string {
+    return value.replace(/,/g, '');
 }
 
 function removeLetters(value: string): string {
-    return value.replace(/[^\d.]/g, '');
+    return value.replace(/[^\d.,]/g, '');
+}
+
+function addDecimalCharacter(originalValue: string, formattedValue: string): string {
+    const countryDecimalCharacter = doesCountryUseDotForDecimals(globalOptions?.country) ? '.' : ',';
+    if (originalValue.includes('.') && !formattedValue.includes(countryDecimalCharacter)) {
+        return formattedValue + countryDecimalCharacter;
+    }
+    return formattedValue;
 }
 
 type Options = {
-    maximumDigits?: number;
+    minimumFractionDigits?: number;
+    maximumFractionDigits?: number;
+    country?: CountryCode;
 };

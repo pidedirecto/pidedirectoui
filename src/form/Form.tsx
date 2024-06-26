@@ -4,7 +4,9 @@
 import { createContext } from 'react';
 import * as React from 'react';
 import { FormProvider } from 'react-hook-form';
+import classes from 'src/styles/form.module.css';
 import { FormProps } from 'src/types/form/Form';
+import { classNames } from 'src/utils/css/classNames';
 
 export function Form({ form, onSubmit, disabled, id, disableSubmitOnEnterKey, classes: classesProp, children }: FormProps): React.ReactElement {
     return (
@@ -23,7 +25,7 @@ export function Form({ form, onSubmit, disabled, id, disableSubmitOnEnterKey, cl
                               }
                             : undefined
                     }
-                    className={classesProp?.form}
+                    className={classNames(classes.form, classesProp?.form)}
                     noValidate
                     id={id}
                 >

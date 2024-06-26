@@ -57,7 +57,7 @@ export function TimePicker({ value, onChange, onBlur, label, placeholder, name, 
                         inputProps={{ className: classNames(classes.input, classesProp?.input), id: id ?? `${name}-input` }}
                         onChange={handleChange}
                         onBlur={handleInputBlur}
-                        value={value}
+                        value={value || null}
                         format='LT'
                         autoOk
                         fullWidth

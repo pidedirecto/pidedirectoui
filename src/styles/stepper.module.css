@@ -1,0 +1,91 @@
+.stepper {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.stepper[data-orientation="horizontal"] {
+    flex-direction: row;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.stepContent {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.iconContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 30px;
+}
+
+.stepCircle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--border-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-semi-bold);
+    color: var(--text-primary);
+}
+
+.stepLabel {
+    margin-left: 8px;
+    font-size: var(--font-size-extra-small);
+    color: var(--text-primary);
+    font-family: var(--font-medium);
+}
+
+.stepLine {
+    background-color: var(--surface-contrast);
+    height: 20px;
+    width: 2px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.activeStepCircle {
+    background-color: var(--surface-brand-contrast);
+    border: 1px solid var(--border-brand-contrast);
+    color: white;
+}
+
+.activeStepLabel {
+    color: var(--text-brand);
+}
+
+.activeStepLine {
+    background-color: var(--surface-brand-contrast);
+}
+
+.stepLine[data-orientation="horizontal"]  {
+    height: 2px;
+    width: 20px;
+    margin-top: 15px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+@media (min-width: 600px) {
+    .stepLabel{
+        font-size: var(--font-size-small);
+    }
+}
+
+@media (min-width: 960px) {
+    .stepLabel{
+        font-size: var(--font-size-regular);
+    }
+}

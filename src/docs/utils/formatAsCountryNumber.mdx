@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title='utils/formatAsCountryNumber' />
+
+# formatAsCountryNumber
+
+The `formatAsCountryNumber` util function allows you to transform a number into a currency string.
+
+```ts
+import { formatAsCountryNumber } from '@pidedirect/ui/utils'
+
+formatAsCountryNumber('123456') // Result 123,456 or 123.456 depending on the country
+```
+
+it accepts an object of `Options`.
+
+- `options.minimumFractionDigits`: Minimum fraction digits, default is 0
+- `options.maximumFractionDigits`: Maximum fraction digits, default is 2
+- `options.country`: This value will be used to set the number format, default is MX.
+This value should be one of the available country codes you can get from
+```ts
+import { CountryCodes } from '@pidedirecto/ui/const'
+```

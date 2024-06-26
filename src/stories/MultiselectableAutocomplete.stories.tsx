@@ -37,6 +37,13 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
                 type: { summary: 'string' },
             },
         },
+        id: {
+            description: 'MultiselectableAutocomplete id',
+            table: {
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         variant: {
             description: 'autocomplete variant',
             table: {
@@ -130,13 +137,6 @@ const meta: Meta<typeof MultiselectableAutocomplete> = {
             table: {
                 required: false,
                 type: { summary: 'boolean' },
-            },
-        },
-        required: {
-            description: 'Sets input as required',
-            table: {
-                required: false,
-                type: { summary: 'boolean | {value:number, message:string}' },
             },
         },
         InputProps: {

@@ -30,11 +30,23 @@ export function DropDown({ content, variant, position, children, disabled, preve
         setIsOpen(false);
     };
 
+    const getDropDownLeft = () => {
+        if (!dropDownContainerRef.current) return;
+        if (position === 'right') return 'unset';
+        return '0';
+    };
+
+    const getDropDownRight = () => {
+        if (!dropDownContainerRef.current) return;
+        if (!position || position === 'left') return 'unset';
+        return '0';
+    };
+
     return (
         <div ref={dropDownContainerRef} className={classNames(classes.container, classesProp?.container)}>
             <Button
                 id={idProp ?? `listbox-${id.current}-button`}
-                classes={{ button: classNames(classes.button, classesProp?.button) }}
+                classes={{ button: classNames(classes.button, variant === 'icon' && classes.buttonIcon, classesProp?.button) }}
                 disabled={disabled}
                 variant={variant ?? 'secondary'}
                 onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
@@ -52,7 +64,14 @@ export function DropDown({ content, variant, position, children, disabled, preve
             {isOpen &&
                 dropDownContainerRef.current &&
                 createPortal(
-                    <div role='listbox' className={classNames(classes.dropdown, classesProp?.dropdown)} aria-labelledby={`listbox-${id.current}-button`} aria-readonly={true} ref={dropDownRef}>
+                    <div
+                        role='listbox'
+                        className={classNames(classes.dropdown, classesProp?.dropdown)}
+                        style={{ left: getDropDownLeft(), right: getDropDownRight() }}
+                        aria-labelledby={`listbox-${id.current}-button`}
+                        aria-readonly={true}
+                        ref={dropDownRef}
+                    >
                         <DropDownContext.Provider value={{ closeDropDown: handleCloseDropDown }}>{children}</DropDownContext.Provider>
                     </div>,
                     dropDownContainerRef.current,

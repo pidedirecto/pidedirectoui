@@ -23,6 +23,7 @@ export function FormCurrencyNumberStringField({
     required,
     min,
     max,
+    country,
     rules,
     placeHolder,
     maximumDigits,
@@ -48,9 +49,9 @@ export function FormCurrencyNumberStringField({
                     inputRef={ref}
                     label={required ? `${label}*` : label}
                     onBlur={onBlur}
-                    value={transformCurrencyNumberStringInput(value, { maximumDigits })}
+                    value={transformCurrencyNumberStringInput(value, { country, maximumFractionDigits: maximumDigits })}
                     onChange={(value: string) => {
-                        onChange(transformCurrencyNumberStringOutput(value, { maximumDigits }));
+                        onChange(transformCurrencyNumberStringOutput(value, { country, maximumFractionDigits: maximumDigits }));
                     }}
                     placeholder={placeHolder}
                     name={name}

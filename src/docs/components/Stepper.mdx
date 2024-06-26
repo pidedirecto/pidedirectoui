@@ -1,0 +1,33 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as StepperStories from '../../stories/Stepper.stories';
+
+<Meta of={StepperStories} />
+
+# Stepper
+Renders an stepper.
+
+<Canvas of={StepperStories.Primary} />
+
+The 2 main props of `Stepper` component are `steps` and `activeStep`. The `steps` prop is an array of `Step` objects. The `Step` object has the following properties.
+
+- `value`: Step value, this can be any value type and should be unique between steps.
+- `label`: Step label, a string value which will label the step
+- `content`: Step icon content, by default the icon content will be the index position of the step, you can change this content with this property, for example:
+
+<Canvas of={StepperStories.CustomIcons} />
+
+The `activeStep` prop should be the value of the step that is active, so the value passed here be one of the steps.
+
+The position of the steps in the ui will correspond to its index position in the array.
+
+## Orientation
+
+You can change the stepper orientation to horizontal with the `orientation` prop.
+
+<Canvas of={StepperStories.Horizontal} />
+
+## API
+
+<ArgTypes of={StepperStories} />
+

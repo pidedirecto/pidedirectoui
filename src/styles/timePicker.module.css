@@ -29,7 +29,7 @@
 }
 
 .inputContainer[data-error="true"] {
-    border: 2px solid var(--border-danger);
+    border: 1px solid var(--border-danger);
 }
 
 .input {

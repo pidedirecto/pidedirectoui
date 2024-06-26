@@ -1,0 +1,14 @@
+.select {
+    max-height: unset;
+}
+
+.optionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+
+.optionSmallText {
+    color: var(--text-secondary)
+}

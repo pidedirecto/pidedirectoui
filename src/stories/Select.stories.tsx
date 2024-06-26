@@ -150,6 +150,14 @@ const meta: Meta<typeof Select> = {
             },
             control: false,
         },
+        'classes.dropdown': {
+            description: 'CSS class to override the select dropdown container style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         'classes.button': {
             description: 'CSS class to override the select button style',
             table: {

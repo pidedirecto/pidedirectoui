@@ -30,6 +30,20 @@ const meta: Meta<typeof Input> = {
             },
             control: false,
         },
+        disabled: {
+            description: 'Disables input',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        required: {
+            description: 'Require input',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
         tooltip: {
             description: 'Input tooltip',
             table: {

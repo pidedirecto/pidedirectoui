@@ -35,71 +35,71 @@
     pointer-events: none;
 }
 
-.secondary {
+.buttonSecondary {
     background-color: transparent;
     border: 1px solid var(--border-primary);
     color: var(--text-secondary);
 }
 
-.secondary:hover {
+.buttonSecondary:hover {
     background-color: var(--surface-tertiary);
     border: 1px solid var(--border-tertiary);
 }
 
-.secondary:focus {
+.buttonSecondary:focus {
     outline: 2px solid var(--border-brand-outline);
 }
 
-.secondary:disabled {
+.buttonSecondary:disabled {
     background-color: var(--surface-secondary);
     border: 1px solid var(--surface-secondary);
     color: var(--text-contrast);
     pointer-events: none;
 }
 
-.outline {
+.buttonOutline {
     background-color: transparent;
     border: 1px solid var(--border-brand-contrast);
     color: var(--text-brand);
 }
 
-.outline:hover {
+.buttonOutline:hover {
     background-color: var(--surface-brand);
 }
 
-.outline:focus {
+.buttonOutline:focus {
     outline: 2px solid var(--border-brand-outline);
 }
 
-.outline:disabled {
+.buttonOutline:disabled {
     background-color: var(--surface-secondary);
     border: 1px solid var(--surface-secondary);
     color: var(--text-contrast);
     pointer-events: none;
 }
 
-.text {
+.buttonText {
     border: 0;
     background-color: transparent;
     color: var(--text-secondary);
     padding: 6px 0px;
 }
 
-.text:hover {
+.buttonText:hover {
     text-decoration: underline;
     background-color: transparent;
 }
 
-.text:focus {
+.buttonText:focus {
     outline: 2px solid var(--border-brand-outline);
 }
 
-.text:disabled {
+.buttonText:disabled {
     color: var(--text-contrast);
     pointer-events: none;
 }
 
-.icon {
+.buttonIcon {
     width: 48px;
     height: 48px;
     border-radius: 48px;
@@ -111,15 +111,15 @@
     justify-content: center;
 }
 
-.icon:hover {
+.buttonIcon:hover {
     background-color: var(--surface-tertiary);
 }
 
-.icon:focus {
+.buttonIcon:focus {
     outline: 2px solid var(--border-brand-outline);
 }
 
-.icon:disabled {
+.buttonIcon:disabled {
     color: var(--text-contrast);
     background-color: var(--surface-secondary);
 }

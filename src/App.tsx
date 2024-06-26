@@ -3,13 +3,18 @@
  */
 
 import * as React from 'react';
-import { Loader } from 'src/components/Loader';
+import { Card } from 'src/components/Card';
+import { CircleIconContainer } from 'src/components/CircleIconContainer';
+import { SaveIcon } from 'src/icons/SaveIcon';
 
 export function App(): React.ReactElement {
     return (
         <div style={{ padding: 120 }}>
-            <h1>App</h1>
-            <Loader loading={true} />
+            <Card>
+                <CircleIconContainer>
+                    <SaveIcon />
+                </CircleIconContainer>
+            </Card>
         </div>
     );
 }

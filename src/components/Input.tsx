@@ -2,6 +2,7 @@
  * @prettier
  */
 import * as React from 'react';
+import { useState } from 'react';
 import { HelperText } from 'src/components/HelperText';
 import { Label } from 'src/components/Label';
 import { Tooltip } from 'src/components/Tooltip';
@@ -20,6 +21,7 @@ export function Input({
     helperText,
     value,
     required,
+    disabled,
     step,
     error,
     autoComplete,
@@ -28,10 +30,13 @@ export function Input({
     rightAdornment,
     InputComponent,
     onBlur,
+    onFocus,
     id,
     classes: classesProp,
     ...props
 }: InputProps): React.ReactElement {
+    const [isFocused, setIsFocused] = useState(false);
+
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
     const isSearchType = type === 'search';
@@ -44,6 +49,12 @@ export function Input({
     const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
         createUserTypedInputLogEvent(label ?? name, value ?? '');
         onBlur?.(e);
+        setIsFocused(false);
+    };
+
+    const handleInputFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+        setIsFocused(true);
+        onFocus?.(e);
     };
 
     return (
@@ -56,7 +67,7 @@ export function Input({
                     {!!tooltip && <Tooltip text={tooltip} id={`${name}-tooltip`} />}
                 </div>
             )}
-            <div data-error={error} className={classNames(classes.inputContainer, classesProp?.inputContainer)}>
+            <div data-error={error} data-focus={isFocused} className={classNames(disabled ? classes.inputContainerDisabled : classes.inputContainer, classesProp?.inputContainer)}>
                 {isSearchType && !leftAdornment && (
                     <div className={classes.icon}>
                         <SearchIcon size={16} />
@@ -73,6 +84,7 @@ export function Input({
                         onChange={handleChange}
                         aria-describedby={`${name ?? label}-tooltip`}
                         onBlur={handleInputBlur}
+                        required={required}
                         autoComplete={autoComplete || 'off'}
                     />
                 )}
@@ -85,10 +97,13 @@ export function Input({
                         type={type || 'text'}
                         className={classNames(classes.input, classesProp?.input)}
                         name={name}
+                        required={required}
                         onChange={handleChange}
                         aria-describedby={`${name ?? label}-tooltip`}
                         onBlur={handleInputBlur}
+                        onFocus={handleInputFocus}
                         autoComplete={autoComplete || 'off'}
+                        disabled={disabled}
                     />
                 )}
                 {!!rightAdornment && rightAdornment}

@@ -7,6 +7,8 @@ import { UseIsScreenSize } from "src/types/hooks/UseIsScreenSize";
 import { Params, Result } from "src/types/hooks/CreateStore";
 import { UseNotification } from "src/types/hooks/UseNotification";
 import { UseElementSize } from "src/types/hooks/UseElementSize";
+import { UseConfirmDialog } from "src/types/hooks/UseConfirmDialog";
+import { ApiSauceResponse, Options } from "src/types/hooks/UseLoadApi";
 
 /**
  * Theme gives width and height of an element passing its reference
@@ -58,11 +60,18 @@ export const useHasClickedOutside: UseHasClickedOutside
 export const useIsScreenSize: UseIsScreenSize
 
 /**
- * Hook to shwo a notification
+ * Hook to show a notification
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-usenotification--docs)
  */
 export const useNotification: UseNotification
+
+/**
+ * Hook to show a confirmation dialog
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useconfirmdialog--docs)
+ */
+export const useConfirmDialog: UseConfirmDialog
 
 /**
  * Create store function
@@ -70,3 +79,14 @@ export const useNotification: UseNotification
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-createstore--docs)
  */
 export function createStore<State, Actions>(params: Params<State, Actions>): Result<State, Actions>;
+
+/**
+ * Create store function
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-createstore--docs)
+ */
+export function useLoadApi<S extends (request?: any) => ApiSauceResponse<any>>(
+    fn: S,
+    request?: Parameters<S>[0],
+    options?: Options
+): [boolean, Extract<Awaited<ReturnType<S>>, { ok: true }>['data'], (params?: { request: any }) => Promise<void>]

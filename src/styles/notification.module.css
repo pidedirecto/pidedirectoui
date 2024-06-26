@@ -12,7 +12,7 @@
     border-radius: 8px;
     color: white;
     transition: bottom 0.15s linear, opacity 0.15s linear;
-    z-index: 9999;
+    z-index: 3000;
 }
 
 .shownNotification {
