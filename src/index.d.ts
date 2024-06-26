@@ -7,6 +7,7 @@ import { Accordion } from "src/types/components/Accordion";
 import { DraggableList } from "src/types/components/DraggableList";
 import { DraggableListItem } from "src/types/components/DraggableListItem";
 import { DropDown } from "src/types/components/DropDown";
+import { Loader } from "src/types/components/Loader";
 import { DropDownItem } from "src/types/components/DropDownItem";
 import { Select } from "src/types/components/Select";
 import { Tooltip } from "src/types/components/Tooltip";
@@ -294,3 +295,10 @@ export const ConfirmDialog: ConfirmDialog
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-textarea--docs)
  */
 export const TextArea: TextArea
+
+/**
+ * Renders Loader
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-loader--docs)
+ */
+export const Loader: Loader
