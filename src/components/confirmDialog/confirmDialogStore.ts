@@ -21,8 +21,10 @@ export const [useConfirmDialogStore, useConfirmDialogActions] = createStore<Stat
             state.onAccept = dialog.onAccept;
             state.onCancel = dialog.onCancel;
         },
-        clearConfirmDialog: (state) => {
+        closeConfirmDialog: (state) => {
             state.open = false;
+        },
+        clearConfirmDialog: (state) => {
             state.title = undefined;
             state.content = undefined;
             state.variant = undefined;
@@ -59,5 +61,6 @@ type OpenConfirmDialogParams = {
 
 type Actions = {
     openConfirmDialog: (dialog: OpenConfirmDialogParams) => void;
+    closeConfirmDialog: () => void;
     clearConfirmDialog: () => void;
 };

@@ -7,6 +7,7 @@ import { UseConfirmDialogProps } from 'src/types/hooks/UseConfirmDialog';
 
 export function useConfirmDialog() {
     const openConfirmDialog = useConfirmDialogActions((actions) => actions.openConfirmDialog);
+    const closeConfirmDialog = useConfirmDialogActions((actions) => actions.closeConfirmDialog);
     const clearConfirmDialog = useConfirmDialogActions((actions) => actions.clearConfirmDialog);
     const awaitingPromiseRef = useRef<
         | {
@@ -26,13 +27,15 @@ export function useConfirmDialog() {
         });
     };
 
-    const handleAccept = () => {
+    const handleAccept = async () => {
         awaitingPromiseRef.current?.resolve(true);
+        closeConfirmDialog();
         clearConfirmDialogTimeout();
     };
 
     const handleClose = () => {
         awaitingPromiseRef.current?.resolve(false);
+        closeConfirmDialog();
         clearConfirmDialogTimeout();
     };
 
