@@ -15,7 +15,7 @@ const meta: Meta<typeof Chip> = {
         variant: {
             description: 'Chip variant',
             table: {
-                type: { summary: 'error | warning | success | info' },
+                type: { summary: 'error | warning | success | info | secondary' },
             },
             control: false,
         },
@@ -89,6 +89,14 @@ export const Info: Story = {
     args: {
         ...meta.args,
         variant: 'info',
+        children: "I'm a chip",
+    },
+};
+
+export const Secondary: Story = {
+    args: {
+        ...meta.args,
+        variant: 'secondary',
         children: "I'm a chip",
     },
 };
