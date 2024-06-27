@@ -49,7 +49,7 @@ const meta: Meta<typeof ConfirmDialog> = {
             description: 'Number of seconds to wait before closing the dialog',
             table: {
                 required: false,
-                type: { summary: 'number' },
+                type: { summary: 'warning | error | success | notification' },
             },
         },
         variant: {
