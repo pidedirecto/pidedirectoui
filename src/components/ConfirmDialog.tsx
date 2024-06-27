@@ -53,11 +53,9 @@ export function ConfirmDialog(): React.ReactElement {
     };
 
     const getVariantIcon = () => {
-        if (variant === 'error') return <ErrorIcon size={90} />;
-        if (variant === 'warning') return <NotificationIcon size={90} />;
-        if (variant === 'success') return <SuccessIcon size={90} />;
-        if (variant === 'notification') return <NotificationIcon size={90} />;
-
+        if (variant === 'error') return <ErrorIcon size={80} />;
+        if (variant === 'warning') return <NotificationIcon size={80} />;
+        if (variant === 'success') return <SuccessIcon size={80} />;
         return null;
     };
 
