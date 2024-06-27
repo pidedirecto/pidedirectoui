@@ -1,11 +1,5 @@
 import {type FieldValues,type FieldName,type Control,useWatch as useWatchReactHookForm} from "react-hook-form";
 
-interface WatchOptions<TFieldValues extends FieldValues> {
-    name: FieldName<TFieldValues>;
-    control: Control<TFieldValues>;
-    defaultValue?: TFieldValues[FieldName<TFieldValues>];
-}
-
 export function useWatch<TFieldValues extends FieldValues>(
     { name, control, defaultValue }: WatchOptions<TFieldValues>
 ): TFieldValues[FieldName<TFieldValues>] | undefined{
@@ -16,4 +10,10 @@ export function useWatch<TFieldValues extends FieldValues>(
     });
 
     return value;
+}
+
+interface WatchOptions<TFieldValues extends FieldValues> {
+    name: FieldName<TFieldValues>;
+    control: Control<TFieldValues>;
+    defaultValue?: TFieldValues[FieldName<TFieldValues>];
 }
