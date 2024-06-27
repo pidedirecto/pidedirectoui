@@ -59,54 +59,6 @@ const meta: Meta<typeof ConfirmDialog> = {
                 type: { summary: 'number' },
             },
         },
-        classes: {
-            description: 'Classes object to override confirm dialog style',
-            table: {
-                required: false,
-                type: { summary: 'object' },
-            },
-        },
-        // @ts-ignore
-        'classes.acceptButton': {
-            description: 'CSS class to override the accept button style',
-            table: {
-                subcategory: 'Classes API',
-                type: { summary: 'string' },
-            },
-            control: false,
-        },
-        'classes.cancelButton': {
-            description: 'CSS class to override the cancel button style',
-            table: {
-                subcategory: 'Classes API',
-                type: { summary: 'string' },
-            },
-            control: false,
-        },
-        'classes.title': {
-            description: 'CSS class to override the title style',
-            table: {
-                subcategory: 'Classes API',
-                type: { summary: 'string' },
-            },
-            control: false,
-        },
-        'classes.textContent': {
-            description: 'CSS class to override the text content style',
-            table: {
-                subcategory: 'Classes API',
-                type: { summary: 'string' },
-            },
-            control: false,
-        },
-        'classes.icon': {
-            description: 'CSS class to override the icon style',
-            table: {
-                subcategory: 'Classes API',
-                type: { summary: 'string' },
-            },
-            control: false,
-        },
     },
 };
 export default meta;
