@@ -25,6 +25,7 @@ export function ConfirmDialog(): React.ReactElement {
     const onCancel = useConfirmDialogStore((state) => state.onCancel);
     const variant = useConfirmDialogStore((state) => state.variant);
     const timeoutSeconds = useConfirmDialogStore((state) => state.timeoutSeconds);
+    const classesProp = useConfirmDialogStore((state) => state.classes);
 
     // @ts-ignore
     let timeout: NodeJS.Timeout | null = null;
@@ -45,9 +46,9 @@ export function ConfirmDialog(): React.ReactElement {
     const getButtonClasses = () => {
         let buttonClasses = classes.button;
 
-        if (variant === 'error') buttonClasses = classNames(buttonClasses, classes.errorButton);
-        if (variant === 'warning') buttonClasses = classNames(buttonClasses, classes.warningButton);
-        if (variant === 'success') buttonClasses = classNames(buttonClasses, classes.successButton);
+        if (variant === 'error') buttonClasses = classNames(buttonClasses, classes.errorButton, classesProp?.acceptButton);
+        if (variant === 'warning') buttonClasses = classNames(buttonClasses, classes.warningButton, classesProp?.acceptButton);
+        if (variant === 'success') buttonClasses = classNames(buttonClasses, classes.successButton, classesProp?.acceptButton);
 
         return buttonClasses;
     };
@@ -63,18 +64,18 @@ export function ConfirmDialog(): React.ReactElement {
 
     return (
         <Dialog classes={{ dialog: classes.dialog }} open={!!open} onClose={onCancel}>
-            <div className={classes.iconContainer}>
+            <div className={classNames(classes.iconContainer, classesProp?.icon)}>
                 {getVariantIcon()}
                 {!!title && <Text className={classes.title}>{title}</Text>}
             </div>
             {!!content && (
                 <div className={classes.dialogContent}>
-                    <Text className={classes.message}>{content}</Text>
+                    <Text className={classNames(classes.message, classesProp?.textContent)}>{content}</Text>
                 </div>
             )}
             <DialogActions className={classes.buttonsContainer}>
                 {!!cancelButtonText && (
-                    <Button variant={'secondary'} onClick={onCancel}>
+                    <Button variant={'secondary'} onClick={onCancel} classes={{ button: classesProp?.cancelButton }}>
                         {cancelButtonText}
                     </Button>
                 )}

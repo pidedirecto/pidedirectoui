@@ -10,5 +10,12 @@ export type UseConfirmDialogProps = {
     acceptButtonText?: string;
     cancelButtonText?: string;
     timeoutSeconds?: number;
+    classes?: {
+        acceptButton?: string;
+        cancelButton?: string;
+        title?: string;
+        textContent?: string;
+        icon?: string;
+    };
     variant?: 'warning' | 'error' | 'success' | 'notification';
 };
