@@ -16,9 +16,7 @@ export function Loader({ loading, text }: LoaderProps): React.ReactElement | nul
                 <span></span>
                 <span></span>
             </div>
-            <Text className={classes.textContainer} weight='semiBold'>
-                {text}
-            </Text>
+            <Text className={classes.textContainer}>{text}</Text>
         </div>
     );
 }
