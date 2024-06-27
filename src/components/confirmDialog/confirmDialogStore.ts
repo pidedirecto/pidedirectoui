@@ -22,6 +22,7 @@ export const [useConfirmDialogStore, useConfirmDialogActions] = createStore<Stat
             state.onCancel = dialog.onCancel;
         },
         clearConfirmDialog: (state) => {
+            state.open = false;
             state.title = undefined;
             state.content = undefined;
             state.variant = undefined;
