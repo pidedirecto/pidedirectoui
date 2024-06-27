@@ -8,6 +8,7 @@ import { Input } from 'src/components/Input';
 import { FormContext } from 'src/form/Form';
 import classes from 'src/styles/form/formIntegerFieldProps.module.css';
 import { FormIntegerFieldProps } from 'src/types/form/FormIntegerField';
+import { classNames } from 'src/utils/css/classNames';
 import { getError } from 'src/utils/form/getError';
 import { transformIntegerInput } from 'src/utils/form/transformIntegerInput';
 import { transformIntegerOutput } from 'src/utils/form/transformIntegerOutput';
@@ -44,7 +45,7 @@ export function FormIntegerField({ name, label, helperText, defaultValue, disabl
                     helperText={error?.message ?? helperText}
                     type='number'
                     inputMode='numeric'
-                    classes={{ input: classes.input }}
+                    classes={{ ...(inputProps?.classes ?? {}), input: classNames(classes.input, inputProps?.classes?.input) }}
                 />
             )}
             defaultValue={defaultValue ?? null}

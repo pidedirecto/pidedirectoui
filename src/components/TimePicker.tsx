@@ -1,8 +1,7 @@
 /**
  * @prettier
  */
-import MomentUtils from '@date-io/moment';
-import { MuiPickersUtilsProvider, TimePicker as MuiTimePicker } from '@material-ui/pickers';
+import { TimePicker as MuiTimePicker } from '@material-ui/pickers';
 import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date';
 import * as React from 'react';
 import { HelperText } from 'src/components/HelperText';
@@ -11,21 +10,21 @@ import { useCreateUserTypedInputLogEvent } from 'src/services/logEvent/useCreate
 import classes from 'src/styles/timePicker.module.css';
 import { classNames } from 'src/utils/css/classNames';
 import 'src/utils/configureMoment';
-import { ThemeProvider } from '@material-ui/core';
+import MomentUtils from '@date-io/moment';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import moment from 'moment/moment';
+import { useContext } from 'react';
+import { PickersProviderContext } from 'src/components/PickersProvider';
 import { ClockIcon } from 'src/icons/ClockIcon';
 import { TimePickerProps } from 'src/types/components/TimePicker';
-import { useConfigureMuiTheme } from 'src/utils/mui/useConfigureMuiTheme';
 
 export function TimePicker({ value, onChange, onBlur, label, placeholder, name, id, helperText, disabled, error, inputRef, classes: classesProp }: TimePickerProps): React.ReactElement {
-    const muiTheme = useConfigureMuiTheme();
-
-    console.log('value = ', value);
-
+    const context = useContext(PickersProviderContext);
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
     const handleChange = (momentDate: MaterialUiPickersDate) => {
-        onChange(momentDate?.toDate(), momentDate?.format('hh:mm'));
+        onChange(momentDate?.toDate(), momentDate?.format('HH:mm'));
     };
 
     const handleInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -34,8 +33,8 @@ export function TimePicker({ value, onChange, onBlur, label, placeholder, name, 
     };
 
     return (
-        <MuiPickersUtilsProvider utils={MomentUtils} libInstance={moment}>
-            <ThemeProvider theme={muiTheme}>
+        <MuiThemeProvider theme={context.muiTheme}>
+            <MuiPickersUtilsProvider utils={MomentUtils} libInstance={context.momentInstance ?? moment}>
                 <div className={classes.container}>
                     {!!label && (
                         <Label error={error} htmlFor={id ?? `${name}-input`} disabled={disabled}>
@@ -58,7 +57,7 @@ export function TimePicker({ value, onChange, onBlur, label, placeholder, name, 
                         inputProps={{ className: classNames(classes.input, classesProp?.input), id: id ?? `${name}-input` }}
                         onChange={handleChange}
                         onBlur={handleInputBlur}
-                        value={value}
+                        value={value || null}
                         format='LT'
                         autoOk
                         fullWidth
@@ -66,7 +65,7 @@ export function TimePicker({ value, onChange, onBlur, label, placeholder, name, 
                     />
                     {!!helperText && <HelperText error={error}>{helperText}</HelperText>}
                 </div>
-            </ThemeProvider>
-        </MuiPickersUtilsProvider>
+            </MuiPickersUtilsProvider>
+        </MuiThemeProvider>
     );
 }

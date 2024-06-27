@@ -1,35 +1,54 @@
 /**
  * @prettier
  */
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import * as React from 'react';
 import { Button } from 'src/components/Button';
 import { Input } from 'src/components/Input';
+import { LinearProgress } from 'src/components/LinearProgress';
+import { TableBody } from 'src/components/table/TableBody';
+import { TableCheckbox } from 'src/components/table/TableCheckbox';
+import { useTableActions } from 'src/components/table/tableStore';
+import { TableToolbar } from 'src/components/table/TableToolbar';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
-import { VirtualizedList } from 'src/components/VirtualizedList';
 import { UiLogEventTypes } from 'src/constants/UiLogEventType';
 import classes from 'src/styles/table.module.css';
 import type { TableColumn, TableProps, TableRow } from 'src/types/components/Table';
 import { classNames } from 'src/utils/css/classNames';
+import { removeNulls } from 'src/utils/object/removeNulls';
+import { newId } from 'src/utils/string/newId';
 
 export function Table({
     columns,
     rows,
+    onSelect,
     hideHeaders,
     rowsPerPage,
     emptyMessage,
     searchable,
+    selectable,
     virtualized,
+    loading,
     contentHeight,
     rowHeight,
+    title,
+    toolbar,
     searchInputProps,
     classes: classesProp,
     onRowClick,
 }: TableProps): React.ReactElement {
+    const tableId = useRef(newId());
+    const clearSelectedRows = useTableActions((actions) => actions.clearSelectedRows);
     const { addElementToStackTrace } = useContext(UiLogEventTrackerContext);
 
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState('');
+
+    const rowIds = removeNulls<Array<any>>(rows.map((row) => row.rowId));
+
+    if (rowIds.length !== rows.length && selectable) {
+        console.error('If Table component is selectable it requires each row has a rowId but some rows do not have it');
+    }
 
     if (!!virtualized && !contentHeight) {
         console.error('You are using a virtualized table without passing content height, contentHeight prop is required.');
@@ -38,6 +57,12 @@ export function Table({
     if (!!virtualized && !rowHeight) {
         console.error('You are using a virtualized table without passing row height, rowHeight prop is required.');
     }
+
+    useEffect(() => {
+        return () => {
+            clearSelectedRows(tableId.current);
+        };
+    }, []);
 
     const addTableToStackTrace = () => {
         addElementToStackTrace({
@@ -70,11 +95,24 @@ export function Table({
 
     return (
         <div className={classNames(classes.container, classesProp?.container)}>
-            {searchable && <Input {...searchInputProps} name={'search'} type={'search'} value={search} onChange={(value) => setSearch(value)} classes={{ inputContainer: classes.inputContainer }} />}
+            {!!searchable && !!title && <h2 className={classes.title}>{title}</h2>}
+            <div className={classes.toolbarContainer}>
+                {!!searchable && (
+                    <Input {...searchInputProps} name={'search'} type={'search'} value={search} onChange={(value) => setSearch(value)} classes={{ inputContainer: classes.inputContainer }} />
+                )}
+                {!searchable && !!title && <h2 className={classes.title}>{title}</h2>}
+                {!searchable && !title && <div></div>}
+                <TableToolbar tableId={tableId.current} toolbar={toolbar} />
+            </div>
             <table className={classNames(classes.table, classesProp?.table)} onClickCapture={addTableToStackTrace}>
                 {!hideHeaders && (
                     <thead className={classes.headerRow}>
                         <tr className={classes.row}>
+                            {!!selectable && (
+                                <th className={classNames(classes.header, classesProp?.header)} style={{ width: '10%' }}>
+                                    <TableCheckbox tableId={tableId.current} rowIds={rowIds} onSelect={onSelect} />
+                                </th>
+                            )}
                             {columns.map((column, idx) => {
                                 const columnSize = column.size || 1;
                                 const width = 100 * columnSize;
@@ -93,7 +131,12 @@ export function Table({
                             const isLastRow = idx === rows.length - 1;
 
                             return (
-                                <tr onClick={() => onRowClick?.(row)} key={idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, classesProp?.row, row?.className)}>
+                                <tr onClick={() => onRowClick?.(row)} key={row.key ?? idx} className={classNames(classes.row, !isLastRow && classes.borderedRow, classesProp?.row, row?.className)}>
+                                    {!!selectable && (
+                                        <td className={classNames(classes.cell, classesProp?.cell)} style={{ width: `10%` }}>
+                                            <TableCheckbox tableId={tableId.current} rowId={row.rowId} onSelect={onSelect} />
+                                        </td>
+                                    )}
                                     {columns.map((column: TableColumn) => {
                                         const columnSize = column.size || 1;
                                         const width = 100 * columnSize;
@@ -133,25 +176,7 @@ export function Table({
                     </tfoot>
                 )}
             </table>
+            {loading && <LinearProgress />}
         </div>
     );
 }
-
-function TableBody({ children, virtualized, height, rowHeight }: TableBodyProps): React.ReactElement {
-    if (!virtualized) {
-        return <>{children}</>;
-    }
-
-    return (
-        <VirtualizedList itemSize={rowHeight} height={height}>
-            {children}
-        </VirtualizedList>
-    );
-}
-
-type TableBodyProps = {
-    children: Array<React.ReactElement>;
-    virtualized?: boolean;
-    height?: number;
-    rowHeight?: number;
-};

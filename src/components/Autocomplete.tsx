@@ -49,7 +49,7 @@ export function Autocomplete({
     useHasClickedOutside({
         element: containerRef.current,
         onClick: ({ hasClickedOutside, elementClicked }) => {
-            if (hasClickedOutside && listOptionsContainerRef.current && !listOptionsContainerRef.current.contains(elementClicked)) setIsOpen(false);
+            if (hasClickedOutside && listOptionsContainerRef.current && listOptionsContainerRef.current.contains(elementClicked)) setIsOpen(false);
         },
     });
 
@@ -76,15 +76,17 @@ export function Autocomplete({
     return (
         <div ref={containerRef}>
             <div {...getRootProps()}>
-                <div className={classes.headContainer}>
-                    <Label htmlFor={`use-autocomplete-customer`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
-                        {label}
-                    </Label>
-                </div>
+                {!!label && (
+                    <div className={classes.headContainer}>
+                        <Label htmlFor={`use-autocomplete-customer`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
+                            {label}
+                        </Label>
+                    </div>
+                )}
                 <Input
                     {...(inputProps as any)}
                     type='search'
-                    classes={{ input: classes.input, label: classes.inputError }}
+                    classes={{ input: classes.input, label: classes.inputError, container: classesProp?.container }}
                     placeholder={placeholder}
                     disabled={disabled}
                     inputRef={inputRef}
@@ -93,9 +95,9 @@ export function Autocomplete({
                         onInputChange?.(e.target.value);
                         inputOnChange?.(e);
                     }}
-                    onClick={() => {
-                        setIsOpen(true);
-                    }}
+                    onFocus={() => setIsOpen(true)}
+                    onClick={() => setIsOpen(true)}
+                    onBlur={() => setIsOpen(false)}
                     value={inputValue}
                 />
                 {!!helperText && <HelperText classes={{ helperText: classes.helperText }}>{helperText}</HelperText>}

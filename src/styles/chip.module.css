@@ -32,6 +32,11 @@
     color: var(--text-success);
 }
 
+.chip[data-variant="secondary"] {
+    background-color: var(--surface-tertiary);
+    color: var(--text-primary);
+}
+
 .chip[data-clickable="true"] {
     cursor: pointer
 }

@@ -1,0 +1,31 @@
+import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+
+import * as RadioGroupStories from '../../stories/RadioGroup.stories';
+
+<Meta of={RadioGroupStories} />
+
+# RadioGroup
+
+Renders a radio group
+
+<Canvas of={RadioGroupStories.Primary} sourceState='none' />
+
+```tsx
+import { Radio, RadioGroup } from '@pidedirecto/ui'
+
+const [value, setValue] = useState(undefined)
+
+const handleChange = (value: any) => setValue(value)
+
+<RadioGroup label={'Select your favorite food'} value={value} name='food' onChange={handleChange}>
+    <Radio value='pizza' label={'Pizza'} />
+    <Radio value='burger' label={'Burger'} />
+    <Radio value='taco' label={'Taco'} />
+</RadioGroup>
+```
+
+The `RadioGroup` component is used to group several `Radio` components. The value provided to the component should be one of the values sent to `Radio`.
+
+## API
+
+<ArgTypes of={RadioGroupStories} />

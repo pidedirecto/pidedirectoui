@@ -40,7 +40,7 @@ const meta: Meta<typeof FormColorField> = {
         defaultValue: {
             description: 'Input default value',
             table: {
-                type: { summary: 'boolean' },
+                type: { summary: 'string' },
             },
         },
         disabled: {

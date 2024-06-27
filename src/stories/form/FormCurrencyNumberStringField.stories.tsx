@@ -3,6 +3,7 @@
  */
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
+import { CountryCodes } from 'src/constants/CountryCode';
 import { Form } from 'src/form/Form';
 import { FormCurrencyNumberStringField } from 'src/form/FormCurrencyNumberStringField';
 import { useForm } from 'src/hooks/useForm';
@@ -40,7 +41,7 @@ const meta: Meta<typeof FormCurrencyNumberStringField> = {
         defaultValue: {
             description: 'Input default value',
             table: {
-                type: { summary: 'boolean' },
+                type: { summary: 'string' },
             },
         },
         disabled: {
@@ -71,6 +72,12 @@ const meta: Meta<typeof FormCurrencyNumberStringField> = {
             description: 'Input tooltip',
             table: {
                 type: { summary: 'string' },
+            },
+        },
+        country: {
+            description: 'Country to display number format, this is useful to show correctly numbers accross different countries',
+            table: {
+                type: { summary: 'Country' },
             },
         },
         maximumDigits: {
@@ -107,6 +114,21 @@ export const Primary: Story = {
         return (
             <Form form={form} onSubmit={() => {}}>
                 <FormCurrencyNumberStringField name={'price'} label={'Product price'} />
+            </Form>
+        );
+    },
+};
+
+export const UruguayInput: Story = {
+    args: {
+        ...meta.args,
+    },
+    render: () => {
+        const form = useForm();
+
+        return (
+            <Form form={form} onSubmit={() => {}}>
+                <FormCurrencyNumberStringField name={'price'} label={'Product price'} country={CountryCodes.UY} />
             </Form>
         );
     },

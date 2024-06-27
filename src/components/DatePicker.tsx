@@ -1,8 +1,7 @@
 /**
  * @prettier
  */
-import MomentUtils from '@date-io/moment';
-import { DatePicker as MuiDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
+import { DatePicker as MuiDatePicker } from '@material-ui/pickers';
 import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date';
 import * as React from 'react';
 import { HelperText } from 'src/components/HelperText';
@@ -12,13 +11,15 @@ import classes from 'src/styles/datePicker.module.css';
 import { DatePickerProps } from 'src/types/components/DatePicker';
 import { classNames } from 'src/utils/css/classNames';
 import 'src/utils/configureMoment';
-import { ThemeProvider } from '@material-ui/core';
+import MomentUtils from '@date-io/moment';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import moment from 'moment/moment';
-import { useConfigureMuiTheme } from 'src/utils/mui/useConfigureMuiTheme';
+import { useContext } from 'react';
+import { PickersProviderContext } from 'src/components/PickersProvider';
 
 export function DatePicker({ value, onChange, onBlur, label, placeholder, name, id, helperText, disabled, error, inputRef, classes: classesProp }: DatePickerProps): React.ReactElement {
-    const muiTheme = useConfigureMuiTheme();
-
+    const context = useContext(PickersProviderContext);
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
     const handleChange = (momentDate: MaterialUiPickersDate) => {
@@ -31,8 +32,8 @@ export function DatePicker({ value, onChange, onBlur, label, placeholder, name, 
     };
 
     return (
-        <MuiPickersUtilsProvider utils={MomentUtils} libInstance={moment}>
-            <ThemeProvider theme={muiTheme}>
+        <MuiThemeProvider theme={context.muiTheme}>
+            <MuiPickersUtilsProvider utils={MomentUtils} libInstance={context.momentInstance ?? moment}>
                 <div className={classes.container}>
                     {!!label && (
                         <Label error={error} htmlFor={id ?? `${name}-input`} disabled={disabled}>
@@ -57,7 +58,7 @@ export function DatePicker({ value, onChange, onBlur, label, placeholder, name, 
                     />
                     {!!helperText && <HelperText error={error}>{helperText}</HelperText>}
                 </div>
-            </ThemeProvider>
-        </MuiPickersUtilsProvider>
+            </MuiPickersUtilsProvider>
+        </MuiThemeProvider>
     );
 }

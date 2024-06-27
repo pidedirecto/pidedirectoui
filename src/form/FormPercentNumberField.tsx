@@ -1,7 +1,7 @@
 /**
  * @prettier
  */
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import * as React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Input } from 'src/components/Input';
@@ -9,6 +9,7 @@ import { FormContext } from 'src/form/Form';
 import classes from 'src/styles/form/formPercentNumberField.module.css';
 import { InputProps } from 'src/types/components/Input';
 import { FormPercentNumberFieldProps } from 'src/types/form/FormPercentNumberField';
+import { classNames } from 'src/utils/css/classNames';
 import { getError } from 'src/utils/form/getError';
 import { transformPercentNumberInput } from 'src/utils/form/transformPercentNumberInput';
 import { transformPercentNumberOutput } from 'src/utils/form/transformPercentNumberOutput';
@@ -30,7 +31,7 @@ export function FormPercentNumberField({ name, label, helperText, defaultValue, 
             render={({ onChange, onBlur, value, name, ref }) => (
                 <NumericInput
                     {...inputProps}
-                    classes={{ input: classes.input }}
+                    classes={{ ...(inputProps?.classes ?? {}), input: classNames(classes.input, inputProps?.classes?.input) }}
                     inputRef={ref}
                     label={required ? `${label}*` : label}
                     onBlur={onBlur}
@@ -62,6 +63,10 @@ export function FormPercentNumberField({ name, label, helperText, defaultValue, 
 
 function NumericInput({ value, onChange, ...props }: InputProps): React.ReactElement {
     const [inputValue, setInputValue] = useState('');
+
+    useEffect(() => {
+        if (!!value && !inputValue) setInputValue(value);
+    }, [value, inputValue]);
 
     const handleChange = (value: string, e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(value);

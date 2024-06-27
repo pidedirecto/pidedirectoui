@@ -7,6 +7,7 @@ import { FormCurrencyNumberStringField } from "src/types/form/FormCurrencyNumber
 import { FormEmailField } from "src/types/form/FormEmailField";
 import { FormColorField } from "src/types/form/FormColorField";
 import { FormIntegerField } from "src/types/form/FormIntegerField";
+import { FormHiddenField } from "src/types/form/FormHiddenField";
 import { FormPasswordField } from "src/types/form/FormPasswordField";
 import { FormPercentNumberField } from "src/types/form/FormPercentNumberField";
 import { FormSelectableList } from "src/types/form/FormSelectableList";
@@ -15,6 +16,10 @@ import { FormDateTimePicker } from "src/types/form/FormDateTimePicker";
 import { FormMultiselectableAutocomplete } from "src/types/form/FormMultiselectableAutocomplete";
 import { FormAutocomplete } from "src/types/form/FormAutocomplete";
 import { FormTimePicker } from "src/types/form/FormTimePicker";
+import { FormScheduleDaySelect } from "src/types/form/FormScheduleDaySelect";
+import { FormRadioGroup } from "src/types/form/FormRadioGroup";
+import { FormNextWeekDaysSelect } from "src/types/form/FormNextWeekDaysSelect";
+import { FormTextAreaField } from "src/types/form/FormTextAreaField";
 
 
 /**
@@ -72,6 +77,12 @@ export const FormEmailField: FormEmailField
 export const FormColorField: FormColorField
 
 /**
+ * Form hidden component
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formhiddenfield--docs)
+ */
+export const FormHiddenField: FormHiddenField
+
+/**
  * Form integer component
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formintegerfield--docs)
  */
@@ -118,3 +129,27 @@ export const FormDateTimePicker: FormDateTimePicker
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formtimepicker--docs)
  */
 export const FormTimePicker: FormTimePicker
+
+/**
+ * Form schedule day select
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formscheduledayselect--docs)
+ */
+export const FormScheduleDaySelect: FormScheduleDaySelect
+
+/**
+ * Form radio group
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formradiogroup--docs)
+ */
+export const FormRadioGroup: FormRadioGroup
+
+/**
+ * Form radio group
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formnextweekdaysselect--docs)
+ */
+export const FormNextWeekDaysSelect: FormNextWeekDaysSelect
+
+/**
+ * Form text area
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formtextareafield--docs)
+ */
+export const FormTextAreaField: FormTextAreaField

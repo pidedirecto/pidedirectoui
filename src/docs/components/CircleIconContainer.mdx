@@ -1,0 +1,25 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import * as CircleIconContainerStories from '../../stories/CircleIconContainer.stories';
+
+<Meta of={CircleIconContainerStories} />
+
+# CircleIconContainer
+Renders an CircleIconContainer.
+
+Render an icon inside a circular container, this can be customized to redefine styles
+
+<Canvas of={CircleIconContainerStories.Primary} sourceState={'none'} />
+
+```tsx
+
+return (
+     <CircleIconContainer >
+        <SaveIcon/>
+     </CircleIconContainer>
+);
+```
+
+## API
+
+<ArgTypes of={CircleIconContainerStories} />
+

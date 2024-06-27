@@ -40,7 +40,7 @@ const meta: Meta<typeof FormTextField> = {
         defaultValue: {
             description: 'Input default value',
             table: {
-                type: { summary: 'boolean' },
+                type: { summary: 'string' },
             },
         },
         disabled: {

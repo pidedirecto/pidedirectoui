@@ -1,0 +1,29 @@
+import { Meta, ArgTypes } from '@storybook/blocks';
+
+<Meta title='utils/formatAsCurrencyNumber' />
+
+# formatAsCurrencyNumber
+
+The `formatAsCurrencyNumber` util function allows you to transform a number into a currency string.
+
+```ts
+import { formatAsCurrencyNumber } from '@pidedirect/ui/utils'
+
+formatAsCurrencyNumber('100') // Result $100
+```
+
+it accepts an object of `Options`.
+
+- `options.minimumFractionDigits`: Minimum fraction digits, default is 0
+- `options.maximumFractionDigits`: Maximum fraction digits, default is 2
+- `options.country`: This value will be used to set the currency, default is MX, ex. If you pass uy country the currency will be UYU
+This value should be one of the available country codes you can get from
+```ts
+import { CountryCodes } from '@pidedirecto/ui/const'
+```
+
+- `options.currency`: This value will overwrite the currency set by the country, this is helpful if you are using other currencies in different countries
+This value should be one of the available currencies you can get from
+```ts
+import { Currencies } from '@pidedirecto/ui/const'
+```

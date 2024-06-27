@@ -18,7 +18,6 @@ export function useConfigureMuiTheme() {
         },
         typography: {
             fontFamily: 'var(--font-regular)',
-            fontSize: 12,
         },
     });
 }

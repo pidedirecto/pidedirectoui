@@ -17,12 +17,10 @@
 
 .container:focus {
     border: 0;
-    z-index: 2;
 }
 
 .container[aria-selected="true"] {
     border: 0;
-    z-index: 2;
     background-color: var(--surface-tertiary);
 }
 

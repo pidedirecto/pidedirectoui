@@ -145,7 +145,8 @@ export const Primary: Story = {
         return (
             <Form form={form} onSubmit={() => {}}>
                 <FormSelect
-                    placeholder={'Select a value'}
+                    placeholder={'This is the placeholder'}
+                    label={'Select an option'}
                     name={'select'}
                     options={[
                         {

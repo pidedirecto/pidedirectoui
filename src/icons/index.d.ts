@@ -18,6 +18,7 @@ export const BookIcon: SvgIcon
 export const BoxIcon: SvgIcon
 export const BugIcon: SvgIcon
 export const CalculatorIcon: SvgIcon
+export const CalendarIcon: SvgIcon
 export const CalendarClockIcon: SvgIcon
 export const CardCashIcon: SvgIcon
 export const CartIcon: SvgIcon
@@ -25,7 +26,9 @@ export const CashBoxIcon: SvgIcon
 export const CashIcon: SvgIcon
 export const CashDrawerIcon: SvgIcon
 export const CashTransferIcon: SvgIcon
+export const CellPhoneIcon: SvgIcon
 export const ChatIcon: SvgIcon
+export const ChainIcon: SvgIcon
 export const CheckIcon: SvgIcon
 export const CircleIcon: SvgIcon
 export const CircleCheckIcon: SvgIcon
@@ -55,6 +58,7 @@ export const DownloadIcon: SvgIcon
 export const DragIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon
+export const ErrorIcon: SvgIcon
 export const ExchangeArrowsIcon: SvgIcon
 export const ExitIcon: SvgIcon
 export const EyeIcon: SvgIcon
@@ -74,6 +78,7 @@ export const HomeIcon: SvgIcon
 export const IdentifierIcon: SvgIcon
 export const InfoIcon: SvgIcon
 export const InvoiceIcon: SvgIcon
+export const KeyIcon: SvgIcon
 export const KilogramsIcon: SvgIcon
 export const LightBulbIcon: SvgIcon
 export const LightingIcon: SvgIcon
@@ -94,6 +99,7 @@ export const MoneyIcon: SvgIcon
 export const MotorcycleIcon: SvgIcon
 export const NoPhotoIcon: SvgIcon
 export const NoteIcon: SvgIcon
+export const NotificationIcon: SvgIcon
 export const OpenBoxIcon: SvgIcon
 export const OutlinedLightBulbIcon: SvgIcon
 export const OutlinedPeopleIcon: SvgIcon
@@ -106,8 +112,9 @@ export const PhoneIcon: SvgIcon
 export const PideDirectoIcon: SvgIcon
 export const PieChartIcon: SvgIcon
 export const PinIcon: SvgIcon
-export const PrinterIcon: SvgIcon
 export const PlusIcon: SvgIcon
+export const PrinterIcon: SvgIcon
+export const PromotionIcon: SvgIcon
 export const QuestionIcon: SvgIcon
 export const ReceiptIcon: SvgIcon
 export const RefreshIcon: SvgIcon
@@ -116,11 +123,14 @@ export const SaveIcon: SvgIcon
 export const ScissorsIcon: SvgIcon
 export const SearchIcon: SvgIcon
 export const SettingsIcon: SvgIcon
+export const ShieldIcon: SvgIcon
+export const ShieldFillIcon: SvgIcon
 export const SpeakerIcon: SvgIcon
 export const SpeakerOffIcon: SvgIcon
 export const StarIcon: SvgIcon
 export const StoreIcon: SvgIcon
 export const SurveyIcon: SvgIcon
+export const SuccessAlertIcon: SvgIcon
 export const SwitchUserIcon: SvgIcon
 export const TableIcon: SvgIcon
 export const TerminalIcon: SvgIcon
@@ -137,6 +147,7 @@ export const UserIcon: SvgIcon
 export const UsersIcon: SvgIcon
 export const VideoIcon: SvgIcon
 export const WarningIcon: SvgIcon
+export const WalletIcon: SvgIcon
 export const WifiIcon: SvgIcon
 export const WifiOffIcon: SvgIcon
 export const WithdrawIcon: SvgIcon

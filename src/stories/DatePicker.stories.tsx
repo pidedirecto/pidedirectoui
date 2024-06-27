@@ -1,9 +1,14 @@
 /**
  * @prettier
  */
-
+import MomentUtils from '@date-io/moment';
+import { ThemeProvider } from '@material-ui/core';
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import type { Meta, StoryObj } from '@storybook/react';
+import moment from 'moment';
+import React from 'react';
 import { DatePicker } from 'src/components/DatePicker';
+import { useConfigureMuiTheme } from 'src/utils/mui/useConfigureMuiTheme';
 
 const meta: Meta<typeof DatePicker> = {
     component: DatePicker,
@@ -123,5 +128,16 @@ type Story = StoryObj<typeof DatePicker>;
 export const Primary: Story = {
     args: {
         ...meta.args,
+    },
+    render: () => {
+        const muiTheme = useConfigureMuiTheme();
+
+        return (
+            <MuiPickersUtilsProvider utils={MomentUtils} libInstance={moment}>
+                <ThemeProvider theme={muiTheme}>
+                    <DatePicker name='date' value={new Date()} label={'Select your birthday'} onChange={() => {}} />
+                </ThemeProvider>
+            </MuiPickersUtilsProvider>
+        );
     },
 };

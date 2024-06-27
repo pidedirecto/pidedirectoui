@@ -7,6 +7,7 @@ import { Accordion } from "src/types/components/Accordion";
 import { DraggableList } from "src/types/components/DraggableList";
 import { DraggableListItem } from "src/types/components/DraggableListItem";
 import { DropDown } from "src/types/components/DropDown";
+import { Loader } from "src/types/components/Loader";
 import { DropDownItem } from "src/types/components/DropDownItem";
 import { Select } from "src/types/components/Select";
 import { Tooltip } from "src/types/components/Tooltip";
@@ -14,6 +15,7 @@ import { Input } from "src/types/components/Input";
 import { VirtualizedList } from "src/types/components/VirtualizedList";
 import { Table } from "src/types/components/Table";
 import { Dialog } from "src/types/components/Dialog";
+import { DialogContent } from "src/types/components/DialogContent";
 import { DialogActions } from "src/types/components/DialogActions";
 import { Image } from "src/types/components/Image";
 import { Text } from "src/types/components/Text";
@@ -26,6 +28,14 @@ import { Autocomplete } from "src/types/components/Autocomplete";
 import { Card } from "src/types/components/Card";
 import React from 'react'
 import { TimePicker } from "src/types/components/TimePicker";
+import { ScheduleDaySelect } from "src/types/components/ScheduleDaySelect";
+import { PickersProvider } from "src/types/components/PickersProvider";
+import { CircleIconContainer } from "src/types/components/CircleIconContainer";
+import { Radio } from "src/types/components/Radio";
+import { RadioGroup } from "src/types/components/RadioGroup";
+import { Stepper } from "src/types/components/Stepper";
+import { ConfirmDialog } from "src/types/components/ConfirmDialog";
+import { TextArea } from "src/types/components/TextArea";
 
 /**
  * Renders Checkbox
@@ -156,6 +166,13 @@ export const Dialog: Dialog
 /**
  * Dialog actions container
  *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-dialog--docs#dialog-content)
+ */
+export const DialogContent: DialogContent
+
+/**
+ * Dialog actions container
+ *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-dialog--docs#dialog-actions)
  */
 export const DialogActions: DialogActions
@@ -222,3 +239,66 @@ export const Card: Card
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-timepicker--docs)
  */
 export const TimePicker: TimePicker
+
+/**
+ * Renders schedule day select
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-scheduledayselect--docs)
+ */
+export const ScheduleDaySelect: ScheduleDaySelect
+
+/**
+ * Date/Time/DateTime pickers provider utils
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-pickersprovider--docs)
+ */
+export const PickersProvider: PickersProvider
+
+/**
+ * Renders CircleIconContainer
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-circleiconcontainer--docs)
+ */
+export const CircleIconContainer: CircleIconContainer
+
+/**
+ * Renders Radio input
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-radio--docs)
+ */
+export const Radio: Radio
+
+/**
+ * Renders Radio Group
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-radiogroup--docs)
+ */
+export const RadioGroup: RadioGroup
+
+/**
+ * Renders Stepper
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-stepper--docs)
+ */
+export const Stepper: Stepper
+
+/**
+ * Renders Confirmation Dialog
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-confirmdialog--docs)
+ */
+export const ConfirmDialog: ConfirmDialog
+
+/**
+ * Renders TextArea
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-textarea--docs)
+ */
+export const TextArea: TextArea
+
+/**
+ * Renders Loader
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-loader--docs)
+ */
+export const Loader: Loader

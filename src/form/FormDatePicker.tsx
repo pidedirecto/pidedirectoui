@@ -3,13 +3,16 @@
  */
 import { useContext } from 'react';
 import * as React from 'react';
+import { Simulate } from 'react-dom/test-utils';
 import { Controller, useFormContext } from 'react-hook-form';
 import { DatePicker } from 'src/components/DatePicker';
 import { FormContext } from 'src/form/Form';
 import { FormDatePickerProps } from 'src/types/form/FormDatePicker';
 import { getError } from 'src/utils/form/getError';
 
-export function FormDatePicker({ name, label, helperText, defaultValue, disabled, required, rules }: FormDatePickerProps): React.ReactElement {
+import play = Simulate.play;
+
+export function FormDatePicker({ name, label, helperText, defaultValue, disabled, required, rules, placeholder, classes }: FormDatePickerProps): React.ReactElement {
     const {
         errors,
         control,
@@ -36,6 +39,8 @@ export function FormDatePicker({ name, label, helperText, defaultValue, disabled
                     disabled={isSubmitting || disabled || formContext.disabled}
                     error={!!error}
                     helperText={error?.message ?? helperText}
+                    placeholder={placeholder}
+                    classes={classes}
                 />
             )}
             defaultValue={defaultValue ?? null}

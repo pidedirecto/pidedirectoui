@@ -1,0 +1,71 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as ScheduleDaySelectStories from '../../stories/ScheduleDaySelect.stories';
+
+<Meta of={ScheduleDaySelectStories} />
+
+# ScheduleDaySelect
+Renders a schedule select. The value of this input should be a string with the schedule in [opening hours format](https://openingh.openstreetmap.de/evaluation_tool/),
+the onChange callback will send the new schedule in opening hours format.
+
+<Canvas of={ScheduleDaySelectStories.Primary} sourceState='none' />
+
+```tsx
+import { ScheduleDaySelect } from '@pidedirecto/ui'
+
+const [value, setValue] = useState('Mo 10:00-17:00')
+
+const handleChange = (newValue) => setValue(newValue)
+
+<ScheduleDaySelect label={'Select your schedule'} value={value} onChange={handleChange} />
+```
+
+You can add a label to the time pickers too
+
+<Canvas of={ScheduleDaySelectStories.SecondaryLabel} sourceState='none' />
+
+```tsx
+import { ScheduleDaySelect } from '@pidedirecto/ui'
+
+const [value, setValue] = useState('Mo 10:00-17:00')
+
+const handleChange = (newValue) => setValue(newValue)
+
+<ScheduleDaySelect label={'Select your schedule'} scheduleLabel={'Select schedule'} value={value} onChange={handleChange} />
+```
+
+## Days translations
+
+The days letters in the buttons will correspond to the initial letter of the day in english,
+to change this default behaviour you can pass a `daysTranslations` prop object indicating each translation.
+
+<Canvas of={ScheduleDaySelectStories.Translated} sourceState='none' />
+
+```tsx
+import { ScheduleDaySelect } from '@pidedirecto/ui'
+
+const [value, setValue] = useState('Mo 10:00-17:00')
+
+const handleChange = (newValue) => setValue(newValue)
+
+<ScheduleDaySelect
+    label={'Select your schedule'}
+    scheduleLabel={'Select schedule'}
+    daysTranslations={{
+        Mo: 'L',
+        Tu: 'M',
+        We: 'M',
+        Th: 'J',
+        Fr: 'V',
+        Sa: 'S',
+        Su: 'D'
+    }}
+    value={value}
+    onChange={handleChange}
+/>
+```
+
+## API
+
+<ArgTypes of={ScheduleDaySelectStories} />
+

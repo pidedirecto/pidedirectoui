@@ -5,7 +5,7 @@ export type ChipProps = {
     children: React.Node,
     onClick?: Function,
     classes?: { chip: string },
-    variant?: 'error' | 'warning' | 'success' | 'info',
+    variant?: 'error' | 'warning' | 'success' | 'info' | 'secondary',
 };
 
 export type Chip = React.FunctionComponent<ChipProps>

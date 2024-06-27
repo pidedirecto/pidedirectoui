@@ -9,7 +9,7 @@ import { FormContext } from 'src/form/Form';
 import { FormDateTimePickerProps } from 'src/types/form/FormDateTimePicker';
 import { getError } from 'src/utils/form/getError';
 
-export function FormDateTimePicker({ name, label, helperText, defaultValue, disabled, required, rules }: FormDateTimePickerProps): React.ReactElement {
+export function FormDateTimePicker({ name, label, helperText, defaultValue, disabled, required, rules, classes }: FormDateTimePickerProps): React.ReactElement {
     const {
         errors,
         control,
@@ -36,6 +36,7 @@ export function FormDateTimePicker({ name, label, helperText, defaultValue, disa
                     disabled={isSubmitting || disabled || formContext.disabled}
                     error={!!error}
                     helperText={error?.message ?? helperText}
+                    classes={classes}
                 />
             )}
             defaultValue={defaultValue ?? null}

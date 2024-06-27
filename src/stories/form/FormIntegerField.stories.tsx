@@ -40,7 +40,7 @@ const meta: Meta<typeof FormIntegerField> = {
         defaultValue: {
             description: 'Input default value',
             table: {
-                type: { summary: 'boolean' },
+                type: { summary: 'number' },
             },
         },
         disabled: {

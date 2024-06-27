@@ -21,6 +21,7 @@ import { BoxIcon } from 'src/icons/BoxIcon';
 import { BugIcon } from 'src/icons/BugIcon';
 import { CalculatorIcon } from 'src/icons/CalculatorIcon';
 import { CalendarClockIcon } from 'src/icons/CalendarClockIcon';
+import { CalendarIcon } from 'src/icons/CalendarIcon';
 import { CardCashIcon } from 'src/icons/CardCashIcon';
 import { CartIcon } from 'src/icons/CartIcon';
 import { CashBoxIcon } from 'src/icons/CashBoxIcon';
@@ -28,6 +29,8 @@ import { CashDrawerIcon } from 'src/icons/CashDrawerIcon';
 import { CashIcon } from 'src/icons/CashIcon';
 import { CashRegisterShiftIcon } from 'src/icons/CashRegisterShiftIcon';
 import { CashTransferIcon } from 'src/icons/CashTransferIcon';
+import { CellPhoneIcon } from 'src/icons/CellPhoneIcon';
+import { ChainIcon } from 'src/icons/ChainIcon';
 import { ChatIcon } from 'src/icons/ChatIcon';
 import { CheckIcon } from 'src/icons/CheckIcon';
 import { CircleCheckIcon } from 'src/icons/CircleCheckIcon';
@@ -56,6 +59,7 @@ import { DragIcon } from 'src/icons/DragIcon';
 import { EditIcon } from 'src/icons/EditIcon';
 import { EllipsisVerticalIcon } from 'src/icons/EllipsisVerticalIcon';
 import { EnvelopeIcon } from 'src/icons/EnvelopeIcon';
+import { ErrorIcon } from 'src/icons/ErrorIcon';
 import { ExchangeArrowsIcon } from 'src/icons/ExchangeArrowsIcon';
 import { ExitIcon } from 'src/icons/ExitIcon';
 import { EyeIcon } from 'src/icons/EyeIcon';
@@ -77,6 +81,7 @@ import { IdentifierIcon } from 'src/icons/IdentifierIcon';
 import { IncomingIcon } from 'src/icons/IncomingIcon';
 import { InfoIcon } from 'src/icons/InfoIcon';
 import { InvoiceIcon } from 'src/icons/InvoiceIcon';
+import { KeyIcon } from 'src/icons/KeyIcon';
 import { KilogramsIcon } from 'src/icons/KilogramsIcon';
 import { LightBulbIcon } from 'src/icons/LightBulbIcon';
 import { LightingIcon } from 'src/icons/LightingIcon';
@@ -94,6 +99,7 @@ import { MoneyIcon } from 'src/icons/MoneyIcon';
 import { MotorcycleIcon } from 'src/icons/MotorcycleIcon';
 import { NoPhotoIcon } from 'src/icons/NoPhotoIcon';
 import { NoteIcon } from 'src/icons/NoteIcon';
+import { NotificationIcon } from 'src/icons/NotificationIcon';
 import { OpenBoxIcon } from 'src/icons/OpenBoxIcon';
 import { OutlinedLightBulbIcon } from 'src/icons/OutlinedLightBulbIcon';
 import { OutlinedPeopleIcon } from 'src/icons/OutlinedPeopleIcon';
@@ -108,6 +114,7 @@ import { PieChartIcon } from 'src/icons/PieChartIcon';
 import { PinIcon } from 'src/icons/PinIcon';
 import { PlusIcon } from 'src/icons/PlusIcon';
 import { PrinterIcon } from 'src/icons/PrinterIcon';
+import { PromotionIcon } from 'src/icons/PromotionIcon';
 import { QuestionIcon } from 'src/icons/QuestionIcon';
 import { ReceiptIcon } from 'src/icons/ReceiptIcon';
 import { RefreshIcon } from 'src/icons/RefreshIcon';
@@ -117,10 +124,13 @@ import { SaveIcon } from 'src/icons/SaveIcon';
 import { ScissorsIcon } from 'src/icons/ScissorsIcon';
 import { SearchIcon } from 'src/icons/SearchIcon';
 import { SettingsIcon } from 'src/icons/SettingsIcon';
+import { ShieldFillIcon } from 'src/icons/ShieldFillIcon';
+import { ShieldIcon } from 'src/icons/ShieldIcon';
 import { SpeakerIcon } from 'src/icons/SpeakerIcon';
 import { SpeakerOffIcon } from 'src/icons/SpeakerOffIcon';
 import { StarIcon } from 'src/icons/StarIcon';
 import { StoreIcon } from 'src/icons/StoreIcon';
+import { SuccessIcon } from 'src/icons/SuccessIcon';
 import { SurveyIcon } from 'src/icons/SurveyIcon';
 import { SwitchUserIcon } from 'src/icons/SwitchUserIcon';
 import { TableIcon } from 'src/icons/TableIcon';
@@ -137,6 +147,7 @@ import { UsbIcon } from 'src/icons/UsbIcon';
 import { UserIcon } from 'src/icons/UserIcon';
 import { UsersIcon } from 'src/icons/UsersIcon';
 import { VideoIcon } from 'src/icons/VideoIcon';
+import { WalletIcon } from 'src/icons/WalletIcon';
 import { WarningIcon } from 'src/icons/WarningIcon';
 import { WifiIcon } from 'src/icons/WifiIcon';
 import { WifiOffIcon } from 'src/icons/WifiOffIcon';
@@ -221,6 +232,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>CalculatorIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <CalendarIcon size={size} />
+                <span className={classes.iconName}>CalendarIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <CalendarClockIcon size={size} />
                 <span className={classes.iconName}>CalendarClockIcon</span>
             </div>
@@ -253,8 +268,16 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>CashTransferIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <CellPhoneIcon size={size} />
+                <span className={classes.iconName}>CellPhoneIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <ChatIcon size={size} />
                 <span className={classes.iconName}>ChatIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <ChainIcon size={size} />
+                <span className={classes.iconName}>ChainIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <CheckIcon size={size} />
@@ -369,6 +392,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>EnvelopeIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <ErrorIcon size={size} />
+                <span className={classes.iconName}>ErrorIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <ExchangeArrowsIcon size={size} />
                 <span className={classes.iconName}>ExchangeArrowsIcon</span>
             </div>
@@ -449,6 +476,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>InvoiceIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <KeyIcon size={size} />
+                <span className={classes.iconName}>KeyIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <KilogramsIcon size={size} />
                 <span className={classes.iconName}>KilogramsIcon</span>
             </div>
@@ -517,6 +548,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>NoteIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <NotificationIcon size={size} />
+                <span className={classes.iconName}>NotificationIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <OpenBoxIcon size={size} />
                 <span className={classes.iconName}>OpenBoxIcon</span>
             </div>
@@ -569,6 +604,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>PrinterIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <PromotionIcon size={size} />
+                <span className={classes.iconName}>PromotionIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <PlusIcon size={size} />
                 <span className={classes.iconName}>PlusIcon</span>
             </div>
@@ -609,6 +648,14 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>SettingsIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <ShieldIcon size={size} />
+                <span className={classes.iconName}>ShieldIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <ShieldFillIcon size={size} />
+                <span className={classes.iconName}>ShieldFillIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <SpeakerIcon size={size} />
                 <span className={classes.iconName}>SpeakerIcon</span>
             </div>
@@ -627,6 +674,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <SurveyIcon size={size} />
                 <span className={classes.iconName}>SurveyIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <SuccessIcon size={size} />
+                <span className={classes.iconName}>SuccessAlertIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <SwitchUserIcon size={size} />
@@ -691,6 +742,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <WarningIcon size={size} />
                 <span className={classes.iconName}>WarningIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <WalletIcon size={size} />
+                <span className={classes.iconName}>WalletIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <WifiIcon size={size} />

@@ -11,7 +11,7 @@ import classes from 'src/styles/dropDown.module.css';
 import { DropDownProps } from 'src/types/components/DropDown';
 import { classNames } from 'src/utils/css/classNames';
 
-export function DropDown({ content, variant, position, children, disabled, preventClose, classes: classesProp }: DropDownProps): React.ReactElement {
+export function DropDown({ content, variant, position, children, disabled, preventClose, id: idProp, classes: classesProp }: DropDownProps): React.ReactElement {
     const dropDownContainerRef = useRef<HTMLDivElement | null>(null);
     const dropDownRef = useRef<HTMLDivElement | null>(null);
     const id = useRef(normalizeContent(content));
@@ -25,38 +25,28 @@ export function DropDown({ content, variant, position, children, disabled, preve
         },
     });
 
-    const getDropDownLeft = () => {
-        if (!dropDownContainerRef.current) return;
-        if (position === 'left') return 'unset';
-        return dropDownContainerRef.current.getBoundingClientRect().left;
-    };
-
-    const getDropDownRight = () => {
-        if (!dropDownContainerRef.current) return;
-        if (position === 'right' || !position) return 'unset';
-        return window.innerWidth - dropDownContainerRef.current.getBoundingClientRect().right;
-    };
-
-    const getDropDownTop = () => {
-        if (!dropDownContainerRef.current) return;
-        return dropDownContainerRef.current?.getBoundingClientRect().top + (dropDownContainerRef.current?.clientHeight || 0) + 10;
-    };
-
-    const getDropDownWidth = () => {
-        if (!dropDownContainerRef.current) return;
-        return dropDownContainerRef.current?.getBoundingClientRect().width;
-    };
-
     const handleCloseDropDown = () => {
         if (preventClose) return;
         setIsOpen(false);
     };
 
+    const getDropDownLeft = () => {
+        if (!dropDownContainerRef.current) return;
+        if (position === 'right') return 'unset';
+        return '0';
+    };
+
+    const getDropDownRight = () => {
+        if (!dropDownContainerRef.current) return;
+        if (!position || position === 'left') return 'unset';
+        return '0';
+    };
+
     return (
         <div ref={dropDownContainerRef} className={classNames(classes.container, classesProp?.container)}>
             <Button
-                id={`listbox-${id.current}-button`}
-                classes={{ button: classNames(classes.button, classesProp?.button) }}
+                id={idProp ?? `listbox-${id.current}-button`}
+                classes={{ button: classNames(classes.button, variant === 'icon' && classes.buttonIcon, classesProp?.button) }}
                 disabled={disabled}
                 variant={variant ?? 'secondary'}
                 onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
@@ -72,23 +62,19 @@ export function DropDown({ content, variant, position, children, disabled, preve
                 )}
             </Button>
             {isOpen &&
+                dropDownContainerRef.current &&
                 createPortal(
                     <div
                         role='listbox'
                         className={classNames(classes.dropdown, classesProp?.dropdown)}
+                        style={{ left: getDropDownLeft(), right: getDropDownRight() }}
                         aria-labelledby={`listbox-${id.current}-button`}
                         aria-readonly={true}
-                        style={{
-                            left: getDropDownLeft(),
-                            right: getDropDownRight(),
-                            top: getDropDownTop(),
-                            width: getDropDownWidth(),
-                        }}
                         ref={dropDownRef}
                     >
                         <DropDownContext.Provider value={{ closeDropDown: handleCloseDropDown }}>{children}</DropDownContext.Provider>
                     </div>,
-                    document.body,
+                    dropDownContainerRef.current,
                 )}
         </div>
     );

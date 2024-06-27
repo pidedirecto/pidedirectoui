@@ -102,13 +102,6 @@ const meta: Meta<typeof Autocomplete> = {
                 type: { summary: 'boolean' },
             },
         },
-        required: {
-            description: 'Sets input as required',
-            table: {
-                required: false,
-                type: { summary: 'boolean | {value:number, message:string}' },
-            },
-        },
         InputProps: {
             description: 'Take all input properties',
             table: {
@@ -145,6 +138,14 @@ const meta: Meta<typeof Autocomplete> = {
             },
         },
         // @ts-ignore
+        'classes.container': {
+            description: 'CSS class to override the container style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         'classes.optionsContainer': {
             description: 'CSS class to override the options container style',
             table: {
