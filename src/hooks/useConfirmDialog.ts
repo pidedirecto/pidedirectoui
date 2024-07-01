@@ -16,12 +16,10 @@ export function useConfirmDialog() {
         | undefined
     >();
 
-    const clearConfirmDialogTimeout = setTimeout(() => {
-        clearConfirmDialog();
-    }, 100) as any;
-
     const handleOpenConfirmDialog = (options: UseConfirmDialogProps) => {
-        openConfirmDialog({ ...options, onAccept: handleAccept, onCancel: handleClose });
+        if (!options.acceptButtonText) return;
+
+        openConfirmDialog({ ...options, onAccept: handleAccept, onCancel: handleClose, acceptButtonText: options.acceptButtonText });
         return new Promise<boolean | undefined>((resolve: (result: Promise<boolean | undefined> | boolean | undefined) => void, reject: (error?: any) => void) => {
             awaitingPromiseRef.current = { resolve };
         });
@@ -30,13 +28,13 @@ export function useConfirmDialog() {
     const handleAccept = async () => {
         awaitingPromiseRef.current?.resolve(true);
         closeConfirmDialog();
-        clearConfirmDialogTimeout();
+        setTimeout(clearConfirmDialog, 100);
     };
 
     const handleClose = () => {
         awaitingPromiseRef.current?.resolve(false);
         closeConfirmDialog();
-        clearConfirmDialogTimeout();
+        setTimeout(clearConfirmDialog, 100);
     };
 
     return handleOpenConfirmDialog;
