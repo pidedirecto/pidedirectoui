@@ -11,11 +11,37 @@ const meta: Meta<typeof Loader> = {
     },
     argTypes: {
         loading: {
-            control: 'boolean',
+            description: 'Loading state',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        size: {
+            description: 'Loader size',
+            table: {
+                type: { summary: 'number' },
+            },
+            control: false,
         },
         text: {
-            description: 'text show in loader',
+            description: 'Text shown in loader',
             table: {
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        classes: {
+            description: 'Classes object to override loader style',
+            table: {
+                type: { summary: 'object' },
+            },
+        },
+        // @ts-ignore
+        'classes.text': {
+            description: 'CSS class to override the text style',
+            table: {
+                subcategory: 'Classes API',
                 type: { summary: 'string' },
             },
             control: false,

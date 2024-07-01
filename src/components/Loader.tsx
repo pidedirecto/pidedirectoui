@@ -5,8 +5,9 @@ import React, { useEffect, useRef } from 'react';
 import { Text } from 'src/components/Text';
 import classes from 'src/styles/loader.module.css';
 import { LoaderProps } from 'src/types/components/Loader';
+import { classNames } from 'src/utils/css/classNames';
 
-export function Loader({ loading, text, size }: LoaderProps): React.ReactElement | null {
+export function Loader({ loading, text, size, classes: classesProp }: LoaderProps): React.ReactElement | null {
     const rootElement = useRef<HTMLElement | null>(null);
 
     const containerHeight = Math.floor((size ?? DefaultSize) * 1.5);
@@ -37,7 +38,7 @@ export function Loader({ loading, text, size }: LoaderProps): React.ReactElement
                 <span style={{ width: size, height: size }}></span>
                 <span style={{ width: size, height: size }}></span>
             </div>
-            {!!text && <Text className={classes.textContainer}>{text}</Text>}
+            {!!text && <Text className={classNames(classes.textContainer, classesProp?.text)}>{text}</Text>}
         </div>
     );
 }
