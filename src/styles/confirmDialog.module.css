@@ -32,7 +32,7 @@
 }
 
 .warningButton {
-    background-color: var(--surface-brand-contrast);
+    background-color: var(--text-warning);
 }
 
 .successButton {
@@ -50,10 +50,9 @@
 }
 
 .title {
-    font-family: var(--font-regular);
+    font-family: var(--font-semi-bold);
     color:var(--text-primary);
     font-size: var(--font-size-extra-large);
-    font-weight: 600;
 }
 
 @media (min-width: 600px) {
