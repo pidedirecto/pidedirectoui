@@ -43,5 +43,5 @@ export function Loader({ loading, text, size, classes: classesProp }: LoaderProp
     );
 }
 
-const DefaultPosition = 40;
+const DefaultPosition = 30;
 const DefaultSize = 18;
