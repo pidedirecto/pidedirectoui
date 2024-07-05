@@ -12,6 +12,7 @@ export function Loader({ loading, text, size, classes: classesProp }: LoaderProp
 
     const containerHeight = Math.floor((size ?? DefaultSize) * 1.5);
     const currentSize = size ?? DefaultSize;
+    const newLoaderPosition = Math.floor((currentSize * DefaultPosition) / DefaultSize);
 
     useEffect(() => {
         initializeSize();
@@ -23,7 +24,6 @@ export function Loader({ loading, text, size, classes: classesProp }: LoaderProp
         }
         if (!rootElement.current) return;
 
-        const newLoaderPosition = Math.floor((currentSize * DefaultPosition) / DefaultSize);
         rootElement.current.style.setProperty('--loader-initial-animation-position', `-${newLoaderPosition}px`);
         rootElement.current.style.setProperty('--loader-final-animation-position', `${newLoaderPosition}px`);
     };
@@ -31,7 +31,7 @@ export function Loader({ loading, text, size, classes: classesProp }: LoaderProp
     if (!loading) return null;
 
     return (
-        <div className={classes.loaderContainer} style={{ width: currentSize * 3 + 40 }}>
+        <div className={classes.loaderContainer} style={{ width: currentSize * 3 + newLoaderPosition }}>
             <div className={classes.slidingDots} style={{ height: containerHeight }}>
                 <span style={{ width: size, height: size }}></span>
                 <span style={{ width: size, height: size }}></span>
