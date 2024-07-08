@@ -43,6 +43,12 @@ const meta: Meta<typeof FormPasswordField> = {
                 type: { summary: 'string' },
             },
         },
+        placeholder: {
+            description: 'Input placeholder value',
+            table: {
+                type: { summary: 'string' },
+            },
+        },
         disabled: {
             description: 'Disables input',
             table: {
@@ -88,7 +94,7 @@ export const Primary: Story = {
 
         return (
             <Form form={form} onSubmit={() => {}}>
-                <FormPasswordField name={'password'} label={'Password'} />
+                <FormPasswordField name={'password'} label={'Password'} placeholder={'PlaceHolder text'} />
             </Form>
         );
     },

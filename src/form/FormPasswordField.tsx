@@ -13,7 +13,7 @@ import classes from 'src/styles/form/formPasswordField.module.css';
 import { FormPasswordFieldProps } from 'src/types/form/FormPasswordField';
 import { getError } from 'src/utils/form/getError';
 
-export function FormPasswordField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormPasswordFieldProps): React.ReactElement {
+export function FormPasswordField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps, placeholder }: FormPasswordFieldProps): React.ReactElement {
     const {
         errors,
         control,
@@ -43,6 +43,7 @@ export function FormPasswordField({ name, label, helperText, defaultValue, disab
                         onChange(value);
                     }}
                     name={name}
+                    placeholder={placeholder}
                     disabled={isSubmitting || disabled || formContext.disabled}
                     aria-label={label ? undefined : name}
                     tooltip={tooltip}

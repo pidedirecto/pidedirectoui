@@ -11,6 +11,7 @@ export type FormTextFieldProps = {
     label?: string;
     helperText?: string;
     defaultValue?: string;
+    placeholder?: string;
     disabled?: boolean;
     required?: ValidationRule<boolean>;
     tooltip?: string;
