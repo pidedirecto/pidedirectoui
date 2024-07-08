@@ -1,4 +1,5 @@
 import { Checkbox } from "src/types/components/Checkbox";
+import { Divider } from "src/types/components/Divider";
 import { Switch } from "src/types/components/Switch";
 import { Button } from "src/types/components/Button";
 import { UiLogEventTracker } from "src/types/components/UiLogEventTracker";
@@ -43,6 +44,13 @@ import { TextArea } from "src/types/components/TextArea";
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-checkbox--docs)
  */
 export const Checkbox: Checkbox
+
+/**
+ * Renders Divider
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-divider--docs)
+ */
+export const Divider: Divider
 
 /**
  * Renders Switch

@@ -1,0 +1,40 @@
+.divider {
+    background-color: transparent;
+    border: 0;
+}
+
+.horizontal {
+    height: 1px;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.vertical {
+    width: 1px;
+    height: 100%;
+    margin: 0 5px;
+}
+
+.horizontal.dashed {
+    border-top: 1px dashed var(--border-primary, #000);
+}
+
+.horizontal.solid {
+    border-top: 1px solid var(--border-primary, #000);
+}
+
+.horizontal.dotted {
+    border-top: 1px dotted var(--border-primary, #000);
+}
+
+.vertical.solid {
+    border-left: 1px solid var(--border-primary, #000);
+}
+
+.vertical.dashed {
+    border-left: 1px dashed var(--border-primary, #000);
+}
+
+.vertical.dotted {
+    border-left: 1px dotted var(--border-primary, #000);
+}
