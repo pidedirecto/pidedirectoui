@@ -29,7 +29,6 @@ export function Input({
     leftAdornment,
     rightAdornment,
     InputComponent,
-    placeholder,
     onBlur,
     onFocus,
     id,
@@ -86,7 +85,6 @@ export function Input({
                         aria-describedby={`${name ?? label}-tooltip`}
                         onBlur={handleInputBlur}
                         required={required}
-                        placeholder={placeholder}
                         autoComplete={autoComplete || 'off'}
                     />
                 )}
@@ -99,7 +97,6 @@ export function Input({
                         type={type || 'text'}
                         className={classNames(classes.input, classesProp?.input)}
                         name={name}
-                        placeholder={placeholder}
                         required={required}
                         onChange={handleChange}
                         aria-describedby={`${name ?? label}-tooltip`}
