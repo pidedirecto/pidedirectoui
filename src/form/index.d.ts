@@ -53,7 +53,7 @@ export const FormSelect: FormSelect
  */
 export const FormTextField: FormTextField
 /**
- * Form text component
+ * Form user name component
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formusernamefield--docs)
  */
 export const FormUsernameField: FormUsernameField

@@ -50,6 +50,14 @@ export const BasicDivider: Story = {
     },
 };
 
+export const Vertical: Story = {
+    args: {
+        ...meta.args,
+        variant: 'dashed',
+        orientation: 'vertical',
+    },
+};
+
 export const Dashed: Story = {
     args: {
         ...meta.args,

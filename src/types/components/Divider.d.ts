@@ -1,10 +1,9 @@
 /**
  * @prettier
  */
-import { HTMLProps } from 'react';
 import * as React from 'react';
 
-export type DividerProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'type' | 'onChange'> & {
+export type DividerProps = {
     classes?: {
         divider?: string;
     };

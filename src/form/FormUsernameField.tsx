@@ -19,14 +19,6 @@ export function FormUsernameField({ name, label, helperText, defaultValue, disab
 
     const error = getError(errors, name);
 
-    const transformInputText = (text: any) => {
-        const isValid = text.charAt(text.length - 1) !== ' ';
-        if (!isValid) {
-            return text.slice(0, -1);
-        }
-        return text;
-    };
-
     return (
         <Controller
             control={control}
@@ -40,7 +32,7 @@ export function FormUsernameField({ name, label, helperText, defaultValue, disab
                     value={value}
                     placeholder={placeholder}
                     onChange={(value: string) => {
-                        onChange(transformInputText(value));
+                        onChange(value.trim());
                     }}
                     name={name}
                     disabled={isSubmitting || disabled || formContext.disabled}

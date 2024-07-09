@@ -3,38 +3,38 @@
     border: 0;
 }
 
-.horizontal {
+.divider[data-orientation="horizontal"] {
     height: 1px;
     width: 100%;
     margin: 5px 0;
 }
 
-.vertical {
+.divider[data-orientation="vertical"] {
     width: 1px;
     height: 100%;
     margin: 0 5px;
 }
 
-.horizontal.dashed {
-    border-top: 1px dashed var(--border-primary, #000);
-}
-
-.horizontal.solid {
+.divider[data-orientation="horizontal"].solid {
     border-top: 1px solid var(--border-primary, #000);
 }
 
-.horizontal.dotted {
+.divider[data-orientation="horizontal"].dashed {
+    border-top: 1px dashed var(--border-primary, #000);
+}
+
+.divider[data-orientation="horizontal"].dotted {
     border-top: 1px dotted var(--border-primary, #000);
 }
 
-.vertical.solid {
+.divider[data-orientation="vertical"].solid {
     border-left: 1px solid var(--border-primary, #000);
 }
 
-.vertical.dashed {
+.divider[data-orientation="vertical"].dashed {
     border-left: 1px dashed var(--border-primary, #000);
 }
 
-.vertical.dotted {
+.divider[data-orientation="vertical"].dotted {
     border-left: 1px dotted var(--border-primary, #000);
 }
