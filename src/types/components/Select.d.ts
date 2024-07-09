@@ -1,4 +1,5 @@
 import * as React from "react";
+import { DropDownProps } from "src/types/components/DropDown";
 
 export type SelectProps = {
     label?: string,
@@ -18,6 +19,7 @@ export type SelectProps = {
         item?: string,
         button?: string,
     },
+    position?: DropDownProps['position'],
     multiselectable?: boolean,
     disabled?: boolean,
     searchable?: boolean,
