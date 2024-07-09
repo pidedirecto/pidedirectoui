@@ -2,6 +2,7 @@
  * @prettier
  */
 import type { Meta, StoryObj } from '@storybook/react';
+import React from 'react';
 import { Divider } from 'src/components/Divider';
 
 const meta: Meta<typeof Divider> = {
@@ -30,7 +31,7 @@ const meta: Meta<typeof Divider> = {
             },
         },
         //@ts-ignore
-        'classes.Divider': {
+        'classes.divider': {
             description: 'CSS class to override the Divider style',
             table: {
                 subcategory: 'Classes API',
@@ -53,11 +54,15 @@ export const BasicDivider: Story = {
 export const Vertical: Story = {
     args: {
         ...meta.args,
-        variant: 'dashed',
-        orientation: 'vertical',
+    },
+    render: () => {
+        return (
+            <div style={{ width: '10px', height: '40px' }}>
+                <Divider variant='dashed' orientation={'vertical'} />
+            </div>
+        );
     },
 };
-
 export const Dashed: Story = {
     args: {
         ...meta.args,
