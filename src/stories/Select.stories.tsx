@@ -6,6 +6,7 @@ import React from 'react';
 import { Select } from 'src/components/Select';
 import { CheckIcon } from 'src/icons/CheckIcon';
 import { CrossIcon } from 'src/icons/CrossIcon';
+import { createLink } from 'src/utils/docs/createLink';
 
 const meta: Meta<typeof Select> = {
     component: Select,
@@ -113,6 +114,20 @@ const meta: Meta<typeof Select> = {
             description: 'Select helperText',
             table: {
                 type: { summary: 'string' },
+            },
+            control: false,
+        },
+        searchable: {
+            description: 'Enables search in select',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        position: {
+            description: `Select dropdown position, ${createLink('https://ui.pidedirecto.mx/?path=/docs/stories-dropdown--dropdown#api', 'same as Dropdown')}`,
+            table: {
+                type: { summary: 'right | left' },
             },
             control: false,
         },

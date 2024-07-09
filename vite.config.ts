@@ -62,7 +62,7 @@ export default defineConfig({
         tsconfigPaths(),
         dts({
             copyDtsFiles: true,
-            include: ['src/**/*.d.ts', 'src/constants/*.ts', 'src/index.d.ts'],
+            include: ['src/**/*.d.ts', 'src/constants/*.ts', 'src/utils/type/*.ts', 'src/index.d.ts'],
             exclude: ['src/icons/IconsList.tsx'],
             beforeWriteFile: (path, content) => {
                 return { filePath: path.replace('src/', ''), content };

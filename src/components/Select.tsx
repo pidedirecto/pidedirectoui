@@ -32,6 +32,7 @@ export function Select({
     disabled,
     searchable,
     error,
+    position,
     preventClose,
     tooltip,
     classes: classesProp,
@@ -134,6 +135,7 @@ export function Select({
                 }}
                 preventClose={preventClose}
                 id={name}
+                position={position}
             >
                 {searchable && (
                     <div className={classes.topContainer}>
