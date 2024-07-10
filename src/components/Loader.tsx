@@ -31,7 +31,7 @@ export function Loader({ loading, text, size, classes: classesProp }: LoaderProp
     if (!loading) return null;
 
     return (
-        <div className={classes.loaderContainer} style={{ width: currentSize * 3 + newLoaderPosition }}>
+        <div className={classNames(classes.loaderContainer, classesProp?.container)} style={{ width: currentSize * 3 + newLoaderPosition }}>
             <div className={classes.slidingDots} style={{ height: containerHeight }}>
                 <span style={{ width: size, height: size }}></span>
                 <span style={{ width: size, height: size }}></span>

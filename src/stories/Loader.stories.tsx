@@ -38,6 +38,14 @@ const meta: Meta<typeof Loader> = {
             },
         },
         // @ts-ignore
+        'classes.container': {
+            description: 'CSS class to override the loader container style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         'classes.text': {
             description: 'CSS class to override the text style',
             table: {

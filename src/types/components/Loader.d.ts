@@ -5,6 +5,7 @@ export type LoaderProps = {
     text?: string
     size?: number
     classes?: {
+        container?: string;
         text?: string;
     }
 }
