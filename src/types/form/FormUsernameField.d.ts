@@ -6,7 +6,7 @@ import { type ValidationRule } from 'react-hook-form';
 import { InputProps } from 'src/types/components/Input';
 import { OptionalKeys } from 'src/utils/type/OptionalKeys';
 
-export type FormPasswordFieldProps = {
+export type FormUsernameFieldProps = {
     name: string;
     label?: string;
     helperText?: string;
@@ -19,4 +19,4 @@ export type FormPasswordFieldProps = {
     inputProps?: OptionalKeys<InputProps>;
 };
 
-export type FormPasswordField = React.FunctionComponent<FormPasswordFieldProps>;
+export type FormUsernameField = React.FunctionComponent<FormUsernameFieldProps>;

@@ -1,19 +1,15 @@
 /**
  * @prettier
  */
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import * as React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
-import { Button } from 'src/components/Button';
 import { Input } from 'src/components/Input';
 import { FormContext } from 'src/form/Form';
-import { ClosedEyeIcon } from 'src/icons/ClosedEyeIcon';
-import { EyeIcon } from 'src/icons/EyeIcon';
-import classes from 'src/styles/form/formPasswordField.module.css';
-import { FormPasswordFieldProps } from 'src/types/form/FormPasswordField';
+import { FormUsernameFieldProps } from 'src/types/form/FormUsernameField';
 import { getError } from 'src/utils/form/getError';
 
-export function FormPasswordField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps, placeholder }: FormPasswordFieldProps): React.ReactElement {
+export function FormUsernameField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps, placeholder }: FormUsernameFieldProps): React.ReactElement {
     const {
         errors,
         control,
@@ -21,11 +17,7 @@ export function FormPasswordField({ name, label, helperText, defaultValue, disab
     } = useFormContext();
     const formContext = useContext(FormContext);
 
-    const [showPassword, setShowPassword] = useState(false);
-
     const error = getError(errors, name);
-
-    const togglePassword = () => setShowPassword(!showPassword);
 
     return (
         <Controller
@@ -34,33 +26,26 @@ export function FormPasswordField({ name, label, helperText, defaultValue, disab
             render={({ onChange, onBlur, value, name, ref }) => (
                 <Input
                     {...inputProps}
-                    type={showPassword ? 'text' : 'password'}
                     inputRef={ref}
-                    label={required ? `${label ?? ''}*` : label}
+                    label={required ? `${label}*` : label}
                     onBlur={onBlur}
-                    value={value ?? ''}
+                    value={value}
+                    placeholder={placeholder}
                     onChange={(value: string) => {
-                        onChange(value);
+                        onChange(value.trim());
                     }}
                     name={name}
-                    placeholder={placeholder}
                     disabled={isSubmitting || disabled || formContext.disabled}
                     aria-label={label ? undefined : name}
                     tooltip={tooltip}
                     error={!!error}
                     helperText={error?.message ?? helperText}
-                    rightAdornment={
-                        <Button variant='icon' onClick={togglePassword} classes={{ button: classes.button }}>
-                            {!!showPassword && <EyeIcon />}
-                            {!showPassword && <ClosedEyeIcon />}
-                        </Button>
-                    }
                 />
             )}
             defaultValue={defaultValue ?? null}
             rules={{
+                required,
                 ...rules,
-                required: required,
             }}
         />
     );

@@ -4,12 +4,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Form } from 'src/form/Form';
-import { FormPasswordField } from 'src/form/FormPasswordField';
+import { FormUsernameField } from 'src/form/FormUsernameField';
 import { useForm } from 'src/hooks/useForm';
 import { createLink } from 'src/utils/docs/createLink';
 
-const meta: Meta<typeof FormPasswordField> = {
-    component: FormPasswordField,
+const meta: Meta<typeof FormUsernameField> = {
+    component: FormUsernameField,
     args: {
         name: 'checkbox',
         label: 'Checkbox',
@@ -44,7 +44,7 @@ const meta: Meta<typeof FormPasswordField> = {
             },
         },
         placeholder: {
-            description: 'Input placeholder value',
+            description: 'Input place holder value',
             table: {
                 type: { summary: 'string' },
             },
@@ -83,7 +83,7 @@ const meta: Meta<typeof FormPasswordField> = {
 };
 export default meta;
 
-type Story = StoryObj<typeof FormPasswordField>;
+type Story = StoryObj<typeof FormUsernameField>;
 
 export const Primary: Story = {
     args: {
@@ -94,7 +94,7 @@ export const Primary: Story = {
 
         return (
             <Form form={form} onSubmit={() => {}}>
-                <FormPasswordField name={'password'} label={'Password'} placeholder={'PlaceHolder text'} />
+                <FormUsernameField name={'input'} label={'User name'} placeholder={'just one word without blank spaces'} />
             </Form>
         );
     },

@@ -9,7 +9,7 @@ import { FormContext } from 'src/form/Form';
 import { FormTextFieldProps } from 'src/types/form/FormTextField';
 import { getError } from 'src/utils/form/getError';
 
-export function FormTextField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormTextFieldProps): React.ReactElement {
+export function FormTextField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps, placeholder }: FormTextFieldProps): React.ReactElement {
     const {
         errors,
         control,
@@ -30,6 +30,7 @@ export function FormTextField({ name, label, helperText, defaultValue, disabled,
                     label={required ? `${label}*` : label}
                     onBlur={onBlur}
                     value={value}
+                    placeholder={placeholder}
                     onChange={(value: string) => {
                         onChange(value);
                     }}

@@ -43,6 +43,12 @@ const meta: Meta<typeof FormTextField> = {
                 type: { summary: 'string' },
             },
         },
+        placeholder: {
+            description: 'Input place holder value',
+            table: {
+                type: { summary: 'string' },
+            },
+        },
         disabled: {
             description: 'Disables input',
             table: {
@@ -88,7 +94,7 @@ export const Primary: Story = {
 
         return (
             <Form form={form} onSubmit={() => {}}>
-                <FormTextField name={'input'} label={'Write your favorite food'} />
+                <FormTextField name={'input'} label={'Write your favorite food'} placeholder={'place holder text'} />
             </Form>
         );
     },
