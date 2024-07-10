@@ -4,11 +4,11 @@
 import * as React from 'react';
 
 export type DividerProps = {
+    variant?: 'solid' | 'dashed' | 'dotted';
+    orientation?: 'horizontal' | 'vertical';
     classes?: {
         divider?: string;
     };
-    variant?: 'solid' | 'dashed' | 'dotted';
-    orientation?: 'horizontal' | 'vertical';
 };
 
 export type Divider = React.FunctionComponent<DividerProps>;
