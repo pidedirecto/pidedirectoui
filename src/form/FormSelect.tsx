@@ -20,6 +20,11 @@ export function FormSelect({ name, label, defaultValue, disabled, tooltip, requi
     const error = getError(errors, name);
     const errorMessage = getError(errors, name)?.message;
 
+    const formatValue = (value: any) => {
+        if (!multiselectable) return value;
+        return value.length ? value : null;
+    };
+
     return (
         <Controller
             control={control}
@@ -33,7 +38,7 @@ export function FormSelect({ name, label, defaultValue, disabled, tooltip, requi
                     multiselectable={multiselectable}
                     preventClose={preventClose}
                     onChange={(value: any) => {
-                        onChange(value);
+                        onChange(formatValue(value));
                     }}
                     name={name}
                     disabled={isSubmitting || disabled || formContext.disabled}
