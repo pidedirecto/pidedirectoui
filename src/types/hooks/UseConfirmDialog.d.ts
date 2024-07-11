@@ -7,7 +7,7 @@ export type UseConfirmDialog = () => (params: UseConfirmDialogProps) => Promise<
 export type UseConfirmDialogProps = {
     title?: string;
     content?: string;
-    acceptButtonText?: string;
+    acceptButtonText: string;
     cancelButtonText?: string;
     timeoutSeconds?: number;
     variant?: 'warning' | 'error' | 'success' | 'notification';

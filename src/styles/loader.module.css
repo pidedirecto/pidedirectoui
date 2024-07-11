@@ -1,51 +1,90 @@
 .loaderContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.textContainer {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-semi-bold);
 }
 
 .slidingDots {
-  display: flex;
-  gap: 40px;
-  position: relative;
-  margin-bottom: 40px;
+    display: flex;
+    gap: 40px;
+    position: relative;
+    justify-content: center;
 }
 
 .slidingDots span {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background-color: var(--purple600);
-  opacity: 0;
-  position: absolute;
-  animation: fadeMove 2s ease-in-out infinite;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: var(--purple600);
+    opacity: 0;
+    position: absolute;
+    top: 20%;
 }
 
 .slidingDots span:nth-child(1) {
-  animation-delay: 0s;
+    animation: firstLoadingAnimation 1.2s ease-in-out infinite;
 }
 
 .slidingDots span:nth-child(2) {
-  animation-delay: 0.66s;
+    animation: secondLoadingAnimation 1.2s ease-in-out infinite;
 }
 
 .slidingDots span:nth-child(3) {
-  animation-delay: 1.33s;
+    animation: thirdLoadingAnimation 1.2s ease-in-out infinite;
+
 }
 
-@keyframes fadeMove {
-  0%, 100% {
-    opacity: 0;
-    transform: translateX(-40px) scale(1);
-  }
-  25% {
-    opacity: 1;
-    transform: translateX(0) scale(1.5);
-  }
-  75% {
-    opacity: 0;
-    transform: translateX(40px) scale(1);
-  }
+@keyframes firstLoadingAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(var(--loader-initial-animation-position)) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(var(--loader-final-animation-position)) scale(1);
+    }
+}
+
+@keyframes secondLoadingAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(var(--loader-final-animation-position)) scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(var(--loader-initial-animation-position)) scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1.5);
+    }
+}
+
+@keyframes thirdLoadingAnimation {
+    0% {
+        opacity: 1;
+        transform: translateX(0) scale(1.5);
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(var(--loader-final-animation-position)) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(var(--loader-initial-animation-position)) scale(1);
+    }
 }

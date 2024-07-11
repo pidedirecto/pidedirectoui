@@ -7,6 +7,7 @@ import { UseConfirmDialogProps } from 'src/types/hooks/UseConfirmDialog';
 
 export function useConfirmDialog() {
     const openConfirmDialog = useConfirmDialogActions((actions) => actions.openConfirmDialog);
+    const closeConfirmDialog = useConfirmDialogActions((actions) => actions.closeConfirmDialog);
     const clearConfirmDialog = useConfirmDialogActions((actions) => actions.clearConfirmDialog);
     const awaitingPromiseRef = useRef<
         | {
@@ -16,20 +17,24 @@ export function useConfirmDialog() {
     >();
 
     const handleOpenConfirmDialog = (options: UseConfirmDialogProps) => {
-        openConfirmDialog({ ...options, onAccept: handleAccept, onCancel: handleClose });
+        if (!options.acceptButtonText) return;
+
+        openConfirmDialog({ ...options, onAccept: handleAccept, onCancel: handleClose, acceptButtonText: options.acceptButtonText });
         return new Promise<boolean | undefined>((resolve: (result: Promise<boolean | undefined> | boolean | undefined) => void, reject: (error?: any) => void) => {
             awaitingPromiseRef.current = { resolve };
         });
     };
 
-    const handleAccept = () => {
+    const handleAccept = async () => {
         awaitingPromiseRef.current?.resolve(true);
-        clearConfirmDialog();
+        closeConfirmDialog();
+        setTimeout(clearConfirmDialog, 100);
     };
 
     const handleClose = () => {
         awaitingPromiseRef.current?.resolve(false);
-        clearConfirmDialog();
+        closeConfirmDialog();
+        setTimeout(clearConfirmDialog, 100);
     };
 
     return handleOpenConfirmDialog;

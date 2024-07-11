@@ -3,6 +3,7 @@ import { FormCheckbox } from "src/types/form/FormCheckbox";
 import { FormSwitch } from "src/types/form/FormSwitch";
 import { FormSelect } from "src/types/form/FormSelect";
 import { FormTextField } from "src/types/form/FormTextField";
+import { FormUsernameField } from "src/types/form/FormUsernameField";
 import { FormCurrencyNumberStringField } from "src/types/form/FormCurrencyNumberStringField";
 import { FormEmailField } from "src/types/form/FormEmailField";
 import { FormColorField } from "src/types/form/FormColorField";
@@ -51,6 +52,11 @@ export const FormSelect: FormSelect
  * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formtextfield--docs)
  */
 export const FormTextField: FormTextField
+/**
+ * Form user name component
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/form-formusernamefield--docs)
+ */
+export const FormUsernameField: FormUsernameField
 
 /**
  * Form password component

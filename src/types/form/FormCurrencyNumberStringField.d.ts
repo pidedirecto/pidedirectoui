@@ -12,7 +12,7 @@ export type FormCurrencyNumberStringFieldProps = {
     label?: string;
     helperText?: string;
     defaultValue?: string;
-    placeHolder?: string;
+    placeholder?: string;
     disabled?: boolean;
     maximumDigits?: number;
     required?: ValidationRule<boolean>;

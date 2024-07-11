@@ -227,4 +227,7 @@ body {
   --mediumScreen: 960px;
   --largeScreen: 1280px;
 
+  --loader-initial-animation-position: -40px;
+  --loader-final-animation-position: 40px
+
 }
