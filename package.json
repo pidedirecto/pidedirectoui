@@ -1,6 +1,6 @@
 {
   "name": "@pidedirecto/ui",
-  "version": "0.19.20",
+  "version": "0.19.21",
   "files": [
     "*"
   ],
@@ -60,7 +60,10 @@
     "appType": "NODE_PUBLIC_PACKAGE",
     "appName": "pidedirectoui",
     "appAlias": "pui",
-    "usesUiDocs": true
+    "usesUiDocs": true,
+    "projectType": "NODE_PUBLIC_PACKAGE",
+    "projectName": "pidedirectoui",
+    "projectAlias": "pui"
   },
   "scripts": {
     "prepare": "husky install && pd package-changed update-packagehash"
