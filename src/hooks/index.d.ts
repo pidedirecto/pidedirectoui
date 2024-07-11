@@ -49,7 +49,7 @@ export const useForm: UseForm
 /**
  * Form hook to get value from input updated
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useform--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-usewatch--docs)
  */
 export const useWatch: UseWatch
 

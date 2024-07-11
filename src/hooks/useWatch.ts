@@ -12,7 +12,7 @@ export function useWatch<TFieldValues extends FieldValues>(
     return value;
 }
 
-interface WatchOptions<TFieldValues extends FieldValues> {
+type WatchOptions<TFieldValues extends FieldValues> ={
     name: FieldName<TFieldValues>;
     control: Control<TFieldValues>;
     defaultValue?: TFieldValues[FieldName<TFieldValues>];
