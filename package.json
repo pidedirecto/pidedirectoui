@@ -57,13 +57,10 @@
     "npm": "10.2.4"
   },
   "pidedirecto": {
-    "appType": "NODE_PUBLIC_PACKAGE",
-    "appName": "pidedirectoui",
-    "appAlias": "pui",
-    "usesUiDocs": true,
     "projectType": "NODE_PUBLIC_PACKAGE",
     "projectName": "pidedirectoui",
-    "projectAlias": "pui"
+    "projectAlias": "pui",
+    "usesUiDocs": true
   },
   "scripts": {
     "prepare": "husky install && pd package-changed update-packagehash"
