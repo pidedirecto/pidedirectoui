@@ -135,6 +135,7 @@ import { SurveyIcon } from 'src/icons/SurveyIcon';
 import { SwitchUserIcon } from 'src/icons/SwitchUserIcon';
 import { TableIcon } from 'src/icons/TableIcon';
 import { TerminalIcon } from 'src/icons/TerminalIcon';
+import { ThumbsUpIcon } from 'src/icons/ThumbsUpIcon';
 import { TicketIcon } from 'src/icons/TicketIcon';
 import { TicketsIcon } from 'src/icons/TicketsIcon';
 import { TransactionIcon } from 'src/icons/TransactionIcon';
@@ -166,6 +167,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <AirTableIcon size={size} />
                 <span className={classes.iconName}>AirTableIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <ThumbsUpIcon size={size} />
+                <span className={classes.iconName}>ThumbsUpIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <ArrowDownIcon size={size} />

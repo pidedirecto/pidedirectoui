@@ -4,6 +4,7 @@
 
 export * from 'src/icons/AddElementIcon';
 export * from 'src/icons/AirTableIcon';
+export * from 'src/icons/ThumbsUpIcon';
 export * from 'src/icons/ArrowDownIcon';
 export * from 'src/icons/ArrowUpIcon';
 export * from 'src/icons/BackArrowIcon';
