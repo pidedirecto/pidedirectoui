@@ -4,7 +4,6 @@
 import * as React from 'react';
 import { AddElementIcon } from 'src/icons/AddElementIcon';
 import { AirTableIcon } from 'src/icons/AirTableIcon';
-import { ApprovalIcon } from 'src/icons/ApprovalIcon';
 import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
 import { ArrowUpIcon } from 'src/icons/ArrowUpIcon';
 import { BackArrowIcon } from 'src/icons/BackArrowIcon';
@@ -120,7 +119,6 @@ import { QuestionIcon } from 'src/icons/QuestionIcon';
 import { ReceiptIcon } from 'src/icons/ReceiptIcon';
 import { RefreshIcon } from 'src/icons/RefreshIcon';
 import { RestoreIcon } from 'src/icons/RestoreIcon';
-import { RoomServiceBellIcon } from 'src/icons/RoomServiceBellIcon';
 import { RouteIcon } from 'src/icons/RouteIcon';
 import { SaveIcon } from 'src/icons/SaveIcon';
 import { ScissorsIcon } from 'src/icons/ScissorsIcon';
@@ -137,6 +135,7 @@ import { SurveyIcon } from 'src/icons/SurveyIcon';
 import { SwitchUserIcon } from 'src/icons/SwitchUserIcon';
 import { TableIcon } from 'src/icons/TableIcon';
 import { TerminalIcon } from 'src/icons/TerminalIcon';
+import { ThumbsUpIcon } from 'src/icons/ThumbsUpIcon';
 import { TicketIcon } from 'src/icons/TicketIcon';
 import { TicketsIcon } from 'src/icons/TicketsIcon';
 import { TransactionIcon } from 'src/icons/TransactionIcon';
@@ -170,8 +169,8 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>AirTableIcon</span>
             </div>
             <div className={classes.iconContainer}>
-                <ApprovalIcon size={size} />
-                <span className={classes.iconName}>ApprovalIcon</span>
+                <ThumbsUpIcon size={size} />
+                <span className={classes.iconName}>ThumbsUpIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <ArrowDownIcon size={size} />
@@ -636,10 +635,6 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <RouteIcon size={size} />
                 <span className={classes.iconName}>RouteIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <RoomServiceBellIcon size={size} />
-                <span className={classes.iconName}>RoomServiceBellIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <SaveIcon size={size} />

@@ -4,7 +4,7 @@
 import * as React from 'react';
 import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function ApprovalIcon({ title, width, height, color, size, ...props }: SvgIconProps): React.ReactElement {
+export function ThumbsUpIcon({ title, width, height, color, size, ...props }: SvgIconProps): React.ReactElement {
     return (
         <svg {...props} width={width ?? size ?? '20'} height={height ?? size ?? '18'} viewBox='0 0 20 18' fill='none' xmlns='http://www.w3.org/2000/svg'>
             {title && <title>{title}</title>}

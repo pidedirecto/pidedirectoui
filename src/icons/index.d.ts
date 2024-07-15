@@ -2,7 +2,7 @@ import { SvgIcon } from "src/types/icons/SvgIcon";
 
 export const AddElementIcon: SvgIcon
 export const AirTableIcon: SvgIcon
-export const ApprovalIcon: SvgIcon
+export const ThumbsUpIcon: SvgIcon
 export const ArrowDownIcon: SvgIcon
 export const ArrowUpIcon: SvgIcon
 export const BackArrowIcon: SvgIcon
@@ -120,7 +120,6 @@ export const QuestionIcon: SvgIcon
 export const ReceiptIcon: SvgIcon
 export const RefreshIcon: SvgIcon
 export const RouteIcon: SvgIcon
-export const RoomServiceBellIcon: SvgIcon
 export const SaveIcon: SvgIcon
 export const ScissorsIcon: SvgIcon
 export const SearchIcon: SvgIcon

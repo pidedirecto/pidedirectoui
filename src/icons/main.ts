@@ -4,7 +4,7 @@
 
 export * from 'src/icons/AddElementIcon';
 export * from 'src/icons/AirTableIcon';
-export * from 'src/icons/ApprovalIcon';
+export * from 'src/icons/ThumbsUpIcon';
 export * from 'src/icons/ArrowDownIcon';
 export * from 'src/icons/ArrowUpIcon';
 export * from 'src/icons/BackArrowIcon';
@@ -121,7 +121,6 @@ export * from 'src/icons/QuestionIcon';
 export * from 'src/icons/ReceiptIcon';
 export * from 'src/icons/RefreshIcon';
 export * from 'src/icons/RouteIcon';
-export * from 'src/icons/RoomServiceBellIcon';
 export * from 'src/icons/SaveIcon';
 export * from 'src/icons/ScissorsIcon';
 export * from 'src/icons/SearchIcon';
