@@ -1,6 +1,16 @@
 {
   "name": "@pidedirecto/ui",
   "version": "0.19.21",
+  "engines": {
+    "node": "20.11.0",
+    "npm": "10.2.4"
+  },
+  "pidedirecto": {
+    "projectType": "NODE_PUBLIC_PACKAGE",
+    "projectName": "pidedirectoui",
+    "projectAlias": "pui",
+    "usesUiDocs": true
+  },
   "files": [
     "*"
   ],
@@ -51,16 +61,6 @@
       "import": "./utils/index.js",
       "require": "./utils/index.cjs"
     }
-  },
-  "engines": {
-    "node": "20.11.0",
-    "npm": "10.2.4"
-  },
-  "pidedirecto": {
-    "projectType": "NODE_PUBLIC_PACKAGE",
-    "projectName": "pidedirectoui",
-    "projectAlias": "pui",
-    "usesUiDocs": true
   },
   "scripts": {
     "prepare": "husky install && pd package-changed update-packagehash"
