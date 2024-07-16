@@ -42,6 +42,7 @@ export const CommandIcon: SvgIcon
 export const CookingPotIcon: SvgIcon
 export const CopyIcon: SvgIcon
 export const CoinsIcon: SvgIcon
+export const ColumnsIcon: SvgIcon
 export const CreditCardIcon: SvgIcon
 export const CrossIcon: SvgIcon
 export const CutleryIcon: SvgIcon

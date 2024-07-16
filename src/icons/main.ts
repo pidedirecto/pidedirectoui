@@ -44,6 +44,7 @@ export * from 'src/icons/CommandIcon';
 export * from 'src/icons/CookingPotIcon';
 export * from 'src/icons/CopyIcon';
 export * from 'src/icons/CoinsIcon';
+export * from 'src/icons/ColumnsIcon';
 export * from 'src/icons/CreditCardIcon';
 export * from 'src/icons/CrossIcon';
 export * from 'src/icons/CutleryIcon';
