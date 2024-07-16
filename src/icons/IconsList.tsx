@@ -101,6 +101,7 @@ import { NoPhotoIcon } from 'src/icons/NoPhotoIcon';
 import { NoteIcon } from 'src/icons/NoteIcon';
 import { NotificationIcon } from 'src/icons/NotificationIcon';
 import { OpenBoxIcon } from 'src/icons/OpenBoxIcon';
+import { OutlinedDoorbellIcon } from 'src/icons/OutlinedDoorbellIcon';
 import { OutlinedLightBulbIcon } from 'src/icons/OutlinedLightBulbIcon';
 import { OutlinedPeopleIcon } from 'src/icons/OutlinedPeopleIcon';
 import { OutlinedPlusIcon } from 'src/icons/OutlinedPlusIcon';
@@ -167,10 +168,6 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <AirTableIcon size={size} />
                 <span className={classes.iconName}>AirTableIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <ThumbsUpIcon size={size} />
-                <span className={classes.iconName}>ThumbsUpIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <ArrowDownIcon size={size} />
@@ -573,6 +570,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>OutlinedPlus</span>
             </div>
             <div className={classes.iconContainer}>
+                <OutlinedDoorbellIcon size={size} />
+                <span className={classes.iconName}>OutlinedDoorbellIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <PaymentTerminalIcon size={size} />
                 <span className={classes.iconName}>PaymentTerminalIcon</span>
             </div>
@@ -719,6 +720,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <TrashCanIcon size={size} />
                 <span className={classes.iconName}>TrashCanIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <ThumbsUpIcon size={size} />
+                <span className={classes.iconName}>ThumbsUpIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <UnLockIcon size={size} />
