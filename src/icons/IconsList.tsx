@@ -698,6 +698,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>TerminalIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <ThumbsUpIcon size={size} />
+                <span className={classes.iconName}>ThumbsUpIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <TicketIcon size={size} />
                 <span className={classes.iconName}>TicketIcon</span>
             </div>
@@ -720,10 +724,6 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <TrashCanIcon size={size} />
                 <span className={classes.iconName}>TrashCanIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <ThumbsUpIcon size={size} />
-                <span className={classes.iconName}>ThumbsUpIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <UnLockIcon size={size} />
