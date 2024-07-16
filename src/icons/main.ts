@@ -4,7 +4,6 @@
 
 export * from 'src/icons/AddElementIcon';
 export * from 'src/icons/AirTableIcon';
-export * from 'src/icons/ThumbsUpIcon';
 export * from 'src/icons/ArrowDownIcon';
 export * from 'src/icons/ArrowUpIcon';
 export * from 'src/icons/BackArrowIcon';
@@ -106,6 +105,7 @@ export * from 'src/icons/OpenBoxIcon';
 export * from 'src/icons/OutlinedLightBulbIcon';
 export * from 'src/icons/OutlinedPeopleIcon';
 export * from 'src/icons/OutlinedPlusIcon';
+export * from 'src/icons/OutlinedDoorbellIcon';
 export * from 'src/icons/PaymentTerminalIcon';
 export * from 'src/icons/PdfIcon';
 export * from 'src/icons/PennantIcon';
@@ -142,6 +142,7 @@ export * from 'src/icons/TransactionIcon';
 export * from 'src/icons/TrendingDownIcon';
 export * from 'src/icons/TrendingUpIcon';
 export * from 'src/icons/TrashCanIcon';
+export * from 'src/icons/ThumbsUpIcon';
 export * from 'src/icons/UnLockIcon';
 export * from 'src/icons/UploadIcon';
 export * from 'src/icons/UsbIcon';

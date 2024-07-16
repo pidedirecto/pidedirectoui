@@ -2,7 +2,6 @@ import { SvgIcon } from "src/types/icons/SvgIcon";
 
 export const AddElementIcon: SvgIcon
 export const AirTableIcon: SvgIcon
-export const ThumbsUpIcon: SvgIcon
 export const ArrowDownIcon: SvgIcon
 export const ArrowUpIcon: SvgIcon
 export const BackArrowIcon: SvgIcon
@@ -105,6 +104,7 @@ export const OpenBoxIcon: SvgIcon
 export const OutlinedLightBulbIcon: SvgIcon
 export const OutlinedPeopleIcon: SvgIcon
 export const OutlinedPlusIcon: SvgIcon
+export const OutlinedDoorbellIcon: SvgIcon
 export const PaymentTerminalIcon: SvgIcon
 export const PdfIcon: SvgIcon
 export const PennantIcon: SvgIcon
@@ -141,6 +141,7 @@ export const TransactionIcon: SvgIcon
 export const TrendingDownIcon: SvgIcon
 export const TrendingUpIcon: SvgIcon
 export const TrashCanIcon: SvgIcon
+export const ThumbsUpIcon: SvgIcon
 export const UnLockIcon: SvgIcon
 export const UploadIcon: SvgIcon
 export const UsbIcon: SvgIcon
