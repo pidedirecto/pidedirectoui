@@ -65,7 +65,11 @@ export function ConfirmDialog(): React.ReactElement {
         <Dialog classes={{ dialog: classes.dialog }} open={!!open} onClose={onCancel}>
             <div className={classes.iconContainer}>
                 {getVariantIcon()}
-                {!!title && <Text className={classes.title}>{title}</Text>}
+                {!!title && (
+                    <Text variant={'title'} size={'extraLarge'} className={classes.title}>
+                        {title}
+                    </Text>
+                )}
             </div>
             {!!content && (
                 <div className={classes.dialogContent}>
