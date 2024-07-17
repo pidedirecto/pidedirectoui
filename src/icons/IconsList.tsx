@@ -123,6 +123,7 @@ import { RestoreIcon } from 'src/icons/RestoreIcon';
 import { RouteIcon } from 'src/icons/RouteIcon';
 import { SaveIcon } from 'src/icons/SaveIcon';
 import { ScissorsIcon } from 'src/icons/ScissorsIcon';
+import { ScreenIcon } from 'src/icons/ScreenIcon';
 import { SearchIcon } from 'src/icons/SearchIcon';
 import { SettingsIcon } from 'src/icons/SettingsIcon';
 import { ShieldFillIcon } from 'src/icons/ShieldFillIcon';
@@ -644,6 +645,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <ScissorsIcon size={size} />
                 <span className={classes.iconName}>ScissorsIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <ScreenIcon size={size} />
+                <span className={classes.iconName}>ScreenIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <SearchIcon size={size} />
