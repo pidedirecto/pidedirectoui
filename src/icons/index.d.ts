@@ -122,6 +122,7 @@ export const RefreshIcon: SvgIcon
 export const RouteIcon: SvgIcon
 export const SaveIcon: SvgIcon
 export const ScissorsIcon: SvgIcon
+export const ScreenIcon: SvgIcon
 export const SearchIcon: SvgIcon
 export const SettingsIcon: SvgIcon
 export const ShieldIcon: SvgIcon

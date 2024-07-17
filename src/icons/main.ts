@@ -2,6 +2,7 @@
  * @prettier
  */
 
+
 export * from 'src/icons/AddElementIcon';
 export * from 'src/icons/AirTableIcon';
 export * from 'src/icons/ArrowDownIcon';
@@ -123,6 +124,7 @@ export * from 'src/icons/RefreshIcon';
 export * from 'src/icons/RouteIcon';
 export * from 'src/icons/SaveIcon';
 export * from 'src/icons/ScissorsIcon';
+export * from 'src/icons/ScreenIcon';
 export * from 'src/icons/SearchIcon';
 export * from 'src/icons/SettingsIcon';
 export * from 'src/icons/ShieldIcon';
