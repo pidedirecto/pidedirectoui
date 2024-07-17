@@ -17,7 +17,7 @@ export function TableBody({ virtualized, children, height, rowHeight }: Props): 
 }
 
 type Props = {
-    children: Array<React.ReactElement>;
+    children: React.ReactNode;
     virtualized?: boolean;
     height?: number;
     rowHeight?: number;

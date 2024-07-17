@@ -106,3 +106,17 @@
 .tableCheckboxContainer {
     transform: translateX(-16px);
 }
+
+.filterColumnsTableToolbarButton {
+    align-items: center;
+}
+
+.filterColumnsTableToolbarButtonDropdown {
+    max-height: 40vh !important;
+}
+
+.filterColumnsTableToolbarButtonDropdownItem {
+    display: flex;
+    flex-direction: row;
+    gap: 4px
+}

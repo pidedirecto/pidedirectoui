@@ -204,6 +204,13 @@ const meta: Meta<typeof Table> = {
             },
             control: false,
         },
+        filterColumns: {
+            description: 'Enables column filtering',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
         selectable: {
             description: 'Sets if table rows should be selectable',
             table: {
@@ -243,6 +250,21 @@ const meta: Meta<typeof Table> = {
             description: 'Function to be called when row is clicked',
             table: {
                 type: { summary: 'function' },
+            },
+            control: false,
+        },
+        filters: {
+            description: 'Filters object to enable filtering features',
+            table: {
+                type: { summary: 'object' },
+            },
+        },
+        //@ts-ignore
+        'filters.columns': {
+            description: 'Enables column filtering',
+            table: {
+                subcategory: 'Filters API',
+                type: { summary: 'boolean' },
             },
             control: false,
         },
@@ -423,6 +445,33 @@ export const CustomToolbar: Story = {
                 </Button>
             </>
         ),
+        rows: [
+            {
+                column1: 'Cell 1',
+                column2: 'Cell 2',
+                column3: 'Cell 3',
+            },
+            {
+                column1: 'Cell 4',
+                column2: 'Cell 5',
+                column3: 'Cell 6',
+            },
+            {
+                column1: 'Cell 7',
+                column2: 'Cell 8',
+                column3: 'Cell 9',
+            },
+        ],
+    },
+};
+
+export const FilterColumns: Story = {
+    args: {
+        ...meta.args,
+        onSelect: undefined,
+        filters: {
+            columns: true,
+        },
         rows: [
             {
                 column1: 'Cell 1',
