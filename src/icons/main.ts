@@ -2,6 +2,7 @@
  * @prettier
  */
 
+
 export * from 'src/icons/AddElementIcon';
 export * from 'src/icons/AirTableIcon';
 export * from 'src/icons/ArrowDownIcon';
@@ -124,6 +125,7 @@ export * from 'src/icons/RefreshIcon';
 export * from 'src/icons/RouteIcon';
 export * from 'src/icons/SaveIcon';
 export * from 'src/icons/ScissorsIcon';
+export * from 'src/icons/ScreenIcon';
 export * from 'src/icons/SearchIcon';
 export * from 'src/icons/SettingsIcon';
 export * from 'src/icons/ShieldIcon';
@@ -137,13 +139,13 @@ export * from 'src/icons/SuccessIcon';
 export * from 'src/icons/SwitchUserIcon';
 export * from 'src/icons/TableIcon';
 export * from 'src/icons/TerminalIcon';
+export * from 'src/icons/ThumbsUpIcon';
 export * from 'src/icons/TicketIcon';
 export * from 'src/icons/TicketsIcon';
 export * from 'src/icons/TransactionIcon';
 export * from 'src/icons/TrendingDownIcon';
 export * from 'src/icons/TrendingUpIcon';
 export * from 'src/icons/TrashCanIcon';
-export * from 'src/icons/ThumbsUpIcon';
 export * from 'src/icons/UnLockIcon';
 export * from 'src/icons/UploadIcon';
 export * from 'src/icons/UsbIcon';

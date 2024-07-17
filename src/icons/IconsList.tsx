@@ -124,6 +124,7 @@ import { RestoreIcon } from 'src/icons/RestoreIcon';
 import { RouteIcon } from 'src/icons/RouteIcon';
 import { SaveIcon } from 'src/icons/SaveIcon';
 import { ScissorsIcon } from 'src/icons/ScissorsIcon';
+import { ScreenIcon } from 'src/icons/ScreenIcon';
 import { SearchIcon } from 'src/icons/SearchIcon';
 import { SettingsIcon } from 'src/icons/SettingsIcon';
 import { ShieldFillIcon } from 'src/icons/ShieldFillIcon';
@@ -651,6 +652,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>ScissorsIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <ScreenIcon size={size} />
+                <span className={classes.iconName}>ScreenIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <SearchIcon size={size} />
                 <span className={classes.iconName}>SearchIcon</span>
             </div>
@@ -703,6 +708,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>TerminalIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <ThumbsUpIcon size={size} />
+                <span className={classes.iconName}>ThumbsUpIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <TicketIcon size={size} />
                 <span className={classes.iconName}>TicketIcon</span>
             </div>
@@ -725,10 +734,6 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <TrashCanIcon size={size} />
                 <span className={classes.iconName}>TrashCanIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <ThumbsUpIcon size={size} />
-                <span className={classes.iconName}>ThumbsUpIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <UnLockIcon size={size} />

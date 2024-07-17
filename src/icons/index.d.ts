@@ -123,6 +123,7 @@ export const RefreshIcon: SvgIcon
 export const RouteIcon: SvgIcon
 export const SaveIcon: SvgIcon
 export const ScissorsIcon: SvgIcon
+export const ScreenIcon: SvgIcon
 export const SearchIcon: SvgIcon
 export const SettingsIcon: SvgIcon
 export const ShieldIcon: SvgIcon
@@ -136,13 +137,13 @@ export const SuccessAlertIcon: SvgIcon
 export const SwitchUserIcon: SvgIcon
 export const TableIcon: SvgIcon
 export const TerminalIcon: SvgIcon
+export const ThumbsUpIcon: SvgIcon
 export const TicketIcon: SvgIcon
 export const TicketsIcon: SvgIcon
 export const TransactionIcon: SvgIcon
 export const TrendingDownIcon: SvgIcon
 export const TrendingUpIcon: SvgIcon
 export const TrashCanIcon: SvgIcon
-export const ThumbsUpIcon: SvgIcon
 export const UnLockIcon: SvgIcon
 export const UploadIcon: SvgIcon
 export const UsbIcon: SvgIcon
