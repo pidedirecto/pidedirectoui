@@ -20,4 +20,4 @@ export const formatAsCurrencyNumber: FormatAsCurrencyNumber
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/utils-formatasnumber--docs)
  */
-export const formatAsNumber: FormatAsCountryNumber
+export const formatAsCountryNumber: FormatAsCountryNumber
