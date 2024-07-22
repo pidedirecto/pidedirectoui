@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
@@ -68,5 +69,6 @@ export default defineConfig({
                 return { filePath: path.replace('src/', ''), content };
             },
         }),
+        nodePolyfills(),
     ],
 });
