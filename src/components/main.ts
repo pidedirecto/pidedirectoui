@@ -41,3 +41,4 @@ export * from 'src/components/RadioGroup';
 export * from 'src/components/Stepper';
 export * from 'src/components/ConfirmDialog';
 export * from 'src/components/TextArea';
+export * from 'src/components/ImageUpload';

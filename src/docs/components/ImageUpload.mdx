@@ -1,0 +1,76 @@
+import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+
+import * as ImageUploadStories from '../../stories/ImageUpload.stories';
+
+<Meta of={ImageUploadStories} />
+
+# ImageUpload
+Renders an image uploader.
+
+<Canvas of={ImageUploadStories.Primary} sourceState='none' />
+
+```tsx
+import { ImageUpload } from '@pidedirecto/ui';
+
+const [value, setValue] = useState<undefined | string>(undefined)
+
+return (
+    <ImageUpload label='Upload an image' value={value} onChange={(value) => setValue(value)} transformer={() => 'https://images.letseat.mx/4216ff96827304547af5a000cdd61d16.jpg'}>
+        <span>Upload or drop your images here</span>
+    </ImageUpload>
+)
+```
+
+This component requires 3 props `value` and `onChange` props are the typical input props, `value` indicates the current component value, and it should either undefined
+for an empty state or an url image string, this url should be a pidedirecto image url, any external url image will be ignored, the `onChange` prop will be call each time the user either
+removes the image or upload a new one; The third required prop is `transformer` this callback will receive as params the next object
+```ts
+Params = {
+    fileName: string;
+    imageBlob: Blob;
+    type: string;
+}
+```
+and it should return an url image string, so this function is in charge of transforming the raw data image to an url string.
+
+The content passed as children will be rendered when the input is waiting for the user to upload an image, so you can customize this content as you wish.
+
+## Dimensions validation
+
+if you would like to validate the dimensions of the uploaded image you can pass a `dimensions` object like this, the values passed should be in pixels.
+```ts
+dimensions?: {
+    maxWidth?: number;
+    minWidth?: number;
+    maxHeight?: number;
+    minHeight?: number;
+};
+```
+
+If any the of the dimensions is not respected the `onDimensionsError` prop will be called, sou you can use it to display any error message.
+
+```tsx
+import { ImageUpload } from '@pidedirecto/ui';
+
+const [value, setValue] = useState<undefined | string>(undefined)
+const [error, setError] = useState(false)
+
+return (
+    <ImageUpload
+        label='Upload an image'
+        value={value}
+        onChange={(value) => setValue(value)}
+        transformer={() => 'https://images.letseat.mx/4216ff96827304547af5a000cdd61d16.jpg'}
+        dimensions={{ maxHeight: 1000 }}
+        onDimensionsError={() => setError(true)}
+    >
+        <span>Upload or drop your images here</span>
+        {error && <span>Wrong dimensions</span>}
+    </ImageUpload>
+)
+```
+
+## API
+
+<ArgTypes of={ImageUploadStories} />
+

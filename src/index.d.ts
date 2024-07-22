@@ -37,6 +37,7 @@ import { RadioGroup } from "src/types/components/RadioGroup";
 import { Stepper } from "src/types/components/Stepper";
 import { ConfirmDialog } from "src/types/components/ConfirmDialog";
 import { TextArea } from "src/types/components/TextArea";
+import { ImageUpload } from "src/types/components/ImageUpload";
 
 /**
  * Renders Checkbox
@@ -310,3 +311,10 @@ export const TextArea: TextArea
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-loader--docs)
  */
 export const Loader: Loader
+
+/**
+ * Renders Image Uploader
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-imageupload--docs)
+ */
+export const ImageUpload: ImageUpload
