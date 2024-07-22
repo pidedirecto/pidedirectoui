@@ -24,19 +24,27 @@
 }
 
 .errorButton {
-    background-color: var(--surface-brand-contrast);
+    background-color: var(--text-danger);
 }
 
 .errorButton:hover{
-    background-color: var(--surface-brand-heavy-contrast);
+    background-color: var(--red300);
 }
 
 .warningButton {
     background-color: var(--text-warning);
 }
 
+.warningButton:hover{
+    background-color: var(--orange300);
+}
+
 .successButton {
-    background-color: var(--surface-brand-contrast);
+    background-color: var(--green600);
+}
+
+.successButton:hover{
+    background-color: var(--green700);
 }
 
 .dialog {
