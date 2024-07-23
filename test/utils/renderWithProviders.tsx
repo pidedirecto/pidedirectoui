@@ -3,7 +3,8 @@
  */
 import { render } from '@testing-library/react';
 
-export function renderWithProviders(ui: any, { initialState, history, ...renderOptions }: Props) {
+export function renderWithProviders(ui: any, props?: Props) {
+    const { initialState, history, ...renderOptions } = props ?? {};
     function Wrapper({ children }: any) {
         return children;
     }
@@ -12,7 +13,7 @@ export function renderWithProviders(ui: any, { initialState, history, ...renderO
 }
 
 type Props = {
-    initialState: any;
-    store: any;
-    history: any;
+    initialState?: any;
+    store?: any;
+    history?: any;
 };
