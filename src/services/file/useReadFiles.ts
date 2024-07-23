@@ -42,7 +42,7 @@ export function useReadFiles() {
 
     const readFiles = async (files: FileList) => {
         const result: Array<{ data: ArrayBuffer; file: File }> = [];
-        for (const file of files as any) {
+        for (const file of Array.from(files) as any) {
             const fileTransformed = await readFile(file);
             result.push({ data: fileTransformed, file });
         }
