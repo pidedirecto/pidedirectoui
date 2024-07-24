@@ -126,7 +126,7 @@ export function ImageUpload({
                 </div>
                 <div className={classNames(classes.imageContainer, classesProp?.imageContainer)} onClick={openFileExplorer}>
                     <Image src={value} size={ImageSizes.SMALL} className={classes.image} />
-                    <Text>{value}</Text>
+                    <Text className={classes.imageUrl}>{value}</Text>
                     <Button variant='icon' onClick={() => onChange(undefined)} disabled={disabled}>
                         <CrossIcon size={16} />
                     </Button>
