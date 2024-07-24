@@ -8,6 +8,7 @@ import { SelectableList } from 'src/components/SelectableList';
 import { FormContext } from 'src/form/Form';
 import { FormSelectableListProps } from 'src/types/form/FormSelectableList';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormSelectableList({
     name,
@@ -40,7 +41,7 @@ export function FormSelectableList({
             name={name}
             render={({ onChange, onBlur, value, name }) => (
                 <SelectableList
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     multiselectable={multiselectable}
                     searchable={searchable}
                     virtualized={virtualized}

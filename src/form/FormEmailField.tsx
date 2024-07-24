@@ -8,6 +8,7 @@ import { Input } from 'src/components/Input';
 import { FormContext } from 'src/form/Form';
 import { FormEmailFieldProps } from 'src/types/form/FormEmailField';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormEmailField({ name, label, helperText, defaultValue, disabled, tooltip, required, emailErrorMessage, rules, inputProps }: FormEmailFieldProps): React.ReactElement {
     const {
@@ -27,7 +28,7 @@ export function FormEmailField({ name, label, helperText, defaultValue, disabled
                 <Input
                     {...inputProps}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onBlur={onBlur}
                     value={value}
                     onChange={(value: string) => {

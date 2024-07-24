@@ -10,6 +10,7 @@ import classes from 'src/styles/form/formCurrencyNumberStringField.module.css';
 import { FormCurrencyNumberStringFieldProps } from 'src/types/form/FormCurrencyNumberStringField';
 import { classNames } from 'src/utils/css/classNames';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 import { transformCurrencyNumberStringInput } from 'src/utils/form/transformCurrencyNumberStringInput';
 import { transformCurrencyNumberStringOutput } from 'src/utils/form/transformCurrencyNumberStringOutput';
 
@@ -47,7 +48,7 @@ export function FormCurrencyNumberStringField({
                     {...inputProps}
                     classes={{ ...(inputProps?.classes ?? {}), input: classNames(classes.input, inputProps?.classes?.input) }}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onBlur={onBlur}
                     value={transformCurrencyNumberStringInput(value, { country, maximumFractionDigits: maximumDigits })}
                     onChange={(value: string) => {

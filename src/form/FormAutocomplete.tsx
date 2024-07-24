@@ -8,6 +8,7 @@ import { Autocomplete } from 'src/components/Autocomplete';
 import { FormContext } from 'src/form/Form';
 import { FormAutocompleteProps } from 'src/types/form/FormAutocomplete';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormAutocomplete({
     label,
@@ -41,7 +42,7 @@ export function FormAutocomplete({
             render={({ onChange, name }) => (
                 <Autocomplete
                     name={name}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     placeholder={placeholder}
                     helperText={helperText}
                     data={data}

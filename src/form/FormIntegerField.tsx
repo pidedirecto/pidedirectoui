@@ -10,6 +10,7 @@ import classes from 'src/styles/form/formIntegerFieldProps.module.css';
 import { FormIntegerFieldProps } from 'src/types/form/FormIntegerField';
 import { classNames } from 'src/utils/css/classNames';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 import { transformIntegerInput } from 'src/utils/form/transformIntegerInput';
 import { transformIntegerOutput } from 'src/utils/form/transformIntegerOutput';
 
@@ -31,7 +32,7 @@ export function FormIntegerField({ name, label, helperText, defaultValue, disabl
                 <Input
                     {...inputProps}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onBlur={onBlur}
                     value={transformIntegerInput(value)}
                     onChange={(value: string) => {

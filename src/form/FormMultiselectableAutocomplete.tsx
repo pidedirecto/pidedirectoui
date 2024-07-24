@@ -8,6 +8,7 @@ import { MultiselectableAutocomplete } from 'src/components/MultiselectableAutoc
 import { FormContext } from 'src/form/Form';
 import { FormMultiselectableAutocompleteProps } from 'src/types/form/FormMultiselectableAutocomplete';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormMultiselectableAutocomplete({
     label,
@@ -45,7 +46,7 @@ export function FormMultiselectableAutocomplete({
             render={({ onChange, value, name }) => (
                 <MultiselectableAutocomplete
                     name={name}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     placeholder={placeholder}
                     helperText={helperText}
                     selectAllOption={selectAllOption}

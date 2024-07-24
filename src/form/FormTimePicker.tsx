@@ -8,6 +8,7 @@ import { TimePicker } from 'src/components/TimePicker';
 import { FormContext } from 'src/form/Form';
 import { FormTimePickerProps } from 'src/types/form/FormTimePicker';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormTimePicker({ name, label, helperText, defaultValue, disabled, required, hoursAsValue, rules, classes }: FormTimePickerProps): React.ReactElement {
     const {
@@ -38,7 +39,7 @@ export function FormTimePicker({ name, label, helperText, defaultValue, disabled
             render={({ onChange, value, onBlur, name, ref }) => (
                 <TimePicker
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     value={hoursAsValue ? formatHoursToDate(value) : value}
                     onChange={(value: Date | undefined, hours: string | undefined) => {
                         onChange(hoursAsValue ? hours ?? null : value ?? null);

@@ -8,6 +8,7 @@ import { Input } from 'src/components/Input';
 import { FormContext } from 'src/form/Form';
 import { FormUsernameFieldProps } from 'src/types/form/FormUsernameField';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormUsernameField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps, placeholder }: FormUsernameFieldProps): React.ReactElement {
     const {
@@ -27,7 +28,7 @@ export function FormUsernameField({ name, label, helperText, defaultValue, disab
                 <Input
                     {...inputProps}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onBlur={onBlur}
                     value={value}
                     placeholder={placeholder}

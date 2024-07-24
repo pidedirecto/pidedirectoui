@@ -8,6 +8,7 @@ import { TextArea } from 'src/components/TextArea';
 import { FormContext } from 'src/form/Form';
 import { FormTextAreaFieldProps } from 'src/types/form/FormTextAreaField';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormTextAreaField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormTextAreaFieldProps): React.ReactElement {
     const {
@@ -27,7 +28,7 @@ export function FormTextAreaField({ name, label, helperText, defaultValue, disab
                 <TextArea
                     {...inputProps}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onBlur={onBlur}
                     value={value ?? ''}
                     onChange={(value: string) => {

@@ -9,6 +9,7 @@ import { DatePicker } from 'src/components/DatePicker';
 import { FormContext } from 'src/form/Form';
 import { FormDatePickerProps } from 'src/types/form/FormDatePicker';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 import play = Simulate.play;
 
@@ -29,7 +30,7 @@ export function FormDatePicker({ name, label, helperText, defaultValue, disabled
             render={({ onChange, value, onBlur, name, ref }) => (
                 <DatePicker
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     value={value}
                     onChange={(value: Date | undefined) => {
                         onChange(value ?? null);

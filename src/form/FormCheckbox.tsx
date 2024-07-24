@@ -8,6 +8,7 @@ import { Checkbox } from 'src/components/Checkbox';
 import { FormContext } from 'src/form/Form';
 import { FormCheckboxProps } from 'src/types/form/FormCheckbox';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormCheckbox({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormCheckboxProps): React.ReactElement {
     const {
@@ -27,7 +28,7 @@ export function FormCheckbox({ name, label, helperText, defaultValue, disabled, 
                 <Checkbox
                     {...inputProps}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onBlur={onBlur}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                         onChange(e.target.checked);

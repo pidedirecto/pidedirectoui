@@ -8,6 +8,7 @@ import { DateTimePicker } from 'src/components/DateTimePicker';
 import { FormContext } from 'src/form/Form';
 import { FormDateTimePickerProps } from 'src/types/form/FormDateTimePicker';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormDateTimePicker({ name, label, helperText, defaultValue, disabled, required, rules, classes }: FormDateTimePickerProps): React.ReactElement {
     const {
@@ -26,7 +27,7 @@ export function FormDateTimePicker({ name, label, helperText, defaultValue, disa
             render={({ onChange, value, onBlur, name, ref }) => (
                 <DateTimePicker
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     value={value}
                     onChange={(value: Date | undefined) => {
                         onChange(value ?? null);

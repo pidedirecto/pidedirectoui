@@ -10,6 +10,7 @@ import classes from 'src/styles/form/formColorField.module.css';
 import { FormColorFieldProps } from 'src/types/form/FormColorField';
 import { classNames } from 'src/utils/css/classNames';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormColorField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormColorFieldProps): React.ReactElement {
     const {
@@ -29,7 +30,7 @@ export function FormColorField({ name, label, helperText, defaultValue, disabled
                 <Input
                     {...inputProps}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onBlur={onBlur}
                     value={value}
                     onChange={(value: string) => {

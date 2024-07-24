@@ -8,6 +8,7 @@ import { Switch } from 'src/components/Switch';
 import { FormContext } from 'src/form/Form';
 import { FormSwitchProps } from 'src/types/form/FormSwitch';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormSwitch({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps }: FormSwitchProps): React.ReactElement {
     const {
@@ -27,7 +28,7 @@ export function FormSwitch({ name, label, helperText, defaultValue, disabled, to
                 <Switch
                     {...inputProps}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onBlur={onBlur}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                         onChange(e.target.checked);

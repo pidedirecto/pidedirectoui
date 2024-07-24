@@ -11,6 +11,7 @@ import { InputProps } from 'src/types/components/Input';
 import { FormPercentNumberFieldProps } from 'src/types/form/FormPercentNumberField';
 import { classNames } from 'src/utils/css/classNames';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 import { transformPercentNumberInput } from 'src/utils/form/transformPercentNumberInput';
 import { transformPercentNumberOutput } from 'src/utils/form/transformPercentNumberOutput';
 
@@ -33,7 +34,7 @@ export function FormPercentNumberField({ name, label, helperText, defaultValue, 
                     {...inputProps}
                     classes={{ ...(inputProps?.classes ?? {}), input: classNames(classes.input, inputProps?.classes?.input) }}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onBlur={onBlur}
                     value={transformPercentNumberInput(value)}
                     onChange={(value: string) => {

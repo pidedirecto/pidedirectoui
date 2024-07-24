@@ -8,6 +8,7 @@ import { Input } from 'src/components/Input';
 import { FormContext } from 'src/form/Form';
 import { FormTextFieldProps } from 'src/types/form/FormTextField';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormTextField({ name, label, helperText, defaultValue, disabled, tooltip, required, rules, inputProps, placeholder }: FormTextFieldProps): React.ReactElement {
     const {
@@ -27,7 +28,7 @@ export function FormTextField({ name, label, helperText, defaultValue, disabled,
                 <Input
                     {...inputProps}
                     inputRef={ref}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onBlur={onBlur}
                     value={value}
                     placeholder={placeholder}

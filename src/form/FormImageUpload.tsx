@@ -6,6 +6,7 @@ import { Controller, useFormContext } from 'react-hook-form';
 import { ImageUpload } from 'src/components/ImageUpload';
 import { FormImageUploadProps } from 'src/types/form/FormImageUpload';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormImageUpload({
     name,
@@ -40,7 +41,7 @@ export function FormImageUpload({
                     value={value}
                     onChange={onChange}
                     transformer={transformer}
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     tooltip={tooltip}
                     disabled={disabled}
                     dimensions={dimensions}

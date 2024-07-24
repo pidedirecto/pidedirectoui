@@ -6,6 +6,7 @@ import { Controller, useFormContext } from 'react-hook-form';
 import { RadioGroup } from 'src/components/RadioGroup';
 import { FormRadioGroupProps } from 'src/types/form/FormRadioGroup';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormRadioGroup({ name, label, defaultValue, tooltip, helperText, required, rules, children }: FormRadioGroupProps): React.ReactElement {
     const {
@@ -22,7 +23,7 @@ export function FormRadioGroup({ name, label, defaultValue, tooltip, helperText,
             name={name}
             render={({ onChange, value, name }) => (
                 <RadioGroup
-                    label={required ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     onChange={(value: any) => {
                         onChange(value);
                     }}
