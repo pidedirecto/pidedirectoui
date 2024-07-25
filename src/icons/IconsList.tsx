@@ -173,16 +173,16 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>AirTableIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <AmbitIcon size={size} />
+                <span className={classes.iconName}>AmbitIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <ArrowDownIcon size={size} />
                 <span className={classes.iconName}>ArrowDownIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <ArrowUpIcon size={size} />
                 <span className={classes.iconName}>ArrowUpIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
-                <AmbitIcon size={size} />
-                <span className={classes.iconName}>AmbitIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <BackArrowIcon size={size} />
