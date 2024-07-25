@@ -2,11 +2,11 @@
  * @prettier
  */
 
-
 export * from 'src/icons/AddElementIcon';
 export * from 'src/icons/AirTableIcon';
 export * from 'src/icons/ArrowDownIcon';
 export * from 'src/icons/ArrowUpIcon';
+export * from 'src/icons/AmbitIcon';
 export * from 'src/icons/BackArrowIcon';
 export * from 'src/icons/BagIcon';
 export * from 'src/icons/BarChartIcon';

@@ -4,6 +4,7 @@ export const AddElementIcon: SvgIcon
 export const AirTableIcon: SvgIcon
 export const ArrowDownIcon: SvgIcon
 export const ArrowUpIcon: SvgIcon
+export const AmbitIcon: SvgIcon
 export const BackArrowIcon: SvgIcon
 export const BagIcon: SvgIcon
 export const BarChartIcon: SvgIcon

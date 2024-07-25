@@ -4,6 +4,7 @@
 import * as React from 'react';
 import { AddElementIcon } from 'src/icons/AddElementIcon';
 import { AirTableIcon } from 'src/icons/AirTableIcon';
+import { AmbitIcon } from 'src/icons/AmbitIcon';
 import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
 import { ArrowUpIcon } from 'src/icons/ArrowUpIcon';
 import { BackArrowIcon } from 'src/icons/BackArrowIcon';
@@ -178,6 +179,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <ArrowUpIcon size={size} />
                 <span className={classes.iconName}>ArrowUpIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <AmbitIcon size={size} />
+                <span className={classes.iconName}>AmbitIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <BackArrowIcon size={size} />
