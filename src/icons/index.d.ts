@@ -2,6 +2,7 @@ import { SvgIcon } from "src/types/icons/SvgIcon";
 
 export const AddElementIcon: SvgIcon
 export const AirTableIcon: SvgIcon
+export const AmbitIcon: SvgIcon
 export const ArrowDownIcon: SvgIcon
 export const ArrowUpIcon: SvgIcon
 export const BackArrowIcon: SvgIcon
