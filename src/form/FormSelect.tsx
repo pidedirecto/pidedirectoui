@@ -8,6 +8,7 @@ import { Select } from 'src/components/Select';
 import { FormContext } from 'src/form/Form';
 import { FormSelectProps } from 'src/types/form/FormSelect';
 import { getError } from 'src/utils/form/getError';
+import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 export function FormSelect({ name, label, defaultValue, disabled, tooltip, required, options, multiselectable, preventClose, placeholder }: FormSelectProps): React.ReactElement {
     const {
@@ -32,7 +33,7 @@ export function FormSelect({ name, label, defaultValue, disabled, tooltip, requi
             render={({ onChange, value, name }) => (
                 <Select
                     value={value}
-                    label={required && !!label ? `${label}*` : label}
+                    label={getFormFieldLabel(required, label)}
                     placeholder={placeholder}
                     options={options}
                     multiselectable={multiselectable}
