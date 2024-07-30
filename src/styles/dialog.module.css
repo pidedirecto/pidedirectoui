@@ -61,6 +61,7 @@
     overflow-y: visible;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .dialogContent[data-position="right"] {
