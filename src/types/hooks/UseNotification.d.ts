@@ -1,6 +1,5 @@
 /**
  * @prettier
  */
-import { Notification } from 'src/types/Notification';
 
-export type UseNotification = () => (notification: Omit<Notification, 'notificationId'>) => void;
+export type UseNotification = () => (notification: { message: string; timeOpened?: number }) => void;
