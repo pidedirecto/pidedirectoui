@@ -8,7 +8,7 @@ import { FormRadioGroupProps } from 'src/types/form/FormRadioGroup';
 import { getError } from 'src/utils/form/getError';
 import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
-export function FormRadioGroup({ name, label, defaultValue, tooltip, helperText, required, rules, children }: FormRadioGroupProps): React.ReactElement {
+export function FormRadioGroup({ name, label, defaultValue, tooltip, helperText, required, rules, orientation, children }: FormRadioGroupProps): React.ReactElement {
     const {
         errors,
         control,
@@ -32,6 +32,7 @@ export function FormRadioGroup({ name, label, defaultValue, tooltip, helperText,
                     tooltip={tooltip}
                     helperText={error?.message ?? helperText}
                     error={!!error}
+                    orientation={orientation}
                 >
                     {children}
                 </RadioGroup>

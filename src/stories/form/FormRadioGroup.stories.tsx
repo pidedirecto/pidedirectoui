@@ -56,6 +56,13 @@ const meta: Meta<typeof FormRadioGroup> = {
                 type: { summary: 'string' },
             },
         },
+        orientation: {
+            description: 'Defines the radios orientations.',
+            table: {
+                type: { summary: 'horizontal | vertical' },
+            },
+            control: false,
+        },
         rules: {
             description: createLink('https://react-hook-form.com/docs/useform/register#options', 'Rules object'),
             table: {
