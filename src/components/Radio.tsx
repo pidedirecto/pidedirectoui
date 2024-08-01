@@ -22,7 +22,7 @@ export function Radio({ value, label, checked, tooltip, disabled, onChange, inpu
     };
 
     const getChecked = () => {
-        if (!radioGroupContext.value) return checked;
+        if (radioGroupContext.value === null || radioGroupContext.value === undefined) return checked;
         return checked || radioGroupContext.value === value;
     };
 
