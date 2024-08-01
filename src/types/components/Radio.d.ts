@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { HTMLProps } from "react";
 
-export type RadioProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'onChange' | 'type' | 'name'> & {
+export type RadioProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'onChange' | 'type' | 'name' | 'value'> & {
     value: any,
     checked?: boolean,
     label: string,
