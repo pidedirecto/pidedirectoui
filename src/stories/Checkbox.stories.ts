@@ -55,6 +55,20 @@ const meta: Meta<typeof Checkbox> = {
             },
             control: false,
         },
+        error: {
+            description: 'Sets error state',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        inputRef: {
+            description: 'Checkbox input ref',
+            table: {
+                type: { summary: 'React.ref' },
+            },
+            control: false,
+        },
         checked: {
             description: 'Controls the checked stated of the checkbox',
             table: {
