@@ -33,6 +33,7 @@ export function Radio({ value, label, checked, tooltip, helperText, disabled, on
                 {...props}
                 checked={getChecked()}
                 id={id ?? `${value}-radio`}
+                aria-describedby={helperText ? `${value}-radio-helperText` : ''}
                 type='radio'
                 name={radioGroupContext.name}
                 value={value}
@@ -48,7 +49,7 @@ export function Radio({ value, label, checked, tooltip, helperText, disabled, on
                     </Label>
                     {!!tooltip && <Tooltip text={tooltip} />}
                 </div>
-                {!!helperText && <HelperText>{helperText}</HelperText>}
+                {!!helperText && <HelperText id={`${value}-radio-helperText`}>{helperText}</HelperText>}
             </div>
         </div>
     );
