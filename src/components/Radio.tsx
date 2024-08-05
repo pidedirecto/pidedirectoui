@@ -3,6 +3,7 @@
  */
 import * as React from 'react';
 import { useContext } from 'react';
+import { HelperText } from 'src/components/HelperText';
 import { Label } from 'src/components/Label';
 import { RadioGroupContext } from 'src/components/RadioGroup';
 import { Tooltip } from 'src/components/Tooltip';
@@ -11,7 +12,7 @@ import classes from 'src/styles/radio.module.css';
 import { RadioProps } from 'src/types/components/Radio';
 import { classNames } from 'src/utils/css/classNames';
 
-export function Radio({ value, label, checked, tooltip, disabled, onChange, inputRef, id, classes: classesProp, ...props }: RadioProps): React.ReactElement {
+export function Radio({ value, label, checked, tooltip, helperText, disabled, onChange, inputRef, id, classes: classesProp, ...props }: RadioProps): React.ReactElement {
     const createUserClickedRadioLogEvent = useCreateUserClickedRadioLogEvent();
     const radioGroupContext = useContext(RadioGroupContext);
 
@@ -40,11 +41,14 @@ export function Radio({ value, label, checked, tooltip, disabled, onChange, inpu
                 onChange={handleChange}
                 className={classNames(classes.input, classesProp?.input)}
             />
-            <div className={classes.labelContainer}>
-                <Label classes={{ label: classesProp?.label }} htmlFor={id ?? `${value}-radio`}>
-                    {label}
-                </Label>
-                {!!tooltip && <Tooltip text={tooltip} />}
+            <div className={classes.infoContainer}>
+                <div className={classes.labelContainer}>
+                    <Label classes={{ label: classesProp?.label }} htmlFor={id ?? `${value}-radio`}>
+                        {label}
+                    </Label>
+                    {!!tooltip && <Tooltip text={tooltip} />}
+                </div>
+                {!!helperText && <HelperText>{helperText}</HelperText>}
             </div>
         </div>
     );

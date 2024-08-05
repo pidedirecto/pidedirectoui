@@ -33,6 +33,13 @@ const meta: Meta<typeof Radio> = {
             },
             control: false,
         },
+        helperText: {
+            description: 'Radio helper text',
+            table: {
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         disabled: {
             description: 'Disables the radio',
             table: {
