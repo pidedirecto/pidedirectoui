@@ -73,6 +73,7 @@ export const FlappyDiskIcon: SvgIcon
 export const FoldersIcon: SvgIcon
 export const FoodBagIcon: SvgIcon
 export const GearIcon: SvgIcon
+export const GiftIcon: SvgIcon
 export const GramsIcon: SvgIcon
 export const GridIcon: SvgIcon
 export const HistoryIcon: SvgIcon

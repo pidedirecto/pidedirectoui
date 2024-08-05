@@ -75,6 +75,7 @@ import { FoldersIcon } from 'src/icons/FoldersIcon';
 import { FoodBagIcon } from 'src/icons/FoodBagIcon';
 import { FoodBoxIcon } from 'src/icons/FoodBoxIcon';
 import { GearIcon } from 'src/icons/GearIcon';
+import { GiftIcon } from 'src/icons/GiftIcon';
 import { GramsIcon } from 'src/icons/GramsIcon';
 import { GridIcon } from 'src/icons/GridIcon';
 import { HistoryIcon } from 'src/icons/HistoryIcon';
@@ -459,6 +460,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <GearIcon size={size} />
                 <span className={classes.iconName}>GearIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <GiftIcon size={size} />
+                <span className={classes.iconName}>GiftIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <GramsIcon size={size} />

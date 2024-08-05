@@ -75,6 +75,7 @@ export * from 'src/icons/FlappyDiskIcon';
 export * from 'src/icons/FoldersIcon';
 export * from 'src/icons/FoodBagIcon';
 export * from 'src/icons/GearIcon';
+export * from 'src/icons/GiftIcon';
 export * from 'src/icons/GramsIcon';
 export * from 'src/icons/GridIcon';
 export * from 'src/icons/HistoryIcon';
