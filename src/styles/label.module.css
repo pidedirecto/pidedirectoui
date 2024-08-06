@@ -2,6 +2,7 @@
     font-size: var(--font-size-regular);
     font-family: var(--font-regular);
     color: var(--text-primary);
+    padding: 0;
 }
 
 .label[for] {
