@@ -61,17 +61,6 @@ const meta: Meta<typeof Radio> = {
             },
             control: false,
         },
-        onChange: {
-            description: 'Function to be called when the checked stated of the radio changes',
-            type: {
-                required: false,
-                name: 'function',
-            },
-            table: {
-                type: { summary: 'function' },
-            },
-            control: false,
-        },
         classes: {
             description: 'Classes object to override radio style',
             table: {
@@ -112,6 +101,5 @@ type Story = StoryObj<typeof Radio>;
 export const Primary: Story = {
     args: {
         ...meta.args,
-        onChange: undefined,
     },
 };

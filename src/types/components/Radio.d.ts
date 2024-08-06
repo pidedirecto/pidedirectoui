@@ -8,7 +8,6 @@ export type RadioProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'onChan
     tooltip?: string,
     helperText?: string,
     disabled?:boolean,
-    onChange?: (checked: boolean, e: React.ChangeEvent<HTMLInputElement>) => void | Promise<void>,
     inputRef?: React.Ref<HTMLInputElement>,
     classes?: {
         container?: string,

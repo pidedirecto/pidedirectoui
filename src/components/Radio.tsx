@@ -12,13 +12,12 @@ import classes from 'src/styles/radio.module.css';
 import { RadioProps } from 'src/types/components/Radio';
 import { classNames } from 'src/utils/css/classNames';
 
-export function Radio({ value, label, checked, tooltip, helperText, disabled, onChange, inputRef, id, classes: classesProp, ...props }: RadioProps): React.ReactElement {
+export function Radio({ value, label, checked, tooltip, helperText, disabled, inputRef, id, classes: classesProp, ...props }: RadioProps): React.ReactElement {
     const createUserClickedRadioLogEvent = useCreateUserClickedRadioLogEvent();
     const radioGroupContext = useContext(RadioGroupContext);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleClick = () => {
         createUserClickedRadioLogEvent(label ?? '');
-        onChange?.(e.target.checked, e);
         radioGroupContext.onChange?.(value);
     };
 
@@ -39,7 +38,7 @@ export function Radio({ value, label, checked, tooltip, helperText, disabled, on
                 value={value}
                 disabled={disabled}
                 ref={inputRef}
-                onChange={handleChange}
+                onClick={handleClick}
                 className={classNames(classes.input, classesProp?.input)}
             />
             <div className={classes.infoContainer}>
