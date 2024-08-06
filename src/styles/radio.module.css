@@ -21,6 +21,7 @@
     width: 20px;
     height: 20px;
     color: var(--surface-brand-contrast);
+    background-color: white;
     appearance: none;
     border: 2px solid var(--border-primary);
     border-radius: 20px;

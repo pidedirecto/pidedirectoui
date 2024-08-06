@@ -92,6 +92,14 @@ const meta: Meta<typeof Radio> = {
             },
             control: false,
         },
+        'classes.helperText': {
+            description: 'CSS class to override the helper text style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
     },
 };
 export default meta;

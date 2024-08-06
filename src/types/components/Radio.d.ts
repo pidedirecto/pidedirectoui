@@ -13,6 +13,7 @@ export type RadioProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'onChan
         container?: string,
         label?: string,
         input?: string,
+        helperText?: string,
     },
 }
 

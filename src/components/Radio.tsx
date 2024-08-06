@@ -48,7 +48,11 @@ export function Radio({ value, label, checked, tooltip, helperText, disabled, in
                     </Label>
                     {!!tooltip && <Tooltip text={tooltip} />}
                 </div>
-                {!!helperText && <HelperText id={`${value}-radio-helperText`}>{helperText}</HelperText>}
+                {!!helperText && (
+                    <HelperText id={`${value}-radio-helperText`} classes={{ helperText: classesProp?.helperText }}>
+                        {helperText}
+                    </HelperText>
+                )}
             </div>
         </div>
     );
