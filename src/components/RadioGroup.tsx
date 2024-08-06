@@ -12,11 +12,13 @@ import { classNames } from 'src/utils/css/classNames';
 
 export function RadioGroup({ label, value, onChange, name, tooltip, helperText, error, children, orientation = 'vertical', classes: classesProp }: RadioGroupProps): React.ReactElement {
     return (
-        <div className={classNames(classes.container, classesProp?.container)}>
+        <fieldset className={classNames(classes.container, classesProp?.container)}>
             {!!label && (
                 <div className={classes.labelContainer}>
                     <div className={classes.label}>
-                        <Label error={error}>{label}</Label>
+                        <Label variant='legend' error={error}>
+                            {label}
+                        </Label>
                         {!!tooltip && <Tooltip text={tooltip} />}
                     </div>
                     {!!helperText && <HelperText error={error}>{helperText}</HelperText>}
@@ -25,7 +27,7 @@ export function RadioGroup({ label, value, onChange, name, tooltip, helperText, 
             <RadioGroupContext.Provider value={{ name, value, onChange }}>
                 <div className={classNames(classes.radiosContainer, orientation === 'horizontal' && classes.radiosContainerHorizontal)}>{children}</div>
             </RadioGroupContext.Provider>
-        </div>
+        </fieldset>
     );
 }
 
