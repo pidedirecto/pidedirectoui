@@ -151,6 +151,7 @@ export * from 'src/icons/UnLockIcon';
 export * from 'src/icons/UploadIcon';
 export * from 'src/icons/UsbIcon';
 export * from 'src/icons/UserIcon';
+export * from 'src/icons/UserBadgeIcon';
 export * from 'src/icons/UsersIcon';
 export * from 'src/icons/VideoIcon';
 export * from 'src/icons/WarningIcon';
