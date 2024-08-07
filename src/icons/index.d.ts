@@ -150,6 +150,7 @@ export const UnLockIcon: SvgIcon
 export const UploadIcon: SvgIcon
 export const UsbIcon: SvgIcon
 export const UserIcon: SvgIcon
+export const UserBadgeIcon: SvgIcon
 export const UsersIcon: SvgIcon
 export const VideoIcon: SvgIcon
 export const WarningIcon: SvgIcon

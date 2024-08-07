@@ -150,6 +150,7 @@ import { TrendingUpIcon } from 'src/icons/TrendingUpIcon';
 import { UnLockIcon } from 'src/icons/UnLockIcon';
 import { UploadIcon } from 'src/icons/UploadIcon';
 import { UsbIcon } from 'src/icons/UsbIcon';
+import { UserBadgeIcon } from 'src/icons/UserBadgeIcon';
 import { UserIcon } from 'src/icons/UserIcon';
 import { UsersIcon } from 'src/icons/UsersIcon';
 import { VideoIcon } from 'src/icons/VideoIcon';
@@ -760,6 +761,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <UserIcon size={size} />
                 <span className={classes.iconName}>UserIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <UserBadgeIcon size={size} />
+                <span className={classes.iconName}>UserBadgeIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <UsersIcon size={size} />
