@@ -5,18 +5,15 @@ import * as React from 'react';
 import { useContext } from 'react';
 import { TableContext } from 'src/components/Table';
 import { TableCheckbox } from 'src/components/table/TableCheckbox';
-import { useTableStore } from 'src/components/table/tableStore';
+import { useFilteredTableColumns } from 'src/components/table/utils/useFilteredTableColumns';
 import classes from 'src/styles/table.module.css';
 import { TableColumn, TableProps, TableRow } from 'src/types/components/Table';
 import { classNames } from 'src/utils/css/classNames';
 
 export function TableRows({ rows, onRowClick }: Props): React.ReactElement {
-    const { columns, tableId, selectable, onSelect, classes: classesProp } = useContext(TableContext);
+    const { tableId, selectable, onSelect, classes: classesProp } = useContext(TableContext);
 
-    const hiddenColumnIds = useTableStore((state) => state.hiddenColumnIds);
-
-    const tableHiddenColumnIds = hiddenColumnIds.find((hiddenColumnIds) => hiddenColumnIds.tableId === tableId);
-    const filteredColumns = columns.filter((column) => !tableHiddenColumnIds?.hiddenColumnIds.includes(column.id));
+    const filteredColumns = useFilteredTableColumns();
 
     return (
         <>

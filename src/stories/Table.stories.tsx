@@ -12,7 +12,6 @@ import { RefreshIcon } from 'src/icons/RefreshIcon';
 const meta: Meta<typeof Table> = {
     component: Table,
     args: {
-        onRowClick: undefined,
         columns: [
             {
                 id: 'column1',
@@ -47,6 +46,8 @@ const meta: Meta<typeof Table> = {
                 column3: 'Cell 9',
             },
         ],
+        onRowClick: undefined,
+        onSelect: undefined,
     },
     argTypes: {
         columns: {
@@ -148,24 +149,119 @@ const meta: Meta<typeof Table> = {
             },
             control: false,
         },
-        title: {
-            description: 'Table title',
+        options: {
+            description: 'options object',
             table: {
+                type: { summary: 'object' },
+            },
+            control: false,
+        },
+        // @ts-ignore
+        'options.searchable': {
+            description: 'Sets if table should be searchable',
+            table: {
+                subcategory: 'Options API',
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        'options.selectable': {
+            description: 'Sets if table rows should be selectable',
+            table: {
+                subcategory: 'Options API',
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        'options.hideHeaders': {
+            description: 'Hides table headers',
+            table: {
+                subcategory: 'Options API',
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        'options.virtualized': {
+            description: 'Enables table virtualization',
+            table: {
+                subcategory: 'Options API',
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        'options.contentHeight': {
+            description: 'Table body height, required when table is virtualized',
+            table: {
+                subcategory: 'Options API',
+                type: { summary: 'number' },
+            },
+            control: false,
+        },
+        'options.rowHeight': {
+            description: 'Table row height, required when table is virtualized',
+            table: {
+                subcategory: 'Options API',
+                type: { summary: 'number' },
+            },
+            control: false,
+        },
+
+        'options.downloadable': {
+            description: 'Enables to download table content in a csv file',
+            table: {
+                subcategory: 'Options API',
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
+        'options.downloadFileName': {
+            description: 'Table content csv file name',
+            table: {
+                subcategory: 'Options API',
                 type: { summary: 'string' },
             },
             control: false,
         },
-        hideHeaders: {
-            description: 'Hides table headers',
+        'options.emptyMessage': {
+            description: 'Message to show when there are not rows to show',
             table: {
-                type: { summary: 'boolean' },
+                subcategory: 'Options API',
+                type: { summary: 'string' },
             },
             control: false,
         },
-        virtualized: {
-            description: 'Enables table virtualization',
+        events: {
+            description: 'Events object',
+            type: {
+                required: true,
+                name: 'Array' as any,
+            },
             table: {
-                type: { summary: 'boolean' },
+                type: { summary: 'array' },
+            },
+            control: false,
+        },
+        // @ts-ignore
+        'events.onSelect': {
+            description: 'Callback function to be called each time table rows are selected',
+            table: {
+                subcategory: 'Events API',
+                type: { summary: 'function' },
+            },
+            control: false,
+        },
+        'events.onRowClick': {
+            description: 'Function to be called when row is clicked',
+            table: {
+                subcategory: 'Events API',
+                type: { summary: 'function' },
+            },
+            control: false,
+        },
+        title: {
+            description: 'Table title',
+            table: {
+                type: { summary: 'string' },
             },
             control: false,
         },
@@ -176,52 +272,10 @@ const meta: Meta<typeof Table> = {
             },
             control: false,
         },
-        contentHeight: {
-            description: 'Table body height, required when table is virtualized',
-            table: {
-                type: { summary: 'number' },
-            },
-            control: false,
-        },
-        rowHeight: {
-            description: 'Table row height, required when table is virtualized',
-            table: {
-                type: { summary: 'number' },
-            },
-            control: false,
-        },
-        emptyMessage: {
-            description: 'Message to show when there are not rows to show',
-            table: {
-                type: { summary: 'string' },
-            },
-            control: false,
-        },
-        searchable: {
-            description: 'Sets if table should be searchable',
-            table: {
-                type: { summary: 'boolean' },
-            },
-            control: false,
-        },
         filterColumns: {
             description: 'Enables column filtering',
             table: {
                 type: { summary: 'boolean' },
-            },
-            control: false,
-        },
-        selectable: {
-            description: 'Sets if table rows should be selectable',
-            table: {
-                type: { summary: 'boolean' },
-            },
-            control: false,
-        },
-        onSelect: {
-            description: 'Callback function to be called each time table rows are selected',
-            table: {
-                type: { summary: 'function' },
             },
             control: false,
         },
@@ -243,13 +297,6 @@ const meta: Meta<typeof Table> = {
             description: 'Enables pagination and sets rows per page',
             table: {
                 type: { summary: 'number' },
-            },
-            control: false,
-        },
-        onRowClick: {
-            description: 'Function to be called when row is clicked',
-            table: {
-                type: { summary: 'function' },
             },
             control: false,
         },
@@ -330,7 +377,9 @@ export const Primary: Story = {
 export const RowClick: Story = {
     args: {
         ...meta.args,
-        onRowClick: (row) => alert(`Row clicked! ${JSON.stringify(row)}`),
+        events: {
+            onRowClick: (row) => alert(`Row clicked! ${JSON.stringify(row)}`),
+        },
     },
 };
 
@@ -370,7 +419,9 @@ export const Pagination: Story = {
 export const SearchableTable: Story = {
     args: {
         ...meta.args,
-        searchable: true,
+        options: {
+            searchable: true,
+        },
         rows: [
             {
                 key: '1',
@@ -406,8 +457,9 @@ export const SearchableTable: Story = {
 export const Selectable: Story = {
     args: {
         ...meta.args,
-        selectable: true,
-        onSelect: () => {},
+        options: {
+            selectable: true,
+        },
         rows: [
             {
                 column1: 'Cell 1',
@@ -468,7 +520,6 @@ export const CustomToolbar: Story = {
 export const FilterColumns: Story = {
     args: {
         ...meta.args,
-        onSelect: undefined,
         filters: {
             columns: true,
         },
@@ -495,8 +546,20 @@ export const FilterColumns: Story = {
 export const Virtualized: Story = {
     args: {
         ...meta.args,
-        virtualized: true,
-        contentHeight: 100,
-        rowHeight: 60,
+        options: {
+            virtualized: true,
+            contentHeight: 100,
+            rowHeight: 60,
+        },
+    },
+};
+
+export const Downloadable: Story = {
+    args: {
+        ...meta.args,
+        options: {
+            downloadable: true,
+            downloadFileName: 'test-file',
+        },
     },
 };

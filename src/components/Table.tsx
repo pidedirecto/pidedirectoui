@@ -29,6 +29,8 @@ export function Table({
     searchable,
     selectable,
     virtualized,
+    options,
+    events,
     loading,
     filters,
     contentHeight,
@@ -49,16 +51,23 @@ export function Table({
 
     const rowIds = removeNulls<Array<any>>(rows.map((row) => row.rowId));
 
-    if (rowIds.length !== rows.length && selectable) {
+    const isSearchable = options?.searchable || searchable;
+    const isSelectable = options?.selectable || selectable;
+    const isVirtualized = options?.virtualized || virtualized;
+    const tableRowHeight = options?.rowHeight || rowHeight;
+    const tableContentHeight = options?.contentHeight || contentHeight;
+    const tableEmptyMessage = options?.emptyMessage || emptyMessage;
+
+    if (rowIds.length !== rows.length && isSelectable) {
         console.error('If Table component is selectable it requires each row has a rowId but some rows do not have it');
     }
 
-    if (!!virtualized && !contentHeight) {
-        console.error('You are using a virtualized table without passing content height, contentHeight prop is required.');
+    if (!!isVirtualized && !tableContentHeight) {
+        console.error('You are using a virtualized table without passing content height, options.contentHeight prop is required.');
     }
 
-    if (!!virtualized && !rowHeight) {
-        console.error('You are using a virtualized table without passing row height, rowHeight prop is required.');
+    if (!!isVirtualized && !tableRowHeight) {
+        console.error('You are using a virtualized table without passing row height, options.rowHeight prop is required.');
     }
 
     useEffect(() => {
@@ -97,26 +106,26 @@ export function Table({
     };
 
     return (
-        <TableContext.Provider value={{ tableId: tableId.current, columns, selectable, classes, onSelect, filters }}>
+        <TableContext.Provider value={{ tableId: tableId.current, columns, rows: getRowsToShow(), selectable: isSelectable, classes, onSelect: events?.onSelect ?? onSelect, filters, options }}>
             <div className={classNames(classes.container, classesProp?.container)}>
-                {!!searchable && !!title && <h2 className={classes.title}>{title}</h2>}
+                {!!isSearchable && !!title && <h2 className={classes.title}>{title}</h2>}
                 <div className={classes.toolbarContainer}>
-                    {!!searchable && (
+                    {!!isSearchable && (
                         <Input {...searchInputProps} name={'search'} type={'search'} value={search} onChange={(value) => setSearch(value)} classes={{ inputContainer: classes.inputContainer }} />
                     )}
-                    {!searchable && !!title && <h2 className={classes.title}>{title}</h2>}
-                    {!searchable && !title && <div></div>}
+                    {!isSearchable && !!title && <h2 className={classes.title}>{title}</h2>}
+                    {!isSearchable && !title && <div></div>}
                     <TableToolbar toolbar={toolbar} />
                 </div>
                 <table className={classNames(classes.table, classesProp?.table)} onClickCapture={addTableToStackTrace}>
-                    {!hideHeaders && <TableHeader rowIds={rowIds} />}
+                    {!(options?.hideHeaders ?? hideHeaders) && <TableHeader rowIds={rowIds} />}
                     <tbody>
-                        <TableBody virtualized={virtualized} height={contentHeight} rowHeight={rowHeight}>
-                            <TableRows rows={getRowsToShow()} onRowClick={onRowClick} />
+                        <TableBody virtualized={isVirtualized} height={tableContentHeight} rowHeight={tableRowHeight}>
+                            <TableRows rows={getRowsToShow()} onRowClick={events?.onRowClick ?? onRowClick} />
                         </TableBody>
-                        {rows.length === 0 && !!emptyMessage && (
+                        {rows.length === 0 && !!tableEmptyMessage && (
                             <tr className={classes.row} style={{ justifyContent: 'center' }}>
-                                <td className={classNames(classes.cell, classesProp?.cell)}>{emptyMessage}</td>
+                                <td className={classNames(classes.cell, classesProp?.cell)}>{tableEmptyMessage}</td>
                             </tr>
                         )}
                     </tbody>
@@ -149,12 +158,15 @@ export function Table({
 export const TableContext = createContext<TableContextType>({
     tableId: newId(),
     columns: [],
+    rows: [],
 });
 
 type TableContextType = {
     tableId: string;
     columns: TableProps['columns'];
-    selectable?: TableProps['selectable'];
+    rows: TableProps['rows'];
+    selectable?: boolean;
+    options?: TableProps['options'];
     filters?: TableProps['filters'];
     onSelect?: TableProps['onSelect'];
     classes?: TableProps['classes'];
