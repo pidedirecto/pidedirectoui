@@ -58,6 +58,7 @@ export const DoorbellIcon: SvgIcon
 export const DoorHangerIcon: SvgIcon
 export const DownloadIcon: SvgIcon
 export const DragIcon: SvgIcon
+export const EarphoneIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon
 export const ErrorIcon: SvgIcon
@@ -155,6 +156,7 @@ export const UsersIcon: SvgIcon
 export const VideoIcon: SvgIcon
 export const WarningIcon: SvgIcon
 export const WalletIcon: SvgIcon
+export const WhatsAppIcon: SvgIcon
 export const WifiIcon: SvgIcon
 export const WifiOffIcon: SvgIcon
 export const WithdrawIcon: SvgIcon

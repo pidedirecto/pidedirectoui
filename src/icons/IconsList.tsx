@@ -58,6 +58,7 @@ import { DoorbellIcon } from 'src/icons/DoorbellIcon';
 import { DoorHangerIcon } from 'src/icons/DoorHangerIcon';
 import { DownloadIcon } from 'src/icons/DownloadIcon';
 import { DragIcon } from 'src/icons/DragIcon';
+import { EarphoneIcon } from 'src/icons/EarphoneIcon';
 import { EditIcon } from 'src/icons/EditIcon';
 import { EllipsisVerticalIcon } from 'src/icons/EllipsisVerticalIcon';
 import { EnvelopeIcon } from 'src/icons/EnvelopeIcon';
@@ -156,6 +157,7 @@ import { UsersIcon } from 'src/icons/UsersIcon';
 import { VideoIcon } from 'src/icons/VideoIcon';
 import { WalletIcon } from 'src/icons/WalletIcon';
 import { WarningIcon } from 'src/icons/WarningIcon';
+import { WhatsAppIcon } from 'src/icons/WhatsAppIcon';
 import { WifiIcon } from 'src/icons/WifiIcon';
 import { WifiOffIcon } from 'src/icons/WifiOffIcon';
 import { WithdrawIcon } from 'src/icons/WithdrawIcon';
@@ -397,6 +399,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <DragIcon size={size} />
                 <span className={classes.iconName}>DragIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <EarphoneIcon size={size} />
+                <span className={classes.iconName}>EarphoneIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <EditIcon size={size} />
@@ -781,6 +787,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <WalletIcon size={size} />
                 <span className={classes.iconName}>WalletIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <WhatsAppIcon size={size} />
+                <span className={classes.iconName}>WhatsAppIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <WifiIcon size={size} />
