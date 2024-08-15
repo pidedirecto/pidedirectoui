@@ -58,7 +58,6 @@ import { DoorbellIcon } from 'src/icons/DoorbellIcon';
 import { DoorHangerIcon } from 'src/icons/DoorHangerIcon';
 import { DownloadIcon } from 'src/icons/DownloadIcon';
 import { DragIcon } from 'src/icons/DragIcon';
-import { EarphoneIcon } from 'src/icons/EarphoneIcon';
 import { EditIcon } from 'src/icons/EditIcon';
 import { EllipsisVerticalIcon } from 'src/icons/EllipsisVerticalIcon';
 import { EnvelopeIcon } from 'src/icons/EnvelopeIcon';
@@ -79,6 +78,7 @@ import { GearIcon } from 'src/icons/GearIcon';
 import { GiftIcon } from 'src/icons/GiftIcon';
 import { GramsIcon } from 'src/icons/GramsIcon';
 import { GridIcon } from 'src/icons/GridIcon';
+import { HeadphoneIcon } from 'src/icons/HeadphoneIcon';
 import { HistoryIcon } from 'src/icons/HistoryIcon';
 import { HomeIcon } from 'src/icons/HomeIcon';
 import { IdentifierIcon } from 'src/icons/IdentifierIcon';
@@ -401,10 +401,6 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>DragIcon</span>
             </div>
             <div className={classes.iconContainer}>
-                <EarphoneIcon size={size} />
-                <span className={classes.iconName}>EarphoneIcon</span>
-            </div>
-            <div className={classes.iconContainer}>
                 <EditIcon size={size} />
                 <span className={classes.iconName}>EditIcon</span>
             </div>
@@ -479,6 +475,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <GridIcon size={size} />
                 <span className={classes.iconName}>GridIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <HeadphoneIcon size={size} />
+                <span className={classes.iconName}>EarphoneIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <HistoryIcon size={size} />
