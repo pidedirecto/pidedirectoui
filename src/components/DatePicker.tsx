@@ -18,7 +18,22 @@ import moment from 'moment/moment';
 import { useContext } from 'react';
 import { PickersProviderContext } from 'src/components/PickersProvider';
 
-export function DatePicker({ value, onChange, onBlur, label, placeholder, name, id, helperText, disabled, error, inputRef, classes: classesProp }: DatePickerProps): React.ReactElement {
+export function DatePicker({
+    value,
+    minDate,
+    maxDate,
+    onChange,
+    onBlur,
+    label,
+    placeholder,
+    name,
+    id,
+    helperText,
+    disabled,
+    error,
+    inputRef,
+    classes: classesProp,
+}: DatePickerProps): React.ReactElement {
     const context = useContext(PickersProviderContext);
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
@@ -55,6 +70,8 @@ export function DatePicker({ value, onChange, onBlur, label, placeholder, name, 
                         autoOk
                         fullWidth
                         variant='inline'
+                        minDate={minDate}
+                        maxDate={maxDate}
                     />
                     {!!helperText && <HelperText error={error}>{helperText}</HelperText>}
                 </div>

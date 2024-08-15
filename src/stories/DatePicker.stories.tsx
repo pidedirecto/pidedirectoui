@@ -40,6 +40,20 @@ const meta: Meta<typeof DatePicker> = {
             },
             control: false,
         },
+        minDate: {
+            description: 'DatePicker minDate',
+            table: {
+                type: { summary: 'date' as any },
+            },
+            control: false,
+        },
+        maxDate: {
+            description: 'DatePicker maxDate',
+            table: {
+                type: { summary: 'date' as any },
+            },
+            control: false,
+        },
         label: {
             description: 'DatePicker label',
             table: {
