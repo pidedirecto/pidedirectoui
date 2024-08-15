@@ -54,22 +54,22 @@ describe('formatAsCurrencyNumber util', () => {
 
     it('should format currency properly for ar country', () => {
         const result = formatAsCurrencyNumber('123456.2', { country: CountryCodes.AR });
-        expect(result).toBe('$ 123.456,2');
+        expect(result).toBe('$123.456,2');
     });
 
     it('should format currency properly for uy country', () => {
         const result = formatAsCurrencyNumber('123456.2', { country: CountryCodes.UY });
-        expect(result).toBe('$ 123.456,2');
+        expect(result).toBe('$123.456,2');
     });
 
     it('should format currency properly for pe country', () => {
         const result = formatAsCurrencyNumber('123456.2', { country: CountryCodes.PE });
-        expect(result).toBe('S/ 123.456,2');
+        expect(result).toBe('S/123.456,2');
     });
 
     it('should format currency properly for br country', () => {
         const result = formatAsCurrencyNumber('123456.2', { country: CountryCodes.BR });
-        expect(result).toBe('R$ 123.456,2');
+        expect(result).toBe('R$123.456,2');
     });
 
     it('should format currency properly for cl country', () => {
@@ -79,17 +79,17 @@ describe('formatAsCurrencyNumber util', () => {
 
     it('should format currency properly for co country', () => {
         const result = formatAsCurrencyNumber('123456.2', { country: CountryCodes.CO });
-        expect(result).toBe('$ 123.456,2');
+        expect(result).toBe('$123.456,2');
     });
 
     it('should format currency properly for py country', () => {
         const result = formatAsCurrencyNumber('123456.2', { country: CountryCodes.PY });
-        expect(result).toBe('₲ 123.456,2');
+        expect(result).toBe('₲123.456,2');
     });
 
     it('should render currency correctly when currency is passed and is different than the one used in the country', () => {
         const result = formatAsCurrencyNumber('123456.2', { country: CountryCodes.MX, currency: Currencies.USD });
-        expect(result).toBe('USD$ 123,456.2');
+        expect(result).toBe('USD$123,456.2');
     });
 
     it('should format number as currency', () => {
