@@ -51,14 +51,14 @@ const meta: Meta<typeof DateTimePicker> = {
         minDate: {
             description: 'DateTimePicker minDate',
             table: {
-                type: { summary: 'date' as any },
+                type: { summary: 'Date' as any },
             },
             control: false,
         },
         maxDate: {
             description: 'DateTimePicker maxDate',
             table: {
-                type: { summary: 'date' as any },
+                type: { summary: 'Date' as any },
             },
             control: false,
         },

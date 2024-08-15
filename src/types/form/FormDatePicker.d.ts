@@ -10,6 +10,8 @@ export type FormDatePickerProps = {
     name: string;
     helperText?: string;
     id?: string;
+    minDate?: Date;
+    maxDate?: Date;
     disabled?: boolean;
     error?: boolean;
     defaultValue?: Date;
