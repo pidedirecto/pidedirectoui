@@ -58,7 +58,6 @@ export const DoorbellIcon: SvgIcon
 export const DoorHangerIcon: SvgIcon
 export const DownloadIcon: SvgIcon
 export const DragIcon: SvgIcon
-export const EarphoneIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon
 export const ErrorIcon: SvgIcon
@@ -77,6 +76,7 @@ export const GearIcon: SvgIcon
 export const GiftIcon: SvgIcon
 export const GramsIcon: SvgIcon
 export const GridIcon: SvgIcon
+export const HeadphoneIcon: SvgIcon
 export const HistoryIcon: SvgIcon
 export const HomeIcon: SvgIcon
 export const IdentifierIcon: SvgIcon

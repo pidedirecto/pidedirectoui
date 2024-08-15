@@ -478,7 +478,7 @@ export function IconsList(): React.ReactElement {
             </div>
             <div className={classes.iconContainer}>
                 <HeadphoneIcon size={size} />
-                <span className={classes.iconName}>EarphoneIcon</span>
+                <span className={classes.iconName}>HeadphoneIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <HistoryIcon size={size} />
