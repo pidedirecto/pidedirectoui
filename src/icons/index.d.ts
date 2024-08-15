@@ -76,6 +76,7 @@ export const GearIcon: SvgIcon
 export const GiftIcon: SvgIcon
 export const GramsIcon: SvgIcon
 export const GridIcon: SvgIcon
+export const HeadphoneIcon: SvgIcon
 export const HistoryIcon: SvgIcon
 export const HomeIcon: SvgIcon
 export const IdentifierIcon: SvgIcon
@@ -155,6 +156,7 @@ export const UsersIcon: SvgIcon
 export const VideoIcon: SvgIcon
 export const WarningIcon: SvgIcon
 export const WalletIcon: SvgIcon
+export const WhatsAppIcon: SvgIcon
 export const WifiIcon: SvgIcon
 export const WifiOffIcon: SvgIcon
 export const WithdrawIcon: SvgIcon

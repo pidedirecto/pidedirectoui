@@ -78,6 +78,7 @@ import { GearIcon } from 'src/icons/GearIcon';
 import { GiftIcon } from 'src/icons/GiftIcon';
 import { GramsIcon } from 'src/icons/GramsIcon';
 import { GridIcon } from 'src/icons/GridIcon';
+import { HeadphoneIcon } from 'src/icons/HeadphoneIcon';
 import { HistoryIcon } from 'src/icons/HistoryIcon';
 import { HomeIcon } from 'src/icons/HomeIcon';
 import { IdentifierIcon } from 'src/icons/IdentifierIcon';
@@ -156,6 +157,7 @@ import { UsersIcon } from 'src/icons/UsersIcon';
 import { VideoIcon } from 'src/icons/VideoIcon';
 import { WalletIcon } from 'src/icons/WalletIcon';
 import { WarningIcon } from 'src/icons/WarningIcon';
+import { WhatsAppIcon } from 'src/icons/WhatsAppIcon';
 import { WifiIcon } from 'src/icons/WifiIcon';
 import { WifiOffIcon } from 'src/icons/WifiOffIcon';
 import { WithdrawIcon } from 'src/icons/WithdrawIcon';
@@ -475,6 +477,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>GridIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <HeadphoneIcon size={size} />
+                <span className={classes.iconName}>HeadphoneIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <HistoryIcon size={size} />
                 <span className={classes.iconName}>HistoryIcon</span>
             </div>
@@ -781,6 +787,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <WalletIcon size={size} />
                 <span className={classes.iconName}>WalletIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <WhatsAppIcon size={size} />
+                <span className={classes.iconName}>WhatsAppIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <WifiIcon size={size} />
