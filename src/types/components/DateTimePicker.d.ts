@@ -12,6 +12,7 @@ export type DateTimePickerProps = {
     disabled?: boolean;
     error?: boolean;
     value: Date | undefined | null;
+    dateFormat?: string;
     minDate?: Date;
     maxDate?: Date;
     onChange: (value: Date | undefined) => void | Promise<void>;

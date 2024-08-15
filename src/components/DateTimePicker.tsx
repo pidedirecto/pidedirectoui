@@ -32,6 +32,7 @@ export function DateTimePicker({
     disabled,
     error,
     inputRef,
+    dateFormat,
     classes: classesProp,
 }: DateTimePickerProps): React.ReactElement {
     const context = useContext(PickersProviderContext);
@@ -68,7 +69,7 @@ export function DateTimePicker({
                         value={value}
                         minDate={minDate}
                         maxDate={maxDate}
-                        format='ddd ll'
+                        format={dateFormat ?? 'ddd ll'}
                         autoOk
                         fullWidth
                         variant='inline'

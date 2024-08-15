@@ -41,6 +41,13 @@ const meta: Meta<typeof DateTimePicker> = {
             },
             control: false,
         },
+        dateFormat: {
+            description: 'DateTimePicker format to show the date in the input',
+            table: {
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
         minDate: {
             description: 'DateTimePicker minDate',
             table: {
