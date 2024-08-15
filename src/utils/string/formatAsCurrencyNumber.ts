@@ -34,7 +34,7 @@ export function formatAsCurrencyNumber(value: string | number | null | undefined
     const numberParts = numberFormat.formatToParts(Number(value));
     const formattedString = numberParts.map((part) => formatNumberPart(part, options?.country ?? CountryCodes.MX)).join('');
 
-    return formattedString.replace(/\s/g, ' ');
+    return formattedString.replace(/\s/g, '');
 }
 
 function formatNumberPart(numberPart: NumberPart, country: CountryCode): string {
