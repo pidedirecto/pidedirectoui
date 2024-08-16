@@ -29,8 +29,17 @@ export function Notification({ children, secondsOpened, onClose, open, classes: 
         }
     }, [open]);
 
+    const closeNotification = () => {
+        setIsOpened(false);
+        onClose?.();
+        if (timeout) {
+            clearTimeout(timeout);
+            timeout = null;
+        }
+    };
+
     return createPortal(
-        <div role='alert' className={classNames(classes.hiddenNotification, isOpened && classNames(classes.shownNotification, classesProp?.container))}>
+        <div role='alert' className={classNames(classes.hiddenNotification, isOpened && classNames(classes.shownNotification, classesProp?.container))} onClick={closeNotification}>
             {children}
         </div>,
         document.body,
