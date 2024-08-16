@@ -18,7 +18,23 @@ import { useContext } from 'react';
 import { PickersProviderContext } from 'src/components/PickersProvider';
 import { DateTimePickerProps } from 'src/types/components/DateTimePicker';
 
-export function DateTimePicker({ value, onChange, onBlur, label, placeholder, name, id, helperText, disabled, error, inputRef, classes: classesProp }: DateTimePickerProps): React.ReactElement {
+export function DateTimePicker({
+    value,
+    minDate,
+    maxDate,
+    onChange,
+    onBlur,
+    label,
+    placeholder,
+    name,
+    id,
+    helperText,
+    disabled,
+    error,
+    inputRef,
+    dateFormat,
+    classes: classesProp,
+}: DateTimePickerProps): React.ReactElement {
     const context = useContext(PickersProviderContext);
     const createUserTypedInputLogEvent = useCreateUserTypedInputLogEvent();
 
@@ -51,7 +67,9 @@ export function DateTimePicker({ value, onChange, onBlur, label, placeholder, na
                         onChange={handleChange}
                         onBlur={handleInputBlur}
                         value={value}
-                        format='ddd ll'
+                        minDate={minDate}
+                        maxDate={maxDate}
+                        format={dateFormat ?? 'ddd ll'}
                         autoOk
                         fullWidth
                         variant='inline'

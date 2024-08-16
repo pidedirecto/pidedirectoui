@@ -12,6 +12,9 @@ export type DateTimePickerProps = {
     disabled?: boolean;
     error?: boolean;
     value: Date | undefined | null;
+    dateFormat?: string;
+    minDate?: Date;
+    maxDate?: Date;
     onChange: (value: Date | undefined) => void | Promise<void>;
     onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void | Promise<void>;
     inputRef?: React.Ref<HTMLInputElement>;

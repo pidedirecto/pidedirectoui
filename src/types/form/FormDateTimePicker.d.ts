@@ -8,6 +8,8 @@ export type FormDateTimePickerProps = {
     label?: string;
     placeholder?: string;
     name: string;
+    minDate?: Date;
+    maxDate?: Date;
     helperText?: string;
     id?: string;
     disabled?: boolean;

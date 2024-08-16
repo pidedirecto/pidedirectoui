@@ -13,7 +13,7 @@ import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
 import play = Simulate.play;
 
-export function FormDatePicker({ name, label, helperText, defaultValue, disabled, required, rules, placeholder, classes }: FormDatePickerProps): React.ReactElement {
+export function FormDatePicker({ name, minDate, maxDate, label, helperText, defaultValue, disabled, required, rules, placeholder, classes }: FormDatePickerProps): React.ReactElement {
     const {
         errors,
         control,
@@ -42,6 +42,8 @@ export function FormDatePicker({ name, label, helperText, defaultValue, disabled
                     helperText={error?.message ?? helperText}
                     placeholder={placeholder}
                     classes={classes}
+                    minDate={minDate}
+                    maxDate={maxDate}
                 />
             )}
             defaultValue={defaultValue ?? null}

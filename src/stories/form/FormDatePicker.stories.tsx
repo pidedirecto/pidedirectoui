@@ -30,6 +30,18 @@ const meta: Meta<typeof FormDatePicker> = {
                 type: { summary: 'string' },
             },
         },
+        minDate: {
+            description: 'DatePicker minDate',
+            table: {
+                type: { summary: 'Date' as any },
+            },
+        },
+        maxDate: {
+            description: 'DatePicker maxDate',
+            table: {
+                type: { summary: 'Date' as any },
+            },
+        },
         label: {
             description: 'DatePicker label',
             table: {
