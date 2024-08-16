@@ -20,6 +20,7 @@ export function FormAutocomplete({
     getOptionDisabled,
     getOptionLabel,
     getOptionValue,
+    onInputChange,
     disabled,
     classes: classesProp,
     defaultValue,
@@ -51,6 +52,7 @@ export function FormAutocomplete({
                     getOptionDisabled={getOptionDisabled}
                     renderOption={renderOption}
                     onChange={(itemIds: any) => onChange(itemIds)}
+                    onInputChange={onInputChange}
                     disabled={isSubmitting || disabled || formContext.disabled}
                     classes={classesProp}
                     error={error}

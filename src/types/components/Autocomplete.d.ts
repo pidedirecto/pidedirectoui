@@ -15,7 +15,7 @@ export type AutocompleteProps = {
     error?: boolean,
     InputProps?: any,
     onChange: Function,
-    onInputChange?: Function,
+    onInputChange?: (value: string, e: React.ChangeEvent<HTMLInputElement>) => void | Promise<void>,
     tooltip?: string,
     classes?: {
         container?: string;

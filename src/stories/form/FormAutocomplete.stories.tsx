@@ -89,6 +89,13 @@ const meta: Meta<typeof FormAutocomplete> = {
                 type: { summary: 'Function' },
             },
         },
+        onInputChange: {
+            description: 'Callback to be called after the user write on input',
+            table: {
+                required: false,
+                type: { summary: 'function' },
+            },
+        },
         renderOption: {
             description: 'Function used how indicator how must render each option',
             table: {

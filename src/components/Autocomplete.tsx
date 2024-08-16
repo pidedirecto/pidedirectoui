@@ -92,7 +92,7 @@ export function Autocomplete({
                     inputRef={inputRef}
                     onChange={(value, e) => {
                         setInputValue(e.target.value);
-                        onInputChange?.(e.target.value);
+                        onInputChange?.(value, e);
                         inputOnChange?.(e);
                     }}
                     onFocus={() => setIsOpen(true)}

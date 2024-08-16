@@ -15,6 +15,7 @@ export type FormAutocompleteProps = {
     getOptionLabel: (req: any) => any;
     getOptionDisabled?: (req: any) => boolean;
     renderOption: (req: any) => React.Node;
+    onInputChange?: (value: string, e: React.ChangeEvent<HTMLInputElement>) => void | Promise<void>;
     disabled?: boolean;
     required?: ValidationRule<boolean>;
     classes?: {
