@@ -27,7 +27,7 @@ export function FormCurrencyNumberStringField({
     country,
     rules,
     placeholder,
-    maximumDigits,
+    maximumDigits = 2,
     inputProps,
 }: FormCurrencyNumberStringFieldProps): React.ReactElement {
     const {

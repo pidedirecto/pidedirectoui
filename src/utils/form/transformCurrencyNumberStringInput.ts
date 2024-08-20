@@ -11,7 +11,9 @@ export function transformCurrencyNumberStringInput(value?: string, options?: Opt
     globalOptions = options;
     if (!value) return '';
 
-    let formattedValue = formatAsCountryNumber(normalizeValue(value), { country: options?.country, maximumFractionDigits: options?.maximumFractionDigits });
+    const normalizedValue = normalizeValue(value);
+    let formattedValue = formatAsCountryNumber(normalizedValue, { country: options?.country, maximumFractionDigits: options?.maximumFractionDigits });
+    formattedValue = formatNumberForTrailingZeros(normalizedValue, formattedValue);
 
     return addDecimalCharacter(value, formattedValue);
 }
@@ -34,6 +36,18 @@ function addDecimalCharacter(originalValue: string, formattedValue: string): str
         return formattedValue + countryDecimalCharacter;
     }
     return formattedValue;
+}
+
+function formatNumberForTrailingZeros(originalValue: string, formattedValue: string): string {
+    const countryDecimalCharacter = doesCountryUseDotForDecimals(globalOptions?.country) ? '.' : ',';
+
+    const originalDecimals = originalValue.split('.')[1];
+    const formattedDecimals = formattedValue.split(countryDecimalCharacter)[1];
+    if (originalDecimals === formattedDecimals) return formattedValue;
+
+    const formattedIntegers = formattedValue.split(countryDecimalCharacter)[0];
+
+    return `${formattedIntegers}${countryDecimalCharacter}${originalDecimals}`;
 }
 
 type Options = {

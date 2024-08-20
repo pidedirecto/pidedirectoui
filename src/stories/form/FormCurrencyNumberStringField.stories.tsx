@@ -74,6 +74,12 @@ const meta: Meta<typeof FormCurrencyNumberStringField> = {
                 type: { summary: 'string' },
             },
         },
+        placeholder: {
+            description: 'Input placeholder',
+            table: {
+                type: { summary: 'string' },
+            },
+        },
         country: {
             description: 'Country to display number format, this is useful to show correctly numbers accross different countries',
             table: {
@@ -81,7 +87,7 @@ const meta: Meta<typeof FormCurrencyNumberStringField> = {
             },
         },
         maximumDigits: {
-            description: 'maximum digits, by default 2',
+            description: 'Maximum digits',
             table: {
                 type: { summary: 'number' },
             },
