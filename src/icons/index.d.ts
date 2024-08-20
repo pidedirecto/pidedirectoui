@@ -57,6 +57,7 @@ export const DocumentIcon: SvgIcon
 export const DoorbellIcon: SvgIcon
 export const DoorHangerIcon: SvgIcon
 export const DownloadIcon: SvgIcon
+export const DownloadCloudIcon: SvgIcon
 export const DragIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon

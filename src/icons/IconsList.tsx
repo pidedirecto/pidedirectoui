@@ -56,6 +56,7 @@ import { DishIcon } from 'src/icons/DishIcon';
 import { DocumentIcon } from 'src/icons/DocumentIcon';
 import { DoorbellIcon } from 'src/icons/DoorbellIcon';
 import { DoorHangerIcon } from 'src/icons/DoorHangerIcon';
+import { DownloadCloudIcon } from 'src/icons/DownloadCloudIcon';
 import { DownloadIcon } from 'src/icons/DownloadIcon';
 import { DragIcon } from 'src/icons/DragIcon';
 import { EditIcon } from 'src/icons/EditIcon';
@@ -395,6 +396,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <DownloadIcon size={size} />
                 <span className={classes.iconName}>DownloadIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <DownloadCloudIcon size={size} />
+                <span className={classes.iconName}>DownloadCloudIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <DragIcon size={size} />

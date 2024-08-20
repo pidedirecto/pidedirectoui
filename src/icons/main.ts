@@ -59,6 +59,7 @@ export * from 'src/icons/DocumentIcon';
 export * from 'src/icons/DoorbellIcon';
 export * from 'src/icons/DoorHangerIcon';
 export * from 'src/icons/DownloadIcon';
+export * from 'src/icons/DownloadCloudIcon';
 export * from 'src/icons/DragIcon';
 export * from 'src/icons/EditIcon';
 export * from 'src/icons/EnvelopeIcon';
