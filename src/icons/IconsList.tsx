@@ -8,6 +8,7 @@ import { AmbitIcon } from 'src/icons/AmbitIcon';
 import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
 import { ArrowUpIcon } from 'src/icons/ArrowUpIcon';
 import { BackArrowIcon } from 'src/icons/BackArrowIcon';
+import { BackspaceIcon } from 'src/icons/BackspaceIcon';
 import { BagIcon } from 'src/icons/BagIcon';
 import { BankIcon } from 'src/icons/BankIcon';
 import { BarChartIcon } from 'src/icons/BarChartIcon';
@@ -36,6 +37,7 @@ import { ChatIcon } from 'src/icons/ChatIcon';
 import { CheckIcon } from 'src/icons/CheckIcon';
 import { CircleCheckIcon } from 'src/icons/CircleCheckIcon';
 import { CircleCrossIcon } from 'src/icons/CircleCrossIcon';
+import { CircleFilledCheckIcon } from 'src/icons/CircleFilledCheckIcon';
 import { CircleIcon } from 'src/icons/CircleIcon';
 import { ClipboardCheckIcon } from 'src/icons/ClipboardCheckIcon';
 import { ClipboardIcon } from 'src/icons/ClipboardIcon';
@@ -194,6 +196,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>BackArrowIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <BackspaceIcon size={size} />
+                <span className={classes.iconName}>BackspaceIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <BagIcon size={size} />
                 <span className={classes.iconName}>BagIcon</span>
             </div>
@@ -308,6 +314,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <CircleCrossIcon size={size} />
                 <span className={classes.iconName}>CircleCrossIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <CircleFilledCheckIcon size={size} />
+                <span className={classes.iconName}>CircleFilledCheckIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <ClipboardCheckIcon size={size} />
