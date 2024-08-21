@@ -6,6 +6,7 @@ export const AmbitIcon: SvgIcon
 export const ArrowDownIcon: SvgIcon
 export const ArrowUpIcon: SvgIcon
 export const BackArrowIcon: SvgIcon
+export const BackspaceIcon: SvgIcon
 export const BagIcon: SvgIcon
 export const BarChartIcon: SvgIcon
 export const BasketIcon: SvgIcon
@@ -34,6 +35,7 @@ export const CheckIcon: SvgIcon
 export const CircleIcon: SvgIcon
 export const CircleCheckIcon: SvgIcon
 export const CircleCrossIcon: SvgIcon
+export const CircleFilledCheckIcon: SvgIcon
 export const ClipboardCheckIcon: SvgIcon
 export const ClipboardIcon: SvgIcon
 export const ClipboardsIcon: SvgIcon
