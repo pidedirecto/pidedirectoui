@@ -36,8 +36,20 @@ const meta: Meta<typeof FormTimePicker> = {
                 type: { summary: 'string' },
             },
         },
+        placeholder: {
+            description: 'DatePicker placeholder',
+            table: {
+                type: { summary: 'string' },
+            },
+        },
         helperText: {
             description: 'DatePicker helper text',
+            table: {
+                type: { summary: 'string' },
+            },
+        },
+        id: {
+            description: 'DatePicker input id',
             table: {
                 type: { summary: 'string' },
             },
