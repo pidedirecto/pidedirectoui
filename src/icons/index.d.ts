@@ -79,6 +79,8 @@ export const GearIcon: SvgIcon
 export const GiftIcon: SvgIcon
 export const GramsIcon: SvgIcon
 export const GridIcon: SvgIcon
+export const HandshakeHeartIcon: SvgIcon
+export const HandshakeHeartFillIcon: SvgIcon
 export const HeadphoneIcon: SvgIcon
 export const HistoryIcon: SvgIcon
 export const HomeIcon: SvgIcon
