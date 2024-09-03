@@ -81,6 +81,8 @@ export * from 'src/icons/GearIcon';
 export * from 'src/icons/GiftIcon';
 export * from 'src/icons/GramsIcon';
 export * from 'src/icons/GridIcon';
+export * from 'src/icons/HandshakeHeartIcon';
+export * from 'src/icons/HandshakeHeartFillIcon';
 export * from 'src/icons/HeadphoneIcon';
 export * from 'src/icons/HistoryIcon';
 export * from 'src/icons/HomeIcon';

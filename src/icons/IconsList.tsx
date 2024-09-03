@@ -81,6 +81,8 @@ import { GearIcon } from 'src/icons/GearIcon';
 import { GiftIcon } from 'src/icons/GiftIcon';
 import { GramsIcon } from 'src/icons/GramsIcon';
 import { GridIcon } from 'src/icons/GridIcon';
+import { HandshakeHeartFillIcon } from 'src/icons/HandshakeHeartFillIcon';
+import { HandshakeHeartIcon } from 'src/icons/HandshakeHeartIcon';
 import { HeadphoneIcon } from 'src/icons/HeadphoneIcon';
 import { HistoryIcon } from 'src/icons/HistoryIcon';
 import { HomeIcon } from 'src/icons/HomeIcon';
@@ -494,6 +496,14 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <HeadphoneIcon size={size} />
                 <span className={classes.iconName}>HeadphoneIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <HandshakeHeartIcon size={size} />
+                <span className={classes.iconName}>HandshakeHeartIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <HandshakeHeartFillIcon size={size} />
+                <span className={classes.iconName}>HandshakeHeartFillIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <HistoryIcon size={size} />
