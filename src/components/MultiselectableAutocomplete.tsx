@@ -106,11 +106,7 @@ export function MultiselectableAutocomplete({
                             <Label htmlFor={id ?? `${name}-multiselectable-autocomplete`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
                                 {label}
                             </Label>
-                            {!!helperText && (
-                                <HelperText classes={{ helperText: classes.helperText }} error={!!error}>
-                                    {helperText}
-                                </HelperText>
-                            )}
+                            {!!helperText && <HelperText error={!!error}>{helperText}</HelperText>}
                         </div>
                     )}
                     {!!productsSelectedLabel && <span className={classes.numberOptionsSelectedContainer}>{productsSelectedLabel}</span>}

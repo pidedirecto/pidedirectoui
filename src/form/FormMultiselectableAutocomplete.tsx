@@ -39,6 +39,13 @@ export function FormMultiselectableAutocomplete({
 
     const error = getError(errors, name);
 
+    const handleValidateWhenRequired = (value: Array<any>) => {
+        if (!required) return;
+        if (value.length > 0) return;
+        if (typeof required !== 'object') return '';
+        return required?.message;
+    };
+
     return (
         <Controller
             control={control}
@@ -61,13 +68,14 @@ export function FormMultiselectableAutocomplete({
                     value={value}
                     disabled={isSubmitting || disabled || formContext.disabled}
                     classes={classesProp}
-                    error={error}
+                    error={!!error}
                     variant={variant}
                 />
             )}
             defaultValue={defaultValue ?? []}
             rules={{
                 required,
+                validate: rules?.validate ?? handleValidateWhenRequired,
                 ...rules,
             }}
         />
