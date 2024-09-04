@@ -2,8 +2,10 @@
  * @prettier
  */
 import { CountryCode, CountryCodes } from 'src/constants/CountryCode';
-import { Currencies } from 'src/constants/Currency';
+import { Currencies, Currency } from 'src/constants/Currency';
 import { Options } from 'src/types/utils/formatAsCurrencyNumber';
+import { doesCurrencyBelongsToCountry } from 'src/utils/country/doesCurrencyBelongsToCountry';
+import { getCountryCurrencySymbol } from 'src/utils/country/getCountryCurrencySymbol';
 import { isParaguay } from 'src/utils/country/isParaguay';
 import { isPeru } from 'src/utils/country/isPeru';
 import { transformCountryCodeToCurrency } from 'src/utils/country/transformCountryCodeToCurrency';
@@ -46,10 +48,16 @@ function formatNumberPart(numberPart: NumberPart, country: CountryCode): string 
             if (isPeru(country)) return ',';
             return numberPart.value;
         case 'currency':
-            const isForeignCurrency = Object.keys(Currencies).includes(numberPart.value);
-            if (isForeignCurrency) return `${numberPart.value}$`;
+            const currency = numberPart.value as Currency;
+
+            const isForeignCurrency = Object.keys(Currencies).includes(currency);
+            if (isForeignCurrency) {
+                if (doesCurrencyBelongsToCountry(currency as Currency, country)) return getCountryCurrencySymbol(country);
+                return `${currency}$`;
+            }
+
             if (isParaguay(country)) return '₲';
-            return numberPart.value;
+            return currency;
         default:
             return numberPart.value;
     }
