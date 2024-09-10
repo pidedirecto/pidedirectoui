@@ -25,6 +25,26 @@ export function transformCountryCodeToCurrency(countryCode: CountryCode | undefi
             return 'PYG';
         case CountryCodes.CO:
             return 'COP';
+        case CountryCodes.BO:
+            return 'BOB';
+        case CountryCodes.CR:
+            return 'CRC';
+        case CountryCodes.CU:
+            return 'CUP';
+        case CountryCodes.EC:
+            return 'USD';
+        case CountryCodes.SV:
+            return 'USD';
+        case CountryCodes.GT:
+            return 'GTQ';
+        case CountryCodes.NI:
+            return 'NIO';
+        case CountryCodes.PA:
+            return 'PAB';
+        case CountryCodes.DO:
+            return 'DOP';
+        case CountryCodes.HN:
+            return 'HNL';
         default:
             return 'MXN';
     }
