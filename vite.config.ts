@@ -12,7 +12,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
     build: {
         lib: {
-            entry: resolve(__dirname, 'src/index.ts'),
+            entry: resolve(__dirname, 'src/main.ts'),
             name: '@pidedirecto/ui',
             fileName: 'index',
         },
