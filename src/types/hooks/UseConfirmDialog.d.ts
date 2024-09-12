@@ -1,5 +1,3 @@
-
-
 export type UseConfirmDialog = () => (params: UseConfirmDialogProps) => Promise<boolean>;
 
 export type UseConfirmDialogProps = {

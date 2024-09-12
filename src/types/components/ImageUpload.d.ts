@@ -1,5 +1,4 @@
-
-import * as React from 'react'
+import * as React from 'react';
 
 export type ImageUploadProps = {
     children: React.ReactNode;
@@ -23,13 +22,13 @@ export type ImageUploadProps = {
         container?: string;
         inputContainer?: string;
         imageContainer?: string;
-    }
-}
+    };
+};
 
-export const ImageUpload = React.FunctionComponent<ImageUploadProps>
+export const ImageUpload = React.FunctionComponent<ImageUploadProps>;
 
 type Params = {
     fileName: string;
     imageBlob: Blob;
     type: string;
-}
+};

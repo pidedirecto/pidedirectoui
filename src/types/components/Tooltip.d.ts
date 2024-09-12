@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 export type TooltipProps = {
     id?: string;
@@ -10,6 +10,6 @@ export type TooltipProps = {
     };
     position?: 'top' | 'bottom' | 'left' | 'right';
     children?: React.ReactNode;
-}
+};
 
-export type Tooltip = React.FunctionComponent<TooltipProps>
+export type Tooltip = React.FunctionComponent<TooltipProps>;

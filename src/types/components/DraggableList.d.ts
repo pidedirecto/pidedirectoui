@@ -1,11 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 
 export type DraggableListProps = {
-    children: React.ReactNode,
-    onDragEnd?: Function,
+    children: React.ReactNode;
+    onDragEnd?: Function;
     classes?: {
-        container: string,
-    },
-}
+        container: string;
+    };
+};
 
-export type DraggableList = React.FunctionComponent<DraggableListProps>
+export type DraggableList = React.FunctionComponent<DraggableListProps>;

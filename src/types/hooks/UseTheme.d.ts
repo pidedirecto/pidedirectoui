@@ -1,5 +1,3 @@
-
-
 export type Theme = {
     palette?: {
         surface?: {
