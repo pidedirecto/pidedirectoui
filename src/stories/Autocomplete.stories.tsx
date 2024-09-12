@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { Autocomplete } from 'src/components/Autocomplete';

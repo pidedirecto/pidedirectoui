@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { getUiInteractionLogEventsInLocalStorage } from 'src/services/localStorage/logEvent/getUiInteractionLogEventsInLocalStorage';
 import { setUiInteractionLogEventsInLocalStorage } from 'src/services/localStorage/logEvent/setUiInteractionLogEventsInLocalStorage';
 import { UiLogEvent } from 'src/types/UiLogEvent';

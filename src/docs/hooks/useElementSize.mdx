@@ -1,14 +1,12 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 
 import * as useElementSizeStories from '../../stories/useElementSize.stories';
 
-
-<Meta title="hooks/useElementSize" />
+<Meta title='hooks/useElementSize' />
 
 # useElementSize
 
 This hook allows you to obtain the width and height of an element by passing a reference to that element, using useRef. Returns width and height number variables
-
 
 ```tsx
 
@@ -25,5 +23,5 @@ return <div ref={elementRef}></div>
 ```
 
 ### Usage
-<Canvas of={useElementSizeStories.BasicUsage} />
 
+<Canvas of={useElementSizeStories.BasicUsage} />

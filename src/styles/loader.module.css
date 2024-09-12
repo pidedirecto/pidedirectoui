@@ -41,7 +41,6 @@
 
 .slidingDots span:nth-child(3) {
     animation: thirdLoadingAnimation 1.2s ease-in-out infinite;
-
 }
 
 @keyframes firstLoadingAnimation {

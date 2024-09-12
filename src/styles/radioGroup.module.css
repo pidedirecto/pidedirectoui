@@ -10,14 +10,14 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 6px
+    gap: 6px;
 }
 
 .radiosContainerHorizontal {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10px
+    gap: 10px;
 }
 
 .labelContainer {

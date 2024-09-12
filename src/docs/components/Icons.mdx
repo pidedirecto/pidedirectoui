@@ -1,13 +1,14 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
-import { QuestionIcon } from 'src/icons/QuestionIcon';
 import * as IconsStories from '../../stories/Icon.stories';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 import { IconsList } from 'src/icons/IconsList';
+import { QuestionIcon } from 'src/icons/QuestionIcon';
 
-<Meta title="docs/Icons" />
+<Meta title='docs/Icons' />
 
 # Icons
 
 You can use our icons importing them from `@pidedirecto/ui/icons`
+
 ```tsx
 import { QuestionIcon } from "@pidedirecto/ui/icons";
 
@@ -19,8 +20,10 @@ return <QuestionIcon />
 ## Props
 
 ### Color
+
 Sets the icon color
-<div style={{ display: 'flex', flexDirection: 'row', gap: 5}}>
+
+<div style={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
     <QuestionIcon color={'#32a852'} />
     <QuestionIcon color={'#3279a8'} />
     <QuestionIcon color={'#f7df28'} />
@@ -33,7 +36,6 @@ Sets the icon color
     <QuestionIcon color={'#f7df28'} />
 </div>
 ```
-
 
 By default, the icon color is [currentColor](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#currentcolor_keyword) that is why we strongly recommend setting the color through the css container element
 
@@ -44,8 +46,10 @@ By default, the icon color is [currentColor](https://developer.mozilla.org/en-US
 ```
 
 ### Size
+
 You can resize the icon through the size props, this will change the SVG width and height
-<div style={{ display: 'flex', flexDirection: 'row', gap: 5, alignItems: 'center', color: '#3279a8'}}>
+
+<div style={{ display: 'flex', flexDirection: 'row', gap: 5, alignItems: 'center', color: '#3279a8' }}>
     <QuestionIcon size={15} />
     <QuestionIcon size={20} />
     <QuestionIcon size={25} />
@@ -59,7 +63,6 @@ You can resize the icon through the size props, this will change the SVG width a
 </div>
 ```
 
-
 You can also pass independently the props `width` and `height`
 
 <Canvas of={IconsStories.Size} />
@@ -67,12 +70,13 @@ You can also pass independently the props `width` and `height`
 If you pass one of these props the prop `size` will be ignored
 
 ### Title
+
 Adds an accessibility title to SVG
 
 <Canvas of={IconsStories.Title} />
 
 # Api
+
 Here there are described some of the important props, but icon components can receive any of the HTML svg props.
 
 <ArgTypes of={IconsStories} />
-

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { HelperText } from 'src/components/HelperText';
 import { Label } from 'src/components/Label';

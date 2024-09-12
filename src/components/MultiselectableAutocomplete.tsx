@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useAutocomplete } from '@material-ui/lab';
 import { useRef, useState } from 'react';
 import * as React from 'react';

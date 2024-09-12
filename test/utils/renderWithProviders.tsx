@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { render } from '@testing-library/react';
 
 export function renderWithProviders(ui: any, props?: Props) {

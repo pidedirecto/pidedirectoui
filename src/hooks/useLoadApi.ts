@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useEffect, useState } from 'react';
 import { ApiSauceResponse, Options } from 'src/types/hooks/UseLoadApi';
 import { isArray } from 'src/utils/array/isArray';

@@ -1,6 +1,4 @@
-/**
- * @prettier
- */
+
 
 export type Params<State, Actions> = {
     initialState: State;

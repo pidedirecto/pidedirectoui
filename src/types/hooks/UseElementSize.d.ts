@@ -1,6 +1,4 @@
-/**
- * @prettier
- */
+
 
 import { RefObject } from 'react';
 

@@ -28,7 +28,7 @@
     border: 0 !important;
 }
 
-.inputContainer[data-error="true"] {
+.inputContainer[data-error='true'] {
     border: 2px solid var(--border-danger);
 }
 

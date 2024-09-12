@@ -21,14 +21,14 @@
 }
 
 .button:hover {
-    background-color: var(--surface-brand-heavy-contrast)
+    background-color: var(--surface-brand-heavy-contrast);
 }
 
 .button:focus {
     outline: 2px solid var(--border-brand-outline);
 }
 
-.button:disabled{
+.button:disabled {
     background-color: var(--surface-secondary);
     cursor: default;
     color: var(--text-contrast);
@@ -124,7 +124,7 @@
     background-color: var(--surface-secondary);
 }
 
-.button[data-size="large"] {
+.button[data-size='large'] {
     height: 52px;
     font-size: var(--font-size-large);
 }

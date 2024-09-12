@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { createContext, useRef } from 'react';
 import { useEffect } from 'react';

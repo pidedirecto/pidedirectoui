@@ -11,7 +11,9 @@
     font-family: var(--font-medium);
     border-radius: 8px;
     color: white;
-    transition: bottom 0.15s linear, opacity 0.15s linear;
+    transition:
+        bottom 0.15s linear,
+        opacity 0.15s linear;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -32,4 +34,3 @@
         width: 80vw;
     }
 }
-

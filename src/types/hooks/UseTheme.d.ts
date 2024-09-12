@@ -1,6 +1,4 @@
-/**
- * @prettier
- */
+
 
 export type Theme = {
     palette?: {

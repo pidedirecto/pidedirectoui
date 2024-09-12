@@ -1,4 +1,11 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+if command -v pd > /dev/null 2>&1 ; then
+    pd package-changed install
+else
+    echo "PideDirecto CLI is needed for this project"
+    echo "Please install it with 'npm install -g @pidedirecto/cli'"
+fi
+
 npx lint-staged --concurrent false

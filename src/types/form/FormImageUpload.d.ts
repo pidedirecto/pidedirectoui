@@ -1,6 +1,4 @@
-/**
- * @prettier
- */
+
 import * as React from 'react';
 import { type ValidationRule } from 'react-hook-form';
 import { ImageUploadProps } from 'src/types/components/ImageUpload';

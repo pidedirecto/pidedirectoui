@@ -1,7 +1,3 @@
-/**
- * @prettier
- * @flow
- */
 import * as React from 'react';
 import { useContext } from 'react';
 import { DropDownContext } from 'src/components/DropDown';

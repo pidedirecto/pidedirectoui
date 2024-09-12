@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import React from 'react';
 import classes from 'src/styles/linearProgress.module.css';
 

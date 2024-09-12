@@ -1,7 +1,3 @@
-/**
- * @prettier
- * @flow
- */
 import * as React from 'react';
 import classes from 'src/styles/dialogActions.module.css';
 import type { DialogActionsProps } from 'src/types/components/DialogActions';

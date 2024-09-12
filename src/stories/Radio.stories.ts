@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { Radio } from 'src/components/Radio';
 import { createLink } from 'src/utils/docs/createLink';

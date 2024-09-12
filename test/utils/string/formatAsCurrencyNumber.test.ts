@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 import { CountryCodes } from 'src/constants/CountryCode';
 import { Currencies } from 'src/constants/Currency';
 import { formatAsCurrencyNumber } from 'src/utils/string/formatAsCurrencyNumber';

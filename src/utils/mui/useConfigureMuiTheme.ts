@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { createMuiTheme } from '@material-ui/core/styles';
 import { useTheme } from 'src/hooks/useTheme';
 

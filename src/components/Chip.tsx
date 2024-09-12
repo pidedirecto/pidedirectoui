@@ -1,7 +1,3 @@
-/**
- * @prettier
- * @flow
- */
 import * as React from 'react';
 import classes from 'src/styles/chip.module.css';
 import { ChipProps } from 'src/types/components/Chip';

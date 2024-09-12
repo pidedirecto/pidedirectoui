@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { isString } from 'src/utils/string/isString';
 
 export function lowerCase<T extends string | null | undefined>(value: T): T {

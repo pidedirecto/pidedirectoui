@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { produce } from 'immer';
 import { useSyncExternalStore } from 'use-sync-external-store/shim';
 import type { Params, Result } from 'src/types/hooks/CreateStore';

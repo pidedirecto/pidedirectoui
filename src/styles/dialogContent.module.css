@@ -9,7 +9,7 @@
 }
 
 @media (max-width: 600px) {
-    .container{
+    .container {
         max-height: 75%;
     }
 }

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import classes from 'src/styles/card.module.css';
 import { CardProps } from 'src/types/components/Card';

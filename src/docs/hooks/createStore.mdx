@@ -1,34 +1,32 @@
-import { Meta} from '@storybook/blocks';
+import { Meta } from '@storybook/blocks';
 
-
-<Meta title="hooks/createStore" />
+<Meta title='hooks/createStore' />
 
 # createStore
 
 Creates a store with initial state and actions
 
 ```tsx
-import { createStore } from '@pidedirecto/ui/hooks'
-
+import { createStore } from '@pidedirecto/ui/hooks';
 
 export const [useNumbersStore, useNumbersAction] = createStore<State, Actions>({
     initialState: {
-        numbers: []
+        numbers: [],
     },
     actions: {
         addNumber: (state, number) => {
-            state.numbers.push(number)
-        }
-    }
-})
+            state.numbers.push(number);
+        },
+    },
+});
 
 type State = {
-    numbers: Array<number>
-}
+    numbers: Array<number>;
+};
 
 type Actions = {
-    addNumber: (n: number) => void
-}
+    addNumber: (n: number) => void;
+};
 ```
 
 ## useStore
@@ -37,7 +35,7 @@ The first value returned by the `createStore` function is a `useStore` hook that
 using the previous example if you would like to get the `numbers` state from the store you should use `useNumbersStore` like
 
 ```tsx
-const numbers = useNumbersStore(state => state.numbers)
+const numbers = useNumbersStore((state) => state.numbers);
 ```
 
 The `useStore` hook expects a function as parameter, inside this function you will have to return what values you want from state.
@@ -50,11 +48,11 @@ The second value is a `useAction` function that will retrieve the action from th
 using the previous example if you would like to call the `addNumber` action you should do it as follows
 
 ```tsx
-const addNumber = useNumbersAction(actions => actions.addNumber)
+const addNumber = useNumbersAction((actions) => actions.addNumber);
 
 const handleClick = () => {
-    addNumber(1)
-}
+    addNumber(1);
+};
 ```
 
 The `useAction` expects a function as parameter, inside this function you will have to return what action you want from state.
@@ -65,10 +63,3 @@ We recommend naming this hook with this format `use...anyNameHere...Action`
 
 If you try to console.log directly the state of the store inside an action you will find it difficult to read because the store state is wrapped into proxies,
 so if you want to console log the state you will have to use the [logStore](https://ui.pidedirecto.mx/?path=/docs/utils-logstore--docs) function
-
-
-
-
-
-
-

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 export type ApiSauceResponse<T> = Promise<ApiResponse<T>>;
 export const ApiSauceResponse = Promise;
 

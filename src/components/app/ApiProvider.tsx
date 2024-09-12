@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { createContext } from 'react';
 import { SyncOfflineUiLogEvents } from 'src/components/app/SyncOfflineUiLogEvents';

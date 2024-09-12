@@ -23,6 +23,6 @@
     display: none;
 }
 
-.text[aria-hidden="false"] {
+.text[aria-hidden='false'] {
     display: block;
 }

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { Checkbox } from 'src/components/Checkbox';
 import { createLink } from 'src/utils/docs/createLink';

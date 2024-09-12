@@ -1,6 +1,4 @@
-/**
- * @prettier
- */
+
 
 export type UseConfirmDialog = () => (params: UseConfirmDialogProps) => Promise<boolean>;
 

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import classes from 'src/styles/dialogContent.module.css';
 import type { DialogContentProps } from 'src/types/components/DialogContent';

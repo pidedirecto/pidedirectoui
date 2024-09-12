@@ -47,7 +47,7 @@
     background-color: var(--surface-brand);
 }
 
-.tab[aria-selected="true"] {
+.tab[aria-selected='true'] {
     font-family: var(--font-medium);
     text-transform: none;
     font-size: var(--font-size-regular);
@@ -65,16 +65,14 @@
     text-align: center;
 }
 
-.badge[aria-selected="true"] {
+.badge[aria-selected='true'] {
     background-color: var(--surface-brand);
     color: var(--text-secondary);
 }
 
 .tabContainer {
-    padding-top: 24px
+    padding-top: 24px;
 }
-
-
 
 @media (max-width: 600px) {
     .container {

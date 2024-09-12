@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 import type { Meta, StoryObj } from '@storybook/react';
 import { TextArea } from 'src/components/TextArea';
 

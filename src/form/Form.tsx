@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { createContext } from 'react';
 import * as React from 'react';
 import { FormProvider } from 'react-hook-form';

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { isObject } from 'src/utils/object/isObject';
 
 export function cloneObject<T extends Object>(obj: T): T {

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { useCreateUserClickedButtonLogEvent } from 'src/services/logEvent/useCreateUserClickedButtonLogEvent';
 import classes from 'src/styles/button.module.css';

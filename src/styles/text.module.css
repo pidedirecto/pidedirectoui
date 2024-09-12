@@ -5,39 +5,39 @@
     margin: 0;
 }
 
-.text[data-weight="regular"] {
+.text[data-weight='regular'] {
     font-family: var(--font-regular);
 }
 
-.text[data-weight="light"] {
+.text[data-weight='light'] {
     font-family: var(--font-light);
 }
 
-.text[data-weight="bold"] {
+.text[data-weight='bold'] {
     font-family: var(--font-bold);
 }
 
-.text[data-weight="medium"] {
+.text[data-weight='medium'] {
     font-family: var(--font-medium);
 }
 
-.text[data-weight="semiBold"] {
+.text[data-weight='semiBold'] {
     font-family: var(--font-semi-bold);
 }
 
-.text[data-size="small"] {
+.text[data-size='small'] {
     font-size: var(--font-size-small);
 }
 
-.text[data-size="regular"] {
+.text[data-size='regular'] {
     font-size: var(--font-size-regular);
 }
 
-.text[data-size="large"] {
+.text[data-size='large'] {
     font-size: var(--font-size-large);
 }
 
-.text[data-size="extraLarge"] {
+.text[data-size='extraLarge'] {
     font-size: var(--font-size-extra-large);
 }
 

@@ -1,8 +1,7 @@
-import { Meta} from '@storybook/blocks';
+import { Meta } from '@storybook/blocks';
 import { Color } from 'src/docs/utils/Color';
 
-
-<Meta title="hooks/useTheme" />
+<Meta title='hooks/useTheme' />
 
 # useTheme
 
@@ -15,20 +14,20 @@ The `Theme` object is organized into several sections, including `palette` for c
 
 The `surface` variables within the theme's palette are designed to define the background colors for UI components and areas. These variables range from light to dark, offering a spectrum of color options for creating depth, hierarchy, and focus across the interface. The surface colors help in distinguishing different sections of the UI, enhancing user experience by visually segmenting content and interactive elements.
 
-- `primary`: The lightest background color, generally used for the main backgrounds across the UI.
-- `secondary`, `tertiary`: Provide nuanced background options, useful for grouping elements or creating subtle distinctions between different UI sections.
-- `contrast`, `heavyContrast`: These are darker colors that provide strong visual separation or emphasis, ideal for footers, headers, or focused elements.
-- `invert`: The darkest color, often used for text or elements on light backgrounds for maximum contrast.
-- `brand`, `brandSecondary`, `brandContrast`, `brandHeavyContrast`: Brand-related surface colors that infuse the UI with the brand's identity, useful for branded elements or sections that require distinct recognition.
-- `success`, `info`, `warning`, `danger`: Semantic colors used for background elements that communicate specific statuses or messages to the user, like success notifications or warning messages.
+-   `primary`: The lightest background color, generally used for the main backgrounds across the UI.
+-   `secondary`, `tertiary`: Provide nuanced background options, useful for grouping elements or creating subtle distinctions between different UI sections.
+-   `contrast`, `heavyContrast`: These are darker colors that provide strong visual separation or emphasis, ideal for footers, headers, or focused elements.
+-   `invert`: The darkest color, often used for text or elements on light backgrounds for maximum contrast.
+-   `brand`, `brandSecondary`, `brandContrast`, `brandHeavyContrast`: Brand-related surface colors that infuse the UI with the brand's identity, useful for branded elements or sections that require distinct recognition.
+-   `success`, `info`, `warning`, `danger`: Semantic colors used for background elements that communicate specific statuses or messages to the user, like success notifications or warning messages.
 
 ## Icon Variables
 
 `Icon` variables in the theme's palette dictate the color of icons within the application. Icons play a critical role in user interface design, offering visual cues and enhancing usability through graphical representations of actions, objects, and more. The color of icons must align with the overall design language and ensure sufficient contrast for easy recognition.
 
-- `primary`: The primary color for icons, ensuring they are legible and harmonize with the overall design.
-- `invert`: Used for icons on dark or inverted backgrounds, providing necessary contrast.
-- `brand`: A brand-aligned color for icons, enabling the use of branded icons or emphasizing icons that relate directly to brand elements or actions.
+-   `primary`: The primary color for icons, ensuring they are legible and harmonize with the overall design.
+-   `invert`: Used for icons on dark or inverted backgrounds, providing necessary contrast.
+-   `brand`: A brand-aligned color for icons, enabling the use of branded icons or emphasizing icons that relate directly to brand elements or actions.
 
 By leveraging these `surface` and `icon` variables, designers and developers can create a cohesive, visually appealing, and brand-consistent user interface. These variables allow for flexibility and creativity in UI design, ensuring that applications not only look good but also provide a seamless and intuitive user experience.
 
@@ -36,26 +35,25 @@ By leveraging these `surface` and `icon` variables, designers and developers can
 
 Within the theme's palette, `border` variables play a vital role in defining the aesthetic boundaries of UI components. These variables are designed to set the border colors for elements such as input fields, buttons, cards, and any component that requires a distinct border. The range of border variables allows for a nuanced design approach, enabling the creation of visual hierarchies and emphasis through color contrast.
 
-- `primary`: Defines the primary border color, typically used for the most common UI elements.
-- `secondary`, `tertiary`: Serve as alternative border colors for differentiating elements or emphasizing various states.
-- `invert`: Specifies the border color for elements on dark or inverted backgrounds.
-- `brand`: Used for border colors that match the brand identity, ensuring a cohesive visual language.
-- `brandContrast`, `brandOutline`: Offer additional brand-related border options for highlighting or outlining elements.
-- `success`, `info`, `warning`, `danger`: These are semantic colors used to convey different statuses or alerts within the UI, such as success messages or error states.
+-   `primary`: Defines the primary border color, typically used for the most common UI elements.
+-   `secondary`, `tertiary`: Serve as alternative border colors for differentiating elements or emphasizing various states.
+-   `invert`: Specifies the border color for elements on dark or inverted backgrounds.
+-   `brand`: Used for border colors that match the brand identity, ensuring a cohesive visual language.
+-   `brandContrast`, `brandOutline`: Offer additional brand-related border options for highlighting or outlining elements.
+-   `success`, `info`, `warning`, `danger`: These are semantic colors used to convey different statuses or alerts within the UI, such as success messages or error states.
 
 ## Text Variables
 
 `Text` variables, also part of the theme's palette, are essential for ensuring legibility and enhancing the textual content's alignment with the overall design. These variables dictate the color of text across different components and contexts, supporting readability and aesthetic harmony.
 
-- `primary`: The main text color, used for the body text and primary content.
-- `contrast`: Provides a high-contrast text color option, often used for headings or emphasized text.
-- `secondary`: A softer color for secondary text, such as captions or less critical information.
-- `invert`: The text color for use on dark or inverted backgrounds, ensuring readability.
-- `brand`: Aligns text color with the brand palette, suitable for branded content or highlights.
-- `success`, `info`, `warning`, `danger`: Semantic text colors that communicate different messages or states, like success, information, warnings, and errors.
+-   `primary`: The main text color, used for the body text and primary content.
+-   `contrast`: Provides a high-contrast text color option, often used for headings or emphasized text.
+-   `secondary`: A softer color for secondary text, such as captions or less critical information.
+-   `invert`: The text color for use on dark or inverted backgrounds, ensuring readability.
+-   `brand`: Aligns text color with the brand palette, suitable for branded content or highlights.
+-   `success`, `info`, `warning`, `danger`: Semantic text colors that communicate different messages or states, like success, information, warnings, and errors.
 
 These variables enhance the theme's flexibility and expressiveness, enabling developers and designers to create a consistent, brand-aligned, and user-friendly interface.
-
 
 ```ts
 type Theme = {
@@ -119,15 +117,15 @@ type Theme = {
 If you use this component the `theme` prop is required but the values inside the theme object are optionals, so you can customize the theme as few as you want
 
 ```tsx
-import { useTheme } from '@pidedirecto/ui/hooks'
+import { useTheme } from '@pidedirecto/ui/hooks';
 
 useTheme({
     palette: {
         surface: {
-            primary: 'red'
-        }
-    }
-})
+            primary: 'red',
+        },
+    },
+});
 ```
 
 You can only have one theme per application, so if you use multiple `useTheme` hooks the last one will override the previous theme values
@@ -138,9 +136,9 @@ You can only have one theme per application, so if you use multiple `useTheme` h
 
 The size objects contains the font size info, this size are used across all the components
 
-- extraSmall: extra small font size 10px
-- small: small font size, used for example in helper texts 12px
-- normal: main font size 14px
-- large: large font size 16px
-- large: large font size 16px
-- extraLarge: extraLarge font size 18px
+-   extraSmall: extra small font size 10px
+-   small: small font size, used for example in helper texts 12px
+-   normal: main font size 14px
+-   large: large font size 16px
+-   large: large font size 16px
+-   extraLarge: extraLarge font size 18px

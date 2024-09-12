@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useContext } from 'react';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
 import { UiLogEventTypes, type UiLogEventType } from 'src/constants/UiLogEventType';

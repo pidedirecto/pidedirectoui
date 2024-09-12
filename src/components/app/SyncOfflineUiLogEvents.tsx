@@ -1,8 +1,4 @@
-/**
- * @prettier
- */
-import { useEffect } from 'react';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ApiContext } from 'src/components/app/ApiProvider';
 import { useSyncOfflineUiLogEvents } from 'src/services/logEvent/useSyncOfflineUiLogEvents';
 

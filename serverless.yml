@@ -1,31 +1,31 @@
 service: pidedirectoui
 
-frameworkVersion: "3.37.0" # keep same as version in package.json
+frameworkVersion: '3.37.0' # keep same as version in package.json
 useDotenv: true
 
 plugins:
-  - serverless-finch
+    - serverless-finch
 
 provider:
-  name: aws
-  runtime: nodejs20.x
-  region: us-east-1
+    name: aws
+    runtime: nodejs20.x
+    region: us-east-1
 
 custom:
-  client:
-    bucketName: ${env:S3_BUCKET_NAME}
-    distributionFolder: storybook-static
-    indexDocument: index.html
-    errorDocument: index.html
-    objectHeaders:
-      '*.html':
-        - name: Cache-Control
-          value: no-cache
-      'service-worker.js':
-        - name: Cache-Control
-          value: no-cache
-    uploadOrder:
-      - .*
-      - .*/assets/.*
-      - service-worker\.js
-      - index\.html
+    client:
+        bucketName: ${env:S3_BUCKET_NAME}
+        distributionFolder: storybook-static
+        indexDocument: index.html
+        errorDocument: index.html
+        objectHeaders:
+            '*.html':
+                - name: Cache-Control
+                  value: no-cache
+            'service-worker.js':
+                - name: Cache-Control
+                  value: no-cache
+        uploadOrder:
+            - .*
+            - .*/assets/.*
+            - service-worker\.js
+            - index\.html

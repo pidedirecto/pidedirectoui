@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import classes from 'src/styles/text.module.css';
 import { TextProps } from 'src/types/components/Text';

@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 4px
+    gap: 4px;
 }
 
 .labelContainer {
@@ -44,15 +44,15 @@
     box-sizing: border-box;
 }
 
-.inputContainer[data-error="true"] {
+.inputContainer[data-error='true'] {
     border: 2px solid var(--border-danger);
 }
 
-.inputContainer[data-focus="true"]{
+.inputContainer[data-focus='true'] {
     outline: 2px solid var(--border-brand-outline);
 }
 
-.inputContainer:disabled{
+.inputContainer:disabled {
     background-color: 2px solid var(--border-brand-outline);
 }
 

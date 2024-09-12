@@ -1,6 +1,4 @@
-/**
- * @prettier
- */
+
 import * as React from 'react';
 import { type UseFormMethods } from 'react-hook-form';
 

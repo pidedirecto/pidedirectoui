@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 export const UiLogEventTypes = Object.freeze({
     USER_OPENED_PAGE: 'USER_OPENED_PAGE',
     USER_CLICKED_BUTTON: 'USER_CLICKED_BUTTON',

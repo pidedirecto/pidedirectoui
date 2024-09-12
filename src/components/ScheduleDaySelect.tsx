@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { Button } from 'src/components/Button';
 import { Label } from 'src/components/Label';

@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap:12px
+    gap: 12px;
 }
 .dialogContent {
     text-align: center;
@@ -27,7 +27,7 @@
     background-color: var(--text-danger);
 }
 
-.errorButton:hover{
+.errorButton:hover {
     background-color: var(--red300);
 }
 
@@ -35,7 +35,7 @@
     background-color: var(--text-warning);
 }
 
-.warningButton:hover{
+.warningButton:hover {
     background-color: var(--orange300);
 }
 
@@ -43,7 +43,7 @@
     background-color: var(--green600);
 }
 
-.successButton:hover{
+.successButton:hover {
     background-color: var(--green700);
 }
 
@@ -59,27 +59,24 @@
 
 .title {
     font-family: var(--font-semi-bold);
-    color:var(--text-primary);
+    color: var(--text-primary);
     font-size: var(--font-size-extra-large);
 }
 
 @media (min-width: 600px) {
-    .dialog{
+    .dialog {
         max-width: 90%;
     }
-    .message{
+    .message {
         font-size: var(--font-size-extra-large);
     }
 }
 
 @media (min-width: 960px) {
-    .iconContainer{
+    .iconContainer {
         min-width: 460px;
     }
-    .dialog{
+    .dialog {
         max-width: 50%;
     }
-
-
 }
-

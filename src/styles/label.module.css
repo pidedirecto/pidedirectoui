@@ -13,6 +13,6 @@
     color: var(--text-danger);
 }
 
-.label[aria-disabled="true"] {
+.label[aria-disabled='true'] {
     color: var(--text-contrast);
 }

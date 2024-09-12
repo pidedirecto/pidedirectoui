@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useContext, useEffect, useState } from 'react';
 import * as React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';

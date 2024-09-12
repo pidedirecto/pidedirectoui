@@ -1,6 +1,4 @@
-/**
- * @prettier
- */
+
 import * as React from 'react';
 import { type ValidationRule } from 'react-hook-form';
 import { InputProps } from 'src/types/components/Input';

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 export const ScreenWidthSizes = Object.freeze({
     SMALL_SCREEN: 600,
     MEDIUM_SCREEN: 960,

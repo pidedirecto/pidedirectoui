@@ -1,10 +1,11 @@
-import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
 import * as ScheduleDaySelectStories from '../../stories/ScheduleDaySelect.stories';
 
 <Meta of={ScheduleDaySelectStories} />
 
 # ScheduleDaySelect
+
 Renders a schedule select. The value of this input should be a string with the schedule in [opening hours format](https://openingh.openstreetmap.de/evaluation_tool/),
 the onChange callback will send the new schedule in opening hours format.
 
@@ -68,4 +69,3 @@ const handleChange = (newValue) => setValue(newValue)
 ## API
 
 <ArgTypes of={ScheduleDaySelectStories} />
-

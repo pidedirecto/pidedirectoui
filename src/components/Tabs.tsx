@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { Children, useContext, useState } from 'react';
 import { LinearProgress } from 'src/components/LinearProgress';

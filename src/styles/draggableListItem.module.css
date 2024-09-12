@@ -19,7 +19,7 @@
     border: 0;
 }
 
-.container[aria-selected="true"] {
+.container[aria-selected='true'] {
     border: 0;
     background-color: var(--surface-tertiary);
 }

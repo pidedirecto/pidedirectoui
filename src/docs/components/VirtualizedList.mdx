@@ -1,7 +1,6 @@
-import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
 import * as VirtualizedListStories from '../../stories/VirtualizedList.stories';
-
 
 <Meta of={VirtualizedListStories} />
 
@@ -9,8 +8,8 @@ import * as VirtualizedListStories from '../../stories/VirtualizedList.stories';
 
 Renders an VirtualizedList.
 
-
 The Virtualized list is capable of storing a large number of elements but will only render those that are seen in the window defined by the height of the component
+
 ## Vertical virtualized list
 
 <Canvas of={VirtualizedListStories.Controlled} sourceState={'none'} />
@@ -39,6 +38,7 @@ return (
 ```
 
 ## Horizontal virtualized list
+
 <Canvas of={VirtualizedListStories.Horizontal} sourceState={'none'} />
 
 ```tsx
@@ -67,4 +67,3 @@ return (
 ## API
 
 <ArgTypes of={VirtualizedListStories} />
-

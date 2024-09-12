@@ -88,14 +88,14 @@
 }
 
 .toolbarButtonsContainer button {
-    color: var(--text-brand)
+    color: var(--text-brand);
 }
 
 .title {
     margin: 0;
     font-family: var(--font-semi-bold);
     font-size: var(--font-size-extra-large);
-    color: var(--text-primary)
+    color: var(--text-primary);
 }
 
 .tableCheckbox {
@@ -118,5 +118,5 @@
 .filterColumnsTableToolbarButtonDropdownItem {
     display: flex;
     flex-direction: row;
-    gap: 4px
+    gap: 4px;
 }

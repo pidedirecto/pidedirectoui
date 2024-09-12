@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 4px
+    gap: 4px;
 }
 
 .labelContainer {
@@ -36,7 +36,7 @@
     outline: 2px solid var(--border-brand-outline);
 }
 
-.input[data-error="true"] {
+.input[data-error='true'] {
     border: 2px solid var(--border-danger);
 }
 

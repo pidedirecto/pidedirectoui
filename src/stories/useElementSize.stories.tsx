@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { Meta } from '@storybook/react';
 import React, { useRef } from 'react';
 import { useElementSize } from 'src/hooks/useElementSize';

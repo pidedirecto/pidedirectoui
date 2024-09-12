@@ -19,8 +19,8 @@
 }
 
 .input:checked {
-   background-color: var(--surface-brand-contrast);
-   border: 1px solid var(--surface-brand-contrast);
+    background-color: var(--surface-brand-contrast);
+    border: 1px solid var(--surface-brand-contrast);
 }
 
 .input:disabled {

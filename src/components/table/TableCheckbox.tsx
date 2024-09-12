@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { Checkbox } from 'src/components/Checkbox';
 import { useTableActions, useTableStore } from 'src/components/table/tableStore';

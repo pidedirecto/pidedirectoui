@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { current } from 'immer';
 
 export function logStore(...args: Array<any>): void {

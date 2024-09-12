@@ -1,7 +1,3 @@
-/**
- * @prettier
- * @flow
- */
 import { isArray } from 'src/utils/array/isArray';
 
 export function removeNulls<T extends Object | Array<any> | void | null>(obj: T): T {

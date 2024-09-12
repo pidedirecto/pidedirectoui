@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { FixedSizeList } from 'react-window';
 import classes from 'src/styles/virtualizedList.module.css';

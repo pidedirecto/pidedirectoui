@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { DropDownItem } from 'src/components/DropDownItem';
 

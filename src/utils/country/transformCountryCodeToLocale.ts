@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { CountryCode, CountryCodes } from 'src/constants/CountryCode';
 
 export function transformCountryCodeToLocale(countryCode: CountryCode | undefined): string {

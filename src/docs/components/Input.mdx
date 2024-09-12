@@ -1,10 +1,11 @@
-import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
 import * as InputStories from '../../stories/Input.stories';
 
 <Meta of={InputStories} />
 
 # Input
+
 Renders an input
 
 <Canvas of={InputStories.Primary} />
@@ -28,17 +29,15 @@ If you want the HTML onChange event you can receive it as second parameter in th
 If you need to override the default input maybe because you have an special format component like displaying currencies but keeping the same style you can pass the `InputComponent` prop
 
 ```tsx
-import { Input } from '@pidedirecto/ui'
+import { Input } from '@pidedirecto/ui';
 
-function MainComponent(){
-    return <Input name='input' InputComponent={MyInput} label='Write your favorite food' />
+function MainComponent() {
+    return <Input name='input' InputComponent={MyInput} label='Write your favorite food' />;
 }
 
-function MyInput ({ ...props }) {
-    return <SpecialInput {...props} />
+function MyInput({ ...props }) {
+    return <SpecialInput {...props} />;
 }
-
-
 ```
 
 ## Types
@@ -48,7 +47,7 @@ function MyInput ({ ...props }) {
 <Canvas of={InputStories.Search} />
 
 ## API
+
 Here there are described some of the important props, but the `Input` component can receive almost any of the HTML input props.
 
 <ArgTypes of={InputStories} />
-

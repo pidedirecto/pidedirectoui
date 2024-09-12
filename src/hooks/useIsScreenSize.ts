@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useEffect, useState } from 'react';
 import { ScreenSize } from 'src/constants/ScreenSize';
 import { getScreenSize } from 'src/utils/window/getScreenSize';

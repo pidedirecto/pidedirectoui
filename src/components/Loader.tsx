@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import React, { useEffect, useRef } from 'react';
 import { Text } from 'src/components/Text';
 import classes from 'src/styles/loader.module.css';

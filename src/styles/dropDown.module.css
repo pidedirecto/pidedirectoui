@@ -9,7 +9,7 @@
     flex-shrink: 0;
 }
 
-.button[data-open="true"] .icon {
+.button[data-open='true'] .icon {
     transform: rotate(-180deg);
 }
 
@@ -23,7 +23,7 @@
     max-width: 100%;
 }
 
-.buttonIcon{
+.buttonIcon {
     width: 48px;
     justify-content: center;
 }
@@ -71,7 +71,7 @@
 
 @media (max-width: 600px) {
     .container {
-        width: 100%
+        width: 100%;
     }
 
     .button {

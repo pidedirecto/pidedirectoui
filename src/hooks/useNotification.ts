@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useNotificationsActions } from 'src/components/Notifications';
 
 export function useNotification() {

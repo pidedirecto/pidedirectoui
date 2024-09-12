@@ -1,6 +1,4 @@
-/**
- * @prettier
- */
+
 import { CountryCode } from 'src/constants/CountryCode';
 import { Currency } from 'src/constants/Currency';
 

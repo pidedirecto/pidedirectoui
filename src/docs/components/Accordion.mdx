@@ -1,10 +1,11 @@
-import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
 import * as AccordionStories from '../../stories/Accordion.stories';
 
 <Meta of={AccordionStories} />
 
 # Accordion
+
 Renders an accordion.
 
 <Canvas of={AccordionStories.Primary} />
@@ -32,19 +33,19 @@ return (
 
 ## Customization
 
-- Custom left icon
+-   Custom left icon
 
 By default, the accordion show an up and down arrow to indicate the accordion state, this can be customizable passing the `renderIcon` prop, this prop is a function that can return any react node and will receive as a prop the accordion state.
 
 <Canvas of={AccordionStories.CustomIcon} sourceState={'none'} />
 
 ```tsx
-<Accordion title={'This is an accordion'} renderIcon={accordionState => (accordionState ? 'Close me!' : 'Open me!')}>
+<Accordion title={'This is an accordion'} renderIcon={(accordionState) => (accordionState ? 'Close me!' : 'Open me!')}>
     <p>Hi! I'm hidden inside an accordion</p>
 </Accordion>
 ```
 
-- Subtext
+-   Subtext
 
 You can also add a description/subtitle to the accordion
 
@@ -53,4 +54,3 @@ You can also add a description/subtitle to the accordion
 ## API
 
 <ArgTypes of={AccordionStories} />
-

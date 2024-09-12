@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { DatePicker as MuiDatePicker } from '@material-ui/pickers';
 import { MaterialUiPickersDate } from '@material-ui/pickers/typings/date';
 import * as React from 'react';

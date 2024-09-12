@@ -1,6 +1,4 @@
-/**
- * @prettier
- */
+
 export type Options = {
     initialValue?: any;
     onError?: OnErrorFunction;

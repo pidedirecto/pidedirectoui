@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 module.exports = {
     printWidth: 200,
     tabWidth: 4,
@@ -10,7 +7,7 @@ module.exports = {
     jsxSingleQuote: true,
     trailingComma: 'all',
     arrowParens: 'always',
-    requirePragma: true,
+    requirePragma: false,
     bracketSpacing: true,
     quoteProps: 'as-needed',
     overrides: [
@@ -29,5 +26,6 @@ module.exports = {
     ],
     plugins: ['@ianvs/prettier-plugin-sort-imports'],
     importOrder: ['<THIRD_PARTY_MODULES>', '^rootpath$', '^(scripts/.*)$', '(^src/.*)$', '^(test/.*)$'],
-    importOrderTypeScriptVersion: '4.8.2',
+    importOrderParserPlugins: ['typescript', 'jsx', 'importAssertions'],
+    importOrderTypeScriptVersion: '5.5.4',
 };

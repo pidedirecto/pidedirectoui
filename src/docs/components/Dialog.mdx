@@ -1,10 +1,11 @@
-import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
 import * as DialogStories from '../../stories/Dialog.stories';
 
 <Meta of={DialogStories} />
 
 # Dialog
+
 Renders a Dialog.
 
 <Canvas of={DialogStories.Primary} sourceState='none' />
@@ -29,17 +30,20 @@ return (
 The `Dialog` component can be positioned in 5 different ways around the window, by default the dialog is centered in the screen,
 but it can also be positioned in the 4 edges of the screen by passing the `position` prop.
 
-- top
-<Canvas of={DialogStories.TopDialog} sourceState='none' />
+-   top
 
-- right
-<Canvas of={DialogStories.RightDialog} sourceState='none' />
+    <Canvas of={DialogStories.TopDialog} sourceState='none' />
 
-- bottom
-<Canvas of={DialogStories.BottomDialog} sourceState='none' />
+-   right
 
-- left
-<Canvas of={DialogStories.LeftDialog} sourceState='none' />
+    <Canvas of={DialogStories.RightDialog} sourceState='none' />
+
+-   bottom
+
+    <Canvas of={DialogStories.BottomDialog} sourceState='none' />
+
+-   left
+    <Canvas of={DialogStories.LeftDialog} sourceState='none' />
 
 ## Dialog mounting
 
@@ -75,4 +79,3 @@ return (
 ## API
 
 <ArgTypes of={DialogStories} />
-

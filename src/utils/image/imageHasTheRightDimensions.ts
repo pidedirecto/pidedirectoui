@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 export async function imageHasTheRightDimensions({ buffer, imageType, dimensions }: Props): Promise<boolean> {
     if (!dimensions) {
         return true;

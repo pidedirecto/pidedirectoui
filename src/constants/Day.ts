@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 export const Days = {
     MONDAY: 'Mo',
     TUESDAY: 'Tu',

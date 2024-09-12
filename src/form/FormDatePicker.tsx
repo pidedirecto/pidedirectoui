@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useContext } from 'react';
 import * as React from 'react';
 import { Simulate } from 'react-dom/test-utils';

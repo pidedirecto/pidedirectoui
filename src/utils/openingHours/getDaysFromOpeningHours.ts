@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import moment from 'moment';
 import OpeningHours from 'opening_hours';
 import { Day, Days } from 'src/constants/Day';

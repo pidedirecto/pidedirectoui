@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useContext } from 'react';
 import * as React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
@@ -42,7 +39,7 @@ export function FormTimePicker({ name, label, helperText, defaultValue, disabled
                     label={getFormFieldLabel(required, label)}
                     value={hoursAsValue ? formatHoursToDate(value) : value}
                     onChange={(value: Date | undefined, hours: string | undefined) => {
-                        onChange(hoursAsValue ? hours ?? null : value ?? null);
+                        onChange(hoursAsValue ? (hours ?? null) : (value ?? null));
                     }}
                     name={name}
                     onBlur={onBlur}

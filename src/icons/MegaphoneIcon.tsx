@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
