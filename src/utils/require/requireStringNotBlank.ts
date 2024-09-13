@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { isString } from 'src/utils/string/isString';
 
 export function requireStringNotBlank(value?: string | null): string {

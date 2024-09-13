@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { CountryCode } from 'src/constants/CountryCode';
 import { Currencies, Currency } from 'src/constants/Currency';
 import { isArgentina } from 'src/utils/country/isArgentina';

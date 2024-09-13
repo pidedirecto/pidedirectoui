@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const hq = require('alias-hq');
 

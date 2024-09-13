@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 export type StepperProps = {
     activeStep: any;
@@ -7,10 +7,10 @@ export type StepperProps = {
         label: string;
         content?: React.ReactNode;
     }>;
-    orientation?: 'vertical' | 'horizontal',
+    orientation?: 'vertical' | 'horizontal';
     classes?: {
         stepIcon?: string;
     };
 };
 
-export type Stepper = React.FunctionComponent<StepperProps>
+export type Stepper = React.FunctionComponent<StepperProps>;

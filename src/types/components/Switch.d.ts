@@ -1,5 +1,5 @@
-import { HTMLProps } from "react";
-import * as React from "react";
+import { HTMLProps } from 'react';
+import * as React from 'react';
 
 export type SwitchProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'type'> & {
     helperText?: string;
@@ -19,4 +19,4 @@ export type SwitchProps = Omit<HTMLProps<HTMLInputElement>, 'className' | 'type'
     inputRef?: React.Ref<any>;
 };
 
-export type Switch = React.FunctionComponent<SwitchProps>
+export type Switch = React.FunctionComponent<SwitchProps>;

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import { RadioGroup } from 'src/components/RadioGroup';

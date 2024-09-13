@@ -42,7 +42,7 @@
     border: none;
 }
 
-.inputError{
+.inputError {
     border: 2px solid var(--border-danger);
 }
 
@@ -65,15 +65,15 @@
     border-radius: 6px;
 }
 
-.listbox li[data-focus="true"]{
+.listbox li[data-focus='true'] {
     color: var(--text-primary);
     cursor: pointer;
- }
+}
 
 .listbox li:active {
     background-color: var(--surface-tertiary);
     color: var(--text-primary);
- }
+}
 
 .itemContainer {
     display: flex;
@@ -91,7 +91,7 @@
     justify-content: space-between;
 }
 
-.infoContainer{
+.infoContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -106,7 +106,7 @@
 
 .itemText {
     font-family: var(--font-regular);
-    font-size: var(--font-size-regular),
+    font-size: var(--font-size-regular);
 }
 
 .checkBoxRow {
@@ -128,7 +128,7 @@
     padding-top: 12px;
     margin-left: 4px;
     border-bottom: 1px solid var(--border-primary);
-    font-size: var(--font-size-small),
+    font-size: var(--font-size-small);
 }
 
 .arrowAlignCenter {
@@ -170,7 +170,6 @@
     background-color: var(--surface-secondary);
     height: 26px;
     width: fit-content;
-
 }
 
 .chip {
@@ -193,13 +192,13 @@
 }
 
 @media (min-width: 600px) {
-    .label{
+    .label {
         font-size: var(--font-size-regular);
     }
 }
 
 @media (max-width: 600px) {
-    .input{
+    .input {
         width: 100%;
     }
 }

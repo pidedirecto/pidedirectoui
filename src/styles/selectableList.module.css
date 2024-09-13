@@ -1,4 +1,3 @@
-
 .container {
     width: 100%;
     display: flex;
@@ -7,7 +6,7 @@
 }
 
 .optionSelected {
-    background-color: var(--surface-brand)
+    background-color: var(--surface-brand);
 }
 
 .disabled {
@@ -20,7 +19,7 @@
     align-items: center;
     gap: 10px;
     font-family: var(--font-regular);
-    height: 40px
+    height: 40px;
 }
 
 .underlineVariantTable {
@@ -32,4 +31,3 @@
     padding-left: 0;
     padding-right: 0;
 }
-

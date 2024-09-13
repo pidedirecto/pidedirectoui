@@ -1,4 +1,4 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 
 import * as AutocompleteStories from '../../stories/Autocomplete.stories';
 
@@ -15,11 +15,13 @@ The Autocomplete component needs several options, each option is an object of an
 The getValue and getLabel functions will be like this:
 
 In this example array:
+
 ```
 const orders = [
     { orderId: '', orderStatus: '',} ....
 ]
 ```
+
 The getValue and getLabel functions will be like this:
 `getOptionValue={(option) => option.orderId} getOptionLabel={(option) => option.orderStatus}`
 

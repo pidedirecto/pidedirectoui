@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { CountryCode } from 'src/constants/CountryCode';
 
 export type FormatAsCountryNumber = (value: string | number | null | undefined, options?: Options) => string;

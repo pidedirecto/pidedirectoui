@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { HTMLProps } from 'react';
 import classes from 'src/styles/label.module.css';

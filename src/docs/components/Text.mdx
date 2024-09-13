@@ -1,4 +1,4 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 
 import * as TextStories from '../../stories/Text.stories';
 
@@ -31,20 +31,22 @@ You can change the text font size through the size prop
 The `Text` component has some predefined styles if you want to render heading element o regular texts,
 this can be done through the variant prop
 
-- Title
-<Canvas of={TextStories.Title} />
+-   Title
 
-- Subtitle
-<Canvas of={TextStories.Subtitle} />
+    <Canvas of={TextStories.Title} />
 
-- Paragraph
-<Canvas of={TextStories.Paragraph} />
+-   Subtitle
+
+    <Canvas of={TextStories.Subtitle} />
+
+-   Paragraph
+    <Canvas of={TextStories.Paragraph} />
 
 These variants also change the HTML element being rendered, for heading variants it renders the respective `h1` or `h2` heading element,
 for the paragraph variant it renders a `p` element, by default, this component renders a `span` element.
 
-
 ## API
+
 Here there are described some of the important props, but the `Text` component can receive almost any of the HTML span and heading element props.
 
 <ArgTypes of={TextStories} />

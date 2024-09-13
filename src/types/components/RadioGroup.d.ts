@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 
 export type RadioGroupProps = {
     value: any;
@@ -11,8 +11,8 @@ export type RadioGroupProps = {
     onChange: (value: any) => void | Promise<void>;
     orientation?: 'horizontal' | 'vertical';
     classes?: {
-        container?: string,
-    },
-}
+        container?: string;
+    };
+};
 
-export type RadioGroup = React.FunctionComponent<RadioGroupProps>
+export type RadioGroup = React.FunctionComponent<RadioGroupProps>;

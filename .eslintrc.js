@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 module.exports = {
     extends: ['react-app', 'plugin:import/errors', 'plugin:import/warnings', 'prettier', 'plugin:storybook/recommended'],
     plugins: ['unused-imports', 'no-relative-import-paths', 'import', 'prettier'],

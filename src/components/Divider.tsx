@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import classNames from 'classnames';
 import * as React from 'react';
 import classes from 'src/styles/divider.module.css';

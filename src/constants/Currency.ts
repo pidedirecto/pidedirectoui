@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import type { CurrencyCode } from 'src/types/Id';
 
 export const Currencies = {

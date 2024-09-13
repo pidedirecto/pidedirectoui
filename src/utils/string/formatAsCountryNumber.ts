@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { CountryCode, CountryCodes } from 'src/constants/CountryCode';
 import { Options } from 'src/types/utils/formatAsCountryNumber';
 import { isPeru } from 'src/utils/country/isPeru';

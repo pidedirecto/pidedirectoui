@@ -1,4 +1,4 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 
 import * as ChipStories from '../../stories/Chip.stories';
 
@@ -14,23 +14,23 @@ Renders a Chip
 
 The `Chip` component has default set of variants and you can change it through the `variant` prop
 
-- success
+-   success
 
 <Canvas of={ChipStories.Success} />
 
-- error
+-   error
 
 <Canvas of={ChipStories.Error} />
 
-- warning
+-   warning
 
 <Canvas of={ChipStories.Warning} />
 
-- info
+-   info
 
 <Canvas of={ChipStories.Info} />
 
-- secondary
+-   secondary
 
 <Canvas of={ChipStories.Secondary} />
 
@@ -41,15 +41,15 @@ The `Chip` component can be clickable if you pass an `onClick` callback, besides
 <Canvas of={ChipStories.Clickable} sourceState='none' />
 
 ```tsx
-import { Chip } from '@pidedirecto/ui'
-import { EditIcon } from '@pidedirecto/ui/icons'
+import { Chip } from '@pidedirecto/ui';
+import { EditIcon } from '@pidedirecto/ui/icons';
 
 <Chip onClick={() => alert('You click on the chip!!')}>
     <div>
         Edit
         <EditIcon size={10} />
     </div>
-</ Chip>
+</Chip>;
 ```
 
 ## API

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { UiLogEvent } from 'src/types/UiLogEvent';
 
 export function setUiInteractionLogEventsInLocalStorage(uiLogEvents: Array<UiLogEvent>): void {

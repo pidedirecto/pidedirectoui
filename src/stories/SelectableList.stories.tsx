@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { SelectableList } from 'src/components/SelectableList';

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useRef } from 'react';
 import { useConfirmDialogActions } from 'src/components/confirmDialog/confirmDialogStore';
 import { UseConfirmDialogProps } from 'src/types/hooks/UseConfirmDialog';

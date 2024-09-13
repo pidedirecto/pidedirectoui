@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 export const ImageSizes = Object.freeze({
     EXTRA_SMALL: 'EXTRA_SMALL',
     SMALL: 'SMALL',

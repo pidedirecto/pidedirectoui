@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import type { ValidationRule } from 'react-hook-form';
 import { isObject } from 'src/utils/object/isObject';
 

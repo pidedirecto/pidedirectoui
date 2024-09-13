@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 export function downloadTextInFile(text?: string | null, fileName?: string | null): void {
     const element = document.createElement('a');
     const file = new Blob([text as any], { type: 'text/plain' });

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 
 export function Color({ color }: Props): React.ReactElement {

@@ -1,4 +1,4 @@
-import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
 import * as DividerStories from '../../stories/Divider.stories';
 
@@ -11,25 +11,31 @@ Renders a Divider
 <Canvas of={DividerStories.BasicDivider} />
 
 ## Divider variants
+
 The solid variant is the main one, you don't have to pass anything to the Divider to render this version
 
 ### Dashed
+
 <Canvas of={DividerStories.Dashed} />
 
 You can change the dashed Divider through the theme
 
 ### Dotted
+
 <Canvas of={DividerStories.Dotted} />
 
 You can change the dotted Divider through the theme
 
 ## Divider orientation
+
 The horizontal variant is the main one, you don't have to pass anything to the Divider to render this version
 
 ### Vertical
+
 <Canvas of={DividerStories.Vertical} />
 
 ## API
+
 Here there are described some of the custom props.
 
 <ArgTypes of={DividerStories} />

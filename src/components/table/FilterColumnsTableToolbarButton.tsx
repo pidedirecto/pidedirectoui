@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { useContext } from 'react';
 import { Checkbox } from 'src/components/Checkbox';

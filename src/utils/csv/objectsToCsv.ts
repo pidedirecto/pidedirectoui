@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import Papa from 'papaparse';
 
 export function objectsToCsv(objects: Array<any>): string {

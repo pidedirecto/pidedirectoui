@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useContext, useRef } from 'react';
 import { ApiContext } from 'src/components/app/ApiProvider';
 import { SECONDS } from 'src/constants/TimeUnit';

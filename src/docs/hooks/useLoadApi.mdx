@@ -1,21 +1,19 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 
 import * as useElementSizeStories from '../../stories/useElementSize.stories';
 
-
-<Meta title="hooks/useLoadApi" />
+<Meta title='hooks/useLoadApi' />
 
 # useLoadApi
 
 This hook allows you to call apis.
 
 ```tsx
-import { useLoadApi } from '@pidedirecto/ui/hooks'
+import { useLoadApi } from '@pidedirecto/ui/hooks';
 
 const elementRef = useRef<HTMLDivElement | null>(null);
 
 const [loading, response, loadApi] = useLoadApi(findElementsApi, { ...request });
-
 ```
 
 The `useLoadApi` accepts three arguments.
@@ -28,8 +26,8 @@ The `useLoadApi` accepts three arguments.
 
 The `options` object can have the following attributes
 
-- `initialValue` can be any type, this value is used to set the default value of the response result
-- `onError` function, this functions is going to be called when the api call has failed, this function receives 2 arguments
+-   `initialValue` can be any type, this value is used to set the default value of the response result
+-   `onError` function, this functions is going to be called when the api call has failed, this function receives 2 arguments
 
     1. The first argument is the response from the api and its type is
 
@@ -47,37 +45,37 @@ type ApiErrorResponse = {
 
     2. The second argument is a function to change the value of the api response
 
-- `dependencies` array, this array works the same as the dependencies array from the `useEffect` hook, if inside the request
-you use some external state, or you want to call the api each time an state changes, you must pass it to this array, for example:
+-   `dependencies` array, this array works the same as the dependencies array from the `useEffect` hook, if inside the request
+    you use some external state, or you want to call the api each time an state changes, you must pass it to this array, for example:
 
 ```ts
-import { useLoadApi } from '@pidedirecto/ui/hooks'
+import { useLoadApi } from '@pidedirecto/ui/hooks';
 
-const [page, setPage] = useState(1)
+const [page, setPage] = useState(1);
 
-const [loading, response] = useLoadApi(paginationApi, { page }, { dependencies: [page] })
+const [loading, response] = useLoadApi(paginationApi, { page }, { dependencies: [page] });
 ```
 
 In this example how the api request uses the page state, you should pass it in the dependencies array
 
-- `requiredValues` array, this field is used to prevent the api is called with some nullish values, if the api request requires some values but
-the values you passed are probably undefined, you can pass them to this array to assure those values are defined before calling the api, for example:
+-   `requiredValues` array, this field is used to prevent the api is called with some nullish values, if the api request requires some values but
+    the values you passed are probably undefined, you can pass them to this array to assure those values are defined before calling the api, for example:
 
 ```ts
-import { useLoadApi } from '@pidedirecto/ui/hooks'
+import { useLoadApi } from '@pidedirecto/ui/hooks';
 
-const [userSelection, setUserSelection] = useState(undefined)
+const [userSelection, setUserSelection] = useState(undefined);
 
-const [loading, response] = useLoadApi(someApi, { userSelection }, { requiredValues: [userSelection], dependencies: [userSelection] })
+const [loading, response] = useLoadApi(someApi, { userSelection }, { requiredValues: [userSelection], dependencies: [userSelection] });
 
-const handleSelect = (selectedValue) => setUserSelection(selectedValue)
+const handleSelect = (selectedValue) => setUserSelection(selectedValue);
 ```
 
 In this example we have an state that has been initialized as undefined, cause its value depends on a user selection, if we would like to call an api
 that need the user selection inside the request but the api required that value to be defined, we can pass the `userSelection` state to the
 `requiredValues` array to guarantee that the api is called once that value has been defined.
 
-- `unZip`, this field is used to unzip the api response.
+-   `unZip`, this field is used to unzip the api response.
 
 ## Result
 
@@ -85,7 +83,7 @@ The `useLoadApi` hook, returns 3 values
 
 1. The first value is a loading state, when the api is being called this state will indicate it.
 2. The second value is the api response, when the api has been called and everything went ok, the hook will change this value to the api response,
-you can set the default value with the `options` object.
+   you can set the default value with the `options` object.
 
 **NOTE**
 
@@ -125,7 +123,7 @@ return (
 ```
 
 3. The third value is a function to call again the api at any time, this is useful for "refresh" behaviors, this function can receive a new request to call the api,
-you need to pass the request inside an object, for example
+   you need to pass the request inside an object, for example
 
 ```tsx
 const [loading, elements, loadApi] = useLoadApi(findElementsApi, { ...request });

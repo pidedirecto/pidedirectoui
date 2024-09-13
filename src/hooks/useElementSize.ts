@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 import { RefObject, useEffect, useState } from 'react';
 import { UseElementSizeResult } from 'src/types/hooks/UseElementSize';
 

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import type { Meta, StoryObj } from '@storybook/react';
 import { DraggableListItem } from 'src/components/DraggableListItem';
 

@@ -1,9 +1,9 @@
-.cardContainer{
+.cardContainer {
     width: 100%;
     border-radius: 5px;
     border: 1px solid var(--border-primary);
 }
-.cardTitle{
+.cardTitle {
     font-size: var(--font-size-large);
     font-weight: bold;
     font-family: var(--font-semi-bold);
@@ -12,6 +12,6 @@
     padding: 8px;
 }
 
-.cardContent{
+.cardContent {
     padding: 8px;
 }

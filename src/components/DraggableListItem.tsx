@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { DraggableListContext } from 'src/components/DraggableList';

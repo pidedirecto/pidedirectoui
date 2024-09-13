@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/react'
+import type { Preview } from '@storybook/react';
 import 'src/letseatfont.css';
 import 'src/index.css';
 

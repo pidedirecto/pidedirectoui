@@ -1,7 +1,7 @@
-import { Meta, Canvas, ArgTypes } from '@storybook/blocks';
 import * as NotificationsStories from '../../stories/Notifications.stories';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
-<Meta title="hooks/useNotification" />
+<Meta title='hooks/useNotification' />
 
 # useNotification
 
@@ -25,19 +25,17 @@ could lead to unexpected behaviours.
 Once you have imported the `Notifications` component, you can use the `useNotification` hook anywhere in your application and start showing notifications.
 
 ```tsx
-import { useNotification } from '@pidedirecto/ui/hooks'
-import { Button } from '@pidedirecto/ui'
+import { Button } from '@pidedirecto/ui';
+import { useNotification } from '@pidedirecto/ui/hooks';
 
 function Component() {
-    const notification = useNotification()
+    const notification = useNotification();
 
     const handleClick = () => {
-        notification({ message: 'Hi! You have a new notification' })
-    }
+        notification({ message: 'Hi! You have a new notification' });
+    };
 
-    return (
-        <Button onClick={handleClick}>Click me!</Button>
-    )
+    return <Button onClick={handleClick}>Click me!</Button>;
 }
 ```
 

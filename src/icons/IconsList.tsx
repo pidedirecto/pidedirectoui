@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { AddElementIcon } from 'src/icons/AddElementIcon';
 import { AirTableIcon } from 'src/icons/AirTableIcon';

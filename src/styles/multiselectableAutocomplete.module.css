@@ -5,7 +5,7 @@
     align-items: center;
     margin-bottom: 4px;
 }
-.headContainerLabel{
+.headContainerLabel {
     display: flex;
     flex-direction: column;
 }
@@ -27,7 +27,6 @@
     min-height: 26px;
     border-radius: 100px;
     font-weight: 700;
-
 }
 .numberOptionsSelectedContainerInside {
     font-family: var(--font-regular);
@@ -41,7 +40,6 @@
     border-radius: 100px;
     font-weight: 700;
     margin-right: 12px;
-
 }
 
 .labelError {
@@ -61,7 +59,7 @@
     border: none;
 }
 
-.inputError{
+.inputError {
     border: 2px solid var(--border-danger);
 }
 
@@ -83,18 +81,17 @@
     border: 1px solid var(--border-primary);
     border-radius: 6px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
 }
 
-.listbox li[data-focus="true"]{
+.listbox li[data-focus='true'] {
     color: var(--text-primary);
     cursor: pointer;
- }
+}
 
 .listbox li:active {
     background-color: var(--surface-tertiary);
     color: var(--text-primary);
- }
+}
 
 .itemContainer {
     display: flex;
@@ -112,7 +109,7 @@
     justify-content: space-between;
 }
 
-.infoContainer{
+.infoContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -127,7 +124,7 @@
 
 .itemText {
     font-family: var(--font-regular);
-    font-size: var(--font-size-regular),
+    font-size: var(--font-size-regular);
 }
 
 .checkBoxRow {
@@ -150,7 +147,7 @@
     padding-left: 4px;
     padding-top: 12px;
     border-bottom: 1px solid var(--border-primary);
-    font-size: var(--font-size-small),
+    font-size: var(--font-size-small);
 }
 
 .arrowAlignCenter {
@@ -191,7 +188,6 @@
     background-color: var(--surface-secondary);
     height: 26px;
     width: fit-content;
-
 }
 
 .chip {
@@ -214,13 +210,13 @@
 }
 
 @media (min-width: 600px) {
-    .label{
+    .label {
         font-size: var(--font-size-regular);
     }
 }
 
 @media (max-width: 600px) {
-    .input{
+    .input {
         width: 100%;
     }
 }

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import MomentUtils from '@date-io/moment';
 import { ThemeProvider } from '@material-ui/core';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { ImageSizes } from 'src/constants/ImageSize';
 import { ImageProps } from 'src/types/components/Image';

@@ -1,7 +1,7 @@
-import { Meta, Canvas, ArgTypes } from '@storybook/blocks';
 import * as ConfirmDialogStories from '../../stories/ConfirmDialog.stories';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
-<Meta title="hooks/useConfirmDialog" />
+<Meta title='hooks/useConfirmDialog' />
 
 # useConfirmDialog
 
@@ -24,27 +24,28 @@ could lead to unexpected behaviours.
 Once you have imported the `ConfirmDialog` component, you can use the `useConfirmDialog` hook anywhere in your application and start use confirmation dialogs .
 
 ```tsx
-import { useConfirmDialog } from '@pidedirecto/ui/hooks'
-import { Button } from '@pidedirecto/ui'
+import { Button } from '@pidedirecto/ui';
+import { useConfirmDialog } from '@pidedirecto/ui/hooks';
 
 function Component() {
-     const confirmDialog = useConfirmDialog()
+    const confirmDialog = useConfirmDialog();
 
-const handleClick = async () => {
-    const confirm = await confirmDialog({
-                title:'Error Dialog title',
-                content:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor ultricies ipsum. Fusce turpis sem, facilisis id dignissim et, dignissim commodo turpis. Morbi massa libero',
-                acceptButtonText:'Accept',
-                cancelButtonText:'Cancel',
-                variant:'warning'
-        })
-     }
+    const handleClick = async () => {
+        const confirm = await confirmDialog({
+            title: 'Error Dialog title',
+            content:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor ultricies ipsum. Fusce turpis sem, facilisis id dignissim et, dignissim commodo turpis. Morbi massa libero',
+            acceptButtonText: 'Accept',
+            cancelButtonText: 'Cancel',
+            variant: 'warning',
+        });
+    };
 
-return (
-    <div>
-        <Button onClick={handleClick}>Click me to show confirmDialogState!</Button>
-    </div>
-);
+    return (
+        <div>
+            <Button onClick={handleClick}>Click me to show confirmDialogState!</Button>
+        </div>
+    );
 }
 ```
 

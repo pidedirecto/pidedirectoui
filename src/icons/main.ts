@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 export * from 'src/icons/AddElementIcon';
 export * from 'src/icons/AirTableIcon';
 export * from 'src/icons/AmbitIcon';

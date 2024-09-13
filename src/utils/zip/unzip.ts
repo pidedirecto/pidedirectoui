@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import pako from 'pako';
 import { isString } from 'src/utils/string/isString';
 

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { memo } from 'react';
 import { Notification } from 'src/components/Notification';

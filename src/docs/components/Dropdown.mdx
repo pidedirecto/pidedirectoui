@@ -1,4 +1,4 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 
 import * as DropDownStories from '../../stories/DropDown.stories';
 import * as DropDownItemStories from '../../stories/DropDownItem.stories';
@@ -6,11 +6,13 @@ import * as DropDownItemStories from '../../stories/DropDownItem.stories';
 <Meta of={DropDownStories} />
 
 # DropDown
+
 Renders a dropdown.
 
 <Canvas of={DropDownStories.Primary} sourceState={'none'} />
 
 If you need to show a list within the dropdown, you will have to use the `DropDownItem` component
+
 ```tsx
 import { DropDown, DropDownItem } from '@pidedirecto/ui';
 
@@ -18,7 +20,7 @@ import { DropDown, DropDownItem } from '@pidedirecto/ui';
     <DropDownItem>Item 1</DropDownItem>
     <DropDownItem>Item 2</DropDownItem>
     <DropDownItem>Item 3</DropDownItem>
-</DropDown>
+</DropDown>;
 ```
 
 The `DropDownItem` should only be used as children of `DropDown` component.
@@ -68,7 +70,7 @@ You can change the position with the `position` prop, it will align the dropdown
 <Canvas of={DropDownStories.LeftPosition} sourceState={'none'} />
 
 ```tsx
- <DropDown content={'Show items'} position='left'>
+<DropDown content={'Show items'} position='left'>
     <DropDownItem>Item 1</DropDownItem>
     <DropDownItem>Item 2</DropDownItem>
     <DropDownItem>Item 3</DropDownItem>
@@ -82,4 +84,3 @@ You can change the position with the `position` prop, it will align the dropdown
 ## DropDownItem API
 
 <ArgTypes of={DropDownItemStories} />
-

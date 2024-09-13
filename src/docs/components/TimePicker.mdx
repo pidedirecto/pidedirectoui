@@ -1,10 +1,11 @@
-import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
 import * as TimePickerStories from '../../stories/TimePicker.stories';
 
 <Meta of={TimePickerStories} />
 
 # TimePicker
+
 Renders a time picker.
 
 <Canvas of={TimePickerStories.Primary} sourceState='none' />
@@ -13,22 +14,15 @@ The `onChange` prop will be called, as first argument you will receive a date ob
 and as a second argument you will receive the hours string with this format hh:mm
 
 ```tsx
-import { TimePicker } from '@pidedirecto/ui'
+import { TimePicker } from '@pidedirecto/ui';
 
 const handleDate = (date: Date, hours: string) => {
     // Handle date
-}
+};
 
-<TimePicker
-    value={value}
-    label={'Select a date'}
-    name='input'
-    onChange={handleDate}
-/>
-
+<TimePicker value={value} label={'Select a date'} name='input' onChange={handleDate} />;
 ```
 
 ## API
 
 <ArgTypes of={TimePickerStories} />
-

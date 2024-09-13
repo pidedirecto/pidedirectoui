@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';

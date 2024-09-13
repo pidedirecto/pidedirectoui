@@ -29,10 +29,10 @@
 }
 
 .button svg {
-    transition: transform 0.2s linear
+    transition: transform 0.2s linear;
 }
 
-.button[data-opened="true"] svg {
+.button[data-opened='true'] svg {
     transform: rotate(-180deg);
 }
 

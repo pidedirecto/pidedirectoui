@@ -1,10 +1,11 @@
-import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
 import * as TextAreaStories from '../../stories/TextArea.stories';
 
 <Meta of={TextAreaStories} />
 
 # TextArea
+
 Renders a textarea
 
 <Canvas of={TextAreaStories.Primary} />
@@ -12,7 +13,7 @@ Renders a textarea
 `TextArea` works in general the same as `Input` excepting this component does not have types.
 
 ## API
+
 Here there are described some of the important props, but the `TextArea` component can receive almost any of the HTML textarea props.
 
 <ArgTypes of={TextAreaStories} />
-

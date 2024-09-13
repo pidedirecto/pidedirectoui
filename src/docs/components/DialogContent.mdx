@@ -1,10 +1,11 @@
-import { Canvas, Meta, ArgTypes } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta } from '@storybook/blocks';
 
 import * as DialogContentStories from '../../stories/DialogContent.stories';
 
 <Meta of={DialogContentStories} />
 
 # DialogContent
+
 Renders the content inside a Dialog with predefined styles for scrolling if the content surpasses the dialog max-height.
 
 Note: don't put Select or Dropdowns components at the bottom of any dialog.
@@ -27,3 +28,4 @@ return (
         </Dialog>
     </div>
 );
+```

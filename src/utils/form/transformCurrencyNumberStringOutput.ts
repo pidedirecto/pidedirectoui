@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { CountryCode } from 'src/constants/CountryCode';
 import { doesCountryUseDotForDecimals } from 'src/utils/string/doesCountryUseDotForDecimals';
 import { formatAsCountryNumber } from 'src/utils/string/formatAsCountryNumber';

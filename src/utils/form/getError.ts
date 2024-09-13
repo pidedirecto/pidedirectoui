@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 export function getError(errors: any, name?: string): any {
     if (!name) return;
     const names = name.split('.');

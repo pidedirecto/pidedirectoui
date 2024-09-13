@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useEffect, useRef } from 'react';
 
 export function useReadFiles() {

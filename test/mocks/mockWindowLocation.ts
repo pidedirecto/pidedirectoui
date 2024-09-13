@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 export function mockWindowLocation(url: string): void {
     const location = new URL(url);
     (location as any).assign = jest.fn();

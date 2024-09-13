@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { useState } from 'react';
 import { Checkbox } from 'src/components/Checkbox';

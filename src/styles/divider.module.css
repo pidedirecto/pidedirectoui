@@ -3,38 +3,38 @@
     border: 0;
 }
 
-.divider[data-orientation="horizontal"] {
+.divider[data-orientation='horizontal'] {
     height: 1px;
     width: 100%;
     margin: 5px 0;
 }
 
-.divider[data-orientation="vertical"] {
+.divider[data-orientation='vertical'] {
     width: 1px;
     height: 100%;
     margin: 0 5px;
 }
 
-.divider[data-orientation="horizontal"][data-variant="solid"] {
+.divider[data-orientation='horizontal'][data-variant='solid'] {
     border-top: 1px solid var(--border-primary, #000);
 }
 
-.divider[data-orientation="horizontal"][data-variant="dashed"] {
+.divider[data-orientation='horizontal'][data-variant='dashed'] {
     border-top: 1px dashed var(--border-primary, #000);
 }
 
-.divider[data-orientation="horizontal"][data-variant="dotted"] {
+.divider[data-orientation='horizontal'][data-variant='dotted'] {
     border-top: 1px dotted var(--border-primary, #000);
 }
 
-.divider[data-orientation="vertical"][data-variant="solid"] {
+.divider[data-orientation='vertical'][data-variant='solid'] {
     border-left: 1px solid var(--border-primary, #000);
 }
 
-.divider[data-orientation="vertical"][data-variant="dashed"] {
+.divider[data-orientation='vertical'][data-variant='dashed'] {
     border-left: 1px dashed var(--border-primary, #000);
 }
 
-.divider[data-orientation="vertical"][data-variant="dotted"] {
+.divider[data-orientation='vertical'][data-variant='dotted'] {
     border-left: 1px dotted var(--border-primary, #000);
 }

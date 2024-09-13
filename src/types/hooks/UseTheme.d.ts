@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 export type Theme = {
     palette?: {
         surface?: {

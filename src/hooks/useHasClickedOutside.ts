@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useEffect } from 'react';
 
 export function useHasClickedOutside({ element, onClick }: Params): void {

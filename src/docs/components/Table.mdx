@@ -1,10 +1,11 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 
 import * as TableStories from '../../stories/Table.stories';
 
 <Meta of={TableStories} />
 
 # Table
+
 Renders a table
 
 <Canvas of={TableStories.Primary} />
@@ -12,53 +13,57 @@ Renders a table
 ## Columns
 
 ### id
+
 This is the column id, this is important because this will be the link between the column and the row, with this id you can tell to the component what should be rendered on this column
 
 ### content
+
 This is the column header content, in other words the children of `th`, this content can be any valid React.Node, can be just a string or a React element
 
 ### size
+
 This is the column size, this is optional and by default this has a value of 1, if you set a value of `2` means this column will grow in 200%
 
 ```tsx
 const columns = [
     {
         id: 'column1',
-        content: 'This is the header 1'
+        content: 'This is the header 1',
     },
     {
         id: 'column2',
-        content: (
-            <span style={{ color: 'red' }}>This is the header 2</span>
-        )
+        content: <span style={{ color: 'red' }}>This is the header 2</span>,
     },
     {
         id: 'column3',
         content: 'This is the header 3',
         size: 2,
     },
-]
+];
 ```
 
 ## Rows
 
 This prop is an array of objects, each object should have one key per column, the key should be one of the ids defined in the columns array, for example, if you define a column with id `status`
+
 ```tsx
 const column = {
     id: 'column1',
-    content: 'Column 1'
-}
+    content: 'Column 1',
+};
 ```
+
 You should have objects inside the rows array with the key `status`, thus you tell what should be rendered in the column by the value of the key `status`, the value can be any React node
+
 ```tsx
 const rows = [
     {
-        column1: 'Cell 1'
+        column1: 'Cell 1',
     },
     {
-        column1: <div>Cell 2</div>
-    }
-]
+        column1: <div>Cell 2</div>,
+    },
+];
 ```
 
 ## Table interaction
@@ -118,12 +123,14 @@ The `Table` component has customizable props. `title` prop will render a title.
 <Canvas of={TableStories.CustomToolbar} />
 
 `tooltbar` prop can receive either a function or directly a `React.Element` value, if a function is passed this function should return a `React.Element`, and as argument will receive an object.
+
 ```ts
 {
     selectedRows: Array<any>;
     clearSelectedRows: () => void;
 }
 ```
+
 The `selectedRows` key is an array containing the `rowId` values of the selected rows, so in order to use this functionality you should pass to each row object an unique value in the `rowId` field.
 The `clearSelectedRows` functions can be used to clear the selected rows.
 
@@ -173,4 +180,3 @@ If you would like to filter whole column contents you can do it through `filter.
 ## API
 
 <ArgTypes of={TableStories} />
-

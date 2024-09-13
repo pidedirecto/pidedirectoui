@@ -4,7 +4,7 @@
     width: fit-content;
 }
 
-.stepper[data-orientation="horizontal"] {
+.stepper[data-orientation='horizontal'] {
     flex-direction: row;
 }
 
@@ -70,7 +70,7 @@
     background-color: var(--surface-brand-contrast);
 }
 
-.stepLine[data-orientation="horizontal"]  {
+.stepLine[data-orientation='horizontal'] {
     height: 2px;
     width: 20px;
     margin-top: 15px;
@@ -79,13 +79,13 @@
 }
 
 @media (min-width: 600px) {
-    .stepLabel{
+    .stepLabel {
         font-size: var(--font-size-small);
     }
 }
 
 @media (min-width: 960px) {
-    .stepLabel{
+    .stepLabel {
         font-size: var(--font-size-regular);
     }
 }

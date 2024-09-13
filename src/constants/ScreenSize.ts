@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 export const ScreenSizes = Object.freeze({
     EXTRA_SMALL_SCREEN: 'EXTRA_SMALL_SCREEN',
     SMALL_SCREEN: 'SMALL_SCREEN',

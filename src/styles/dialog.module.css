@@ -12,20 +12,19 @@
     animation: modal-open 0.2s ease-out;
 }
 
-.dialogContainer[data-position="right"] {
+.dialogContainer[data-position='right'] {
     align-items: flex-end;
 }
 
-
-.dialogContainer[data-position="top"] {
+.dialogContainer[data-position='top'] {
     justify-content: flex-start;
 }
 
-.dialogContainer[data-position="bottom"] {
+.dialogContainer[data-position='bottom'] {
     justify-content: flex-end;
 }
 
-.dialogContainer[data-position="left"] {
+.dialogContainer[data-position='left'] {
     align-items: flex-start;
 }
 
@@ -64,22 +63,22 @@
     overflow-x: hidden;
 }
 
-.dialogContent[data-position="right"] {
+.dialogContent[data-position='right'] {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.dialogContent[data-position="bottom"] {
+.dialogContent[data-position='bottom'] {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.dialogContent[data-position="top"] {
+.dialogContent[data-position='top'] {
     border-top-right-radius: 0;
     border-top-left-radius: 0;
 }
 
-.dialogContent[data-position="left"] {
+.dialogContent[data-position='left'] {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -116,9 +115,9 @@
 
 @keyframes modal-close {
     from {
-        opacity: 1
+        opacity: 1;
     }
     to {
-        opacity: 0
+        opacity: 0;
     }
 }

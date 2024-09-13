@@ -1,1 +1,1 @@
-src/*/*.d.ts
+src/**/index.d.ts

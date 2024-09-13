@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import React, { useEffect } from 'react';
 import classes from 'src/styles/stepper.module.css';
 import { StepperProps } from 'src/types/components/Stepper';

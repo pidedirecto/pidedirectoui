@@ -1,4 +1,4 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 
 import * as MultiselectableAutocompleteStories from '../../stories/MultiselectableAutocomplete.stories';
 
@@ -15,11 +15,13 @@ The MultiselectableAutocomplete component needs several options, each option is 
 The getValue and getLabel functions will be like this:
 
 In this example array:
+
 ```
 const orders = [
     { orderId: '', orderStatus: '',} ....
 ]
 ```
+
 The getValue and getLabel functions will be like this:
 `getOptionValue={(option) => option.orderId} getOptionLabel={(option) => option.orderStatus}`
 
@@ -75,6 +77,7 @@ import { MultiselectableAutocomplete } from '@pidedirecto/ui'
     );
 
 ```
+
 ## MultiselectableAutocomplete variant
 
 Renders a MultiselectableAutocomplete detailed variant

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import 'src/index.css';
 import 'src/letseatfont.css';
 

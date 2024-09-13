@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { VirtualizedList } from 'src/components/VirtualizedList';
 

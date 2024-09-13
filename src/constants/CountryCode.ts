@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 export const CountryCodes = {
     MX: 'MX',
     SE: 'SE',

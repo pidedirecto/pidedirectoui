@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import moment from 'moment/moment';
 import { useContext } from 'react';
 import * as React from 'react';

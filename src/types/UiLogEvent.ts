@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import type { UiLogEventType } from 'src/constants/UiLogEventType';
 
 export type UiLogEvent = {

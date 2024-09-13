@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { ScreenSize, ScreenSizes } from 'src/constants/ScreenSize';
 import { ScreenWidthSizes } from 'src/constants/ScreenWidthSize';
 

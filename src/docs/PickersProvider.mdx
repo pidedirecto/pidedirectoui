@@ -1,7 +1,7 @@
-import { Meta, ArgTypes } from '@storybook/blocks';
 import * as UiLogEventTrackerStories from '../stories/UiLogEventTracker.stories';
+import { ArgTypes, Meta } from '@storybook/blocks';
 
-<Meta title="docs/PickersProvider" />
+<Meta title='docs/PickersProvider' />
 
 # PickersProvider
 
@@ -10,14 +10,13 @@ This is required to fully integrate these components with the app
 
 ```tsx
 import { PickersProvider } from '@pidedirecto/ui';
-import moment from 'moment'
+import moment from 'moment';
 import { theme } from 'src/theme/AppTheme';
 
 <PickersProvider momentInstance={moment} muiTheme={theme}>
     <App />
-</PickersProvider>
+</PickersProvider>;
 ```
 
 This only receives two props, `momentInstance` receives the moment instance of the projects, this is needed for the translations of the days, month, etc.
 `muiTheme` is for styling the picker colors, fonts and more styles properties.
-

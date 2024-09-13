@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { CountryCode, CountryCodes } from 'src/constants/CountryCode';
 
 export function isCuba(country: CountryCode | undefined): boolean {

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useContext } from 'react';
 import { TableContext } from 'src/components/Table';
 import { useTableStore } from 'src/components/table/tableStore';

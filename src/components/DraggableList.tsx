@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { createContext, useEffect, useRef } from 'react';
 import { SECONDS } from 'src/constants/TimeUnit';

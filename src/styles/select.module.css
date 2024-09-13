@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -23,7 +23,7 @@
     gap: 4px;
 }
 
-.selectError{
+.selectError {
     border-color: var(--border-danger);
 }
 

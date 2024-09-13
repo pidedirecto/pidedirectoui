@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import CryptoJS from 'crypto-js';
 
 export function hashMd5FromArrayBuffer(value?: string | ArrayBuffer | null): string {

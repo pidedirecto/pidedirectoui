@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { createStore } from 'src/hooks/createStore';
 
 export const [useConfirmDialogStore, useConfirmDialogActions] = createStore<State, Actions>({

@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { CountryCode } from 'src/constants/CountryCode';
 import { formatAsCountryNumber } from 'src/utils/string/formatAsCountryNumber';
 

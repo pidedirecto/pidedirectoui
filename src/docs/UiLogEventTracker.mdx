@@ -1,7 +1,7 @@
-import { Meta, ArgTypes } from '@storybook/blocks';
 import * as UiLogEventTrackerStories from '../stories/UiLogEventTracker.stories';
+import { ArgTypes, Meta } from '@storybook/blocks';
 
-<Meta title="docs/UiLogEventTracker" />
+<Meta title='docs/UiLogEventTracker' />
 
 # UiLogEventTracker
 
@@ -10,10 +10,9 @@ import * as UiLogEventTrackerStories from '../stories/UiLogEventTracker.stories'
 ```tsx
 import { UiLogEventTracker } from '@pidedirecto/ui';
 
-
-<UiLogEventTracker id='page1' onInteract={createUiLogEventApi} >
+<UiLogEventTracker id='page1' onInteract={createUiLogEventApi}>
     <App />
-</UiLogEventTracker>
+</UiLogEventTracker>;
 ```
 
 ## UI Log Events
@@ -34,7 +33,8 @@ type UiLogEvent = {
 };
 ```
 
-- **logEventType**: enum value, you can import the enum from `import { UiLogEventTypes } from '@pidedirecto/ui/constants'`
+-   **logEventType**: enum value, you can import the enum from `import { UiLogEventTypes } from '@pidedirecto/ui/constants'`
+
 ```
 USER_OPENED_PAGE
 USER_CLICKED_BUTTON
@@ -50,11 +50,11 @@ USER_CLICKED_SELECT_OPTION
 USER_CLICKED_CHECKBOX
 ```
 
-- **message**: Readable message explaining the ui log event
-- **details**: Stacktrace of the ui log event, if a button was clicked inside a Dialog here will be ui stack trace to the ui log event
-- **data**: Additional info for the ui log event
-- **offline**: Boolean value if the ui log event was created offline
-- **occurredAt**: Date when the ui log event happens
+-   **message**: Readable message explaining the ui log event
+-   **details**: Stacktrace of the ui log event, if a button was clicked inside a Dialog here will be ui stack trace to the ui log event
+-   **data**: Additional info for the ui log event
+-   **offline**: Boolean value if the ui log event was created offline
+-   **occurredAt**: Date when the ui log event happens
 
 ## API
 

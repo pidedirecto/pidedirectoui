@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 import { type ValidationRule } from 'react-hook-form';
 import { CheckboxProps } from 'src/types/components/Checkbox';

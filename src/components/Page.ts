@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { createContext } from 'react';
 
 //TODO: Implement Page component

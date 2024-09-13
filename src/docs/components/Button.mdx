@@ -1,4 +1,4 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 
 import * as ButtonStories from '../../stories/Button.stories';
 
@@ -15,34 +15,37 @@ Renders a Button
 To listen to the onClick it is as simple as passing an `onClick` prop with a function as a value, the function can be synchronous or asynchronous.
 
 ```tsx
-
 const handleClick = () => console.log('Hi!!');
 
-<Button onClick={handleClick}>button</Button>
+<Button onClick={handleClick}>button</Button>;
 ```
 
-
 ## Button variants
+
 The primary variant is the main one, you don't have to pass anything to the button to render this version
 
 ### Secondary
+
 <Canvas of={ButtonStories.Secondary} />
 
 You can change the secondary button through the theme
 
 ### Outline
+
 <Canvas of={ButtonStories.Outline} />
 
 You can change the outline button through the theme
 
 ### Text
+
 <Canvas of={ButtonStories.Text} />
 
 ### Icon
+
 <Canvas of={ButtonStories.Icon} />
 
-
 ## API
+
 Here there are described some of the custom props, but the `Button` component can receive almost any of the HTML input props.
 
 <ArgTypes of={ButtonStories} />

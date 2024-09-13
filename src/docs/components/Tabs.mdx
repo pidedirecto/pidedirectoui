@@ -1,10 +1,11 @@
-import { Canvas, Meta, ArgTypes, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 
 import * as TabsStories from '../../stories/Tabs.stories';
 
 <Meta of={TabsStories} />
 
 # Tabs
+
 Renders a section with tabs
 
 <Canvas of={TabsStories.Primary} />
@@ -18,9 +19,10 @@ If you pass more children than the length of tabs array those extra children wil
 
 The `Tab` object is the object in the tabs array
 
-- `tab.label` The label for the tab
-- `tab.value` The value for the tab, this is used to identify each tab so make sure this value is unique for each tab
-- `tab.hidden` Hides a tab visually, how it was explained before the relation between the tab and the content is the index, so if you hide a tab make sure you hide content with the same condition
+-   `tab.label` The label for the tab
+-   `tab.value` The value for the tab, this is used to identify each tab so make sure this value is unique for each tab
+-   `tab.hidden` Hides a tab visually, how it was explained before the relation between the tab and the content is the index, so if you hide a tab make sure you hide content with the same condition
+
 ```tsx
 const tabs = [{
     label: 'Tab 1',
@@ -31,11 +33,13 @@ const tabs = [{
 <Tabs tabs={tabs}>
     {hideTab && <div>Content to hide</div>}
 </Tabs>
-  ```
-- `tab.badge` Renders a badge next to the tab label, it can be any valid react node
-<Canvas of={TabsStories.Badge} />
+```
 
-- `tab.onClick` Callback to be called each time the use clicks the tab, the tab object will be passed as prop to the callback, even though with this function you can reproduce the functionality of the `Tabs` component, switching sections, we strongly recommend to leave that functionality to the component and only do side effects on this callback
+-   `tab.badge` Renders a badge next to the tab label, it can be any valid react node
+
+    <Canvas of={TabsStories.Badge} />
+
+-   `tab.onClick` Callback to be called each time the use clicks the tab, the tab object will be passed as prop to the callback, even though with this function you can reproduce the functionality of the `Tabs` component, switching sections, we strongly recommend to leave that functionality to the component and only do side effects on this callback
 
 ## Tabs header
 
@@ -46,4 +50,3 @@ There are situations where we want to have content shared between tabs, in order
 ## API
 
 <ArgTypes of={TabsStories} />
-

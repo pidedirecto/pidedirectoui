@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import * as React from 'react';
 
 export type SvgIconProps = React.SVGAttributes & {

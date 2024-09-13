@@ -1,11 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 
 export type CircleIconContainerProps = {
-    disabled?:boolean,
-    children: React.ReactNode,
+    disabled?: boolean;
+    children: React.ReactNode;
     classes?: {
-        container?: string,
-    },
+        container?: string;
+    };
 };
 
-export type CircleIconContainer = React.FunctionComponent<CircleIconContainerProps>
+export type CircleIconContainer = React.FunctionComponent<CircleIconContainerProps>;

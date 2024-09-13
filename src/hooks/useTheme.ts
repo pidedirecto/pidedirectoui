@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { useEffect, useRef } from 'react';
 import { Theme } from 'src/types/hooks/UseTheme';
 

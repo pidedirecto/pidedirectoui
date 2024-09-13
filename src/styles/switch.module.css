@@ -23,15 +23,15 @@
 }
 
 .input::before {
-   content: "";
-   width: 20px;
-   height: 20px;
-   background-color: var(--neutral100);
-   border-radius: 50px;
-   position: absolute;
-   top: 2px;
-   left: 2px;
-   transition: transform 0.3s ease;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: var(--neutral100);
+    border-radius: 50px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
 }
 
 .input:checked {

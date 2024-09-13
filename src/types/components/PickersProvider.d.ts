@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 export type PickersProviderProps = {
     muiTheme?: any;
@@ -6,4 +6,4 @@ export type PickersProviderProps = {
     children: React.ReactNode;
 };
 
-export type PickersProvider = React.FunctionComponent<PickersProviderProps>
+export type PickersProvider = React.FunctionComponent<PickersProviderProps>;

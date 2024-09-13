@@ -1,6 +1,3 @@
-/**
- * @prettier
- */
 import { isArray } from 'src/utils/array/isArray';
 
 export function convertReactNodeToString(node: any): string {
