@@ -11,8 +11,6 @@ This hook allows you to call apis.
 ```tsx
 import { useLoadApi } from '@pidedirecto/ui/hooks';
 
-const elementRef = useRef<HTMLDivElement | null>(null);
-
 const [loading, response, loadApi] = useLoadApi(findElementsApi, { ...request });
 ```
 
