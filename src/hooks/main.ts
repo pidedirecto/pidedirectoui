@@ -10,3 +10,4 @@ export * from 'src/hooks/createStore';
 export * from 'src/hooks/useNotification';
 export * from 'src/hooks/useConfirmDialog';
 export * from 'src/hooks/useLoadApi';
+export * from 'src/hooks/useSuspenseApi';

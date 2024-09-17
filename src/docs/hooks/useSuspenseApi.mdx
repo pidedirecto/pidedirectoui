@@ -1,0 +1,156 @@
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
+
+import * as useElementSizeStories from '../../stories/useElementSize.stories';
+
+<Meta title='hooks/useSuspenseApi' />
+
+# useSuspenseApi
+
+This hook allows you to call apis but suspending the component.
+
+```tsx
+import { useSuspenseApi } from '@pidedirecto/ui/hooks';
+
+const [response, loadApi] = useSuspenseApi(findElementsApi, { ...request });
+```
+
+The `useSuspenseApi` accepts three arguments.
+
+1. The first argument is an api function, this function should return an `ApiSauceResponse`.
+2. The second argument is the api request object
+3. The third argument is an object of options
+
+This hook should always be used in a component wrapped inside the `Suspense` component from Rect. example:
+
+```tsx
+import { useSuspenseApi } from '@pidedirecto/ui/hooks';
+import { Suspense } from 'react';
+
+function App() {
+    return (
+        <Suspense fallback='Loading...'>
+            <Elements />
+        </Suspense>
+    );
+}
+
+function Elements() {
+    const [elements] = useSuspenseApi(findElementsApi, {});
+
+    return elements.map((element) => <span>{element}</span>);
+}
+```
+
+The `Suspense` component will know when the api is being called and will render the `fallback` prop instead, this is specially useful
+for components that need to call an api when it is mounted.
+
+The main difference between suspending a component instead of showing a loading indicator manually with states, is that React avoids to renders
+the component meanwhile the api is being called. You can read more about `Suspense` [here](https://react.dev/reference/react/Suspense).
+
+## Options
+
+The `options` object can have the following attributes
+
+-   `onError` function, this functions is going to be called when the api call has failed, this function receives 2 arguments
+
+    1. The first argument is the response from the api and its type is
+
+```ts
+type ApiErrorResponse = {
+    ok: false;
+    data?: {
+        message?: string;
+        name?: string;
+    };
+    status?: number;
+    problem: 'CLIENT_ERROR' | 'SERVER_ERROR' | 'TIMEOUT_ERROR' | 'CONNECTION_ERROR' | 'NETWORK_ERROR' | 'CANCEL_ERROR';
+};
+```
+
+    2. The second argument is a function to change the value of the api response
+
+-   `requiredValues` array, this field is used to prevent the api is called with some nullish values, if the api request requires some values but
+    the values you passed are probably undefined, you can pass them to this array to assure those values are defined before calling the api, for example:
+
+```ts
+import { useSuspenseApi } from '@pidedirecto/ui/hooks';
+
+const [userSelection, setUserSelection] = useState(undefined);
+
+const [response] = useSuspenseApi(someApi, { userSelection }, { requiredValues: [userSelection] });
+
+const handleSelect = (selectedValue) => setUserSelection(selectedValue);
+```
+
+In this example we have an state that has been initialized as undefined, cause its value depends on a user selection, if we would like to call an api
+that need the user selection inside the request but the api required that value to be defined, we can pass the `userSelection` state to the
+`requiredValues` array to guarantee that the api is called once that value has been defined.
+
+-   `unZip`, this field is used to unzip the api response.
+
+## Result
+
+The `useSuspenseApi` hook, returns 3 values
+
+1. The second value is the api response, when the api has been called and everything went ok, the hook will change this value to the api response,
+   you can set the default value with the `options` object.
+
+**NOTE**
+
+This value is already a state, so you don't need to set other state based on this value
+
+Do
+
+```tsx
+const [elements] = useSuspenseApi(findElementsApi, { ...request });
+
+return (
+    <div>
+        // You can use directly the response
+        {elements.map(element => <span>{element}</span>)}
+    </div>
+)
+```
+
+Don't
+
+```tsx
+
+const [elementsResponse, setElementsResponse] = useState([])
+
+const [elements] = useSuspenseApi(findElementsApi, { ...request });
+
+useEffect(() => {
+    // You don't need to set another state based on the useSuspenseApi result, IT IS ALREADY A STATE!
+    setElementsResponse(elements)
+}, [elements])
+
+return (
+    <div>
+        {elementsResponse.map(element => <span>{element}</span>)}
+    </div>
+)
+```
+
+3. The third value is a function to call again the api at any time, this is useful for "refresh" behaviors, this function can receive a new request to call the api,
+   you need to pass the request inside an object, for example
+
+```tsx
+const [elements, loadApi] = useSuspenseApi(findElementsApi, { ...request });
+
+const handleClick = () => {
+    // Here we can send the new request
+    loadApi({ request: { ...newRequest } })
+
+    // Or we can just call it, this will use the request set in the hook declaration
+    loadApi()
+}
+
+return (
+    <div>
+        <button onClick={handleClick}>Refresh</button>
+        // You can use directly the response cause it is already a value
+        {elements.map(element => <span>{element}</span>)}
+    </div>
+)
+```

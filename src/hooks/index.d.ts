@@ -9,7 +9,8 @@ import { UseNotification } from "src/types/hooks/UseNotification";
 import { UseElementSize } from "src/types/hooks/UseElementSize";
 import { UseWatch } from "src/types/hooks/UseWatch";
 import { UseConfirmDialog } from "src/types/hooks/UseConfirmDialog";
-import { ApiSauceResponse, Options } from "src/types/hooks/UseLoadApi";
+import { ApiSauceResponse, Options as UseLoadApiOptions } from "src/types/hooks/UseLoadApi";
+import { ApiSauceResponse, Options as UseSuspenseApiOptions } from "src/types/hooks/UseSuspenseApi";
 
 /**
  * Theme gives width and height of an element passing its reference
@@ -89,12 +90,23 @@ export const useConfirmDialog: UseConfirmDialog
 export function createStore<State, Actions>(params: Params<State, Actions>): Result<State, Actions>;
 
 /**
- * Create store function
+ * Hook to call apis
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-createstore--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useloadapi--docs)
  */
 export function useLoadApi<S extends (request?: any) => ApiSauceResponse<any>>(
     fn: S,
     request?: Parameters<S>[0],
-    options?: Options
+    options?: UseLoadApiOptions
 ): [boolean, Extract<Awaited<ReturnType<S>>, { ok: true }>['data'], (params?: { request: any }) => Promise<void>]
+
+/**
+ * Hook to suspense apis
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-usesuspenseapi--docs)
+ */
+export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any>>(
+    fn: S,
+    request?: Parameters<S>[0],
+    options?: UseSuspenseApiOptions
+): [Extract<Awaited<ReturnType<S>>, { ok: true }>['data'], (params?: { request: any }) => Promise<void>]
