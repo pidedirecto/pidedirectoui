@@ -30,6 +30,13 @@ const meta: Meta<typeof Chip> = {
             },
             control: false,
         },
+        style: {
+            description: 'Chip style object',
+            table: {
+                type: { summary: 'React.CSSProperties' },
+            },
+            control: false,
+        },
         classes: {
             description: 'Classes object to override Chip style',
             table: {
