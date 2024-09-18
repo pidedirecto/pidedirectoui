@@ -30,6 +30,7 @@ import { CashRegisterShiftIcon } from 'src/icons/CashRegisterShiftIcon';
 import { CashTransferIcon } from 'src/icons/CashTransferIcon';
 import { CellPhoneIcon } from 'src/icons/CellPhoneIcon';
 import { ChainIcon } from 'src/icons/ChainIcon';
+import { ChatBubblesIcon } from 'src/icons/ChatBubblesIcon';
 import { ChatIcon } from 'src/icons/ChatIcon';
 import { CheckIcon } from 'src/icons/CheckIcon';
 import { CircleCheckIcon } from 'src/icons/CircleCheckIcon';
@@ -58,6 +59,7 @@ import { DoorHangerIcon } from 'src/icons/DoorHangerIcon';
 import { DownloadCloudIcon } from 'src/icons/DownloadCloudIcon';
 import { DownloadIcon } from 'src/icons/DownloadIcon';
 import { DragIcon } from 'src/icons/DragIcon';
+import { DrawerIcon } from 'src/icons/DrawerIcon';
 import { EditIcon } from 'src/icons/EditIcon';
 import { EllipsisVerticalIcon } from 'src/icons/EllipsisVerticalIcon';
 import { EnvelopeIcon } from 'src/icons/EnvelopeIcon';
@@ -295,6 +297,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>ChatIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <ChatBubblesIcon size={size} />
+                <span className={classes.iconName}>ChatBubblesIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <ChainIcon size={size} />
                 <span className={classes.iconName}>ChainIcon</span>
             </div>
@@ -413,6 +419,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <DragIcon size={size} />
                 <span className={classes.iconName}>DragIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <DrawerIcon size={size} />
+                <span className={classes.iconName}>DrawerIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <EditIcon size={size} />

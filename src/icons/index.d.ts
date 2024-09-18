@@ -30,6 +30,7 @@ export const CashDrawerIcon: SvgIcon
 export const CashTransferIcon: SvgIcon
 export const CellPhoneIcon: SvgIcon
 export const ChatIcon: SvgIcon
+export const ChatBubblesIcon: SvgIcon
 export const ChainIcon: SvgIcon
 export const CheckIcon: SvgIcon
 export const CircleIcon: SvgIcon
@@ -61,6 +62,7 @@ export const DoorHangerIcon: SvgIcon
 export const DownloadIcon: SvgIcon
 export const DownloadCloudIcon: SvgIcon
 export const DragIcon: SvgIcon
+export const DrawerIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon
 export const ErrorIcon: SvgIcon
