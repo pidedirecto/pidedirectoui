@@ -52,8 +52,8 @@ export function Tabs({ tabs, loading, classes: classesProp, defaultValue, onChan
                                 aria-controls={`tabpanel-${tab.value}`}
                                 id={`tab-${tab.value}`}
                             >
-                                <span>{tab.label}</span>
-                                {!!tab?.badge && (
+                                {!tab.content && <span>{tab.label}</span>}
+                                {!!tab?.badge && !tab.content && (
                                     <span
                                         className={classNames(classes.badge, classesProp?.badge, isTabSelected && classes.selectedBadge, isTabSelected && classesProp?.selectedBadge)}
                                         aria-selected={isTabSelected}
@@ -61,6 +61,7 @@ export function Tabs({ tabs, loading, classes: classesProp, defaultValue, onChan
                                         {tab?.badge}
                                     </span>
                                 )}
+                                {tab.content}
                             </button>
                         );
                     })}

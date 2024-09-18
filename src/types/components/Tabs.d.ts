@@ -23,6 +23,7 @@ export type Tab = {
     label: string;
     value: string;
     hidden?: boolean;
+    content?: React.ReactNode;
     badge?: React.ReactNode;
     onClick?: Function;
 };
