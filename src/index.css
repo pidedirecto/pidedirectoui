@@ -92,9 +92,13 @@ body {
     --surface-brand-contrast: var(--purple700);
     --surface-brand-heavy-contrast: var(--purple1000);
     --surface-success: var(--green200);
+    --surface-success-contrast: var(--green700);
     --surface-info: var(--blue100);
+    --surface-info-contrast: var(--blue600);
     --surface-warning: var(--orange100);
+    --surface-warning-contrast: var(--orange400);
     --surface-danger: var(--red100);
+    --surface-danger-contrast: var(--red200);
 
     /* text */
     --text-primary: var(--neutral900);
