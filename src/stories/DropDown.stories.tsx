@@ -59,6 +59,13 @@ const meta: Meta<typeof DropDown> = {
             },
             control: false,
         },
+        badge: {
+            description: 'Button badge',
+            table: {
+                type: { summary: 'React.ReactNode' },
+            },
+            control: false,
+        },
         classes: {
             description: 'Classes object to override dropdown style',
             table: {

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ButtonProps } from 'src/types/components/Button';
 
 export type DropDownProps = {
     content: React.ReactNode;
@@ -8,6 +9,7 @@ export type DropDownProps = {
     disabled?: boolean;
     preventClose?: boolean;
     children: React.ReactNode;
+    badge?: ButtonProps['badge'];
     classes?: {
         container?: string;
         button?: string;
