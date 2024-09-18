@@ -12,7 +12,7 @@ const meta: Meta<typeof Chip> = {
         variant: {
             description: 'Chip variant',
             table: {
-                type: { summary: 'error | warning | success | info | secondary' },
+                type: { summary: 'error | error-contrast | warning | warning-contrast | success | success-contrast | info | info-contrast | secondary' },
             },
             control: false,
         },
@@ -66,10 +66,26 @@ export const Error: Story = {
     },
 };
 
+export const ErrorContrast: Story = {
+    args: {
+        ...meta.args,
+        variant: 'error-contrast',
+        children: "I'm a chip",
+    },
+};
+
 export const Warning: Story = {
     args: {
         ...meta.args,
         variant: 'warning',
+        children: "I'm a chip",
+    },
+};
+
+export const WarningContrast: Story = {
+    args: {
+        ...meta.args,
+        variant: 'warning-contrast',
         children: "I'm a chip",
     },
 };
@@ -82,10 +98,26 @@ export const Success: Story = {
     },
 };
 
+export const SuccessContrast: Story = {
+    args: {
+        ...meta.args,
+        variant: 'success-contrast',
+        children: "I'm a chip",
+    },
+};
+
 export const Info: Story = {
     args: {
         ...meta.args,
         variant: 'info',
+        children: "I'm a chip",
+    },
+};
+
+export const InfoContrast: Story = {
+    args: {
+        ...meta.args,
+        variant: 'info-contrast',
         children: "I'm a chip",
     },
 };

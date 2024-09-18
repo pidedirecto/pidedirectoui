@@ -17,9 +17,19 @@
     color: var(--text-warning);
 }
 
+.chip[data-variant='warning-contrast'] {
+    background-color: var(--surface-warning-contrast);
+    color: white;
+}
+
 .chip[data-variant='error'] {
     background-color: var(--surface-danger);
     color: var(--text-danger);
+}
+
+.chip[data-variant='error-contrast'] {
+    background-color: var(--surface-danger-contrast);
+    color: white;
 }
 
 .chip[data-variant='info'] {
@@ -27,9 +37,19 @@
     color: var(--text-info);
 }
 
+.chip[data-variant='info-contrast'] {
+    background-color: var(--surface-info-contrast);
+    color: white;
+}
+
 .chip[data-variant='success'] {
     background-color: var(--surface-success);
     color: var(--text-success);
+}
+
+.chip[data-variant='success-contrast'] {
+    background-color: var(--surface-success-contrast);
+    color: white;
 }
 
 .chip[data-variant='secondary'] {
