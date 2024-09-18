@@ -37,6 +37,7 @@ import { RadioGroup } from "src/types/components/RadioGroup";
 import { Stepper } from "src/types/components/Stepper";
 import { ConfirmDialog } from "src/types/components/ConfirmDialog";
 import { TextArea } from "src/types/components/TextArea";
+import { SkeletonLoader } from "src/types/components/SkeletonLoader";
 import { ImageUpload } from "src/types/components/ImageUpload";
 
 /**
@@ -318,3 +319,10 @@ export const Loader: Loader
  * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-imageupload--docs)
  */
 export const ImageUpload: ImageUpload
+
+/**
+ * Renders Skeleton Loader
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/stories-skeletonloader--docs)
+ */
+export const SkeletonLoader: SkeletonLoader
