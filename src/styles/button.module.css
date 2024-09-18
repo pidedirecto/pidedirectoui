@@ -128,3 +128,17 @@
     height: 52px;
     font-size: var(--font-size-large);
 }
+
+.badgeContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.badgeContainer > :first-child {
+    position: absolute;
+    right: -10px;
+    top: -6px;
+}

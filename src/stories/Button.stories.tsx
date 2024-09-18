@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
 import { Button } from 'src/components/Button';
+import { Chip } from 'src/components/Chip';
+import { BellIcon } from 'src/icons/BellIcon';
 import { CrossIcon } from 'src/icons/CrossIcon';
 
 const meta: Meta<typeof Button> = {
@@ -20,6 +22,13 @@ const meta: Meta<typeof Button> = {
             description: 'Button size',
             table: {
                 type: { summary: 'large' },
+            },
+            control: false,
+        },
+        badge: {
+            description: 'Button badge',
+            table: {
+                type: { summary: 'React.ReactNode' },
             },
             control: false,
         },
@@ -76,5 +85,27 @@ export const Icon: Story = {
         ...meta.args,
         variant: 'icon',
         children: <CrossIcon />,
+    },
+};
+
+export const Badge: Story = {
+    args: {
+        ...meta.args,
+        variant: 'secondary',
+        children: <BellIcon />,
+        badge: <Chip variant='error-contrast'>2</Chip>,
+    },
+};
+
+export const BadgePositioned: Story = {
+    args: {
+        ...meta.args,
+        variant: 'secondary',
+        children: <BellIcon />,
+        badge: (
+            <Chip style={{ bottom: -10, top: 'unset' }} variant='error-contrast'>
+                2
+            </Chip>
+        ),
     },
 };

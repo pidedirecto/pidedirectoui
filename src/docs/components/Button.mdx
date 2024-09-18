@@ -44,6 +44,16 @@ You can change the outline button through the theme
 
 <Canvas of={ButtonStories.Icon} />
 
+## Badge
+
+You can add a badge to `Button` component through `badge` prop
+
+<Canvas of={ButtonStories.Badge} />
+
+badge content can be any valid `React.ReactNode`, but we recommend using `Chip` component. If you want to change the badge position, you can do it simple with position absolute css attributes using either classes or styles directly.
+
+<Canvas of={ButtonStories.BadgePositioned} />
+
 ## API
 
 Here there are described some of the custom props, but the `Button` component can receive almost any of the HTML input props.
