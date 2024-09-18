@@ -90,9 +90,9 @@ that need the user selection inside the request but the api required that value 
 
 ## Result
 
-The `useSuspenseApi` hook, returns 3 values
+The `useSuspenseApi` hook, returns 2 values
 
-1. The second value is the api response, when the api has been called and everything went ok, the hook will change this value to the api response,
+1. The first value is the api response, when the api has been called and everything went ok, the hook will change this value to the api response,
    you can set the default value with the `options` object.
 
 **NOTE**
@@ -132,7 +132,7 @@ return (
 )
 ```
 
-3. The third value is a function to call again the api at any time, this is useful for "refresh" behaviors, this function can receive a new request to call the api,
+2. The second value is a function to call again the api at any time, this is useful for "refresh" behaviors, this function can receive a new request to call the api,
    you need to pass the request inside an object, for example
 
 ```tsx
@@ -153,4 +153,69 @@ return (
         {elements.map(element => <span>{element}</span>)}
     </div>
 )
+```
+
+When you call this function the hook will suspense the component again, therefore the `Suspense` component will render again the fallback prop.
+
+## Considerations
+
+There are some points to have in mind when using this hook.
+
+1. If you are calling the same endpoint multiple times in the same page, this hook will cache the response and will return it for both
+   api calls, actually the endpoint will be only called once, the endpoints can only be called once per time even if it is trying to be called
+   in multiple instances, this can be beneficial if the endpoint is called with the same request, but can have unwanted behaviour if you want to call
+   the same endpoint multiple times with different request in the same page. Example
+
+```tsx
+function App() {
+    return (
+        <Suspense fallback='Loading...'>
+            <Elements />
+            <AnotherElements />
+        </Suspense>
+    );
+}
+
+function Elements() {
+    const [elements] = useSuspenseApi(findElementsApi, { ...request1 });
+
+    return elements.map((element) => <span>{element}</span>);
+}
+
+function AnotherElements() {
+    // How we are calling the same endpoint twice in the same page, it will return the same response of the first component
+    // even if we are calling it with different requests. Try to avoid to call the same endpoint multiple times in the same page.
+    const [elements] = useSuspenseApi(findElementsApi, { ...request2 });
+
+    return elements.map((element) => <span>{element}</span>);
+}
+```
+
+2. You can nest `Suspense` components so having multiple components suspended at the same time. example:
+
+```tsx
+function App() {
+    return (
+        // Here will suspend first the Elements component, once it is ready it will try to render ElementDetails and hook will
+        // suspend it untilt it is ready too.
+        <Suspense fallback='Loading...'>
+            <Elements />
+            <Suspense fallback='Loading details...'>
+                <ElementDetails />
+            </Suspense>
+        </Suspense>
+    );
+}
+
+function Elements() {
+    const [elements] = useSuspenseApi(findElementsApi, { ...request });
+
+    return elements.map((element) => <span>{element}</span>);
+}
+
+function ElementDetails() {
+    const [details] = useSuspenseApi(findElementDetailsApi, { ...request });
+
+    return <div>{details}</div>;
+}
 ```
