@@ -14,6 +14,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     background-color: var(--surface-tertiary);
+    flex-shrink: 0;
 }
 
 .column {
