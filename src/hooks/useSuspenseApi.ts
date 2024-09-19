@@ -23,7 +23,6 @@ export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any
 
     useEffect(() => {
         return () => {
-            console.log('unmounting');
             if (!isResponseStillCached()) removeApi(fn);
         };
     }, []);
