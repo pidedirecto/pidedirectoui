@@ -86,7 +86,11 @@ In this example we have an state that has been initialized as undefined, cause i
 that need the user selection inside the request but the api required that value to be defined, we can pass the `userSelection` state to the
 `requiredValues` array to guarantee that the api is called once that value has been defined.
 
--   `unZip`, this field is used to unzip the api response.
+-   `unZip` this field is used to unzip the api response.
+
+-   `cache` the time the hook will cache the response, if you call the load function before this time the hook will
+    avoid to call the api function, this will work even if the component where the hook is used is unmounted, the hook will still have cached the response
+    when it is mounted again, this value is in milliseconds.
 
 ## Result
 

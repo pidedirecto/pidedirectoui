@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { createStore } from 'src/hooks/createStore';
 import { ApiSauceResponse, Options } from 'src/types/hooks/UseSuspenseApi';
@@ -11,6 +12,7 @@ export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any
     const hasInitialFetched = useSuspenseStore((store) => !!store.suspenseApiStates.get(fn)?.hasInitialFetched);
     const loading = useSuspenseStore((store) => !!store.suspenseApiStates.get(fn)?.loading);
     const data = useSuspenseStore((store) => store.suspenseApiStates.get(fn)?.data);
+    const lastTimeFetched = useSuspenseStore((store) => store.suspenseApiStates.get(fn)?.lastTimeFetched);
 
     const [responseTrigger, setResponseTrigger] = useState(false);
 
@@ -21,13 +23,19 @@ export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any
 
     useEffect(() => {
         return () => {
-            removeApi(fn);
+            console.log('unmounting');
+            if (!isResponseStillCached()) removeApi(fn);
         };
     }, []);
 
     const load = async (params?: { request: any }) => {
-        addApi(fn);
+        addApi(fn, options?.cache);
         if (!shouldCallApi(options?.requiredValues) || loading) return;
+        if (isResponseStillCached()) {
+            setResponseTrigger(!responseTrigger);
+            return;
+        }
+
         startFetchApi(fn);
         const response = await fn(params?.request ?? request);
 
@@ -38,6 +46,12 @@ export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any
         const apiData = options?.unZip ? unzip(response.data) : response.data;
         endFetchApi(fn, apiData);
         setResponseTrigger(!responseTrigger);
+    };
+
+    const isResponseStillCached = () => {
+        if (!options?.cache) return false;
+        if (!lastTimeFetched) return false;
+        return moment(lastTimeFetched).add(options.cache, 'milliseconds').isAfter(new Date());
     };
 
     const handleApiError = (data: Extract<Awaited<ReturnType<S>>, { ok: true }>['data']) => {
@@ -60,8 +74,15 @@ const [useSuspenseStore, useSuspenseActions] = createStore<Store, Actions>({
         suspenseApiStates: new Map(),
     },
     actions: {
-        addApi(state, api) {
-            if (state.suspenseApiStates.has(api)) return;
+        addApi(state, api, cache) {
+            if (state.suspenseApiStates.has(api)) {
+                if (!cache) return;
+
+                const previousSuspenseApiState = state.suspenseApiStates.get(api);
+                if (moment(previousSuspenseApiState?.lastTimeFetched).add(cache, 'milliseconds').isAfter(new Date())) {
+                    return;
+                }
+            }
             state.suspenseApiStates.set(api, { hasInitialFetched: false, loading: false });
         },
         removeApi(state, api) {
@@ -73,7 +94,7 @@ const [useSuspenseStore, useSuspenseActions] = createStore<Store, Actions>({
         endFetchApi(state, api, data) {
             const previousSuspenseApiState = state.suspenseApiStates.get(api);
             if (!previousSuspenseApiState) return;
-            state.suspenseApiStates.set(api, { ...previousSuspenseApiState, loading: false, data });
+            state.suspenseApiStates.set(api, { ...previousSuspenseApiState, loading: false, data, lastTimeFetched: new Date() });
         },
     },
 });
@@ -83,7 +104,7 @@ type Store = {
 };
 
 type Actions = {
-    addApi: (api: Function) => void;
+    addApi: (api: Function, cache?: number) => void;
     removeApi: (api: Function) => void;
     startFetchApi: (api: Function) => void;
     endFetchApi: (api: Function, data: any) => void;
@@ -93,4 +114,6 @@ type ApiState = {
     hasInitialFetched: boolean;
     loading: boolean;
     data?: any;
+    request?: any;
+    lastTimeFetched?: Date;
 };
