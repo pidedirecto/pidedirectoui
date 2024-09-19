@@ -10,6 +10,7 @@ export type DropDownProps = {
     preventClose?: boolean;
     children: React.ReactNode;
     badge?: ButtonProps['badge'];
+    onOpen?: () => void;
     classes?: {
         container?: string;
         button?: string;

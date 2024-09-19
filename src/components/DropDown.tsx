@@ -8,7 +8,7 @@ import classes from 'src/styles/dropDown.module.css';
 import { DropDownProps } from 'src/types/components/DropDown';
 import { classNames } from 'src/utils/css/classNames';
 
-export function DropDown({ content, variant, position, children, disabled, preventClose, badge, id: idProp, classes: classesProp }: DropDownProps): React.ReactElement {
+export function DropDown({ content, variant, position, children, disabled, preventClose, badge, onOpen, id: idProp, classes: classesProp }: DropDownProps): React.ReactElement {
     const dropDownContainerRef = useRef<HTMLDivElement | null>(null);
     const dropDownRef = useRef<HTMLDivElement | null>(null);
     const id = useRef(normalizeContent(content));
@@ -39,6 +39,13 @@ export function DropDown({ content, variant, position, children, disabled, preve
         return '0';
     };
 
+    const toggleDropDown = () => {
+        setIsOpen((prevIsOpen) => {
+            if (!prevIsOpen) onOpen?.();
+            return !prevIsOpen;
+        });
+    };
+
     return (
         <div ref={dropDownContainerRef} className={classNames(classes.container, classesProp?.container)}>
             <Button
@@ -47,7 +54,7 @@ export function DropDown({ content, variant, position, children, disabled, preve
                 classes={{ button: classNames(classes.button, variant === 'icon' && classes.buttonIcon, classesProp?.button) }}
                 disabled={disabled}
                 variant={variant ?? 'secondary'}
-                onClick={() => setIsOpen((prevIsOpen) => !prevIsOpen)}
+                onClick={toggleDropDown}
                 data-open={isOpen}
             >
                 {typeof content === 'object' ? (

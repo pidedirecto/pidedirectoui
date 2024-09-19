@@ -66,6 +66,13 @@ const meta: Meta<typeof DropDown> = {
             },
             control: false,
         },
+        onOpen: {
+            description: 'DropDown on open callback',
+            table: {
+                type: { summary: 'function' },
+            },
+            control: false,
+        },
         classes: {
             description: 'Classes object to override dropdown style',
             table: {
