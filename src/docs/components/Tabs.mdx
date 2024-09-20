@@ -39,7 +39,22 @@ const tabs = [{
 
     <Canvas of={TabsStories.Badge} />
 
--   `tab.content` Renders any valid React.Node as the content of the tab, if this prop is passed then `label` and `badge` going to be omitted
+-   `tab.content` Renders any valid React.Node as the content of the tab, if this prop is passed then `label` and `badge` are going to be omitted.
+    This field accepts either a React.Node or a function that returns it, if you pass a function it will receive as params `{ isTabSelected: boolean }`
+
+```tsx
+const tabs = [{
+    label: 'Tab 1',
+    value: '1',
+    content: ({ isTabSelected }) => (
+        <span style={{ color: isTabSelected ? 'green' : 'red' }}>Tab 1</span>
+    ),
+}]
+
+<Tabs tabs={tabs}>
+    {hideTab && <div>Content to hide</div>}
+</Tabs>
+```
 
 -   `tab.onClick` Callback to be called each time the use clicks the tab, the tab object will be passed as prop to the callback, even though with this function you can reproduce the functionality of the `Tabs` component, switching sections, we strongly recommend to leave that functionality to the component and only do side effects on this callback
 

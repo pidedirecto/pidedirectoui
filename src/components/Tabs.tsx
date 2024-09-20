@@ -7,6 +7,7 @@ import { useCreateUserClickedTabLogEvent } from 'src/services/logEvent/useCreate
 import classes from 'src/styles/tabs.module.css';
 import { Tab, TabsProp } from 'src/types/components/Tabs';
 import { classNames } from 'src/utils/css/classNames';
+import { isFunction } from 'src/utils/function/isFunction';
 
 export function Tabs({ tabs, loading, classes: classesProp, defaultValue, onChangeTab, tabsHeader, children }: TabsProp): React.ReactElement {
     const createUserClickedTabLogEvent = useCreateUserClickedTabLogEvent();
@@ -61,7 +62,8 @@ export function Tabs({ tabs, loading, classes: classesProp, defaultValue, onChan
                                         {tab?.badge}
                                     </span>
                                 )}
-                                {tab.content}
+                                {/* @ts-ignore */}
+                                {isFunction(tab.content) ? tab.content({ isTabSelected }) : tab.content}
                             </button>
                         );
                     })}
