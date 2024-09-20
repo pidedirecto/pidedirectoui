@@ -23,7 +23,7 @@ export type Tab = {
     label: string;
     value: string;
     hidden?: boolean;
-    content?: React.ReactNode | (({ isTabSelected: boolean }) => React.ReactNode);
+    content?: React.ReactNode | (({ isTabSelected }: { isTabSelected: boolean }) => React.ReactNode);
     badge?: React.ReactNode;
     onClick?: Function;
 };
