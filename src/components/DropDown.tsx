@@ -40,10 +40,8 @@ export function DropDown({ content, variant, position, children, disabled, preve
     };
 
     const toggleDropDown = () => {
-        setIsOpen((prevIsOpen) => {
-            if (!prevIsOpen) onOpen?.();
-            return !prevIsOpen;
-        });
+        setIsOpen((prevIsOpen) => !prevIsOpen);
+        if (!isOpen) onOpen?.();
     };
 
     return (
