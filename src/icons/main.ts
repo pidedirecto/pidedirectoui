@@ -128,6 +128,7 @@ export * from 'src/icons/PromotionIcon';
 export * from 'src/icons/QuestionIcon';
 export * from 'src/icons/ReceiptIcon';
 export * from 'src/icons/RefreshIcon';
+export * from 'src/icons/RingingBellIcon';
 export * from 'src/icons/RouteIcon';
 export * from 'src/icons/SaveIcon';
 export * from 'src/icons/ScissorsIcon';

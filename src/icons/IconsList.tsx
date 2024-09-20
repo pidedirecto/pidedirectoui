@@ -129,6 +129,7 @@ import { QuestionIcon } from 'src/icons/QuestionIcon';
 import { ReceiptIcon } from 'src/icons/ReceiptIcon';
 import { RefreshIcon } from 'src/icons/RefreshIcon';
 import { RestoreIcon } from 'src/icons/RestoreIcon';
+import { RingingBellIcon } from 'src/icons/RingingBellIcon';
 import { RouteIcon } from 'src/icons/RouteIcon';
 import { SaveIcon } from 'src/icons/SaveIcon';
 import { ScissorsIcon } from 'src/icons/ScissorsIcon';
@@ -692,6 +693,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <RestoreIcon size={size} />
                 <span className={classes.iconName}>RestoreIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <RingingBellIcon size={size} />
+                <span className={classes.iconName}>RingingBellIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <RouteIcon size={size} />

@@ -131,6 +131,7 @@ export const PromotionIcon: SvgIcon
 export const QuestionIcon: SvgIcon
 export const ReceiptIcon: SvgIcon
 export const RefreshIcon: SvgIcon
+export const RingingBellIcon: SvgIcon
 export const RouteIcon: SvgIcon
 export const SaveIcon: SvgIcon
 export const ScissorsIcon: SvgIcon
