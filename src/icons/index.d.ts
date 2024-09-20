@@ -113,6 +113,7 @@ export const NoteIcon: SvgIcon
 export const NotificationIcon: SvgIcon
 export const OpenBoxIcon: SvgIcon
 export const OutlinedLightBulbIcon: SvgIcon
+export const OutlinedNotificationIcon: SvgIcon
 export const OutlinedPeopleIcon: SvgIcon
 export const OutlinedPlusIcon: SvgIcon
 export const OutlinedDoorbellIcon: SvgIcon

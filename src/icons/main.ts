@@ -110,6 +110,7 @@ export * from 'src/icons/NoteIcon';
 export * from 'src/icons/NotificationIcon';
 export * from 'src/icons/OpenBoxIcon';
 export * from 'src/icons/OutlinedLightBulbIcon';
+export * from 'src/icons/OutlinedNotificationIcon';
 export * from 'src/icons/OutlinedPeopleIcon';
 export * from 'src/icons/OutlinedPlusIcon';
 export * from 'src/icons/OutlinedDoorbellIcon';
