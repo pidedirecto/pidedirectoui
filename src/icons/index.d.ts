@@ -117,6 +117,7 @@ export const OutlinedNotificationIcon: SvgIcon
 export const OutlinedPeopleIcon: SvgIcon
 export const OutlinedPlusIcon: SvgIcon
 export const OutlinedDoorbellIcon: SvgIcon
+export const PaperCrossedIcon: SvgIcon
 export const PaymentTerminalIcon: SvgIcon
 export const PdfIcon: SvgIcon
 export const PennantIcon: SvgIcon

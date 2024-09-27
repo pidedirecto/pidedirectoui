@@ -114,6 +114,7 @@ import { OutlinedLightBulbIcon } from 'src/icons/OutlinedLightBulbIcon';
 import { OutlinedNotificationIcon } from 'src/icons/OutlinedNotificationIcon';
 import { OutlinedPeopleIcon } from 'src/icons/OutlinedPeopleIcon';
 import { OutlinedPlusIcon } from 'src/icons/OutlinedPlusIcon';
+import { PaperCrossedIcon } from 'src/icons/PaperCrossedIcon';
 import { PaymentTerminalIcon } from 'src/icons/PaymentTerminalIcon';
 import { PdfIcon } from 'src/icons/PdfIcon';
 import { PennantIcon } from 'src/icons/PennantIcon';
@@ -633,6 +634,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <OutlinedDoorbellIcon size={size} />
                 <span className={classes.iconName}>OutlinedDoorbellIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <PaperCrossedIcon size={size} />
+                <span className={classes.iconName}>PaperCrossedIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <PaymentTerminalIcon size={size} />

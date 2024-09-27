@@ -115,6 +115,7 @@ export * from 'src/icons/OutlinedPeopleIcon';
 export * from 'src/icons/OutlinedPlusIcon';
 export * from 'src/icons/OutlinedDoorbellIcon';
 export * from 'src/icons/PaymentTerminalIcon';
+export * from 'src/icons/PaperCrossedIcon';
 export * from 'src/icons/PdfIcon';
 export * from 'src/icons/PennantIcon';
 export * from 'src/icons/PeopleIcon';
