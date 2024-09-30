@@ -15,4 +15,13 @@ const isSmallScreen = useIsScreenSize(ScreenSizes.SMALL_SCREEN);
 
 In order to use this hook you have to use the `ScreenSizes` const.
 
+You can also pass an array of screen sizes.
+
+```tsx
+import { ScreenSizes } from '@pidedirecto/ui/constants';
+import { useIsScreenSize } from '@pidedirecto/ui/hooks';
+
+const isSmallScreen = useIsScreenSize([ScreenSizes.EXTRA_SMALL_SCREEN, ScreenSizes.SMALL_SCREEN]);
+```
+
 Try to avoid to use this hook for styling purposes, instead try to use always CSS media queries.
