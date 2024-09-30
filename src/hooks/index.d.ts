@@ -9,6 +9,7 @@ import { UseNotification } from "src/types/hooks/UseNotification";
 import { UseElementSize } from "src/types/hooks/UseElementSize";
 import { UseWatch } from "src/types/hooks/UseWatch";
 import { UseConfirmDialog } from "src/types/hooks/UseConfirmDialog";
+import { UseScrollEnd } from "src/types/hooks/UseScrollEnd";
 import { ApiSauceResponse, Options as UseLoadApiOptions } from "src/types/hooks/UseLoadApi";
 import { ApiSauceResponse, Options as UseSuspenseApiOptions } from "src/types/hooks/UseSuspenseApi";
 
@@ -81,6 +82,13 @@ export const useNotification: UseNotification
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useconfirmdialog--docs)
  */
 export const useConfirmDialog: UseConfirmDialog
+
+/**
+ * Hook to know when user reaches the end of scroll
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-usescrollend--docs)
+ */
+export const useScrollEnd: UseScrollEnd
 
 /**
  * Create store function

@@ -1,0 +1,18 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title='hooks/useScrollEnd' />
+
+# useScrollEnd
+
+Hook to know when the user has reached the bottom of the scroll of an specific element.
+
+```ts
+import { useScrollEnd } from '@pidedirecto/ui/hooks';
+
+const ref = useRef<HTMLDivElement>();
+
+useScrollEnd({
+    element: ref.current,
+    onEndReached: () => {},
+});
+```
