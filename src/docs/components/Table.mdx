@@ -120,6 +120,8 @@ This feature works with `options.selectable`, `options.searchable` and `filters`
 
 The `Table` component has customizable props. `title` prop will render a title.
 
+#### Toolbar
+
 <Canvas of={TableStories.CustomToolbar} />
 
 `tooltbar` prop can receive either a function or directly a `React.Element` value, if a function is passed this function should return a `React.Element`, and as argument will receive an object.
@@ -166,6 +168,28 @@ import { Table, Button } from '@pidedirecto/ui'
 />
 
 ```
+
+#### Footer
+
+`footer` prop receives a function, the function does not receive anything as params and should return an object where
+each key should be one of the column ids, it works the same as rows array.
+
+<Canvas of={TableStories.Footer} sourceState='none' />
+
+```tsx
+import { TrashCanIcon } from '@pidedirecto/ui/icons'
+import { Table, Button } from '@pidedirecto/ui'
+
+<Table
+    ...
+    footer={() => ({
+        column2: 'Total $100'
+    })}
+/>
+```
+
+You can omit the other column ids if you don't need a footer for that column. This footer will remain the same even if you
+change the page when table has pagination.
 
 ## Filters
 

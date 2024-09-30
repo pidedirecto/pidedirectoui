@@ -43,6 +43,10 @@
     border-bottom: 1px solid var(--border-primary);
 }
 
+.footer {
+    border-top: 1px solid var(--border-primary);
+}
+
 .cell {
     font-family: var(--font-regular);
     color: var(--text-primary);

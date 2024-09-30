@@ -15,6 +15,7 @@ export type TableProps = {
         row?: string;
         header?: string;
         container?: string;
+        footer?: string;
     };
     /** @deprecated Use options.emptyMessage instead */
     emptyMessage?: string;
@@ -32,6 +33,7 @@ export type TableProps = {
         virtualized?: boolean;
         contentHeight?: number;
         rowHeight?: number;
+        rowsPerPage?: number;
         downloadable?: boolean;
         downloadFileName?: string;
         emptyMessage?: string;
@@ -48,8 +50,10 @@ export type TableProps = {
     /** @deprecated Use options.rowHeight instead */
     rowHeight?: number;
     searchInputProps?: Omit<InputProps, 'name', 'value', 'onChange', 'type'>;
+    /** @deprecated Use options.rowsPerPage instead */
     rowsPerPage?: number;
     title?: string;
+    footer?: () => Record<string, React.ReactNode>;
     toolbar?: React.ReactElement | ((params: ToolbarParams) => React.ReactElement);
     /** @deprecated Use events.onRowClick instead */
     onRowClick?: (row: TableRow) => void | Promise<void>;

@@ -202,6 +202,14 @@ const meta: Meta<typeof Table> = {
             },
             control: false,
         },
+        'options.rowsPerPage': {
+            description: 'Enables pagination and sets rows per page',
+            table: {
+                subcategory: 'Options API',
+                type: { summary: 'number' },
+            },
+            control: false,
+        },
 
         'options.downloadable': {
             description: 'Enables to download table content in a csv file',
@@ -259,6 +267,13 @@ const meta: Meta<typeof Table> = {
             description: 'Table title',
             table: {
                 type: { summary: 'string' },
+            },
+            control: false,
+        },
+        footer: {
+            description: 'Table footer',
+            table: {
+                type: { summary: 'function' },
             },
             control: false,
         },
@@ -409,7 +424,7 @@ export const CellClick: Story = {
 export const Pagination: Story = {
     args: {
         ...meta.args,
-        rowsPerPage: 1,
+        options: { rowsPerPage: 1 },
     },
 };
 
@@ -558,5 +573,14 @@ export const Downloadable: Story = {
             downloadable: true,
             downloadFileName: 'test-file',
         },
+    },
+};
+
+export const Footer: Story = {
+    args: {
+        ...meta.args,
+        footer: () => ({
+            column2: 'Total $100',
+        }),
     },
 };

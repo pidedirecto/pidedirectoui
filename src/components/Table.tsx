@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import * as React from 'react';
-import { Button } from 'src/components/Button';
 import { Input } from 'src/components/Input';
 import { LinearProgress } from 'src/components/LinearProgress';
 import { TableBody } from 'src/components/table/TableBody';
+import { TableFooter } from 'src/components/table/TableFooter';
 import { TableHeader } from 'src/components/table/TableHeader';
 import { TableRows } from 'src/components/table/TableRows';
 import { useTableActions } from 'src/components/table/tableStore';
@@ -11,7 +11,7 @@ import { TableToolbar } from 'src/components/table/TableToolbar';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
 import { UiLogEventTypes } from 'src/constants/UiLogEventType';
 import classes from 'src/styles/table.module.css';
-import type { TableProps } from 'src/types/components/Table';
+import { type TableProps } from 'src/types/components/Table';
 import { classNames } from 'src/utils/css/classNames';
 import { removeNulls } from 'src/utils/object/removeNulls';
 import { newId } from 'src/utils/string/newId';
@@ -33,6 +33,7 @@ export function Table({
     contentHeight,
     rowHeight,
     title,
+    footer,
     toolbar,
     searchInputProps,
     classes: classesProp,
@@ -103,7 +104,9 @@ export function Table({
     };
 
     return (
-        <TableContext.Provider value={{ tableId: tableId.current, columns, rows: getRowsToShow(), selectable: isSelectable, classes, onSelect: events?.onSelect ?? onSelect, filters, options }}>
+        <TableContext.Provider
+            value={{ tableId: tableId.current, columns, rows: getRowsToShow(), selectable: isSelectable, classes, onSelect: events?.onSelect ?? onSelect, filters, options, footer, rowsPerPage }}
+        >
             <div className={classNames(classes.container, classesProp?.container)}>
                 {!!isSearchable && !!title && <h2 className={classes.title}>{title}</h2>}
                 <div className={classes.toolbarContainer}>
@@ -126,25 +129,7 @@ export function Table({
                             </tr>
                         )}
                     </tbody>
-                    {!!rowsPerPage && (
-                        <tfoot>
-                            <tr className={classes.row}>
-                                <td style={{ width: '100%' }}>
-                                    <div className={classes.paginationButtonsContainer}>
-                                        <span>
-                                            {page} / {getTotalPages()}
-                                        </span>
-                                        <Button variant='icon' onClick={previousPage} classes={{ button: classes.buttons }} disabled={page === 1 || !!search}>
-                                            {'<'}
-                                        </Button>
-                                        <Button variant='icon' onClick={nextPage} classes={{ button: classes.buttons }} disabled={page === getTotalPages() || !!search}>
-                                            {'>'}
-                                        </Button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    )}
+                    <TableFooter page={page} totalPages={getTotalPages()} disabled={!!search} nextPage={nextPage} previousPage={previousPage} />
                 </table>
                 {loading && <LinearProgress />}
             </div>
@@ -162,6 +147,8 @@ type TableContextType = {
     tableId: string;
     columns: TableProps['columns'];
     rows: TableProps['rows'];
+    footer?: TableProps['footer'];
+    rowsPerPage?: TableProps['rowsPerPage'];
     selectable?: boolean;
     options?: TableProps['options'];
     filters?: TableProps['filters'];
