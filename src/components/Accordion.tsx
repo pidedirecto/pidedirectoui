@@ -2,31 +2,40 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import * as React from 'react';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
 import { UiLogEventTypes } from 'src/constants/UiLogEventType';
+import { useIsElementVisibleInScreen } from 'src/hooks/useIsElementVisibleInScreen';
 import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
 import { useCreateUserToggledAccordionLogEvent } from 'src/services/logEvent/useCreateUserToggledAccordionLogEvent';
 import classes from 'src/styles/accordion.module.css';
 import { AccordionProps } from 'src/types/components/Accordion';
 import { classNames } from 'src/utils/css/classNames';
 
-export function Accordion({ open, title, defaultOpened, children, classes: classesProp, subText, renderIcon, onChange, iconTitle }: AccordionProps): React.ReactElement {
+export function Accordion({ open, title, defaultOpened, keepMounted, children, classes: classesProp, subText, renderIcon, onChange, iconTitle, onBottomVisible }: AccordionProps): React.ReactElement {
     const containerRef = useRef<HTMLDivElement | null>(null);
+    const bottomRef = useRef<HTMLDivElement | null>(null);
     const accordionId = useRef(getId());
     const { addElementToStackTrace } = useContext(UiLogEventTrackerContext);
     const createUserToggledAccordionLogEvent = useCreateUserToggledAccordionLogEvent();
+    useIsElementVisibleInScreen({
+        element: bottomRef.current,
+        onVisible: onBottomVisible,
+    });
 
     const [currentHeight, setCurrentHeight] = useState('0px');
     const [accordionOpened, setAccordionOpened] = useState(!!defaultOpened || false);
+    const [shouldKeepMounted, setShouldKeepMounted] = useState(!!defaultOpened && !!keepMounted);
+
+    useEffect(() => {
+        if ((open || accordionOpened) && keepMounted) setShouldKeepMounted(true);
+    }, [keepMounted, open, accordionOpened]);
 
     useEffect(() => {
         const height = containerRef.current?.scrollHeight ?? 0;
         setCurrentHeight(`${height}px`);
-        if (accordionOpened) setTimeout(() => setCurrentHeight('max-content'), 500);
     }, [accordionOpened, open, children]);
 
     const handleOnClickAccordion = () => {
         createUserToggledAccordionLogEvent(title ?? '');
-
-        if (onChange) onChange(!accordionOpened);
+        onChange?.(!accordionOpened);
         setAccordionOpened(!accordionOpened);
     };
 
@@ -59,7 +68,8 @@ export function Accordion({ open, title, defaultOpened, children, classes: class
                     id={`accordion-${accordionId.current}`}
                     aria-hidden={!accordionOpened}
                 >
-                    {accordionOpened && children}
+                    {(accordionOpened || shouldKeepMounted) && children}
+                    {!!onBottomVisible && <div className={classes.invisibleBottom} ref={bottomRef}></div>}
                 </div>
             </div>
         );
@@ -67,7 +77,7 @@ export function Accordion({ open, title, defaultOpened, children, classes: class
 
     return (
         <div ref={containerRef} className={classNames(classes.accordion, classesProp?.accordion)} style={{ height: !!open ? currentHeight : 0 }} onClickCapture={addAccordionToStackTrace}>
-            {open && children}
+            {(open || shouldKeepMounted) && children}
         </div>
     );
 }

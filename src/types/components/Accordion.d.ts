@@ -3,6 +3,7 @@ import * as React from 'react';
 export type AccordionProps = {
     open?: boolean;
     defaultOpened?: boolean;
+    keepMounted?: boolean;
     title?: string;
     iconTitle?: string;
     subText?: string;
@@ -13,7 +14,8 @@ export type AccordionProps = {
         container?: string;
         accordion?: string;
     };
-    onChange?: Function;
+    onChange?: (open: boolean) => void | Promise<void>;
+    onBottomVisible?: ({ isVisible }: { isVisible: boolean }) => void | Promise<void>;
     renderIcon?: Function;
 };
 

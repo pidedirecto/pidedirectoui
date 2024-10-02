@@ -25,6 +25,13 @@ const meta: Meta<typeof Accordion> = {
             },
             control: false,
         },
+        keepMounted: {
+            description: 'Keeps content mounted in the DOM when accordion is closed',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
         title: {
             description: 'Titles the accordion content',
             table: {
@@ -59,6 +66,13 @@ const meta: Meta<typeof Accordion> = {
         },
         onChange: {
             description: 'Callback to be called after the user hides or shows the accordion',
+            table: {
+                type: { summary: 'function' },
+            },
+            control: false,
+        },
+        onBottomVisible: {
+            description: 'Callback to know when the bottom of the accordion is visible in screen',
             table: {
                 type: { summary: 'function' },
             },
