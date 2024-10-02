@@ -25,3 +25,10 @@ export const Notification: Story = {
         ...meta.args,
     },
 };
+
+export const Card: Story = {
+    args: {
+        ...meta.args,
+        variant: 'card',
+    },
+};

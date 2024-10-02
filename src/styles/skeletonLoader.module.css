@@ -6,7 +6,15 @@
     gap: 10px;
 }
 
-.container[data-variant='notification'] .icon {
+.container[data-variant='card'] {
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid var(--border-primary);
+}
+
+.icon {
     width: 40px;
     height: 40px;
     border-radius: 40px;
@@ -26,6 +34,14 @@
 }
 
 .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.text {
     width: 100%;
     height: 12px;
     border-radius: 12px;

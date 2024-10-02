@@ -13,10 +13,32 @@ export function SkeletonLoader({ variant }: SkeletonLoaderProps): React.ReactEle
             <div data-variant={variant} className={classes.container}>
                 <div className={classes.icon}></div>
                 <div className={classes.column}>
-                    <div className={classes.row} style={{ width: getRandomRowWidth() }}></div>
-                    <div className={classes.row} style={{ width: getRandomRowWidth() }}></div>
-                    <div className={classes.row} style={{ width: getRandomRowWidth() }}></div>
-                    <div className={classes.row} style={{ width: getRandomRowWidth() }}></div>
+                    <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>
+                    <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>
+                    <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>
+                    <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>
+                </div>
+            </div>
+        );
+    }
+
+    if (variant === 'card') {
+        return (
+            <div data-variant={variant} className={classes.container}>
+                <div className={classes.column}>
+                    <div className={classes.row}>
+                        <div className={classes.icon}></div>
+                        <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>
+                    </div>
+                    <div className={classes.row}>
+                        <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>
+                        <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>
+                    </div>
+                    <div className={classes.row}>
+                        <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>
+                        <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>
+                    </div>
+                    <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>
                 </div>
             </div>
         );
