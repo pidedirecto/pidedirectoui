@@ -71,13 +71,6 @@ const meta: Meta<typeof Accordion> = {
             },
             control: false,
         },
-        onBottomVisible: {
-            description: 'Callback to know when the bottom of the accordion is visible in screen',
-            table: {
-                type: { summary: 'function' },
-            },
-            control: false,
-        },
         renderIcon: {
             description: 'Function to render a left icon and replace the default one',
             table: {

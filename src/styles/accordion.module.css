@@ -61,8 +61,3 @@
     color: var(--text-secondary);
     font-size: var(--font-size-small);
 }
-
-.invisibleBottom {
-    height: 1px;
-    opacity: 0;
-}

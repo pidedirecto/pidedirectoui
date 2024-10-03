@@ -15,7 +15,6 @@ export type AccordionProps = {
         accordion?: string;
     };
     onChange?: (open: boolean) => void | Promise<void>;
-    onBottomVisible?: ({ isVisible }: { isVisible: boolean }) => void | Promise<void>;
     renderIcon?: Function;
 };
 
