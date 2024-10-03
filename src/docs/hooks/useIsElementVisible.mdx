@@ -2,14 +2,14 @@ import { Meta } from '@storybook/blocks';
 
 <Meta title='hooks/useIsElementVisibleInScreen' />
 
-# useIsElementVisibleInScreen
+# useIsElementVisible
 
 Hook to know when the user has reached the bottom of the scroll of a specific element.
 
 ```ts
-import { useIsElementVisibleInScreen } from '@pidedirecto/ui/hooks';
+import { useIsElementVisible } from '@pidedirecto/ui/hooks';
 
-const elementRefInitializer = useIsElementVisibleInScreen({
+const elementRefInitializer = useIsElementVisible({
     onVisible: () => {},
 });
 
@@ -21,7 +21,9 @@ you want to track. This is not a React ref, so you should not use it like that.
 
 As parameter the hook accepts an object with three keys:
 
--   `onVisible` a callback that will be called each time the element toggles its visibility, which means if it is visible or not in the screen.
+-   `onVisible` a callback that will be called each time the element is visible.
+-   `onHidden` a callback that will be called each time the element is hidden.
 -   `threshold` a number value from 0 to 1, which means how much percent of the element should be visible to trigger the callback,
     by default its 1, in other words, 100% of the element should be visible in the screen.
 -   `rootElement` the root element to check the intersection by default it is the window.
+-   `dependencies` array of dependencies.

@@ -12,7 +12,7 @@ import { UseConfirmDialog } from "src/types/hooks/UseConfirmDialog";
 import { UseScrollEnd } from "src/types/hooks/UseScrollEnd";
 import { ApiSauceResponse, Options as UseLoadApiOptions } from "src/types/hooks/UseLoadApi";
 import { ApiSauceResponse, Options as UseSuspenseApiOptions } from "src/types/hooks/UseSuspenseApi";
-import { UseIsElementVisibleInScreen } from "src/types/hooks/UseIsElementVisibleInScreen";
+import { UseIsElementVisible } from "src/types/hooks/UseIsElementVisible";
 
 /**
  * Theme gives width and height of an element passing its reference
@@ -92,11 +92,11 @@ export const useConfirmDialog: UseConfirmDialog
 export const useScrollEnd: UseScrollEnd
 
 /**
- * Hook to know when user an html element is visible on screen
+ * Hook to know when user an html element is visible
  *
- * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useiselementvisibleinscreen--docs)
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-useiselementvisible--docs)
  */
-export const useIsElementVisibleInScreen: UseIsElementVisibleInScreen
+export const useIsElementVisible: UseIsElementVisible
 
 /**
  * Create store function

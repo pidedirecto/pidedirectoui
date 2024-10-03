@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { UseIsElementVisibleInScreenProps } from 'src/types/hooks/UseIsElementVisibleInScreen';
+import { UseIsElementVisibleProps } from 'src/types/hooks/UseIsElementVisible';
 
-export function useIsElementVisibleInScreen({ threshold = 1, onVisible, rootElement }: UseIsElementVisibleInScreenProps): (ref: HTMLElement) => void {
+export function useIsElementVisible({ threshold = 1, onVisible, onHidden, rootElement, dependencies }: UseIsElementVisibleProps): (ref: HTMLElement) => void {
     const elementRef = useRef<HTMLElement>();
     const observerRef = useRef<IntersectionObserver>();
 
@@ -20,7 +20,11 @@ export function useIsElementVisibleInScreen({ threshold = 1, onVisible, rootElem
 
             const observer = new IntersectionObserver(
                 ([entry]) => {
-                    onVisible?.({ isVisible: entry.isIntersecting });
+                    if (entry.isIntersecting) {
+                        onVisible?.();
+                    } else {
+                        onHidden?.();
+                    }
                 },
                 {
                     root: rootElement ?? null,
@@ -32,7 +36,7 @@ export function useIsElementVisibleInScreen({ threshold = 1, onVisible, rootElem
 
             observer.observe(element);
         },
-        [threshold],
+        [threshold, ...(dependencies ?? [])],
     );
 
     return refInitializer;
