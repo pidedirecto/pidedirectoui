@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react';
+import { UseIsElementVisibleInScreenProps } from 'src/types/hooks/UseIsElementVisibleInScreen';
 
-export function useIsElementVisibleInScreen({ threshold = 1, onVisible }: Props): (ref: HTMLElement) => void {
+export function useIsElementVisibleInScreen({ threshold = 1, onVisible }: UseIsElementVisibleInScreenProps): (ref: HTMLElement) => void {
     const elementRef = useRef<HTMLElement>();
     const observerRef = useRef<IntersectionObserver>();
 
@@ -36,8 +37,3 @@ export function useIsElementVisibleInScreen({ threshold = 1, onVisible }: Props)
 
     return refInitializer;
 }
-
-type Props = {
-    threshold?: number;
-    onVisible?: ({ isVisible }: { isVisible: boolean }) => void | Promise<void>;
-};

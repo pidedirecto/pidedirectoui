@@ -1,6 +1,6 @@
-export type UseIsElementVisibleInScreen = (props: UseScrollEndProps) => (element: HTMLElement | null) => void;
+export type UseIsElementVisibleInScreen = (props: UseIsElementVisibleInScreenProps) => (element: HTMLElement | null) => void;
 
-export type UseScrollEndProps = {
+export type UseIsElementVisibleInScreenProps = {
     threshold?: number;
     onVisible?: ({ isVisible }: { isVisible: boolean }) => void | Promise<void>;
 };
