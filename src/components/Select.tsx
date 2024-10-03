@@ -81,12 +81,7 @@ export function Select({
             return selectedOption?.label ?? placeholder;
         }
 
-        return selectedValues
-            .map((selectedValue: any) => {
-                const selectedOption = options.find((option) => option.value === selectedValue);
-                return selectedOption?.label ?? '';
-            })
-            .join(', ');
+        return `${placeholder ?? label} (${selectedValues.length})`;
     };
 
     const handleSearch = useCallback((value: string) => {
