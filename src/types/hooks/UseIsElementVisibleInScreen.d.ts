@@ -1,4 +1,4 @@
-export type UseIsElementVisibleInScreen = (props: UseScrollEndProps) => (element: HTMLElement) => void;
+export type UseIsElementVisibleInScreen = (props: UseScrollEndProps) => (element: HTMLElement | null) => void;
 
 export type UseScrollEndProps = {
     threshold?: number;

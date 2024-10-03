@@ -13,7 +13,7 @@ export function useIsElementVisibleInScreen({ threshold = 1, onVisible }: Props)
     }, []);
 
     const refInitializer = useCallback(
-        (element: HTMLElement) => {
+        (element: HTMLElement | null) => {
             if (!element) return;
             elementRef.current = element;
 
