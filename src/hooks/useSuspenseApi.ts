@@ -9,10 +9,10 @@ export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any
     request?: Parameters<S>[0],
     options?: Options,
 ): [Extract<Awaited<ReturnType<S>>, { ok: true }>['data'], (params?: { request: any }) => Promise<void>] {
-    const hasInitialFetched = useSuspenseStore((store) => !!store.suspenseApiStates.get(fn)?.hasInitialFetched);
-    const loading = useSuspenseStore((store) => !!store.suspenseApiStates.get(fn)?.loading);
-    const data = useSuspenseStore((store) => store.suspenseApiStates.get(fn)?.data);
-    const lastTimeFetched = useSuspenseStore((store) => store.suspenseApiStates.get(fn)?.lastTimeFetched);
+    const hasInitialFetched = useSuspenseStore((store) => !!store.suspenseApiStates.get(options?.key ?? fn)?.hasInitialFetched);
+    const loading = useSuspenseStore((store) => !!store.suspenseApiStates.get(options?.key ?? fn)?.loading);
+    const data = useSuspenseStore((store) => store.suspenseApiStates.get(options?.key ?? fn)?.data);
+    const lastTimeFetched = useSuspenseStore((store) => store.suspenseApiStates.get(options?.key ?? fn)?.lastTimeFetched);
 
     const [responseTrigger, setResponseTrigger] = useState(false);
 
