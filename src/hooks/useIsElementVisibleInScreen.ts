@@ -19,7 +19,6 @@ export function useIsElementVisibleInScreen({ threshold = 1, onVisible }: Props)
 
             const observer = new IntersectionObserver(
                 ([entry]) => {
-                    console.log('entry = ', entry);
                     onVisible?.({ isVisible: entry.isIntersecting });
                 },
                 {
