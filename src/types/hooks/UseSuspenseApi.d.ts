@@ -3,6 +3,7 @@ export type Options = {
     requiredValues?: Array<any>;
     unZip?: boolean;
     cache?: number;
+    key?: string;
 };
 
 type OnErrorFunction = (response: ApiErrorResponse, setData: any) => void;

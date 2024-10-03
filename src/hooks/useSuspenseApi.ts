@@ -23,19 +23,19 @@ export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any
 
     useEffect(() => {
         return () => {
-            if (!isResponseStillCached()) removeApi(fn);
+            if (!isResponseStillCached()) removeApi(fn, options?.key);
         };
     }, []);
 
     const load = async (params?: { request: any }) => {
-        addApi(fn, options?.cache);
+        addApi(fn, options?.cache, options?.key);
         if (!shouldCallApi(options?.requiredValues) || loading) return;
         if (isResponseStillCached()) {
             setResponseTrigger(!responseTrigger);
             return;
         }
 
-        startFetchApi(fn);
+        startFetchApi(fn, options?.key);
         const response = await fn(params?.request ?? request);
 
         if (!response.ok) {
@@ -43,7 +43,7 @@ export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any
         }
 
         const apiData = options?.unZip ? unzip(response.data) : response.data;
-        endFetchApi(fn, apiData);
+        endFetchApi(fn, apiData, options?.key);
         setResponseTrigger(!responseTrigger);
     };
 
@@ -54,7 +54,7 @@ export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any
     };
 
     const handleApiError = (data: Extract<Awaited<ReturnType<S>>, { ok: true }>['data']) => {
-        endFetchApi(fn, data);
+        endFetchApi(fn, data, options?.key);
     };
 
     if (shouldCallApi(options?.requiredValues) && (!hasInitialFetched || loading)) {
@@ -73,40 +73,40 @@ const [useSuspenseStore, useSuspenseActions] = createStore<Store, Actions>({
         suspenseApiStates: new Map(),
     },
     actions: {
-        addApi(state, api, cache) {
-            if (state.suspenseApiStates.has(api)) {
+        addApi(state, api, cache, key) {
+            if (state.suspenseApiStates.has(key ?? api)) {
                 if (!cache) return;
 
-                const previousSuspenseApiState = state.suspenseApiStates.get(api);
+                const previousSuspenseApiState = state.suspenseApiStates.get(key ?? api);
                 if (moment(previousSuspenseApiState?.lastTimeFetched).add(cache, 'milliseconds').isAfter(new Date())) {
                     return;
                 }
             }
-            state.suspenseApiStates.set(api, { hasInitialFetched: false, loading: false });
+            state.suspenseApiStates.set(key ?? api, { hasInitialFetched: false, loading: false });
         },
-        removeApi(state, api) {
-            state.suspenseApiStates.delete(api);
+        removeApi(state, api, key) {
+            state.suspenseApiStates.delete(key ?? api);
         },
-        startFetchApi(state, api) {
-            state.suspenseApiStates.set(api, { hasInitialFetched: true, loading: true });
+        startFetchApi(state, api, key) {
+            state.suspenseApiStates.set(key ?? api, { hasInitialFetched: true, loading: true });
         },
-        endFetchApi(state, api, data) {
-            const previousSuspenseApiState = state.suspenseApiStates.get(api);
+        endFetchApi(state, api, data, key) {
+            const previousSuspenseApiState = state.suspenseApiStates.get(key ?? api);
             if (!previousSuspenseApiState) return;
-            state.suspenseApiStates.set(api, { ...previousSuspenseApiState, loading: false, data, lastTimeFetched: new Date() });
+            state.suspenseApiStates.set(key ?? api, { ...previousSuspenseApiState, loading: false, data, lastTimeFetched: new Date() });
         },
     },
 });
 
 type Store = {
-    suspenseApiStates: Map<Function, ApiState>;
+    suspenseApiStates: Map<Function | string, ApiState>;
 };
 
 type Actions = {
-    addApi: (api: Function, cache?: number) => void;
-    removeApi: (api: Function) => void;
-    startFetchApi: (api: Function) => void;
-    endFetchApi: (api: Function, data: any) => void;
+    addApi: (api: Function, cache?: number, key?: string) => void;
+    removeApi: (api: Function, key?: string) => void;
+    startFetchApi: (api: Function, key?: string) => void;
+    endFetchApi: (api: Function, data: any, key?: string) => void;
 };
 
 type ApiState = {
