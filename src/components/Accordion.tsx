@@ -27,11 +27,10 @@ export function Accordion({ open, title, defaultOpened, keepMounted, children, c
         resizeAccordion();
     }, [accordionOpened, open, children]);
 
-    const resizeAccordion = () =>
-        useCallback(() => {
-            const height = containerRef.current?.scrollHeight ?? 0;
-            setCurrentHeight(`${height}px`);
-        }, []);
+    const resizeAccordion = useCallback(() => {
+        const height = containerRef.current?.scrollHeight ?? 0;
+        setCurrentHeight(`${height}px`);
+    }, []);
 
     const handleOnClickAccordion = () => {
         createUserToggledAccordionLogEvent(title ?? '');
