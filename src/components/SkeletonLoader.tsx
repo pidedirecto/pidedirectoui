@@ -8,6 +8,10 @@ export function SkeletonLoader({ variant }: SkeletonLoaderProps): React.ReactEle
         return width > 100 ? '100%' : `${width}%`;
     };
 
+    if (variant === 'text') {
+        return <div className={classes.text} style={{ width: getRandomRowWidth() }}></div>;
+    }
+
     if (variant === 'notification') {
         return (
             <div data-variant={variant} className={classes.container}>

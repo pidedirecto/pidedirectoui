@@ -32,3 +32,10 @@ export const Card: Story = {
         variant: 'card',
     },
 };
+
+export const Text: Story = {
+    args: {
+        ...meta.args,
+        variant: 'text',
+    },
+};
