@@ -7,7 +7,7 @@ export type AccordionProps = {
     title?: string;
     iconTitle?: string;
     subText?: string;
-    children: React.ReactNode;
+    children: React.ReactNode | (({ resizeAccordion }: { resizeAccordion: () => void }) => React.ReactNode);
     classes?: {
         title?: string;
         subText?: string;

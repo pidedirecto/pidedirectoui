@@ -7,6 +7,7 @@ import { useCreateUserToggledAccordionLogEvent } from 'src/services/logEvent/use
 import classes from 'src/styles/accordion.module.css';
 import { AccordionProps } from 'src/types/components/Accordion';
 import { classNames } from 'src/utils/css/classNames';
+import { isFunction } from 'src/utils/function/isFunction';
 
 export function Accordion({ open, title, defaultOpened, keepMounted, children, classes: classesProp, subText, renderIcon, onChange, iconTitle }: AccordionProps): React.ReactElement {
     const containerRef = useRef<HTMLDivElement | null>(null);
@@ -23,9 +24,13 @@ export function Accordion({ open, title, defaultOpened, keepMounted, children, c
     }, [keepMounted, open, accordionOpened]);
 
     useEffect(() => {
+        resizeAccordion();
+    }, [accordionOpened, open, children]);
+
+    const resizeAccordion = () => {
         const height = containerRef.current?.scrollHeight ?? 0;
         setCurrentHeight(`${height}px`);
-    }, [accordionOpened, open, children]);
+    };
 
     const handleOnClickAccordion = () => {
         createUserToggledAccordionLogEvent(title ?? '');
@@ -62,7 +67,8 @@ export function Accordion({ open, title, defaultOpened, keepMounted, children, c
                     id={`accordion-${accordionId.current}`}
                     aria-hidden={!accordionOpened}
                 >
-                    {(accordionOpened || shouldKeepMounted) && children}
+                    {/*@ts-ignore*/}
+                    {(accordionOpened || shouldKeepMounted) && (isFunction(children) ? children({ resizeAccordion }) : children)}
                 </div>
             </div>
         );
@@ -70,7 +76,8 @@ export function Accordion({ open, title, defaultOpened, keepMounted, children, c
 
     return (
         <div ref={containerRef} className={classNames(classes.accordion, classesProp?.accordion)} style={{ height: !!open ? currentHeight : 0 }} onClickCapture={addAccordionToStackTrace}>
-            {(open || shouldKeepMounted) && children}
+            {/*@ts-ignore*/}
+            {(open || shouldKeepMounted) && (isFunction(children) ? children({ resizeAccordion }) : children)}
         </div>
     );
 }

@@ -60,7 +60,7 @@ const meta: Meta<typeof Accordion> = {
                 name: 'React.Node' as any,
             },
             table: {
-                type: { summary: 'React.Node' },
+                type: { summary: 'React.Node | function' },
             },
             control: false,
         },

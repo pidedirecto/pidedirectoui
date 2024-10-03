@@ -31,6 +31,38 @@ return (
 );
 ```
 
+The children of the Accordion besides of being a React.ReactNode value it can also be a function, if you pass a function it will
+receive an object with `resizeAccordion` function, with a normal behaviour if you resize the children with states the accordion will
+adjust automatically cause the resize implies re-rendering, but when used with suspended children the change between the fallback and the
+actual content does not involve any re-render, that's when this function is useful, example:
+
+```tsx
+const [accordionState, setAccordionState] = useState(false);
+
+const toggleAccordion = () => setAccordionState(!accordionState);
+
+return (
+    <div>
+        <Button onClick={toggleAccordion}>Click me to toggle the content!</Button>
+        <Accordion open={accordionState} onChange={toggleAccordion}>
+            {({ resizeAccordion }) => (
+                <Suspense fallback={'Loading...'}>
+                    <SuspendedComponent resizeAccordion={resizeAccordion} />
+                </Suspense>
+            )}
+        </Accordion>
+    </div>
+);
+
+function SuspendedComponent({ resizeAccordion }) {
+    useEffect(() => {
+        resizeAccordion()
+    }, [])
+
+    return ...
+}
+```
+
 ## Customization
 
 -   Custom left icon
