@@ -12,3 +12,4 @@ export * from 'src/hooks/useConfirmDialog';
 export * from 'src/hooks/useLoadApi';
 export * from 'src/hooks/useSuspenseApi';
 export * from 'src/hooks/useScrollEnd';
+export * from 'src/hooks/useIsElementVisibleInScreen';

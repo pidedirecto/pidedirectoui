@@ -1,0 +1,26 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title='hooks/useIsElementVisibleInScreen' />
+
+# useIsElementVisibleInScreen
+
+Hook to know when the user has reached the bottom of the scroll of a specific element.
+
+```ts
+import { useIsElementVisibleInScreen } from '@pidedirecto/ui/hooks';
+
+const elementRefInitializer = useIsElementVisibleInScreen({
+    onVisible: () => {},
+});
+
+<div ref={elementRefInitializer}></div>
+```
+
+This hook returns a function that will initialize the ref inside the hook, so you should pass this function to the ref prop of the component
+you want to track. This is not a React ref, so you should not use it like that.
+
+As parameter the hook accepts an object with two keys:
+
+-   `onVisible` a callback that will be called each time the element toggles its visibility, which means if it is visible or not in the screen.
+-   `threshold` a number value from 0 to 1, which means how much percent of the element should be visible to trigger the callback,
+    by default its 1, in other words, 100% of the element should be visible in the screen.
