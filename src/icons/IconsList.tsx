@@ -63,6 +63,7 @@ import { DrawerIcon } from 'src/icons/DrawerIcon';
 import { EditIcon } from 'src/icons/EditIcon';
 import { EllipsisVerticalIcon } from 'src/icons/EllipsisVerticalIcon';
 import { EnvelopeIcon } from 'src/icons/EnvelopeIcon';
+import { EqualizerIcon } from 'src/icons/EqualizerIcon';
 import { ErrorIcon } from 'src/icons/ErrorIcon';
 import { ExchangeArrowsIcon } from 'src/icons/ExchangeArrowsIcon';
 import { ExitIcon } from 'src/icons/ExitIcon';
@@ -434,6 +435,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <EnvelopeIcon size={size} />
                 <span className={classes.iconName}>EnvelopeIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <EqualizerIcon size={size} />
+                <span className={classes.iconName}>EqualizerIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <ErrorIcon size={size} />

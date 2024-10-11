@@ -63,6 +63,7 @@ export * from 'src/icons/DragIcon';
 export * from 'src/icons/DrawerIcon';
 export * from 'src/icons/EditIcon';
 export * from 'src/icons/EnvelopeIcon';
+export * from 'src/icons/EqualizerIcon';
 export * from 'src/icons/ErrorIcon';
 export * from 'src/icons/ExchangeArrowsIcon';
 export * from 'src/icons/ExitIcon';

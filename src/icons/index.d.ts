@@ -65,6 +65,7 @@ export const DragIcon: SvgIcon
 export const DrawerIcon: SvgIcon
 export const EditIcon: SvgIcon
 export const EnvelopeIcon: SvgIcon
+export const EqualizerIcon: SvgIcon
 export const ErrorIcon: SvgIcon
 export const ExchangeArrowsIcon: SvgIcon
 export const ExitIcon: SvgIcon
