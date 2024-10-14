@@ -118,6 +118,7 @@ import { OutlinedPlusIcon } from 'src/icons/OutlinedPlusIcon';
 import { PaperCrossedIcon } from 'src/icons/PaperCrossedIcon';
 import { PaymentTerminalIcon } from 'src/icons/PaymentTerminalIcon';
 import { PdfIcon } from 'src/icons/PdfIcon';
+import { PedidosYaIcon } from 'src/icons/PedidosYaIcon';
 import { PennantIcon } from 'src/icons/PennantIcon';
 import { PeopleIcon } from 'src/icons/PeopleIcon';
 import { PhoneIcon } from 'src/icons/PhoneIcon';
@@ -659,6 +660,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <PeopleIcon size={size} />
                 <span className={classes.iconName}>PeopleIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <PedidosYaIcon size={size} />
+                <span className={classes.iconName}>PedidosYaIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <PhoneIcon size={size} />

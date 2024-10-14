@@ -120,6 +120,7 @@ export * from 'src/icons/PaperCrossedIcon';
 export * from 'src/icons/PdfIcon';
 export * from 'src/icons/PennantIcon';
 export * from 'src/icons/PeopleIcon';
+export * from 'src/icons/PedidosYaIcon';
 export * from 'src/icons/PhoneIcon';
 export * from 'src/icons/PideDirectoIcon';
 export * from 'src/icons/PieChartIcon';
