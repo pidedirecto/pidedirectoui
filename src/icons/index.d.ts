@@ -123,6 +123,7 @@ export const PaymentTerminalIcon: SvgIcon
 export const PdfIcon: SvgIcon
 export const PennantIcon: SvgIcon
 export const PeopleIcon: SvgIcon
+export const PedidosYaIcon: SvgIcon
 export const PhoneIcon: SvgIcon
 export const PideDirectoIcon: SvgIcon
 export const PieChartIcon: SvgIcon
