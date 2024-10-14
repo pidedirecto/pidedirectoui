@@ -7,7 +7,19 @@ import { FormSelectProps } from 'src/types/form/FormSelect';
 import { getError } from 'src/utils/form/getError';
 import { getFormFieldLabel } from 'src/utils/form/getFormFieldLabel';
 
-export function FormSelect({ name, label, defaultValue, disabled, tooltip, required, options, multiselectable, preventClose, placeholder }: FormSelectProps): React.ReactElement {
+export function FormSelect({
+    name,
+    label,
+    defaultValue,
+    disabled,
+    tooltip,
+    required,
+    options,
+    multiselectable,
+    preventClose,
+    placeholder,
+    onChange: onChangeProp,
+}: FormSelectProps): React.ReactElement {
     const {
         errors,
         control,
@@ -37,6 +49,7 @@ export function FormSelect({ name, label, defaultValue, disabled, tooltip, requi
                     preventClose={preventClose}
                     onChange={(value: any) => {
                         onChange(formatValue(value));
+                        onChangeProp?.(value);
                     }}
                     name={name}
                     disabled={isSubmitting || disabled || formContext.disabled}

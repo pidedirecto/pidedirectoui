@@ -103,6 +103,13 @@ const meta: Meta<typeof FormSelect> = {
                 type: { summary: 'boolean | object' },
             },
         },
+        onChange: {
+            description: 'Callback to be called each time the user changes the select value',
+            table: {
+                type: { summary: 'function' },
+            },
+            control: false,
+        },
         classes: {
             description: 'Classes object to override select style',
             table: {

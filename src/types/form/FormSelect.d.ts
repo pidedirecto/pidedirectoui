@@ -1,5 +1,6 @@
 import * as React from 'react';
 import type { ValidationRule } from 'react-hook-form';
+import { SelectProps } from 'src/types/components/Select';
 
 export type FormSelectProps = {
     label?: string;
@@ -22,6 +23,7 @@ export type FormSelectProps = {
     error?: boolean;
     defaultValue?: any | Array<any>;
     tooltip?: string;
+    onChange?: SelectProps['onChange'];
 };
 
 export type FormSelect = React.FunctionComponent<FormSelectProps>;
