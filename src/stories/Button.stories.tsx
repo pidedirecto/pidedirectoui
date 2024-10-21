@@ -32,6 +32,13 @@ const meta: Meta<typeof Button> = {
             },
             control: false,
         },
+        asDiv: {
+            description: 'Renders a div semantically equal to a button',
+            table: {
+                type: { summary: 'boolean' },
+            },
+            control: false,
+        },
         classes: {
             description: 'Classes object to override button style',
             table: {

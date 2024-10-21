@@ -18,6 +18,11 @@
     justify-content: center;
     text-transform: none;
     flex-shrink: 0;
+    font-size: var(--font-size-regular);
+}
+
+.buttonEquivalence {
+    width: max-content;
 }
 
 .button:hover {

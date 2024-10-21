@@ -54,6 +54,14 @@ badge content can be any valid `React.ReactNode`, but we recommend using `Chip` 
 
 <Canvas of={ButtonStories.BadgePositioned} />
 
+## asDiv
+
+Sometimes we want to show clickable elements inside other clickable elements, for this case we must use the `asDiv` prop,
+this will render a div element semantically equal to a button element. This obviously comes with some drawbacks, due to it
+is not the native button element, specially when the button is inside other contexts, for example this button equivalence
+won't trigger a form submit event. We should avoid using this equivalence but when the design requires it we should use this
+option instead of nesting buttons.
+
 ## API
 
 Here there are described some of the custom props, but the `Button` component can receive almost any of the HTML input props.
