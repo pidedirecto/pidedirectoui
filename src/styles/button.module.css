@@ -25,6 +25,10 @@
     width: max-content;
 }
 
+.buttonEquivalenceDisabled {
+    cursor: default;
+}
+
 .button:hover {
     background-color: var(--surface-brand-heavy-contrast);
 }
@@ -33,7 +37,8 @@
     outline: 2px solid var(--border-brand-outline);
 }
 
-.button:disabled {
+.button:disabled,
+.buttonEquivalence[aria-disabled='true'] {
     background-color: var(--surface-secondary);
     cursor: default;
     color: var(--text-contrast);
@@ -55,7 +60,8 @@
     outline: 2px solid var(--border-brand-outline);
 }
 
-.buttonSecondary:disabled {
+.buttonSecondary:disabled,
+.buttonEquivalence[aria-disabled='true'] {
     background-color: var(--surface-secondary);
     border: 1px solid var(--surface-secondary);
     color: var(--text-contrast);
@@ -76,7 +82,8 @@
     outline: 2px solid var(--border-brand-outline);
 }
 
-.buttonOutline:disabled {
+.buttonOutline:disabled,
+.buttonEquivalence[aria-disabled='true'] {
     background-color: var(--surface-secondary);
     border: 1px solid var(--surface-secondary);
     color: var(--text-contrast);
@@ -99,7 +106,8 @@
     outline: 2px solid var(--border-brand-outline);
 }
 
-.buttonText:disabled {
+.buttonText:disabled,
+.buttonEquivalence[aria-disabled='true'] {
     color: var(--text-contrast);
     pointer-events: none;
 }
@@ -124,7 +132,8 @@
     outline: 2px solid var(--border-brand-outline);
 }
 
-.buttonIcon:disabled {
+.buttonIcon:disabled,
+.buttonEquivalence[aria-disabled='true'] {
     color: var(--text-contrast);
     background-color: var(--surface-secondary);
 }
