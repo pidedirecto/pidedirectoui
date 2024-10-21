@@ -5,7 +5,7 @@ export type DialogProps = {
     loading?: boolean;
     keepMounted?: boolean;
     onClose?: Function;
-    title?: string;
+    title?: React.Node;
     position?: 'right' | 'top' | 'bottom' | 'left';
     children?: React.Node;
     classes?: {

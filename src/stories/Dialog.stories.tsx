@@ -45,7 +45,7 @@ const meta: Meta<typeof Dialog> = {
         title: {
             description: 'Dialog title',
             table: {
-                type: { summary: 'string' },
+                type: { summary: 'React.Node' },
             },
             control: false,
         },
