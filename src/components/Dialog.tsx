@@ -8,6 +8,7 @@ import { useCreateUserOpenedDialogLogEvent } from 'src/services/logEvent/useCrea
 import classes from 'src/styles/dialog.module.css';
 import { DialogProps } from 'src/types/components/Dialog';
 import { classNames } from 'src/utils/css/classNames';
+import { convertReactNodeToString } from 'src/utils/react/convertReactNodeToString';
 
 export function Dialog({ open, loading, keepMounted, onClose, title, position, children, classes: classesProp }: DialogProps): React.ReactElement {
     const createUserOpenedDialogLogEvent = useCreateUserOpenedDialogLogEvent();
@@ -43,7 +44,7 @@ export function Dialog({ open, loading, keepMounted, onClose, title, position, c
 
     const addDialogToStackTrace = () => {
         addElementToStackTrace({
-            element: title ?? '',
+            element: convertReactNodeToString(title),
             uiLogEventType: UiLogEventTypes.USER_OPENED_DIALOG,
         });
     };
