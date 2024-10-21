@@ -33,7 +33,7 @@ export function Dialog({ open, loading, keepMounted, onClose, title, position, c
     useEffect(() => {
         if (isDialogOpen) {
             window.addEventListener('keydown', handleKeyDown);
-            createUserOpenedDialogLogEvent(title ?? '');
+            createUserOpenedDialogLogEvent(convertReactNodeToString(title));
         } else {
             window.removeEventListener('keydown', handleKeyDown);
         }
