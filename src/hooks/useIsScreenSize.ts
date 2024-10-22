@@ -4,7 +4,7 @@ import { isArray } from 'src/utils/array/isArray';
 import { getScreenSize } from 'src/utils/window/getScreenSize';
 
 export function useIsScreenSize(screenSize: ScreenSize | Array<ScreenSize>): boolean {
-    const [isScreenSize, setIsScreenSize] = useState(screenSize === getScreenSize());
+    const [isScreenSize, setIsScreenSize] = useState(getIsScreenSize(screenSize));
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
@@ -14,16 +14,16 @@ export function useIsScreenSize(screenSize: ScreenSize | Array<ScreenSize>): boo
     }, []);
 
     const handleResize = () => {
-        setIsScreenSize(getIsScreenSize());
-    };
-
-    const getIsScreenSize = () => {
-        if (isArray(screenSize)) {
-            return screenSize.includes(getScreenSize());
-        }
-
-        return screenSize === getScreenSize();
+        setIsScreenSize(getIsScreenSize(screenSize));
     };
 
     return isScreenSize;
+}
+
+function getIsScreenSize(screenSize: ScreenSize | Array<ScreenSize>) {
+    if (isArray(screenSize)) {
+        return screenSize.includes(getScreenSize());
+    }
+
+    return screenSize === getScreenSize();
 }
