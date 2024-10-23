@@ -58,6 +58,7 @@ export default defineConfig({
     publicDir: './public',
     plugins: [
         react(),
+        nodePolyfills(),
         externalizeDeps(),
         libInjectCss(),
         tsconfigPaths(),
@@ -69,7 +70,6 @@ export default defineConfig({
                 return { filePath: path.replace('src/', ''), content };
             },
         }),
-        nodePolyfills(),
         visualizer({
             filename: 'bundle-visualizer.html', // The output file for the bundle visualization
             open: false, // set to true to open html file when running pd build
