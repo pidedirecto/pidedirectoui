@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import visualizer from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { externalizeDeps } from 'vite-plugin-externalize-deps';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -15,7 +16,7 @@ export default defineConfig({
             fileName: 'index',
         },
         rollupOptions: {
-            external: ['react', 'react-dom'],
+            // external: Object.keys((pkg as any).dependencies || {}),
             input: {
                 index: 'src/main.ts',
                 'icons/index': 'src/icons/main.ts',
@@ -57,6 +58,7 @@ export default defineConfig({
     publicDir: './public',
     plugins: [
         react(),
+        externalizeDeps(),
         libInjectCss(),
         tsconfigPaths(),
         dts({
