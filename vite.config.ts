@@ -1,5 +1,6 @@
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
+import visualizer from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
@@ -67,5 +68,9 @@ export default defineConfig({
             },
         }),
         nodePolyfills(),
+        visualizer({
+            filename: 'bundle-visualizer.html', // The output file for the bundle visualization
+            open: false, // set to true to open html file when running pd build
+        }),
     ],
 });

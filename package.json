@@ -153,6 +153,7 @@
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "replace-in-file": "4.2.0",
+        "rollup-plugin-visualizer": "5.12.0",
         "serverless": "3.37.0",
         "serverless-finch": "4.0.3",
         "storybook": "7.6.0",

@@ -191,3 +191,6 @@ amplifyxc.config
 
 # storybook build folder
 storybook-static/
+
+# bundle-visualizer output file
+bundle-visualizer.html
