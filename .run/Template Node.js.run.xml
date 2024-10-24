@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="true" type="NodeJSConfigurationType" typescript-loader="bundled" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="TZ" value="UTC" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>

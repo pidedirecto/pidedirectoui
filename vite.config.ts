@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
 import visualizer from 'rollup-plugin-visualizer';
@@ -73,4 +74,10 @@ export default defineConfig({
             open: false, // set to true to open html file when running pd build
         }),
     ],
+    test: {
+        globals: true,
+        environment: 'jsdom',
+        include: ['test/**/*.test.ts', 'test/**/*.test.tsx'],
+        setupFiles: 'test/vitestSetup.ts',
+    },
 });

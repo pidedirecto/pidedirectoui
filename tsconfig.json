@@ -15,12 +15,10 @@
         "moduleResolution": "node",
         "baseUrl": ".",
         "paths": {
-            "src/*": ["src/*"],
-            "scripts/*": ["scripts/*"],
-            "test/*": ["test/*"]
+            "src/*": ["src/*"]
         },
-        "typeRoots": ["node_modules/@types/", "src/typescript"],
-        "types": ["react", "jest"],
+        "typeRoots": ["src/typescript", "node_modules"], // override default node_modules/@types with our custom project types in src/typescript and any other type in any node_modules
+        "types": [], // Set to empty array to avoid error: "node_modules/path-loader/index.d.ts:11:60 - error TS1005: ',' expected. 11     export function load(location: string, options?: module:path-loader.LoadOptions): Promise<any>;"
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
@@ -28,10 +26,5 @@
         "resolveJsonModule": true,
         "isolatedModules": false
     },
-    "include": ["src/**/*.ts", "src/**/*.d.ts", ",src/**/*.tsx", "scripts/**/*.ts", "scripts/**/*.tsx", "test/**/*.ts", "test/**/*.tsx"],
-    "exclude": ["node_modules/**/*", ".serverless/**/*", ".webpack/**/*", "_warmup/**/*", ".vscode/**/*"],
-    "ts-node": {
-        "require": ["tsconfig-paths/register"],
-        "files": true
-    }
+    "include": ["src"]
 }
