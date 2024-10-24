@@ -1,6 +1,6 @@
 module.exports = {
-    extends: ['react-app', 'plugin:import/errors', 'plugin:import/warnings', 'prettier', 'plugin:storybook/recommended'],
-    plugins: ['unused-imports', 'no-relative-import-paths', 'import', 'prettier'],
+    extends: ['react-app', 'plugin:vitest/recommended', 'plugin:import/errors', 'plugin:import/warnings', 'prettier', 'plugin:storybook/recommended'],
+    plugins: ['unused-imports', 'no-relative-import-paths', 'import', 'prettier', 'vitest'],
     rules: {
         'prettier/prettier': 'off',
         // 'flowtype/require-valid-file-annotation': ['error', 'always', { annotationStyle: 'block' }],

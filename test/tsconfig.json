@@ -1,0 +1,12 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "paths": {
+            "src/*": ["src/*"],
+            "scripts/*": ["scripts/*"],
+            "test/*": ["test/*"]
+        },
+        "types": ["vitest/globals"]
+    },
+    "include": ["../src", "../scripts", "../test"]
+}
