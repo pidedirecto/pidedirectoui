@@ -1,0 +1,17 @@
+changelog:
+    categories:
+        - title: Jiras 📑 🚀
+          labels:
+              - jira
+        - title: Hotfixes 🪲🔧
+          labels:
+              - hotfix
+        - title: Indexes 🧭
+          labels:
+              - has index
+        - title: Patches 🩹
+          labels:
+              - has patch
+        - title: Other Changes 🌮
+          labels:
+              - '*'
