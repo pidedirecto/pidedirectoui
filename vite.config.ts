@@ -16,7 +16,6 @@ export default defineConfig({
             fileName: 'index',
         },
         rollupOptions: {
-            // external: Object.keys((pkg as any).dependencies || {}),
             input: {
                 index: 'src/main.ts',
                 'icons/index': 'src/icons/main.ts',
@@ -65,7 +64,6 @@ export default defineConfig({
         dts({
             copyDtsFiles: true,
             include: ['src/**/*.d.ts', 'src/constants/*.ts', 'src/utils/type/*.ts', 'src/index.d.ts'],
-            exclude: ['src/icons/IconsList.tsx'],
             beforeWriteFile: (path, content) => {
                 return { filePath: path.replace('src/', ''), content };
             },
