@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import visualizer from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { externalizeDeps } from 'vite-plugin-externalize-deps';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -15,7 +16,6 @@ export default defineConfig({
             fileName: 'index',
         },
         rollupOptions: {
-            external: ['react', 'react-dom'],
             input: {
                 index: 'src/main.ts',
                 'icons/index': 'src/icons/main.ts',
@@ -57,17 +57,17 @@ export default defineConfig({
     publicDir: './public',
     plugins: [
         react(),
+        nodePolyfills(),
+        externalizeDeps(),
         libInjectCss(),
         tsconfigPaths(),
         dts({
             copyDtsFiles: true,
             include: ['src/**/*.d.ts', 'src/constants/*.ts', 'src/utils/type/*.ts', 'src/index.d.ts'],
-            exclude: ['src/icons/IconsList.tsx'],
             beforeWriteFile: (path, content) => {
                 return { filePath: path.replace('src/', ''), content };
             },
         }),
-        nodePolyfills(),
         visualizer({
             filename: 'bundle-visualizer.html', // The output file for the bundle visualization
             open: false, // set to true to open html file when running pd build
