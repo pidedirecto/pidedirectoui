@@ -1,0 +1,181 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title='hooks/createIndexedStore' />
+
+# createIndexedStore
+
+Creates store where the data is saved in the browser indexed db
+
+```tsx
+import { createIndexedStore } from '@pidedirecto/ui/hooks';
+
+const [useStore, useActions] = createIndexedStore<State>({
+    name: 'ordersStore',
+    version: 1,
+    schema: {
+        orders: {
+            type: 'array',
+            key: 'orderId',
+        },
+        number: {
+            type: 'primitive',
+        },
+        selectedOrderId: {
+            type: 'primitive',
+        },
+    },
+    initialState: {
+        orders: [],
+        number: 0,
+        selectedOrderId: undefined,
+    },
+});
+```
+
+`createIndexedStore` function takes an object as argument, this object needs the following properties:
+
+-   `name`: This key accepts a string value, this will be the name for the indexed db in the browser, this MUST be unique between the different
+    indexed stores, if you have multiple indexed stores with the same name you will write to the same db on different places
+    which may cause unexpected behaviours.
+
+-   `version`: Version for the indexed db, this is purely a characteristic of the indexed db, and you can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#version).
+    In summary each db has a version, the version represents the current state for the object stores, an object store
+    is a table in the db, each time you change the db schema you MUST increase the version, so the db can create the
+    new object stores.
+
+-   `schema`: This object represents the db schema, for each state inside the initial state you will have to define how it will
+    be saved in the db through the schema object, each state can have 2 different schema depending on its type
+
+    1. If the state is primitive or objects, in other words, if the state is not an array you have to define the schema like this
+
+    ```ts
+    schema: {
+        type: 'primitive' | 'object';
+    }
+    ```
+
+    `object` if the value is an object and `primitive` for any other value like numbers, strings, etc.
+
+    2. If the state is an array you HAVE TO use this schema
+
+    ```ts
+    schema: {
+        type: 'array',
+        key: 'myKey',
+    }
+    ```
+
+    The key field is super important because it will be key used to insert the element array in db, for example if you have
+    an `orders` state, and each order has an `orderId` field, you should use this field as key
+
+    ```ts
+    orders: {
+        type: 'array',
+        key: 'orderId',
+    }
+    ```
+
+    Each key should be unique between elements array.
+
+    NOTE: By the moment is not possible to save plain arrays like `number[]` or `string[]`, every array you save should
+    be an array of objects in order to use some field inside the object as key.
+
+-   `initialState`: The initial state of the store, if it is the first time an indexed store is created the initial state will
+    be populated to the db, if data is already saved then the initial state will be omitted, in other words, the initial state is only
+    used when the db has not been created if it is already then the store value will be the values in the db.
+
+## Usage
+
+The `createIndexedStore` function returns an array with 2 elements, the first element is a hook to access to the db values,
+like the normal store you can use it as follows:
+
+```tsx
+const orders = useStore(state => state.orders)
+
+return (
+    <div>
+        {orders.map(order => order.total)}
+    </div>
+)
+```
+
+The second value in the array response, is an array of actions, in contrast with the regular store function where you can define
+custom actions, in the indexed one, the actions are created automatically depending on the state schemas. These actions are async
+functions because they have to update the db.
+
+For primitive and object states there is only a single action the action is name based on the state name; for example,
+the state `selectedOrderId` will have an `updateSelectedOrderId` action, where you can update the value in the db
+
+```tsx
+const selectedOrderId = useStore(state => state.selectedOrderId)
+
+const updateSelectedOrderId = useActions(actions => actions.updateSelectedOrderId)
+
+const selectOrder = async () => {
+    await updateSelectedOrderId(newOrderId)
+}
+
+return (
+    <div>
+        <p>The current order selected is: {selectedOrderId}</p>
+        <button onClick={selectOrder}>Select order</button>
+    </div>
+)
+```
+
+For array states three actions are created, addAction, updateAction and removeAction; for example the `orders` state
+
+```tsx
+const orders = useStore(state => state.orders)
+
+const addOrders = useActions(actions => actions.addOrders)
+const removeOrders = useActions(actions => actions.removeOrders)
+const updateOrders = useActions(actions => actions.updateOrders)
+
+const handleUpdateField = async (order) => {
+    await updateOrders({
+        ...order,
+        updatedField: //some new value
+    })
+}
+
+return (
+    <div>
+        {orders.map(order => (
+            <div>
+                <p>orderId: {order.orderId}</p>
+                <button onClick={() => removeOrders(order.orderId)}>remove</button>
+                <button onClick={() => handleUpdateField(order)}>update</button>
+            </div>
+        ))}
+
+        <button onClick={() => addOrders(newOrder)}>add</button>
+    </div>
+)
+```
+
+For the addAction you only need to add the new value you want to add the db, remember this new value should be an object
+and should have a field with key and this should be unique.
+
+For the removeAction you only have to pass the key of the element you are trying to remove, in the case of the `orders` state
+you only have to send the `orderId`.
+
+For the updateAction you only have to pass the new object, the action will detect which object in the db you are trying to update
+with the key of the object.
+
+## Concerns
+
+-   Each time you update a primitive state, besides re-rendering components where this state is being used, all the components
+    using the array and object states in the same indexed store will be re-rendered too, this due to nature of those values
+    cause when getting the db state it generates a new array and object thus changing the reference object. To prevent this
+    behaviour we recommend creating indexed stores smalls, meaning containing few states preferably an array state per indexed store,
+    or it can have multiple states only if they are strongly connected. REMEMBER: the indexed store should be only used for data
+    that should be persisted like in offline situations.
+
+-   Changing the schema of an existing object store can cause problems, remember the user may already have data stored in the db
+    and changing the schema may cause problems. This can be avoided by just creating a new indexed store or a new state.
+
+-   Actions can throw errors, so HANDLE THEM, the action can throw an error for different reasons, problems in the db,
+    user not granting the permissions to use indexed dbs, or simply if the browser does not support them.
+
+If you would like to learn more about indexed db in the browser you can check the [docs](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).

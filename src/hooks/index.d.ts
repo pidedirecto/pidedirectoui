@@ -4,7 +4,8 @@ import { UseFieldArray } from "src/types/hooks/UseFieldArray";
 import { UseFormContext } from "src/types/hooks/UseFormContext";
 import { UseHasClickedOutside } from "src/types/hooks/UseHasClickedOutside";
 import { UseIsScreenSize } from "src/types/hooks/UseIsScreenSize";
-import { Params, Result } from "src/types/hooks/CreateStore";
+import { Params as CreateStoreParams, Result as CreateStoreResult } from "src/types/hooks/CreateStore";
+import { Params as CreateIndexedStoreParams, Result as CreateIndexedStoreResult } from "src/types/hooks/CreateIndexedStore";
 import { UseNotification } from "src/types/hooks/UseNotification";
 import { UseElementSize } from "src/types/hooks/UseElementSize";
 import { UseWatch } from "src/types/hooks/UseWatch";
@@ -103,7 +104,14 @@ export const useIsElementVisible: UseIsElementVisible
  *
  * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-createstore--docs)
  */
-export function createStore<State, Actions>(params: Params<State, Actions>): Result<State, Actions>;
+export function createStore<State, Actions>(params: CreateStoreParams<State, Actions>): CreateStoreResult<State, Actions>;
+
+/**
+ * Create store saved on indexed db
+ *
+ * [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-createindexedstore--docs)
+ */
+export function createIndexedStore<State>(params: CreateIndexedStoreParams<State>): CreateIndexedStoreResult<State>;
 
 /**
  * Hook to call apis
