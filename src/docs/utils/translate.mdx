@@ -1,0 +1,109 @@
+import { ArgTypes, Meta } from '@storybook/blocks';
+
+<Meta title='utils/translate' />
+
+# translate
+
+The `translate` function allows yo translate texts to different languages, to star using it you first have to define the translations
+through the `configureI18n` function
+
+```ts
+import { configureI18n } from '@pidedirecto/ui/utils';
+
+configureI18n({
+    language: navigator.language,
+    translations: {
+        es: {
+            Hi: 'Hola',
+        },
+        en: {
+            Hi: 'Hi',
+        },
+        pr: {
+            Hi: 'Olá',
+        },
+    },
+});
+```
+
+The `configureI18n` accepts an object as param, the key `language` is the language which the text will be translated, you can get
+the current browser language from the `navigator.language` property.
+
+The `translations` key is an object with language codes as keys, each key should have an object with the translations
+of the texts.
+
+Now that you have configured the translations and the target language, you can start using the `translate` function.
+
+```ts
+import { translate } from '@pidedirecto/ui/utils';
+
+translate('Hi'); // Hi will be translated to "Hola" if browser is configured in spanish
+```
+
+## setLanguage
+
+In case you want to change the current target language, you can use the `setLanguage` function.
+
+```ts
+import { setLanguage } from '@pidedirecto/ui/utils';
+
+setLanguage('pr');
+```
+
+Now texts will be translated to portuguese.
+
+## translateObject
+
+In case you already have an object with the translations, and you want to use it instead of having to define the translations
+globally, you can use the `translateObject` function.
+
+```ts
+import { translateObject } from '@pidedirecto/ui/utils';
+
+const textTranslated = translateObject(
+    {
+        es: 'Hola',
+        en: 'Hi',
+        pr: 'Olá',
+    },
+    'Hi',
+);
+```
+
+Even if you use this function you have to define the target language, either you already have configured it with the `configureI18n` function or calling `setLanguage`,
+if you don't define a target language by default the target language is spanish.
+
+## Additional params
+
+Both translate functions, `translate` and `translateObject`, accepts as last argument an object which can populate additional info
+to the translated text, in order to connect the keys of the object to the text you have to use the `@` character, for example:
+
+```ts
+import { translate } from '@pidedirecto/ui/utils';
+
+translate('Hi! Current date @date', { date: new Date.toISOSring() });
+```
+
+Using the "@" character we can replace the text `@date` to the value of `new Date.toISOSring()`. Besides this you have to define the translations
+with the "@" character too.
+
+```ts
+configureI18n({
+    language: navigator.language,
+    translations: {
+        es: {
+            'Hi! Current date @date': 'Hola! Fecha actual @date',
+        },
+        en: {
+            'Hi! Current date @date': 'Hi! Current date @date',
+        },
+        pr: {
+            'Hi! Current date @date': 'Olá! Data atual @date',
+        },
+    },
+});
+```
+
+```
+
+```
