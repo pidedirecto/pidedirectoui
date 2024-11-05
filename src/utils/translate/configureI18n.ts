@@ -1,7 +1,7 @@
 import type { LanguageTag } from 'src/types/Id';
 import { ConfigureI18nParams, Translations } from 'src/types/utils/configureI18n';
 
-let language: LanguageTag = 'es-MX' as LanguageTag;
+let language = 'es-MX';
 export let translations: Translations = {
     en: {},
     es: {},
