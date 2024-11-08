@@ -7,6 +7,7 @@ import { Checkbox } from 'src/components/Checkbox';
 import { HelperText } from 'src/components/HelperText';
 import { Input } from 'src/components/Input';
 import { Label } from 'src/components/Label';
+import { Tooltip } from 'src/components/Tooltip';
 import { useHasClickedOutside } from 'src/hooks/useHasClickedOutside';
 import { CrossIcon } from 'src/icons/CrossIcon';
 import classes from 'src/styles/multiselectableAutocomplete.module.css';
@@ -18,6 +19,7 @@ export function MultiselectableAutocomplete({
     name,
     placeholder,
     helperText,
+    tooltip,
     data,
     renderOption,
     getOptionDisabled,
@@ -100,9 +102,12 @@ export function MultiselectableAutocomplete({
                 <div className={classes.headContainer}>
                     {(!!label || !!helperText) && (
                         <div className={classes.headContainerLabel}>
-                            <Label htmlFor={id ?? `${name}-multiselectable-autocomplete`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
-                                {label}
-                            </Label>
+                            <div className={classes.labelContainer}>
+                                <Label htmlFor={id ?? `${name}-multiselectable-autocomplete`} classes={{ label: classes.label, error: classes.labelError }} error={!!error}>
+                                    {label}
+                                </Label>
+                                {!!tooltip && <Tooltip text={tooltip} />}
+                            </div>
                             {!!helperText && <HelperText error={!!error}>{helperText}</HelperText>}
                         </div>
                     )}

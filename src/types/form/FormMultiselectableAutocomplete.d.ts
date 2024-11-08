@@ -6,6 +6,7 @@ export type FormMultiselectableAutocompleteProps = {
     name: string;
     placeholder?: string;
     helperText?: string;
+    tooltip?: string;
     productsSelectedLabel?: string;
     selectAllOptionLabel?: string;
     defaultValue?: Array<string>;
