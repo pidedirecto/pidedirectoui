@@ -163,7 +163,7 @@ you only have to send the `orderId`.
 For the updateAction you only have to pass the new object, the action will detect which object in the db you are trying to update
 with the key of the object.
 
-## Concerns
+## Notes
 
 -   Each time you update a primitive state, besides re-rendering components where this state is being used, all the components
     using the array and object states in the same indexed store will be re-rendered too, this due to nature of those values
@@ -171,6 +171,8 @@ with the key of the object.
     behaviour we recommend creating indexed stores smalls, meaning containing few states preferably an array state per indexed store,
     or it can have multiple states only if they are strongly connected. REMEMBER: the indexed store should be only used for data
     that should be persisted like in offline situations.
+
+-   For using the indexed db outside of components you may read the `createIndexedDb` [docs](https://ui.pidedirecto.mx/?path=/docs/hooks-createindexeddb--docs).
 
 -   Changing the schema of an existing object store can cause problems, remember the user may already have data stored in the db
     and changing the schema may cause problems. This can be avoided by just creating a new indexed store or a new state.

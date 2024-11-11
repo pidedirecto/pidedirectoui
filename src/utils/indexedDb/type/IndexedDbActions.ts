@@ -10,9 +10,9 @@ export type AddActions<State> = {
 };
 
 export type UpdateActions<State> = {
-    [Action in keyof IndexedSchemas<State> as `update${Capitalize<string & Action>}`]: <T>(value: T) => Promise<void>;
+    [Action in keyof IndexedSchemas<State> as `update${Capitalize<string & Action>}`]: (value: ArrayElementType<State[Action]>) => Promise<void>;
 };
 
 export type GetActions<State> = {
-    [Action in keyof IndexedSchemas<State> as `get${Capitalize<string & Action>}`]: <T>() => Promise<T>;
+    [Action in keyof IndexedSchemas<State> as `get${Capitalize<string & Action>}`]: () => Promise<ArrayElementType<State[Action]>>;
 };
