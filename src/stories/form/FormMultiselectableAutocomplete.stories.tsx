@@ -53,6 +53,12 @@ const meta: Meta<typeof FormMultiselectableAutocomplete> = {
                 type: { summary: 'string' },
             },
         },
+        tooltip: {
+            description: 'Tooltip text',
+            table: {
+                type: { summary: 'string' },
+            },
+        },
         productsSelectedLabel: {
             description: 'Description Label of items selected',
             table: {

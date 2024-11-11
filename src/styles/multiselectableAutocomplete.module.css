@@ -13,7 +13,13 @@
     font-family: var(--font-regular);
     color: var(--text-secondary);
     font-size: var(--font-size-small);
-    margin-bottom: 8px;
+}
+
+.labelContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
 }
 
 .numberOptionsSelectedContainer {

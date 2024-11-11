@@ -12,6 +12,7 @@ export function FormMultiselectableAutocomplete({
     name,
     placeholder,
     helperText,
+    tooltip,
     data,
     renderOption,
     getOptionDisabled,
@@ -52,6 +53,7 @@ export function FormMultiselectableAutocomplete({
                     name={name}
                     label={getFormFieldLabel(required, label)}
                     placeholder={placeholder}
+                    tooltip={tooltip}
                     helperText={error?.message ?? helperText}
                     selectAllOption={selectAllOption}
                     selectAllOptionLabel={selectAllOptionLabel}
