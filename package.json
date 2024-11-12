@@ -110,7 +110,6 @@
         "@types/classnames": "2.3.1",
         "@types/crypto-js": "4.2.2",
         "@types/history": "5.0.0",
-        "@types/moment-duration-format": "2.2.5",
         "@types/node": "16.18.60",
         "@types/object-hash": "3.0.5",
         "@types/pako": "2.0.2",
