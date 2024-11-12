@@ -1,5 +1,4 @@
-import moment from 'moment/moment';
-import 'moment/locale/sv';
-import 'moment/locale/es';
+import moment from 'moment';
+import 'moment/dist/locale/es';
 
 moment.locale(navigator.language);

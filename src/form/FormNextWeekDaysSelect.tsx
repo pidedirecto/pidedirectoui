@@ -1,4 +1,4 @@
-import moment from 'moment/moment';
+import moment from 'moment';
 import { useContext } from 'react';
 import * as React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';

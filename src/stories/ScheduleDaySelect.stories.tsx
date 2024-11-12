@@ -2,7 +2,7 @@ import MomentUtils from '@date-io/moment';
 import { ThemeProvider } from '@material-ui/core';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import type { Meta, StoryObj } from '@storybook/react';
-import moment from 'moment/moment';
+import moment from 'moment';
 import React from 'react';
 import { ScheduleDaySelect } from 'src/components/ScheduleDaySelect';
 import { useConfigureMuiTheme } from 'src/utils/mui/useConfigureMuiTheme';

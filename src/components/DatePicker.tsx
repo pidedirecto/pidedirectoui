@@ -11,7 +11,7 @@ import 'src/utils/configureMoment';
 import MomentUtils from '@date-io/moment';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
-import moment from 'moment/moment';
+import moment from 'moment';
 import { useContext } from 'react';
 import { PickersProviderContext } from 'src/components/PickersProvider';
 

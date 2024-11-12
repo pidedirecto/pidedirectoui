@@ -2,7 +2,7 @@ import MomentUtils from '@date-io/moment';
 import { ThemeProvider } from '@material-ui/core';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import type { Meta, StoryObj } from '@storybook/react';
-import moment from 'moment/moment';
+import moment from 'moment';
 import React from 'react';
 import { Form } from 'src/form/Form';
 import { FormDateTimePicker } from 'src/form/FormDateTimePicker';
