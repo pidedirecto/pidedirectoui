@@ -108,6 +108,7 @@ export const MilliliterIcon: SvgIcon
 export const MobileIcon: SvgIcon
 export const MoneyBagIcon: SvgIcon
 export const MoneyIcon: SvgIcon
+export const MonitorIcon: SvgIcon
 export const MotorcycleIcon: SvgIcon
 export const NoPhotoIcon: SvgIcon
 export const NoteIcon: SvgIcon

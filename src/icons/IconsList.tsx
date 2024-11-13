@@ -105,6 +105,7 @@ import { MilliliterIcon } from 'src/icons/MilliliterIcon';
 import { MobileIcon } from 'src/icons/MobileIcon';
 import { MoneyBagIcon } from 'src/icons/MoneyBagIcon';
 import { MoneyIcon } from 'src/icons/MoneyIcon';
+import { MonitorIcon } from 'src/icons/MonitorIcon';
 import { MotorcycleIcon } from 'src/icons/MotorcycleIcon';
 import { NoPhotoIcon } from 'src/icons/NoPhotoIcon';
 import { NoteIcon } from 'src/icons/NoteIcon';
@@ -599,6 +600,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <MoneyIcon size={size} />
                 <span className={classes.iconName}>MoneyIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <MonitorIcon size={size} />
+                <span className={classes.iconName}>MonitorIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <MotorcycleIcon size={size} />
