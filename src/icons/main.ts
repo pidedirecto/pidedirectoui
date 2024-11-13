@@ -106,6 +106,7 @@ export * from 'src/icons/MilliliterIcon';
 export * from 'src/icons/MobileIcon';
 export * from 'src/icons/MoneyBagIcon';
 export * from 'src/icons/MoneyIcon';
+export * from 'src/icons/MonitorIcon';
 export * from 'src/icons/NoPhotoIcon';
 export * from 'src/icons/NoteIcon';
 export * from 'src/icons/NotificationIcon';
