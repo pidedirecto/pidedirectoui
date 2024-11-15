@@ -7,4 +7,6 @@ export type Params<State> = {
     initialState: State;
 };
 
-export type Result<State> = ClearActions<State> & AddActions<State> & UpdateActions<State> & GetActions<State>;
+export type Result<State> = Actions<State>;
+
+export type Actions<State> = ClearActions<State> & AddActions<State> & UpdateActions<State> & GetActions<State>;

@@ -1,4 +1,4 @@
-import { Actions } from 'src/types/hooks/CreateIndexedStore';
+import type { Actions } from 'src/types/hooks/CreateIndexedDb';
 import { addValueToObjectStore } from 'src/utils/indexedDb/addValueToObjectStore';
 import { getAllObjectStoreValues } from 'src/utils/indexedDb/getAllObjectStoreValues';
 import { getObjectStoreValue } from 'src/utils/indexedDb/getObjectStoreValue';
