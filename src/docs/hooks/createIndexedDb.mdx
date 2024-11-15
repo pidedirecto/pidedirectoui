@@ -99,15 +99,15 @@ async function incrementByOne() {
 
 ## Notes
 
--   You may ask what are the difference between `createdIndexedDb` and `createIndexedStore`, well the `createIndexedStore`
+-   You may ask what are the difference between `createdIndexedDb` and `createStore` with persist param, well the `createStore`
     function creates hooks, so you can use them and access the indexed db from components, if you change a value with that function
     the components will know and will re-render. The `createdIndexedDb` function only creates the actions, so you can modify the
     indexed db, you can, of course, use these actions inside components, but besides that, you will be able to use them outside of them.
 
     So our recommendation of when tou use each function, is if you will have to access the db outside of React components, use
-    `createdIndexedDb`, and if you want the components re-render to changes on the indexed db use `createIndexedStore`.
+    `createdIndexedDb`, and if you want the components re-render to changes on the indexed db use `createStore`.
 
-    Have in mind not to access to the same db from `createdIndexedDb` and `createIndexedStore` cause you may have unexpected
+    Have in mind not to access to the same db from `createdIndexedDb` and `createStore` because you may have unexpected
     behaviours.
 
 -   Changing the schema of an existing object store can cause problems, remember the user may already have data stored in the db

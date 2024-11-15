@@ -15,7 +15,7 @@ export function createIndexedDb<State>({ name, version, schema, initialState }: 
         const indexedDB = window.indexedDB;
         if (!indexedDB) return;
 
-        const db = await createDb(name, version, schema);
+        const db = await createDb(`pidedirecto-store-${name}`, version, schema);
         await populateInitialStateInIndexedDb(db, initialState as any, schema);
         indexedDbActions = await generateIndexedDbActions<State>(db, schema, {
             actions: ['update', 'remove', 'add', 'get'],
