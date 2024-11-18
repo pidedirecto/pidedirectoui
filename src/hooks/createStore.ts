@@ -21,6 +21,7 @@ export function createStore<State extends Record<string, any>, Actions>(params: 
     let db: IDBDatabase | undefined = undefined;
     let state: State = cloneObject(initialState as any);
     let listeners: Array<Listener> = [];
+    let persistPromises: Array<Promise<void>> = [];
 
     if (persist) initializeDb();
 
@@ -49,10 +50,10 @@ export function createStore<State extends Record<string, any>, Actions>(params: 
         const action = fn(actions as any);
 
         if (persist) {
-            return (async (...args: Array<any>) => {
+            return ((...args: Array<any>) => {
                 state = produce(state, (draft) => action(draft as any, ...args));
                 notifyChanges();
-                if (db) await updateValueFromObjectStore(db, 'store', state, 1);
+                if (db) persistPromises.push(Promise.allSettled(persistPromises).then(() => updateValueFromObjectStore(db!, 'store', state, 1)));
             }) as T;
         }
 
