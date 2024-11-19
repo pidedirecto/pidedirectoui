@@ -9,6 +9,7 @@ import { IndexedSchema } from 'src/utils/indexedDb/type/IndexedSchema';
 import { updateValueFromObjectStore } from 'src/utils/indexedDb/updateValueFromObjectStore';
 import { cloneObject } from 'src/utils/object/cloneObject';
 import { isObject } from 'src/utils/object/isObject';
+import { wait } from 'src/utils/wait';
 
 enableMapSet();
 
@@ -21,7 +22,7 @@ export function createStore<State extends Record<string, any>, Actions>(params: 
     let db: IDBDatabase | undefined = undefined;
     let state: State = cloneObject(initialState as any);
     let listeners: Array<Listener> = [];
-    let persistPromises: Array<Promise<void>> = [];
+    let persistPromise: PersistPromise = new PersistPromise();
 
     if (persist) initializeDb();
 
@@ -53,7 +54,11 @@ export function createStore<State extends Record<string, any>, Actions>(params: 
             return ((...args: Array<any>) => {
                 state = produce(state, (draft) => action(draft as any, ...args));
                 notifyChanges();
-                if (db) persistPromises.push(Promise.allSettled(persistPromises).then(() => updateValueFromObjectStore(db!, 'store', state, 1)));
+                if (db) {
+                    const previousPersistPromise = persistPromise;
+                    previousPersistPromise.cancel();
+                    persistPromise = new PersistPromise(() => previousPersistPromise.promise.then(() => updateValueFromObjectStore(db!, 'store', state, 1)));
+                }
             }) as T;
         }
 
@@ -113,3 +118,20 @@ const persistStoreSchema: Record<string, IndexedSchema> = {
 };
 
 type Listener = () => void;
+
+class PersistPromise {
+    private cancelled = false;
+    public readonly promise: Promise<void>;
+
+    constructor(asyncFunction: () => Promise<void> = () => Promise.resolve()) {
+        this.promise = (async () => {
+            await wait(0); // needed to wait for cancelled to be set
+            if (this.cancelled) return;
+            await asyncFunction();
+        })();
+    }
+
+    cancel(): void {
+        this.cancelled = true;
+    }
+}
