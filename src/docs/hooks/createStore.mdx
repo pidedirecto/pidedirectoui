@@ -59,6 +59,44 @@ The `useAction` expects a function as parameter, inside this function you will h
 
 We recommend naming this hook with this format `use...anyNameHere...Action`
 
+## Persist
+
+If you would like your data persist event if the user closes thr browser, you can use persist param. When persisting the data
+will be saved into the browser indexed db.
+
+```ts
+export const [useNumbersStore, useNumbersAction] = createStore<State, Actions>({
+    initialState: {
+        numbers: [],
+    },
+    actions: {
+        addNumber: (state, number) => {
+            state.numbers.push(number);
+        },
+    },
+    persist: true,
+    storeName: 'numbers',
+});
+```
+
+When passing persist true, it will ask for a second parameter named `storeName`, this will be the name of the db in the browser.
+Have in mind that when persisting the action now have to sync the information to the database, therefore actions now can throw errors
+if there is a problem within the database, so the recommendation is handling the errors for actions if you found there has been issues.
+
+```ts
+const addNumber = useNumbersAction((actions) => actions.addNumber);
+
+const handleAddNumber = async () => {
+    try {
+        addNumber(1);
+    } catch (e) {
+        // Do something with the error
+    }
+};
+```
+
+If you would like to learn more about indexed db in the browser you can check the [docs](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
+
 ## logs
 
 If you try to console.log directly the state of the store inside an action you will find it difficult to read because the store state is wrapped into proxies,

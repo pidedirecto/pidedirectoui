@@ -7,6 +7,7 @@ export * from 'src/hooks/useHasClickedOutside';
 export * from 'src/hooks/useIsScreenSize';
 export * from 'src/hooks/useElementSize';
 export * from 'src/hooks/createStore';
+export * from 'src/hooks/createIndexedDb';
 export * from 'src/hooks/useNotification';
 export * from 'src/hooks/useConfirmDialog';
 export * from 'src/hooks/useLoadApi';
