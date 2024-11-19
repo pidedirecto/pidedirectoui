@@ -125,7 +125,7 @@ class PersistPromise {
 
     constructor(asyncFunction: () => Promise<void> = () => Promise.resolve()) {
         this.promise = (async () => {
-            await wait(0); // needed to wait for cancelled to be set
+            await wait(0); // needed to wait for cancelled to be set, without this updateValueFromObjectStore will be called every time an action is used
             if (this.cancelled) return;
             await asyncFunction();
         })();
