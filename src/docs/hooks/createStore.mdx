@@ -80,15 +80,15 @@ export const [useNumbersStore, useNumbersAction] = createStore<State, Actions>({
 ```
 
 When passing persist true, it will ask for a second parameter named `storeName`, this will be the name of the db in the browser.
-Have in mind that when persisting the action now have to sync the information to the database, therefore actions now are asynchronous
-and can throw errors if there is a problem within the database, so the recommendation is hanlding the errors for actions in persisting stores.
+Have in mind that when persisting the action now have to sync the information to the database, therefore actions now can throw errors
+if there is a problem within the database, so the recommendation is handling the errors for actions if you found there has been issues.
 
 ```ts
 const addNumber = useNumbersAction((actions) => actions.addNumber);
 
 const handleAddNumber = async () => {
     try {
-        await addNumber(1);
+        addNumber(1);
     } catch (e) {
         // Do something with the error
     }
