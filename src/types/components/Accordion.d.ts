@@ -8,11 +8,13 @@ export type AccordionProps = {
     iconTitle?: string;
     subText?: string;
     children: React.ReactNode | (({ resizeAccordion }: { resizeAccordion: () => void }) => React.ReactNode);
+    tools?: React.ReactNode | (({ isOpen }: { isOpen: boolean }) => React.ReactNode);
     classes?: {
         title?: string;
         subText?: string;
         container?: string;
         accordion?: string;
+        toolsContainer?: string;
     };
     onChange?: (open: boolean) => void | Promise<void>;
     renderIcon?: Function;

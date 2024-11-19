@@ -81,7 +81,27 @@ By default, the accordion show an up and down arrow to indicate the accordion st
 
 You can also add a description/subtitle to the accordion
 
-<Canvas of={AccordionStories.Subtext} />
+<Canvas of={AccordionStories.Subtext} />- Tools
+
+You can also add a tools to the accordion
+
+<Canvas of={AccordionStories.Tools} />
+
+To add this you need to pass the prop `tools` this receives a function with isOpen parameter
+
+```tsx
+<Accordion tools={({ isOpen }) => (isOpen ? <ToolButton /> : null)}>
+    <p>Hi! I'm hidden inside an accordion</p>
+</Accordion>
+```
+
+Or simply the element
+
+```tsx
+<Accordion tools={<ToolButton />}>
+    <p>Hi! I'm hidden inside an accordion</p>
+</Accordion>
+```
 
 ## API
 
