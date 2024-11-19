@@ -1,13 +1,18 @@
 import { type Params, type Result } from 'src/types/hooks/CreateIndexedDb';
 import { createDb } from 'src/utils/indexedDb/createDb';
-import { generateIndexedDbActions } from 'src/utils/indexedDb/generateIndexedDbActions';
+import { getStoreFromIndexedDb } from 'src/utils/indexedDb/getStoreFromIndexedDb';
 import { populateInitialStateInIndexedDb } from 'src/utils/indexedDb/populateInitialStateInIndexedDb';
 import { IndexedSchema } from 'src/utils/indexedDb/type/IndexedSchema';
+import { updateStoreInIndexedDb } from 'src/utils/indexedDb/updateStoreInIndexedDb';
+import { cloneObject } from 'src/utils/object/cloneObject';
 import { removeNulls } from 'src/utils/object/removeNulls';
+import { PersistPromise } from 'src/utils/promise/PersistPromise';
 import { upperCaseFirstLetter } from 'src/utils/string/upperCaseFirstLetter';
 
-export function createIndexedDb<State>({ name, version, schema, initialState }: Params<State>): Result<State> {
-    let indexedDbActions: any = {};
+export function createIndexedDb<State extends Record<string, any>>({ name, initialState }: Params<State>): Result<State> {
+    let persistPromise: PersistPromise = new PersistPromise();
+    let state: Record<string, any> = {} as any;
+    let db: IDBDatabase | undefined = undefined;
 
     initializeDb();
 
@@ -15,51 +20,38 @@ export function createIndexedDb<State>({ name, version, schema, initialState }: 
         const indexedDB = window.indexedDB;
         if (!indexedDB) return;
 
-        const db = await createDb(`pidedirecto-store-${name}`, version, schema);
-        await populateInitialStateInIndexedDb(db, initialState as any, schema);
-        indexedDbActions = await generateIndexedDbActions<State>(db, schema, {
-            actions: ['update', 'remove', 'add', 'get'],
-        });
+        db = await createDb('pidedirecto', 1, indexedDbSchema);
+        await populateInitialStateInIndexedDb(db, name, initialState);
+        state = (await getStoreFromIndexedDb(db, name)) ?? cloneObject(initialState);
     }
 
-    function createActions(schema: Record<string, IndexedSchema>) {
+    function createActions() {
         let actions: any = {};
-        for (const [objectStoreName, objectStoreSchema] of Object.entries(schema)) {
-            const updateActionKey = `update${upperCaseFirstLetter(objectStoreName)}`;
-            const getActionKey = `get${upperCaseFirstLetter(objectStoreName)}`;
-
-            if (objectStoreSchema.type === 'array') {
-                const removeActionKey = `remove${upperCaseFirstLetter(objectStoreName)}`;
-                const addActionKey = `add${upperCaseFirstLetter(objectStoreName)}`;
-                actions = removeNulls({
-                    ...actions,
-                    [removeActionKey]: async (...args: any[]) => {
-                        await indexedDbActions[removeActionKey]?.(...args);
-                    },
-                    [updateActionKey]: async (...args: any[]) => {
-                        await indexedDbActions[updateActionKey]?.(...args);
-                    },
-                    [getActionKey]: async () => {
-                        return indexedDbActions[getActionKey]?.();
-                    },
-                    [addActionKey]: async (...args: any[]) => {
-                        await indexedDbActions[addActionKey]?.(...args);
-                    },
-                });
-                continue;
-            }
+        for (const stateKey of Object.keys(initialState)) {
+            const updateActionKey = `update${upperCaseFirstLetter(stateKey)}`;
+            const getActionKey = `get${upperCaseFirstLetter(stateKey)}`;
             actions = removeNulls({
                 ...actions,
-                [updateActionKey]: async (...args: any[]) => {
-                    await indexedDbActions[updateActionKey]?.(...args);
+                [updateActionKey]: (newValue: any) => {
+                    state[stateKey] = newValue;
+                    const previousPersistPromise = persistPromise;
+                    previousPersistPromise.cancel();
+                    persistPromise = new PersistPromise(() => previousPersistPromise.promise.then(() => updateStoreInIndexedDb(db!, name, state)));
                 },
-                [getActionKey]: async () => {
-                    return indexedDbActions[getActionKey]?.();
+                [getActionKey]: () => {
+                    return state[stateKey];
                 },
             });
         }
         return actions;
     }
 
-    return createActions(schema);
+    return createActions();
 }
+
+const indexedDbSchema: Record<string, IndexedSchema> = {
+    store: {
+        type: 'array',
+        key: '__storeName',
+    },
+};

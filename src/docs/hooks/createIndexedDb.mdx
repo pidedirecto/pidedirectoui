@@ -11,19 +11,6 @@ import { createIndexedDb } from '@pidedirecto/ui/hooks';
 
 const actions = createIndexedDb<State>({
     name: 'ordersStore',
-    version: 1,
-    schema: {
-        orders: {
-            type: 'array',
-            key: 'orderId',
-        },
-        number: {
-            type: 'primitive',
-        },
-        selectedOrderId: {
-            type: 'primitive',
-        },
-    },
     initialState: {
         orders: [],
         number: 0,
@@ -38,62 +25,19 @@ const actions = createIndexedDb<State>({
     indexed util functions, if you have multiple indexed util functions with the same name you will write to the same db on different places
     which may cause unexpected behaviours.
 
--   `version`: Version for the indexed db, this is purely a characteristic of the indexed db, and you can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Basic_Terminology#version).
-    In summary each db has a version, the version represents the current state for the object stores, an object store
-    is a table in the db, each time you change the db schema you MUST increase the version, so the db can create the
-    new object stores.
-
--   `schema`: This object represents the db schema, for each state inside the initial state you will have to define how it will
-    be saved in the db through the schema object, each state can have 2 different schema depending on its type
-
-    1. If the state is primitive or objects, in other words, if the state is not an array you have to define the schema like this
-
-    ```ts
-    schema: {
-        type: 'primitive' | 'object';
-    }
-    ```
-
-    `object` if the value is an object and `primitive` for any other value like numbers, strings, etc.
-
-    2. If the state is an array you HAVE TO use this schema
-
-    ```ts
-    schema: {
-        type: 'array',
-        key: 'myKey',
-    }
-    ```
-
-    The key field is super important because it will be key used to insert the element array in db, for example if you have
-    an `orders` state, and each order has an `orderId` field, you should use this field as key
-
-    ```ts
-    orders: {
-        type: 'array',
-        key: 'orderId',
-    }
-    ```
-
-    Each key should be unique between elements array.
-
-    NOTE: By the moment is not possible to save plain arrays like `number[]` or `string[]`, every array you save should
-    be an array of objects in order to use some field inside the object as key.
-
 -   `initialState`: The initial state of the db, if it is the first time an indexed db is created the initial state will
     be populated, if data is already saved then the initial state will be omitted, in other words, the initial state is only
     used when the db has not been created if it is already then the store value will be the values in the db.
 
 ## Usage
 
-The `createdIndexedDb` function returns an object containing all the actions you can do over the indexed db, depending on the
-schema you passed the function will generate the functions, for example for primitive and object values it will generate only
-update and get actions, and for array values it will generate remove, add, update and get actions.
+The `createdIndexedDb` function returns an object containing the actions for update and get the state, so for every state you
+define in the initialState param there will be two actions in the object.
 
 ```ts
 async function incrementByOne() {
-    const value = await actions.getNumber(); // It returns the current number value in the indexed db
-    await actions.updateNumber(value + 1); // It updates the number value in the indexed db
+    const value = actions.getNumber(); // It returns the current number value in the indexed db
+    updateNumber(value + 1); // It updates the number value in the indexed db
 }
 ```
 
@@ -110,10 +54,10 @@ async function incrementByOne() {
     Have in mind not to access to the same db from `createdIndexedDb` and `createStore` because you may have unexpected
     behaviours.
 
--   Changing the schema of an existing object store can cause problems, remember the user may already have data stored in the db
-    and changing the schema may cause problems. This can be avoided by just creating a new indexed store or a new state.
+-   Changing the state of an existing object store can cause problems, remember the user may already have data stored in the db
+    and changing it may cause problems. This can be avoided by just creating a new indexed store or a new state.
 
--   Actions can throw errors, so HANDLE THEM, the action can throw an error for different reasons, problems in the db,
+-   Actions can throw errors, so handle them if needed, the action can throw an error for different reasons, problems in the db,
     user not granting the permissions to use indexed dbs, or simply if the browser does not support them.
 
 If you would like to learn more about indexed db in the browser you can check the [docs](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API).
