@@ -28,10 +28,10 @@ export function createStore<State extends Record<string, any>, Actions>(params: 
     async function initializeDb() {
         const indexedDB = window.indexedDB;
         if (!indexedDB || !persist) return;
-
         db = await createDb('pidedirecto', 1, persistStoreSchema);
         await populateInitialStateInIndexedDb(db, params.storeName, initialState);
-        state = ((await getStoreFromIndexedDb(db, params.storeName)) ?? cloneObject(initialState as any)) as State;
+        const stateInDb = await getStoreFromIndexedDb(db, params.storeName);
+        state = (stateInDb ?? cloneObject(initialState as any)) as State;
         notifyChanges();
     }
 

@@ -5,7 +5,10 @@ export async function populateInitialStateInIndexedDb<State extends Record<strin
     return new Promise(async (resolve, reject) => {
         try {
             const store = await getStoreFromIndexedDb(db, storeName);
-            if (store) return;
+            if (store) {
+                resolve();
+                return;
+            }
 
             await createStoreInIndexedDb(db, storeName, initialState);
             resolve();
