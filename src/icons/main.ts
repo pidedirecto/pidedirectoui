@@ -98,6 +98,7 @@ export * from 'src/icons/LitreIcon';
 export * from 'src/icons/MotorcycleIcon';
 export * from 'src/icons/RestoreIcon';
 export * from 'src/icons/FoodBoxIcon';
+export * from 'src/icons/LocationSearchIcon';
 export * from 'src/icons/LockIcon';
 export * from 'src/icons/MapIcon';
 export * from 'src/icons/MapPinIcon';

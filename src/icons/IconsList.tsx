@@ -97,6 +97,7 @@ import { LightingIcon } from 'src/icons/LightingIcon';
 import { LinkIcon } from 'src/icons/LinkIcon';
 import { ListIcon } from 'src/icons/ListIcon';
 import { LitreIcon } from 'src/icons/LitreIcon';
+import { LocationSearchIcon } from 'src/icons/LocationSearchIcon';
 import { LockIcon } from 'src/icons/LockIcon';
 import { MapIcon } from 'src/icons/MapIcon';
 import { MapPinIcon } from 'src/icons/MapPinIcon';
@@ -568,6 +569,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <LitreIcon size={size} />
                 <span className={classes.iconName}>LitreIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <LocationSearchIcon size={size} />
+                <span className={classes.iconName}>LocationSearchIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <LockIcon size={size} />

@@ -100,6 +100,7 @@ export const LitreIcon: SvgIcon
 export const MinimalistMotorcycleIcon: SvgIcon
 export const FoodBoxIcon: SvgIcon
 export const RestoreIcon: SvgIcon
+export const LocationSearchIcon: SvgIcon
 export const LockIcon: SvgIcon
 export const MapIcon: SvgIcon
 export const MapPinIcon: SvgIcon
