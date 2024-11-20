@@ -152,6 +152,7 @@ export * from 'src/icons/TerminalIcon';
 export * from 'src/icons/ThumbsUpIcon';
 export * from 'src/icons/TicketIcon';
 export * from 'src/icons/TicketsIcon';
+export * from 'src/icons/TrackingLinkIcon';
 export * from 'src/icons/TransactionIcon';
 export * from 'src/icons/TrendingDownIcon';
 export * from 'src/icons/TrendingUpIcon';

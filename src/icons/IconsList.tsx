@@ -153,6 +153,7 @@ import { TerminalIcon } from 'src/icons/TerminalIcon';
 import { ThumbsUpIcon } from 'src/icons/ThumbsUpIcon';
 import { TicketIcon } from 'src/icons/TicketIcon';
 import { TicketsIcon } from 'src/icons/TicketsIcon';
+import { TrackingLinkIcon } from 'src/icons/TrackingLinkIcon';
 import { TransactionIcon } from 'src/icons/TransactionIcon';
 import { TrashCanIcon } from 'src/icons/TrashCanIcon';
 import { TrendingDownIcon } from 'src/icons/TrendingDownIcon';
@@ -792,6 +793,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <TicketsIcon size={size} />
                 <span className={classes.iconName}>TicketsIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <TrackingLinkIcon size={size} />
+                <span className={classes.iconName}>TrackingLinkIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <TransactionIcon size={size} />

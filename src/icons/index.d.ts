@@ -155,6 +155,7 @@ export const TerminalIcon: SvgIcon
 export const ThumbsUpIcon: SvgIcon
 export const TicketIcon: SvgIcon
 export const TicketsIcon: SvgIcon
+export const TrackingLinkIcon: SvgIcon
 export const TransactionIcon: SvgIcon
 export const TrendingDownIcon: SvgIcon
 export const TrendingUpIcon: SvgIcon
