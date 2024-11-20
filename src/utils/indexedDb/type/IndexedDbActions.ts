@@ -10,7 +10,7 @@ export type AddActions<State> = {
 };
 
 export type UpdateActions<State> = {
-    [Action in keyof IndexedSchemas<State> as `update${Capitalize<string & Action>}`]: (value: ArrayElementType<State[Action]>) => void;
+    [Action in keyof IndexedSchemas<State> as `update${Capitalize<string & Action>}`]: (value: State[Action]) => void;
 };
 
 export type GetActions<State> = {
