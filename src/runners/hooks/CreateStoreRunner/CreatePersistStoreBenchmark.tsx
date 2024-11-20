@@ -53,7 +53,7 @@ const [usePersistStore, usePersistActions] = createStore<RegularState, RegularAc
         },
     },
     persist: true,
-    storeName: 'test',
+    storeName: 'ordersStore',
 });
 
 const anyOrder = {
