@@ -10,11 +10,27 @@
     flex-direction: row;
     align-items: center;
     padding: 0 10px 10px 10px;
-    border: 0;
+    border: none !important;
     border-bottom: 1px solid var(--border-primary);
     background-color: transparent;
     cursor: pointer;
     gap: 10px;
+}
+
+.titleSubContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.toolsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
 }
 
 .button {

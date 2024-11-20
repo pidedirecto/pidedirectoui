@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import { Accordion } from 'src/components/Accordion';
 import { Button } from 'src/components/Button';
+import { SaveIcon } from 'src/icons/SaveIcon';
 
 const meta: Meta<typeof Accordion> = {
     component: Accordion,
@@ -43,6 +44,13 @@ const meta: Meta<typeof Accordion> = {
             description: 'Additional text below the title',
             table: {
                 type: { summary: 'string' },
+            },
+            control: false,
+        },
+        tools: {
+            description: 'Elements to add right side of the accordion',
+            table: {
+                type: { summary: 'React.Node | Function' },
             },
             control: false,
         },
@@ -162,5 +170,12 @@ export const Subtext: Story = {
     args: {
         ...meta.args,
         subText: 'This accordion has some important info, open it!',
+    },
+};
+
+export const Tools: Story = {
+    args: {
+        ...meta.args,
+        tools: <SaveIcon />,
     },
 };

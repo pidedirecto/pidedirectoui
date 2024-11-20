@@ -1,5 +1,6 @@
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import * as React from 'react';
+import { Button } from 'src/components/Button';
 import { UiLogEventTrackerContext } from 'src/components/UiLogEventTracker';
 import { UiLogEventTypes } from 'src/constants/UiLogEventType';
 import { ArrowDownIcon } from 'src/icons/ArrowDownIcon';
@@ -9,7 +10,7 @@ import { AccordionProps } from 'src/types/components/Accordion';
 import { classNames } from 'src/utils/css/classNames';
 import { isFunction } from 'src/utils/function/isFunction';
 
-export function Accordion({ open, title, defaultOpened, keepMounted, children, classes: classesProp, subText, renderIcon, onChange, iconTitle }: AccordionProps): React.ReactElement {
+export function Accordion({ open, title, defaultOpened, keepMounted, children, classes: classesProp, subText, renderIcon, onChange, iconTitle, tools }: AccordionProps): React.ReactElement {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const accordionId = useRef(getId());
     const { addElementToStackTrace } = useContext(UiLogEventTrackerContext);
@@ -48,18 +49,34 @@ export function Accordion({ open, title, defaultOpened, keepMounted, children, c
     if (title) {
         return (
             <div className={classNames(classes.container, classesProp?.container)} onClickCapture={addAccordionToStackTrace}>
-                <button className={classes.titleContainer} onClick={handleOnClickAccordion} aria-expanded={accordionOpened} aria-controls={`accordion-${accordionId.current}`} type={'button'}>
-                    {!renderIcon && (
-                        <div data-opened={accordionOpened} className={classNames(classes.button)}>
-                            <ArrowDownIcon title={iconTitle} />
+                <Button
+                    variant={'secondary'}
+                    asDiv
+                    classes={{ button: classes.titleContainer }}
+                    onClick={handleOnClickAccordion}
+                    aria-expanded={accordionOpened}
+                    aria-controls={`accordion-${accordionId.current}`}
+                    type={'button'}
+                >
+                    <div className={classes.titleSubContainer}>
+                        {!renderIcon && (
+                            <div data-opened={accordionOpened} className={classNames(classes.button)}>
+                                <ArrowDownIcon title={iconTitle} />
+                            </div>
+                        )}
+                        {!!renderIcon && <div className={classes.icon}>{renderIcon(accordionOpened)}</div>}
+                        <div>
+                            <h2 className={classNames(classes.title, classesProp?.title)}>{title}</h2>
+                            {subText && <p className={classNames(classes.caption, classesProp?.subText)}>{subText}</p>}
+                        </div>
+                    </div>
+                    {tools && (
+                        <div className={classNames(classes.toolsContainer, classesProp?.toolsContainer)}>
+                            {/*@ts-ignore*/}
+                            {isFunction(tools) ? tools({ isOpen: accordionOpened }) : tools}
                         </div>
                     )}
-                    {!!renderIcon && <div className={classes.icon}>{renderIcon(accordionOpened)}</div>}
-                    <div className={classes.textContainer}>
-                        <h2 className={classNames(classes.title, classesProp?.title)}>{title}</h2>
-                        {subText && <p className={classNames(classes.caption, classesProp?.subText)}>{subText}</p>}
-                    </div>
-                </button>
+                </Button>
                 <div
                     ref={containerRef}
                     className={classNames(classes.accordion, classesProp?.accordion)}
