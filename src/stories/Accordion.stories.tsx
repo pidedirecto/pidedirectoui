@@ -50,7 +50,7 @@ const meta: Meta<typeof Accordion> = {
         tools: {
             description: 'Elements to add right side of the accordion',
             table: {
-                type: { summary: 'React.Node' },
+                type: { summary: 'React.Node | Function' },
             },
             control: false,
         },

@@ -73,7 +73,7 @@ export function Accordion({ open, title, defaultOpened, keepMounted, children, c
                     {tools && (
                         <div className={classNames(classes.toolsContainer, classesProp?.toolsContainer)}>
                             {/*@ts-ignore*/}
-                            {isFunction(tools) ? tools?.({ isOpen: accordionOpened }) : tools}
+                            {isFunction(tools) ? tools({ isOpen: accordionOpened }) : tools}
                         </div>
                     )}
                 </Button>
