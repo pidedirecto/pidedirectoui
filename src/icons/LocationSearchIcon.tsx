@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { SvgIconProps } from 'src/types/icons/SvgIcon';
 
-export function TrackingLinkIcon({ title, color, width, height, size, ...props }: SvgIconProps): React.ReactElement {
+export function LocationSearchIcon({ title, color, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
         <svg {...props} width={width ?? size ?? 24} height={height ?? size ?? 24} viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <title>{title}</title>

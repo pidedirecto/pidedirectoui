@@ -100,6 +100,7 @@ export const LitreIcon: SvgIcon
 export const MinimalistMotorcycleIcon: SvgIcon
 export const FoodBoxIcon: SvgIcon
 export const RestoreIcon: SvgIcon
+export const LocationSearchIcon: SvgIcon
 export const LockIcon: SvgIcon
 export const MapIcon: SvgIcon
 export const MapPinIcon: SvgIcon
@@ -155,7 +156,6 @@ export const TerminalIcon: SvgIcon
 export const ThumbsUpIcon: SvgIcon
 export const TicketIcon: SvgIcon
 export const TicketsIcon: SvgIcon
-export const TrackingLinkIcon: SvgIcon
 export const TransactionIcon: SvgIcon
 export const TrendingDownIcon: SvgIcon
 export const TrendingUpIcon: SvgIcon
