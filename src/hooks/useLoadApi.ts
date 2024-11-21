@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ApiSauceResponse, Options } from 'src/types/hooks/UseLoadApi';
 import { isArray } from 'src/utils/array/isArray';
-import { unzip } from 'src/utils/zip/unzip';
 
 export function useLoadApi<S extends (request?: any) => ApiSauceResponse<any>>(
     fn: S,
@@ -23,11 +22,7 @@ export function useLoadApi<S extends (request?: any) => ApiSauceResponse<any>>(
             setLoading(false);
             return options?.onError?.(response, setData);
         }
-        if (options?.unZip) {
-            setData(unzip(response.data));
-        } else {
-            setData(response.data);
-        }
+        setData(response.data);
         setLoading(false);
     };
 
