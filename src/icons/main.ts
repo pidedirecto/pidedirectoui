@@ -141,6 +141,7 @@ export * from 'src/icons/SearchIcon';
 export * from 'src/icons/SettingsIcon';
 export * from 'src/icons/ShieldIcon';
 export * from 'src/icons/ShieldFillIcon';
+export * from 'src/icons/SortingArrowsIcon';
 export * from 'src/icons/SpeakerIcon';
 export * from 'src/icons/SpeakerOffIcon';
 export * from 'src/icons/StarIcon';

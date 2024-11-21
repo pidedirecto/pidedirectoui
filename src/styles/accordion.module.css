@@ -17,6 +17,10 @@
     gap: 10px;
 }
 
+.titleContainer:hover {
+    background-color: transparent;
+}
+
 .titleSubContainer {
     width: 100%;
     display: flex;
