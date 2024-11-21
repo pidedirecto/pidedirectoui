@@ -39,6 +39,8 @@ export function Accordion({ open, title, defaultOpened, keepMounted, children, c
         setAccordionOpened(!accordionOpened);
     };
 
+    const handleOnClickAccordionTools = (event: React.MouseEvent<HTMLDivElement>) => event.stopPropagation();
+
     const addAccordionToStackTrace = () => {
         addElementToStackTrace({
             element: title ?? '',
@@ -71,7 +73,7 @@ export function Accordion({ open, title, defaultOpened, keepMounted, children, c
                         </div>
                     </div>
                     {tools && (
-                        <div className={classNames(classes.toolsContainer, classesProp?.toolsContainer)}>
+                        <div className={classNames(classes.toolsContainer, classesProp?.toolsContainer)} onClick={handleOnClickAccordionTools}>
                             {/*@ts-ignore*/}
                             {isFunction(tools) ? tools({ isOpen: accordionOpened }) : tools}
                         </div>
