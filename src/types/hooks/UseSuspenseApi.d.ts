@@ -1,7 +1,6 @@
 export type Options = {
     onError?: OnErrorFunction;
     requiredValues?: Array<any>;
-    unZip?: boolean;
     cache?: number;
     key?: string;
 };

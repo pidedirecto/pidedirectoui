@@ -2,7 +2,6 @@ import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { createStore } from 'src/hooks/createStore';
 import { ApiSauceResponse, Options } from 'src/types/hooks/UseSuspenseApi';
-import { unzip } from 'src/utils/zip/unzip';
 
 export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any>>(
     fn: S,
@@ -42,7 +41,7 @@ export function useSuspenseApi<S extends (request?: any) => ApiSauceResponse<any
             return options?.onError?.(response, handleApiError);
         }
 
-        const apiData = options?.unZip ? unzip(response.data) : response.data;
+        const apiData = response.data;
         endFetchApi(fn, apiData, options?.key);
         setResponseTrigger(!responseTrigger);
     };
