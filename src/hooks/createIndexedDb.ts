@@ -1,4 +1,5 @@
 import { type Params, type Result } from 'src/types/hooks/CreateIndexedDb';
+import { isArray } from 'src/utils/array/isArray';
 import { createDb } from 'src/utils/indexedDb/createDb';
 import { getStoreFromIndexedDb } from 'src/utils/indexedDb/getStoreFromIndexedDb';
 import { populateInitialStateInIndexedDb } from 'src/utils/indexedDb/populateInitialStateInIndexedDb';
@@ -42,6 +43,28 @@ export function createIndexedDb<State extends Record<string, any>>({ name, initi
                     return state[stateKey];
                 },
             });
+            if (isArray(initialState[stateKey])) {
+                const removeActionKey = `remove${upperCaseFirstLetter(stateKey)}`;
+                const addActionKey = `add${upperCaseFirstLetter(stateKey)}`;
+                actions = removeNulls({
+                    ...actions,
+                    [addActionKey]: (newValue: any) => {
+                        state[stateKey].push(newValue);
+                        const previousPersistPromise = persistPromise;
+                        previousPersistPromise.cancel();
+                        persistPromise = new PersistPromise(() => previousPersistPromise.promise.then(() => updateStoreInIndexedDb(db!, name, state)));
+                    },
+                    [removeActionKey]: (value: any, key?: string) => {
+                        state[stateKey] = state[stateKey].filter((element: any) => {
+                            if (key) return element[key] !== value[key];
+                            return element !== value;
+                        });
+                        const previousPersistPromise = persistPromise;
+                        previousPersistPromise.cancel();
+                        persistPromise = new PersistPromise(() => previousPersistPromise.promise.then(() => updateStoreInIndexedDb(db!, name, state)));
+                    },
+                });
+            }
         }
         return actions;
     }

@@ -31,13 +31,34 @@ const actions = createIndexedDb<State>({
 
 ## Usage
 
-The `createdIndexedDb` function returns an object containing the actions for update and get the state, so for every state you
-define in the initialState param there will be two actions in the object.
+The `createdIndexedDb` function returns an object containing the actions for update and get for every key in the state
 
 ```ts
-async function incrementByOne() {
+function incrementByOne() {
     const value = actions.getNumber(); // It returns the current number value in the indexed db
     updateNumber(value + 1); // It updates the number value in the indexed db
+}
+```
+
+For array states there will be 2 other actions additional, one for adding and other one for removing, the remove action
+will accept 2 parameters, the first one is the value you want to remove, by default this action will try to remove the element
+from the array state by value, if you have an array of objects this won't work, and you should use the second parameter, which
+is the key the action will use to remove it
+
+```ts
+function addNewOrder() {
+    actions.addOrders({
+        orderId: 'orderId',
+    });
+}
+
+function removeOrder() {
+    actions.removeOrders(
+        {
+            orderId: 'orderId',
+        },
+        'orderId', // Here we are telling the action to use the field orderId to filter the orders
+    );
 }
 ```
 
