@@ -4,6 +4,7 @@ import { SvgIconProps } from 'src/types/icons/SvgIcon';
 export function BackspaceIcon({ color, title, width, height, size, ...props }: SvgIconProps): React.ReactElement {
     return (
         <svg {...props} width={width ?? size ?? 20} height={height ?? size ?? 17} viewBox='0 0 21 17' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            {title && <title>{title}</title>}
             <path
                 fillRule='evenodd'
                 clipRule='evenodd'
