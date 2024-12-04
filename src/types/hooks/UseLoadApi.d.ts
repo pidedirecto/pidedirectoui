@@ -25,5 +25,5 @@ export type ApiErrorResponse = {
         name?: string;
     };
     status?: number;
-    problem: 'CLIENT_ERROR' | 'SERVER_ERROR' | 'TIMEOUT_ERROR' | 'CONNECTION_ERROR' | 'NETWORK_ERROR' | 'CANCEL_ERROR';
+    problem: 'CLIENT_ERROR' | 'SERVER_ERROR' | 'TIMEOUT_ERROR' | 'CONNECTION_ERROR' | 'NETWORK_ERROR' | 'CANCEL_ERROR' | 'UNAUTHORIZED';
 };
