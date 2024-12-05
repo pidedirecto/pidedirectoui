@@ -10,6 +10,9 @@ export type StepperProps = {
     orientation?: 'vertical' | 'horizontal';
     classes?: {
         stepIcon?: string;
+        stepLabel?: string;
+        stepLine?: string;
+        activeStepLabel?: string;
     };
 };
 
