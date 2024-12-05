@@ -83,7 +83,7 @@ const meta: Meta<typeof Stepper> = {
         },
         // @ts-ignore
         'classes.stepLabel': {
-            description: 'CSS class to override the step indicator container style',
+            description: 'CSS class to override the step label style',
             table: {
                 subcategory: 'Classes API',
                 type: { summary: 'string' },
@@ -92,7 +92,7 @@ const meta: Meta<typeof Stepper> = {
         },
         // @ts-ignore
         'classes.stepLine': {
-            description: 'CSS class to override the step indicator container style',
+            description: 'CSS class to override the step line style',
             table: {
                 subcategory: 'Classes API',
                 type: { summary: 'string' },
@@ -101,7 +101,7 @@ const meta: Meta<typeof Stepper> = {
         },
         // @ts-ignore
         'classes.activeStepLabel': {
-            description: 'CSS class to override the step indicator container style',
+            description: 'CSS class to override the active step label style',
             table: {
                 subcategory: 'Classes API',
                 type: { summary: 'string' },
