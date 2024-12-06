@@ -32,9 +32,11 @@ export function Stepper({ activeStep, steps, orientation = 'vertical', classes: 
                         <div className={classes.iconContent}>
                             <div className={classNames(classes.stepCircle, isActiveStep(step.value) && classes.activeStepCircle, classesProp?.stepIcon)}>{step.content ?? index + 1}</div>
                         </div>
-                        <div className={classNames(classes.stepLabel, isActiveStep(step.value) && classes.activeStepLabel)}>{step.label}</div>
+                        <div className={classNames(classes.stepLabel, isActiveStep(step.value) && (classes.activeStepLabel, classesProp?.activeStepLabel), classesProp?.stepLabel)}>{step.label}</div>
                     </div>
-                    {!isLastStep(step.value) && <div className={classNames(classes.stepLine, isActiveStep(step.value) && classes.activeStepLine)} data-orientation={orientation} />}
+                    {!isLastStep(step.value) && (
+                        <div className={classNames(classes.stepLine, isActiveStep(step.value) && classes.activeStepLine, classesProp?.stepLine)} data-orientation={orientation} />
+                    )}
                 </React.Fragment>
             ))}
         </div>

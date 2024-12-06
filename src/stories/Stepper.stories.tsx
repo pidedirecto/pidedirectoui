@@ -81,6 +81,33 @@ const meta: Meta<typeof Stepper> = {
             },
             control: false,
         },
+        // @ts-ignore
+        'classes.stepLabel': {
+            description: 'CSS class to override the step label style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        // @ts-ignore
+        'classes.stepLine': {
+            description: 'CSS class to override the step line style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
+        // @ts-ignore
+        'classes.activeStepLabel': {
+            description: 'CSS class to override the active step label style',
+            table: {
+                subcategory: 'Classes API',
+                type: { summary: 'string' },
+            },
+            control: false,
+        },
     },
 };
 export default meta;
