@@ -10,7 +10,7 @@ import { DialogProps } from 'src/types/components/Dialog';
 import { classNames } from 'src/utils/css/classNames';
 import { convertReactNodeToString } from 'src/utils/react/convertReactNodeToString';
 
-export function Dialog({ open, loading, keepMounted, onClose, title, position, children, classes: classesProp }: DialogProps): React.ReactElement {
+export function Dialog({ open, loading, keepMounted, onClose, title, position, children, classes: classesProp, ...props }: DialogProps): React.ReactElement {
     const createUserOpenedDialogLogEvent = useCreateUserOpenedDialogLogEvent();
     const { addElementToStackTrace } = useContext(UiLogEventTrackerContext);
     const closeDialogTimeout = useRef<number | undefined>(undefined);
@@ -68,7 +68,14 @@ export function Dialog({ open, loading, keepMounted, onClose, title, position, c
             data-position={position}
         >
             <div className={classes.background} onClick={handleClos}></div>
-            <div aria-modal={true} role={'dialog'} aria-labelledby='dialog-title' className={classNames(classes.dialogContent, classesProp?.dialog)} data-position={position}>
+            <div
+                aria-modal={true}
+                role={'dialog'}
+                aria-labelledby='dialog-title'
+                data-testid={props['data-testid']}
+                className={classNames(classes.dialogContent, classesProp?.dialog)}
+                data-position={position}
+            >
                 {loading && (
                     <div className={classes.loadingContainer}>
                         <LinearProgress />

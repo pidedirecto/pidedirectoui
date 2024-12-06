@@ -157,7 +157,7 @@ export const BottomDialog: Story = {
         return (
             <div>
                 <Button onClick={() => setOpen(true)}>Open bottom Dialog</Button>
-                <Dialog open={open} onClose={() => setOpen(false)} position='bottom'>
+                <Dialog open={open} onClose={() => setOpen(false)} position='bottom' data-testid='bottom-dialog'>
                     This is the dialog content
                 </Dialog>
             </div>
