@@ -94,7 +94,7 @@
     border: 0;
     background-color: transparent;
     color: var(--text-secondary);
-    padding: 6px 0px;
+    padding: 6px;
 }
 
 .buttonText:hover {
