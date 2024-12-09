@@ -13,6 +13,7 @@ export type DialogProps = {
         dialog?: string;
         title?: string;
     };
+    'data-testid'?: string;
 };
 
 export type Dialog = React.FunctionComponent<DialogProps>;
