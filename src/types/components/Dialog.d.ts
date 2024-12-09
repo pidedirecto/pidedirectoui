@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type DialogProps = React.DialogHTMLAttributes<HTMLDialogElement> & {
+export type DialogProps = {
     open: boolean;
     loading?: boolean;
     keepMounted?: boolean;
@@ -13,6 +13,7 @@ export type DialogProps = React.DialogHTMLAttributes<HTMLDialogElement> & {
         dialog?: string;
         title?: string;
     };
+    'data-testid'?: string;
 };
 
 export type Dialog = React.FunctionComponent<DialogProps>;
