@@ -43,6 +43,7 @@ import { ClipboardsIcon } from 'src/icons/ClipboardsIcon';
 import { ClockIcon } from 'src/icons/ClockIcon';
 import { ClosedEyeIcon } from 'src/icons/ClosedEyeIcon';
 import { CoinsIcon } from 'src/icons/CoinsIcon';
+import { CoinStackIcon } from 'src/icons/CoinStackIcon';
 import { ColumnsIcon } from 'src/icons/ColumnsIcon';
 import { CommandIcon } from 'src/icons/CommandIcon';
 import { CookingPotIcon } from 'src/icons/CookingPotIcon';
@@ -54,6 +55,7 @@ import { DepositIcon } from 'src/icons/DepositIcon';
 import { DeviceIcon } from 'src/icons/DeviceIcon';
 import { DishIcon } from 'src/icons/DishIcon';
 import { DocumentIcon } from 'src/icons/DocumentIcon';
+import { DollarDocumentIcon } from 'src/icons/DollarDocumentIcon';
 import { DoorbellIcon } from 'src/icons/DoorbellIcon';
 import { DoorHangerIcon } from 'src/icons/DoorHangerIcon';
 import { DownloadCloudIcon } from 'src/icons/DownloadCloudIcon';
@@ -360,6 +362,10 @@ export function IconsList(): React.ReactElement {
                 <span className={classes.iconName}>CoinsIcon</span>
             </div>
             <div className={classes.iconContainer}>
+                <CoinStackIcon size={size} />
+                <span className={classes.iconName}>CoinStackIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
                 <ColumnsIcon size={size} />
                 <span className={classes.iconName}>ColumnsIcon</span>
             </div>
@@ -406,6 +412,10 @@ export function IconsList(): React.ReactElement {
             <div className={classes.iconContainer}>
                 <DocumentIcon size={size} />
                 <span className={classes.iconName}>DocumentIcon</span>
+            </div>
+            <div className={classes.iconContainer}>
+                <DollarDocumentIcon size={size} />
+                <span className={classes.iconName}>DollarDocumentIcon</span>
             </div>
             <div className={classes.iconContainer}>
                 <DoorbellIcon size={size} />

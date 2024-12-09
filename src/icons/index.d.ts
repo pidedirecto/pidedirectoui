@@ -46,6 +46,7 @@ export const CommandIcon: SvgIcon
 export const CookingPotIcon: SvgIcon
 export const CopyIcon: SvgIcon
 export const CoinsIcon: SvgIcon
+export const CoinStackIcon: SvgIcon
 export const ColumnsIcon: SvgIcon
 export const CreditCardIcon: SvgIcon
 export const CrossIcon: SvgIcon
@@ -57,6 +58,7 @@ export const EllipsisVerticalIcon: SvgIcon
 export const IncomingIcon: SvgIcon
 export const CashRegisterShiftIcon: SvgIcon
 export const DocumentIcon: SvgIcon
+export const DollarDocumentIcon: SvgIcon
 export const DoorbellIcon: SvgIcon
 export const DoorHangerIcon: SvgIcon
 export const DownloadIcon: SvgIcon
@@ -116,6 +118,7 @@ export const NoteIcon: SvgIcon
 export const NotificationIcon: SvgIcon
 export const OpenBoxIcon: SvgIcon
 export const OutlinedLightBulbIcon: SvgIcon
+export const OutlinedMoneyBagIcon: SvgIcon
 export const OutlinedNotificationIcon: SvgIcon
 export const OutlinedPeopleIcon: SvgIcon
 export const OutlinedPlusIcon: SvgIcon
