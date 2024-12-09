@@ -68,14 +68,7 @@ export function Dialog({ open, loading, keepMounted, onClose, title, position, c
             data-position={position}
         >
             <div className={classes.background} onClick={handleClos}></div>
-            <div
-                aria-modal={true}
-                role={'dialog'}
-                aria-labelledby='dialog-title'
-                data-testid={props['data-testid']}
-                className={classNames(classes.dialogContent, classesProp?.dialog)}
-                data-position={position}
-            >
+            <div aria-modal={true} role={'dialog'} aria-labelledby='dialog-title' className={classNames(classes.dialogContent, classesProp?.dialog)} data-position={position} {...props}>
                 {loading && (
                     <div className={classes.loadingContainer}>
                         <LinearProgress />
