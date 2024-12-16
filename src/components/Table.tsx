@@ -55,6 +55,7 @@ export function Table({
     const tableRowHeight = options?.rowHeight || rowHeight;
     const tableContentHeight = options?.contentHeight || contentHeight;
     const tableEmptyMessage = options?.emptyMessage || emptyMessage;
+    const numberOfRowsPerPage = options?.rowsPerPage || rowsPerPage;
 
     if (rowIds.length !== rows.length && isSelectable) {
         console.error('If Table component is selectable it requires each row has a rowId but some rows do not have it');
@@ -81,7 +82,7 @@ export function Table({
         });
     };
 
-    const getTotalPages = () => Math.ceil(rows.length / (rowsPerPage ?? 1)) || 1;
+    const getTotalPages = () => Math.ceil(rows.length / (numberOfRowsPerPage ?? 1)) || 1;
 
     const previousPage = () => {
         if (page === 1) return;
@@ -97,15 +98,26 @@ export function Table({
         if (!!search) {
             return rows.filter((row) => row.onSearch?.(search));
         }
-        if (!!rowsPerPage) {
-            return rows.slice((page - 1) * rowsPerPage, page * rowsPerPage);
+        if (!!numberOfRowsPerPage) {
+            return rows.slice((page - 1) * numberOfRowsPerPage, page * numberOfRowsPerPage);
         }
         return rows;
     };
 
     return (
         <TableContext.Provider
-            value={{ tableId: tableId.current, columns, rows: getRowsToShow(), selectable: isSelectable, classes, onSelect: events?.onSelect ?? onSelect, filters, options, footer, rowsPerPage }}
+            value={{
+                tableId: tableId.current,
+                columns,
+                rows: getRowsToShow(),
+                selectable: isSelectable,
+                classes,
+                onSelect: events?.onSelect ?? onSelect,
+                filters,
+                options,
+                footer,
+                rowsPerPage: numberOfRowsPerPage,
+            }}
         >
             <div className={classNames(classes.container, classesProp?.container)}>
                 {!!isSearchable && !!title && <h2 className={classes.title}>{title}</h2>}
